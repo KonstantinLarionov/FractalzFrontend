@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b6e2149b-c578-444d-ae1e-51d47679d8e9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/fractalz-vue/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-vue/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-vue/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-vue/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-vue/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-vue/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-vue/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-vue/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-vue/src/api/RestClient.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-vue/src/api/RestPoints.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-vue/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-vue/src/components/HelloWorld.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-vue/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-vue/src/objects/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FractalzVueWeb/fractalz-vue/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FractalzVueWeb/fractalz-vue/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FractalzVueWeb/fractalz-vue/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FractalzVueWeb/fractalz-vue/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FractalzVueWeb/fractalz-vue/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FractalzVueWeb/fractalz-vue/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FractalzVueWeb/fractalz-vue/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FractalzVueWeb/fractalz-vue/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FractalzVueWeb/fractalz-vue/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FractalzVueWeb/fractalz-vue/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FractalzVueWeb/fractalz-vue/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fractalz-electron/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../fractalz-electron/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fractalz-electron/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fractalz-electron/src/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="22Gr53aT49CoZh0IVGpaE2reWvq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b6e2149b-c578-444d-ae1e-51d47679d8e9" name="Changes" comment="" />
+      <created>1639474586431</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639474586431</updated>
+      <workItem from="1639474587637" duration="1506000" />
+      <workItem from="1639721119747" duration="2319000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
