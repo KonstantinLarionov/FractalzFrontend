@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractalzWPF", "FractalzWPF\FractalzWPF.csproj", "{FEFF217A-DB34-49EF-A2AA-5C580702BCD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEFF217A-DB34-49EF-A2AA-5C580702BCD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEFF217A-DB34-49EF-A2AA-5C580702BCD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEFF217A-DB34-49EF-A2AA-5C580702BCD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEFF217A-DB34-49EF-A2AA-5C580702BCD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC84E922-8EC7-46B7-944E-0733F4E84DE4}
+	EndGlobalSection
+EndGlobal
