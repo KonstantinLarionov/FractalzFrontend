@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31911.196
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31911.260
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractalzWPF", "FractalzWPF\FractalzWPF.csproj", "{FEFF217A-DB34-49EF-A2AA-5C580702BCD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FractalzWPF", "FractalzWPF\FractalzWPF.csproj", "{FEFF217A-DB34-49EF-A2AA-5C580702BCD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractalzWPF.Infrastructure.Vizualizer", "FractalzWPF.Vizualizer\FractalzWPF.Infrastructure.Vizualizer.csproj", "{3098C89D-DAFC-4C00-8638-53DD10CA0558}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractalzWPF.Infrastructure.Connector", "FractalzWPF.Infrastructure.Connector\FractalzWPF.Infrastructure.Connector.csproj", "{4F77D633-CBB4-4F76-9907-EF1451A6A1C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractalzWPF.Infrastructure.Application", "FractalzWPF.Infrastructure.Application\FractalzWPF.Infrastructure.Application.csproj", "{C86CA03C-2985-4D7A-93FA-962B73085AA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{FEFF217A-DB34-49EF-A2AA-5C580702BCD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEFF217A-DB34-49EF-A2AA-5C580702BCD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEFF217A-DB34-49EF-A2AA-5C580702BCD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3098C89D-DAFC-4C00-8638-53DD10CA0558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3098C89D-DAFC-4C00-8638-53DD10CA0558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3098C89D-DAFC-4C00-8638-53DD10CA0558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3098C89D-DAFC-4C00-8638-53DD10CA0558}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F77D633-CBB4-4F76-9907-EF1451A6A1C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F77D633-CBB4-4F76-9907-EF1451A6A1C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F77D633-CBB4-4F76-9907-EF1451A6A1C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F77D633-CBB4-4F76-9907-EF1451A6A1C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C86CA03C-2985-4D7A-93FA-962B73085AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C86CA03C-2985-4D7A-93FA-962B73085AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C86CA03C-2985-4D7A-93FA-962B73085AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C86CA03C-2985-4D7A-93FA-962B73085AA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

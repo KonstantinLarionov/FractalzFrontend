@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FractalzWPF.Infrastructure.Application;
+using FractalzWPF.Infrastructure.Application.Application;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +23,7 @@ namespace FractalzWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(INavigator navigator)
         {
             InitializeComponent();
         }

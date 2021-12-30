@@ -1,0 +1,12 @@
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\bin\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.deps.json
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\bin\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.dll
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\bin\Debug\net5.0-windows\ref\FractalzWPF.Infrastructure.Vizualizer.dll
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\bin\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.pdb
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.csproj.AssemblyReference.cache
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.AssemblyInfoInputs.cache
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.AssemblyInfo.cs
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.csproj.CoreCompileInputs.cache
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.dll
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\ref\FractalzWPF.Infrastructure.Vizualizer.dll
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.pdb
