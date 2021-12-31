@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="FractalzWPF.Infrastructure.Vizualizer.ProfileUserControl"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FractalzWPF.Infrastructure.Vizualizer"
+             mc:Ignorable="d" 
+             d:DesignHeight="684.04" d:DesignWidth="450" Background="Transparent">
+    <DockPanel LastChildFill="True">
+        <md:Card DockPanel.Dock="Top"
+            Width="200" 
+            Margin="0,30,0,0" Height="200">
+            <Image 
+            Source="50.png" />
+        </md:Card>
+        <StackPanel 
+            HorizontalAlignment="Center" 
+            DockPanel.Dock="Top" 
+            Height="50" Margin="50,0,50,0" 
+            Orientation="Horizontal">
+            <Button 
+                Cursor="Hand"
+                Background="#009788"
+                Foreground="White"
+                Width="50" Height="30"
+                Margin="0,0,1,0"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" BorderBrush="{x:Null}">
+                <md:PackIcon Kind="Upload"/>
+            </Button>
+            <Button 
+                Cursor="Hand"
+                Background="#009788" 
+                Foreground="White" 
+                Height="30" Width="200"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" BorderBrush="{x:Null}">
+                Выберите файл
+            </Button>
+        </StackPanel>
+        <DockPanel Margin="30">
+            <StackPanel DockPanel.Dock="Top">
+                <Label>Ваш Email:</Label>
+                <TextBox/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Top">
+                <Label>ФИО/Никнейм:</Label>
+                <TextBox/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Top">
+                <Label>Ваш телефон:</Label>
+                <TextBox/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Top" Cursor="Hand">
+                <Label>Файл подписи:</Label>
+                <TextBox/>
+                <Label FontSize="10" Foreground="Gray">(нужен только для внутренних серверов)</Label>
+            </StackPanel>
+            <Button Background="#009788" Foreground="White" Cursor="Hand" DockPanel.Dock="Bottom"  Height="30" BorderBrush="{x:Null}" >Сохранить</Button>
+        </DockPanel>
+    </DockPanel>
+</UserControl>

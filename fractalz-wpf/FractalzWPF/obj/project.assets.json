@@ -54,6 +54,15 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "PresentationFramework/4.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/PresentationFramework.dll": {}
+        },
+        "runtime": {
+          "lib/PresentationFramework.dll": {}
+        }
+      },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "type": "package",
         "compile": {
@@ -70,7 +79,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "6.0.0"
+          "Microsoft.Extensions.DependencyInjection": "6.0.0",
+          "PresentationFramework": "4.6.0"
         },
         "compile": {
           "bin/placeholder/FractalzWPF.Infrastructure.Application.dll": {}
@@ -92,6 +102,25 @@
         "runtime": {
           "bin/placeholder/FractalzWPF.Infrastructure.Connector.dll": {}
         }
+      },
+      "FractalzWPF.Infrastructure.Vizualizer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "FractalzWPF.Infrastructure.Application": "1.0.0",
+          "MaterialDesignColors": "2.0.4",
+          "MaterialDesignThemes": "4.3.0",
+          "Microsoft.Extensions.DependencyInjection": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FractalzWPF.Infrastructure.Vizualizer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FractalzWPF.Infrastructure.Vizualizer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
@@ -201,6 +230,18 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "PresentationFramework/4.6.0": {
+      "sha512": "37FpU6XcB1Hgr5X03MgUOxvzWLJYKJP72J3g5hnZHi/DXsTxpJEu4brCGW+TmplVWfntuysO/uRcZcPS9YK0Bw==",
+      "type": "package",
+      "path": "presentationframework/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/PresentationFramework.dll",
+        "presentationframework.4.6.0.nupkg.sha512",
+        "presentationframework.nuspec"
+      ]
+    },
     "System.Runtime.CompilerServices.Unsafe/6.0.0": {
       "sha512": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
       "type": "package",
@@ -235,30 +276,36 @@
       "type": "project",
       "path": "../FractalzWPF.Infrastructure.Connector/FractalzWPF.Infrastructure.Connector.csproj",
       "msbuildProject": "../FractalzWPF.Infrastructure.Connector/FractalzWPF.Infrastructure.Connector.csproj"
+    },
+    "FractalzWPF.Infrastructure.Vizualizer/1.0.0": {
+      "type": "project",
+      "path": "../FractalzWPF.Vizualizer/FractalzWPF.Infrastructure.Vizualizer.csproj",
+      "msbuildProject": "../FractalzWPF.Vizualizer/FractalzWPF.Infrastructure.Vizualizer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
       "FractalzWPF.Infrastructure.Connector >= 1.0.0",
+      "FractalzWPF.Infrastructure.Vizualizer >= 1.0.0",
       "MaterialDesignColors >= 2.0.4",
       "MaterialDesignThemes >= 4.3.0",
       "Microsoft.Extensions.DependencyInjection >= 6.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kosty\\.nuget\\packages\\": {}
+    "C:\\Users\\123\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF\\FractalzWPF.csproj",
+      "projectUniqueName": "C:\\Users\\123\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF\\FractalzWPF.csproj",
       "projectName": "FractalzWPF",
-      "projectPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF\\FractalzWPF.csproj",
-      "packagesPath": "C:\\Users\\kosty\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF\\obj\\",
+      "projectPath": "C:\\Users\\123\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF\\FractalzWPF.csproj",
+      "packagesPath": "C:\\Users\\123\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\123\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kosty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\123\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -272,8 +319,11 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj": {
-              "projectPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj"
+            "C:\\Users\\123\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj": {
+              "projectPath": "C:\\Users\\123\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj"
+            },
+            "C:\\Users\\123\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj": {
+              "projectPath": "C:\\Users\\123\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj"
             }
           }
         }
@@ -319,8 +369,20 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.7.21379.14\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"PresentationFramework 4.6.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \"net5.0-windows7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "PresentationFramework",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
 }

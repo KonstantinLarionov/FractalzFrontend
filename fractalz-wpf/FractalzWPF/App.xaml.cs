@@ -1,6 +1,8 @@
 ﻿using FractalzWPF.Infrastructure.Application;
 using FractalzWPF.Infrastructure.Application.Handlers;
 using FractalzWPF.Infrastructure.Connector;
+using FractalzWPF.Infrastructure.Vizualizer;
+
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -29,6 +31,7 @@ namespace FractalzWPF
         {
             services.AddInfrastructureConnector();
             services.AddApplication();
+            services.AddUserControls();
 
             services.AddSingleton<MainWindow>();
         }

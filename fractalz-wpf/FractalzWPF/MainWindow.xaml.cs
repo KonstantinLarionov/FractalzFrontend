@@ -1,5 +1,7 @@
 ﻿using FractalzWPF.Infrastructure.Application;
 using FractalzWPF.Infrastructure.Application.Application;
+using FractalzWPF.Infrastructure.Application.Domains.Enums;
+
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -23,9 +25,23 @@ namespace FractalzWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(INavigator navigator)
+        private readonly INavigatorControls _navigatorControls;
+        private readonly INavigatorHandlers _navigatorHandlers;
+        public MainWindow(INavigatorHandlers navigatorHandlers, INavigatorControls navigatorControls)
         {
             InitializeComponent();
+            _navigatorControls = navigatorControls;
+            _navigatorHandlers = navigatorHandlers;
+        }
+
+        private void profileLB_Click(object sender, RoutedEventArgs e) => Switcher(UserControlType.Profile);
+
+        private void dialogsLB_Click(object sender, RoutedEventArgs e) => Switcher(UserControlType.Chat);
+
+        private void Switcher(UserControlType controlType)
+        {
+            mainSpace.Children.Clear();
+            mainSpace.Children.Add(_navigatorControls.Controls[controlType]);
         }
     }
 }

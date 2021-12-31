@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FractalzWPF.Infrastructure.Connector\FractalzWPF.Infrastructure.Connector.csproj" />
+    <ProjectReference Include="..\FractalzWPF.Vizualizer\FractalzWPF.Infrastructure.Vizualizer.csproj" />
   </ItemGroup>
 
   <ItemGroup>

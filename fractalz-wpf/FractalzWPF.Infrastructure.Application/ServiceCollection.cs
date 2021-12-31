@@ -14,7 +14,7 @@ namespace FractalzWPF.Infrastructure.Application
         public static void AddApplication(this ServiceCollection serviceCollection)
         {
             serviceCollection.AddTransient<GetStringTestHandler>();
-            serviceCollection.AddSingleton<INavigator, Navigator>();
+            serviceCollection.AddSingleton<INavigatorHandlers, Navigator>();
         }
     }
 }
