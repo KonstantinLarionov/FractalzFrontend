@@ -24,5 +24,15 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Elements
         {
             InitializeComponent();
         }
+
+        private void UserControl_MouseMove(object sender, MouseEventArgs e)
+        {
+            Background = new SolidColorBrush(Color.FromRgb(220,220,220));
+        }
+
+        private void UserControl_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Background = new SolidColorBrush(Colors.Transparent);
+        }
     }
 }

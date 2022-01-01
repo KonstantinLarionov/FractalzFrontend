@@ -12,7 +12,7 @@
             Width="200" 
             Margin="0,30,0,0" Height="200">
             <Image 
-            Source="50.png" />
+            Source="/FractalzWPF.Infrastructure.Vizualizer;component/200.png" />
         </md:Card>
         <StackPanel 
             HorizontalAlignment="Center" 

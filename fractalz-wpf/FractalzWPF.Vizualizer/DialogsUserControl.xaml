@@ -7,14 +7,13 @@
              xmlns:local="clr-namespace:FractalzWPF.Infrastructure.Vizualizer"
              mc:Ignorable="d" 
              d:DesignHeight="684.04" d:DesignWidth="450">
-    <DockPanel>
+    <DockPanel Margin="0,2,0,-2">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Orientation="Horizontal" DockPanel.Dock="Top" Height="60">
-            <md:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Search" Width="30" Height="30"/>
+            <md:PackIcon VerticalAlignment="Center" Kind="Search" Width="30" Height="30"/>
             <TextBox Width="320" FontSize="16" md:HintAssist.Hint="Найти диалог" md:HintAssist.HelperText="(начнте вводить имя или название диалога)" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             
         </StackPanel>
-        <StackPanel Orientation="Vertical" Name="dialogsSpace">
-            
+        <StackPanel Margin="0,20,0,0" Orientation="Vertical" Name="dialogsSpace">
         </StackPanel>
     </DockPanel>
 </UserControl>

@@ -86,5 +86,5 @@ C:\Users\123\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF\obj\Debug\ne
 C:\Users\123\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF\obj\Debug\net5.0-windows\FractalzWPF.AssemblyInfoInputs.cache
 C:\Users\123\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF\obj\Debug\net5.0-windows\FractalzWPF.AssemblyInfo.cs
 C:\Users\123\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF\obj\Debug\net5.0-windows\FractalzWPF.csproj.CoreCompileInputs.cache
-C:\Users\123\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF\obj\Debug\net5.0-windows\FractalzWPF.csproj.CopyComplete
 C:\Users\123\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF\obj\Debug\net5.0-windows\FractalzWPF.genruntimeconfig.cache
+C:\Users\123\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF\obj\Debug\net5.0-windows\FractalzWPF.csproj.CopyComplete
