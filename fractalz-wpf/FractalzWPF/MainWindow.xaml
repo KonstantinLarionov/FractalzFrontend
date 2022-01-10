@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FractalzWPF"
         mc:Ignorable="d"
-        Title="Fractalz" Height="700" Width="450">
+        Title="Fractalz" Height="700" Width="450" Closed="Window_Closed">
 
     <DockPanel>
         <DockPanel Width="60">
@@ -23,19 +23,19 @@
                     <Button Name="dialogsLB" Click="dialogsLB_Click" DockPanel.Dock="Top" ToolTip="Диалоги" Background="{x:Null}" BorderBrush="{x:Null}" Height="50" Padding="0" Margin="0,0,0,0">
                         <md:PackIcon Kind="MessageGroup" VerticalAlignment="Center" Width="66" HorizontalAlignment="Center" Height="30" />
                     </Button>
+                    <Button DockPanel.Dock="Top" Click="todoLB_Click" ToolTip="Список задач" Background="{x:Null}" BorderBrush="{x:Null}" Height="50" Padding="0" Margin="0,0,0,0">
+                        <md:PackIcon Kind="ToDo" VerticalAlignment="Center" Width="66" HorizontalAlignment="Center" Height="30" />
+                    </Button>
+                    <Button DockPanel.Dock="Bottom" ToolTip="Вход/Выход" Background="{x:Null}" BorderBrush="{x:Null}" Height="50" Padding="0" Margin="0,100,0,0">
+                        <md:PackIcon Kind="ExitToApp" VerticalAlignment="Center" Width="66" HorizontalAlignment="Center" Height="30" />
+                    </Button>
                     <Button DockPanel.Dock="Top" IsEnabled="False" ToolTip="Новости" Background="{x:Null}" BorderBrush="{x:Null}" Height="50" Padding="0" Margin="0,0,0,0">
                         <md:PackIcon Kind="Newspaper" VerticalAlignment="Center" Width="66" HorizontalAlignment="Center" Height="30" />
-                    </Button>
-                    <Button DockPanel.Dock="Top" ToolTip="Список задач" Background="{x:Null}" BorderBrush="{x:Null}" Height="50" Padding="0" Margin="0,0,0,0">
-                        <md:PackIcon Kind="ToDo" VerticalAlignment="Center" Width="66" HorizontalAlignment="Center" Height="30" />
                     </Button>
                     <Button DockPanel.Dock="Top" IsEnabled="False" ToolTip="Доски задач" Background="{x:Null}" BorderBrush="{x:Null}" Height="50" Padding="0" Margin="0,0,0,0">
                         <md:PackIcon Kind="Trello" VerticalAlignment="Center" Width="66" HorizontalAlignment="Center" Height="30" />
                     </Button>
 
-                    <Button DockPanel.Dock="Bottom" ToolTip="Вход/Выход" Background="{x:Null}" BorderBrush="{x:Null}" Height="50" Padding="0" Margin="0,100,0,0">
-                        <md:PackIcon Kind="ExitToApp" VerticalAlignment="Center" Width="66" HorizontalAlignment="Center" Height="30" />
-                    </Button>
 
                 </DockPanel>
             </md:Card>

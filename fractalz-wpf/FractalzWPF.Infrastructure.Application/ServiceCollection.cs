@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace FractalzWPF.Infrastructure.Application
 {
+    public static class SC
+    { public static ServiceProvider provider; }
     public static class ServiceCollectionExtensions
     {
         public static void AddApplication(this ServiceCollection serviceCollection)

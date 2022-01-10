@@ -10,6 +10,9 @@ namespace FractalzWPF.Infrastructure.Application.Domains.Enums
     {
         Login,
         Registration,
-        MainWindow
+        MainWindow,
+        TodoCreate,
+        TodoArchive,
+        Chat
     }
 }

@@ -298,11 +298,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF\\FractalzWPF.csproj",
+      "projectUniqueName": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF\\FractalzWPF.csproj",
       "projectName": "FractalzWPF",
-      "projectPath": "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF\\FractalzWPF.csproj",
+      "projectPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF\\FractalzWPF.csproj",
       "packagesPath": "C:\\Users\\kosty\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF\\obj\\",
+      "outputPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kosty\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -319,11 +319,11 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj": {
-              "projectPath": "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj"
+            "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj": {
+              "projectPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj"
             },
-            "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj": {
-              "projectPath": "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj"
+            "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj": {
+              "projectPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj"
             }
           }
         }
@@ -369,7 +369,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200-preview.21617.4\\RuntimeIdentifierGraph.json"
       }
     }
   },
