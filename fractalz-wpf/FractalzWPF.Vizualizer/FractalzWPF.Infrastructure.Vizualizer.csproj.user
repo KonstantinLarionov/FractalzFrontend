@@ -2,24 +2,48 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="ChatWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="DialogsUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Elements\DialogElement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="LoginWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ProfileUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="RegistrationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="TodoUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="ChatWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="DialogsUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Elements\DialogElement.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ProfileUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TodoUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -1,4 +1,6 @@
 ﻿using FractalzWPF.Infrastructure.Application;
+using FractalzWPF.Infrastructure.Application.Application;
+using FractalzWPF.Infrastructure.Application.Domains.Enums;
 using FractalzWPF.Infrastructure.Application.Handlers;
 using FractalzWPF.Infrastructure.Connector;
 using FractalzWPF.Infrastructure.Vizualizer;
@@ -39,6 +41,8 @@ namespace FractalzWPF
         private void OnStartup(object sender, StartupEventArgs e)
         {
             var mainWindow = SC.provider.GetService<MainWindow>();
+            var navigator = SC.provider.GetService<INavigatorControls>();
+            navigator.Windows[WindowType.Login].Show();
             mainWindow.Show();
         }
     }
