@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FractalzWPF.Infrastructure.Vizualizer.Elements"
              mc:Ignorable="d" 
-             Height="70" Margin="10,10" MouseLeave="UserControl_MouseLeave" Cursor="Hand" MouseEnter="UserControl_MouseMove" d:DesignWidth="450" BorderThickness="0,0,0,1" BorderBrush="Gainsboro">
+             Height="70" Margin="0,10" MouseLeave="UserControl_MouseLeave" Cursor="Hand" MouseEnter="UserControl_MouseMove" d:DesignWidth="450" BorderThickness="0,0,0,1" BorderBrush="Gainsboro">
     <DockPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Left">
             <Image Margin="10,0,0,0" Width="60" Height="60" Source="/FractalzWPF.Infrastructure.Vizualizer;component/Elements/100.png">

@@ -11,6 +11,9 @@
     <Compile Update="Elements\DialogElement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Elements\TodoElement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -18,6 +21,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="RegistrationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="TodoCreateWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="TodoUserControl.xaml.cs">
@@ -34,6 +40,9 @@
     <Page Update="Elements\DialogElement.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Elements\TodoElement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -41,6 +50,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TodoCreateWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="TodoUserControl.xaml">

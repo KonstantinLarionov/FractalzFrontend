@@ -38,6 +38,10 @@ namespace FractalzWPF
 
         private void dialogsLB_Click(object sender, RoutedEventArgs e) => Switcher(UserControlType.Chat);
 
+        private void todoLB_Click(object sender, RoutedEventArgs e) => Switcher(UserControlType.Todo);
+
+        private void Window_Closed(object sender, EventArgs e) => Application.Current.Shutdown();
+
         private void Switcher(UserControlType controlType)
         {
             mainSpace.Children.Clear();

@@ -19,12 +19,14 @@ namespace FractalzWPF.Infrastructure.Vizualizer
             Controls = new Dictionary<UserControlType, UserControl>()
             {
                 { UserControlType.Profile, new ProfileUserControl() },
-                { UserControlType.Chat, new DialogsUserControl() }
+                { UserControlType.Chat, new DialogsUserControl() },
+                { UserControlType.Todo, new TodoUserControl() }
             };
             Windows = new Dictionary<WindowType, Window>()
             {
                 { WindowType.Login, new LoginWindow() },
-                { WindowType.Registration, new RegistrationWindow() }
+                { WindowType.Registration, new RegistrationWindow() },
+                { WindowType.TodoCreate, new TodoCreateWindow() }
             };
         }
     }

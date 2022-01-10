@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="FractalzWPF.Infrastructure.Vizualizer.Elements.TodoElement"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FractalzWPF.Infrastructure.Vizualizer.Elements"
+             mc:Ignorable="d" 
+             Margin="10" MouseDown="UserControl_MouseDown">
+    <DockPanel LastChildFill="True" Cursor="Hand">
+    <DockPanel LastChildFill="False" DockPanel.Dock="Top" Cursor="Hand" >
+            <CheckBox Click="checkBox1_Click" Cursor="Hand" VerticalAlignment="Top" IsChecked="True" Height="16" IsEnabled="True"  Name="checkBox1" Background="#009788" BorderBrush="#009788" >
+                <TextBlock DockPanel.Dock="Left" FontWeight="Bold" Margin="5,0" Text="Новая задача на сегодня [8:00-8:30]">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <!-- Here is how we bind to another control's property -->
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=checkBox1}" Value="True">
+                                    <Setter Property="TextBlock.TextDecorations" Value="Strikethrough" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </CheckBox>
+
+            <TextBlock DockPanel.Dock="Right" >
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                            <!-- Here is how we bind to another control's property -->
+                            <DataTrigger Binding="{Binding IsChecked, ElementName=checkBox1}" Value="True">
+                                <Setter Property="TextBlock.TextDecorations" Value="Strikethrough" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            30мин
+        </TextBlock>
+    </DockPanel>
+    <DockPanel>
+            <Button VerticalAlignment="Top" Background="#FFB73A3A" BorderBrush="#FFB73A3A" Margin="1,10,0,0" Height="20" Padding="0">
+                <md:PackIcon Kind="Trash"/>
+            </Button>
+            <TextBlock Padding="15,0,0,0" DockPanel.Dock="Bottom" TextWrapping="Wrap" > Учитывая ключевые сценарии поведения, консультация с широким активом прекрасно подходит для реализации новых принципов формирования материально-технической и кадровой базы. Противоположная точка зрения подразумевает, что некоторые особенности внутренней политики функционально разнесены на независимые элементы. В своём стремлении повысить качество жизни, они забывают, что базовый вектор развития однозначно определяет каждого участника как способного принимать собственные решения касаемо своевременного выполнения сверхзадачи.</TextBlock>
+    </DockPanel>
+    </DockPanel>
+</UserControl>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FractalzWPF.Infrastructure.Vizualizer.Elements;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace FractalzWPF.Infrastructure.Vizualizer
         public TodoUserControl()
         {
             InitializeComponent();
+            todoList.Children.Add(new TodoElement());
+            todoList.Children.Add(new TodoElement());
+            todoList.Children.Add(new TodoElement());
+            todoList.Children.Add(new TodoElement());
+            todoList.Children.Add(new TodoElement());
+            todoList.Children.Add(new TodoElement());
+            todoList.Children.Add(new TodoElement());
+            todoList.Children.Add(new TodoElement());
+            todoList.Children.Add(new TodoElement());
         }
     }
 }
