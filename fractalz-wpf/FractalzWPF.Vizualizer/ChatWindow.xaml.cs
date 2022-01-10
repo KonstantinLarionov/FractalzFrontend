@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FractalzWPF.Infrastructure.Vizualizer.Elements;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,16 @@ namespace FractalzWPF.Infrastructure.Vizualizer
         public ChatWindow()
         {
             InitializeComponent();
+            messagesSpace.Children.Add(new MessageElement());
+            messagesSpace.Children.Add(new MessageElement());
+            messagesSpace.Children.Add(new MessageElement());
+            messagesSpace.Children.Add(new MessageElement());
+            messagesSpace.Children.Add(new MessageElement());
+            messagesSpace.Children.Add(new MessageElement());
+            messagesSpace.Children.Add(new MessageElement());
+            messagesSpace.Children.Add(new MessageElement());
+            messagesSpace.Children.Add(new MessageElement());
+            messagesSpace.Children.Add(new MessageElement());
         }
     }
 }

@@ -44,6 +44,7 @@ namespace FractalzWPF
             navigator.Windows[WindowType.Registration].Show();
             navigator.Windows[WindowType.Login].Show();
             navigator.Windows[WindowType.TodoCreate].Show();
+            navigator.Windows[WindowType.Chat].Show();
             mainWindow.Show();
         }
     }

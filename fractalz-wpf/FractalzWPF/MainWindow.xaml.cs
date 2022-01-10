@@ -32,6 +32,7 @@ namespace FractalzWPF
             InitializeComponent();
             _navigatorControls = navigatorControls;
             _navigatorHandlers = navigatorHandlers;
+            dialogsLB_Click(this, new RoutedEventArgs());
         }
 
         private void profileLB_Click(object sender, RoutedEventArgs e) => Switcher(UserControlType.Profile);
