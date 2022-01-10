@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "TN9hhseiKzqqUPXNeCxmNl1vBGPVA8jkv9YpoilTziSs2fVFTLuPvLKbNwkDcl3ctQ5wSfFkan6jU5TYU8aS3Q==",
+  "dgSpecHash": "qc8z8XRllme0TvG84u4I2LameWU5Qzw5TIPpOssZy+xQr7qpzdGF6dpjl4svyB9r1uPskpE0oUGZrd8b2ydOVA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\123\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\FractalzWPF.Infrastructure.Application.csproj",
+  "projectFilePath": "C:\\Users\\kosty\\Source\\Repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\FractalzWPF.Infrastructure.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\123\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
-    "C:\\Users\\123\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\123\\.nuget\\packages\\presentationframework\\4.6.0\\presentationframework.4.6.0.nupkg.sha512",
-    "C:\\Users\\123\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\presentationframework\\4.6.0\\presentationframework.4.6.0.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": [
     {

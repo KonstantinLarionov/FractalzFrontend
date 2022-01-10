@@ -7,13 +7,27 @@
              xmlns:local="clr-namespace:FractalzWPF.Infrastructure.Vizualizer"
              mc:Ignorable="d" 
              d:DesignHeight="684.04" d:DesignWidth="450">
+    <UserControl.Resources>
+
+        <Style TargetType="ScrollBar">
+            <Setter Property="Width" Value="5"/>
+            <Setter Property="MinWidth" Value="5"/>
+        </Style>
+
+    </UserControl.Resources>
+
+
     <DockPanel Margin="0,2,0,-2">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Orientation="Horizontal" DockPanel.Dock="Top" Height="60">
             <md:PackIcon VerticalAlignment="Center" Kind="Search" Width="30" Height="30"/>
             <TextBox Width="320" FontSize="16" md:HintAssist.Hint="Найти диалог" md:HintAssist.HelperText="(начнте вводить имя или название диалога)" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             
         </StackPanel>
-        <StackPanel Margin="0,20,0,0" Orientation="Vertical" Name="dialogsSpace">
-        </StackPanel>
+        <ScrollViewer IsTabStop="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            
+            <StackPanel Name="dialogsSpace" Margin="0,20,0,0" Orientation="Vertical">
+
+            </StackPanel>
+        </ScrollViewer>
     </DockPanel>
 </UserControl>

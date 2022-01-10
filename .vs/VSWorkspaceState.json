@@ -1,8 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\fractalz-wpf"
+    "\\fractalz-wpf",
+    "\\fractalz-wpf\\FractalzWPF",
+    "\\fractalz-wpf\\FractalzWPF.Infrastructure.Application",
+    "\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\Application",
+    "\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\Domains",
+    "\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\Domains\\Enums",
+    "\\fractalz-wpf\\FractalzWPF.Vizualizer"
   ],
-  "SelectedNode": "\\fractalz-wpf",
+  "SelectedNode": "\\fractalz-wpf\\FractalzWPF.Vizualizer\\NavigatorControls.cs",
   "PreviewInSolutionExplorer": false
 }

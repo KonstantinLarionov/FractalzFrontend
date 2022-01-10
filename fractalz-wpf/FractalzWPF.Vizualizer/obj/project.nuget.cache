@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "QE6YPYPLaKKYbumOd1PQm2P/PH5hQ5XVV66e5Yk3hfESek3H+PZb4LyYZrwMh+BKnU9XT8nibYiyHWXzfizKvw==",
+  "dgSpecHash": "ep+AByQ6SzC6OnaJgX/beGRVY0DURQt5R08RisXBYCK6Wyw0Evo8vOL30t/Wf+hOJyrNGEPWyvejT5fPGrtLKw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\123\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj",
+  "projectFilePath": "C:\\Users\\kosty\\Source\\Repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\123\\.nuget\\packages\\materialdesigncolors\\2.0.4\\materialdesigncolors.2.0.4.nupkg.sha512",
-    "C:\\Users\\123\\.nuget\\packages\\materialdesignthemes\\4.3.0\\materialdesignthemes.4.3.0.nupkg.sha512",
-    "C:\\Users\\123\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
-    "C:\\Users\\123\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\123\\.nuget\\packages\\presentationframework\\4.6.0\\presentationframework.4.6.0.nupkg.sha512",
-    "C:\\Users\\123\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\kosty\\.nuget\\packages\\materialdesigncolors\\2.0.4\\materialdesigncolors.2.0.4.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\materialdesignthemes\\4.3.0\\materialdesignthemes.4.3.0.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\presentationframework\\4.6.0\\presentationframework.4.6.0.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": [
     {
