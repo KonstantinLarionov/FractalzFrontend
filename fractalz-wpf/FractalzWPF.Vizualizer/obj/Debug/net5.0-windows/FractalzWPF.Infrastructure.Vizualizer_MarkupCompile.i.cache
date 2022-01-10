@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\kosty\Source\Repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\
+C:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\
 FractalzWPF.Infrastructure.Vizualizer
 none
 false
@@ -13,7 +13,7 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 7-1867571410
 
 11-662819579
-1981571340301
+1981357389936
 ChatWindow.xaml;DialogsUserControl.xaml;Elements\DialogElement.xaml;LoginWindow.xaml;ProfileUserControl.xaml;RegistrationWindow.xaml;TodoUserControl.xaml;
 
 False

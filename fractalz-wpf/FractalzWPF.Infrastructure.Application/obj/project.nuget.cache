@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qc8z8XRllme0TvG84u4I2LameWU5Qzw5TIPpOssZy+xQr7qpzdGF6dpjl4svyB9r1uPskpE0oUGZrd8b2ydOVA==",
+  "dgSpecHash": "WPU6zIG38bmoKkLfv8l6Wdpod6w9BV4xMJm8praNtIxHhDcbIImBnW/PYGjLhbYvcTzQjdggisowdRzsEsFDCA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kosty\\Source\\Repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\FractalzWPF.Infrastructure.Application.csproj",
+  "projectFilePath": "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\FractalzWPF.Infrastructure.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
