@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 
-921780889
+101428826230
 
-11-100829476
+12-983875685
 198-1642228659
-ChatWindow.xaml;DialogsUserControl.xaml;Elements\DialogElement.xaml;Elements\TodoElement.xaml;LoginWindow.xaml;ProfileUserControl.xaml;RegistrationWindow.xaml;TodoCreateWindow.xaml;TodoUserControl.xaml;
+ChatWindow.xaml;DialogsUserControl.xaml;Elements\DialogElement.xaml;Elements\TodoElement.xaml;LoginWindow.xaml;MainWindow.xaml;ProfileUserControl.xaml;RegistrationWindow.xaml;TodoCreateWindow.xaml;TodoUserControl.xaml;
 
 False
 

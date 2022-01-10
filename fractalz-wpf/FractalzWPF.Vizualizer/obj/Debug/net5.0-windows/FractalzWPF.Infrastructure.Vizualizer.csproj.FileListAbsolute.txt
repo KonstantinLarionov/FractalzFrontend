@@ -89,3 +89,5 @@ C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualize
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\Elements\TodoElement.baml
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\TodoCreateWindow.g.cs
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\TodoCreateWindow.baml
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\MainWindow.baml

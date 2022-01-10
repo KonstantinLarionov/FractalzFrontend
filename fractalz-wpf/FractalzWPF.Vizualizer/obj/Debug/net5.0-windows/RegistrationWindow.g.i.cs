@@ -56,7 +56,8 @@ namespace FractalzWPF.Infrastructure.Vizualizer {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;component/registrationwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;V1.0.0.0;component/registrationwindow.xaml" +
+                    "", System.UriKind.Relative);
             
             #line 1 "..\..\..\RegistrationWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

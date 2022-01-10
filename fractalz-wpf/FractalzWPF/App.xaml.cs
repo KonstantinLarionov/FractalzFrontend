@@ -34,7 +34,6 @@ namespace FractalzWPF
             services.AddInfrastructureConnector();
             services.AddApplication();
             services.AddUserControls();
-
             services.AddSingleton<MainWindow>();
         }
 
