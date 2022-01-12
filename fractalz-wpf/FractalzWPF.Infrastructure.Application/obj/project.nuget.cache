@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WPU6zIG38bmoKkLfv8l6Wdpod6w9BV4xMJm8praNtIxHhDcbIImBnW/PYGjLhbYvcTzQjdggisowdRzsEsFDCA==",
+  "dgSpecHash": "YIVGdu4f34Xf+XR9BAzsGQII0UrTDu8H2vi9KvgBg8eAaoV9pt7yWvXISByOYaUG+sBIPyBvbM5J+79aMpPN5g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\FractalzWPF.Infrastructure.Application.csproj",
+  "projectFilePath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\FractalzWPF.Infrastructure.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
@@ -14,7 +14,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Пакет \"PresentationFramework 4.6.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \"net5.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "message": "Package 'PresentationFramework 4.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
       "libraryId": "PresentationFramework",
       "targetGraphs": [
         "net5.0"

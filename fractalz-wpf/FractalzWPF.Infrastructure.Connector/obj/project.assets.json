@@ -39,6 +39,18 @@
           "lib/PresentationFramework.dll": {}
         }
       },
+      "RestSharp/107.0.4-alpha.0.4": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/RestSharp.dll": {}
+        }
+      },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "type": "package",
         "compile": {
@@ -49,6 +61,15 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Text.Json/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {}
         }
       },
       "FractalzWPF.Infrastructure.Application/1.0.0": {
@@ -130,6 +151,24 @@
         "presentationframework.nuspec"
       ]
     },
+    "RestSharp/107.0.4-alpha.0.4": {
+      "sha512": "wD49LAdw7fnewTOplaT5scqluWA18TleR5FhrXowGbw91M2HZAAptxtxBrAOLXpDCdVegx09eaKR4nvC4CNo0Q==",
+      "type": "package",
+      "path": "restsharp/107.0.4-alpha.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/RestSharp.dll",
+        "lib/net5.0/RestSharp.xml",
+        "lib/net6.0/RestSharp.dll",
+        "lib/net6.0/RestSharp.xml",
+        "lib/netstandard2.0/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.xml",
+        "restsharp.107.0.4-alpha.0.4.nupkg.sha512",
+        "restsharp.nuspec",
+        "restsharp.png"
+      ]
+    },
     "System.Runtime.CompilerServices.Unsafe/6.0.0": {
       "sha512": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
       "type": "package",
@@ -155,6 +194,28 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Text.Json/5.0.0": {
+      "sha512": "+luxMQNZ2WqeffBU7Ml6njIvxc8169NW2oU+ygNudXQGZiarjE7DOtN7bILiQjTZjkmwwRZGTtLzmdrSI/Ustw==",
+      "type": "package",
+      "path": "system.text.json/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Text.Json.dll",
+        "lib/net461/System.Text.Json.xml",
+        "lib/netcoreapp3.0/System.Text.Json.dll",
+        "lib/netcoreapp3.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.5.0.0.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "FractalzWPF.Infrastructure.Application/1.0.0": {
       "type": "project",
       "path": "../FractalzWPF.Infrastructure.Application/FractalzWPF.Infrastructure.Application.csproj",
@@ -164,7 +225,8 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "FractalzWPF.Infrastructure.Application >= 1.0.0",
-      "Microsoft.Extensions.DependencyInjection >= 6.0.0"
+      "Microsoft.Extensions.DependencyInjection >= 6.0.0",
+      "RestSharp >= 107.0.4-alpha.0.4"
     ]
   },
   "packageFolders": {
@@ -173,11 +235,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj",
+      "projectUniqueName": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj",
       "projectName": "FractalzWPF.Infrastructure.Connector",
-      "projectPath": "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj",
+      "projectPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj",
       "packagesPath": "C:\\Users\\kosty\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\obj\\",
+      "outputPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kosty\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -194,8 +256,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\FractalzWPF.Infrastructure.Application.csproj": {
-              "projectPath": "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\FractalzWPF.Infrastructure.Application.csproj"
+            "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\FractalzWPF.Infrastructure.Application.csproj": {
+              "projectPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\FractalzWPF.Infrastructure.Application.csproj"
             }
           }
         }
@@ -213,6 +275,10 @@
           "Microsoft.Extensions.DependencyInjection": {
             "target": "Package",
             "version": "[6.0.0, )"
+          },
+          "RestSharp": {
+            "target": "Package",
+            "version": "[107.0.4-alpha.0.4, )"
           }
         },
         "imports": [
@@ -230,7 +296,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200-preview.21617.4\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -239,7 +305,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Пакет \"PresentationFramework 4.6.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \"net5.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "message": "Package 'PresentationFramework 4.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
       "libraryId": "PresentationFramework",
       "targetGraphs": [
         "net5.0"

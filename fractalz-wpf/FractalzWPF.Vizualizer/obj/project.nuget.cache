@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TMh3VxVnQi0hzKdrhwy5JC4kJpksMtCBKsGEIURS7klfHyc08I7LTGMD2XQo5DgIwlz5b79LSILaamvsBop7cw==",
+  "dgSpecHash": "sRmntpb9QhvwEza1QWwV1UpwZJ3oKWEi5pBTB5cyJulNqbPPjvq6B1YPNMKJnFItZO1Rmm6wsmPg4tdXCT04UQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj",
+  "projectFilePath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kosty\\.nuget\\packages\\materialdesigncolors\\2.0.4\\materialdesigncolors.2.0.4.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\materialdesignthemes\\4.3.0\\materialdesignthemes.4.3.0.nupkg.sha512",
@@ -16,7 +16,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Пакет \"PresentationFramework 4.6.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \"net5.0-windows7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "message": "Package 'PresentationFramework 4.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "PresentationFramework",
       "targetGraphs": [
         "net5.0-windows7.0"
