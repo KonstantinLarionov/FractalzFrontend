@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FractalzWPF.Infrastructure.Application.Application
+namespace FractalzWPF.Application.Domains.Responses.Todo
 {
-    public interface IConnector
+    public class DeleteTaskResponse : BasicResponse
     {
     }
 }

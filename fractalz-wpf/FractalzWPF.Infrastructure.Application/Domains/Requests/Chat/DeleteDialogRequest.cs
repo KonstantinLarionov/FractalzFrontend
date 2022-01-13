@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FractalzWPF.Infrastructure.Application.Application
+namespace FractalzWPF.Application.Domains.Requests.Chat
 {
-    public interface IConnector
+    public class DeleteDialogRequest 
     {
+        public int DialogId { get; set; }
     }
 }

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FractalzWPF.Infrastructure.Application.Application
+namespace FractalzWPF.Application.Domains.Responses.Chat
 {
-    public interface IConnector
+    public class SendReactionResponse : BasicResponse
     {
+
     }
 }

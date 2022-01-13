@@ -17,7 +17,7 @@ namespace FractalzWPF.Infrastructure.Application.Handlers
 
         public string Handle()
         {
-            return _connector.Test();
+            return  string.Empty;
         }
     }
 }

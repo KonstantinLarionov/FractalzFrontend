@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FractalzWPF.Infrastructure.Application.Application
+namespace FractalzWPF.Application.Domains.Requests.Todo
 {
-    public interface IConnector
+    public class DeleteTaskRequest 
     {
+        public int IdTask { get; set; }
     }
 }
