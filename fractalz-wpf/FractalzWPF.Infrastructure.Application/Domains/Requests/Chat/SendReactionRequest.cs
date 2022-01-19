@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FractalzWPF.Application.Domains.Entities.Chat;
+using FractalzWPF.Infrastructure.Application.Domains.Enums;
 
 namespace FractalzWPF.Application.Domains.Requests.Chat
 {

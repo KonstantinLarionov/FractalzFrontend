@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FractalzWPF.Application.Domains.Entities.Chat;
 using FractalzWPF.Application.Domains.Entities.Todo;
+using FractalzWPF.Infrastructure.Application.Domains.Entitties.Server;
 
 namespace FractalzWPF.Application.Domains.Entities.Profile
 
@@ -76,5 +77,7 @@ namespace FractalzWPF.Application.Domains.Entities.Profile
         /// 
         /// </summary>
         public List<Dialog> Dialogs { get; set; }
+
+        public ServerInfo Server { get; set; }
     }
 }

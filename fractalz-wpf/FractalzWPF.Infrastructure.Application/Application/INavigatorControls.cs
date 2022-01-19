@@ -1,5 +1,4 @@
 ﻿using FractalzWPF.Infrastructure.Application.Domains.Enums;
-using FractalzWPF.Infrastructure.Application.Handlers;
 using System;
 using System.Collections.Generic;
 using System.Linq;

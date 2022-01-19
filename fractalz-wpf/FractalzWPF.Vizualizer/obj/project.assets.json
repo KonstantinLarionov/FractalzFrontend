@@ -249,7 +249,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kosty\\.nuget\\packages\\": {}
+    "C:\\Users\\kosty\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -260,6 +261,9 @@
       "packagesPath": "C:\\Users\\kosty\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\kosty\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

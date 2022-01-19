@@ -13,6 +13,9 @@
         "packagesPath": "C:\\Users\\kosty\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\kosty\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -77,6 +80,9 @@
         "packagesPath": "C:\\Users\\kosty\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\kosty\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -112,9 +118,13 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "RestSharp": {
               "target": "Package",
-              "version": "[107.0.4-alpha.0.4, )"
+              "version": "[106.11.7, )"
             }
           },
           "imports": [

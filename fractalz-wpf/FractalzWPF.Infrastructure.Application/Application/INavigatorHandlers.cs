@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FractalzWPF.Infrastructure.Application.Handlers.User;
 
 namespace FractalzWPF.Infrastructure.Application.Application
 {
     public interface INavigatorHandlers
     {
-        public GetStringTestHandler _testHandler { get; set; }
+        public RegistrationHandler RegistrationHandler { get; set; }
     }
 }

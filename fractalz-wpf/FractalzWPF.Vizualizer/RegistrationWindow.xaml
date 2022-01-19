@@ -12,14 +12,14 @@
             <DockPanel LastChildFill="False">
                 <Image Margin="0,20,0,10" DockPanel.Dock="Top" Width="100" Height="100" Source="/FractalzWPF.Infrastructure.Vizualizer;component/Logo.png"/>
                 <TextBlock HorizontalAlignment="Center" Text="F  R   A   C   T   A   L   Z" Foreground="DarkGoldenrod" FontWeight="Bold" FontSize="20" DockPanel.Dock="Top"/>
-                <TextBox Margin="50,10" md:HintAssist.Hint="Введите логин" DockPanel.Dock="Top" />
-                <TextBox Margin="50,10" md:HintAssist.Hint="Введите ваш email" DockPanel.Dock="Top"/>
-                <TextBox Margin="50,10" md:HintAssist.Hint="Введите пароль" DockPanel.Dock="Top"/>
-                <TextBox Margin="50,10" md:HintAssist.Hint="Повторите пароль" DockPanel.Dock="Top"/>
+                <TextBox Name="login" Margin="50,10" md:HintAssist.Hint="Введите логин" DockPanel.Dock="Top" />
+                <TextBox Name="email" Margin="50,10" md:HintAssist.Hint="Введите ваш email" DockPanel.Dock="Top"/>
+                <PasswordBox Name="pass" Margin="50,10" md:HintAssist.Hint="Введите пароль" DockPanel.Dock="Top"/>
+                <PasswordBox Name="repass" Margin="50,10" md:HintAssist.Hint="Повторите пароль" DockPanel.Dock="Top"/>
 
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Background="Gray" Foreground="White" BorderBrush="Gray" Content="Вход" Margin="0,10" DockPanel.Dock="Top" Width="128"/>
-                    <Button Background="#009788" Foreground="White" BorderBrush="#009788" Content="Зарегистрироваться" Margin="10,10,0,10" DockPanel.Dock="Top" Width="172"/>
+                    <Button Background="#009788" Foreground="White" BorderBrush="#009788" Click="ButtonBase_OnClick" Content="Зарегистрироваться" Margin="10,10,0,10" DockPanel.Dock="Top" Width="172"/>
                 </StackPanel>
             </DockPanel>
         </md:Card>

@@ -1,4 +1,4 @@
-﻿namespace FractalzWPF.Infrastructure.Connector.Objects
+﻿namespace FractalzWPF.Infrastructure.Application.Domains.Enums
 {
     public enum RequestType
     {

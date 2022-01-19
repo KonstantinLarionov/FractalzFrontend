@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FractalzWPF.Application.Domains.Entities.Profile;
 
 namespace FractalzWPF.Infrastructure.Connector
 {
@@ -12,7 +13,7 @@ namespace FractalzWPF.Infrastructure.Connector
     {
         public static void AddInfrastructureConnector(this ServiceCollection services)
         {
-            services.AddTransient<IConnector, Connector>();
+            services.AddTransient<IFactoryConnector, FactoryConnector>();
         }
     }
 }

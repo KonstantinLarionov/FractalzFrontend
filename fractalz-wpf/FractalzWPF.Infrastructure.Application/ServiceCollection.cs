@@ -6,16 +6,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FractalzWPF.Infrastructure.Application.Handlers.User;
 
 namespace FractalzWPF.Infrastructure.Application
 {
     public static class SC
     { public static ServiceProvider provider; }
+    
     public static class ServiceCollectionExtensions
     {
         public static void AddApplication(this ServiceCollection serviceCollection)
         {
-            serviceCollection.AddTransient<GetStringTestHandler>();
+            serviceCollection.AddTransient<RegistrationHandler>();
             serviceCollection.AddSingleton<INavigatorHandlers, Navigator>();
         }
     }

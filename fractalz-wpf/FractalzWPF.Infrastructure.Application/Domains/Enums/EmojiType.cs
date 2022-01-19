@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FractalzWPF.Application.Domains.Entities.Chat
+namespace FractalzWPF.Infrastructure.Application.Domains.Enums
 {
     public enum EmojiType
     {

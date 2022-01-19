@@ -41,7 +41,7 @@ namespace FractalzWPF
 
         private void todoLB_Click(object sender, RoutedEventArgs e) => Switcher(UserControlType.Todo);
 
-        private void Window_Closed(object sender, EventArgs e) => Application.Current.Shutdown();
+        private void Window_Closed(object sender, EventArgs e) => System.Windows.Application.Current.Shutdown();
 
         private void Switcher(UserControlType controlType)
         {

@@ -5,15 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FractalzWPF.Infrastructure.Application.Handlers.User;
 
 namespace FractalzWPF.Infrastructure.Application
 {
     public class Navigator : INavigatorHandlers
     {
-        public GetStringTestHandler _testHandler { get; set; }
-        public Navigator(GetStringTestHandler testHandler)
+        public RegistrationHandler RegistrationHandler { get; set; }
+        public Navigator(RegistrationHandler regHandler)
         {
-            _testHandler = testHandler;
+            RegistrationHandler = regHandler;
         }
     }
 }
