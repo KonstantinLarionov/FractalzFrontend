@@ -4,6 +4,17 @@
     {
         Login, 
         Reg,
-        UpdateProfile
+        UpdateProfile,
+        GetListDialog,
+        GetMessageHistory,
+        CreateDialog,
+        DeleteDialog,
+        CreateMessage,
+        UpdateMessage,
+        DeleteMessage,
+        SendReactionMessage,
+        GetTodoList,
+        CreateTask,
+        UpdateStatusTask
     }
 }
