@@ -17,7 +17,7 @@ namespace FractalzWPF.Infrastructure.Connector
         protected RestClient _client;
         public BaseConnector()
         {
-            _client = new RestClient("https://localhost:5001/");
+            _client = new RestClient("https://localhost:5001");
         }
         
         /// <summary>
@@ -31,14 +31,16 @@ namespace FractalzWPF.Infrastructure.Connector
         {
             var template = _requests
                 .FirstOrDefault(x => x.Key == type).Value;
-            var request = new RestRequest(new Uri(template.Url), template.Method);
+            var request = new RestRequest(template.Url, template.Method);
             if(template.Method == Method.GET)
             { request.Resource += GenerateParametersString(message); }
             else
-            { request.AddJsonBody(message); }
+            {
+                request.AddJsonBody(message);
+            }
 
-            var result = _client.Execute(request)?.Content;
-            return JsonConvert.DeserializeObject<T>(result);
+            var result = _client.Execute(request);
+            return JsonConvert.DeserializeObject<T>(result.Content);
         }
 
         private static string GenerateParametersString(object foo)

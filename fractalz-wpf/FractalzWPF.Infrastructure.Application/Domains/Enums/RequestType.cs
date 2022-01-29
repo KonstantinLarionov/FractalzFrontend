@@ -15,6 +15,8 @@
         SendReactionMessage,
         GetTodoList,
         CreateTask,
-        UpdateStatusTask
+        UpdateStatusTask,
+        DownloadFile,
+        DeleteTask
     }
 }

@@ -4,9 +4,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:notifications="clr-namespace:Notifications.Wpf.Controls;assembly=Notifications.Wpf"
         xmlns:local="clr-namespace:FractalzWPF.Infrastructure.Vizualizer"
         mc:Ignorable="d"
         Title="Регистрация во Fractalz" Height="490" Width="472" ResizeMode="NoResize">
+    
     <DockPanel Background="Gainsboro" LastChildFill="True" >
         <md:Card Margin="30">
             <DockPanel LastChildFill="False">
@@ -23,5 +25,6 @@
                 </StackPanel>
             </DockPanel>
         </md:Card>
+
     </DockPanel>
 </Window>

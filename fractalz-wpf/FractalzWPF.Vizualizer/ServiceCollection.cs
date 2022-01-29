@@ -15,6 +15,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer
         public static void AddUserControls(this ServiceCollection services)
         {
             services.AddSingleton<INavigatorControls, NavigatorControls>();
+            services.AddSingleton<NotifyHandler>();
         }
     }
 }

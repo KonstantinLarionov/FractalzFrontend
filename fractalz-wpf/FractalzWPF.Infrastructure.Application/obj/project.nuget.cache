@@ -1,15 +1,26 @@
 {
   "version": 2,
-  "dgSpecHash": "ymAF6DbPZ8qSmpwGuIMfUZ6J3XoDdReDX5dgPBZ4KTW/ob+pHAChw4u8JFFz/S5TrQIbP6ir4DfP830/T7zijA==",
+  "dgSpecHash": "YnGUIVcz1mX0p4jX9kI7tlvQt4v2Q/xl7WwzYYvBIEo/mPJLr3JNVemLee87Sxm+04CwizEld5+bV/ksU14xsg==",
   "success": true,
   "projectFilePath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Application\\FractalzWPF.Infrastructure.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\notifications.wpf\\0.1.1\\notifications.wpf.0.1.1.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\presentationframework\\4.6.0\\presentationframework.4.6.0.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Notifications.Wpf 0.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Notifications.Wpf",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

@@ -30,6 +30,15 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "Notifications.Wpf/0.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/net461/Notifications.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Notifications.Wpf.dll": {}
+        }
+      },
       "PresentationFramework/4.6.0": {
         "type": "package",
         "compile": {
@@ -104,6 +113,20 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Notifications.Wpf/0.1.1": {
+      "sha512": "uZQeeDXEkk0eQPGEhdNxCuAJ6R6NpCKxlMBFStwAjtXFk8t9j2SjVHvLN/FCr+oCKTkKOJPjOMvaXIS+AE7qxA==",
+      "type": "package",
+      "path": "notifications.wpf/0.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Notifications.Wpf.dll",
+        "lib/net45/Notifications.Wpf.dll",
+        "lib/net461/Notifications.Wpf.dll",
+        "notifications.wpf.0.1.1.nupkg.sha512",
+        "notifications.wpf.nuspec"
+      ]
+    },
     "PresentationFramework/4.6.0": {
       "sha512": "37FpU6XcB1Hgr5X03MgUOxvzWLJYKJP72J3g5hnZHi/DXsTxpJEu4brCGW+TmplVWfntuysO/uRcZcPS9YK0Bw==",
       "type": "package",
@@ -145,6 +168,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.Extensions.DependencyInjection >= 6.0.0",
+      "Notifications.Wpf >= 0.1.1",
       "PresentationFramework >= 4.6.0"
     ]
   },
@@ -195,6 +219,10 @@
             "target": "Package",
             "version": "[6.0.0, )"
           },
+          "Notifications.Wpf": {
+            "target": "Package",
+            "version": "[0.1.1, )"
+          },
           "PresentationFramework": {
             "target": "Package",
             "version": "[4.6.0, )"
@@ -220,6 +248,16 @@
     }
   },
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Notifications.Wpf 0.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Notifications.Wpf",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

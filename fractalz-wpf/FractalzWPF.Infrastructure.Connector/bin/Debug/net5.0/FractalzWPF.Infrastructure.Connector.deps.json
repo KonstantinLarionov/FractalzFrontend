@@ -45,6 +45,14 @@
           }
         }
       },
+      "Notifications.Wpf/0.1.1": {
+        "runtime": {
+          "lib/net461/Notifications.Wpf.dll": {
+            "assemblyVersion": "0.1.1.0",
+            "fileVersion": "0.1.1.0"
+          }
+        }
+      },
       "PresentationFramework/4.6.0": {
         "runtime": {
           "lib/PresentationFramework.dll": {
@@ -72,6 +80,7 @@
       "FractalzWPF.Infrastructure.Application/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
+          "Notifications.Wpf": "0.1.1",
           "PresentationFramework": "4.6.0"
         },
         "runtime": {
@@ -106,6 +115,13 @@
       "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "path": "newtonsoft.json/13.0.1",
       "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
+    "Notifications.Wpf/0.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uZQeeDXEkk0eQPGEhdNxCuAJ6R6NpCKxlMBFStwAjtXFk8t9j2SjVHvLN/FCr+oCKTkKOJPjOMvaXIS+AE7qxA==",
+      "path": "notifications.wpf/0.1.1",
+      "hashPath": "notifications.wpf.0.1.1.nupkg.sha512"
     },
     "PresentationFramework/4.6.0": {
       "type": "package",

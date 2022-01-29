@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oEzqHDr+hjQghkzUQaWUHBVY/keILXqsRTCA2FFZe2lNtR97uLXOUm52DgbrRJ98wUlw6KdybGhOUBM//r5NdQ==",
+  "dgSpecHash": "9UwpZEAipD9blzWUTqb+Usr59jLGGAbLZBf7z2Gyru5+1R6hTVUxtcA/B71+mU+rNw/Ed9FUw5XlGCat5uNZJA==",
   "success": true,
   "projectFilePath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF\\FractalzWPF.csproj",
   "expectedPackageFiles": [
@@ -8,12 +8,25 @@
     "C:\\Users\\kosty\\.nuget\\packages\\materialdesignthemes\\4.3.0\\materialdesignthemes.4.3.0.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\microsoft.toolkit.uwp.notifications\\7.0.2\\microsoft.toolkit.uwp.notifications.7.0.2.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\notifications.wpf\\0.1.1\\notifications.wpf.0.1.1.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\presentationframework\\4.6.0\\presentationframework.4.6.0.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\restsharp\\106.11.7\\restsharp.106.11.7.nupkg.sha512",
-    "C:\\Users\\kosty\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\kosty\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Notifications.Wpf 0.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Notifications.Wpf",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

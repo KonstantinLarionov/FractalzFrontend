@@ -125,3 +125,7 @@ C:\Users\kosty\Source\Repos\FractalzFrontend\fractalz-wpf\FractalzWPF\obj\Debug\
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.dll
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.pdb
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF\obj\Debug\net5.0-windows\refint\FractalzWPF.dll
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\Notifications.Wpf.dll
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\RestSharp.dll
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\Microsoft.Toolkit.Uwp.Notifications.dll
