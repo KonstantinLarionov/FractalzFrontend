@@ -47,7 +47,9 @@ namespace FractalzWPF.Infrastructure.Connector
         {
             var properties = from p in foo.GetType().GetProperties()
                 where p.GetValue(foo, null) != null
-                select p.Name + "=" + HttpUtility.UrlEncode(p.GetValue(foo, null).ToString());
+                select p.Name + "=" + HttpUtility.UrlEncode(p.PropertyType == typeof(DateTime?) || p.PropertyType == typeof(DateTime) ? 
+                    ((DateTime)p.GetValue(foo, null)).ToString("s") :
+                    p.GetValue(foo, null).ToString());
 
             return "?"+string.Join("&", properties.ToArray());
         }

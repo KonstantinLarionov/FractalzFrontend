@@ -20,13 +20,13 @@ namespace FractalzWPF.Infrastructure.Vizualizer
             {
                 { UserControlType.Profile, new ProfileUserControl() },
                 { UserControlType.Chat, new DialogsUserControl() },
-                { UserControlType.Todo, new TodoUserControl() }
+                { UserControlType.Todo, new TodoUserControl(noty, handlers) }
             };
             Windows = new Dictionary<WindowType, Window>()
             {
                 { WindowType.Login, new LoginWindow() },
                 { WindowType.Registration, new RegistrationWindow(handlers, noty) },
-                { WindowType.TodoCreate, new TodoCreateWindow() },
+                { WindowType.TodoCreate, new TodoCreateWindow(noty, handlers) },
                 { WindowType.Chat, new ChatWindow() }
             };
         }
