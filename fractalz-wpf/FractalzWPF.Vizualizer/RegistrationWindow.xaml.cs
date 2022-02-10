@@ -11,8 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FractalzWPF.Application.Domains.Entities.Profile;
 using FractalzWPF.Application.Domains.Responses.User;
 using FractalzWPF.Infrastructure.Application.Application;
+using Microsoft.Extensions.Options;
 using Notifications.Wpf;
 
 namespace FractalzWPF.Infrastructure.Vizualizer

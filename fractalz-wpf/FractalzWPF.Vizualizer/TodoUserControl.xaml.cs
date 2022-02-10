@@ -100,7 +100,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer
             BuildData();
         private void BuildData()
         {
-            var rat = _navigator.GetTodoListHandler.Do(_navigator.UserId, DateTime.Now.AddDays(-7));
+            var rat = _navigator.GetTodoListHandler.Do(_navigator.UserData.Id, DateTime.Now.AddDays(-7));
             if (rat.Success)
             {
                 _todoList = rat.TodoList;

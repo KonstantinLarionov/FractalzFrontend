@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
     <PackageReference Include="Notifications.Wpf" Version="0.1.1" />
     <PackageReference Include="PresentationFramework" Version="4.6.0" />
   </ItemGroup>

@@ -29,7 +29,7 @@ namespace FractalzWPF
     {
         private readonly INavigatorControls _navigatorControls;
         private readonly INavigatorHandlers _navigatorHandlers;
-        public MainWindow(INavigatorHandlers navigatorHandlers, INavigatorControls navigatorControls, IOptions<UserData> data)
+        public MainWindow(INavigatorHandlers navigatorHandlers, INavigatorControls navigatorControls)
         {
             InitializeComponent();
             _navigatorControls = navigatorControls;

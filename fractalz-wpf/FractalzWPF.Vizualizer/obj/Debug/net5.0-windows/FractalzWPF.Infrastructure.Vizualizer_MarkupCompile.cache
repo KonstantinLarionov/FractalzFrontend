@@ -13,7 +13,7 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 10822544045
 
 141285351246
-200-124946095
+202-2116253835
 ChatWindow.xaml;DialogsUserControl.xaml;Elements\DialogElement.xaml;Elements\MessageElement.xaml;Elements\TodoElement.xaml;LoginWindow.xaml;ProfileUserControl.xaml;RegistrationWindow.xaml;TodoCreateWindow.xaml;TodoUserControl.xaml;
 
 False

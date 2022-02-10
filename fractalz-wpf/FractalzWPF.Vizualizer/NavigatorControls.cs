@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using FractalzWPF.Application.Domains.Entities.Profile;
+using Microsoft.Extensions.Options;
 
 namespace FractalzWPF.Infrastructure.Vizualizer
 {
@@ -24,7 +26,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer
             };
             Windows = new Dictionary<WindowType, Window>()
             {
-                { WindowType.Login, new LoginWindow() },
+                { WindowType.Login, new LoginWindow(handlers, noty) },
                 { WindowType.Registration, new RegistrationWindow(handlers, noty) },
                 { WindowType.TodoCreate, new TodoCreateWindow(noty, handlers) },
                 { WindowType.Chat, new ChatWindow() }

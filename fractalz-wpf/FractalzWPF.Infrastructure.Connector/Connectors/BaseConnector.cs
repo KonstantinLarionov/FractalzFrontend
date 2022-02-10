@@ -25,7 +25,7 @@ namespace FractalzWPF.Infrastructure.Connector
         /// </summary>
         /// <param name="message"></param>
         /// <param name="type"></param>
-        /// <param name="headers"></param>
+        /// <param name="token"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         public T Send<T>(object message, RequestType type, string token)

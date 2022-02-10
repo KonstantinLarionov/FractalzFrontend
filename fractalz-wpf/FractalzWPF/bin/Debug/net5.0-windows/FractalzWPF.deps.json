@@ -780,6 +780,7 @@
       "FractalzWPF.Infrastructure.Application/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
+          "Microsoft.Extensions.Options": "2.2.0",
           "Notifications.Wpf": "0.1.1",
           "PresentationFramework": "4.6.0"
         },
@@ -804,6 +805,7 @@
           "MaterialDesignColors": "2.0.4",
           "MaterialDesignThemes": "4.3.0",
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
+          "Microsoft.Extensions.Options": "2.2.0",
           "Microsoft.Toolkit.Uwp.Notifications": "7.0.2"
         },
         "runtime": {

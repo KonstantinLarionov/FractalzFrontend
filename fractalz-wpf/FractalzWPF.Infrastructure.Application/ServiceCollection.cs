@@ -19,6 +19,7 @@ namespace FractalzWPF.Infrastructure.Application
         public static void AddApplication(this ServiceCollection serviceCollection)
         {
             serviceCollection.AddTransient<RegistrationHandler>();
+            serviceCollection.AddTransient<LoginHandler>();
             serviceCollection.AddTransient<GetTodoListHandler>();
             serviceCollection.AddTransient<CreateTaskHandler>();
             serviceCollection.AddTransient<DeleteTaskHandler>();

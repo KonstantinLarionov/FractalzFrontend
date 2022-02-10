@@ -12,14 +12,14 @@
             <DockPanel LastChildFill="False">
                 <Image Margin="0,20,0,10" DockPanel.Dock="Top" Width="100" Height="100" Source="/FractalzWPF.Infrastructure.Vizualizer;component/Logo.png"/>
                 <TextBlock HorizontalAlignment="Center" Text="F  R   A   C   T   A   L   Z" Foreground="DarkGoldenrod" FontWeight="Bold" FontSize="20" DockPanel.Dock="Top"/>
-                <TextBox Margin="50,10" md:HintAssist.Hint="Введите логин или email" DockPanel.Dock="Top" />
-                <TextBox Margin="50,10" md:HintAssist.Hint="Введите ваш пароль" DockPanel.Dock="Top"/>
+                <TextBox Name="tb_login" Margin="50,10" md:HintAssist.Hint="Введите логин или email" DockPanel.Dock="Top" />
+                <PasswordBox Name="tb_password" Margin="50,10" md:HintAssist.Hint="Введите ваш пароль" DockPanel.Dock="Top"/>
                 
                 <Button Background="#009788" Foreground="White" BorderBrush="#009788" Content="Загрузить файл подписи" Margin="30,10,30,0" DockPanel.Dock="Top" Width="278"/>
                 <TextBlock DockPanel.Dock="Top" Margin="30,0" Width="278" FontSize="10" Foreground="LightSlateGray" >Только для подключения к частным серверам</TextBlock>
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center"> 
                 <Button Background="Gray" Foreground="White" BorderBrush="Gray" Content="Регистрация" Margin="0,10" DockPanel.Dock="Top" Width="128"/>
-                <Button Background="#009788" Foreground="White" BorderBrush="#009788" Content="Войти" Margin="10,10,0,10" DockPanel.Dock="Top" Width="140"/>
+                <Button Click="ButtonBase_OnClick" Background="#009788" Foreground="White" BorderBrush="#009788" Content="Войти" Margin="10,10,0,10" DockPanel.Dock="Top" Width="140"/>
                 </StackPanel>
             </DockPanel>
         </md:Card>

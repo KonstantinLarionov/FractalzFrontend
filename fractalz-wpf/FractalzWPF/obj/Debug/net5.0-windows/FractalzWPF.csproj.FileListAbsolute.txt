@@ -180,3 +180,4 @@ C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF\bin\Debug
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\System.IO.Pipelines.dll
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\runtimes\win-x64\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\runtimes\win-x86\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF\obj\Debug\net5.0-windows\FractalzWPF_Content.g.cs

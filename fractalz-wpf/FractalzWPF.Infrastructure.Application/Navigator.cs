@@ -5,16 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FractalzWPF.Application.Domains.Entities.Profile;
+using FractalzWPF.Application.Domains.Responses.User;
 using FractalzWPF.Infrastructure.Application.Handlers.Todo;
 using FractalzWPF.Infrastructure.Application.Handlers.User;
+using Microsoft.Extensions.Options;
 
 namespace FractalzWPF.Infrastructure.Application
 {
     public class Navigator : INavigatorHandlers
     {
-        public int UserId { get; set; } = 2;
-        public string Token { get; set; }
+        public UserData UserData { get; set; }
         public RegistrationHandler RegistrationHandler { get; set; }
+        public LoginHandler LoginHandler { get; set; }
         public GetTodoListHandler GetTodoListHandler { get; set; }
         public CreateTaskHandler CreateTaskHandler { get; set; }
         public DeleteTaskHandler DeleteTaskHandler { get; set; }
@@ -24,8 +27,12 @@ namespace FractalzWPF.Infrastructure.Application
             GetTodoListHandler getTodoListHandler, 
             CreateTaskHandler createTaskHandler, 
             DeleteTaskHandler deleteTaskHandler, 
-            UpdateStatusTaskHandler updateStatusTaskHandler)
+            UpdateStatusTaskHandler updateStatusTaskHandler,
+            LoginHandler loginHandler,
+            IOptions<UserData> userData)
         {
+            UserData = userData.Value ?? throw new ArgumentException(nameof(userData));
+            LoginHandler = loginHandler;
             RegistrationHandler = regHandler;
             GetTodoListHandler = getTodoListHandler;
             CreateTaskHandler = createTaskHandler;

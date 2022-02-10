@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "djg3gc1OIRgd8Gvd4ujnpRVS+6f+HwLHrgY8wXPsS2wxBPReQ1LjcPL4v4nOZwEhpcYUVkDGTLTSyyyjo5O8Iw==",
+  "dgSpecHash": "91Tij/hyxZM9DuFfdFiDhDxubrX4kKW3jY7VLwKPRZmjSTK1SHwzxKXRMqCfcATFPUhQTCXZr1v4UV3jxkfwtw==",
   "success": true,
   "projectFilePath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj",
   "expectedPackageFiles": [
@@ -8,9 +8,13 @@
     "C:\\Users\\kosty\\.nuget\\packages\\materialdesignthemes\\4.3.0\\materialdesignthemes.4.3.0.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.options\\2.2.0\\microsoft.extensions.options.2.2.0.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\microsoft.toolkit.uwp.notifications\\7.0.2\\microsoft.toolkit.uwp.notifications.7.0.2.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\notifications.wpf\\0.1.1\\notifications.wpf.0.1.1.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\presentationframework\\4.6.0\\presentationframework.4.6.0.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\system.componentmodel.annotations\\4.5.0\\system.componentmodel.annotations.4.5.0.nupkg.sha512",
+    "C:\\Users\\kosty\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
   ],
