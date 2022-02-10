@@ -17,6 +17,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FractalzWPF.Application.Domains.Entities.Profile;
+using Microsoft.Extensions.Options;
 
 namespace FractalzWPF
 {
@@ -27,7 +29,7 @@ namespace FractalzWPF
     {
         private readonly INavigatorControls _navigatorControls;
         private readonly INavigatorHandlers _navigatorHandlers;
-        public MainWindow(INavigatorHandlers navigatorHandlers, INavigatorControls navigatorControls)
+        public MainWindow(INavigatorHandlers navigatorHandlers, INavigatorControls navigatorControls, IOptions<UserData> data)
         {
             InitializeComponent();
             _navigatorControls = navigatorControls;

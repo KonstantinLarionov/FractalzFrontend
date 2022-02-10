@@ -25,9 +25,10 @@ namespace FractalzWPF.Infrastructure.Connector
         /// </summary>
         /// <param name="message"></param>
         /// <param name="type"></param>
+        /// <param name="headers"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T Send<T>(object message, RequestType type)
+        public T Send<T>(object message, RequestType type, string token)
         {
             var template = _requests
                 .FirstOrDefault(x => x.Key == type).Value;
@@ -37,6 +38,11 @@ namespace FractalzWPF.Infrastructure.Connector
             else
             {
                 request.AddJsonBody(message);
+            }
+
+            if (token != null)
+            {
+                request.AddHeader("FX_Authorization",$"Basic {token}");
             }
 
             var result = _client.Execute(request);

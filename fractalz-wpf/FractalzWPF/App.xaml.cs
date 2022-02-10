@@ -10,9 +10,12 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using FractalzWPF.Application.Domains.Entities.Profile;
+using Microsoft.Extensions.Configuration;
 
 namespace FractalzWPF
 {
@@ -21,9 +24,14 @@ namespace FractalzWPF
     /// </summary>
     public partial class App : System.Windows.Application
     {
-
+        public IConfiguration Configuration { get; private set; }
         public App()
         {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Environment.CurrentDirectory)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+ 
+            Configuration = builder.Build();
             ServiceCollection services = new ServiceCollection();
             ConfigureServices(services);
             SC.provider = services.BuildServiceProvider();
@@ -31,6 +39,7 @@ namespace FractalzWPF
 
         private void ConfigureServices(ServiceCollection services)
         {
+            services.Configure<UserData>(Configuration.GetSection("UserData"));
             services.AddInfrastructureConnector();
             services.AddApplication();
             services.AddUserControls();

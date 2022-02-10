@@ -13,6 +13,8 @@ namespace FractalzWPF.Infrastructure.Application.Application
     public interface INavigatorHandlers
     {
         public int UserId { get; set; }
+        public string Token { get; set; }
+
         public GetTodoListHandler GetTodoListHandler { get; set; }
         public CreateTaskHandler CreateTaskHandler { get; set; }
         public DeleteTaskHandler DeleteTaskHandler { get; set; }

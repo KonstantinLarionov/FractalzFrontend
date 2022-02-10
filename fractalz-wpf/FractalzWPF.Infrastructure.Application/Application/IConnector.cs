@@ -11,6 +11,6 @@ namespace FractalzWPF.Infrastructure.Application.Application
 {
     public interface IConnector
     {
-        public T Send<T>(object message, RequestType type);
+        public T Send<T>(object message, RequestType type, string token = null);
     }
 }
