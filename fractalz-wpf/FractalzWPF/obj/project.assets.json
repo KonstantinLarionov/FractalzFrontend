@@ -954,12 +954,22 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "websocket-sharp-with-proxy-support/1.9.1": {
+        "type": "package",
+        "compile": {
+          "lib/net35-client/websocket-sharp-with-proxy-support.dll": {}
+        },
+        "runtime": {
+          "lib/net35-client/websocket-sharp-with-proxy-support.dll": {}
+        }
+      },
       "FractalzWPF.Infrastructure.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
           "Microsoft.Extensions.Options": "2.2.0",
+          "Newtonsoft.Json": "13.0.1",
           "Notifications.Wpf": "0.1.1",
           "PresentationFramework": "4.6.0"
         },
@@ -984,6 +994,20 @@
         },
         "runtime": {
           "bin/placeholder/FractalzWPF.Infrastructure.Connector.dll": {}
+        }
+      },
+      "FractalzWPF.Infrastructure.LinkedEvent/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "FractalzWPF.Infrastructure.Application": "1.0.0",
+          "websocket-sharp-with-proxy-support": "1.9.1"
+        },
+        "compile": {
+          "bin/placeholder/FractalzWPF.Infrastructure.LinkedEvent.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FractalzWPF.Infrastructure.LinkedEvent.dll": {}
         }
       },
       "FractalzWPF.Infrastructure.Vizualizer/1.0.0": {
@@ -2431,6 +2455,19 @@
         "version.txt"
       ]
     },
+    "websocket-sharp-with-proxy-support/1.9.1": {
+      "sha512": "kqfT4fVvSamiqo4FQO6WGay+XeZxsBxXg0oCSdWp5zWjHS/V6bmZx5cZNzvrm3kQ2giffcrzeuMkl+BRcXgRqQ==",
+      "type": "package",
+      "path": "websocket-sharp-with-proxy-support/1.9.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/native/SSPIHelper.dll",
+        "lib/net35-client/websocket-sharp-with-proxy-support.dll",
+        "websocket-sharp-with-proxy-support.1.9.1.nupkg.sha512",
+        "websocket-sharp-with-proxy-support.nuspec"
+      ]
+    },
     "FractalzWPF.Infrastructure.Application/1.0.0": {
       "type": "project",
       "path": "../FractalzWPF.Infrastructure.Application/FractalzWPF.Infrastructure.Application.csproj",
@@ -2441,6 +2478,11 @@
       "path": "../FractalzWPF.Infrastructure.Connector/FractalzWPF.Infrastructure.Connector.csproj",
       "msbuildProject": "../FractalzWPF.Infrastructure.Connector/FractalzWPF.Infrastructure.Connector.csproj"
     },
+    "FractalzWPF.Infrastructure.LinkedEvent/1.0.0": {
+      "type": "project",
+      "path": "../FractalzWPF.Infrastructure.LinkedEvent/FractalzWPF.Infrastructure.LinkedEvent.csproj",
+      "msbuildProject": "../FractalzWPF.Infrastructure.LinkedEvent/FractalzWPF.Infrastructure.LinkedEvent.csproj"
+    },
     "FractalzWPF.Infrastructure.Vizualizer/1.0.0": {
       "type": "project",
       "path": "../FractalzWPF.Vizualizer/FractalzWPF.Infrastructure.Vizualizer.csproj",
@@ -2450,6 +2492,7 @@
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
       "FractalzWPF.Infrastructure.Connector >= 1.0.0",
+      "FractalzWPF.Infrastructure.LinkedEvent >= 1.0.0",
       "FractalzWPF.Infrastructure.Vizualizer >= 1.0.0",
       "MaterialDesignColors >= 2.0.4",
       "MaterialDesignThemes >= 4.3.0",
@@ -2462,23 +2505,29 @@
   },
   "packageFolders": {
     "C:\\Users\\kosty\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF\\FractalzWPF.csproj",
+      "projectUniqueName": "C:\\Users\\kosty\\RiderProjects\\FractalzFrontend\\fractalz-wpf\\FractalzWPF\\FractalzWPF.csproj",
       "projectName": "FractalzWPF",
-      "projectPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF\\FractalzWPF.csproj",
+      "projectPath": "C:\\Users\\kosty\\RiderProjects\\FractalzFrontend\\fractalz-wpf\\FractalzWPF\\FractalzWPF.csproj",
       "packagesPath": "C:\\Users\\kosty\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF\\obj\\",
+      "outputPath": "C:\\Users\\kosty\\RiderProjects\\FractalzFrontend\\fractalz-wpf\\FractalzWPF\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\kosty\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0-windows"
@@ -2491,11 +2540,14 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj": {
-              "projectPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj"
+            "C:\\Users\\kosty\\RiderProjects\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj": {
+              "projectPath": "C:\\Users\\kosty\\RiderProjects\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.Connector\\FractalzWPF.Infrastructure.Connector.csproj"
             },
-            "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj": {
-              "projectPath": "C:\\Users\\kosty\\source\\repos\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj"
+            "C:\\Users\\kosty\\RiderProjects\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.LinkedEvent\\FractalzWPF.Infrastructure.LinkedEvent.csproj": {
+              "projectPath": "C:\\Users\\kosty\\RiderProjects\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.LinkedEvent\\FractalzWPF.Infrastructure.LinkedEvent.csproj"
+            },
+            "C:\\Users\\kosty\\RiderProjects\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj": {
+              "projectPath": "C:\\Users\\kosty\\RiderProjects\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj"
             }
           }
         }
@@ -2557,7 +2609,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200-preview.21617.4\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -2578,6 +2630,16 @@
       "warningLevel": 1,
       "message": "Package 'PresentationFramework 4.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "PresentationFramework",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'websocket-sharp-with-proxy-support 1.9.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "websocket-sharp-with-proxy-support",
       "targetGraphs": [
         "net5.0-windows7.0"
       ]

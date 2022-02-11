@@ -94,6 +94,14 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
       "Notifications.Wpf/0.1.1": {
         "runtime": {
           "lib/net461/Notifications.Wpf.dll": {
@@ -118,6 +126,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
           "Microsoft.Extensions.Options": "2.2.0",
+          "Newtonsoft.Json": "13.0.1",
           "Notifications.Wpf": "0.1.1",
           "PresentationFramework": "4.6.0"
         },
@@ -181,6 +190,13 @@
       "sha512": "sha512-UWwo9Jdkk52E3zmUMoO+JC2Aix1gizCPIHtVBUON/uyzjKlnjgqoBd7zeS8HJ94Vsm2mW4OjVtPVhz3sEwEDQA==",
       "path": "microsoft.toolkit.uwp.notifications/7.0.2",
       "hashPath": "microsoft.toolkit.uwp.notifications.7.0.2.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "Notifications.Wpf/0.1.1": {
       "type": "package",

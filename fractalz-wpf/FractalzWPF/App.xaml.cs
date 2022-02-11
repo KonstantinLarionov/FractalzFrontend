@@ -4,6 +4,7 @@ using FractalzWPF.Infrastructure.Application.Domains.Enums;
 using FractalzWPF.Infrastructure.Application.Handlers;
 using FractalzWPF.Infrastructure.Connector;
 using FractalzWPF.Infrastructure.Vizualizer;
+using FractalzWPF.Infrastructure.LinkedEvent;
 
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -32,17 +33,22 @@ namespace FractalzWPF
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
  
             Configuration = builder.Build();
-            ServiceCollection services = new ServiceCollection();
+            
+            var services = new ServiceCollection();
             ConfigureServices(services);
+            
             SC.provider = services.BuildServiceProvider();
         }
 
         private void ConfigureServices(ServiceCollection services)
         {
             services.Configure<UserData>(Configuration.GetSection("UserData"));
-            services.AddInfrastructureConnector();
+            
             services.AddApplication();
-            services.AddUserControls();
+            services.AddInfrastructureConnector();
+            services.AddInfrastructureVisualizer();
+            services.AddInfrastructureLinkedEvent();
+            
             services.AddSingleton<MainWindow>();
         }
 
@@ -50,10 +56,12 @@ namespace FractalzWPF
         {
             var mainWindow = SC.provider.GetService<MainWindow>();
             var navigator = SC.provider.GetService<INavigatorControls>();
+            
             navigator.Windows[WindowType.Registration].Show();
             navigator.Windows[WindowType.Login].Show();
             navigator.Windows[WindowType.TodoCreate].Show();
             navigator.Windows[WindowType.Chat].Show();
+            
             mainWindow.Show();
         }
     }

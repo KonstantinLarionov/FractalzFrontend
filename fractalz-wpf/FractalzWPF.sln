@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractalzWPF.Infrastructure.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractalzWPF.Infrastructure.Application", "FractalzWPF.Infrastructure.Application\FractalzWPF.Infrastructure.Application.csproj", "{C86CA03C-2985-4D7A-93FA-962B73085AA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractalzWPF.Infrastructure.LinkedEvent", "FractalzWPF.Infrastructure.LinkedEvent\FractalzWPF.Infrastructure.LinkedEvent.csproj", "{A4D564C7-1A9D-4DAE-A670-5679569CCB7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C86CA03C-2985-4D7A-93FA-962B73085AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C86CA03C-2985-4D7A-93FA-962B73085AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C86CA03C-2985-4D7A-93FA-962B73085AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D564C7-1A9D-4DAE-A670-5679569CCB7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D564C7-1A9D-4DAE-A670-5679569CCB7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D564C7-1A9D-4DAE-A670-5679569CCB7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D564C7-1A9D-4DAE-A670-5679569CCB7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

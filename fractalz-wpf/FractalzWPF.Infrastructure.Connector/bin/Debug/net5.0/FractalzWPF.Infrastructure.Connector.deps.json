@@ -108,6 +108,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
           "Microsoft.Extensions.Options": "2.2.0",
+          "Newtonsoft.Json": "13.0.1",
           "Notifications.Wpf": "0.1.1",
           "PresentationFramework": "4.6.0"
         },
