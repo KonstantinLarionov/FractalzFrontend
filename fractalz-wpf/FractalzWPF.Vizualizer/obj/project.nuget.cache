@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nbQDwKVqwaSsVpit3UXObpQ8pDZbl+gF5gKGyz6xVfhGtxyx0Ie5m/6HagG+FKueQ7TrNdxaIpbl33GdP7inOA==",
+  "dgSpecHash": "ovHWGoFy4Wn7xb0cS/9+TgXm1SA/5yRwCmC7YCmCd6CAXkl8BPpsNUQyf2eXVei3pid/xeBIphvZNcCPm5h9Lw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kosty\\RiderProjects\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj",
+  "projectFilePath": "C:\\Users\\kosty\\source\\repos\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Vizualizer\\FractalzWPF.Infrastructure.Vizualizer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kosty\\.nuget\\packages\\materialdesigncolors\\2.0.4\\materialdesigncolors.2.0.4.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\materialdesignthemes\\4.3.0\\materialdesignthemes.4.3.0.nupkg.sha512",
