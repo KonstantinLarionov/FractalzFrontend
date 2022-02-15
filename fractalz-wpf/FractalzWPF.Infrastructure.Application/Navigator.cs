@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FractalzWPF.Application.Domains.Entities.Profile;
 using FractalzWPF.Application.Domains.Responses.User;
+using FractalzWPF.Infrastructure.Application.Handlers.Chat;
 using FractalzWPF.Infrastructure.Application.Handlers.Todo;
 using FractalzWPF.Infrastructure.Application.Handlers.User;
 using Microsoft.Extensions.Options;
@@ -22,6 +23,7 @@ namespace FractalzWPF.Infrastructure.Application
         public CreateTaskHandler CreateTaskHandler { get; set; }
         public DeleteTaskHandler DeleteTaskHandler { get; set; }
         public UpdateStatusTaskHandler UpdateStatusTaskHandler { get; set; }
+        public GetMessageHistoryHandler GetMessageHistoryHandler { get; set; }
 
         public Navigator(RegistrationHandler regHandler, 
             GetTodoListHandler getTodoListHandler, 
@@ -29,9 +31,11 @@ namespace FractalzWPF.Infrastructure.Application
             DeleteTaskHandler deleteTaskHandler, 
             UpdateStatusTaskHandler updateStatusTaskHandler,
             LoginHandler loginHandler,
+            GetMessageHistoryHandler getMessageHistoryHandler,
             IOptions<UserData> userData)
         {
             UserData = userData.Value ?? throw new ArgumentException(nameof(userData));
+            GetMessageHistoryHandler = getMessageHistoryHandler;
             LoginHandler = loginHandler;
             RegistrationHandler = regHandler;
             GetTodoListHandler = getTodoListHandler;

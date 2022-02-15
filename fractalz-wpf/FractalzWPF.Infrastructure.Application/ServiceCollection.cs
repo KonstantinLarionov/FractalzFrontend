@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FractalzWPF.Infrastructure.Application.Handlers.Chat;
 using FractalzWPF.Infrastructure.Application.Handlers.Todo;
 using FractalzWPF.Infrastructure.Application.Handlers.User;
 
@@ -25,6 +26,7 @@ namespace FractalzWPF.Infrastructure.Application
             serviceCollection.AddTransient<DeleteTaskHandler>();
             //serviceCollection.AddTransient<TodoBaseHandler>();
             serviceCollection.AddTransient<UpdateStatusTaskHandler>();
+            serviceCollection.AddTransient<GetMessageHistoryHandler>();
             serviceCollection.AddSingleton<INavigatorHandlers, Navigator>();
         }
     }

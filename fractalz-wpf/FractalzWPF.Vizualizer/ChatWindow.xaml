@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FractalzWPF.Infrastructure.Vizualizer"
         mc:Ignorable="d"
-        Title="" Height="400" Width="600">
+        Title="" Height="400" Width="600" Loaded="ChatWindow_OnLoaded">
     <Window.Resources>
 
         <Style TargetType="ScrollBar">

@@ -29,7 +29,6 @@ namespace FractalzWPF.Infrastructure.Vizualizer
                 { WindowType.Login, new LoginWindow(handlers, noty) },
                 { WindowType.Registration, new RegistrationWindow(handlers, noty) },
                 { WindowType.TodoCreate, new TodoCreateWindow(noty, handlers) },
-                { WindowType.Chat, new ChatWindow() }
             };
         }
     }

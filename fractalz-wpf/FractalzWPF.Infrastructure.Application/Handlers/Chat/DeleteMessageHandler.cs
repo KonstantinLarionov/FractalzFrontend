@@ -17,7 +17,7 @@ namespace FractalzWPF.Infrastructure.Application.Handlers.Chat
             {
                 MessageId = messageId
             };
-            var response = _connector.Send<DeleteMessageResponse>(request, RequestType.DeleteMessage);
+            var response = _connector.Send<DeleteMessageResponse>(request, RequestType.DeleteMessage, MyInfo.Token);
             return response;
         }
     }

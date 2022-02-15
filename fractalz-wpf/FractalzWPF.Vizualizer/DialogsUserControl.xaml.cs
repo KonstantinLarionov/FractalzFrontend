@@ -25,20 +25,11 @@ namespace FractalzWPF.Infrastructure.Vizualizer
         public DialogsUserControl()
         {
             InitializeComponent();
-            dialogsSpace.Children.Add(new DialogElement());
-            dialogsSpace.Children.Add(new DialogElement());
-            dialogsSpace.Children.Add(new DialogElement());
-            dialogsSpace.Children.Add(new DialogElement());
-            dialogsSpace.Children.Add(new DialogElement());
-            dialogsSpace.Children.Add(new DialogElement());
-            dialogsSpace.Children.Add(new DialogElement());
-            dialogsSpace.Children.Add(new DialogElement());
-            dialogsSpace.Children.Add(new DialogElement());
-            dialogsSpace.Children.Add(new DialogElement());
-            dialogsSpace.Children.Add(new DialogElement());
-            dialogsSpace.Children.Add(new DialogElement());
-            dialogsSpace.Children.Add(new DialogElement());
-            dialogsSpace.Children.Add(new DialogElement());
+        }
+
+        private void DialogsUserControl_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

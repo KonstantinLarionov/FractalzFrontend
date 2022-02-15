@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FractalzWPF.Infrastructure.Vizualizer"
              mc:Ignorable="d" 
-             d:DesignHeight="684.04" d:DesignWidth="450">
+             d:DesignHeight="684.04" d:DesignWidth="450" Loaded="DialogsUserControl_OnLoaded">
     <UserControl.Resources>
 
         <Style TargetType="ScrollBar">

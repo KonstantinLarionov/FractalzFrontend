@@ -35,8 +35,7 @@ namespace FractalzWPF.Infrastructure.LinkedEvent
                 UserUpdateStatusEvent?.Invoke((User)res.Data);
         }
         #endregion
-  
-        
+
         #region [Implementation]
         public void ConnectDefaultEvent()
         {

@@ -19,7 +19,7 @@ namespace FractalzWPF.Infrastructure.Application.Handlers.Chat
                 IdUser =  idUser,
                 EmojiType = emojiType
             };
-            var response = _connector.Send<SendReactionResponse>(request, RequestType.SendReactionMessage);
+            var response = _connector.Send<SendReactionResponse>(request, RequestType.SendReactionMessage, MyInfo.Token);
             return response;
         }
     }

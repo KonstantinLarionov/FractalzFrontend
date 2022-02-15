@@ -20,7 +20,7 @@ namespace FractalzWPF.Infrastructure.Application.Handlers.Chat
                 DateFrom = from,
                 CountMessage = Count
             };
-            var result = _connector.Send<GetMessageHistoryResponse>(request, RequestType.GetMessageHistory);
+            var result = _connector.Send<GetMessageHistoryResponse>(request, RequestType.GetMessageHistory, MyInfo.Token);
             return result;
         }
 

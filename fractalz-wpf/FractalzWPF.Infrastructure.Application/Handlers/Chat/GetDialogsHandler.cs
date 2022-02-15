@@ -13,7 +13,7 @@ namespace FractalzWPF.Infrastructure.Application.Handlers.Chat
         public GetListDialogsResponse Do(int userId)
         {
             var request = new GetListDialogsRequest {UserId = userId};
-            var response = _connector.Send<GetListDialogsResponse>(request, RequestType.GetListDialog);
+            var response = _connector.Send<GetListDialogsResponse>(request, RequestType.GetListDialog, MyInfo.Token);
             return response;
         }
     }

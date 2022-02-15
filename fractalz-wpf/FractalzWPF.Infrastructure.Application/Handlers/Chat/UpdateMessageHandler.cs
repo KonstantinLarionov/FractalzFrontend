@@ -18,7 +18,7 @@ namespace FractalzWPF.Infrastructure.Application.Handlers.Chat
                 MessagId = messageId,
                 Text = text
             };
-            var response = _connector.Send<UpdateMessageResponse>(request, RequestType.UpdateMessage);
+            var response = _connector.Send<UpdateMessageResponse>(request, RequestType.UpdateMessage, MyInfo.Token);
             return response;
         }
     }
