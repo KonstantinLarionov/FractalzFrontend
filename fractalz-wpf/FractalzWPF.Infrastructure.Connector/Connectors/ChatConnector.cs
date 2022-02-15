@@ -13,15 +13,15 @@ namespace FractalzWPF.Infrastructure.Connector
         {
             _requests = new Dictionary<RequestType, (string, Method)>
             {
-                {RequestType.Login, ("/chat/getDialogs", Method.GET)},
-                {RequestType.Login, ("/chat/getMessages", Method.GET)},
-                {RequestType.Login, ("/chat/createDialog", Method.POST)},
-                {RequestType.Login, ("/chat/deleteDialog", Method.DELETE)},
-                {RequestType.Login, ("/chat/createMessage", Method.POST)},
-                {RequestType.Login, ("/chat/updateMessage", Method.PUT)},
-                {RequestType.Login, ("/chat/deleteMessage", Method.DELETE)},
-                {RequestType.Login, ("/chat/reactionMessage", Method.POST)},
-                {RequestType.Login, ("/chat/downloadFile", Method.GET)},
+                {RequestType.GetListDialog, ("/chat/getDialogs", Method.GET)},
+                {RequestType.GetMessageHistory, ("/chat/getMessages", Method.GET)},
+                {RequestType.CreateDialog, ("/chat/createDialog", Method.POST)},
+                {RequestType.DeleteDialog, ("/chat/deleteDialog", Method.DELETE)},
+                {RequestType.CreateMessage, ("/chat/createMessage", Method.POST)},
+                {RequestType.UpdateMessage, ("/chat/updateMessage", Method.PUT)},
+                {RequestType.DeleteMessage, ("/chat/deleteMessage", Method.DELETE)},
+                {RequestType.SendReactionMessage, ("/chat/reactionMessage", Method.POST)},
+                {RequestType.DownloadFile, ("/chat/downloadFile", Method.GET)},
             };
         }
     }

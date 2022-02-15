@@ -24,8 +24,8 @@ namespace FractalzWPF.Infrastructure.Connector
             _requests = new Dictionary<RequestType, (string, Method)>
             {
                 {RequestType.Login, ("/user/login", Method.GET)},
-                {RequestType.Login, ("/user/registration", Method.POST)},
-                {RequestType.Login, ("/user/updateProfile", Method.POST)}
+                {RequestType.Reg, ("/user/registration", Method.POST)},
+                {RequestType.UpdateProfile, ("/user/updateProfile", Method.POST)}
             };
         }
     }

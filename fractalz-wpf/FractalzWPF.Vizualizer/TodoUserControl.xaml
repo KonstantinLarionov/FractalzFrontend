@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:FractalzWPF.Infrastructure.Vizualizer"
              xmlns:el="clr-namespace:FractalzWPF.Infrastructure.Vizualizer.Elements"
              mc:Ignorable="d" 
-              d:DesignHeight="684.04" d:DesignWidth="450" Background="Transparent" BorderThickness="1">
+              d:DesignHeight="684.04" d:DesignWidth="450" Background="Transparent" BorderThickness="1" Loaded="TodoUserControl_OnLoaded">
     <UserControl.Resources>
 
         <Style TargetType="ScrollBar">
@@ -19,16 +19,16 @@
         <md:Card Margin="10" DockPanel.Dock="Top" Height="150" Padding="10">
             <DockPanel >
                 <DockPanel Margin="0,0,0,10" DockPanel.Dock="Top" LastChildFill="False">
-                    <TextBlock FontSize="14" FontWeight="Bold" Text="Всего задач:" DockPanel.Dock="Left"/>
-                    <TextBlock FontSize="14" Text="0шт" DockPanel.Dock="Right"/>
+                    <TextBlock FontSize="14" FontWeight="Bold" Text="Всего задач за 7 дней:" DockPanel.Dock="Left"/>
+                    <TextBlock Name="tb_countAllTask" FontSize="14" Text="0шт" DockPanel.Dock="Right"/>
                 </DockPanel>
                 <DockPanel Margin="0,0,0,10" DockPanel.Dock="Top" LastChildFill="False">
                     <TextBlock FontSize="14" FontWeight="Bold" Text="Всего открытых задач:" DockPanel.Dock="Left"/>
-                    <TextBlock FontSize="14" Text="0шт"  DockPanel.Dock="Right"/>
+                    <TextBlock Name="tb_countAllOpenTask" FontSize="14" Text="0шт"  DockPanel.Dock="Right"/>
                 </DockPanel>
                 <DockPanel Margin="0,0,0,10" DockPanel.Dock="Top"  LastChildFill="False">
                     <TextBlock FontSize="14" FontWeight="Bold" Text="Задач на сегодня:" DockPanel.Dock="Left"/>
-                    <TextBlock FontSize="14" Text="0шт"  DockPanel.Dock="Right"/>
+                    <TextBlock Name="tb_countTodayTask" FontSize="14" Text="0шт"  DockPanel.Dock="Right"/>
                 </DockPanel >
                 <DockPanel DockPanel.Dock="Bottom" LastChildFill="False">
                     <Button  Content="Архив задач" Background="Transparent" BorderBrush="Transparent" Foreground="#343a40" Height="40" Margin="10,0,0,0" DockPanel.Dock="Right"/>
@@ -37,7 +37,7 @@
             </DockPanel>
         </md:Card>
         <ScrollViewer>
-            <StackPanel Orientation="Vertical" DockPanel.Dock="Top" Name="todoList" >
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Top" Name="sp_todoList" >
             </StackPanel>
         </ScrollViewer>
     </DockPanel>

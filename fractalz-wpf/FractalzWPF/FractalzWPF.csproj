@@ -14,16 +14,25 @@
   <ItemGroup>
     <PackageReference Include="MaterialDesignColors" Version="2.0.4" />
     <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FractalzWPF.Infrastructure.Connector\FractalzWPF.Infrastructure.Connector.csproj" />
+    <ProjectReference Include="..\FractalzWPF.Infrastructure.LinkedEvent\FractalzWPF.Infrastructure.LinkedEvent.csproj" />
     <ProjectReference Include="..\FractalzWPF.Vizualizer\FractalzWPF.Infrastructure.Vizualizer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="50.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net5.0-windows\appsettings.json" />
   </ItemGroup>
 
 </Project>

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FractalzWPF.Infrastructure.Application.Handlers.Todo;
 using FractalzWPF.Infrastructure.Application.Handlers.User;
 
 namespace FractalzWPF.Infrastructure.Application
@@ -18,6 +19,12 @@ namespace FractalzWPF.Infrastructure.Application
         public static void AddApplication(this ServiceCollection serviceCollection)
         {
             serviceCollection.AddTransient<RegistrationHandler>();
+            serviceCollection.AddTransient<LoginHandler>();
+            serviceCollection.AddTransient<GetTodoListHandler>();
+            serviceCollection.AddTransient<CreateTaskHandler>();
+            serviceCollection.AddTransient<DeleteTaskHandler>();
+            //serviceCollection.AddTransient<TodoBaseHandler>();
+            serviceCollection.AddTransient<UpdateStatusTaskHandler>();
             serviceCollection.AddSingleton<INavigatorHandlers, Navigator>();
         }
     }

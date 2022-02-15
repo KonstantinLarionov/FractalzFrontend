@@ -12,9 +12,10 @@ namespace FractalzWPF.Infrastructure.Vizualizer
 {
     public static class ServiceCollectionExtensions
     {
-        public static void AddUserControls(this ServiceCollection services)
+        public static void AddInfrastructureVisualizer(this ServiceCollection services)
         {
             services.AddSingleton<INavigatorControls, NavigatorControls>();
+            services.AddSingleton<NotifyHandler>();
         }
     }
 }

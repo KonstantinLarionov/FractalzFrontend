@@ -9,7 +9,6 @@ using FractalzWPF.Application.Domains.Entities.Todo;
 using FractalzWPF.Infrastructure.Application.Domains.Entitties.Server;
 
 namespace FractalzWPF.Application.Domains.Entities.Profile
-
 {
     public record User
     {

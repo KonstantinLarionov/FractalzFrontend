@@ -13,10 +13,10 @@ namespace FractalzWPF.Infrastructure.Connector
         {
             _requests = new Dictionary<RequestType, (string, Method)>
             {
-                {RequestType.Login, ("/todoList/getList", Method.GET)},
-                {RequestType.Login, ("/todoList/createTask", Method.POST)},
-                {RequestType.Login, ("/todoList/updateStatusTask", Method.PUT)},
-                {RequestType.Login, ("/todoList/deleteTask", Method.DELETE)},
+                {RequestType.GetTodoList, ("/todoList/getList", Method.GET)},
+                {RequestType.CreateTask, ("/todoList/createTask", Method.POST)},
+                {RequestType.UpdateStatusTask, ("/todoList/updateStatusTask", Method.PUT)},
+                {RequestType.DeleteTask, ("/todoList/deleteTask", Method.DELETE)},
             };
         }
 

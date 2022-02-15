@@ -9,12 +9,12 @@
         Title="Создание задачи" Height="235" Width="424" ResizeMode="NoResize">
     <DockPanel>
         <StackPanel Margin="20,10,20,0">
-            <TextBox FontSize="14" Margin="0,0,0,5"  md:HintAssist.Hint="Название задачи"/>
-            <TextBox FontSize="14" Margin="0,0,0,5"  md:HintAssist.Hint="Описание задачи"/>
+            <TextBox Name="title" FontSize="14" Margin="0,0,0,5"  md:HintAssist.Hint="Название задачи"/>
+            <TextBox Name="about" FontSize="14" Margin="0,0,0,5"  md:HintAssist.Hint="Описание задачи"/>
             <DockPanel >
                 <DatePicker Name="date" FontSize="14" DockPanel.Dock="Left" Margin="0,0,0,5"  md:HintAssist.Hint="Дата старта" Width="114"/>
                 <md:TimePicker Name="time" FontSize="14" DockPanel.Dock="Left" Margin="10,0,0,5"  md:HintAssist.Hint="Время старта"/>
-                <ComboBox FontSize="14" DockPanel.Dock="Right" Margin="10,0,0,5" md:HintAssist.Hint="Длительность" IsEditable="True">
+                <ComboBox Name="timeless" FontSize="14" DockPanel.Dock="Right" Margin="10,0,0,5" md:HintAssist.Hint="Длительность" IsEditable="True">
                     <ComboBoxItem>5м</ComboBoxItem>
                     <ComboBoxItem>10м</ComboBoxItem>
                     <ComboBoxItem>15м</ComboBoxItem>
@@ -24,7 +24,7 @@
                     <ComboBoxItem>6ч</ComboBoxItem>
                 </ComboBox>
             </DockPanel>
-            <Button Margin="0,10" Content="Добавить" Background="#009788" BorderBrush="#009788"/>
+            <Button Margin="0,10" Content="Добавить" Click="ButtonBase_OnClick" Background="#009788" BorderBrush="#009788"/>
         </StackPanel>
     </DockPanel>
 </Window>

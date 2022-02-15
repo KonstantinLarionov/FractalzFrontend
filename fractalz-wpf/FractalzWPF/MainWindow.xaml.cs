@@ -17,6 +17,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FractalzWPF.Application.Domains.Entities.Profile;
+using Microsoft.Extensions.Options;
 
 namespace FractalzWPF
 {

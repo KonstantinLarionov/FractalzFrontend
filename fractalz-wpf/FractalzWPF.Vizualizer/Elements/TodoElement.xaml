@@ -8,14 +8,14 @@
              mc:Ignorable="d" 
              Margin="10" MouseDown="UserControl_MouseDown">
     <DockPanel LastChildFill="True" Cursor="Hand">
-    <DockPanel LastChildFill="False" DockPanel.Dock="Top" Cursor="Hand" >
-            <CheckBox Click="checkBox1_Click" Cursor="Hand" VerticalAlignment="Top" IsChecked="True" Height="16" IsEnabled="True"  Name="checkBox1" Background="#009788" BorderBrush="#009788" >
-                <TextBlock DockPanel.Dock="Left" FontWeight="Bold" Margin="5,0" Text="Новая задача на сегодня [8:00-8:30]">
+    <DockPanel ZIndex="4" LastChildFill="False" DockPanel.Dock="Top" Cursor="Hand" >
+            <CheckBox TabIndex="4" Cursor="Hand"  VerticalAlignment="Top" IsChecked="True" Height="16" IsEnabled="True"  Name="checkBoxTask" Background="#009788" BorderBrush="#009788" >
+                <TextBlock DockPanel.Dock="Left" Name="titleTask" FontWeight="Bold" Margin="5,0" Text="Новая задача на сегодня [8:00-8:30]">
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
                             <Style.Triggers>
                                 <!-- Here is how we bind to another control's property -->
-                                <DataTrigger Binding="{Binding IsChecked, ElementName=checkBox1}" Value="True">
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=checkBoxTask}" Value="True">
                                     <Setter Property="TextBlock.TextDecorations" Value="Strikethrough" />
                                 </DataTrigger>
                             </Style.Triggers>
@@ -38,8 +38,9 @@
             30мин
         </TextBlock>
     </DockPanel>
-    <DockPanel>
+    <DockPanel ZIndex="1">
             <Button 
+                Click="ButtonBase_OnClick"
                 VerticalAlignment="Top"
                 Background="#FFB73A3A"
                 BorderBrush="#FFB73A3A" 
@@ -48,7 +49,7 @@
                 Padding="0">
                 <md:PackIcon Kind="Trash" VerticalAlignment="Center" Width="12"/>
             </Button>
-            <TextBlock Margin="15,0,0,0" DockPanel.Dock="Bottom" TextWrapping="Wrap" > Учитывая ключевые сценарии поведения, консультация с широким активом прекрасно подходит для реализации новых принципов формирования материально-технической и кадровой базы. Противоположная точка зрения подразумевает, что некоторые особенности внутренней политики функционально разнесены на независимые элементы. В своём стремлении повысить качество жизни, они забывают, что базовый вектор развития однозначно определяет каждого участника как способного принимать собственные решения касаемо своевременного выполнения сверхзадачи.</TextBlock>
+            <TextBlock Name="descTask" Margin="15,0,0,0" DockPanel.Dock="Bottom" TextWrapping="Wrap" > Учитывая ключевые сценарии поведения, консультация с широким активом прекрасно подходит для реализации новых принципов формирования материально-технической и кадровой базы. Противоположная точка зрения подразумевает, что некоторые особенности внутренней политики функционально разнесены на независимые элементы. В своём стремлении повысить качество жизни, они забывают, что базовый вектор развития однозначно определяет каждого участника как способного принимать собственные решения касаемо своевременного выполнения сверхзадачи.</TextBlock>
     </DockPanel>
     </DockPanel>
 </UserControl>
