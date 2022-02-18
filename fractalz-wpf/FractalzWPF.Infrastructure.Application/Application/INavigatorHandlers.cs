@@ -22,6 +22,7 @@ namespace FractalzWPF.Infrastructure.Application.Application
         public RegistrationHandler RegistrationHandler { get; set; }
         public LoginHandler LoginHandler { get; set; }
         public GetMessageHistoryHandler GetMessageHistoryHandler { get; set; }
+        public GetDialogsHandler GetDialogsHandler { get; set; }
 
     }
 }

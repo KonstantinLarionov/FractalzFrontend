@@ -14,6 +14,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FractalzWPF.Application.Domains.Entities.Chat;
+using FractalzWPF.Application.Domains.Entities.Profile;
+using FractalzWPF.Infrastructure.Application.Application;
+using Notifications.Wpf;
 
 namespace FractalzWPF.Infrastructure.Vizualizer
 {
@@ -22,14 +26,69 @@ namespace FractalzWPF.Infrastructure.Vizualizer
     /// </summary>
     public partial class DialogsUserControl : UserControl
     {
-        public DialogsUserControl()
+        private readonly INavigatorHandlers _handlers;
+        private readonly NotifyHandler _noty;
+        private readonly ILinkedEventService _linkedEventService;
+        private readonly INavigatorControls _navigatorControls;
+        public DialogsUserControl(INavigatorHandlers handlers, NotifyHandler noty, ILinkedEventService linkedEventService, INavigatorControls controls)
         {
             InitializeComponent();
+            _handlers = handlers ?? throw new ArgumentException(nameof(handlers));
+            _noty = noty ?? throw new ArgumentException(nameof(noty));
+            _linkedEventService = linkedEventService ?? throw new ArgumentException(nameof(linkedEventService));
+            _navigatorControls = controls ?? throw new ArgumentException(nameof(controls));
+            _linkedEventService.DialogUpdateEvent += LinkedEventServiceOnDialogUpdateEvent;
+        }
+
+        private void LinkedEventServiceOnDialogUpdateEvent(Dialog dialog)
+        {
+            throw new NotImplementedException();
         }
 
         private void DialogsUserControl_OnLoaded(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            var dialogs = _handlers.GetDialogsHandler.Do(_handlers.UserData.Id);
+            if (!dialogs.Success)
+            {
+                _noty.Show("Проблемы с диалогами!",dialogs.Message, null, NotificationType.Error);
+                return;
+            }
+
+            foreach (var dialog in dialogs.Dialogs)
+            {
+                dialogsSpace.Children.Add(new DialogElement(dialog.Id, 
+                    GetDialogName(dialog.Users), 
+                    dialog.LastMessage.Text, 
+                    dialog.Created, 
+                    dialog.CountUnReadMessage, 
+                    _navigatorControls));
+            }
+        }
+
+        public string GetDialogName(List<User> usersFromDialog)
+        {
+            var usersWithoutMe = usersFromDialog
+                .Where(x => x.Id != _handlers.UserData.Id)
+                .ToList();
+            var nameDialog = string.Empty;
+            foreach (var user in usersWithoutMe)
+            {
+                nameDialog = string.Join(", ", nameDialog, GetUserName(user));
+            }
+
+            return nameDialog;
+        }
+        private string GetUserName(User user)
+        {
+            if (user.Name != null &&
+                user.Surname != null &&
+                user.Surname != string.Empty &&
+                user.Name != string.Empty)
+            {
+                return $"{user.Name} {user.Surname}";
+            }
+
+            return user.Login;
         }
     }
 }

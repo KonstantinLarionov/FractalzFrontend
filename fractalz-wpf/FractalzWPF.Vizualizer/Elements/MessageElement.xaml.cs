@@ -20,9 +20,12 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Elements
     /// </summary>
     public partial class MessageElement : UserControl
     {
-        public MessageElement()
+        public MessageElement(string name, string text, DateTime dateTime)
         {
             InitializeComponent();
+            userName.Content = name;
+            messageText.Text = text;
+            messageDate.Content = dateTime.ToLongTimeString();
         }
     }
 }

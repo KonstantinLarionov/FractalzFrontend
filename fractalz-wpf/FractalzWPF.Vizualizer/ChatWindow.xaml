@@ -42,8 +42,8 @@
                 <TextBox TextWrapping="Wrap" Text="Ясность нашей позиции очевидна: высокое качество позиционных исследований не оставляет шанса для приоритизации разума над эмоциями. Идейные соображения высшего порядка, а также начало повседневной работы по формированию позиции говорит о возможностях кластеризации усилий. Но сложившаяся структура организации требует от нас анализа стандартных подходов." Margin="5,0,0,0" Cursor="IBeam"/>
             </DockPanel>
         </md:Card>
-        <ScrollViewer DockPanel.Dock="Top">
-            <StackPanel Orientation="Vertical" Name="messagesSpace">
+        <ScrollViewer DockPanel.Dock="Top" Name="scroller">
+            <StackPanel Margin="0,0,0,20" Orientation="Vertical" Name="messagesSpace">
                 
             </StackPanel>
         </ScrollViewer>

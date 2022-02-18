@@ -27,6 +27,7 @@ namespace FractalzWPF.Infrastructure.Application
             //serviceCollection.AddTransient<TodoBaseHandler>();
             serviceCollection.AddTransient<UpdateStatusTaskHandler>();
             serviceCollection.AddTransient<GetMessageHistoryHandler>();
+            serviceCollection.AddTransient<GetDialogsHandler>();
             serviceCollection.AddSingleton<INavigatorHandlers, Navigator>();
         }
     }

@@ -24,6 +24,7 @@ namespace FractalzWPF.Infrastructure.Application
         public DeleteTaskHandler DeleteTaskHandler { get; set; }
         public UpdateStatusTaskHandler UpdateStatusTaskHandler { get; set; }
         public GetMessageHistoryHandler GetMessageHistoryHandler { get; set; }
+        public GetDialogsHandler GetDialogsHandler { get; set; }
 
         public Navigator(RegistrationHandler regHandler, 
             GetTodoListHandler getTodoListHandler, 
@@ -32,6 +33,7 @@ namespace FractalzWPF.Infrastructure.Application
             UpdateStatusTaskHandler updateStatusTaskHandler,
             LoginHandler loginHandler,
             GetMessageHistoryHandler getMessageHistoryHandler,
+            GetDialogsHandler getDialogsHandler,
             IOptions<UserData> userData)
         {
             UserData = userData.Value ?? throw new ArgumentException(nameof(userData));
@@ -42,6 +44,7 @@ namespace FractalzWPF.Infrastructure.Application
             CreateTaskHandler = createTaskHandler;
             DeleteTaskHandler = deleteTaskHandler;
             UpdateStatusTaskHandler = updateStatusTaskHandler;
+            GetDialogsHandler = getDialogsHandler;
         }
     }
 }
