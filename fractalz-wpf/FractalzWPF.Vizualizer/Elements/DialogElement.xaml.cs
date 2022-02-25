@@ -23,12 +23,19 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Elements
     public partial class DialogElement : UserControl
     {
         private readonly INavigatorControls _navigatorControls;
-        private int Id;
-        private string _fio;
-        public DialogElement(int id, string fio, string lastText, DateTime dateMessage, int countMessage, INavigatorControls navigatorControls)
+        public int Id { get; set; }
+        public string Fio { get; set; }
+        public string LastText { get; set; }
+        public int CoutMessage { get; set; }
+        public DialogElement(int id, string fio,
+            string lastText, DateTime dateMessage, 
+            int countMessage, INavigatorControls navigatorControls)
         {
             InitializeComponent();
-            _fio = fio;
+            Fio = fio;
+            LastText = lastText;
+            CoutMessage = countMessage;
+            
             SetData(fio, lastText, dateMessage, countMessage);
             Id = id != 0 ? id : throw new ArgumentException(nameof(id));
             _navigatorControls = navigatorControls ?? throw new ArgumentException(nameof(navigatorControls));
@@ -44,9 +51,21 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Elements
             Background = new SolidColorBrush(Colors.Transparent);
         }
 
-        private void SetData(string fio, string lastText, DateTime dateMessage, int countMessage)
+        public void SetData(string fio, string lastText, DateTime dateMessage, int countMessage)
         {
             tb_fio.Text = fio;
+            tb_lastMessage.Text = lastText;
+            tb_dateMessage.Text = dateMessage.ToShortTimeString();
+            if (countMessage > 0)
+            {
+                tb_count.Text = countMessage.ToString();
+                tb_fio.FontWeight = FontWeights.Bold;
+                tb_lastMessage.FontWeight = FontWeights.Bold;
+                tb_dateMessage.FontWeight = FontWeights.Bold;
+            }
+        }
+        public void SetDataWithoutFio(string lastText, DateTime dateMessage, int countMessage)
+        {
             tb_lastMessage.Text = lastText;
             tb_dateMessage.Text = dateMessage.ToShortTimeString();
             if (countMessage > 0)
@@ -72,7 +91,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Elements
             
             var window = (ChatWindow)_navigatorControls.Windows[WindowType.Chat];
             window.DialogId = this.Id;
-            window.DialogName = this._fio;
+            window.DialogName = this.Fio;
         }
     }
 }

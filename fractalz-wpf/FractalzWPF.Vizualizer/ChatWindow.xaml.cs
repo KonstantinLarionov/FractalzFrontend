@@ -34,11 +34,11 @@ namespace FractalzWPF.Infrastructure.Vizualizer
         public ChatWindow(INavigatorHandlers navigatorHandlers, NotifyHandler noty, ILinkedEventService linkedEventService)
         {
             InitializeComponent();
-            _userName = GetUserName();
             _navigator = navigatorHandlers ?? throw new ArgumentException(nameof(navigatorHandlers));
             _linkedEventService = linkedEventService ?? throw new ArgumentException(nameof(linkedEventService));
             _noty = noty ?? throw new ArgumentException(nameof(noty));
             _linkedEventService.GetMessageEvent += LinkedEventServiceOnGetMessageEvent;
+            _userName = GetUserName();
         }
 
         private void LinkedEventServiceOnGetMessageEvent(Message message)
@@ -60,9 +60,14 @@ namespace FractalzWPF.Infrastructure.Vizualizer
 
         private void ChatWindow_OnLoaded(object sender, RoutedEventArgs e)
         {
+            if (DialogId == 0)
+            {
+                return;
+            }
+
             var data = _navigator.GetMessageHistoryHandler.Do(
                 this.DialogId, DateTime.Now.AddDays(-7), 100);
-            if (data.Success)
+            if (data?.Success == true)
             {
                 var messages = data.Messages;
                 foreach (var messageData in messages)
@@ -78,7 +83,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer
             }
             else
             {
-                _noty.Show("Ошибка получения истории сообщений", data.Message, null, NotificationType.Error);
+                _noty.Show("Ошибка получения истории сообщений", data?.Message, null, NotificationType.Error);
             }
         }
 

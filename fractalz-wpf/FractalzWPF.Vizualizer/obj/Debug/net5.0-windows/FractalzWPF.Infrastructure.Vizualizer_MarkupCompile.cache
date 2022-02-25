@@ -16,5 +16,5 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 203-1043298446
 ChatWindow.xaml;DialogsUserControl.xaml;Elements\DialogElement.xaml;Elements\MessageElement.xaml;Elements\TodoElement.xaml;LoginWindow.xaml;ProfileUserControl.xaml;RegistrationWindow.xaml;TodoCreateWindow.xaml;TodoUserControl.xaml;
 
-True
+False
 

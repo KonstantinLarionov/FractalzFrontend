@@ -42,15 +42,22 @@ namespace FractalzWPF.Infrastructure.Vizualizer
 
         private void LinkedEventServiceOnDialogUpdateEvent(Dialog dialog)
         {
-            throw new NotImplementedException();
+            var elements = dialogsSpace.Children;
+            foreach (DialogElement element in elements)
+            {
+                if (element.Id != dialog.Id)
+                { continue; }
+                
+                element.SetDataWithoutFio(dialog.LastMessage.Text, dialog.LastMessage.Created, dialog.CountUnReadMessage);
+            }
         }
 
         private void DialogsUserControl_OnLoaded(object sender, RoutedEventArgs e)
         {
             var dialogs = _handlers.GetDialogsHandler.Do(_handlers.UserData.Id);
-            if (!dialogs.Success)
+            if (dialogs is null || !dialogs.Success)
             {
-                _noty.Show("Проблемы с диалогами!",dialogs.Message, null, NotificationType.Error);
+                _noty.Show("Проблемы с диалогами!",dialogs?.Message, null, NotificationType.Error);
                 return;
             }
 

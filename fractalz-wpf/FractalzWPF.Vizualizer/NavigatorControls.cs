@@ -16,12 +16,12 @@ namespace FractalzWPF.Infrastructure.Vizualizer
     {
         public Dictionary<UserControlType, UserControl> Controls { get; }
         public Dictionary<WindowType, Window> Windows { get; }
-        public NavigatorControls(INavigatorHandlers handlers, NotifyHandler noty)
+        public NavigatorControls(INavigatorHandlers handlers, NotifyHandler noty, ILinkedEventService linkedEventService)
         { 
             Controls = new Dictionary<UserControlType, UserControl>()
             {
                 { UserControlType.Profile, new ProfileUserControl() },
-                { UserControlType.Chat, new DialogsUserControl() },
+                { UserControlType.Chat, new DialogsUserControl(handlers, noty, linkedEventService, this) },
                 { UserControlType.Todo, new TodoUserControl(noty, handlers) }
             };
             Windows = new Dictionary<WindowType, Window>()
@@ -29,6 +29,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer
                 { WindowType.Login, new LoginWindow(handlers, noty) },
                 { WindowType.Registration, new RegistrationWindow(handlers, noty) },
                 { WindowType.TodoCreate, new TodoCreateWindow(noty, handlers) },
+                { WindowType.Chat, new ChatWindow(handlers,noty,linkedEventService) },
             };
         }
     }

@@ -13,7 +13,7 @@ namespace FractalzWPF.Infrastructure.LinkedEvent
     public class LinkedEventService : ILinkedEventService
     {
         private WebSocket _ws;
-        private readonly string _pathWs = $"{Constants.URL_OpenServer}:{Constants.PORT_OpenServer}:{Constants.ENDPOINT_OpenServer}";
+        private readonly string _pathWs = $"{Constants.URL_OpenServer}:{Constants.PORT_OpenServer}{Constants.ENDPOINT_OpenServer}";
         private readonly UserData _userInfo;
 
         public LinkedEventService(IOptions<UserData> userInfo)
@@ -60,7 +60,7 @@ namespace FractalzWPF.Infrastructure.LinkedEvent
         private void Connect()
         {
             _ws = new WebSocket($"{_pathWs}?idUser={_userInfo.Id}");
-            _ws.SetCookie(new Cookie(Constants.NAME_HeaderAuth, _userInfo.Token));
+            _ws.SetCookie(new Cookie(Constants.NAME_HeaderAuth, "Basic " + _userInfo.Token));
             _ws.OnMessage += OnMessage;
             _ws.Connect();
         }
