@@ -1,0 +1,418 @@
+25.02.2022 21:39:30|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: ASWSAfd2beX5JduE6NyW9A==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=c3RyaW5nOnN0cmluZw==
+25.02.2022 21:39:39|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 500 Internal Server Error
+                          Date: Fri, 25 Feb 2022 16:39:39 GMT
+                          Content-Type: text/plain
+                          Server: Kestrel
+                          Transfer-Encoding: chunked
+25.02.2022 21:39:39|Error|WebSocket.doHandshake:0|Not a WebSocket connection response.
+25.02.2022 21:39:39|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 21:39:39|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 21:39:39|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 21:49:06|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: Ird++ZwqAfSkh6MhRfM9wQ==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=c3RyaW5nOnN0cmluZw==
+25.02.2022 21:49:09|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 401 Unauthorized
+                          Date: Fri, 25 Feb 2022 16:49:09 GMT
+                          Server: Kestrel
+                          Content-Length: 0
+25.02.2022 21:49:09|Warn |WebSocket.sendHandshakeRequest:0|Received an authentication requirement for ''.
+25.02.2022 21:49:09|Error|WebSocket.sendHandshakeRequest:0|No authentication challenge is specified.
+25.02.2022 21:49:09|Error|WebSocket.doHandshake:0|Requires the authentication.
+25.02.2022 21:49:09|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 21:49:09|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 21:49:09|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 21:59:54|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: U1QBLy6bPEZmOMX3XyiTaA==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=c3RyaW5nOnN0cmluZw==
+25.02.2022 21:59:54|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 401 Unauthorized
+                          Date: Fri, 25 Feb 2022 16:59:54 GMT
+                          Server: Kestrel
+                          Content-Length: 0
+25.02.2022 21:59:54|Warn |WebSocket.sendHandshakeRequest:0|Received an authentication requirement for ''.
+25.02.2022 21:59:54|Error|WebSocket.sendHandshakeRequest:0|No authentication challenge is specified.
+25.02.2022 21:59:54|Error|WebSocket.doHandshake:0|Requires the authentication.
+25.02.2022 21:59:54|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 21:59:54|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 21:59:54|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 22:05:02|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: 4RAEwcBpLn2YJJYWGgzm3g==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=c3RyaW5nOnN0cmluZw==
+25.02.2022 22:05:02|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 401 Unauthorized
+                          Date: Fri, 25 Feb 2022 17:05:02 GMT
+                          Server: Kestrel
+                          Content-Length: 0
+25.02.2022 22:05:02|Warn |WebSocket.sendHandshakeRequest:0|Received an authentication requirement for ''.
+25.02.2022 22:05:02|Error|WebSocket.sendHandshakeRequest:0|No authentication challenge is specified.
+25.02.2022 22:05:02|Error|WebSocket.doHandshake:0|Requires the authentication.
+25.02.2022 22:05:02|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 22:05:02|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 22:05:02|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 22:10:17|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: pjJWYc/YzS1J/5G3AE4d4Q==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=c3RyaW5nOnN0cmluZw==
+25.02.2022 22:10:18|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 401 Unauthorized
+                          Date: Fri, 25 Feb 2022 17:10:17 GMT
+                          Server: Kestrel
+                          Content-Length: 0
+25.02.2022 22:10:18|Warn |WebSocket.sendHandshakeRequest:0|Received an authentication requirement for ''.
+25.02.2022 22:10:18|Error|WebSocket.sendHandshakeRequest:0|No authentication challenge is specified.
+25.02.2022 22:10:18|Error|WebSocket.doHandshake:0|Requires the authentication.
+25.02.2022 22:10:18|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 22:10:18|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 22:10:18|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 22:10:51|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: FfGmyLWUlkskpZ6sqQYc7w==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=c3RyaW5nOnN0cmluZw==
+25.02.2022 22:11:11|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 401 Unauthorized
+                          Date: Fri, 25 Feb 2022 17:11:11 GMT
+                          Server: Kestrel
+                          Content-Length: 0
+25.02.2022 22:11:11|Warn |WebSocket.sendHandshakeRequest:0|Received an authentication requirement for ''.
+25.02.2022 22:11:11|Error|WebSocket.sendHandshakeRequest:0|No authentication challenge is specified.
+25.02.2022 22:11:11|Error|WebSocket.doHandshake:0|Requires the authentication.
+25.02.2022 22:11:11|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 22:11:11|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 22:11:11|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 22:13:05|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: V7hqYyOTChK9mlXGpYcnQg==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=c3RyaW5nOnN0cmluZw==
+25.02.2022 22:13:31|Fatal|WebSocket.processException:0|WebSocketSharp.WebSocketException: An exception has occurred while reading an HTTP request/response.
+                           ---> System.IO.IOException: Unable to read data from the transport connection: Удаленный хост принудительно разорвал существующее подключение..
+                           ---> System.Net.Sockets.SocketException (10054): Удаленный хост принудительно разорвал существующее подключение.
+                             --- End of inner exception stack trace ---
+                             at System.Net.Sockets.NetworkStream.Read(Span`1 buffer)
+                             at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](TIOAdapter adapter, Memory`1 buffer)
+                             at System.Net.Security.SslStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+                             at System.Net.Security.SslStream.ReadByte()
+                             at WebSocketSharp.HttpBase.readHeaders(Stream stream, Int32 maxLength)
+                             at WebSocketSharp.HttpBase.Read[T](Stream stream, Func`2 parser, Int32 millisecondsTimeout)
+                             --- End of inner exception stack trace ---
+                             at WebSocketSharp.HttpBase.Read[T](Stream stream, Func`2 parser, Int32 millisecondsTimeout)
+                             at WebSocketSharp.HttpRequest.GetResponse(Stream stream, Int32 millisecondsTimeout)
+                             at WebSocketSharp.WebSocket.sendHttpRequest(HttpRequest request, Int32 millisecondsTimeout)
+                             at WebSocketSharp.WebSocket.sendHandshakeRequest()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+25.02.2022 22:13:31|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 22:13:31|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 22:13:31|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 22:28:47|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: fsbEGbceJZjPJkZcDj8lrg==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=c3RyaW5nOnN0cmluZw==
+25.02.2022 22:28:56|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 401 Unauthorized
+                          Date: Fri, 25 Feb 2022 17:28:56 GMT
+                          Server: Kestrel
+                          Content-Length: 0
+25.02.2022 22:28:56|Warn |WebSocket.sendHandshakeRequest:0|Received an authentication requirement for ''.
+25.02.2022 22:28:56|Error|WebSocket.sendHandshakeRequest:0|No authentication challenge is specified.
+25.02.2022 22:28:56|Error|WebSocket.doHandshake:0|Requires the authentication.
+25.02.2022 22:28:56|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 22:28:56|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 22:28:56|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 22:30:11|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: F84ARVNibMTGtV0s9KcgNg==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=c3RyaW5nOnN0cmluZw==
+25.02.2022 22:31:08|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 401 Unauthorized
+                          Date: Fri, 25 Feb 2022 17:31:08 GMT
+                          Server: Kestrel
+                          Content-Length: 0
+25.02.2022 22:31:08|Warn |WebSocket.sendHandshakeRequest:0|Received an authentication requirement for ''.
+25.02.2022 22:31:08|Error|WebSocket.sendHandshakeRequest:0|No authentication challenge is specified.
+25.02.2022 22:31:08|Error|WebSocket.doHandshake:0|Requires the authentication.
+25.02.2022 22:31:08|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 22:31:08|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 22:31:08|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 22:31:41|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: kUupZtKIHfYpuy/bjBiCjQ==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=c3RyaW5nOnN0cmluZw==
+25.02.2022 22:31:43|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 401 Unauthorized
+                          Date: Fri, 25 Feb 2022 17:31:43 GMT
+                          Server: Kestrel
+                          Content-Length: 0
+25.02.2022 22:31:43|Warn |WebSocket.sendHandshakeRequest:0|Received an authentication requirement for ''.
+25.02.2022 22:31:43|Error|WebSocket.sendHandshakeRequest:0|No authentication challenge is specified.
+25.02.2022 22:31:43|Error|WebSocket.doHandshake:0|Requires the authentication.
+25.02.2022 22:31:43|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 22:31:43|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 22:31:43|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 22:38:20|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: hUmTsvkaV0VFAeptw4Na9Q==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=Basic c3RyaW5nOnN0cmluZw==
+25.02.2022 22:39:27|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 401 Unauthorized
+                          Date: Fri, 25 Feb 2022 17:39:27 GMT
+                          Server: Kestrel
+                          Content-Length: 0
+25.02.2022 22:39:27|Warn |WebSocket.sendHandshakeRequest:0|Received an authentication requirement for ''.
+25.02.2022 22:39:27|Error|WebSocket.sendHandshakeRequest:0|No authentication challenge is specified.
+25.02.2022 22:39:27|Error|WebSocket.doHandshake:0|Requires the authentication.
+25.02.2022 22:39:27|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 22:39:27|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 22:39:27|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 22:40:00|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: 71aZPhzASgjIKsPCuwBOag==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=Basic c3RyaW5nOnN0cmluZw==
+25.02.2022 22:41:30|Fatal|WebSocket.processException:0|WebSocketSharp.WebSocketException: A timeout has occurred while reading an HTTP request/response.
+                           ---> System.IO.IOException: Unable to read data from the transport connection: Программа на вашем хост-компьютере разорвала установленное подключение..
+                           ---> System.Net.Sockets.SocketException (10053): Программа на вашем хост-компьютере разорвала установленное подключение.
+                             --- End of inner exception stack trace ---
+                             at System.Net.Sockets.NetworkStream.Read(Span`1 buffer)
+                             at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](TIOAdapter adapter, Memory`1 buffer)
+                             at System.Net.Security.SslStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+                             at System.Net.Security.SslStream.ReadByte()
+                             at WebSocketSharp.HttpBase.readHeaders(Stream stream, Int32 maxLength)
+                             at WebSocketSharp.HttpBase.Read[T](Stream stream, Func`2 parser, Int32 millisecondsTimeout)
+                             --- End of inner exception stack trace ---
+                             at WebSocketSharp.HttpBase.Read[T](Stream stream, Func`2 parser, Int32 millisecondsTimeout)
+                             at WebSocketSharp.HttpRequest.GetResponse(Stream stream, Int32 millisecondsTimeout)
+                             at WebSocketSharp.WebSocket.sendHttpRequest(HttpRequest request, Int32 millisecondsTimeout)
+                             at WebSocketSharp.WebSocket.sendHandshakeRequest()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+25.02.2022 22:41:30|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 22:41:30|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 22:41:30|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 22:59:21|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: BZ4oAWOPxWZc06bVdUUs6w==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=Basic c3RyaW5nOnN0cmluZw==
+25.02.2022 23:04:12|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: IGKYlPjDjdWBEQigplGwKQ==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=Basic c3RyaW5nOnN0cmluZw==
+25.02.2022 23:04:14|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 401 Unauthorized
+                          Date: Fri, 25 Feb 2022 18:04:14 GMT
+                          Server: Kestrel
+                          Content-Length: 0
+25.02.2022 23:04:14|Warn |WebSocket.sendHandshakeRequest:0|Received an authentication requirement for ''.
+25.02.2022 23:04:14|Error|WebSocket.sendHandshakeRequest:0|No authentication challenge is specified.
+25.02.2022 23:04:14|Error|WebSocket.doHandshake:0|Requires the authentication.
+25.02.2022 23:04:14|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 23:04:14|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 23:04:14|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 23:05:34|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: OJWZQrDnWe5ibmQ57Da9zQ==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=Basic c3RyaW5nOnN0cmluZw==
+25.02.2022 23:05:44|Fatal|WebSocket.processException:0|WebSocketSharp.WebSocketException: An exception has occurred while reading an HTTP request/response.
+                           ---> System.IO.IOException: Unable to read data from the transport connection: Удаленный хост принудительно разорвал существующее подключение..
+                           ---> System.Net.Sockets.SocketException (10054): Удаленный хост принудительно разорвал существующее подключение.
+                             --- End of inner exception stack trace ---
+                             at System.Net.Sockets.NetworkStream.Read(Span`1 buffer)
+                             at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](TIOAdapter adapter, Memory`1 buffer)
+                             at System.Net.Security.SslStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+                             at System.Net.Security.SslStream.ReadByte()
+                             at WebSocketSharp.HttpBase.readHeaders(Stream stream, Int32 maxLength)
+                             at WebSocketSharp.HttpBase.Read[T](Stream stream, Func`2 parser, Int32 millisecondsTimeout)
+                             --- End of inner exception stack trace ---
+                             at WebSocketSharp.HttpBase.Read[T](Stream stream, Func`2 parser, Int32 millisecondsTimeout)
+                             at WebSocketSharp.HttpRequest.GetResponse(Stream stream, Int32 millisecondsTimeout)
+                             at WebSocketSharp.WebSocket.sendHttpRequest(HttpRequest request, Int32 millisecondsTimeout)
+                             at WebSocketSharp.WebSocket.sendHandshakeRequest()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+25.02.2022 23:05:44|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 23:05:44|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 23:05:44|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 23:06:16|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: hJmZIRwNJBBkoEN8mA2utw==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=Basic c3RyaW5nOnN0cmluZw==
+25.02.2022 23:06:49|Fatal|WebSocket.processException:0|WebSocketSharp.WebSocketException: An exception has occurred while reading an HTTP request/response.
+                           ---> System.IO.IOException: Unable to read data from the transport connection: Удаленный хост принудительно разорвал существующее подключение..
+                           ---> System.Net.Sockets.SocketException (10054): Удаленный хост принудительно разорвал существующее подключение.
+                             --- End of inner exception stack trace ---
+                             at System.Net.Sockets.NetworkStream.Read(Span`1 buffer)
+                             at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](TIOAdapter adapter, Memory`1 buffer)
+                             at System.Net.Security.SslStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+                             at System.Net.Security.SslStream.ReadByte()
+                             at WebSocketSharp.HttpBase.readHeaders(Stream stream, Int32 maxLength)
+                             at WebSocketSharp.HttpBase.Read[T](Stream stream, Func`2 parser, Int32 millisecondsTimeout)
+                             --- End of inner exception stack trace ---
+                             at WebSocketSharp.HttpBase.Read[T](Stream stream, Func`2 parser, Int32 millisecondsTimeout)
+                             at WebSocketSharp.HttpRequest.GetResponse(Stream stream, Int32 millisecondsTimeout)
+                             at WebSocketSharp.WebSocket.sendHttpRequest(HttpRequest request, Int32 millisecondsTimeout)
+                             at WebSocketSharp.WebSocket.sendHandshakeRequest()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+25.02.2022 23:06:49|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 23:06:49|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 23:06:49|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 23:14:55|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: ZDq6Q3iLl/1cgtAZNDz0Jg==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=Basic c3RyaW5nOnN0cmluZw==
+25.02.2022 23:14:57|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 401 Unauthorized
+                          Date: Fri, 25 Feb 2022 18:14:57 GMT
+                          Server: Kestrel
+                          Content-Length: 0
+25.02.2022 23:14:57|Warn |WebSocket.sendHandshakeRequest:0|Received an authentication requirement for ''.
+25.02.2022 23:14:57|Error|WebSocket.sendHandshakeRequest:0|No authentication challenge is specified.
+25.02.2022 23:14:57|Error|WebSocket.doHandshake:0|Requires the authentication.
+25.02.2022 23:14:57|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 23:14:57|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 23:14:57|Trace|WebSocket.close:0|End closing the connection.
+25.02.2022 23:15:37|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/subscribe?idUser=1 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5001
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: hiXsAe7pVUPfrx3slFj1Pw==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=Basic c3RyaW5nOnN0cmluZw==
+25.02.2022 23:15:37|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 401 Unauthorized
+                          Date: Fri, 25 Feb 2022 18:15:37 GMT
+                          Server: Kestrel
+                          Content-Length: 0
+25.02.2022 23:15:37|Warn |WebSocket.sendHandshakeRequest:0|Received an authentication requirement for ''.
+25.02.2022 23:15:37|Error|WebSocket.sendHandshakeRequest:0|No authentication challenge is specified.
+25.02.2022 23:15:37|Error|WebSocket.doHandshake:0|Requires the authentication.
+25.02.2022 23:15:37|Trace|WebSocket.close:0|Begin closing the connection.
+25.02.2022 23:15:37|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+25.02.2022 23:15:37|Trace|WebSocket.close:0|End closing the connection.
