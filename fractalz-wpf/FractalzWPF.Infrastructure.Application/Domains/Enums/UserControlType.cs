@@ -12,6 +12,7 @@ namespace FractalzWPF.Infrastructure.Application.Domains.Enums
         Chat,
         News,
         Todo,
-        Cards
+        Cards,
+        Voice
     }
 }

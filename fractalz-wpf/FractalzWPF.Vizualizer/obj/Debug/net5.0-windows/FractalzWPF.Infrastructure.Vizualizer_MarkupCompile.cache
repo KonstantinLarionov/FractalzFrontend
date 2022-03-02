@@ -4,17 +4,17 @@
 library
 C#
 .cs
-C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\
 FractalzWPF.Infrastructure.Vizualizer
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 
-10822544045
+12610611969
 
-141285351246
-203-1043298446
-ChatWindow.xaml;DialogsUserControl.xaml;Elements\DialogElement.xaml;Elements\MessageElement.xaml;Elements\TodoElement.xaml;LoginWindow.xaml;ProfileUserControl.xaml;RegistrationWindow.xaml;TodoCreateWindow.xaml;TodoUserControl.xaml;
+16312540441
+203-125968717
+ChatWindow.xaml;DialogsUserControl.xaml;Elements\DialogElement.xaml;Elements\MessageElement.xaml;Elements\ServerElement.xaml;Elements\TodoElement.xaml;LoginWindow.xaml;ProfileUserControl.xaml;RegistrationWindow.xaml;TodoCreateWindow.xaml;TodoUserControl.xaml;VoiceControl.xaml;
 
 False
 
