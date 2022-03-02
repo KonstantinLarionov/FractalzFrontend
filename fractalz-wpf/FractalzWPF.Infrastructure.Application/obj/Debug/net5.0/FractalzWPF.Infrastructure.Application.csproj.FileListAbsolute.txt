@@ -36,7 +36,6 @@ C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastru
 C:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\obj\Debug\net5.0\FractalzWPF.Infrastructure.Application.csproj.AssemblyReference.cache
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\bin\Debug\net5.0\FractalzWPF.Infrastructure.Application.deps.json
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\bin\Debug\net5.0\FractalzWPF.Infrastructure.Application.dll
-C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\bin\Debug\net5.0\ref\FractalzWPF.Infrastructure.Application.dll
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\bin\Debug\net5.0\FractalzWPF.Infrastructure.Application.pdb
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\obj\Debug\net5.0\FractalzWPF.Infrastructure.Application.csproj.AssemblyReference.cache
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\obj\Debug\net5.0\FractalzWPF.Infrastructure.Application.GeneratedMSBuildEditorConfig.editorconfig
@@ -46,3 +45,4 @@ C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastru
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\obj\Debug\net5.0\FractalzWPF.Infrastructure.Application.dll
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\obj\Debug\net5.0\ref\FractalzWPF.Infrastructure.Application.dll
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\obj\Debug\net5.0\FractalzWPF.Infrastructure.Application.pdb
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\obj\Debug\net5.0\refint\FractalzWPF.Infrastructure.Application.dll

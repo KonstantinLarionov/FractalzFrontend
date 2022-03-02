@@ -101,7 +101,6 @@ C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualize
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.csproj.GenerateResource.cache
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\bin\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.deps.json
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\bin\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.dll
-C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\bin\Debug\net5.0-windows\ref\FractalzWPF.Infrastructure.Vizualizer.dll
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\bin\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.pdb
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\bin\Debug\net5.0-windows\FractalzWPF.Infrastructure.Application.dll
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\bin\Debug\net5.0-windows\FractalzWPF.Infrastructure.Application.pdb
@@ -143,3 +142,8 @@ C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualize
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\VoiceControl.baml
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\Elements\ServerElement.g.cs
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\Elements\ServerElement.baml
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\Elements\ServerElement.g.cs
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\VoiceControl.g.cs
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\Elements\ServerElement.baml
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\VoiceControl.baml
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\refint\FractalzWPF.Infrastructure.Vizualizer.dll

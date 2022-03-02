@@ -13,25 +13,8 @@
             </DockPanel>
         </Button>
         <StackPanel Name="tree" Visibility="Collapsed" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-            <TreeView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                <TreeViewItem IsExpanded="True" Width="450" Header="Комната 1">
-                    <TreeViewItem Width="450" Header="MS SQL Server" />
-                    <TreeViewItem Width="450" Header="MySQL" />
-                    <TreeViewItem Width="450" Header="MongoDB" />
-                    <TreeViewItem Width="450" Header="Postgres" />
-                </TreeViewItem>
-                <TreeViewItem IsExpanded="True" Width="450" Header="Комната 1">
-                    <TreeViewItem Width="450" Header="MS SQL Server" />
-                    <TreeViewItem Width="450" Header="MySQL" />
-                    <TreeViewItem Width="450" Header="MongoDB" />
-                    <TreeViewItem Width="450" Header="Postgres" />
-                </TreeViewItem>
-                <TreeViewItem Width="450" Header="Комната 1">
-                    <TreeViewItem Width="450" Header="MS SQL Server" />
-                    <TreeViewItem Width="450" Header="MySQL" />
-                    <TreeViewItem Width="450" Header="MongoDB" />
-                    <TreeViewItem Width="450" Header="Postgres" />
-                </TreeViewItem>
+            <TreeView Name="treeViewRooms">
+              
             </TreeView>
         </StackPanel>
     </DockPanel>

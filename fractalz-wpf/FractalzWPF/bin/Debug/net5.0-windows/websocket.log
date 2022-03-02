@@ -624,3 +624,115 @@
                             sent: False
                             received: True
 02.03.2022 16:57:28|Trace|WebSocket.close:0|End closing the connection.
+02.03.2022 20:38:17|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. [::1]:5001
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+02.03.2022 20:38:17|Trace|WebSocket.close:0|Begin closing the connection.
+02.03.2022 20:38:17|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+02.03.2022 20:38:17|Trace|WebSocket.close:0|End closing the connection.
+02.03.2022 21:10:16|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. [::1]:5001
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+02.03.2022 21:10:16|Trace|WebSocket.close:0|Begin closing the connection.
+02.03.2022 21:10:16|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+02.03.2022 21:10:16|Trace|WebSocket.close:0|End closing the connection.
+02.03.2022 21:11:45|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. [::1]:5001
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+02.03.2022 21:11:45|Trace|WebSocket.close:0|Begin closing the connection.
+02.03.2022 21:11:45|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+02.03.2022 21:11:45|Trace|WebSocket.close:0|End closing the connection.
+02.03.2022 21:13:39|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. [::1]:5001
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+02.03.2022 21:13:39|Trace|WebSocket.close:0|Begin closing the connection.
+02.03.2022 21:13:39|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+02.03.2022 21:13:39|Trace|WebSocket.close:0|End closing the connection.
+02.03.2022 21:14:28|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. [::1]:5001
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+02.03.2022 21:14:28|Trace|WebSocket.close:0|Begin closing the connection.
+02.03.2022 21:14:28|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+02.03.2022 21:14:28|Trace|WebSocket.close:0|End closing the connection.
+02.03.2022 21:15:50|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. [::1]:5001
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+02.03.2022 21:15:50|Trace|WebSocket.close:0|Begin closing the connection.
+02.03.2022 21:15:50|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+02.03.2022 21:15:50|Trace|WebSocket.close:0|End closing the connection.
+02.03.2022 21:18:11|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. [::1]:5001
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+02.03.2022 21:18:11|Trace|WebSocket.close:0|Begin closing the connection.
+02.03.2022 21:18:11|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+02.03.2022 21:18:11|Trace|WebSocket.close:0|End closing the connection.

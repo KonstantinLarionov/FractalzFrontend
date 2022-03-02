@@ -45,7 +45,6 @@ C:\Users\kosty\Source\Repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastruc
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Connector\obj\Debug\net5.0\refint\FractalzWPF.Infrastructure.Connector.dll
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Connector\bin\Debug\net5.0\FractalzWPF.Infrastructure.Connector.deps.json
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Connector\bin\Debug\net5.0\FractalzWPF.Infrastructure.Connector.dll
-C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Connector\bin\Debug\net5.0\ref\FractalzWPF.Infrastructure.Connector.dll
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Connector\bin\Debug\net5.0\FractalzWPF.Infrastructure.Connector.pdb
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Connector\bin\Debug\net5.0\FractalzWPF.Infrastructure.Application.dll
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Connector\bin\Debug\net5.0\FractalzWPF.Infrastructure.Application.pdb
@@ -58,3 +57,4 @@ C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastru
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Connector\obj\Debug\net5.0\FractalzWPF.Infrastructure.Connector.dll
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Connector\obj\Debug\net5.0\ref\FractalzWPF.Infrastructure.Connector.dll
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Connector\obj\Debug\net5.0\FractalzWPF.Infrastructure.Connector.pdb
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Connector\obj\Debug\net5.0\refint\FractalzWPF.Infrastructure.Connector.dll
