@@ -17,6 +17,20 @@
         CreateTask,
         UpdateStatusTask,
         DownloadFile,
-        DeleteTask
+        DeleteTask,
+        FindOtherServer,
+        GetOtherServers,
+        GetMyServers,
+        CreateMyServer,
+        EditMyServer,
+        DeleteMyServer,
+        DeleteRoom,
+        GetRooms,
+        GetUsersRoom,
+        CreateRoom,
+        EditRoom,
+        InsertUserInRoom,
+        DeleteUserFromRoom,
+        AddOtherServer,
     }
 }
