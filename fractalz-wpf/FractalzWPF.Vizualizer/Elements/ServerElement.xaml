@@ -9,7 +9,7 @@
     <DockPanel LastChildFill="True">
         <Button Height="50" Background="Transparent" BorderBrush="#009788" HorizontalContentAlignment="Left" DockPanel.Dock="Top" Click="ButtonBase_OnClick">
             <DockPanel>
-                <Label>Название сервера</Label>
+                <Label Name="nameServer"></Label>
             </DockPanel>
         </Button>
         <StackPanel Name="tree" Visibility="Collapsed" ScrollViewer.HorizontalScrollBarVisibility="Disabled">

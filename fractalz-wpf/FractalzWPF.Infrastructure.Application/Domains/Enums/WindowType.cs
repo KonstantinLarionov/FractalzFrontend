@@ -13,6 +13,8 @@ namespace FractalzWPF.Infrastructure.Application.Domains.Enums
         MainWindow,
         TodoCreate,
         TodoArchive,
-        Chat
+        Chat,
+        VoiceRoom,
+        VoiceServer
     }
 }

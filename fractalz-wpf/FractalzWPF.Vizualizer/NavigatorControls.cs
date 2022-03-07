@@ -23,7 +23,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer
                 { UserControlType.Profile, new ProfileUserControl() },
                 { UserControlType.Chat, new DialogsUserControl(handlers, noty, linkedEventService, this) },
                 { UserControlType.Todo, new TodoUserControl(noty, handlers) },
-                { UserControlType.Voice, new VoiceControl() }
+                { UserControlType.Voice, new VoiceControl(noty, handlers, this) }
             };
             Windows = new Dictionary<WindowType, Window>()
             {
@@ -31,6 +31,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer
                 { WindowType.Registration, new RegistrationWindow(handlers, noty) },
                 { WindowType.TodoCreate, new TodoCreateWindow(noty, handlers) },
                 { WindowType.Chat, new ChatWindow(handlers,noty,linkedEventService) },
+                { WindowType.VoiceServer, new VoiceServerCreateWindow(this, noty, handlers) },
             };
         }
     }

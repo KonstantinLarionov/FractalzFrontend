@@ -9,6 +9,7 @@ using FractalzWPF.Application.Domains.Entities.Profile;
 using FractalzWPF.Infrastructure.Application.Handlers.Chat;
 using FractalzWPF.Infrastructure.Application.Handlers.Todo;
 using FractalzWPF.Infrastructure.Application.Handlers.User;
+using FractalzWPF.Infrastructure.Application.Handlers.Voice;
 
 namespace FractalzWPF.Infrastructure.Application.Application
 {
@@ -24,5 +25,19 @@ namespace FractalzWPF.Infrastructure.Application.Application
         public GetMessageHistoryHandler GetMessageHistoryHandler { get; set; }
         public GetDialogsHandler GetDialogsHandler { get; set; }
 
+        public AddOtherServerHandler AddOtherServerHandler { get; set; }
+        public CreateMyServerHandler CreateMyServerHandler { get; set; }
+        public CreateRoomHandler CreateRoomHandler { get; set; }
+        public DeleteMyServerHandler DeleteMyServerHandler { get; set; }
+        public DeleteRoomHandler DeleteRoomHandler { get; set; }
+        public DelteUserFromRoomHandler DeleteUserFromRoomHandler { get; set; }
+        public EditMyServerHandler EditMyServerHandler { get; set; }
+        public EditRoomHandler EditRoomHandler { get; set; }
+        public FindServerHandler FindServerHandler { get; set; }
+        public GetMyServersHandler GetMyServersHandler { get; set; }
+        public GetOtherServersHandler GetOtherServersHandler { get; set; }
+        public GetRoomsHandler GetRoomsHandler { get; set; }
+        public GetUsersRoomHandler GetUsersRoomHandler { get; set; }
+        public InsertUserInRoomHandler InsertUserInRoomHandler { get; set; }
     }
 }

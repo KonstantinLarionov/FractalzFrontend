@@ -147,3 +147,7 @@ C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualize
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\Elements\ServerElement.baml
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\VoiceControl.baml
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\refint\FractalzWPF.Infrastructure.Vizualizer.dll
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\VoiceRoomCreateWindow.g.cs
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\VoiceServerCreateWindow.g.cs
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\VoiceRoomCreateWindow.baml
+C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\VoiceServerCreateWindow.baml

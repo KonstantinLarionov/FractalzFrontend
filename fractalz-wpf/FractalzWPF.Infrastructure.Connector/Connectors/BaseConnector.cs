@@ -17,7 +17,7 @@ namespace FractalzWPF.Infrastructure.Connector
         protected RestClient _client;
         public BaseConnector()
         {
-            _client = new RestClient("https://localhost:5001");
+            _client = new RestClient("https://localhost:5201");
         }
         
         /// <summary>

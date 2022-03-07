@@ -17,6 +17,7 @@ namespace FractalzWPF.Infrastructure.Connector
                 {ConnectorType.Chat, new ChatConnector()},
                 {ConnectorType.Todo, new TodoConnector()},
                 {ConnectorType.User, new UserConnector()},
+                {ConnectorType.Voice, new VoiceConnector()},
             };
         }
 
