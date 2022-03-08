@@ -119,20 +119,20 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Elements
         private void Mi2OnClick(object sender, RoutedEventArgs e)
         {
             var mi = (MenuItem)sender;
-            var result = _handlers.DeleteUserFromRoomHandler.Do(_handlers.UserData.Id, (int)mi.Tag);
+            var result = _handlers.DeleteUserFromRoomHandler.Do(_handlers.UserData.Id, Convert.ToInt32(mi.Tag));
             if(result.Success)
             {
                 _noty.Show("Отключение от сервера", "Вы успешно отключились", null, NotificationType.Success);}
             else
             {
-                _noty.Show("Отключение от сервера", "Не удалось отключится от сервера", null, NotificationType.Error);
+                _noty.Show("Отключение от сервера", result.Message, null, NotificationType.Error);
             }
         }
 
         private void MiOnMouseDown(object sender, RoutedEventArgs e)
         {
             var mi = (MenuItem)sender;
-            var result = _handlers.InsertUserInRoomHandler.Do((int)mi.Tag, _handlers.UserData.Id);
+            var result = _handlers.InsertUserInRoomHandler.Do(Convert.ToInt32(mi.Tag), _handlers.UserData.Id);
             if(result.Success)
             {
                 _noty.Show("Подключение к серверу", "Вы успешно подключились", null, NotificationType.Success);}
