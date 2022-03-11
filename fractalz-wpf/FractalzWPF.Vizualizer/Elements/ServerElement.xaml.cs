@@ -19,7 +19,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Elements
         private readonly INavigatorControls _controls;
         private readonly INavigatorHandlers _handlers;
         private readonly NotifyHandler _noty;
-
+        private List<TreeViewItem> tvil = new List<TreeViewItem>();
         public ServerElement(int id, string name, 
             List<VoiceRoom> rooms, 
             Dictionary<int, List<User>>userrooms, 
@@ -36,8 +36,21 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Elements
             
             nameServer.Content = name;
             for (int i = 0; i < rooms.Count; i++)
-                treeViewRooms.Items.Add(CreateUIRoom(rooms[i].Id, rooms[i].Name,
-                    userrooms.FirstOrDefault(x=>x.Key == rooms[i].Id).Value));
+            {
+                var item = CreateUIRoom(rooms[i].Id, rooms[i].Name,
+                    userrooms.FirstOrDefault(x => x.Key == rooms[i].Id).Value);
+                treeViewRooms.Items.Add(item);
+                tvil.Add(item);
+            }
+
+            VoiceRoomEvents.CreateEvent += VoiceRoomEventsOnCreateEvent;
+        }
+
+        private void VoiceRoomEventsOnCreateEvent(TreeViewItem task)
+        {
+            task.ContextMenu = CreateMenuRoom(task.Tag.ToString());
+            treeViewRooms.Items.Add(task);
+            tvil.Add(task);
         }
 
         #region [ContextMenuServer]
@@ -61,7 +74,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Elements
             if (result.Success)
             {
                 _noty.Show("Удаление сервера", "Сервер успешно удален", null, NotificationType.Success);
-                VoiceEvents.DeleteEventInvoke(this);
+                VoiceServerEvents.DeleteEventInvoke(this);
             }
             else
             {
@@ -106,10 +119,13 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Elements
         private void Mi3OnClick(object sender, RoutedEventArgs e)
         { 
             var mi = (MenuItem)sender;
-            var result = _handlers.DeleteRoomHandler.Do(this._id, (int)mi.Tag);
+            var result = _handlers.DeleteRoomHandler.Do(this._id, Convert.ToInt32(mi.Tag));
             if(result.Success)
             {
-                _noty.Show("Удаление комнаты", "Вы успешно удалили комнату", null, NotificationType.Success);}
+                var itemIndex = tvil.FindIndex(x=>Convert.ToInt32(x.Tag) == Convert.ToInt32(mi.Tag));
+                treeViewRooms.Items.Remove(treeViewRooms.Items[itemIndex]);
+                tvil.Remove(tvil[itemIndex]);
+                    _noty.Show("Удаление комнаты", "Вы успешно удалили комнату", null, NotificationType.Success);}
             else
             {
                 _noty.Show("Удаление комнаты", "Не удалось удалить комнату", null, NotificationType.Error);
@@ -146,6 +162,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Elements
         {
             var room = new TreeViewItem()
             {
+                Name = "tvi" + id.ToString(),
                 Tag = id.ToString(),
                 Header = name,
                 ContextMenu = CreateMenuRoom(id.ToString())

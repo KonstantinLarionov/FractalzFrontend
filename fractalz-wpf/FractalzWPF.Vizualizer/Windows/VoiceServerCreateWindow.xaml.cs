@@ -28,7 +28,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer
             if (result.Success)
             {
                 _notifyHandler.Show("Создание сервера", "Сервер успешно создан", null, NotificationType.Success);
-                VoiceEvents.CreateEventInvoke(new ServerElement(result.Server.Id, result.Server.Name, result.Server.Rooms,
+                VoiceServerEvents.CreateEventInvoke(new ServerElement(result.Server.Id, result.Server.Name, result.Server.Rooms,
                     new Dictionary<int, List<User>>(), _controls, _navigator,_notifyHandler));
                 this.Hide();
             }

@@ -24,8 +24,8 @@ namespace FractalzWPF.Infrastructure.Vizualizer
             _navigator = navigator;
             _controls = controls;
             
-            VoiceEvents.CreateEvent += VoiceEventsOnCreateEvent;
-            VoiceEvents.DeleteEvent += VoiceEventsOnDeleteEvent;
+            VoiceServerEvents.CreateEvent += VoiceEventsOnCreateEvent;
+            VoiceServerEvents.DeleteEvent += VoiceEventsOnDeleteEvent;
         }
 
         private void VoiceEventsOnDeleteEvent(UserControl task) =>

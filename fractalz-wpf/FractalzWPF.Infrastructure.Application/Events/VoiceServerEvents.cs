@@ -2,7 +2,7 @@
 
 namespace FractalzWPF.Infrastructure.Application.Events
 {
-    public class VoiceEvents
+    public class VoiceServerEvents
     {
         public delegate void DeleteDelegate(UserControl task);
         public static event DeleteDelegate DeleteEvent;

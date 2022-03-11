@@ -1,5 +1,8 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
+using FractalzWPF.Application.Domains.Entities.Voice;
 using FractalzWPF.Infrastructure.Application.Application;
+using FractalzWPF.Infrastructure.Application.Events;
 using Notifications.Wpf;
 
 namespace FractalzWPF.Infrastructure.Vizualizer
@@ -23,6 +26,11 @@ namespace FractalzWPF.Infrastructure.Vizualizer
             var result = _navigator.CreateRoomHandler.Do(nameRoom.Text, _serverId);
             if (result.Success)
             {
+                VoiceRoomEvents.CreateEventInvoke(new TreeViewItem()
+                {
+                    Tag = result.Room.Id.ToString(),
+                    Header = result.Room.Name
+                });
                 _notifyHandler.Show("Создание комнаты", "Комната успешно создана", null, NotificationType.Success);
             }
             else

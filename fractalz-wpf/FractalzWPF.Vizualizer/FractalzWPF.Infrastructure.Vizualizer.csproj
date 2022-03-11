@@ -43,6 +43,51 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>MessageResource.resx</DependentUpon>
     </Compile>
+    <Compile Update="Windows\ChatWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\LoginWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\RegistrationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\TodoCreateWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controlls\DialogsUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controlls\ProfileUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controlls\TodoUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Windows\ChatWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\TodoCreateWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controlls\DialogsUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controlls\ProfileUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controlls\TodoUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>
