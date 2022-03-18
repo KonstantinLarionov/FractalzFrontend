@@ -56,11 +56,13 @@ namespace FractalzWPF
         {
             var mainWindow = SC.provider.GetService<MainWindow>();
             var navigator = SC.provider.GetService<INavigatorControls>();
-            
-            navigator.Windows[WindowType.Registration].Show();
-            navigator.Windows[WindowType.Login].Show();
-            navigator.Windows[WindowType.TodoCreate].Show();
-            navigator.Windows[WindowType.Chat].Show();
+            //
+            // navigator.Windows[WindowType.Registration].Show();
+            // navigator.Windows[WindowType.Login].Show();
+            // navigator.Windows[WindowType.TodoCreate].Show();
+            // navigator.Windows[WindowType.Chat].Show();
+            navigator.Windows[WindowType.CreateConference].Show();
+            navigator.Windows[WindowType.Conference].Show();
             
             mainWindow.Show();
         }

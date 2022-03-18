@@ -41,6 +41,12 @@ namespace FractalzWPF.Infrastructure.Vizualizer
         {
             my_space.Children.Clear();
             var my_servers = _navigator.GetMyServersHandler.Do(_navigator.UserData.Id);
+            if (my_servers == null)
+            {
+                _notifyHandler.Show("Проблемы с загрузкой", "Не удалось загрузить голосовые сервера", null, NotificationType.Error);
+                return;
+            }
+
             if (my_servers.Success)
             {
                 foreach (var server in my_servers.Servers)

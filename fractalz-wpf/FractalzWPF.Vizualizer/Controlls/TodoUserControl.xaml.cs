@@ -93,7 +93,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer
         private void TodoEventsOnCreateEvent(UserControl task)
         {
             BuildData();
-            sp_todoList.Children.Insert(0, task);
+            //sp_todoList.Children.Insert(0, task);
         }
 
         private void TodoUserControl_OnLoaded(object sender, RoutedEventArgs e) =>

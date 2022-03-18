@@ -23,11 +23,14 @@
                     <Button Name="dialogsLB" Click="dialogsLB_Click" DockPanel.Dock="Top" ToolTip="Диалоги" Background="{x:Null}" BorderBrush="{x:Null}" Height="50" Padding="0" Margin="0,0,0,0">
                         <md:PackIcon Kind="MessageGroup" VerticalAlignment="Center" Width="66" HorizontalAlignment="Center" Height="30" />
                     </Button>
-                    <Button DockPanel.Dock="Top" Click="todoLB_Click" ToolTip="Список задач" Background="{x:Null}" BorderBrush="{x:Null}" Height="50" Padding="0" Margin="0,0,0,0">
-                        <md:PackIcon Kind="ToDo" VerticalAlignment="Center" Width="66" HorizontalAlignment="Center" Height="30" />
+                    <Button Name="videoChatLB" Click="VideoChatLB_OnClick" DockPanel.Dock="Top" ToolTip="Конференции" Background="{x:Null}" BorderBrush="{x:Null}" Height="50" Padding="0" Margin="0,0,0,0">
+                        <md:PackIcon Kind="Video" VerticalAlignment="Center" Width="66" HorizontalAlignment="Center" Height="30" />
                     </Button>
                     <Button DockPanel.Dock="Top" Click="ButtonBase_OnClick" IsEnabled="true" ToolTip="Голосовые чаты" Background="{x:Null}" BorderBrush="{x:Null}" Height="50" Padding="0" Margin="0,0,0,0">
                         <md:PackIcon Kind="Microphone" VerticalAlignment="Center" Width="66" HorizontalAlignment="Center" Height="30" />
+                    </Button>
+                    <Button DockPanel.Dock="Top" Click="todoLB_Click" ToolTip="Список задач" Background="{x:Null}" BorderBrush="{x:Null}" Height="50" Padding="0" Margin="0,0,0,0">
+                        <md:PackIcon Kind="ToDo" VerticalAlignment="Center" Width="66" HorizontalAlignment="Center" Height="30" />
                     </Button>
                     <Button DockPanel.Dock="Bottom" ToolTip="Вход/Выход" Background="{x:Null}" BorderBrush="{x:Null}" Height="50" Padding="0" Margin="0,100,0,0">
                         <md:PackIcon Kind="ExitToApp" VerticalAlignment="Center" Width="66" HorizontalAlignment="Center" Height="30" />

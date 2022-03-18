@@ -13,6 +13,7 @@ namespace FractalzWPF.Infrastructure.Application.Domains.Enums
         News,
         Todo,
         Cards,
-        Voice
+        Voice,
+        VideoChats
     }
 }

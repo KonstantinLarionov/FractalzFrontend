@@ -20,7 +20,7 @@
     <DockPanel Margin="0,2,0,-2">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Orientation="Horizontal" DockPanel.Dock="Top" Height="60">
             <md:PackIcon VerticalAlignment="Center" Kind="Search" Width="30" Height="30"/>
-            <TextBox Width="320" FontSize="16" md:HintAssist.Hint="Найти диалог" md:HintAssist.HelperText="(начнте вводить имя или название диалога)" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Width="320" FontSize="16" md:HintAssist.Hint="Найти диалог" md:HintAssist.HelperText="(начните вводить имя или название диалога и нажмите Enter)" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             
         </StackPanel>
         <ScrollViewer  Margin="0,5,0,0" IsTabStop="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled">

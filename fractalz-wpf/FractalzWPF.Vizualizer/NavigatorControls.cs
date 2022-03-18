@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using FractalzWPF.Application.Domains.Entities.Profile;
+using FractalzWPF.Infrastructure.Vizualizer.Controlls;
+using FractalzWPF.Infrastructure.Vizualizer.Windows;
 using Microsoft.Extensions.Options;
 
 namespace FractalzWPF.Infrastructure.Vizualizer
@@ -23,7 +25,8 @@ namespace FractalzWPF.Infrastructure.Vizualizer
                 { UserControlType.Profile, new ProfileUserControl() },
                 { UserControlType.Chat, new DialogsUserControl(handlers, noty, linkedEventService, this) },
                 { UserControlType.Todo, new TodoUserControl(noty, handlers) },
-                { UserControlType.Voice, new VoiceControl(noty, handlers, this) }
+                { UserControlType.Voice, new VoiceControl(noty, handlers, this) },
+                { UserControlType.VideoChats, new VideoChatsControl() }
             };
             Windows = new Dictionary<WindowType, Window>()
             {
@@ -32,6 +35,8 @@ namespace FractalzWPF.Infrastructure.Vizualizer
                 { WindowType.TodoCreate, new TodoCreateWindow(noty, handlers) },
                 { WindowType.Chat, new ChatWindow(handlers,noty,linkedEventService) },
                 { WindowType.VoiceServer, new VoiceServerCreateWindow(this, noty, handlers) },
+                { WindowType.CreateConference, new CreateConferenceWindow() },
+                { WindowType.Conference, new ConferenceWindow() },
             };
         }
     }

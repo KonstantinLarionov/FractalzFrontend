@@ -1,17 +1,22 @@
 ﻿
 
-FC:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\Controlls\DialogsUserControl.xaml;;
-FC:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\Controlls\ProfileUserControl.xaml;;
-FC:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\Controlls\TodoUserControl.xaml;;
-FC:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\Controlls\VoiceControl.xaml;;
-FC:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\Elements\DialogElement.xaml;;
-FC:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\Elements\MessageElement.xaml;;
-FC:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\Elements\ServerElement.xaml;;
-FC:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\Elements\TodoElement.xaml;;
-FC:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\Windows\ChatWindow.xaml;;
-FC:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\Windows\LoginWindow.xaml;;
-FC:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\Windows\RegistrationWindow.xaml;;
-FC:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\Windows\TodoCreateWindow.xaml;;
-FC:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\Windows\VoiceRoomCreateWindow.xaml;;
-FC:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\Windows\VoiceServerCreateWindow.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Controlls\DialogsUserControl.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Controlls\ProfileUserControl.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Controlls\TodoUserControl.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Controlls\VideoChatsControl.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Controlls\VoiceControl.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Elements\ConferenceElement.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Elements\DialogElement.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Elements\MessageElement.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Elements\ServerElement.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Elements\TodoElement.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Elements\UserAddConferenceElement.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Windows\ChatWindow.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Windows\ConferenceWindow.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Windows\CreateConferenceWindow.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Windows\LoginWindow.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Windows\RegistrationWindow.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Windows\TodoCreateWindow.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Windows\VoiceRoomCreateWindow.xaml;;
+FC:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\Windows\VoiceServerCreateWindow.xaml;;
 

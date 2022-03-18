@@ -34,7 +34,7 @@ namespace FractalzWPF
             InitializeComponent();
             _navigatorControls = navigatorControls;
             _navigatorHandlers = navigatorHandlers;
-            dialogsLB_Click(this, new RoutedEventArgs());
+            VideoChatLB_OnClick(this, new RoutedEventArgs());
         }
 
         private void profileLB_Click(object sender, RoutedEventArgs e) => Switcher(UserControlType.Profile);
@@ -44,7 +44,9 @@ namespace FractalzWPF
         private void todoLB_Click(object sender, RoutedEventArgs e) => Switcher(UserControlType.Todo);
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e) => Switcher(UserControlType.Voice);
-
+        
+        private void VideoChatLB_OnClick(object sender, RoutedEventArgs e) => Switcher(UserControlType.VideoChats);
+        
         private void Window_Closed(object sender, EventArgs e) => System.Windows.Application.Current.Shutdown();
 
         private void Switcher(UserControlType controlType)
@@ -52,5 +54,6 @@ namespace FractalzWPF
             mainSpace.Children.Clear();
             mainSpace.Children.Add(_navigatorControls.Controls[controlType]);
         }
+
     }
 }
