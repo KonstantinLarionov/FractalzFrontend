@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using FractalzWPF.Application.Domains.Entities.Profile;
 using FractalzWPF.Application.Domains.Responses.User;
 using FractalzWPF.Infrastructure.Application.Handlers.Chat;
+using FractalzWPF.Infrastructure.Application.Handlers.Conference;
 using FractalzWPF.Infrastructure.Application.Handlers.Todo;
 using FractalzWPF.Infrastructure.Application.Handlers.User;
 using FractalzWPF.Infrastructure.Application.Handlers.Voice;
@@ -41,11 +42,19 @@ namespace FractalzWPF.Infrastructure.Application
         public GetRoomsHandler GetRoomsHandler { get; set; }
         public GetUsersRoomHandler GetUsersRoomHandler { get; set; }
         public InsertUserInRoomHandler InsertUserInRoomHandler { get; set; }
+        
+        public AddUserInConferenceHandler AddUserInConferenceHandler { get; set; }
+        public CreateConferenceHandler CreateConferenceHandler { get; set; }
+        public DeleteConferenceHandler DeleteConferenceHandler { get; set; }
+        public DeleteUserFromConferenceHandler DeleteUserFromConferenceHandler { get; set; }
+        public EditConferenceHandler EditConferenceHandler { get; set; }
+        public FindConferenceHandler FindConferenceHandler { get; set; }
+        public GetMyConferenceHandler GetMyConferenceHandler { get; set; }
 
-        public Navigator(RegistrationHandler regHandler, 
-            GetTodoListHandler getTodoListHandler, 
-            CreateTaskHandler createTaskHandler, 
-            DeleteTaskHandler deleteTaskHandler, 
+        public Navigator(RegistrationHandler regHandler,
+            GetTodoListHandler getTodoListHandler,
+            CreateTaskHandler createTaskHandler,
+            DeleteTaskHandler deleteTaskHandler,
             UpdateStatusTaskHandler updateStatusTaskHandler,
             LoginHandler loginHandler,
             GetMessageHistoryHandler getMessageHistoryHandler,
@@ -64,7 +73,12 @@ namespace FractalzWPF.Infrastructure.Application
             GetOtherServersHandler getOtherServersHandler,
             GetRoomsHandler getRoomsHandler,
             GetUsersRoomHandler getUsersRoomHandler,
-            InsertUserInRoomHandler insertUserInRoomHandler)
+            InsertUserInRoomHandler insertUserInRoomHandler,
+            AddUserInConferenceHandler addUserInConferenceHandler, CreateConferenceHandler createConferenceHandler,
+            DeleteConferenceHandler deleteConferenceHandler,
+            DeleteUserFromConferenceHandler deleteUserFromConferenceHandler,
+            EditConferenceHandler editConferenceHandler, FindConferenceHandler findConferenceHandler,
+            GetMyConferenceHandler getMyConferenceHandler)
         {
             UserData = userData.Value ?? throw new ArgumentException(nameof(userData));
             GetMessageHistoryHandler = getMessageHistoryHandler;
@@ -89,6 +103,14 @@ namespace FractalzWPF.Infrastructure.Application
             GetRoomsHandler = getRoomsHandler;
             GetUsersRoomHandler = getUsersRoomHandler;
             InsertUserInRoomHandler = insertUserInRoomHandler;
+            AddUserInConferenceHandler = addUserInConferenceHandler;
+
+            CreateConferenceHandler = createConferenceHandler;
+            DeleteConferenceHandler = deleteConferenceHandler;
+            DeleteUserFromConferenceHandler = deleteUserFromConferenceHandler;
+            EditConferenceHandler = editConferenceHandler;
+            FindConferenceHandler = findConferenceHandler;
+            GetMyConferenceHandler = getMyConferenceHandler;
         }
     }
 }

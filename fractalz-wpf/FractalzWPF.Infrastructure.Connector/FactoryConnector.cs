@@ -18,6 +18,7 @@ namespace FractalzWPF.Infrastructure.Connector
                 {ConnectorType.Todo, new TodoConnector()},
                 {ConnectorType.User, new UserConnector()},
                 {ConnectorType.Voice, new VoiceConnector()},
+                {ConnectorType.Conference, new ConferenceConnector()},
             };
         }
 

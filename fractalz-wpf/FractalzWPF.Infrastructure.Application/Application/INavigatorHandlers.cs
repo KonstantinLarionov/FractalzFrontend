@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FractalzWPF.Application.Domains.Entities.Profile;
 using FractalzWPF.Infrastructure.Application.Handlers.Chat;
+using FractalzWPF.Infrastructure.Application.Handlers.Conference;
 using FractalzWPF.Infrastructure.Application.Handlers.Todo;
 using FractalzWPF.Infrastructure.Application.Handlers.User;
 using FractalzWPF.Infrastructure.Application.Handlers.Voice;
@@ -16,6 +17,7 @@ namespace FractalzWPF.Infrastructure.Application.Application
     public interface INavigatorHandlers
     {        
         public UserData UserData { get; set; }
+        
         public GetTodoListHandler GetTodoListHandler { get; set; }
         public CreateTaskHandler CreateTaskHandler { get; set; }
         public DeleteTaskHandler DeleteTaskHandler { get; set; }
@@ -39,5 +41,13 @@ namespace FractalzWPF.Infrastructure.Application.Application
         public GetRoomsHandler GetRoomsHandler { get; set; }
         public GetUsersRoomHandler GetUsersRoomHandler { get; set; }
         public InsertUserInRoomHandler InsertUserInRoomHandler { get; set; }
+
+        public AddUserInConferenceHandler AddUserInConferenceHandler { get; set; }
+        public CreateConferenceHandler CreateConferenceHandler { get; set; }
+        public DeleteConferenceHandler DeleteConferenceHandler { get; set; }
+        public DeleteUserFromConferenceHandler DeleteUserFromConferenceHandler { get; set; }
+        public EditConferenceHandler EditConferenceHandler { get; set; }
+        public FindConferenceHandler FindConferenceHandler { get; set; }
+        public GetMyConferenceHandler GetMyConferenceHandler { get; set; }
     }
 }
