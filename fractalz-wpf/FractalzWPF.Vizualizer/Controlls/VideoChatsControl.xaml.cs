@@ -35,9 +35,9 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Controlls
         {
             conferenceSpace.Children.Clear();
             var response = _navigator.GetMyConferenceHandler.Do(_navigator.UserData.Id);
-            if (!response.Success)
+            if (response == null || !response.Success)
             {
-                _notifyHandler.Show("Проблемы с получением данных", response.Message, null, NotificationType.Error);
+                _notifyHandler.Show("Проблемы с получением данных", response?.Message, null, NotificationType.Error);
                 return;
             }
 

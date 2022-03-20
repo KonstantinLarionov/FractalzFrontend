@@ -6,7 +6,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:FractalzWPF.Infrastructure.Vizualizer.Windows"
         mc:Ignorable="d"
-        Title="Создание и редактирование конференции" Height="430" Width="400" ResizeMode="NoResize">
+        Title="Создание и редактирование конференции" Height="480" Width="400" ResizeMode="NoResize">
     <Window.Resources>
 
         <Style TargetType="ScrollBar">
@@ -18,24 +18,29 @@
 
     <DockPanel>
         <DockPanel Margin="10" LastChildFill="False">
-            <TextBox FontSize="15" DockPanel.Dock="Top" md:HintAssist.Hint="Название конференции"/>
+            <TextBox Name="confName" FontSize="15" DockPanel.Dock="Top" md:HintAssist.Hint="Название конференции"/>
+            <TextBox Margin="0,10,0,5" Name="confToken" FontSize="15" DockPanel.Dock="Top" md:HintAssist.Hint="Уникальный токен конференции" md:HintAssist.HelperText="Уникальный токен по которому можно найти конференцию"/>
             <DockPanel DockPanel.Dock="Top" Margin="0,10">
-                <DatePicker FontSize="15" Width="195" Margin="0,0,5,0" DockPanel.Dock="Left" md:HintAssist.Hint="Дата начала"/>
-                <md:TimePicker FontSize="15" DockPanel.Dock="Right" md:HintAssist.Hint="Время начала"/>
+                <DatePicker Name="dateStart" FontSize="15" Width="195" Margin="0,0,5,0" DockPanel.Dock="Left" md:HintAssist.Hint="Дата начала"/>
+                <md:TimePicker Name="timeStart" FontSize="15" DockPanel.Dock="Right" md:HintAssist.Hint="Время начала"/>
             </DockPanel>
-            <ComboBox FontSize="15" IsEditable="True" DockPanel.Dock="Top" md:HintAssist.Hint="Добавить основного пользователя"/>
+            <ComboBox Name="findUserMain" FontSize="15" IsEditable="True" DockPanel.Dock="Top" md:HintAssist.Hint="Добавить основного пользователя"/>
             <ScrollViewer  Margin="5,10" DockPanel.Dock="Top" Height="80"  IsTabStop="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                 <StackPanel Margin="5,10" DockPanel.Dock="Top" Height="80" Name="mainUsers">
                 
                 </StackPanel>
             </ScrollViewer>
-            <ComboBox FontSize="15" IsEditable="True" DockPanel.Dock="Top" md:HintAssist.Hint="Добавить временного пользователя"/>
+            <ComboBox Name="findUserOther" FontSize="15" IsEditable="True" DockPanel.Dock="Top" md:HintAssist.Hint="Добавить временного пользователя"/>
             <ScrollViewer  Margin="5,10" DockPanel.Dock="Top" Height="80"  IsTabStop="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                 <StackPanel Margin="5,10" DockPanel.Dock="Top" Height="80" Name="otherUsers">
                 
                 </StackPanel>
             </ScrollViewer>
-            <Button DockPanel.Dock="Bottom" BorderBrush="#009788" Background="#009788" Foreground="White">Создать/Редактировать</Button>
+            <DockPanel DockPanel.Dock="Bottom">
+                <Label FontSize="12">Повторять каждый день?</Label>
+                <ToggleButton Name="tb_dayLoop" Margin="5,0" BorderBrush="#009788" Background="#009788"  Foreground="#009788"></ToggleButton>
+                <Button Click="ButtonBase_OnClick" DockPanel.Dock="Bottom" BorderBrush="#009788" Background="#009788" Foreground="White">Создать/Изменить</Button>
+            </DockPanel>
         </DockPanel>
     </DockPanel>
 </Window>

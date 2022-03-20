@@ -35,7 +35,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer
                 { WindowType.TodoCreate, new TodoCreateWindow(noty, handlers) },
                 { WindowType.Chat, new ChatWindow(handlers,noty,linkedEventService) },
                 { WindowType.VoiceServer, new VoiceServerCreateWindow(this, noty, handlers) },
-                { WindowType.CreateConference, new CreateConferenceWindow() },
+                { WindowType.CreateConference, new CreateConferenceWindow(handlers, noty) },
                 { WindowType.Conference, new ConferenceWindow() },
             };
         }
