@@ -47,7 +47,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Controlls
                 Dispatcher.BeginInvoke((Action) delegate
                 {
                     if (conference.DateTimeStart != null)
-                        conferenceSpace.Children.Add(new ConferenceElement(conference.Id, conference.Name,
+                        conferenceSpace.Children.Add(new ConferenceElement(this._navigator, this._notifyHandler, conference.Id, conference.Name,
                             conference.DateTimeStart.Value));
                 });
             }

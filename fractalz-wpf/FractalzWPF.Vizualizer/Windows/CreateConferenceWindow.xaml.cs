@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Windows;
 using FractalzWPF.Application.Domains.Entities.Profile;
 using FractalzWPF.Infrastructure.Application.Application;
+using FractalzWPF.Infrastructure.Application.Events;
 using FractalzWPF.Infrastructure.Vizualizer.Elements;
+using Notifications.Wpf;
 
 namespace FractalzWPF.Infrastructure.Vizualizer.Windows
 {
@@ -23,6 +25,9 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
         {
             InitializeComponent();
             
+            this.dateStart.Text = DateTime.Now.ToShortDateString();
+            this.timeStart.Text = DateTime.Now.ToShortTimeString();
+            
             _handlers = handlers;
             _noty = noty;
             SetupInfo(id, name,token,dateStart, dayLoop,mainUser, otherUser);
@@ -30,7 +35,29 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            // var result = _handlers.CreateConferenceHandler.Do(_handlers.UserData.Id, confName.Text, confToken.Text, dateStart,  )
+            var date = DateTime.Parse(dateStart.Text);
+            var time = DateTime.Parse(timeStart.Text);
+            DateTime dtStart = new DateTime(date.Year,date.Month, date.Day, time.Hour, time.Minute, time.Second);
+
+            if (_id is null or 0)
+            {
+                var result = _handlers.CreateConferenceHandler.Do(_handlers.UserData.Id, confName.Text, confToken.Text,
+                    dtStart, tb_dayLoop.IsChecked ?? false);
+                if (result.Success)
+                {
+                    _noty.Show("Конференция успешно создалась!", "", null, NotificationType.Success);
+                    var confElem = new ConferenceElement(_handlers, _noty,result.IdConference, confName.Text, dtStart);
+                    ConferenceEvents.CreateEventInvoke(confElem);
+                }
+                else
+                {
+                    _noty.Show("Проблемы с созданием конференции", result.Message, null, NotificationType.Error);
+                }
+            }
+            else if(_id.HasValue)
+            {
+                var result = _handlers.EditConferenceHandler.Do(_handlers.UserData.Id, dtStart,tb_dayLoop.IsChecked ?? false, _id.Value, confName.Text, confToken.Text);
+            }
         }
 
         private void SetupInfo(int? id, string name, string token, DateTime? dateStartI, bool? dayLoop,

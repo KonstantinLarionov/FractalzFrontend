@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SP8ZRqq4dRkC9GVoBYFizLWc1hsJje+c+z+HKtCYoEbJbmA+qSFg9aK6Gm0KhXD83ZXbLS2Svh5rO8WYf4gPwA==",
+  "dgSpecHash": "dUw8IUonibuRZDUOYAmmkaZRWR2yyijQdROoOPIcBmdI+CoJLDSQ/1hxnTiO52EtKdTSaThc/Pj5AOmCdwUezA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kosty\\RiderProjects\\FractalzFrontend\\fractalz-wpf\\FractalzWPF.Infrastructure.LinkedEvent\\FractalzWPF.Infrastructure.LinkedEvent.csproj",
+  "projectFilePath": "D:\\.rider\\Fractalz\\Frontend\\fractalz-wpf\\FractalzWPF.Infrastructure.LinkedEvent\\FractalzWPF.Infrastructure.LinkedEvent.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\kosty\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
