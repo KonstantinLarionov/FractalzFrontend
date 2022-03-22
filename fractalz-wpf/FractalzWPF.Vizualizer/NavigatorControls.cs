@@ -26,7 +26,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer
                 { UserControlType.Chat, new DialogsUserControl(handlers, noty, linkedEventService, this) },
                 { UserControlType.Todo, new TodoUserControl(noty, handlers) },
                 { UserControlType.Voice, new VoiceControl(noty, handlers, this) },
-                { UserControlType.VideoChats, new VideoChatsControl() }
+                { UserControlType.VideoChats, new VideoChatsControl(noty, handlers, this) }
             };
             Windows = new Dictionary<WindowType, Window>()
             {
@@ -35,7 +35,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer
                 { WindowType.TodoCreate, new TodoCreateWindow(noty, handlers) },
                 { WindowType.Chat, new ChatWindow(handlers,noty,linkedEventService) },
                 { WindowType.VoiceServer, new VoiceServerCreateWindow(this, noty, handlers) },
-                { WindowType.CreateConference, new CreateConferenceWindow() },
+                { WindowType.CreateConference, new CreateConferenceWindow(handlers, noty) },
                 { WindowType.Conference, new ConferenceWindow() },
             };
         }

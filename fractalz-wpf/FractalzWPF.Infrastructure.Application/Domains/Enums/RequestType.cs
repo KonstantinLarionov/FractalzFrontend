@@ -32,5 +32,12 @@
         InsertUserInRoom,
         DeleteUserFromRoom,
         AddOtherServer,
+        GetMyConferences,
+        FindConferenceByToken,
+        EditConference,
+        DeleteConference,
+        CreateConference,
+        AddUserInConference,
+        DeleteUserFromConference
     }
 }

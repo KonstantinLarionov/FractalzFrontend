@@ -2,6 +2,7 @@
 {
     public enum ConnectorType
     {
-        User, Todo, Chat, Voice
+        User, Todo, Chat, Voice,
+        Conference
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FractalzWPF.Infrastructure.Application.Handlers.Chat;
+using FractalzWPF.Infrastructure.Application.Handlers.Conference;
 using FractalzWPF.Infrastructure.Application.Handlers.Todo;
 using FractalzWPF.Infrastructure.Application.Handlers.User;
 using FractalzWPF.Infrastructure.Application.Handlers.Voice;
@@ -52,6 +53,16 @@ namespace FractalzWPF.Infrastructure.Application
             serviceCollection.AddTransient<GetRoomsHandler>();
             serviceCollection.AddTransient<GetUsersRoomHandler>();
             serviceCollection.AddTransient<InsertUserInRoomHandler>();
+            #endregion
+
+            #region [Conference]
+            serviceCollection.AddTransient<AddUserInConferenceHandler>();
+            serviceCollection.AddTransient<CreateConferenceHandler>();
+            serviceCollection.AddTransient<DeleteConferenceHandler>();
+            serviceCollection.AddTransient<DeleteUserFromConferenceHandler>();
+            serviceCollection.AddTransient<EditConferenceHandler>();
+            serviceCollection.AddTransient<FindConferenceHandler>();
+            serviceCollection.AddTransient<GetMyConferenceHandler>();
             #endregion
             
             serviceCollection.AddSingleton<INavigatorHandlers, Navigator>();
