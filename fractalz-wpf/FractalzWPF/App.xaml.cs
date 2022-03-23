@@ -16,6 +16,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using FractalzWPF.Application.Domains.Entities.Profile;
+using FractalzWPF.Infrastructure.Video;
 using Microsoft.Extensions.Configuration;
 
 namespace FractalzWPF
@@ -48,6 +49,7 @@ namespace FractalzWPF
             services.AddInfrastructureConnector();
             services.AddInfrastructureVisualizer();
             services.AddInfrastructureLinkedEvent();
+            services.AddInfrastructureVideo();
             
             services.AddSingleton<MainWindow>();
         }

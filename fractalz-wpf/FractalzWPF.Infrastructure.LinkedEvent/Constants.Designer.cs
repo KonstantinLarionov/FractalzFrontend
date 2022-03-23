@@ -61,7 +61,7 @@ namespace FractalzWPF.Infrastructure.LinkedEvent {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to /ws/subscribe.
+        ///   Looks up a localized string similar to /ws/.
         /// </summary>
         internal static string ENDPOINT_OpenServer {
             get {
@@ -79,7 +79,7 @@ namespace FractalzWPF.Infrastructure.LinkedEvent {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 5001.
+        ///   Looks up a localized string similar to 5201.
         /// </summary>
         internal static string PORT_OpenServer {
             get {

@@ -1,0 +1,15 @@
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\bin\Debug\net5.0\FractalzWPF.Infrastructure.Video.deps.json
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\bin\Debug\net5.0\FractalzWPF.Infrastructure.Video.dll
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\bin\Debug\net5.0\FractalzWPF.Infrastructure.Video.pdb
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\bin\Debug\net5.0\FractalzWPF.Infrastructure.Application.dll
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\bin\Debug\net5.0\FractalzWPF.Infrastructure.Application.pdb
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\FractalzWPF.Infrastructure.Video.csproj.AssemblyReference.cache
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\FractalzWPF.Infrastructure.Video.GeneratedMSBuildEditorConfig.editorconfig
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\FractalzWPF.Infrastructure.Video.AssemblyInfoInputs.cache
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\FractalzWPF.Infrastructure.Video.AssemblyInfo.cs
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\FractalzWPF.Infrastructure.Video.csproj.CoreCompileInputs.cache
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\FractalzWPF.Infrastructure.Video.csproj.CopyComplete
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\FractalzWPF.Infrastructure.Video.dll
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\refint\FractalzWPF.Infrastructure.Video.dll
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\FractalzWPF.Infrastructure.Video.pdb
+D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\ref\FractalzWPF.Infrastructure.Video.dll

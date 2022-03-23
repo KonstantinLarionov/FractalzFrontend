@@ -22,10 +22,10 @@
         <value>wss://localhost</value>
     </data>
     <data name="ENDPOINT_OpenServer" xml:space="preserve">
-        <value>/ws/subscribe</value>
+        <value>/ws/</value>
     </data>
     <data name="PORT_OpenServer" xml:space="preserve">
-        <value>5001</value>
+        <value>5201</value>
     </data>
     <data name="NAME_HeaderAuth" xml:space="preserve">
         <value>FX_Authorization</value>

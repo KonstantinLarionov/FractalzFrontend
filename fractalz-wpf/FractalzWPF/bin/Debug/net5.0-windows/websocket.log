@@ -2080,3 +2080,770 @@
                             sent: False
                             received: True
 22.03.2022 18:31:36|Trace|WebSocket.close:0|End closing the connection.
+23.03.2022 15:22:14|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. 127.0.0.1:5001
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+23.03.2022 15:22:14|Trace|WebSocket.close:0|Begin closing the connection.
+23.03.2022 15:22:14|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+23.03.2022 15:22:14|Trace|WebSocket.close:0|End closing the connection.
+23.03.2022 15:22:51|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. 127.0.0.1:5001
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+23.03.2022 15:22:51|Trace|WebSocket.close:0|Begin closing the connection.
+23.03.2022 15:22:51|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+23.03.2022 15:22:51|Trace|WebSocket.close:0|End closing the connection.
+23.03.2022 15:24:51|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. 127.0.0.1:5001
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+23.03.2022 15:24:51|Trace|WebSocket.close:0|Begin closing the connection.
+23.03.2022 15:24:51|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+23.03.2022 15:24:51|Trace|WebSocket.close:0|End closing the connection.
+23.03.2022 15:30:12|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. 127.0.0.1:5001
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+23.03.2022 15:30:12|Trace|WebSocket.close:0|Begin closing the connection.
+23.03.2022 15:30:12|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+23.03.2022 15:30:12|Trace|WebSocket.close:0|End closing the connection.
+23.03.2022 15:35:12|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. 127.0.0.1:5001
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+23.03.2022 15:35:12|Trace|WebSocket.close:0|Begin closing the connection.
+23.03.2022 15:35:12|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+23.03.2022 15:35:12|Trace|WebSocket.close:0|End closing the connection.
+23.03.2022 15:42:58|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. 127.0.0.1:5001
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+23.03.2022 15:42:58|Trace|WebSocket.close:0|Begin closing the connection.
+23.03.2022 15:42:58|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+23.03.2022 15:42:58|Trace|WebSocket.close:0|End closing the connection.
+23.03.2022 15:44:31|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/conference/subscribe?userId=1&conferenceId=0 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5201
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: QcM5yu8WYkIf0/iplDQW+w==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=Basic c3RyaW5nOnN0cmluZw==
+23.03.2022 15:44:33|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 101 Switching Protocols
+                          Connection: Upgrade
+                          Date: Wed, 23 Mar 2022 10:44:33 GMT
+                          Server: Kestrel
+                          Upgrade: websocket
+                          Sec-WebSocket-Accept: i88ALx6ze97SNQOPOjKtH5pIx1c=
+23.03.2022 15:44:33|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:33|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:39|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:39|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:42|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:42|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:42|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:42|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:42|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:42|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:42|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:43|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:43|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:43|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:43|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:43|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:43|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:43|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:43|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:43|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:43|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:43|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:44|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:44|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:44|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:44|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:44|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:44|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:44|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:44|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:44|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:44|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:45|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:45|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:45|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:45|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:45|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:45|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:45|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:45|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:45|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:45|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:46|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:46|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:46|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:46|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:46|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:46|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:46|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:46|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:46|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:46|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:47|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:47|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:47|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:47|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:47|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:47|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:47|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:47|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:47|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:47|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:48|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:48|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:48|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:48|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:48|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:48|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:48|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:48|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:48|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:48|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:48|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:49|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:49|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:49|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:49|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:49|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:49|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:49|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:49|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:49|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:49|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:49|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:50|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:50|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:50|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:50|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:50|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:50|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:50|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:50|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:50|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:50|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:51|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:51|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:51|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:51|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:51|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:51|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:51|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:51|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:51|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:52|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:52|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:52|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:52|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:52|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:52|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:52|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:52|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:52|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:52|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:52|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:53|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:53|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:53|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:53|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:53|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:53|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:53|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:53|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:53|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:53|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:54|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:54|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:54|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:54|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:54|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:54|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:54|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:54|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:54|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:54|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:55|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:55|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:55|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:55|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:55|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:55|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:55|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:55|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:55|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:55|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:55|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:56|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:56|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:56|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:56|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:56|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:56|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:56|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:56|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:56|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:56|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:56|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:57|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:57|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:57|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:57|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:57|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:57|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:57|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:57|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:57|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:57|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:58|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:58|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:58|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:58|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:58|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:58|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:58|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:58|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:58|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:58|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:58|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:59|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:59|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:59|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:59|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:59|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:59|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:59|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:59|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:59|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:44:59|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:00|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:00|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:00|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:00|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:00|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:00|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:00|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:00|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:00|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:00|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:00|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:01|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:01|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:01|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:01|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:01|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:01|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:01|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:01|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:01|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:01|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:02|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:02|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:02|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:02|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:02|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:02|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:02|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:02|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:02|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:02|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:03|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:03|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:03|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:03|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:03|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:03|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:03|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:03|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:03|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:03|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:03|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:04|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:04|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:04|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:04|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:04|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:04|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:04|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:04|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:04|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:04|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:04|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:05|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:05|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:05|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:05|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:05|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:05|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:05|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:05|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:05|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:05|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:06|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:06|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:06|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:06|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:06|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:06|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:06|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:06|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:06|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:06|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:07|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:07|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:07|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:07|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:07|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:07|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:07|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:07|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:07|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:07|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:07|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:08|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:08|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:08|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:08|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:08|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:08|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:08|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:08|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:08|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:08|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:09|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:09|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:09|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:09|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:09|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:09|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:09|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:09|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:09|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:09|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:09|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:10|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:10|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:10|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:10|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:10|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:10|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:10|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:10|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:10|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:10|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:11|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:11|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:11|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:11|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:11|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:11|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:11|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:11|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:11|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:11|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:11|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:12|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:12|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:12|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:12|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:12|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:12|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:12|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:12|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:12|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:12|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:13|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:13|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:13|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:13|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:13|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:13|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:13|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:13|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:13|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:13|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:14|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:14|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:14|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:14|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:14|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:14|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:14|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:14|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:14|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:14|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:14|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:15|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:15|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:15|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:15|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:15|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:15|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:15|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:15|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:15|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:15|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:16|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:16|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:16|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:16|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:16|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:16|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:16|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:16|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:16|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:16|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:16|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:17|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:17|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:17|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:17|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:17|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:17|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:17|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:17|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:17|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:17|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:18|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:18|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:18|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:18|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:18|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:18|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:18|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:18|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:18|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:18|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:18|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:19|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:19|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:19|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:19|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:19|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:19|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:19|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:19|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:19|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:19|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:20|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:20|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:20|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:20|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:20|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:20|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:20|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:20|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:20|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:20|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:20|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:21|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:21|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:21|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:21|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:21|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:21|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:21|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:21|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:21|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:22|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:22|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:22|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:22|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:22|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:22|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:22|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:22|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:22|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:22|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:22|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:23|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:23|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:23|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:23|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:23|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:23|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:23|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:23|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:23|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:23|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:24|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:24|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:24|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:24|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:24|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:24|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:24|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:24|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:24|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:24|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:25|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:25|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:25|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:25|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:25|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:25|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:25|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:25|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:25|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:25|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:26|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:26|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:26|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:26|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:26|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:26|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:26|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:26|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:26|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:26|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:26|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:27|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:27|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:27|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:27|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:27|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:27|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:27|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:27|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:27|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:27|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:28|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:28|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:28|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:28|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:28|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:28|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:28|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:28|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:28|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:28|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:28|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:29|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:29|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:29|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:29|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:29|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:29|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:29|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:29|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:29|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:29|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:29|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:30|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:30|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:30|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:30|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:30|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:30|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:30|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:30|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:30|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:30|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:31|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:31|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:31|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:31|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:31|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:31|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:31|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:31|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:31|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:31|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:31|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:32|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:32|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:32|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:32|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:32|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:32|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:32|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:32|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:32|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:32|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:32|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:33|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:33|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:33|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:33|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:33|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:33|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:33|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:33|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:33|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:33|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:34|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:34|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:34|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:34|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:34|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:34|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:34|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:34|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:34|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:34|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:34|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:34|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:35|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:35|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:35|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:35|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:35|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:35|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:35|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:35|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:35|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:35|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:35|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:36|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:36|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:36|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:36|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:36|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:36|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:36|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:36|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:36|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:36|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:36|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:36|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:37|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:37|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:37|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:37|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:37|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:45:37|Trace|WebSocket.processPongFrame:0|Received a Pong.
+23.03.2022 15:46:48|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                          GET /ws/conference/subscribe?userId=1&conferenceId=0 HTTP/1.1
+                          User-Agent: websocket-sharp/1.0
+                          Host: localhost:5201
+                          Upgrade: websocket
+                          Connection: Upgrade
+                          Sec-WebSocket-Key: 8ndlecud1RJxHV4NXFx0fA==
+                          Sec-WebSocket-Version: 13
+                          Cookie: FX_Authorization=Basic c3RyaW5nOnN0cmluZw==
+23.03.2022 15:46:49|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                          HTTP/1.1 101 Switching Protocols
+                          Connection: Upgrade
+                          Date: Wed, 23 Mar 2022 10:46:49 GMT
+                          Server: Kestrel
+                          Upgrade: websocket
+                          Sec-WebSocket-Accept: 74Mau4TnR/0m072w8/pV71pFuYc=
+23.03.2022 15:47:10|Fatal|WebSocket.processException:0|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
+                             at WebSocketSharp.WebSocketFrame.<>c__DisplayClass7.<ReadAsync>b__6(Byte[] header)
+                             at WebSocketSharp.Ext.<>c__DisplayClass6.<ReadBytesAsync>b__5(IAsyncResult ar)
+23.03.2022 15:47:10|Trace|WebSocket.close:0|Begin closing the connection.
+23.03.2022 15:47:10|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+23.03.2022 15:47:10|Trace|WebSocket.close:0|End closing the connection.
+23.03.2022 15:49:03|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. 127.0.0.1:5201
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+23.03.2022 15:49:03|Trace|WebSocket.close:0|Begin closing the connection.
+23.03.2022 15:49:03|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+23.03.2022 15:49:03|Trace|WebSocket.close:0|End closing the connection.
+23.03.2022 15:50:57|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. 127.0.0.1:5201
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+23.03.2022 15:50:57|Trace|WebSocket.close:0|Begin closing the connection.
+23.03.2022 15:50:57|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+23.03.2022 15:50:57|Trace|WebSocket.close:0|End closing the connection.
+23.03.2022 15:51:56|Fatal|WebSocket.processException:0|System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. 127.0.0.1:5201
+                             at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                             at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+                             at System.Net.Sockets.Socket.Connect(IPAddress address, Int32 port)
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                          --- End of stack trace from previous location ---
+                             at System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+                             at System.Net.Sockets.TcpClient..ctor(String hostname, Int32 port)
+                             at WebSocketSharp.WebSocket.setClientStream()
+                             at WebSocketSharp.WebSocket.doHandshake()
+                             at WebSocketSharp.WebSocket.connect()
+23.03.2022 15:51:56|Trace|WebSocket.close:0|Begin closing the connection.
+23.03.2022 15:51:56|Debug|WebSocket.closeHandshake:0|Was clean?: False
+                            sent: False
+                            received: True
+23.03.2022 15:51:56|Trace|WebSocket.close:0|End closing the connection.

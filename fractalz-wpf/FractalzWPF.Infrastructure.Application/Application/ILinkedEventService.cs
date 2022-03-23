@@ -5,6 +5,9 @@ namespace FractalzWPF.Infrastructure.Application.Application
 {
     public interface ILinkedEventService
     {
+        public delegate void GetVideo(byte[] message);
+
+        public event GetVideo GetVideoEvent;
         public delegate void GetMessage(Message message);
 
         public event GetMessage GetMessageEvent;
@@ -18,5 +21,7 @@ namespace FractalzWPF.Infrastructure.Application.Application
         public event DialogUpdate DialogUpdateEvent;
 
         public void ConnectDefaultEvent();
+        public void SendBytes(byte[] arr);
+        public void ConnectConference(int conferenceId);
     }
 }

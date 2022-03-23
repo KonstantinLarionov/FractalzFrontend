@@ -19,20 +19,23 @@ namespace FractalzWPF.Infrastructure.LinkedEvent
         public LinkedEventService(IOptions<UserData> userInfo)
         {
             _userInfo = userInfo.Value ?? throw new ArgumentException(nameof(userInfo));
-            Connect();
+            //Connect();
         }
 
         #region [Socket]
         private void OnMessage(object? sender, MessageEventArgs e)
         {
-            var res = GetEntity(e.Data);
+            GetVideoEvent?.Invoke(e.RawData);
+            // var res = GetEntity(e.Data);
+            //
+            // if (res.Type == WsMessageType.Dialog)
+            //     DialogUpdateEvent?.Invoke((Dialog)res.Data);
+            // else if(res.Type == WsMessageType.Message)
+            //     GetMessageEvent?.Invoke((Message)res.Data);
+            // else if(res.Type == WsMessageType.User)
+            //     UserUpdateStatusEvent?.Invoke((User)res.Data);
+            //
             
-            if (res.Type == WsMessageType.Dialog)
-                DialogUpdateEvent?.Invoke((Dialog)res.Data);
-            else if(res.Type == WsMessageType.Message)
-                GetMessageEvent?.Invoke((Message)res.Data);
-            else if(res.Type == WsMessageType.User)
-                UserUpdateStatusEvent?.Invoke((User)res.Data);
         }
         #endregion
 
@@ -54,6 +57,8 @@ namespace FractalzWPF.Infrastructure.LinkedEvent
         public event ILinkedEventService.UserUpdateStatus UserUpdateStatusEvent;
         
         public event ILinkedEventService.DialogUpdate DialogUpdateEvent;
+        public event ILinkedEventService.GetVideo GetVideoEvent;
+        
         #endregion
 
         #region [Systems]
@@ -63,6 +68,22 @@ namespace FractalzWPF.Infrastructure.LinkedEvent
             _ws.SetCookie(new Cookie(Constants.NAME_HeaderAuth, "Basic " + _userInfo.Token));
             _ws.OnMessage += OnMessage;
             _ws.Connect();
+        }
+        
+        public void ConnectConference(int conferenceId)
+        {
+            _ws = new WebSocket($"{_pathWs}conference/subscribe?userId={_userInfo.Id}&conferenceId={conferenceId}");
+            _ws.SetCookie(new Cookie(Constants.NAME_HeaderAuth, "Basic " + _userInfo.Token));
+            _ws.OnMessage += OnMessage;
+            _ws.Connect();
+        }
+
+        public void SendBytes(byte[] arr)
+        {
+            if (_ws.IsAlive)
+            {
+                _ws.Send(arr);
+            }
         }
 
         public BasicWsEntities GetEntity(string json)

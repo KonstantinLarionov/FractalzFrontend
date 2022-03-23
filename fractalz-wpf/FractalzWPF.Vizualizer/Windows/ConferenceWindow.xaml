@@ -6,7 +6,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:FractalzWPF.Infrastructure.Vizualizer.Windows"
         mc:Ignorable="d"
-        Title="ConferenceWindow" Height="800" Width="1000" >
+        Title="ConferenceWindow" Height="800" Width="1000" Loaded="ConferenceWindow_OnLoaded" Unloaded="ConferenceWindow_OnUnloaded">
     <DockPanel>
         <DockPanel Height="60" DockPanel.Dock="Bottom" LastChildFill="False">
             <Button 
@@ -34,13 +34,25 @@
         </DockPanel>
         <DockPanel LastChildFill="True">
             <DockPanel DockPanel.Dock="Bottom" LastChildFill="False">
-                <Border Height="200" Width="200" Background="Aqua"></Border>
-                <Border Height="200" Width="200" Background="DarkCyan"></Border>
-                <Border Height="200" Width="200" Background="DarkBlue"></Border>
-                <Border Height="200" Width="200" Background="DarkGoldenrod"></Border>
-                <Border Height="200" Width="200" Background="DarkGray"></Border>
+                <Border Height="200" Width="200" >
+                    <Image Name="videoServer1"  Height="200" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+                </Border>
+                <Border Height="200" Width="200" >
+                    <Image Name="videoServer2"  Height="200" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+                </Border>
+                <Border Height="200" Width="200" >
+                    <Image Name="videoServer3"  Height="200" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+                </Border>
+                <Border Height="200" Width="200">
+                    <Image Name="videoServer4"  Height="200" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+                </Border>
+                <Border Height="200" Width="200">
+                    <Image Name="myVideo"  Height="200" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+                </Border>
             </DockPanel>
-            <Border DockPanel.Dock="Top" Background="DarkRed"></Border>
+            <Border DockPanel.Dock="Top" Background="DarkRed">
+                <Image Name="myVideoMain"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+            </Border>
         </DockPanel>
     </DockPanel>
 </Window>

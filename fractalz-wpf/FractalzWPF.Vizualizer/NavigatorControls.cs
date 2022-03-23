@@ -18,7 +18,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer
     {
         public Dictionary<UserControlType, UserControl> Controls { get; }
         public Dictionary<WindowType, Window> Windows { get; }
-        public NavigatorControls(INavigatorHandlers handlers, NotifyHandler noty, ILinkedEventService linkedEventService)
+        public NavigatorControls(INavigatorHandlers handlers, NotifyHandler noty, ILinkedEventService linkedEventService, IVideoDispatcher videoDispatcher)
         { 
             Controls = new Dictionary<UserControlType, UserControl>()
             {
@@ -36,7 +36,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer
                 { WindowType.Chat, new ChatWindow(handlers,noty,linkedEventService) },
                 { WindowType.VoiceServer, new VoiceServerCreateWindow(this, noty, handlers) },
                 { WindowType.CreateConference, new CreateConferenceWindow(handlers, noty) },
-                { WindowType.Conference, new ConferenceWindow() },
+                { WindowType.Conference, new ConferenceWindow(linkedEventService, handlers, videoDispatcher) },
             };
         }
     }
