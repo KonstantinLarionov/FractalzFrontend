@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
@@ -18,7 +19,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
         private readonly INavigatorHandlers _handlers;
         private readonly IVideoDispatcher _videoDispatcher;
         private readonly List<VideoDevice> list;
-        public int ConferenceId { get; set; } = 0;
+        public int ConferenceId { get; set; } = 1;
 
         public ConferenceWindow(ILinkedEventService linkedEventService, INavigatorHandlers handlers, IVideoDispatcher videoDispatcher)
         {
@@ -43,31 +44,11 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
 
         private void VideoDispatcherOnGetCaptureEvent(byte[] capture)
         {
-            //_linkedEventService.SendBytes(capture);
             Dispatcher.BeginInvoke((Action) delegate
             {
                 myVideo.Source = LoadImage(capture);
             });
-            Dispatcher.BeginInvoke((Action) delegate
-            {
-                videoServer1.Source = LoadImage(capture);
-            });
-            Dispatcher.BeginInvoke((Action) delegate
-            {
-                videoServer2.Source = LoadImage(capture);
-            });
-            Dispatcher.BeginInvoke((Action) delegate
-            {
-                videoServer3.Source = LoadImage(capture);
-            });
-            Dispatcher.BeginInvoke((Action) delegate
-            {
-                videoServer4.Source = LoadImage(capture);
-            });
-            Dispatcher.BeginInvoke((Action) delegate
-            {
-                myVideoMain.Source = LoadImage(capture);
-            });
+            Task.Run(()=>_linkedEventService.SendBytes(capture));
         }
         public static ImageSource ByteToImage(byte[] imageData)
         {
@@ -101,6 +82,9 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
 
         private void ConferenceWindow_OnUnloaded(object sender, RoutedEventArgs e)
         {
+            _linkedEventService.GetVideoEvent -= LinkedEventServiceOnGetVideoEvent;
+            _videoDispatcher.GetCaptureEvent -= VideoDispatcherOnGetCaptureEvent;
+
             _videoDispatcher.StopVideoStream(list[0]);
         }
     }

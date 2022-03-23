@@ -75,7 +75,13 @@ namespace FractalzWPF.Infrastructure.LinkedEvent
             _ws = new WebSocket($"{_pathWs}conference/subscribe?userId={_userInfo.Id}&conferenceId={conferenceId}");
             _ws.SetCookie(new Cookie(Constants.NAME_HeaderAuth, "Basic " + _userInfo.Token));
             _ws.OnMessage += OnMessage;
+            _ws.OnError += WsOnOnError;
             _ws.Connect();
+        }
+
+        private void WsOnOnError(object? sender, ErrorEventArgs e)
+        {
+            //throw new NotImplementedException();
         }
 
         public void SendBytes(byte[] arr)

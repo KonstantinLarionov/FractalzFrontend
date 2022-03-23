@@ -436,3 +436,8 @@ D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\Fr
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\AForge.dll
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\AForge.Video.dll
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\AForge.Video.DirectShow.dll
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\AForge.dll
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\AForge.Video.dll
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\AForge.Video.DirectShow.dll
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\FractalzWPF.Infrastructure.Video.dll
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF\bin\Debug\net5.0-windows\FractalzWPF.Infrastructure.Video.pdb

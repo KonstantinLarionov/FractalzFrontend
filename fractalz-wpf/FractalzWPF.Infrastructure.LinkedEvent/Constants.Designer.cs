@@ -115,7 +115,7 @@ namespace FractalzWPF.Infrastructure.LinkedEvent {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to wss://localhost.
+        ///   Looks up a localized string similar to wss://192.168.88.202.
         /// </summary>
         internal static string URL_OpenServer {
             get {
