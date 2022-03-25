@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using FractalzWPF.Application.Domains.Entities.Chat;
 using FractalzWPF.Application.Domains.Entities.Profile;
 using FractalzWPF.Application.Domains.Entities.Websocket;

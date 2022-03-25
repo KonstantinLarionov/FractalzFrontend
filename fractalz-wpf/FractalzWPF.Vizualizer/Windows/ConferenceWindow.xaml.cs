@@ -38,8 +38,11 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
         {
             Dispatcher.BeginInvoke((Action) delegate
             {
-                videoServer1.Source = LoadImage(message);
+                var img = LoadImage(message);
+                if(img !=null)
+                    videoServer1.Source = img;
             });
+
         }
 
         private void VideoDispatcherOnGetCaptureEvent(byte[] capture)
@@ -48,7 +51,8 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
             {
                 myVideo.Source = LoadImage(capture);
             });
-            Task.Run(()=>_linkedEventService.SendBytes(capture));
+            Task.Run(() => _linkedEventService.SendBytes(capture));
+            
         }
         public static ImageSource ByteToImage(byte[] imageData)
         {
@@ -62,20 +66,29 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
         }
         private static BitmapImage LoadImage(byte[] imageData)
         {
-            if (imageData == null || imageData.Length == 0) return null;
-            var image = new BitmapImage();
-            using (var mem = new MemoryStream(imageData))
+            try
             {
-                mem.Position = 0;
-                image.BeginInit();
-                image.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
-                image.CacheOption = BitmapCacheOption.OnLoad;
-                image.UriSource = null;
-                image.StreamSource = mem;
-                image.EndInit();
+                if (imageData == null || imageData.Length == 0) return null;
+                var image = new BitmapImage();
+                using (var mem = new MemoryStream(imageData))
+                {
+                    mem.Position = 0;
+                    image.BeginInit();
+                    image.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.UriSource = null;
+                    image.StreamSource = mem;
+                    image.EndInit();
+                }
+
+                image.Freeze();
+                
+                return image;
             }
-            image.Freeze();
-            return image;
+            catch
+            {
+                return null;
+            }
         }
         private void ConferenceWindow_OnLoaded(object sender, RoutedEventArgs e) =>
             _linkedEventService.ConnectConference(ConferenceId);
