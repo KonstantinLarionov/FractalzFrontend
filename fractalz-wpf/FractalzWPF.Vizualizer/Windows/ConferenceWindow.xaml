@@ -35,7 +35,7 @@
         <DockPanel LastChildFill="True">
             <DockPanel DockPanel.Dock="Bottom" LastChildFill="False">
                 <Border Height="200" Width="200" >
-                    <Image Name="videoServer1"  Height="200" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+                    <Image Name="videoServer1" Source="{Binding VideoServer, Mode=TwoWay}"   Height="200" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
                 </Border>
                 <Border Height="200" Width="200" >
                     <Image Name="videoServer2"  Height="200" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
@@ -47,11 +47,11 @@
                     <Image Name="videoServer4"  Height="200" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
                 </Border>
                 <Border Height="200" Width="200">
-                    <Image Name="myVideo"  Height="200" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+                    <Image Name="myVideo" Source="{Binding YourImage, Mode=TwoWay}"   Height="200" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
                 </Border>
             </DockPanel>
             <Border DockPanel.Dock="Top" Background="DarkRed">
-                <Image Name="myVideoMain"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+                <Image Name="myVideoMain" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
             </Border>
         </DockPanel>
     </DockPanel>

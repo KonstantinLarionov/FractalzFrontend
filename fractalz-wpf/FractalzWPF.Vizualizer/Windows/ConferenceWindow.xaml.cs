@@ -19,11 +19,16 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
         private readonly INavigatorHandlers _handlers;
         private readonly IVideoDispatcher _videoDispatcher;
         private readonly List<VideoDevice> list;
+        private TestContext test;
+
         public int ConferenceId { get; set; } = 1;
+        
 
         public ConferenceWindow(ILinkedEventService linkedEventService, INavigatorHandlers handlers, IVideoDispatcher videoDispatcher)
         {
             InitializeComponent();
+            test = new TestContext();
+            this.DataContext = test;
             
             _linkedEventService = linkedEventService;
             _linkedEventService.GetVideoEvent += LinkedEventServiceOnGetVideoEvent;
@@ -31,27 +36,27 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
             _videoDispatcher = videoDispatcher;
             list = _videoDispatcher.GetListDevices();
             _videoDispatcher.GetCaptureEvent += VideoDispatcherOnGetCaptureEvent;
-            _videoDispatcher.StartVideoStream(list[0]);
         }
 
         private void LinkedEventServiceOnGetVideoEvent(byte[] message)
         {
-            Dispatcher.BeginInvoke((Action) delegate
-            {
-                var img = LoadImage(message);
-                if(img !=null)
-                    videoServer1.Source = img;
-            });
+            // Dispatcher.BeginInvoke((Action) delegate
+            // {
+            var img = LoadImage(message);
+            if(img !=null)
+                test.VideoServer = img;
+            // });
 
         }
 
         private void VideoDispatcherOnGetCaptureEvent(byte[] capture)
         {
-            Dispatcher.BeginInvoke((Action) delegate
-            {
-                myVideo.Source = LoadImage(capture);
-            });
-            Task.Run(() => _linkedEventService.SendBytes(capture));
+            // Dispatcher.BeginInvoke((Action) delegate
+            // {
+            //     myVideo.Source = LoadImage(capture);
+            // });
+            test.YourImage = LoadImage(capture);
+            Task.Run(() => { _linkedEventService.SendBytes(capture); });
             
         }
         public static ImageSource ByteToImage(byte[] imageData)
@@ -90,8 +95,12 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
                 return null;
             }
         }
-        private void ConferenceWindow_OnLoaded(object sender, RoutedEventArgs e) =>
+
+        private void ConferenceWindow_OnLoaded(object sender, RoutedEventArgs e)
+        {
             _linkedEventService.ConnectConference(ConferenceId);
+            _videoDispatcher.StartVideoStream(list[0]);
+        }
 
         private void ConferenceWindow_OnUnloaded(object sender, RoutedEventArgs e)
         {
