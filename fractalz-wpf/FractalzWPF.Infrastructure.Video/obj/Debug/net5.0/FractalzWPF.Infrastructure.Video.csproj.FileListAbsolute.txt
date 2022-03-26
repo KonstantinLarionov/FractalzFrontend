@@ -25,6 +25,6 @@ C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastru
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\FractalzWPF.Infrastructure.Video.csproj.CoreCompileInputs.cache
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\FractalzWPF.Infrastructure.Video.csproj.CopyComplete
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\FractalzWPF.Infrastructure.Video.dll
-C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\refint\FractalzWPF.Infrastructure.Video.dll
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\FractalzWPF.Infrastructure.Video.pdb
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\obj\Debug\net5.0\ref\FractalzWPF.Infrastructure.Video.dll
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Video\bin\Debug\net5.0\ref\FractalzWPF.Infrastructure.Video.dll

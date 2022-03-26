@@ -31,7 +31,6 @@ C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastru
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.LinkedEvent\obj\Debug\net5.0\refint\FractalzWPF.Infrastructure.LinkedEvent.dll
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.LinkedEvent\obj\Debug\net5.0\FractalzWPF.Infrastructure.LinkedEvent.pdb
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.LinkedEvent\obj\Debug\net5.0\ref\FractalzWPF.Infrastructure.LinkedEvent.dll
-C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.LinkedEvent\obj\Debug\net5.0\refint\FractalzWPF.Infrastructure.LinkedEvent.dll
 C:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.LinkedEvent\bin\Debug\net5.0\FractalzWPF.Infrastructure.LinkedEvent.deps.json
 C:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.LinkedEvent\bin\Debug\net5.0\FractalzWPF.Infrastructure.LinkedEvent.dll
 C:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.LinkedEvent\bin\Debug\net5.0\ref\FractalzWPF.Infrastructure.LinkedEvent.dll
@@ -66,3 +65,4 @@ D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.LinkedEvent\
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.LinkedEvent\obj\Debug\net5.0\refint\FractalzWPF.Infrastructure.LinkedEvent.dll
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.LinkedEvent\obj\Debug\net5.0\FractalzWPF.Infrastructure.LinkedEvent.pdb
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.LinkedEvent\obj\Debug\net5.0\ref\FractalzWPF.Infrastructure.LinkedEvent.dll
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.LinkedEvent\bin\Debug\net5.0\ref\FractalzWPF.Infrastructure.LinkedEvent.dll

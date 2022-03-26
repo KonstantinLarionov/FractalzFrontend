@@ -100,7 +100,6 @@ C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualize
 C:\Users\kosty\source\repos\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\Elements\ServerElement.baml
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\Elements\ServerElement.g.cs
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\Elements\ServerElement.baml
-C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\refint\FractalzWPF.Infrastructure.Vizualizer.dll
 C:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\Elements\ServerElement.g.cs
 C:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\Elements\ServerElement.baml
 C:\Users\kosty\source\repos\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.MessageResource.resources
@@ -243,3 +242,4 @@ D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\refint\FractalzWPF.Infrastructure.Vizualizer.dll
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\FractalzWPF.Infrastructure.Vizualizer.pdb
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Vizualizer\obj\Debug\net5.0-windows\ref\FractalzWPF.Infrastructure.Vizualizer.dll
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Vizualizer\bin\Debug\net5.0-windows\ref\FractalzWPF.Infrastructure.Vizualizer.dll

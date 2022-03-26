@@ -56,8 +56,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
             //     myVideo.Source = LoadImage(capture);
             // });
             test.YourImage = LoadImage(capture);
-            Task.Run(() => { _linkedEventService.SendBytes(capture); });
-            
+            _linkedEventService.SendUDPPack(capture);
         }
         public static ImageSource ByteToImage(byte[] imageData)
         {

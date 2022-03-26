@@ -45,7 +45,6 @@ C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastru
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\obj\Debug\net5.0\FractalzWPF.Infrastructure.Application.dll
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\obj\Debug\net5.0\ref\FractalzWPF.Infrastructure.Application.dll
 C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\obj\Debug\net5.0\FractalzWPF.Infrastructure.Application.pdb
-C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\obj\Debug\net5.0\refint\FractalzWPF.Infrastructure.Application.dll
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\bin\Debug\net5.0\FractalzWPF.Infrastructure.Application.deps.json
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\bin\Debug\net5.0\FractalzWPF.Infrastructure.Application.dll
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\bin\Debug\net5.0\FractalzWPF.Infrastructure.Application.pdb
@@ -58,3 +57,4 @@ D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\obj\Debug\net5.0\refint\FractalzWPF.Infrastructure.Application.dll
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\obj\Debug\net5.0\FractalzWPF.Infrastructure.Application.pdb
 D:\.rider\Fractalz\Frontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\obj\Debug\net5.0\ref\FractalzWPF.Infrastructure.Application.dll
+C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-wpf\FractalzWPF.Infrastructure.Application\bin\Debug\net5.0\ref\FractalzWPF.Infrastructure.Application.dll
