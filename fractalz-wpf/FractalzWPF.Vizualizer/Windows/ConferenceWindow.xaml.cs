@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows;
@@ -10,6 +11,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using FractalzWPF.Application.Domains.Entities.Conference;
 using FractalzWPF.Infrastructure.Application.Application;
+using Rtsp;
+using Rtsp.Messages;
 
 namespace FractalzWPF.Infrastructure.Vizualizer.Windows
 {
@@ -20,6 +23,7 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
         private readonly IVideoDispatcher _videoDispatcher;
         private readonly List<VideoDevice> list;
         private TestContext test;
+        private readonly RtspListener listner;
 
         public int ConferenceId { get; set; } = 1;
         
@@ -31,39 +35,46 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
             this.DataContext = test;
             
             _linkedEventService = linkedEventService;
-            _linkedEventService.GetVideoEvent += LinkedEventServiceOnGetVideoEvent;
             _handlers = handlers;
             _videoDispatcher = videoDispatcher;
             list = _videoDispatcher.GetListDevices();
             _videoDispatcher.GetCaptureEvent += VideoDispatcherOnGetCaptureEvent;
+            listner = new RtspListener(new RtspTcpTransport("127.0.0.1",7711));
+            listner.MessageReceived += ListnerOnMessageReceived;
+            listner.DataReceived += ListnerOnDataReceived;
+            listner.Start();
+
         }
 
-        private void LinkedEventServiceOnGetVideoEvent(byte[] message)
+        private void ListnerOnDataReceived(object? sender, RtspChunkEventArgs e)
         {
-            // Dispatcher.BeginInvoke((Action) delegate
-            // {
-            var img = LoadImage(message);
-            if(img !=null)
-                test.VideoServer = img;
-            // });
-
+            throw new NotImplementedException();
         }
+
+        private void ListnerOnMessageReceived(object? sender, RtspChunkEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
 
         private void VideoDispatcherOnGetCaptureEvent(byte[] capture)
         {
-            // Dispatcher.BeginInvoke((Action) delegate
-            // {
-            //     myVideo.Source = LoadImage(capture);
-            // });
+            //2764854 65535
             test.YourImage = LoadImage(capture);
-            _linkedEventService.SendUDPPack(capture);
+
+            byte[] arr = new byte[1] {233};
+            listner.SendData(1,arr);
         }
-        public static ImageSource ByteToImage(byte[] imageData)
+        public static ImageSource ByteToImage(byte[]? imageData)
         {
             BitmapImage biImg = new BitmapImage();
-            MemoryStream ms = new MemoryStream(imageData);
-            biImg.BeginInit();
-            biImg.StreamSource = ms;
+            if (imageData != null)
+            {
+                MemoryStream ms = new MemoryStream(imageData);
+                biImg.BeginInit();
+                biImg.StreamSource = ms;
+            }
+
             biImg.EndInit();
             ImageSource imgSrc = biImg as ImageSource;
             return imgSrc;
@@ -103,7 +114,6 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows
 
         private void ConferenceWindow_OnUnloaded(object sender, RoutedEventArgs e)
         {
-            _linkedEventService.GetVideoEvent -= LinkedEventServiceOnGetVideoEvent;
             _videoDispatcher.GetCaptureEvent -= VideoDispatcherOnGetCaptureEvent;
 
             _videoDispatcher.StopVideoStream(list[0]);

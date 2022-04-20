@@ -143,6 +143,14 @@
             "Microsoft.Toolkit.Uwp.Notifications": {
               "target": "Package",
               "version": "[7.0.2, )"
+            },
+            "NLog": {
+              "target": "Package",
+              "version": "[5.0.0-rc2, )"
+            },
+            "SharpRTSP": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [
