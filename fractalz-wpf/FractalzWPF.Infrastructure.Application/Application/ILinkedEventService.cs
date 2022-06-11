@@ -22,7 +22,5 @@ namespace FractalzWPF.Infrastructure.Application.Application
 
         public void ConnectDefaultEvent();
         public void SendBytes(byte[] arr);
-        public void ConnectConference(int conferenceId);
-        public void SendUDPPack(byte[] array);
     }
 }

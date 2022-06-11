@@ -104,7 +104,8 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;component/windows/conferencewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;V1.0.0.0;component/windows/conferencewindo" +
+                    "w.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Windows\ConferenceWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

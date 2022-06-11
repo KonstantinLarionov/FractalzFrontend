@@ -64,8 +64,8 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Controlls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;component/controlls/videochatscontrol.xaml" +
-                    "", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;V1.0.0.0;component/controlls/videochatscon" +
+                    "trol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Controlls\VideoChatsControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

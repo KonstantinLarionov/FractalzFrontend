@@ -13,7 +13,7 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 19328005805
 
 2752310132
-204291128221
+207410331797
 Controlls\DialogsUserControl.xaml;Controlls\ProfileUserControl.xaml;Controlls\TodoUserControl.xaml;Controlls\VideoChatsControl.xaml;Controlls\VoiceControl.xaml;Elements\ConferenceElement.xaml;Elements\DialogElement.xaml;Elements\MessageElement.xaml;Elements\ServerElement.xaml;Elements\TodoElement.xaml;Elements\UserAddConferenceElement.xaml;Windows\ChatWindow.xaml;Windows\ConferenceWindow.xaml;Windows\CreateConferenceWindow.xaml;Windows\LoginWindow.xaml;Windows\RegistrationWindow.xaml;Windows\TodoCreateWindow.xaml;Windows\VoiceRoomCreateWindow.xaml;Windows\VoiceServerCreateWindow.xaml;
 
 False

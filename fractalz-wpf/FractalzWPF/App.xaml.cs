@@ -49,7 +49,6 @@ namespace FractalzWPF
             services.AddInfrastructureConnector();
             services.AddInfrastructureVisualizer();
             services.AddInfrastructureLinkedEvent();
-            services.AddInfrastructureVideo();
             
             services.AddSingleton<MainWindow>();
         }

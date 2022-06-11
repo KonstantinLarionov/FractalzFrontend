@@ -56,8 +56,8 @@ namespace FractalzWPF.Infrastructure.Vizualizer {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;component/controlls/profileusercontrol.xam" +
-                    "l", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;V1.0.0.0;component/controlls/profileuserco" +
+                    "ntrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Controlls\ProfileUserControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

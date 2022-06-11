@@ -72,7 +72,8 @@ namespace FractalzWPF.Infrastructure.Vizualizer {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;component/controlls/voicecontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;V1.0.0.0;component/controlls/voicecontrol." +
+                    "xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Controlls\VoiceControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

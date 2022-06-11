@@ -80,7 +80,8 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Elements {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;component/elements/todoelement.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;V1.0.0.0;component/elements/todoelement.xa" +
+                    "ml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Elements\TodoElement.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

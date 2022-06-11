@@ -56,8 +56,8 @@ namespace FractalzWPF.Infrastructure.Vizualizer.Elements {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;component/elements/useraddconferenceelemen" +
-                    "t.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;V1.0.0.0;component/elements/useraddconfere" +
+                    "nceelement.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Elements\UserAddConferenceElement.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

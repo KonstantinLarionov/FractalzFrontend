@@ -72,35 +72,7 @@ namespace FractalzWPF.Infrastructure.LinkedEvent
             _ws.OnMessage += OnMessage;
             _ws.Connect();
         }
-
-        private UdpClient Client;
-        public void ConnectConference(int conferenceId)
-        {
-            _ws = new WebSocket($"{_pathWs}conference/subscribe?userId={_userInfo.Id}&conferenceId={conferenceId}");
-            Client = new UdpClient("192.168.88.164", 5202);
-            _ws.SetCookie(new Cookie(Constants.NAME_HeaderAuth, "Basic " + _userInfo.Token));
-            _ws.OnMessage += OnMessage;
-            _ws.OnError += WsOnOnError;
-            Client.Connect("192.168.88.164",5202);
-            _ws.Connect();
-            
-            
-            Task.Run(async() =>
-            {
-                while (true)
-                {
-                    var array = await Client.ReceiveAsync();
-                    GetVideoEvent?.Invoke(array.Buffer);
-                }
-            });
-        }
-
-        public void SendUDPPack(byte[] array)
-        {
-            if (Client != null)
-                Client.SendAsync(array, array.Length);
-        }
-
+        
         private void WsOnOnError(object? sender, ErrorEventArgs e)
         {
             //throw new NotImplementedException();

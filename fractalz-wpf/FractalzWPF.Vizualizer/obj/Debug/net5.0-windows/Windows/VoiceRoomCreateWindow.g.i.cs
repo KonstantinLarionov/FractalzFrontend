@@ -61,8 +61,8 @@ namespace FractalzWPF.Infrastructure.Vizualizer {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;component/windows/voiceroomcreatewindow.xa" +
-                    "ml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FractalzWPF.Infrastructure.Vizualizer;V1.0.0.0;component/windows/voiceroomcreate" +
+                    "window.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Windows\VoiceRoomCreateWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
