@@ -7,8 +7,19 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'landing-page',
-      component: require('@/components/LandingPage').default
+      name: 'DialogPage',
+      component: require('@/components/pages/DialogPage').default,
+      meta:{
+        layout: "default-layout"
+      }
+    },
+    {
+      path: '/m',
+      name: 'StartPage',
+      component: require('@/components/pages/StartPage').default,
+      meta:{
+        layout: "default-layout"
+      }
     },
     {
       path: '*',
