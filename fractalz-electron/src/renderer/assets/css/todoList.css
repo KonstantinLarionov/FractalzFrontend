@@ -1,0 +1,126 @@
+ht {
+     height: 30px;
+     border-style: solid;
+     border-color: #8c8b8b;
+     border-width: 1px 0 0 0;
+     border-radius: 20px;
+ }
+ht:before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -21px;
+    border-style: solid;
+    border-color: #8c8b8b;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+hb {
+    display: block;
+    height: 30px;
+    border-style: solid;
+    border-color: #8c8b8b;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+.hb-todo{
+    margin-bottom: -20px;
+}
+
+.card {
+    width: 90%;
+    margin: auto;
+}
+
+.page {
+    margin-top: 10px;
+    margin-bottom: 50px
+}
+
+.float-right.headingright {
+    color: #153063;
+    font-weight: 500;
+    margin-top: 10px
+}
+
+.float-right {
+    color: #7a7a7a;
+    font-weight: 450
+}
+
+.today,
+.tomorrow {
+    color: #153063;
+    font-size: 25px;
+    font-weight: 600
+}
+
+.heading2 {
+    margin-top: 6%
+}
+
+.fa-calendar,
+.fa-circle-thin,
+.fa-star {
+    color: #7a7a7a
+}
+
+.time {
+    color: #7a7a7a;
+    font-size: 12px
+}
+
+.fa-plus {
+
+    display: inline-block;
+    border-radius: 25px;
+    background-color: #e3e1e1;
+    color: #7a7a7a;
+    size: 10px;
+    padding: 2px
+}
+
+.task {
+    color: #153063;
+    font-weight: 500
+}
+
+.task2 {
+    opacity: 0.5
+}
+
+.card-body {
+    margin: 2%
+}
+
+.card-header {
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: white !important;
+    padding: 0px;
+    margin-top: 2%
+}
+
+.navTask {
+    color: white;
+    border: 0;
+    padding: 10px;
+    transition: 0.28s;
+}
+.navTask:hover{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14), 0 3px 4px 0 rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20);
+}
+
+.fa-bars {
+    color: #136fe8
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        font-size: 12px
+    }
+
+    .time {
+        font-size: 9px
+    }
+}
