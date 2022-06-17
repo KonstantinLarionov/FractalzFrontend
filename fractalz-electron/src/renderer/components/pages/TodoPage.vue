@@ -1,5 +1,5 @@
 <template>
-  <div hidden class="todo-wrap" id="todoSpace">
+  <div class="todo-wrap" id="todoSpace">
     <!--For Page-->
     <div class="page">
       <!--Card-->

@@ -22,6 +22,8 @@ function createWindow () {
     width: 430,
     height: 700,
     useContentSize: true,
+    resizable: false,
+    autoHideMenuBar: true
     // Here
   })
 

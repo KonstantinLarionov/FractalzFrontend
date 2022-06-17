@@ -1,5 +1,5 @@
 <template>
-  <div hidden class="news-wrap" id="newsSpace">
+  <div class="news-wrap" id="newsSpace">
     <div class="row news-controls">
 
     </div>

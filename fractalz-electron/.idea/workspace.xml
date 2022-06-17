@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62c9c083-0caf-47be-a0b5-6ab81b039c16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/Frontend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/pages/NewsPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/pages/NewsPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/pages/TodoPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/pages/TodoPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/layouts/DefaultLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/layouts/DefaultLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
