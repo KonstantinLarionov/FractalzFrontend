@@ -14,94 +14,53 @@
       </div>
     </div>
     <!-- Dialogs -->
-    <div class="row">
-      <div class="dialog">
-        <div class="row">
-          <div class="col-3 d-flex align-items-center justify-content-end">
-            <div class="dialog-logo-wrap">
-              <img  src="https://via.placeholder.com/40" alt="" class="dialog-logo" width="35" height="35"/>
-            </div>
-          </div>
-          <div class="col-9 pl-0">
-            <label class="dialog-name">Константин Ларионов</label>
-            <div class="preview-dialog">
-              <label class="dialog-last-message-new text-truncate" style="max-width: 258.97px;">Последнее dasdasdasddasdasdasdние...</label>
-              <label class="dialog-datetime">9:30</label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="dialog">
-        <div class="row">
-          <div class="col-3 d-flex align-items-center justify-content-end">
-            <div class="dialog-logo-wrap">
-              <img  src="https://via.placeholder.com/40" alt="" class="dialog-logo" width="35" height="35"/>
-            </div>
-          </div>
-          <div class="col-9 pl-0">
-            <label class="dialog-name">Константин Ларионов</label>
-            <div class="preview-dialog">
-              <label class="dialog-last-message-new text-truncate" style="max-width: 258.97px;">Последнее dasdasdasddasdasdasdние...</label>
-              <label class="dialog-datetime">9:30</label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="dialog">
-        <div class="row">
-          <div class="col-3 d-flex align-items-center justify-content-end">
-            <div class="dialog-logo-wrap">
-              <img  src="https://via.placeholder.com/40" alt="" class="dialog-logo" width="35" height="35"/>
-            </div>
-          </div>
-          <div class="col-9 pl-0">
-            <label class="dialog-name">Константин Ларионов</label>
-            <div class="preview-dialog">
-              <label class="dialog-last-message-new text-truncate" style="max-width: 258.97px;">Последнее dasdasdasddasdasdasdние...</label>
-              <label class="dialog-datetime">9:30</label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="dialog">
-        <div class="row">
-          <div class="col-3 d-flex align-items-center justify-content-end">
-            <div class="dialog-logo-wrap">
-              <img  src="https://via.placeholder.com/40" alt="" class="dialog-logo" width="35" height="35"/>
-            </div>
-          </div>
-          <div class="col-9 pl-0">
-            <label class="dialog-name">Константин Ларионов</label>
-            <div class="preview-dialog">
-              <label class="dialog-last-message text-truncate" style="max-width: 258.97px;">Последнее dasdasdasddasdasdasdние...</label>
-              <label class="dialog-datetime">9:30</label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="dialog">
-        <div class="row">
-          <div class="col-3 d-flex align-items-center justify-content-end">
-            <div class="dialog-logo-wrap">
-              <img  src="https://via.placeholder.com/40" alt="" class="dialog-logo" width="35" height="35"/>
-            </div>
-          </div>
-          <div class="col-9 pl-0">
-            <label class="dialog-name">Константин Ларионов</label>
-            <div class="preview-dialog">
-              <label class="dialog-last-message text-truncate" style="max-width: 258.97px;">Последнее dasdasdasddasdasdasdние...</label>
-              <label class="dialog-datetime">9:30</label>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="row" v-for="dialogContent in dialogContents" :key="dialogContent.$id">
+      <dialog-element :dialog-name="dialogContent.name" :dialog-last-message="dialogContent.lastMessage" :dialog-date-send="dialogContent.dateSend"></dialog-element>
     </div>
   </div>
 </template>
 
 <script>
+import DialogElement from "../elements/DialogElement";
+import Vue from "vue";
+
+Vue.component ('dialog-element', DialogElement)
+
 export default {
-  name: "DialogPage"
+  name: "DialogPage",
+  date() {
+    return {
+      dialogContents: [],
+    }
+  },
+  mounted: async function () {
+    this.dialogContents = [];
+    this.getDialogs();
+  },
+  methods: {
+    getDialogs: function () {
+      var arr =[
+        {
+          id: 0,
+          name:'Даниил Яковлев',
+          lastMessage: 'Привед',
+          dateSend: '15.04.2007',
+        },
+        {
+          id: 1,
+          name:'Андрюшка',
+          lastMessage: 'Привед',
+          dateSend: '15.04.2007',
+        }
+      ];
+
+      for (let j in arr)
+      {
+        this.$set(this.dialogContents, j, arr[j])
+      }
+      this.$forceUpdate();
+    },
+  }
 }
 </script>
 

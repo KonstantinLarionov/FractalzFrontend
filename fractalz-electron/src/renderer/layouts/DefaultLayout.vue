@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid" style="overflow-y: hidden; overflow-x: hidden;">
     <div class="row" style="height: 100vh; ">
-      <div class="p-0 m-0 col-2 teal">
+      <div class="p-0 m-0 teal">
         <div class="container d-flex flex-column" style="height: 100%;">
           <div class="row mt-2">
             <div class="col d-flex justify-content-center mt-1">

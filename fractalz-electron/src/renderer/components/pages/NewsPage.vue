@@ -3,121 +3,58 @@
     <div class="row news-controls">
 
     </div>
-    <div class="row news">
-      <div class="col-4 w-100 h-100 p-0 m-0">
-        <img src="https://via.placeholder.com/100" style="width: 100%; height: 100%"/>
-      </div>
-      <div class="col-8" >
-        <div class="container" >
-          <div class="row mb-2"><p class="text-dark text-truncate font-weight-bold m-0" style="font-size: 14px;">Заголовок новости</p></div>
-          <div class="row mb-2"> <span class="badge bg-success">Спорт</span></div>
-          <div class="row"> <p class="text-truncate text-wrap font-monospace" style="font-size: 14px;">111111111111111111111111 111111111111111111111111 </p></div>
-        </div>
-      </div>
-    </div>
-    <div class="row news" >
-      <div class="col-4 w-100 h-100 p-0 m-0">
-        <img src="https://via.placeholder.com/100" style="width: 100%; height: 100%"/>
-      </div>
-      <div class="col-8" >
-        <div class="container" >
-          <div class="row mb-2"><p class="text-dark text-truncate font-weight-bold m-0" style="font-size: 14px;">Заголовок новости</p></div>
-          <div class="row mb-2"> <span class="badge bg-success">Спорт</span></div>
-          <div class="row"> <p class="text-truncate text-wrap font-monospace" style="font-size: 14px;">111111111111111111111111 111111111111111111111111 </p></div>
-        </div>
-      </div>
-    </div>
-    <div class="row news" >
-      <div class="col-4 w-100 h-100 p-0 m-0">
-        <img src="https://via.placeholder.com/100" style="width: 100%; height: 100%"/>
-      </div>
-      <div class="col-8" >
-        <div class="container" >
-          <div class="row mb-2"><p class="text-dark text-truncate font-weight-bold m-0" style="font-size: 14px;">Заголовок новости</p></div>
-          <div class="row mb-2"> <span class="badge bg-success">Спорт</span></div>
-          <div class="row"> <p class="text-truncate text-wrap font-monospace" style="font-size: 14px;">111111111111111111111111 111111111111111111111111 </p></div>
-        </div>
-      </div>
-    </div>
-    <div class="row news">
-      <div class="col-4 w-100 h-100 p-0 m-0">
-        <img src="https://via.placeholder.com/100" style="width: 100%; height: 100%"/>
-      </div>
-      <div class="col-8" >
-        <div class="container" >
-          <div class="row mb-2"><p class="text-dark text-truncate font-weight-bold m-0" style="font-size: 14px;">Заголовок новости</p></div>
-          <div class="row mb-2"> <span class="badge bg-success">Спорт</span></div>
-          <div class="row"> <p class="text-truncate text-wrap font-monospace" style="font-size: 14px;">111111111111111111111111 111111111111111111111111 </p></div>
-        </div>
-      </div>
-    </div>
-    <div class="row news" >
-      <div class="col-4 w-100 h-100 p-0 m-0">
-        <img src="https://via.placeholder.com/100" style="width: 100%; height: 100%"/>
-      </div>
-      <div class="col-8" >
-        <div class="container" >
-          <div class="row mb-2"><p class="text-dark text-truncate font-weight-bold m-0" style="font-size: 14px;">Заголовок новости</p></div>
-          <div class="row mb-2"> <span class="badge bg-success">Спорт</span></div>
-          <div class="row"> <p class="text-truncate text-wrap font-monospace" style="font-size: 14px;">111111111111111111111111 111111111111111111111111 </p></div>
-        </div>
-      </div>
-    </div>
-    <div class="row news" >
-      <div class="col-4 w-100 h-100 p-0 m-0">
-        <img src="https://via.placeholder.com/100" style="width: 100%; height: 100%"/>
-      </div>
-      <div class="col-8" >
-        <div class="container" >
-          <div class="row mb-2"><p class="text-dark text-truncate font-weight-bold m-0" style="font-size: 14px;">Заголовок новости</p></div>
-          <div class="row mb-2"> <span class="badge bg-success">Спорт</span></div>
-          <div class="row"> <p class="text-truncate text-wrap font-monospace" style="font-size: 14px;">111111111111111111111111 111111111111111111111111 </p></div>
-        </div>
-      </div>
-    </div>
-    <div class="row news" >
-      <div class="col-4 w-100 h-100 p-0 m-0">
-        <img src="https://via.placeholder.com/100" style="width: 100%; height: 100%"/>
-      </div>
-      <div class="col-8" >
-        <div class="container" >
-          <div class="row mb-2"><p class="text-dark text-truncate font-weight-bold m-0" style="font-size: 14px;">Заголовок новости</p></div>
-          <div class="row mb-2"> <span class="badge bg-success">Спорт</span></div>
-          <div class="row"> <p class="text-truncate text-wrap font-monospace" style="font-size: 14px;">111111111111111111111111 111111111111111111111111 </p></div>
-        </div>
-      </div>
-    </div>
-    <div class="row news" >
-      <div class="col-4 w-100 h-100 p-0 m-0">
-        <img src="https://via.placeholder.com/100" style="width: 100%; height: 100%"/>
-      </div>
-      <div class="col-8" >
-        <div class="container" >
-          <div class="row mb-2"><p class="text-dark text-truncate font-weight-bold m-0" style="font-size: 14px;">Заголовок новости</p></div>
-          <div class="row mb-2"> <span class="badge bg-success">Спорт</span></div>
-          <div class="row"> <p class="text-truncate text-wrap font-monospace" style="font-size: 14px;">111111111111111111111111 111111111111111111111111 </p></div>
-        </div>
-      </div>
-    </div>
-    <div class="row news" >
-      <div class="col-4 w-100 h-100 p-0 m-0">
-        <img src="https://via.placeholder.com/100" style="width: 100%; height: 100%"/>
-      </div>
-      <div class="col-8" >
-        <div class="container" >
-          <div class="row mb-2"><p class="text-dark text-truncate font-weight-bold m-0" style="font-size: 14px;">Заголовок новости</p></div>
-          <div class="row mb-2"> <span class="badge bg-success">Спорт</span></div>
-          <div class="row"> <p class="text-truncate text-wrap font-monospace" style="font-size: 14px;">111111111111111111111111 111111111111111111111111 </p></div>
-        </div>
-      </div>
+    <div v-for="newsContent in newsContents" :key="newsContent.$id">
+      <news-element :news-name="newsContent.name" :news-type="newsContent.type" :news-text="newsContent.text"></news-element>
     </div>
   </div>
-
 </template>
 
 <script>
+import NewsElement from "../elements/NewsElement";
+import Vue from "vue";
+
+Vue.component ('news-element', NewsElement)
 export default {
-  name: "NewsPage"
+  name: "NewsPage",
+  date() {
+    return {
+      newsContents: [],
+    }
+  },
+  mounted: async function () {
+    this.newsContents = [];
+    this.getNews();
+  },
+  methods: {
+    getNews: function () {
+      var arr =[
+        {
+          id: 0,
+          name:'Заголовок новости',
+          type: 'Спорт',
+          text: '11111 111',
+        },
+        {
+          id: 0,
+          name:'Заголовок новости',
+          type: 'Спорт',
+          text: '11111 111',
+        },
+        {
+          id: 0,
+          name:'Заголовок новости',
+          type: 'Спорт',
+          text: '11111 111',
+        }
+      ];
+
+      for (let j in arr)
+      {
+        this.$set(this.newsContents, j, arr[j])
+      }
+      this.$forceUpdate();
+    },
+  }
 }
 </script>
 

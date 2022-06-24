@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca0414e2-1aaa-4786-8bb5-759d29476302" name="Changes" comment="" />
+    <list default="true" id="ca0414e2-1aaa-4786-8bb5-759d29476302" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/elements/DialogElement.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/elements/NewsElement.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/elements/todo/TodoTaskElement.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/elements/todo/TodoTaskManager.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/modals/TodoModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/main/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/DialogPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/DialogPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/NewsPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/NewsPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/TodoPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/TodoPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/layouts/DefaultLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/layouts/DefaultLayout.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2AdmBdSyZM61iGlfHoUZGP4aikY" />
   <component name="ProjectViewState">
@@ -19,6 +42,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.17.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.17.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sc.lk/SC.LK.UI" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -30,8 +58,12 @@
       <option name="presentableId" value="Default" />
       <updated>1655347701542</updated>
       <workItem from="1655347703959" duration="34000" />
+      <workItem from="1655960200730" duration="27474000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -43,5 +75,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
