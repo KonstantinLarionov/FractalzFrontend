@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62c9c083-0caf-47be-a0b5-6ab81b039c16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/renderer/gears/NotifyCenter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/pages/DialogPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/pages/DialogPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/gears/NotifyCenter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/services/NotifyCenter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +69,7 @@
       <workItem from="1655294895386" duration="50000" />
       <workItem from="1655295015934" duration="3425000" />
       <workItem from="1656044672605" duration="137000" />
-      <workItem from="1656058530168" duration="2175000" />
+      <workItem from="1656058530168" duration="2295000" />
     </task>
     <servers />
   </component>
