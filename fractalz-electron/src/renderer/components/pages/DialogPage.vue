@@ -1,4 +1,5 @@
 <template>
+  <!-- Через v-if можно менять темплейты -->
   <div class="dialogs-wrap p-3" id="dialogsSpace">
     <!-- Searcher -->
     <div class="row">

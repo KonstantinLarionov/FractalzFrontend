@@ -8,7 +8,17 @@
         <div class="card-header">
           <todo-task-manager todo-total-tasks="0" todo-today-tasks="0" todo-total-open-tasks="0"></todo-task-manager>
           <span class="float-right mt-2">
-            <button class="mr-4 navTask dark-teal" data-toggle="modal" data-target="#todoAdd" >Добавить задачу</button>
+            <button class="mr-4 navTask dark-teal" @click="showModal = true">Добавить задачу</button>
+
+              <todo-modal v-if="showModal" @close="showModal = false">
+                <template v-slot:body>
+
+                </template>
+<!--                <template v-slot:footer>
+                  Hello, modal!
+                </template>-->
+              </todo-modal>
+
             <button class="mr-4 border-0 bg-transparent navTask text-dark">Архив задач</button>
             <i class="fa fa-search" aria-hidden="true"></i>
           </span>
@@ -42,8 +52,15 @@ import Vue from "vue";
 Vue.component ('todo-task-element', TodoTaskElement)
 Vue.component ('todo-task-manager', TodoTaskManager)
 Vue.component ('todo-modal', TodoModal)
+
+
 export default {
   name: "TodoPage",
+  data(){
+    return{
+      showModal: false
+    }
+  },
   date() {
     return {
       todoTasksContents: [],
@@ -82,10 +99,20 @@ export default {
       }
       this.$forceUpdate();
     },
+    showModal: function (){
+      this.showModal = true;
+    }
   }
 }
 </script>
 
 <style scoped>
-
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 20%;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+}
 </style>
