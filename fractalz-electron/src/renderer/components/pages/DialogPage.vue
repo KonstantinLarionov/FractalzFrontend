@@ -1,6 +1,8 @@
 <template>
-  <!-- Через v-if можно менять темплейты -->
-  <div class="dialogs-wrap p-3" id="dialogsSpace">
+  <chat-page v-if="chatSelect== true">
+
+  </chat-page>
+  <div v-else-if="chatSelect == false" class="dialogs-wrap p-3" id="dialogsSpace">
     <!-- Searcher -->
     <div class="row">
       <div class="searcher-wrap row">
@@ -15,7 +17,7 @@
       </div>
     </div>
     <!-- Dialogs -->
-    <div class="row" v-for="dialogContent in dialogContents" :key="dialogContent.$id">
+    <div class="row" v-on:click="openChat()" v-for="dialogContent in dialogContents" :key="dialogContent.$id">
       <dialog-element :dialog-name="dialogContent.name" :dialog-last-message="dialogContent.lastMessage" :dialog-date-send="dialogContent.dateSend"></dialog-element>
     </div>
   </div>
@@ -23,12 +25,19 @@
 
 <script>
 import DialogElement from "../elements/DialogElement";
+import ChatPage from "./ChatPage";
 import Vue from "vue";
 
 Vue.component ('dialog-element', DialogElement)
+Vue.component ('chat-page', ChatPage)
 
 export default {
   name: "DialogPage",
+  data(){
+    return{
+      chatSelect: false
+    }
+  },
   date() {
     return {
       dialogContents: [],
@@ -60,6 +69,10 @@ export default {
         this.$set(this.dialogContents, j, arr[j])
       }
       this.$forceUpdate();
+    },
+    openChat: function (){
+      console.log("asdas")
+      this.chatSelect = true;
     },
   }
 }

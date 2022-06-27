@@ -22,6 +22,14 @@ export default new Router({
       }
     },
     {
+      path: '/dialog/chat',
+      name: 'ChatPage',
+      component: require('@/components/pages/ChatPage').default,
+      meta:{
+        layout: "default-layout"
+      }
+    },
+    {
       path: '/account',
       name: 'AccountPage',
       component: require('@/components/pages/AccountPage').default,

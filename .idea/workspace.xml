@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca0414e2-1aaa-4786-8bb5-759d29476302" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/ChatPage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/elements/todo/TodoTaskElement.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/elements/todo/TodoTaskElement.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/modals/TodoModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/modals/TodoModal.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/DialogPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/DialogPage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/TodoPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/TodoPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +52,7 @@
       <updated>1655347701542</updated>
       <workItem from="1655347703959" duration="34000" />
       <workItem from="1655960200730" duration="27706000" />
-      <workItem from="1656308087487" duration="19278000" />
+      <workItem from="1656308087487" duration="25452000" />
     </task>
     <servers />
   </component>
