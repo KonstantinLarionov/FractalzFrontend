@@ -59,12 +59,10 @@
           </div>
         </div>
       </div>
-      <div class="col-10 p-0" id="spaces">
-
+      <div class="col p-0" id="spaces">
         <section class="content">
           <slot/>
         </section>
-
       </div>
     </div>
   </div>
@@ -77,5 +75,8 @@ export default {
 </script>
 
 <style scoped>
-
+.content{
+  width: 100%;
+  height: 100%;
+}
 </style>
