@@ -54,6 +54,14 @@ export default new Router({
       }
     },
     {
+      path: '/timetable',
+      name: 'TimetablePage',
+      component: require('@/components/pages/TimetablePage').default,
+      meta:{
+        layout: "default-layout"
+      }
+    },
+    {
       path: '*',
       redirect: '/'
     }

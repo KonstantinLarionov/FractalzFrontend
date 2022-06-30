@@ -373,25 +373,4 @@ body{
   -webkit-appearance: none;
   border-radius: 0;
 }
-
-/* W3C standard
-   сейчас только для Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #46be8a white;
-}
-
-/* для Chrome/Edge/Safari */
-*::-webkit-scrollbar {
-  height: 12px;
-  width: 12px;
-}
-*::-webkit-scrollbar-track {
-  background: white;
-}
-*::-webkit-scrollbar-thumb {
-  background-color: #46be8a;
-  border-radius: 5px;
-  border: 3px solid white;
-}
 </style>
