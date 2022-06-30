@@ -62,6 +62,14 @@ export default new Router({
       }
     },
     {
+      path: '/registration',
+      name: 'RegistrationPage',
+      component: require('@/components/pages/RegistrationPage').default,
+      meta:{
+        layout: "non-layout"
+      }
+    },
+    {
       path: '*',
       redirect: '/'
     }

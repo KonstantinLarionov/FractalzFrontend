@@ -1,10 +1,10 @@
 <template>
   <vue-cal class="" style="height: 100%"
            :disable-views="['years', 'year']" active-view="week" :time-step="30"
+
            locale="ru"
-           :special-hours="specialHours"
            :split-days="splitDays"
-           :sticky-split-labels="stickySplitLabels"
+           :sticky-split-labels="true"
            :events="events"
            >
    </vue-cal>
@@ -19,14 +19,13 @@ export default {
   name: "TimetablePage",
   components:{VueCal},
   data:()=>({
-    stickySplitLabels: false,
     splitDays: [
       // The id property is added automatically if none (starting from 1), but you can set a custom one.
       // If you need to toggle the splits, you must set the id explicitly.
       { id: 1, class: 'mom', label: 'Mom' },
       { id: 2, class: 'dad', label: 'Dad'},
     ],
-    specialHours: {
+    /*specialHours: {
       1: dailyHours,
       2: dailyHours,
       3: [
@@ -37,31 +36,21 @@ export default {
       5: dailyHours,
       6: dailyHours,
       7: dailyHours,
-    },
+    },*/
       events: [
       {
-        start: '2022-06-29 11:30',
-        end: '2022-06-29 12:30',
-        title: 'Need to go shopping',
-        content: '<i class="v-icon material-icons">shopping_cart</i>',
-        class: 'leisure',
+        start: '2022-06-29 8:30',
+        end: '2022-06-29 17:30',
+        title: 'Рабочий день',
+        class: 'working-day',
         split: 1
         },
       {
-        start: '2022-06-29 10:30',
-        end: '2022-06-29 11:30',
-        title: 'Golf with John',
-        content: '<i class="v-icon material-icons">shopping_cart</i>',
-        class: 'leisure',
+        start: '2022-06-29 8:30',
+        end: '2022-06-29 17:30',
+        title: 'Рабочий день',
+        class: 'working-day',
         split: 2
-      },
-      {
-        start: '2022-06-28 10:30',
-        end: '2022-06-28 11:30',
-        title: 'Dad\'s birthday!',
-        content: '<i class="v-icon material-icons">shopping_cart</i>',
-        class: 'sport',
-        split: 1
       }
     ]
   }),
@@ -74,6 +63,18 @@ export default {
 </script>
 
 <style>
+.vuecal__event.working-day
+{
+  background-color: rgb(253, 211, 173);
+  border: solid rgb(246, 201, 160);
+  border-width: 0 0 0 4px ;
+}
+.vuecal__event.weekend
+{
+  background-color: rgba(0, 150, 135, 0.2);
+  border: solid rgb(0, 150, 135);
+  border-width: 2px 0;
+}
 .vuecal__cell-split.dad {background-color: rgba(221, 238, 255, 0.5);}
 .vuecal__cell-split.mom {background-color: rgba(255, 232, 251, 0.5);}
 .business-hours {
