@@ -1,34 +1,41 @@
 <template>
   <div class="login-page">
     <div class="form">
-      <form class="register-form">
-        <input type="text" placeholder="name"/>
-        <input type="password" placeholder="password"/>
-        <input type="text" placeholder="email address"/>
-        <button>create</button>
-        <p class="message">Already registered? <a onclick="toSungIn()">Sign In</a></p>
+      <form v-if="isLogin== false" class="register-form">
+        <input type="text" placeholder="Логин"/>
+        <input type="password" placeholder="Пароль"/>
+        <input type="text" placeholder="Почта"/>
+        <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singIn()">Создать</button>
+        <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>
       </form>
-      <form class="login-form">
-        <input type="text" placeholder="username"/>
-        <input type="password" placeholder="password"/>
-        <button>login</button>
-        <p class="message">Not registered? <a onclick="toCreateAccount()">Create an account</a></p>
+      <form v-else-if="isLogin == true" class="login-form">
+        <input type="text" placeholder="Логин/Почта"/>
+        <input type="password" placeholder="Пароль"/>
+        <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Войти</button>
+        <p class="message">Нет аккаута? <a v-on:click="toCreateAccount()">Создать аккаунт</a></p>
       </form>
     </div>
   </div>
 </template>
 
 <script>
-import $ from 'jquery'
-
 export default {
   name: "RegistrationPage",
+  data() {
+    return{
+      isLogin: true
+    }
+  },
   methods: {
     toCreateAccount : function () {
-      $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+      this.isLogin = false;
     },
-    toSungIn : function () {
-      $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    toSingIn : function () {
+      this.isLogin = true;
+    },
+    singIn : function () {
+    },
+   logIn : function () {
     },
   }
 }
@@ -39,7 +46,7 @@ export default {
 
 .login-page {
   width: 360px;
-  padding: 8% 0 0;
+  padding: 10% 0 0;
   margin: auto;
 }
 .form {
@@ -67,7 +74,7 @@ export default {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #4CAF50;
+  background: #009788;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -75,53 +82,14 @@ export default {
   font-size: 14px;
   cursor: pointer;
 }
-.form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
-}
 .form .message {
   margin: 15px 0 0;
   color: #b3b3b3;
   font-size: 12px;
 }
 .form .message a {
-  color: #4CAF50;
+  color: #009788;
+  cursor: pointer;
   text-decoration: none;
 }
-.form .register-form {
-  display: none;
-}
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
-}
-.container:before, .container:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.container .info {
-  margin: 50px auto;
-  text-align: center;
-}
-.container .info h1 {
-  margin: 0 0 15px;
-  padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #1a1a1a;
-}
-.container .info span {
-  color: #4d4d4d;
-  font-size: 12px;
-}
-.container .info span a {
-  color: #000000;
-  text-decoration: none;
-}
-.container .info span .fa {
-  color: #EF3B3A;
-}
-
 </style>
