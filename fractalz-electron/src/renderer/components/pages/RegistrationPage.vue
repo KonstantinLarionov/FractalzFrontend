@@ -1,16 +1,16 @@
 <template>
   <div class="login-page">
     <div class="form">
-      <form v-if="isLogin== false" class="register-form">
-        <input type="text" placeholder="Логин"/>
-        <input type="password" placeholder="Пароль"/>
-        <input type="text" placeholder="Почта"/>
-        <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singIn()">Создать</button>
+      <form v-if="isLogin == false" class="register-form">
+        <input type="text" id="login" placeholder="Логин"/>
+        <input type="password" id="password" placeholder="Пароль"/>
+        <input type="text" id="email" placeholder="Почта"/>
+        <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singIn()">Зарегистрироваться</button>
         <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>
       </form>
       <form v-else-if="isLogin == true" class="login-form">
-        <input type="text" placeholder="Логин/Почта"/>
-        <input type="password" placeholder="Пароль"/>
+        <input type="text" id="userLogin" placeholder="Логин/Почта"/>
+        <input type="password" id="userPassword" placeholder="Пароль"/>
         <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Войти</button>
         <p class="message">Нет аккаута? <a v-on:click="toCreateAccount()">Создать аккаунт</a></p>
       </form>
@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import Vue from 'vue'
+
 export default {
   name: "RegistrationPage",
   data() {
@@ -34,8 +36,11 @@ export default {
       this.isLogin = true;
     },
     singIn : function () {
+      console.log("хуй")
+      var singInRequest = Vue.http
+      singInRequest.Registration(document.getElementById("login").value, document.getElementById("email").value, document.getElementById("password").value)
     },
-   logIn : function () {
+    logIn : function () {
     },
   }
 }
