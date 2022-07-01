@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca0414e2-1aaa-4786-8bb5-759d29476302" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/main/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/UserPart.js" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/UserPart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/AccountPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/AccountPage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -32,11 +41,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.17.1" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.17.1" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.17.5" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.17.5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../sc.lk/SC.LK.UI" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
@@ -52,7 +62,8 @@
       <updated>1655347701542</updated>
       <workItem from="1655347703959" duration="34000" />
       <workItem from="1655960200730" duration="27706000" />
-      <workItem from="1656308087487" duration="80320000" />
+      <workItem from="1656308087487" duration="73709000" />
+      <workItem from="1656568592461" duration="15811000" />
     </task>
     <servers />
   </component>
@@ -69,18 +80,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/ChatPage.vue</url>
-          <line>351</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
