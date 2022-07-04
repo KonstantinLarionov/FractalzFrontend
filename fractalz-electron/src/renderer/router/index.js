@@ -6,7 +6,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/Start',
       name: 'StartPage',
       component: require('@/components/pages/StartPage').default,
       meta:{
@@ -62,7 +62,7 @@ export default new Router({
       }
     },
     {
-      path: '/registration',
+      path: '/',
       name: 'RegistrationPage',
       component: require('@/components/pages/RegistrationPage').default,
       meta:{

@@ -32,7 +32,7 @@ export default class UserPart extends BasePart {
      * @constructor
      */
     async Login(login, password) {
-        return await this.instant.$get(this._loginPath + this._loginModel(login, password))
+        return await this.instant.get(this._loginPath + this._loginModel(login, password))
     }
 
     /**
@@ -44,7 +44,11 @@ export default class UserPart extends BasePart {
      * @constructor
      */
     async Registration(login, email, password) {
-        return await this.instant.$post(this._registrationPath, this._registrationModel(login, email, password))
+        return await this.instant.post(this._registrationPath, this._registrationModel(login, email, password))
     }
 
+    async UpdateProfile( objectData ) {
+        console.log(objectData);
+        return await this.instant.post(this._updateProfilePath, objectData)
+    }
 }

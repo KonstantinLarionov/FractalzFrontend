@@ -15,9 +15,6 @@
     computed: {
       //Это самое вычисляемое свойство
       layout(){
-        console.log(this.$route.meta.layout)
-        //Вернем имя шаблона из роута или дефолтное значение
-        //(шаблон для страниц, для которых мы не указали ш аблон)
         return this.$route.meta.layout || "default-layout"
       }
     }
