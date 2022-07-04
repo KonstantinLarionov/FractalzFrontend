@@ -54,6 +54,8 @@
 <script>
 import AnswerLeft from "../elements/chat/AnswerLeft";
 import AnswerRight from "../elements/chat/AnswerRight";
+import ChatPart from "../../api/ChatPart";
+import NotifyCenter from "../../services/NotifyCenter";
 import Vue from "vue";
 
 Vue.component ('answer-left-element', AnswerLeft)
@@ -66,40 +68,140 @@ export default {
       messageContents: [],
     }
   },
+  data(){
+    return{
+      notyHeader: "Диалог Fractalz"
+    }
+  },
+  props:{
+    api: Object,
+    noty: Object
+  },
   mounted: async function () {
     this.messageContents = [];
     this.getMessage();
   },
   methods: {
-    getMessage: function () {
-      var arr =[
-        {
-          id: 0,
-          from: 0,
-          avatar: 'https://bootdey.com/img/Content/avatar/avatar2.png',
-          status : 0,
-          name : "Alexander Herthic",
-          message: "Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adiping elit",
-          dateSend: "5 min ago",
-        },
-        {
-          id: 1,
-          from: 1,
-          avatar: 'https://bootdey.com/img/Content/avatar/avatar1.png',
-          status : 1,
-          name : "Alexander Herthic",
-          message: "Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adiping elit",
-          dateSend: "5 min ago",
+    getMessage: async function (idDialog, dateFrom, countMessage) {
+      var result = await this.api
+          .getMessage(idDialog, dateFrom, countMessage)
+          .catch(response => {
+            this.noty.Show({
+              title: this.notyHeader,
+              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+            });
+          });
+      if (result.data.success) {
+        console.log(result)
+        var arr = [];
+        if (result.messages != null) {
+          arr = result.messages;
+        } else {
+          arr = [
+            {
+              id: 0,
+              from: 0,
+              avatar: 'https://bootdey.com/img/Content/avatar/avatar2.png',
+              status: 0,
+              name: "Alexander Herthic",
+              message: "Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adiping elit",
+              dateSend: "5 min ago",
+            },
+            {
+              id: 1,
+              from: 1,
+              avatar: 'https://bootdey.com/img/Content/avatar/avatar1.png',
+              status: 1,
+              name: "Alexander Herthic",
+              message: "Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adiping elit",
+              dateSend: "5 min ago",
+            }
+          ];
         }
-      ];
-
-      for (let j in arr)
-      {
-        this.$set(this.messageContents, j, arr[j])
+        for (let j in arr) {
+          this.$set(this.messageContents, j, arr[j])
+        }
+        this.$forceUpdate();
+      } else {
+        this.noty.Show({title: this.notyHeader, message: "У вас нет сообщений начните диалог"});
       }
-      console.log(arr)
-      this.$forceUpdate();
     },
+    sendMessage: async function (obj) {
+      var result = await this.api
+          .CreateMessage(obj)
+          .catch(response => {
+            this.noty.Show({
+              title: this.notyHeader,
+              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+            });
+          });
+      if (result.data.success) {
+        console.log(result)
+
+      } else {
+        this.noty.Show({title: this.notyHeader, message: "Ошибка отправки сообщения"});
+      }
+    },
+    updateMessage: async function (obj) {
+      var result = await this.api
+          .UpdateMessage(obj)
+          .catch(response => {
+            this.noty.Show({
+              title: this.notyHeader,
+              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+            });
+          });
+      if (result.data.success) {
+        console.log(result)
+      } else {
+        this.noty.Show({title: this.notyHeader, message: "Ошибка изменения сообщения"});
+      }
+    },
+    sendReaction: async function () {
+      var result = await this.api
+          .ReactionMessage(obj)
+          .catch(response => {
+            this.noty.Show({
+              title: this.notyHeader,
+              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+            });
+          });
+      if (result.data.success) {
+        console.log(result)
+      } else {
+        this.noty.Show({title: this.notyHeader, message: "Ошибка изменения сообщения"});
+      }
+    },
+    downloadFile: async function () {
+      var result = await this.api
+          .DownloadFile(obj)
+          .catch(response => {
+            this.noty.Show({
+              title: this.notyHeader,
+              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+            });
+          });
+      if (result.data.success) {
+        console.log(result)
+      } else {
+        this.noty.Show({title: this.notyHeader, message: "Ошибка загрузки файла"});
+      }
+    },
+    deleteMessage: async function () {
+      var result = await this.api
+          .DeleteMessage(obj)
+          .catch(response => {
+            this.noty.Show({
+              title: this.notyHeader,
+              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+            });
+          });
+      if (result.data.success) {
+        console.log(result)
+      } else {
+        this.noty.Show({title: this.notyHeader, message: "Ошибка удаления сообщения"});
+      }
+    }
   }
 }
 </script>

@@ -2,16 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca0414e2-1aaa-4786-8bb5-759d29476302" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/ChatPart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/ConferencePart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/KanbanPart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/NewsPart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/TimetablePart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/TodoPart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/VoicePart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fractalz-electron/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/main/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/UserPart.js" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/UserPart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/AccountPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/AccountPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/ChatPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/ChatPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/DialogPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/DialogPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/TodoPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/TodoPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +92,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
