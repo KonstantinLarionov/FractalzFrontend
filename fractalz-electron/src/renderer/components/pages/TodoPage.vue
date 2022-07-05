@@ -47,6 +47,8 @@
 import TodoTaskElement from "../elements/todo/TodoTaskElement";
 import TodoTaskManager from "../elements/todo/TodoTaskManager";
 import TodoModal from "../modals/TodoModal";
+import UserPart from "../../api/UserPart";
+import NotifyCenter from "../../services/NotifyCenter";
 import Vue from "vue";
 
 Vue.component ('todo-task-element', TodoTaskElement)
@@ -65,6 +67,10 @@ export default {
     return {
       todoTasksContents: [],
     }
+  },
+  props:{
+    api: Object,
+    noty: Object
   },
   mounted: async function () {
     this.todoTasksContents = [];

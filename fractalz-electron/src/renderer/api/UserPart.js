@@ -25,10 +25,10 @@ export default class UserPart extends BasePart {
     //#endregion
 
     /**
-     * Логин пользователя
+     * Логирование пользователя
      * @param login
      * @param password
-     * @returns https://test-back.it.scancity.ru/swagger/index.html /profile/login
+     * @returns {Promise<*>}
      * @constructor
      */
     async Login(login, password) {
@@ -47,6 +47,12 @@ export default class UserPart extends BasePart {
         return await this.instant.post(this._registrationPath, this._registrationModel(login, email, password))
     }
 
+    /**
+     * Обновление профиля
+     * @param objectData
+     * @returns {Promise<*>}
+     * @constructor
+     */
     async UpdateProfile( objectData ) {
         console.log(objectData);
         return await this.instant.post(this._updateProfilePath, objectData)
