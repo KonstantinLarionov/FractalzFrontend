@@ -17,7 +17,7 @@
       </div>
     </div>
     <!-- Dialogs -->
-    <div class="row" v-on:click="openChat()" v-for="dialogContent in dialogContents" :key="dialogContent.$id">
+    <div class="row" v-for="dialogContent in dialogContents" :key="dialogContent.$id" v-on:click="openChat(dialogContent.id)">
       <dialog-element :dialog-name="dialogContent.name" :dialog-last-message="dialogContent.lastMessage" :dialog-date-send="dialogContent.dateSend"></dialog-element>
     </div>
   </div>
@@ -39,6 +39,7 @@ export default {
     return{
       findStr : '',
       chatSelect: false,
+      isFindUsers: false,
       notyHeader: "Диалоги Fractalz"
     }
   },
@@ -60,6 +61,13 @@ export default {
     console.log(Vue.$cookies.get('UserToken'))
   },
   methods: {
+    openChat: function (id){
+      if (this.isFindUsers){
+        let arr = [id, Vue.$cookies.get('UserInfo').id];
+        this.createDialog(arr);
+      }
+      this.chatSelect = true;
+    },
     getDialogs: async function () {
       var result = await this.api
           .GetDialogs(Vue.$cookies.get('UserInfo').id)
@@ -70,39 +78,21 @@ export default {
             });
           });
       if (result.data.success) {
-        console.log(result)
         var arr = [];
-        if (result.dialogs != null){
-          arr = result.dialogs;
+        if (result.data.dialogs != null){
+          arr = result.data.dialogs.$values;
+          for (let j in arr) {
+            this.$set(this.dialogContents, j, arr[j])
+          }
+          this.$forceUpdate();
         }
-        else {
-          arr = [
-            {
-              id: 0,
-              name: 'Даниил Яковлев',
-              lastMessage: 'Привед',
-              dateSend: '15.04.2007',
-            },
-            {
-              id: 1,
-              name: 'Андрюшка',
-              lastMessage: 'Привед',
-              dateSend: '15.04.2007',
-            }
-          ];
-        }
-        for (let j in arr) {
-          this.$set(this.dialogContents, j, arr[j])
-        }
-        this.$forceUpdate();
       } else {
         this.noty.Show({title: this.notyHeader, message: "У вас нет активных диалогов"});
       }
     },
-    openChat: function (){
-      this.chatSelect = true;
-    },
+
     findUsers: async function () {
+      this.isFindUsers =true;
       var result = await this.api
           .FindUsers(this.findStr)
           .catch(response => {
@@ -119,6 +109,7 @@ export default {
           this.dialogContents = [];
           for (let j in arr) {
             this.$set(this.dialogContents, j, arr[j])
+            console.log(this.dialogContents)
           }
           this.$forceUpdate();
         }
@@ -128,6 +119,7 @@ export default {
       }
     },
     createDialog: async function (usersId) {
+      console.log(usersId)
       var result = await this.api
           .CreateDialog(usersId)
           .catch(response => {

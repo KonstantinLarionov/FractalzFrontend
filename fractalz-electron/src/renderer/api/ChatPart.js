@@ -28,6 +28,12 @@ export default class ChatPart extends BasePart {
     _getMessagesModel = function (idDialog, dateFrom, countMessage) {
         return "?IdDialog=" + idDialog + "&DateFrom=" + dateFrom + "&CountMessage=" + countMessage;
     }
+
+    _createDialogModel = function (UsersId) {
+        return {
+            UsersId
+        }
+    }
     //#endregion
 
     /**
@@ -77,7 +83,8 @@ export default class ChatPart extends BasePart {
      * @constructor
      */
     async CreateDialog(objectData) {
-        return await this.instant.post(this._createDialogPath, objectData)
+        console.log(this._createDialogModel(objectData))
+        return await this.instant.post(this._createDialogPath, this._createDialogModel(objectData))
     }
 
     /**
