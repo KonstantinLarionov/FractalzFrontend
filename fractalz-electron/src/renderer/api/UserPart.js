@@ -10,6 +10,7 @@ export default class UserPart extends BasePart {
     _registrationPath = this._partPath + "registration"
     _updateProfilePath = this._partPath + "updateProfile"
     _updateStatusPath = this._partPath + "updateStatus"
+    _passwordReset = this._partPath + "passwordReset"
 
     _loginModel = function (login, password) {
         return "?login=" + login + "&password=" + password;
@@ -22,6 +23,8 @@ export default class UserPart extends BasePart {
             "password": password
         }
     }
+    _passwordResetModel = function (email, newPassword)
+    {return "newPassword" + newPassword}
     //#endregion
 
     /**
@@ -46,6 +49,8 @@ export default class UserPart extends BasePart {
     async Registration(login, email, password) {
         return await this.instant.post(this._registrationPath, this._registrationModel(login, email, password))
     }
+     async PasswordReset(newPassword)
+     { return await  this.instant.update(this._passwordReset, this._passwordResetModel(newPassword))}
 
     async UpdateProfile( objectData ) {
         console.log(objectData);
