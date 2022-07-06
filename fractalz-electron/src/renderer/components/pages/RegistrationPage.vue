@@ -13,7 +13,20 @@
         <input type="password" v-model="password" placeholder="Пароль"/>
         <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Войти</button>
         <button class="modal-default-button mr-4 navTask mt-1" v-if="Auth" style="background-color: darkred" v-on:click="logOut()">Выйти</button>
-        <p class="message">Нет аккаута? <a v-on:click="toCreateAccount()">Создать аккаунт</a></p>
+        <p class= "message">Нет аккаута? <a v-on:click="toCreateAccount()">Создать аккаунт</a></p>
+        <p class= "password-reset"> Забыли пароль?</p>
+        <p class= "password-resetbutton"> <a v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</a></p>
+      </form>
+      <form v-if="passwordReset == true" class="password-reset-form">
+        <p class="reset-title"> Для восстановления доступа вам необходимо сбросить старый пароль и установить новый.
+          Для этого мы отправим вам на почту одноразовый код для подтверждения </p>
+        <input type="text" v-model="login" placeholder="Почта(ваш зарегестрированный Email)" />
+        <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Отправить код</button>
+        <input type="text" placeholder="Ваш одноразовый код" />
+        <input type="text" v-model="password" placeholder="Старый пароль"/>
+        <input type="text" v-model="newPassword" placeholder="Новый пароль"/>
+        <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Сохранить</button>
+        <button class="modal-default-button mr-4 navTask mt-1" v-if="Auth" style="background-color: darkred" v-on:click="logIn()">Войти</button>
       </form>
     </div>
   </div>
@@ -33,7 +46,8 @@ export default {
       isLogin: true,
       login : 'kostya12277',
       email : 'kostya12277@yandex.ru',
-      password: '4Thehorde!'
+      password: '4TheHorde!',
+      passwordReset: false,
     }
   },
 
@@ -55,6 +69,10 @@ export default {
 
     toSingIn : function () {
       this.isLogin = true;
+    },
+
+    toResetPassword : function(){
+      this.passwordReset = true;
     },
 
     singIn : async function () {
@@ -170,4 +188,16 @@ export default {
   cursor: pointer;
   text-decoration: none;
 }
+.form .password-reset{
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .password-resetbutton{
+  color: #009788;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 12px;
+}
+
 </style>

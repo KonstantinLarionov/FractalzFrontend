@@ -2,16 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca0414e2-1aaa-4786-8bb5-759d29476302" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fractalz-electron/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/main/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/UserPart.js" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/UserPart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/AccountPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/AccountPage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/.idea/.idea.FractalzWPF/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/.idea/.idea.FractalzWPF/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.Application/obj/Debug/net5.0/FractalzWPF.Infrastructure.Application.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.Application/obj/Debug/net5.0/FractalzWPF.Infrastructure.Application.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.Application/obj/Debug/net5.0/FractalzWPF.Infrastructure.Application.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.Application/obj/Debug/net5.0/FractalzWPF.Infrastructure.Application.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.Application/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.Connector/obj/Debug/net5.0/FractalzWPF.Infrastructure.Connector.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.Connector/obj/Debug/net5.0/FractalzWPF.Infrastructure.Connector.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.Connector/obj/Debug/net5.0/FractalzWPF.Infrastructure.Connector.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.Connector/obj/Debug/net5.0/FractalzWPF.Infrastructure.Connector.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.Connector/obj/Debug/net5.0/FractalzWPF.Infrastructure.Connector.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.Connector/obj/Debug/net5.0/FractalzWPF.Infrastructure.Connector.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.Connector/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.Connector/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.LinkedEvent/obj/Debug/net5.0/FractalzWPF.Infrastructure.LinkedEvent.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.LinkedEvent/obj/Debug/net5.0/FractalzWPF.Infrastructure.LinkedEvent.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.LinkedEvent/obj/Debug/net5.0/FractalzWPF.Infrastructure.LinkedEvent.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.LinkedEvent/obj/Debug/net5.0/FractalzWPF.Infrastructure.LinkedEvent.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.LinkedEvent/obj/Debug/net5.0/FractalzWPF.Infrastructure.LinkedEvent.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.LinkedEvent/obj/Debug/net5.0/FractalzWPF.Infrastructure.LinkedEvent.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.LinkedEvent/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Infrastructure.LinkedEvent/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Controlls/DialogsUserControl.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Controlls/DialogsUserControl.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Controlls/ProfileUserControl.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Controlls/ProfileUserControl.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Controlls/TodoUserControl.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Controlls/TodoUserControl.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Controlls/VideoChatsControl.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Controlls/VideoChatsControl.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Controlls/VoiceControl.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Controlls/VoiceControl.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Elements/ConferenceElement.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Elements/ConferenceElement.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Elements/DialogElement.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Elements/DialogElement.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Elements/MessageElement.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Elements/MessageElement.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Elements/ServerElement.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Elements/ServerElement.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Elements/TodoElement.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Elements/TodoElement.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Elements/UserAddConferenceElement.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Elements/UserAddConferenceElement.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/FractalzWPF.Infrastructure.Vizualizer.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/FractalzWPF.Infrastructure.Vizualizer.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/FractalzWPF.Infrastructure.Vizualizer.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/FractalzWPF.Infrastructure.Vizualizer.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/FractalzWPF.Infrastructure.Vizualizer.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/FractalzWPF.Infrastructure.Vizualizer.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/FractalzWPF.Infrastructure.Vizualizer_MarkupCompile.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/FractalzWPF.Infrastructure.Vizualizer_MarkupCompile.lref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/ChatWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/ChatWindow.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/ConferenceWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/ConferenceWindow.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/CreateConferenceWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/CreateConferenceWindow.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/LoginWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/LoginWindow.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/RegistrationWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/RegistrationWindow.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/TodoCreateWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/TodoCreateWindow.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/VoiceRoomCreateWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/VoiceRoomCreateWindow.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/VoiceServerCreateWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/Debug/net5.0-windows/Windows/VoiceServerCreateWindow.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF.Vizualizer/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF/obj/Debug/net5.0-windows/App.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF/obj/Debug/net5.0-windows/FractalzWPF.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF/obj/Debug/net5.0-windows/FractalzWPF.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF/obj/Debug/net5.0-windows/FractalzWPF.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF/obj/Debug/net5.0-windows/FractalzWPF.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF/obj/Debug/net5.0-windows/FractalzWPF.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF/obj/Debug/net5.0-windows/FractalzWPF.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF/obj/Debug/net5.0-windows/FractalzWPF_Content.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF/obj/Debug/net5.0-windows/FractalzWPF_MarkupCompile.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF/obj/Debug/net5.0-windows/FractalzWPF_MarkupCompile.lref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF/obj/Debug/net5.0-windows/MainWindow.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-wpf/FractalzWPF/obj/project.packagespec.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,18 +99,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.17.5" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.17.5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sc.lk/SC.LK.UI" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -64,6 +120,8 @@
       <workItem from="1655960200730" duration="27706000" />
       <workItem from="1656308087487" duration="73709000" />
       <workItem from="1656568592461" duration="15811000" />
+      <workItem from="1656930821571" duration="1060000" />
+      <workItem from="1656933003859" duration="11925000" />
     </task>
     <servers />
   </component>
@@ -80,10 +138,21 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue</url>
+          <line>20</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
