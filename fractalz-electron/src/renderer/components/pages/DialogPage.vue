@@ -60,8 +60,14 @@ export default {
     this.getDialogs();
     console.log(Vue.$cookies.get('UserInfo'))
     console.log(Vue.$cookies.get('UserToken'))
+
+    Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
   },
   methods: {
+    onDialogsUpdate : function (message) {
+      this.noty.Show({title: "Новое сообщение" , message : "DialogId: " + message.Id})
+      //TODO :  + Подсветить жирным диалог который пришел
+    },
     openChat: function (id){
       if (this.isFindUsers){
         let arr = [id, Vue.$cookies.get('UserInfo').id];
