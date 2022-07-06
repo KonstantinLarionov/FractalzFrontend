@@ -92,6 +92,8 @@ export default {
       this.$cookies.set("UserInfo", null)
       this.$cookies.set("UserToken", null)
       this.Auth = false;
+      Vue.socket.close(1000, "UserDisconnect");
+
       this.noty.Show({title : "Выход из системы Fractalz", message : "Вы успешно покинули систему! Ждем вас снова."});
     },
     logIn : async function () {
@@ -108,14 +110,21 @@ export default {
         this.$cookies.set("UserToken", result.data.token);
         this.$cookies.set("UserInfo", result.data.user);
         this.noty.Show({title : "Вход в систему Fractalz", message : "Добро пожаловать!\rВы успешно вошли в систему."});
+        this.connectWebSocket(result.data.user.id);
         await this.$router.push({ name: 'DialogPage' })
       }
       else {
         this.noty.Show({title : "Вход в систему Fractalz", message : "Произошла ошибка. Проверьте правильность данных!"});
       }
     },
+    connectWebSocket : function (userId) {
+      Vue.socket = new WebSocket(Vue.prototype.$http.defaults.baseURL.replace('http', 'ws') + "/ws/subscribe?idUser="+userId);
+      Vue.socket.onopen = Vue.socketEvents.onopen;
+      Vue.socket.onclose = Vue.socketEvents.onclose;
+      Vue.socket.onmessage = Vue.socketEvents.onmessage;
+      Vue.socket.onerror = Vue.socketEvents.onerror;
+    }
   }
-
 }
 </script>
 
