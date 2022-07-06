@@ -94,6 +94,7 @@ export default class ChatPart extends BasePart {
      * @constructor
      */
     async CreateMessage(objectData) {
+        console.log(objectData)
         return await this.instant.post(this._createMessagePath, objectData)
     }
 

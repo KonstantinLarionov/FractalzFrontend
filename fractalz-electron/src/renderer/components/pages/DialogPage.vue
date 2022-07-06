@@ -1,5 +1,5 @@
 <template>
-  <chat-page v-if="chatSelect== true">
+  <chat-page v-if="chatSelect== true" :dialog-id="this.dialogId">
 
   </chat-page>
   <div v-else-if="chatSelect == false" class="dialogs-wrap p-3" id="dialogsSpace">
@@ -17,8 +17,8 @@
       </div>
     </div>
     <!-- Dialogs -->
-    <div class="row" v-for="dialogContent in dialogContents" :key="dialogContent.$id" v-on:click="openChat(dialogContent.id)">
-      <dialog-element :dialog-name="dialogContent.name" :dialog-last-message="dialogContent.lastMessage" :dialog-date-send="dialogContent.dateSend"></dialog-element>
+    <div class="row" v-for="dialogContent in dialogContents" :key="dialogContent.$id" v-on:click="openChat(dialogContent.id )">
+      <dialog-element :dialog-name="dialogContent.name" :dialog-last-message="dialogContent.lastMessage" :dialog-date-send="dialogContent.dateSend" ></dialog-element>
     </div>
   </div>
 </template>
@@ -39,6 +39,7 @@ export default {
     return{
       findStr : '',
       chatSelect: false,
+      dialogId: null,
       isFindUsers: false,
       notyHeader: "Диалоги Fractalz"
     }
@@ -64,8 +65,9 @@ export default {
     openChat: function (id){
       if (this.isFindUsers){
         let arr = [id, Vue.$cookies.get('UserInfo').id];
-        this.createDialog(arr);
+        this.dialogId = this.createDialog(arr);
       }
+      this.dialogId = id;
       this.chatSelect = true;
     },
     getDialogs: async function () {
@@ -90,7 +92,6 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "У вас нет активных диалогов"});
       }
     },
-
     findUsers: async function () {
       this.isFindUsers =true;
       var result = await this.api
@@ -129,7 +130,7 @@ export default {
             });
           });
       if (result.data.success) {
-        console.log(result)
+        return result.data.dialog.id
       }
       else {
         this.noty.Show({title: this.notyHeader, message: "Не удалось создать диалог"});
