@@ -3,19 +3,22 @@
     <div class="chat col-inside-lg decor-default">
         <div class="chat-body">
           <div v-for="messageContent in messageContents" :key="messageContent.$id">
-            <answer-left-element v-if="messageContent.from == 1"
-                             :avatar="messageContent.avatar"
-                             :status="messageContent.status"
-                             :name="messageContent.name"
-                             :message="messageContent.message"
-                             :date-send="messageContent.dateSend">
-            </answer-left-element>
-            <answer-right-element v-else-if="messageContent.from == 0"
+            <answer-left-element v-if="messageContent.idSender !== idUserSender"
+                                 :message="messageContent.text"
+                                 :date-send="messageContent.created"
+
                                  :avatar="messageContent.avatar"
                                  :status="messageContent.status"
-                                 :name="messageContent.name"
-                                 :message="messageContent.message"
-                                 :date-send="messageContent.dateSend">
+                                 :name="messageContent.name">
+            </answer-left-element>
+            <answer-right-element v-if="messageContent.idSender === idUserSender"
+                                  :message="messageContent.text"
+                                  :date-send="messageContent.created"
+
+                                  :avatar="messageContent.avatar"
+                                  :status="messageContent.status"
+                                  :name="messageContent.name">
+
             </answer-right-element>
           </div>
       </div>
@@ -43,9 +46,7 @@
 <script>
 import AnswerLeft from "../elements/chat/AnswerLeft";
 import AnswerRight from "../elements/chat/AnswerRight";
-import NotifyCenter from "../../services/NotifyCenter";
 import Vue from "vue";
-import ChatPart from "../../api/ChatPart";
 
 Vue.component ('answer-left-element', AnswerLeft)
 Vue.component ('answer-right-element', AnswerRight)
@@ -64,20 +65,19 @@ export default {
     }
   },
   props:{
+    idUserSender : null,
     dialogId: null,
     api: Object,
     noty: Object
   },
   mounted: async function () {
-    this.api = new ChatPart(this.$http);
-    this.noty = new NotifyCenter();
     this.messageContents = [];
-    console.log(this.dialogId)
+    this.getMessage();
   },
   methods: {
-    getMessage: async function (idDialog, dateFrom, countMessage) {
+    getMessage: async function () {
       var result = await this.api
-          .getMessage(this.dialogId, '', 100)
+          .GetMessages(this.dialogId, '', 100)
           .catch(response => {
             this.noty.Show({
               title: this.notyHeader,
@@ -85,34 +85,14 @@ export default {
             });
           });
       if (result.data.success) {
-        console.log(result)
         var arr = [];
-        if (result.messages != null) {
-          arr = result.messages;
-        } else {
-          arr = [
-            {
-              id: 0,
-              from: 0,
-              avatar: 'https://bootdey.com/img/Content/avatar/avatar2.png',
-              status: 0,
-              name: "Alexander Herthic",
-              message: "Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adiping elit",
-              dateSend: "5 min ago",
-            },
-            {
-              id: 1,
-              from: 1,
-              avatar: 'https://bootdey.com/img/Content/avatar/avatar1.png',
-              status: 1,
-              name: "Alexander Herthic",
-              message: "Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adiping elit",
-              dateSend: "5 min ago",
-            }
-          ];
-        }
-        for (let j in arr) {
-          this.$set(this.messageContents, j, arr[j])
+        if (result.data.messages != null) {
+          arr = result.data.messages.$values;
+          for (let j in arr) {
+            this.$set(this.messageContents, j, arr[j])
+          }
+          console.log(this.messageContents)
+          console.log(this.idUserSender)
         }
         this.$forceUpdate();
       } else {
