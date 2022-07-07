@@ -21,6 +21,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
                 <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
               </svg>
+              <span v-if="CountDialogsNoty!= 0" class="position-absolute ml-3 badge rounded-pill bg-danger" style="margin-top: -8px; font-size: 10px; border: 2px solid rgb(0, 151, 136)"> {{ CountDialogsNoty }}</span>
             </router-link>
           </div>
           <div class="row">
@@ -36,6 +37,7 @@
                 <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
                 <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
               </svg>
+
             </router-link>
           </div>
           <div class="row">
@@ -76,8 +78,33 @@
 </template>
 
 <script>
+import Vue from "vue";
+import NotifyCenter from "../services/NotifyCenter";
+
 export default {
-  name: "DefaultLayout"
+  name: "DefaultLayout",
+  data(){
+    return {CountDialogsNoty: 0}
+  },
+  props : {
+  },
+  mounted() {
+    this.noty = new NotifyCenter();
+    Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
+  },
+  methods: {
+    onDialogsUpdate : function (message) {
+      this.noty.Show({title: "Новое сообщение" , message : "DialogId: " + message.Id})
+      require('electron').ipcRenderer.send('flash-noty', function (){});
+        if(this.CountDialogsNoty >= 100) {
+        this.CountDialogsNoty = "99+";
+      }
+      else {
+        this.CountDialogsNoty++;
+      }
+      //TODO :  + Подсветить жирным диалог который пришел
+    },
+  }
 }
 </script>
 

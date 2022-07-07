@@ -1,6 +1,9 @@
 import { app, BrowserWindow } from 'electron'
 import '../renderer/store'
-
+import { ipcMain } from "electron";
+ipcMain.on('flash-noty', (event, data) => {
+  mainWindow.flashFrame(true);
+})
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -34,6 +37,7 @@ function createWindow () {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
+
 }
 
 app.on('ready', createWindow)
@@ -49,3 +53,4 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
