@@ -17,7 +17,6 @@
 <script>
 export default {
   props : {
-    From:null,
     Avatar:null,
     Status : null,
     Name : null,

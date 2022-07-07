@@ -26,7 +26,14 @@ export default class ChatPart extends BasePart {
     }
 
     _getMessagesModel = function (idDialog, dateFrom, countMessage) {
-        return "?IdDialog=" + idDialog + "&DateFrom=" + dateFrom + "&CountMessage=" + countMessage;
+        var res = "?IdDialog=" + idDialog;
+        if (dateFrom != ''){
+            res+="&DateFrom=" + dateFrom;
+        }
+        if (countMessage != ''){
+            res+= "&CountMessage=" + countMessage;
+        }
+        return res;
     }
 
     _createDialogModel = function (UsersId) {
@@ -64,7 +71,7 @@ export default class ChatPart extends BasePart {
      * @constructor
      */
     async GetMessages(idDialog, dateFrom, countMessage) {
-        return await this.instant.get(this._getDialogsPath + this._getMessagesModel(idDialog, dateFrom, countMessage))
+        return await this.instant.get(this._getMessagesPath + this._getMessagesModel(idDialog, dateFrom, countMessage))
     }
 
     /**

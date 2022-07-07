@@ -1,5 +1,5 @@
 <template>
-  <chat-page v-if="chatSelect== true" :dialog-id="this.dialogId">
+  <chat-page v-if="chatSelect== true" :dialog-id="this.dialogId" :api="this.api" :noty="this.noty" :id-user-sender="this.idUserSender">
 
   </chat-page>
   <div v-else-if="chatSelect == false" class="dialogs-wrap p-3" id="dialogsSpace">
@@ -40,6 +40,7 @@ export default {
       findStr : '',
       chatSelect: false,
       dialogId: null,
+      idUserSender: Vue.$cookies.get('UserInfo').id,
       isFindUsers: false,
       notyHeader: "Диалоги Fractalz"
     }
@@ -58,9 +59,6 @@ export default {
     this.noty = new NotifyCenter();
     this.dialogContents = [];
     this.getDialogs();
-    console.log(Vue.$cookies.get('UserInfo'))
-    console.log(Vue.$cookies.get('UserToken'))
-
     Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
   },
   methods: {
