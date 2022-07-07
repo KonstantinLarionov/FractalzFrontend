@@ -1,10 +1,5 @@
 <template>
   <div class="chat-content-main d-flex flex-column">
-
-<!--    <div class="chat-content-header" style="height: auto; padding: 10px 15px;">
-
-    </div>-->
-
     <div class="chat col-inside-lg decor-default">
         <div class="chat-body">
           <div v-for="messageContent in messageContents" :key="messageContent.$id">
@@ -25,10 +20,8 @@
           </div>
       </div>
     </div>
-
     <div class="d-flex align-items-center chat-content-footer">
-
-      <a  @click="addFiles()" class="p-2 select" title="Прикрепить документ">
+      <a class="p-2 select" title="Прикрепить документ">
           <svg width="24" height="24" viewBox="0 0 24 24" color="#000000" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
             <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z">
             </path>
@@ -36,27 +29,23 @@
             </polyline>
           </svg>
         </a>
-
-      <textarea id="message" class="p-2 textarea" placeholder="Ваше сообщение"></textarea>
-
-      <a @click="sendMessage()" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
+      <textarea v-model="message" id="message" class="p-2 textarea" placeholder="Ваше сообщение"></textarea>
+      <a v-on:click="sendMessage()" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
           <svg width="24" height="24" color="#000000" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
             <line x1="22" y1="2" x2="11" y2="13"/>
             <polygon points="22 2 15 22 11 13 2 9 22 2"/>
           </svg>
         </a>
-
     </div>
-
   </div>
 </template>
 
 <script>
 import AnswerLeft from "../elements/chat/AnswerLeft";
 import AnswerRight from "../elements/chat/AnswerRight";
-import ChatPart from "../../api/ChatPart";
 import NotifyCenter from "../../services/NotifyCenter";
 import Vue from "vue";
+import ChatPart from "../../api/ChatPart";
 
 Vue.component ('answer-left-element', AnswerLeft)
 Vue.component ('answer-right-element', AnswerRight)
@@ -70,21 +59,25 @@ export default {
   },
   data(){
     return{
+      message: '',
       notyHeader: "Диалог Fractalz"
     }
   },
   props:{
+    dialogId: null,
     api: Object,
     noty: Object
   },
   mounted: async function () {
+    this.api = new ChatPart(this.$http);
+    this.noty = new NotifyCenter();
     this.messageContents = [];
-    this.getMessage();
+    console.log(this.dialogId)
   },
   methods: {
     getMessage: async function (idDialog, dateFrom, countMessage) {
       var result = await this.api
-          .getMessage(idDialog, dateFrom, countMessage)
+          .getMessage(this.dialogId, '', 100)
           .catch(response => {
             this.noty.Show({
               title: this.notyHeader,
@@ -126,7 +119,13 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "У вас нет сообщений начните диалог"});
       }
     },
-    sendMessage: async function (obj) {
+    sendMessage: async function () {
+      var obj = {
+        userId: Vue.$cookies.get('UserInfo').id,
+        dialogId: this.dialogId,
+        message: this.message,
+        files: []
+      }
       var result = await this.api
           .CreateMessage(obj)
           .catch(response => {
@@ -137,7 +136,7 @@ export default {
           });
       if (result.data.success) {
         console.log(result)
-
+        this.message = ''
       } else {
         this.noty.Show({title: this.notyHeader, message: "Ошибка отправки сообщения"});
       }
