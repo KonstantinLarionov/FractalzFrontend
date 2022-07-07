@@ -1,33 +1,32 @@
 <template>
-  <div class="login-page">
-    <div class="form">
-      <div v-if="type === 'A'" class="register-form">
-        <input type="text" v-model="login" placeholder="Логин"/>
-        <input type="text" v-model="email" placeholder="Почта"/>
-        <input type="password" v-model="password" placeholder="Пароль"/>
-        <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singIn()">Создать</button>
-        <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>
-      </div>
-      <div v-if="type === 'B'" class="login-form">
-        <input type="text" v-model="login" placeholder="Логин/Почта" />
-        <input type="password" v-model="password" placeholder="Пароль"/>
-        <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Войти</button>
-        <button class="modal-default-button mr-4 navTask mt-1" v-if="Auth" style="background-color: darkred" v-on:click="logOut()">Выйти</button>
-        <p class= "message">Нет аккаута? <a v-on:click="toCreateAccount()">Создать аккаунт</a></p>
-        <p class= "password-reset-text"> Забыли пароль?</p>
-        <p class= "password-resetbutton"> <a v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</a></p>
-      </div>
-      <div v-if="type === 'C'" class="password-reset-form">
-        <p class="reset-title"> Для восстановления доступа вам необходимо сбросить старый пароль и установить новый.
-          Для этого мы отправим вам на Email одноразовый код для подтверждения </p>
-        <input type="text" v-model="login" placeholder="Ваш зарегестрированный Email" />
-        <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Отправить код</button>
-        <input type="text" placeholder="Ваш одноразовый код" />
-        <input type="text" v-model="newPassword1" placeholder="Новый пароль"/>
-        <input type="text" v-model="newPassword2" placeholder="Подтверждение нового пароля"/>
-        <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="passReset()">Сохранить</button>
-        <button class="modal-default-button mr-4 navTask mt-1" v-if="Auth" style="background-color: darkred" v-on:click="logIn()">Войти</button>
-        <p class= "password-resetbutton-back"> <a v-on:click="toBackFromReset()">Вернуться назад</a></p>
+  <div class="login-page-vertical">
+      <div class="form">
+        <div v-if="type === 'A'" class="register-form">
+          <input type="text" v-model="login" placeholder="Логин"/>
+          <input type="text" v-model="email" placeholder="Почта"/>
+          <input type="password" v-model="password" placeholder="Пароль"/>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singIn()">Создать</button>
+          <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>
+        </div>
+        <div v-if="type === 'B'" class="login-form">
+          <input type="text" v-model="login" placeholder="Логин/Почта" />
+          <input type="password" v-model="password" placeholder="Пароль"/>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Войти</button>
+          <button class="modal-default-button mr-4 navTask mt-1" v-if="Auth" style="background-color: darkred" v-on:click="logOut()">Выйти</button>
+          <p class= "message">Нет аккаута? <a v-on:click="toCreateAccount()">Создать аккаунт</a></p>
+          <p class= "password-reset-text"> Забыли пароль?</p>
+          <p class= "password-resetbutton"> <a v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</a></p>
+        </div>
+        <div v-if="type === 'C'" class="password-reset-form">
+          <p class="reset-title"> Для восстановления доступа вам необходимо сбросить старый пароль и установить новый.
+            Для этого мы отправим вам на Email одноразовый код для подтверждения </p>
+          <input type="text" v-model="existEmail" placeholder="Ваш зарегестрированный Email" />
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Отправить код</button>
+          <input type="text" placeholder="Ваш одноразовый код" />
+          <input type="text" v-model="newPassword1" placeholder="Новый пароль"/>
+          <input type="text" v-model="newPassword2" placeholder="Подтверждение нового пароля"/>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="passReset()">Сохранить</button>
+          <p class= "password-resetbutton-back"> <a v-on:click="toBackFromReset()">Вернуться назад</a></p>
       </div>
     </div>
   </div>
@@ -48,9 +47,11 @@ export default {
       type: 'B',
       registerForm: 'A',
       loginForm: 'B',
+      password:"",
       passwordResetForm: 'C',
-      login : 'kostya12277',
-      email : 'kostya12277@yandex.ru',
+      login : '',
+      email : '',
+      existEmail:"",
       newPassword1: "",
       newPassword2: "",
     }
@@ -141,20 +142,37 @@ export default {
       }
     },
     passReset: async function (){
-      if (this.newPassword1 === this.newPassword2)
+      var Reg = new RegExp("^(?=.*[A-Z]).{1,18}$");
+      var reg = new RegExp("^(?=.*[a-z]).{1,18}$");
+
+      if (!(this.newPassword1 === this.newPassword2))
+        return this.noty.Show({title : "Сброс пароля в системе Fractalz", message : "Произошла ошибка.\rВведенные пароли не совпадают"});
+
+      if (!(this.newPassword2.length > 6))
+        return this.noty.Show({title : "Сброс пароля в системе Fractalz", message : "Произошла ошибка.\rПароль должен быть больше 6 символов!"});
+
+      if (!(this.newPassword2.length < 18))
+        return this.noty.Show({title : "Сброс пароля в системе Fractalz", message : "Произошла ошибка.\rПароль должен быть меньше 18 символов!"});
+
+      if (!(reg[Symbol.match](this.newPassword2)))
+        return this.noty.Show({title : "Сброс пароля в системе Fractalz", message : "Произошла ошибка.\rПароль должен содержать хотябы одну прописную букву!"});
+
+      if (!(Reg[Symbol.match](this.newPassword2)))
+        return this.noty.Show({title : "Сброс пароля в системе Fractalz", message : "Произошла ошибка.\rПароль должен содержать хотябы одну заглавную букву!"});
       {
-        var result = await this.api.PasswordReset(this.email, this.newPassword2).catch(response => {this.noty.Show
-            ({title: "Сброс пароля в системе Fractalz",
-              message: "Произошла ошибка!\rПроверьте введенные данные!" });});
+        const result = await this.api.PasswordReset(this.existEmail, this.newPassword2).catch(response => {
+          this.noty.Show
+          ({
+            title: "Сброс пароля в системе Fractalz",
+            message: "Произошла ошибка!\rПроверьте введенные данные!"
+          });
+        });
         if (result.data.success)
         {
-
+          this.noty.Show({title : "Смена пароля в системе Fractalz", message : "Пароль успешно изменен!\rТеперь вы можете войти в свою учетную запись."});
         }
       }
-      else
-      {
-        this.noty.Show({title : "Сброс пароля в системе Fractalz", message : "Произошла ошибка.\rВведенные пароли не совпадают"});
-      }
+
 
     }
   }
@@ -165,25 +183,27 @@ export default {
 <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-.login-page {
-  width: 360px;
-  padding: 10% 0%;
-  display: flex;
-  margin: auto;
-}
-.form {
-  position: relative;
+.login-page-vertical
+{
   z-index: 0;
+  width:360px;
+  display: table;
+  margin: 0% auto;
+  vertical-align: middle;
+}
+.form
+{
+  z-index: 1;
   background: #FFFFFF;
   max-width: 360px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 25px;
+  margin: 10% auto auto auto;
+  padding: 35px;
+
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-
 }
-.form input {
+.form input
+{
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
@@ -194,7 +214,8 @@ export default {
   box-sizing: border-box;
   font-size: 14px;
 }
-.form button {
+.form button
+{
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -207,34 +228,40 @@ export default {
   cursor: pointer;
   margin: 0px 0px 15px;
 }
-.form .message {
+.form .message
+{
   margin: 0px 15px 15px;
   color: #b3b3b3;
   font-size: 12px;
 }
-.form .message a {
+.form .message a
+{
   color: #009788;
   cursor: pointer;
   text-decoration: none;
 }
-.form .password-reset-text{
+.form .password-reset-text
+{
   margin: 15px 0 0;
   color: #b3b3b3;
   font-size: 12px;
 }
 .form .reset-title{
+
   margin: 0px 15px 15px;
-  color: #b3b3b3;
-  font-size: 16px;
+  color: #000000;
+  font-size: 15px;
 }
-.form .password-resetbutton{
+.form .password-resetbutton
+{
   color: #009788;
   cursor: pointer;
   text-decoration: none;
   font-size: 12px;
 }
 
-.form .password-resetbutton-back{
+.form .password-resetbutton-back
+{
   color: #009788;
   cursor: pointer;
   text-decoration: none;
