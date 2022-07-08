@@ -2,10 +2,11 @@
   <div class="login-page-vertical">
       <div class="form">
         <div v-if="type === 'A'" class="register-form">
+          <p class="registration-title">Регистрация нового пользователя в системе Fractalz!</p>
           <input type="text" v-model="login" placeholder="Логин"/>
           <input type="text" v-model="email" placeholder="Почта"/>
           <input type="password" v-model="password" placeholder="Пароль"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singIn()">Создать</button>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toAuthCode()">Создать</button>
           <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>
         </div>
         <div v-if="type === 'B'" class="login-form">
@@ -28,6 +29,14 @@
           <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="passReset()">Сохранить</button>
           <p class= "password-resetbutton-back"> <a v-on:click="toBackFromReset()">Вернуться назад</a></p>
       </div>
+        <div v-if="type === 'D'" class="auth-code-form">
+          <p class="code-title">Почти готово!</p>
+          <p class="Code-code">Для потверждения нам нужен код который вы отправите на указанную вами почту</p>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toSendCode()">Отправить код</button>
+          <input type="text" v-model="code" placeholder="Код"/>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singIn()">Подтвердить</button>
+          <p class="message"><a v-on:click="toCreateAccount()">Вернуться назад</a></p>
+        </div>
     </div>
   </div>
 </template>
@@ -45,15 +54,13 @@ export default {
       Auth : false,
       isLogin:true,
       type: 'B',
-      registerForm: 'A',
-      loginForm: 'B',
       password:"",
-      passwordResetForm: 'C',
       login : '',
       email : '',
       existEmail:"",
       newPassword1: "",
       newPassword2: "",
+      code:"",
     }
   },
 
@@ -82,7 +89,15 @@ export default {
     },
     toBackFromReset:function(){
       return this.type = 'B'
-},
+    },
+    toAuthCode:async function()
+    {
+      return this.type = 'D';
+    },
+    toSendCode: async function()
+    {
+
+    },
 
     singIn : async function () {
       var titleNoty = "Регистрация в системе Fractalz";
@@ -227,6 +242,16 @@ export default {
   font-size: 14px;
   cursor: pointer;
   margin: 0px 0px 15px;
+}
+.form .registration-title
+{
+  color: #009788;
+  font-size: 16px;
+}
+.form .code-title
+{
+  color: #009788;
+  font-size: 18px;
 }
 .form .message
 {
