@@ -6,7 +6,7 @@
           <input type="text" v-model="login" placeholder="Логин"/>
           <input type="text" v-model="email" placeholder="Почта"/>
           <input type="password" v-model="password" placeholder="Пароль"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toAuthCode()">Создать</button>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singIn()">Создать</button>
           <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>
         </div>
         <div v-if="type === 'B'" class="login-form">
@@ -22,8 +22,8 @@
           <p class="reset-title"> Для восстановления доступа вам необходимо сбросить старый пароль и установить новый.
             Для этого мы отправим вам на Email одноразовый код для подтверждения </p>
           <input type="text" v-model="existEmail" placeholder="Ваш зарегестрированный Email" />
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Отправить код</button>
-          <input type="text" placeholder="Ваш одноразовый код" />
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toSendCode()">Отправить код</button>
+          <input type="text" v-model="Authcode" placeholder="Ваш одноразовый код" />
           <input type="text" v-model="newPassword1" placeholder="Новый пароль"/>
           <input type="text" v-model="newPassword2" placeholder="Подтверждение нового пароля"/>
           <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="passReset()">Сохранить</button>
@@ -31,10 +31,9 @@
       </div>
         <div v-if="type === 'D'" class="auth-code-form">
           <p class="code-title">Почти готово!</p>
-          <p class="Code-code">Для потверждения нам нужен код который вы отправите на указанную вами почту</p>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toSendCode()">Отправить код</button>
-          <input type="text" v-model="code" placeholder="Код"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singIn()">Подтвердить</button>
+          <p class="Code-code">Для потверждения введите код который отправлен на указанную вами почту.</p>
+          <input type="text" v-model="Authcode" placeholder="Код"/>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toValidateCode()">Подтвердить</button>
           <p class="message"><a v-on:click="toCreateAccount()">Вернуться назад</a></p>
         </div>
     </div>
@@ -53,6 +52,7 @@ export default {
     return{
       Auth : false,
       isLogin:true,
+      GenRequest: true,
       type: 'B',
       password:"",
       login : '',
@@ -60,7 +60,7 @@ export default {
       existEmail:"",
       newPassword1: "",
       newPassword2: "",
-      code:"",
+      Authcode:"",
     }
   },
 
@@ -88,33 +88,46 @@ export default {
       return this.type = 'C';
     },
     toBackFromReset:function(){
-      return this.type = 'B'
+      return this.type = 'B';
     },
-    toAuthCode:async function()
-    {
-      return this.type = 'D';
-    },
+
     toSendCode: async function()
     {
+      var result = await this.api.SendCode(this.email, this.GenRequest.true)
+    },
 
+    toValidateCode: async function()
+    {
+      const titleNoty = "Регистрация в системе Fractalz"
+      var result = await this.api.ValidateCode(this.Authcode, this.email)
+      if (result.data.success)
+      {
+        this.noty.Show({title: titleNoty, message: "Добро пожаловать!"});
+        return this.logIn();
+      } else
+      {
+        this.noty.Show({title: titleNoty, message: result.data.message});
+      }
     },
 
     singIn : async function () {
-      var titleNoty = "Регистрация в системе Fractalz";
-      var result = await this.api
-          .Registration(this.login, this.email, this.password)
-          .catch(response => {
-            this.noty.Show({
-              title: titleNoty,
-              message: "Произошла ошибка.\rВозможно такой пользователь уже существует"
+      {
+        const titleNoty = "Регистрация в системе Fractalz"
+        var result = await this.api.Registration(this.login, this.email, this.password)
+            .catch(response => {this.noty.Show({
+          title: titleNoty, message: "Произошла ошибка.\rВозможно такой пользователь уже существует"
+              });
             });
-          });
-
-      if (result.data.success) {
-        this.noty.Show({title: titleNoty, message: "Вы успешно зарегистрированы!\rПожалуйста войдите в систему."});
-        this.toSingIn();
-      } else {
-        this.noty.Show({title: titleNoty, message: "Произошла ошибка.\rПроверьте правильность данных!"});
+      }
+      const titleNoty = "Регистрация в системе Fractalz"
+      if (result.data.success)
+      {
+        this.noty.Show({title: titleNoty, message: "Вы успешно зарегистрированы!\rОсталось совсем чуть-чуть!"});
+        this.type = "D"
+        return this.toSendCode();
+      } else
+      {
+        this.noty.Show({title: titleNoty, message: result.data});
       }
     },
 
@@ -174,21 +187,25 @@ export default {
 
       if (!(Reg[Symbol.match](this.newPassword2)))
         return this.noty.Show({title : "Сброс пароля в системе Fractalz", message : "Произошла ошибка.\rПароль должен содержать хотябы одну заглавную букву!"});
+      const valid = await this.api.ValidateCode(this.Authcode, this.email)
+      if (valid.data.success)
       {
-        const result = await this.api.PasswordReset(this.existEmail, this.newPassword2).catch(response => {
-          this.noty.Show
-          ({
-            title: "Сброс пароля в системе Fractalz",
-            message: "Произошла ошибка!\rПроверьте введенные данные!"
-          });
-        });
-        if (result.data.success)
         {
-          this.noty.Show({title : "Смена пароля в системе Fractalz", message : "Пароль успешно изменен!\rТеперь вы можете войти в свою учетную запись."});
+          const result = await this.api.PasswordReset(this.existEmail, this.newPassword2).catch(response => {
+            this.noty.Show
+            ({
+              title: "Сброс пароля в системе Fractalz",
+              message: "Произошла ошибка!\rПроверьте введенные данные!"
+            });
+          });
+          if (result.data.success) {
+            this.noty.Show({
+              title: "Смена пароля в системе Fractalz",
+              message: "Пароль успешно изменен!\rТеперь вы можете войти в свою учетную запись."
+            });
+          }
         }
       }
-
-
     }
   }
 

@@ -11,24 +11,46 @@ export default class UserPart extends BasePart {
     _updateProfilePath = this._partPath + "updateProfile"
     _updateStatusPath = this._partPath + "updateStatus"
     _passwordReset = this._partPath + "passwordReset"
+    _sendCode = this._partPath + "sendCode"
+    _validCode = this._partPath + "validCode"
 
-    _loginModel = function (login, password) {
+    _loginModel = function (login, password)
+    {
         return "?login=" + login + "&password=" + password;
     }
 
-    _registrationModel = function (login, email, password) {
+    _registrationModel = function (login, email, password)
+    {
         return {
             "login": login,
             "email": email,
             "password": password
         }
     }
-    _passwordResetModel = function (existEmail, newPassword) {
+    _passwordResetModel = function (existEmail, newPassword)
+    {
         return {
             "existEmail": existEmail,
             "password": newPassword
         }
     }
+    _sendCodeModel = function (email, sendReq)
+    {
+        return {
+            "email": email,
+            "sendReq": sendReq
+        }
+
+    }
+    _validCodeModel = function (Authcode, email)
+    {
+        return {
+            "Authcode": Authcode,
+            "email": email,
+        }
+
+    }
+
     //#endregion
 
     /**
@@ -53,8 +75,14 @@ export default class UserPart extends BasePart {
     async Registration(login, email, password) {
         return await this.instant.post(this._registrationPath, this._registrationModel(login, email, password))
     }
-     async PasswordReset(newPassword,existEmail)
+    async PasswordReset(newPassword,existEmail)
      { return await  this.instant.put(this._passwordReset, this._passwordResetModel( newPassword,existEmail))}
+
+    async SendCode(email,sendReq)
+    { return await  this.instant.put(this._sendCode, this._sendCodeModel( email, sendReq))}
+
+    async ValidateCode(Authcode, email)
+    { return await  this.instant.put(this._validCode, this._validCodeModel(Authcode, email ))}
 
     async UpdateProfile( objectData ) {
         console.log(objectData);
