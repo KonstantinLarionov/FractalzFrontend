@@ -68,7 +68,7 @@ export default {
     },
     openChat: function (id){
       if (this.isFindUsers){
-        let arr = [id, Vue.$cookies.get('UserInfo').id];
+        let arr = [Vue.$cookies.get('UserInfo').id, id];
         this.dialogId = this.createDialog(arr);
       }
       this.dialogId = id;
@@ -134,6 +134,8 @@ export default {
             });
           });
       if (result.data.success) {
+        console.log(result.data)
+        console.log(result.data.dialog.id)
         return result.data.dialog.id
       }
       else {
