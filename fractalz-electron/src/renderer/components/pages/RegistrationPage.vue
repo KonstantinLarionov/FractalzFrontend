@@ -79,20 +79,16 @@ export default {
     toCreateAccount : function () {
       return this.type = 'A';
     },
-
     toSingIn : function () {
       return this.type = 'B';
     },
-
     toResetPassword : function(){
       return this.type = 'C';
     },
     toBackFromReset:function(){
       return this.type = 'B';
     },
-
-    toSendCode: async function()
-    {
+    toSendCode: async function() {
       var result = await this.api.SendCode(this.email, this.GenRequest.true)
     },
 
@@ -192,7 +188,7 @@ export default {
       Vue.socket.onclose = Vue.socketEvents.onclose;
       Vue.socket.onmessage = Vue.socketEvents.onmessage;
       Vue.socket.onerror = Vue.socketEvents.onerror;
-    }
+    },
     passReset: async function (){
       var Reg = new RegExp("^(?=.*[A-Z]).{1,18}$");
       var reg = new RegExp("^(?=.*[a-z]).{1,18}$");
