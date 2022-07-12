@@ -163,8 +163,6 @@ export default {
       this.$cookies.set("UserToken", null)
       this.Auth = false;
       Vue.socket.close(1000, "UserDisconnect");
-
-      this.noty.Show({title : "Выход из системы Fractalz", message : "Вы успешно покинули систему! Ждем вас снова."});
       this.noty.Show({title : "Выход из системы Fractalz", message : "Вы успешно покинули систему!\rЖдем вас снова."});
     },
     logIn : async function () {
