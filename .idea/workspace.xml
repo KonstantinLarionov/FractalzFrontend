@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ca0414e2-1aaa-4786-8bb5-759d29476302" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/UserPart.js" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/api/UserPart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +58,7 @@
       <workItem from="1657260154998" duration="683000" />
       <workItem from="1657267361201" duration="6082000" />
       <workItem from="1657521187789" duration="11217000" />
-      <workItem from="1657536038963" duration="4575000" />
+      <workItem from="1657536038963" duration="11606000" />
     </task>
     <servers />
   </component>
@@ -79,54 +78,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue</url>
-          <line>171</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue</url>
-          <line>172</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue</url>
-          <line>173</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue</url>
-          <line>29</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue</url>
-          <line>28</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue</url>
-          <line>24</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/fractalz-electron/src/renderer/components/pages/RegistrationPage.vue</url>
-          <line>23</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

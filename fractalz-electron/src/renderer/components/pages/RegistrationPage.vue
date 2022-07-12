@@ -112,6 +112,21 @@ export default {
 
     singIn : async function () {
       {
+        var Reg = new RegExp("^(?=.*[A-Z]).{1,18}$");
+        var reg = new RegExp("^(?=.*[a-z]).{1,18}$");
+
+        if (!(this.password.length > 6))
+          return this.noty.Show({title : "Регистрация в системе Fractalz", message : "Произошла ошибка.\rПароль должен быть больше 6 символов!"});
+
+        if (!(this.password.length < 18))
+          return this.noty.Show({title : "Регистрация в системе Fractalz", message : "Произошла ошибка.\rПароль должен быть меньше 18 символов!"});
+
+        if (!(reg[Symbol.match](this.password)))
+          return this.noty.Show({title : "Регистрация в системе Fractalz", message : "Произошла ошибка.\rПароль должен содержать хотябы одну прописную букву!"});
+
+        if (!(Reg[Symbol.match](this.password)))
+          return this.noty.Show({title : "Регистрация в системе Fractalz", message : "Произошла ошибка.\rПароль должен содержать хотябы одну заглавную букву!"});
+
         const titleNoty = "Регистрация в системе Fractalz"
         var result = await this.api.Registration(this.login, this.email, this.password)
             .catch(response => {this.noty.Show({
@@ -127,7 +142,7 @@ export default {
         return this.toSendCode();
       } else
       {
-        this.noty.Show({title: titleNoty, message: result.data});
+        this.noty.Show({title: titleNoty, message: result.data.message});
       }
     },
 
