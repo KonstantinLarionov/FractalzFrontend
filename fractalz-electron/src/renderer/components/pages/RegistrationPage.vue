@@ -64,7 +64,7 @@ export default {
           .catch(response => {
             this.noty.Show({
               title: titleNoty,
-              message: "Произошла ошибка. Возможно такой пользователь уже существует"
+              message: response.response.data.message
             });
           });
 
