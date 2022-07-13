@@ -6,7 +6,7 @@
 
           <div class="modal-header">
             <slot name="header">
-              <p class="modal-header-title">Название</p>
+              <p class="modal-header-title">Создание задачи</p>
               <a class="modal-header-close" @click="$emit('close')">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
                 <path d="M0 0h24v24H0z" fill="none"/>
@@ -18,16 +18,18 @@
 
           <div class="modal-body">
             <slot name="body">
-              <input class="modal-body-input" type="text">
-              <input class="modal-body-input" type="text">
-              <input class="modal-body-input" type="date">
-              <input class="modal-body-input" type="text">
+              <p class ="modal-heading">Заголовок задачи</p>
+              <input class="modal-body-input" v-model="Header" type="text">
+              <p class ="modal-heading">Описание задачи</p>
+              <input class="modal-body-input" v-model="About" type="text">
+              <p class ="modal-heading">Время окончания задачи</p>
+              <input class="modal-body-input" v-model="duration" type="date">
             </slot>
           </div>
 
           <div class="modal-footer">
             <slot name="footer">
-              <button class="modal-default-button mr-4 navTask dark-teal" @click="$emit('close')">
+              <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toCreateTask()" @click="$emit('close')">
                 Добавить
               </button>
             </slot>
@@ -40,21 +42,67 @@
 </template>
 
 <script>
+import ToDoPart from "../../api/TodoPart";
+import NotifyCenter from "../../services/NotifyCenter";
+
 export default {
   name: "TodoModal",
-  props: {},
-  data() {
-    return{}
+  props: {
+    api: Object,
+    noty: Object
   },
-  computed:{}
+
+  data() {
+    return{
+      Header: "",
+      About:"",
+      duration:5,
+      TodoListId:"08da63fe-a44c-49aa-82f0-94dbc98c7359",
+    }
+  },
+
+  mounted() {
+    this.api = new ToDoPart(this.$http);
+    this.noty = new NotifyCenter();
+  },
+
+  methods:
+    {
+      toCreateTask: async function()
+      {
+
+        const titleNoty = "Создание задачи"
+        var result = await this.api.CreateTask(this.Header, this.About, this.duration, this.TodoListId)
+            .catch(response => {this.noty.Show({
+              title: titleNoty, message: response.response.data.message})});
+        if (result.data.success)
+          {
+            this.noty.Show({title: titleNoty, message: "Вы успешно зарегистрированы!\rОсталось совсем чуть-чуть!"});
+          } else
+          {
+            this.noty.Show({title: titleNoty, message: result.data.message});
+          }
+      }
+    }
 }
+
 </script>
 
 <style lang="css">
+
+.modal-body{
+  margin: 0 0 0 0;
+  padding: 0 10px 0px 10px;
+}
 .modal-body-input{
   width: 100%;
   padding: 0 0 0 0;
-  margin: 10px 0px 0px 0px;
+  margin: 0px 0px 5px 0px;
+}
+.modal-heading{
+  padding: 0 10px 0px 10px;
+  margin: 0 0 0 0;
+  font-size: 14px;
 }
 .modal-mask {
   position: fixed;
@@ -82,12 +130,15 @@ export default {
 }
 .modal-header{
   display: flex;
+  padding: 10px 10px 0px 10px;
 }
 .modal-header-title{
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-size: 16px;
+  color: #0d0f12;
   justify-content: space-between;
   width: 100%;
   margin: 0;
