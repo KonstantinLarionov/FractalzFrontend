@@ -63,7 +63,7 @@ export default {
   },
   methods: {
     onDialogsUpdate : function (message) {
-      this.noty.Show({title: "Новое сообщение" , message : "DialogId: " + message.Id})
+      this.noty.Show({title: "Новое сообщение" , message : "DialogId: " + message.id})
       //TODO :  + Подсветить жирным диалог который пришел
     },
     openChat: function (id){

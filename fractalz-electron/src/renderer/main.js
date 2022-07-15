@@ -40,12 +40,12 @@ Vue.socketEvents = {
     console.log(event);
 
     event = JSON.parse(event.data);
-    if(event.Type === 0)//Users
-    { Vue.socketEvents.usersReceive(event.Data);}
-    if(event.Type === 1)//Dialogs
-    { Vue.socketEvents.dialogsReceive(event.Data);}
-    if(event.Type === 2)//Message
-    { Vue.socketEvents.messageReceive(event.Data);}
+    if(event.type === 0)//Users
+    { Vue.socketEvents.usersReceive(event.data);}
+    if(event.type === 1)//Dialogs
+    { Vue.socketEvents.dialogsReceive(event.data);}
+    if(event.type === 2)//Message
+    { Vue.socketEvents.messageReceive(event.data);}
   },
   onerror : function(error) {
     console.log("Ошибка " + error.message);

@@ -93,14 +93,17 @@ export default {
     Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
   },
   methods: {
-    onDialogsUpdate : function (message) {
-      this.noty.Show({title: "Новое сообщение" , message : "DialogId: " + message.Id})
-      require('electron').ipcRenderer.send('flash-noty', function (){});
+    onDialogsUpdate : function (message1) {
+      if (message.idSender != Vue.$cookies.get('UserInfo').id)
+      {
+        this.noty.Show({title: "Новое сообщение" , message : "DialogId: " + message.text})
+        require('electron').ipcRenderer.send('flash-noty', function (){});
         if(this.CountDialogsNoty >= 100) {
-        this.CountDialogsNoty = "99+";
-      }
-      else {
-        this.CountDialogsNoty++;
+          this.CountDialogsNoty = "99+";
+        }
+        else {
+          this.CountDialogsNoty++;
+        }
       }
       //TODO :  + Подсветить жирным диалог который пришел
     },

@@ -1,11 +1,11 @@
 <template>
   <div class="chat-content-main d-flex flex-column">
-    <div class="chat col-inside-lg decor-default">
+    <div id="chat" class="chat col-inside-lg decor-default">
         <div class="chat-body">
           <div v-for="messageContent in messageContents" :key="messageContent.$id">
             <answer-left-element v-if="messageContent.idSender !== idUserSender"
                                  :message="messageContent.text"
-                                 :date-send="messageContent.created"
+                                 :date-send="messageContent.dateCreated"
 
                                  :avatar="messageContent.avatar"
                                  :status="messageContent.status"
@@ -13,7 +13,7 @@
             </answer-left-element>
             <answer-right-element v-if="messageContent.idSender === idUserSender"
                                   :message="messageContent.text"
-                                  :date-send="messageContent.created"
+                                  :date-send="messageContent.dateCreated"
 
                                   :avatar="messageContent.avatar"
                                   :status="messageContent.status"
@@ -72,9 +72,31 @@ export default {
   },
   mounted: async function () {
     this.messageContents = [];
-    this.getMessage();
+    await this.getMessage();
+    Vue.socketEvents.messageReceive = this.onMessageReceive;
+    this.scroll();
   },
   methods: {
+    scroll : function () {
+      var block = document.getElementById("chat");
+      block.scrollTop  =  block.scrollHeight;
+    },
+    onMessageReceive : function (message) {
+      console.log(message)
+      if (message.idSender != this.idUserSender){
+        this.noty.Show({title: "Новое сообщение от " , message : message.Text})
+      }
+      if (message.dialogId == this.dialogId){
+        if (message != null) {
+          var arr = [];
+          arr = message;
+          this.messageContents.push(arr)
+          console.log(this.messageContents)
+        }
+        this.$forceUpdate();
+      }
+      //TODO :  + Подсветить жирным диалог который пришел
+    },
     getMessage: async function () {
       var result = await this.api
           .GetMessages(this.dialogId, '', 100)
@@ -115,11 +137,13 @@ export default {
             });
           });
       if (result.data.success) {
+        this.scroll();
         console.log(result)
         this.message = ''
       } else {
         this.noty.Show({title: this.notyHeader, message: "Ошибка отправки сообщения"});
       }
+      this.onMessageReceive
     },
     updateMessage: async function (obj) {
       var result = await this.api
