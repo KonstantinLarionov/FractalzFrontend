@@ -6,18 +6,18 @@
             <answer-left-element v-if="messageContent.idSender !== idUserSender"
                                  :message="messageContent.text"
                                  :date-send="messageContent.dateCreated"
+                                 :name="messageContent.nameSender"
 
                                  :avatar="messageContent.avatar"
-                                 :status="messageContent.status"
-                                 :name="messageContent.name">
+                                 :status="messageContent.status">
             </answer-left-element>
             <answer-right-element v-if="messageContent.idSender === idUserSender"
                                   :message="messageContent.text"
                                   :date-send="messageContent.dateCreated"
+                                  :name="messageContent.nameSender"
 
                                   :avatar="messageContent.avatar"
-                                  :status="messageContent.status"
-                                  :name="messageContent.name">
+                                  :status="messageContent.status">
 
             </answer-right-element>
           </div>
