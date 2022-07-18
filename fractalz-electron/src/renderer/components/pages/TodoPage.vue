@@ -19,7 +19,7 @@
                 </template>-->
               </todo-modal>
 
-            <button class="mr-4 border-0 bg-transparent navTask text-dark">Архив задач</button>
+            <button class="mr-4 border-0 bg-transparent navTask text-dark" >Архив задач</button>
             <i class="fa fa-search" aria-hidden="true"></i>
           </span>
         </div>
@@ -50,6 +50,7 @@ import TodoModal from "../modals/TodoModal";
 import UserPart from "../../api/UserPart";
 import NotifyCenter from "../../services/NotifyCenter";
 import Vue from "vue";
+import ToDoPart from "../../api/TodoPart";
 
 Vue.component ('todo-task-element', TodoTaskElement)
 Vue.component ('todo-task-manager', TodoTaskManager)
@@ -60,7 +61,7 @@ export default {
   name: "TodoPage",
   data(){
     return{
-      showModal: false
+      showModal: false,
     }
   },
   date() {
@@ -74,40 +75,39 @@ export default {
   },
   mounted: async function () {
     this.todoTasksContents = [];
+    this.api = new ToDoPart(this.$http);
+    this.taskReq();
     this.getTasks();
   },
   methods: {
-    getTasks: function () {
-      var arr =[
-        {
-          id: 0,
-          name:'Take kids to school',
-          timeCreated: '8:00-8:30AM',
-          timeToTake: '30min',
-        },
-        {
-          id: 1,
-          name:'Take kids to school',
-          timeCreated: '8:00-8:30AM',
-          timeToTake: '30min',
-        },
-        {
-          id: 2,
-          name:'Take kids to school',
-          timeCreated: '8:00-8:30AM',
-          timeToTake: '30min',
-        }
-      ];
-
-      for (let j in arr)
+    taskReq: async function(){
+      console.log(this.$cookies.get("UserInfo").id)
+      var request = await this.api.GetTask( this.$cookies.get("UserInfo").id , '')
+      if(request.data.success)
       {
-        this.$set(this.todoTasksContents, j, arr[j])
+        var arr =[];
+        arr = response.response.data.ToDoList.$values;
+        for (let j in arr)
+        {
+          this.$set(this.todoTasksContents, j, arr[j])
+        }
+        console.log(arr),
+        this.$forceUpdate();
       }
-      this.$forceUpdate();
+      //else{this.noty.Show({title:"123", message:"123"})}
     },
+
+
+    getTasks: async function () {
+
+    },
+
+
     showModal: function (){
       this.showModal = true;
     }
+
+
   }
 }
 </script>

@@ -11,6 +11,18 @@ export default class TodoPart extends BasePart {
     _updateStatusTaskPath = this._partPath + "updateStatusTask"
     _deleteTaskPath = this._partPath + "deleteTask"
 
+    _getListModel = function (UserId, DateFrom)
+    {
+        return {
+            "UserId" : UserId,
+            "DateFrom" : DateFrom
+        };
+    }
+    async GetTask (UserId, DateFrom)
+    {
+        return await this.instant.get(this._getListPath, this._getListModel(UserId, DateFrom))
+    }
+
     _createModel = function (Header, About, DurationInMinute,TodoListId)
     {
         return {
