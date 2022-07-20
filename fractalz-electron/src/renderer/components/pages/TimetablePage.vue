@@ -1,6 +1,6 @@
 <template>
   <vue-cal class="" style="height: 100%"
-           :disable-views="['years', 'year']" active-view="week" :time-step="30"
+           :disable-views="['years', 'year']" active-view="day" :time-step="30"
 
            locale="ru"
            :split-days="splitDays"
