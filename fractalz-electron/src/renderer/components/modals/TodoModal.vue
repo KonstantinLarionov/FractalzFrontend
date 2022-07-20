@@ -45,6 +45,7 @@
 import ToDoPart from "../../api/TodoPart";
 import NotifyCenter from "../../services/NotifyCenter";
 import TodoPage from "../pages/TodoPage";
+import TodoTaskElement from "../elements/todo/TodoTaskElement";
 
 export default {
   name: "TodoModal",
@@ -65,26 +66,26 @@ export default {
   mounted() {
     this.api = new ToDoPart(this.$http);
     this.noty = new NotifyCenter();
+    this.toCreateTask();
   },
 
   methods:
     {
       toCreateTask: async function()
       {
-        console.log (this.$cookies.get("UserInfo").id);
         const titleNoty = "Создание задачи"
         var result = await this.api.CreateTask(this.Header, this.About, this.duration, this.TodoListId)
             .catch(response => {this.noty.Show({
               title: titleNoty, message: response.response.data.message})});
         if (result.data.success)
           {
-            this.noty.Show({title: titleNoty, message: "Вы успешно зарегистрированы!\rОсталось совсем чуть-чуть!"});
+            this.noty.Show({title: titleNoty, message: "Задача добавлена!"});
             await TodoPage.taskReq();
+            //TodoPage.$forceUpdate();
           } else
           {
             this.noty.Show({title: titleNoty, message: result.data.message});
           }
-
       }
     }
 }
