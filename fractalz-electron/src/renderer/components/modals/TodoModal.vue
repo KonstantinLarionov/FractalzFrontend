@@ -44,6 +44,7 @@
 <script>
 import ToDoPart from "../../api/TodoPart";
 import NotifyCenter from "../../services/NotifyCenter";
+import TodoPage from "../pages/TodoPage";
 
 export default {
   name: "TodoModal",
@@ -78,10 +79,12 @@ export default {
         if (result.data.success)
           {
             this.noty.Show({title: titleNoty, message: "Вы успешно зарегистрированы!\rОсталось совсем чуть-чуть!"});
+            await TodoPage.taskReq();
           } else
           {
             this.noty.Show({title: titleNoty, message: result.data.message});
           }
+
       }
     }
 }

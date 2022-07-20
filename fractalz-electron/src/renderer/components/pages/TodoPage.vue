@@ -30,7 +30,11 @@
             <span class="float-right headingright">7h 15min</span>
           </p>
           <div v-for="todoTaskContent in todoTasksContents" :key="todoTaskContent.$id">
-            <todo-task-element :todo-name="todoTaskContent.name" :todo-time-created="todoTaskContent.timeCreated" :todo-time-to-take="todoTaskContent.timeToTake"></todo-task-element>
+            <todo-task-element :todo-name="todoTaskContent.header"
+                               :todo-time-created="todoTaskContent.dateCreate"
+                               :todo-time-to-take="todoTaskContent.durationInMinute"
+                               :todo-id="todoTaskContent.id" >
+            </todo-task-element>
           </div>
           <p class="heading2">
             <span class="tomorrow">Вчера</span>
@@ -51,6 +55,7 @@ import UserPart from "../../api/UserPart";
 import NotifyCenter from "../../services/NotifyCenter";
 import Vue from "vue";
 import ToDoPart from "../../api/TodoPart";
+import todoTaskElement from "../elements/todo/TodoTaskElement";
 
 Vue.component ('todo-task-element', TodoTaskElement)
 Vue.component ('todo-task-manager', TodoTaskManager)
@@ -81,20 +86,20 @@ export default {
   },
   methods: {
     taskReq: async function(){
-      console.log(this.$cookies.get("UserInfo").id)
-      var request = await this.api.GetTask( this.$cookies.get("UserInfo").id , '')
+      var request = await this.api.GetTask( this.$cookies.get("UserInfo").id, '')
+          .catch(response=>{this.noty.Show({title: "Task add", message:"task not added"})})
       if(request.data.success)
       {
         var arr =[];
-        arr = response.response.data.ToDoList.$values;
+        arr = request.data.todoList.tasks.$values;
         for (let j in arr)
         {
-          this.$set(this.todoTasksContents, j, arr[j])
+            this.$set(this.todoTasksContents, j , arr[j])
         }
-        console.log(arr),
+        console.log(this.todoTasksContents),
         this.$forceUpdate();
       }
-      //else{this.noty.Show({title:"123", message:"123"})}
+      else{this.noty.Show({title:"123", message:"123"})}
     },
 
 
