@@ -119,4 +119,8 @@ export default {
 
 <style scoped>
 
+.mr-4 navTask dark-teal
+{
+  
+}
 </style>
