@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 import DefaultLayout from "./layouts/DefaultLayout"
+Vue.config.productionTip = false
 
 Vue.component("default-layout", DefaultLayout)
 

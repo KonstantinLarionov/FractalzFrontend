@@ -19,7 +19,7 @@
                 </template>-->
               </todo-modal>
 
-            <button class="mr-4 border-0 bg-transparent navTask text-dark">Архив задач</button>
+            <button class="mr-4 border-0 bg-transparent navTask text-dark" >Архив задач</button>
             <i class="fa fa-search" aria-hidden="true"></i>
           </span>
         </div>
@@ -30,7 +30,11 @@
             <span class="float-right headingright">7h 15min</span>
           </p>
           <div v-for="todoTaskContent in todoTasksContents" :key="todoTaskContent.$id">
-            <todo-task-element :todo-name="todoTaskContent.name" :todo-time-created="todoTaskContent.timeCreated" :todo-time-to-take="todoTaskContent.timeToTake"></todo-task-element>
+            <todo-task-element :todo-name="todoTaskContent.header"
+                               :todo-time-created="todoTaskContent.dateCreate"
+                               :todo-time-to-take="todoTaskContent.durationInMinute"
+                               :todo-id="todoTaskContent.id" >
+            </todo-task-element>
           </div>
           <p class="heading2">
             <span class="tomorrow">Вчера</span>
@@ -50,6 +54,8 @@ import TodoModal from "../modals/TodoModal";
 import UserPart from "../../api/UserPart";
 import NotifyCenter from "../../services/NotifyCenter";
 import Vue from "vue";
+import ToDoPart from "../../api/TodoPart";
+import todoTaskElement from "../elements/todo/TodoTaskElement";
 
 Vue.component ('todo-task-element', TodoTaskElement)
 Vue.component ('todo-task-manager', TodoTaskManager)
@@ -60,7 +66,7 @@ export default {
   name: "TodoPage",
   data(){
     return{
-      showModal: false
+      showModal: false,
     }
   },
   date() {
@@ -74,40 +80,39 @@ export default {
   },
   mounted: async function () {
     this.todoTasksContents = [];
+    this.api = new ToDoPart(this.$http);
+    this.taskReq();
     this.getTasks();
   },
   methods: {
-    getTasks: function () {
-      var arr =[
-        {
-          id: 0,
-          name:'Take kids to school',
-          timeCreated: '8:00-8:30AM',
-          timeToTake: '30min',
-        },
-        {
-          id: 1,
-          name:'Take kids to school',
-          timeCreated: '8:00-8:30AM',
-          timeToTake: '30min',
-        },
-        {
-          id: 2,
-          name:'Take kids to school',
-          timeCreated: '8:00-8:30AM',
-          timeToTake: '30min',
-        }
-      ];
-
-      for (let j in arr)
+    taskReq: async function(){
+      var request = await this.api.GetTask( this.$cookies.get("UserInfo").id, '')
+          .catch(response=>{this.noty.Show({title: "Task add", message:"task not added"})})
+      if(request.data.success)
       {
-        this.$set(this.todoTasksContents, j, arr[j])
+        var arr =[];
+        arr = request.data.todoList.tasks.$values;
+        for (let j in arr)
+        {
+            this.$set(this.todoTasksContents, j , arr[j])
+        }
+        console.log(this.todoTasksContents),
+        this.$forceUpdate();
       }
-      this.$forceUpdate();
+      else{this.noty.Show({title:"123", message:"123"})}
     },
+
+
+    getTasks: async function () {
+
+    },
+
+
     showModal: function (){
       this.showModal = true;
     }
+
+
   }
 }
 </script>
