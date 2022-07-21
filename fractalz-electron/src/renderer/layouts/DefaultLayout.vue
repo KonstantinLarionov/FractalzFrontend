@@ -57,6 +57,14 @@
               </svg>
             </div>
           </div>
+          <div class="row">
+            <button id="notyCreateLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left " v-on:click="CreateNotyModal = true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-send-exclamation" viewBox="0 0 16 16">
+                <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855a.75.75 0 0 0-.124 1.329l4.995 3.178 1.531 2.406a.5.5 0 0 0 .844-.536L6.637 10.07l7.494-7.494-1.895 4.738a.5.5 0 1 0 .928.372l2.8-7Zm-2.54 1.183L5.93 9.363 1.591 6.602l11.833-4.733Z"/>
+                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1.5a.5.5 0 0 1-1 0V11a.5.5 0 0 1 1 0Zm0 3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
+              </svg>
+            </button>
+          </div>
 
           <div class="row" style="margin-top: auto; ">
             <router-link :to="{ name: 'RegistrationPage' }"  id="registrationLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
@@ -74,23 +82,32 @@
         </section>
       </div>
     </div>
+    <CreateNotyModal v-if="CreateNotyModal" @close="CreateNotyModal = false"></CreateNotyModal>
   </div>
 </template>
 
 <script>
 import Vue from "vue";
 import NotifyCenter from "../services/NotifyCenter";
+import CreateNotyModal from "../components/modals/CreateNotyModal";
+
+Vue.component ('CreateNotyModal', CreateNotyModal)
+
 
 export default {
   name: "DefaultLayout",
   data(){
-    return {CountDialogsNoty: 0}
+    return {
+      CountDialogsNoty: 0,
+      CreateNotyModal: false
+    }
   },
   props : {
   },
   mounted() {
     this.noty = new NotifyCenter();
     Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
+    Vue.socketEvents.notyReceive = this.onNotyGlobal;
   },
   methods: {
     onDialogsUpdate : function (message1) {
@@ -107,6 +124,11 @@ export default {
       }
       //TODO :  + Подсветить жирным диалог который пришел
     },
+    onNotyGlobal : function (message) {
+      console.log(message);
+      this.noty.Show({title: message.Title.toString() , message : message.Message})
+      require('electron').ipcRenderer.send('flash-noty', function (){});
+    }
   }
 }
 </script>
