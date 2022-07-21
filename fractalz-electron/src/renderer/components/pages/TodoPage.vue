@@ -33,7 +33,7 @@
             <todo-task-element :todo-name="todoTaskContent.header"
                                :todo-time-created="todoTaskContent.dateCreate"
                                :todo-time-to-take="todoTaskContent.durationInMinute"
-                               :todo-id="todoTaskContent.id" >
+                               :todo-id="todoTaskContent.id" :complete="todoTaskContent.isCompleted"  >
             </todo-task-element>
           </div>
           <p class="heading2">
@@ -81,6 +81,7 @@ export default {
   mounted: async function () {
     this.todoTasksContents = [];
     this.api = new ToDoPart(this.$http);
+    this.todoTasksContents.isCompleted = todoTaskElement.complete;
     this.taskReq();
     this.getTasks();
   },
@@ -96,8 +97,8 @@ export default {
         {
             this.$set(this.todoTasksContents, j , arr[j])
         }
-        console.log(this.todoTasksContents),
         this.$forceUpdate();
+
       }
       else{this.noty.Show({title:"123", message:"123"})}
     },
@@ -119,4 +120,8 @@ export default {
 
 <style scoped>
 
+.mr-4 navTask dark-teal
+{
+
+}
 </style>

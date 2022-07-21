@@ -37,17 +37,13 @@ export default class TodoPart extends BasePart {
 ////////////////////////////////////////////////////////
     _deleteModel = function (IdTask)
     {
-        return {
-            "IdTask": IdTask,
-
-        };
+        return "?IdTask=" + IdTask
     }
 
     async DeleteTask(IdTask) {
-        return await this.instant.delete(this._deleteTaskPath , this._deleteModel(IdTask))
+        return await this.instant.delete(this._deleteTaskPath + this._deleteModel(IdTask))
     }
 ////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////
     _updateModel = function (IdTask, completed)
     {
         return {
