@@ -90,13 +90,15 @@ export default {
   },
   mounted() {
     this.noty = new NotifyCenter();
-    Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
+    //Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
+    Vue.socketEvents.messageReceive = this.onMessageUpdate;
   },
   methods: {
-    onDialogsUpdate : function (message1) {
+    onMessageUpdate : function (message){
+      console.log(message)
       if (message.idSender != Vue.$cookies.get('UserInfo').id)
       {
-        this.noty.Show({title: "Новое сообщение" , message : "DialogId: " + message.text})
+        this.noty.Show({title: "Новое сообщение от " + message.nameSender , message : message.text});
         require('electron').ipcRenderer.send('flash-noty', function (){});
         if(this.CountDialogsNoty >= 100) {
           this.CountDialogsNoty = "99+";
@@ -107,6 +109,21 @@ export default {
       }
       //TODO :  + Подсветить жирным диалог который пришел
     },
+/*    onDialogsUpdate : function (message) {
+      console.log(message)
+      if (message.idSender != Vue.$cookies.get('UserInfo').id)
+      {
+        this.noty.Show({title: "Новое сообщение" + message.nameSender , message : "DialogId: " + message.text});
+        require('electron').ipcRenderer.send('flash-noty', function (){});
+        if(this.CountDialogsNoty >= 100) {
+          this.CountDialogsNoty = "99+";
+        }
+        else {
+          this.CountDialogsNoty++;
+        }
+      }
+      //TODO :  + Подсветить жирным диалог который пришел
+    },*/
   }
 }
 </script>

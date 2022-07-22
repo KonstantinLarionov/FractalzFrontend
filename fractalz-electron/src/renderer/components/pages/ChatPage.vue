@@ -84,7 +84,7 @@ export default {
     onMessageReceive : function (message) {
       console.log(message)
       if (message.idSender != this.idUserSender){
-        this.noty.Show({title: "Новое сообщение от " , message : message.Text})
+        //this.noty.Show({title: "Новое сообщение от " , message : message.Text})
       }
       if (message.dialogId == this.dialogId){
         if (message != null) {
