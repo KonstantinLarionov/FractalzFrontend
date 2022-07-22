@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 import DefaultLayout from "./layouts/DefaultLayout"
+Vue.config.productionTip = false
 
 Vue.component("default-layout", DefaultLayout)
 
@@ -17,6 +18,8 @@ Vue.socket = {};
 Vue.socketEvents = {
   messageReceive : function (message)
   { console.log("Пришло MESSAGE:"); console.log(message); },
+  notyReceive : function (message)
+  { console.log("Пришло NOTY:"); console.log(message); },
   usersReceive : function (message)
   { console.log("Пришло USERS:"); console.log(message); },
   dialogsReceive : function (message)
@@ -25,7 +28,7 @@ Vue.socketEvents = {
   onopen : function() {
     console.log("Соединение установлено.");
 
-    Vue.socket.send("dialog, users, message");
+    Vue.socket.send("dialog, users, message, noty");
   },
   onclose : function(event) {
     if (event.wasClean) {
@@ -46,6 +49,8 @@ Vue.socketEvents = {
     { Vue.socketEvents.dialogsReceive(event.data);}
     if(event.type === 2)//Message
     { Vue.socketEvents.messageReceive(event.data);}
+    if(event.type === 4)//Noty
+    { Vue.socketEvents.notyReceive(event.data);}
   },
   onerror : function(error) {
     console.log("Ошибка " + error.message);
