@@ -41,6 +41,10 @@ export default class ChatPart extends BasePart {
             UsersId
         }
     }
+
+    _downloadFilesModel = function(Files){
+        return{}
+    }
     //#endregion
 
     /**
@@ -79,7 +83,7 @@ export default class ChatPart extends BasePart {
      * @returns {Promise<*>}
      * @constructor
      */
-    async DownloadFile() {
+    async DownloadFile(Files) {
         return await this.instant.get(this._downloadFilePath)
     }
 
@@ -102,7 +106,7 @@ export default class ChatPart extends BasePart {
      */
     async CreateMessage(objectData) {
         console.log(objectData)
-        return await this.instant.post(this._createMessagePath, objectData)
+        return await this.instant.post(this._createMessagePath, objectData )
     }
 
     /**

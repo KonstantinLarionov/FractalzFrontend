@@ -23,15 +23,16 @@
           </div>
       </div>
     </div>
-    <div class="d-flex align-items-center chat-content-footer">
-      <a class="p-2 select" title="Прикрепить документ">
-          <svg width="24" height="24" viewBox="0 0 24 24" color="#000000" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <div class="d-flex align-items-center chat-content-footer" >
+      <label class="document" >
+        <input type="file" class="p-2 select"  ref="files" style="display: none" multiple v-on:change="filesHandler()" >
+          <svg width="24" height="24" viewBox="0 0 24 24" color="#000000" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file" >
             <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z">
             </path>
             <polyline points="13 2 13 9 20 9">
             </polyline>
           </svg>
-        </a>
+      </label>
       <textarea v-model="message" id="message" class="p-2 textarea" placeholder="Ваше сообщение"></textarea>
       <a v-on:click="sendMessage()" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
           <svg width="24" height="24" color="#000000" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
@@ -50,7 +51,7 @@ import Vue from "vue";
 
 Vue.component ('answer-left-element', AnswerLeft)
 Vue.component ('answer-right-element', AnswerRight)
-
+Vue.config.productionTip = false
 export default {
   name: "ChatPage",
   date() {
@@ -61,14 +62,20 @@ export default {
   data(){
     return{
       message: '',
-      notyHeader: "Диалог Fractalz"
+      notyHeader: "Диалог Fractalz",
+      Files:{
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      },
+      formData: ''
     }
   },
   props:{
     idUserSender : null,
     dialogId: null,
     api: Object,
-    noty: Object
+    noty: Object,
   },
   mounted: async function () {
     this.messageContents = [];
@@ -121,12 +128,15 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "У вас нет сообщений начните диалог"});
       }
     },
+
+
+
     sendMessage: async function () {
       var obj = {
         userId: Vue.$cookies.get('UserInfo').id,
         dialogId: this.dialogId,
         message: this.message,
-        files: []
+        files: this.Files
       }
       var result = await this.api
           .CreateMessage(obj)
@@ -145,6 +155,9 @@ export default {
       }
       this.onMessageReceive
     },
+
+
+
     updateMessage: async function (obj) {
       var result = await this.api
           .UpdateMessage(obj)
@@ -204,6 +217,18 @@ export default {
       } else {
         this.noty.Show({title: this.notyHeader, message: "Ошибка удаления сообщения"});
       }
+    },
+
+
+
+    filesHandler: async function(){
+      this.Files = this.$refs.files.files;
+      console.log(this.Files)
+      this.formData = new FormData();
+      for( var i = 0; i < this.Files.length; i++ ){
+        let file = this.Files[i];
+        this.formData.append('files[' + i + ']', file);
+    }
     }
   }
 }
@@ -224,17 +249,24 @@ export default {
   border: none;
   outline: none;
   width: 100%;
-  border-right: 1px solid #009788;
-  border-left: 1px solid #009788;
+  border-right: 2px solid #009788;
+  border-left: 2px solid #009788;
+  border-top: 2px solid #009788;
 }
 .select{
   height: 100%;
   cursor: pointer;
+
+}
+.document{
+  border: 10px solid transparent;
+  background: transparent;
 }
 .chat-content-footer {
   background-color: white;
   bottom: 0;
-  border-top: 1px solid #009788;
+  border-top: 2px solid #009788;
+  border-radius: 2px;
 }
 
 body{
