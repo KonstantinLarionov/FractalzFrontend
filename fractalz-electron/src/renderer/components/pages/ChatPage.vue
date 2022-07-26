@@ -1,6 +1,6 @@
 <template>
   <div class="chat-content-main d-flex flex-column">
-    <div id="chat" class="chat col-inside-lg decor-default">
+    <div v-on:click="emojiHidden('hidden')" id="chat" class="chat col-inside-lg decor-default">
         <div class="chat-body">
           <div v-for="messageContent in messageContents" :key="messageContent.$id">
             <answer-left-element v-if="messageContent.idSender !== idUserSender"
@@ -23,6 +23,12 @@
           </div>
       </div>
     </div>
+
+    <div v-on="" id="emojiblock" class="emoji_block" style="background: #cbd3da" >
+      <VEmojiPicker @select="selectEmoji"/>
+    </div>
+
+
     <div class="d-flex align-items-center chat-content-footer">
       <a class="p-2 select" title="Прикрепить документ">
           <svg width="24" height="24" viewBox="0 0 24 24" color="#000000" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
@@ -32,13 +38,20 @@
             </polyline>
           </svg>
         </a>
-      <textarea v-model="message" id="message" class="p-2 textarea" placeholder="Ваше сообщение"></textarea>
+
+      <textarea v-on:click="emojiHidden('hidden')" v-model="message" id="message" class="p-2 textarea" placeholder="Ваше сообщение"></textarea>
+
+      <a v-on:click="emojiHidden('visible')" class="p-2 select" title="Emoji" style="transform: rotate(0deg); right: 0">
+        <svg width="25" height="25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12z" fill="#000"/><path d="M11 9.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM16 9.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" fill="#000"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9 15a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1z" fill="#000"/></svg>
+      </a>
+
       <a v-on:click="sendMessage()" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
-          <svg width="24" height="24" color="#000000" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
+         <svg width="24" height ="24" color="#000000" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
             <line x1="22" y1="2" x2="11" y2="13"/>
             <polygon points="22 2 15 22 11 13 2 9 22 2"/>
           </svg>
         </a>
+
     </div>
   </div>
 </template>
@@ -47,25 +60,33 @@
 import AnswerLeft from "../elements/chat/AnswerLeft";
 import AnswerRight from "../elements/chat/AnswerRight";
 import Vue from "vue";
+import { VEmojiPicker } from 'v-emoji-picker';
+
 
 Vue.component ('answer-left-element', AnswerLeft)
 Vue.component ('answer-right-element', AnswerRight)
 
 export default {
   name: "ChatPage",
+  emoji: 'Demo',
+
+  components: {
+    VEmojiPicker
+  },
+
   date() {
     return {
       messageContents: [],
     }
   },
-  data(){
-    return{
+  data() {
+    return {
       message: '',
       notyHeader: "Диалог Fractalz"
     }
   },
-  props:{
-    idUserSender : null,
+  props: {
+    idUserSender: null,
     dialogId: null,
     api: Object,
     noty: Object
@@ -75,18 +96,25 @@ export default {
     await this.getMessage();
     Vue.socketEvents.messageReceive = this.onMessageReceive;
     this.scroll();
+
   },
   methods: {
-    scroll : function () {
-      var block = document.getElementById("chat");
-      block.scrollTop  =  block.scrollHeight;
+    selectEmoji: function(emoji) {
+      console.log(emoji.data)
+      var textarea = document.getElementById("message")
+      textarea.value += emoji.data;
+      
     },
-    onMessageReceive : function (message) {
+    scroll: function () {
+      var block = document.getElementById("chat");
+      block.scrollTop = block.scrollHeight;
+    },
+    onMessageReceive: function (message) {
       console.log(message)
-      if (message.idSender != this.idUserSender){
-        this.noty.Show({title: "Новое сообщение от " , message : message.Text})
+      if (message.idSender != this.idUserSender) {
+        this.noty.Show({title: "Новое сообщение от ", message: message.Text})
       }
-      if (message.dialogId == this.dialogId){
+      if (message.dialogId == this.dialogId) {
         if (message != null) {
           var arr = [];
           arr = message;
@@ -190,6 +218,10 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "Ошибка загрузки файла"});
       }
     },
+    emojiHidden: function (newVisibility) {
+      var emoji = document.getElementById("emojiblock");
+      emoji.style.visibility = newVisibility;
+    },
     deleteMessage: async function () {
       var result = await this.api
           .DeleteMessage(obj)
@@ -210,6 +242,7 @@ export default {
 </script>
 
 <style scoped>
+
 .chat-content-body{
   width: 100%;
   height: 100%;
@@ -226,6 +259,27 @@ export default {
   width: 100%;
   border-right: 1px solid #009788;
   border-left: 1px solid #009788;
+}
+.emoji_block{
+  position: absolute;
+  visibility: hidden;
+  height: 437px;
+  width: 327px;
+  right: 0px;
+  bottom: 60px;
+  border-right-color: #0b0d0f;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-bottom-color: #0b0d0f;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-top-color: #0b0d0f;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-left-color: #0b0d0f;
+  border-left-style: solid;
+  border-left-width: 1px;
+
 }
 .select{
   height: 100%;
