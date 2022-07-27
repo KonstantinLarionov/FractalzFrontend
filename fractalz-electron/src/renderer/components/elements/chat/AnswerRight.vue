@@ -58,7 +58,7 @@
       </slot>
     </div>
     <div class="name">{{Name}}</div>
-    <div class="text">
+    <div class="text wrapword">
       {{Message}}
     </div>
     <div class="time">{{DateSend}}</div>
@@ -79,7 +79,14 @@ export default {
 </script>
 
 <style scoped>
-
+.wrapword {
+  white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  white-space: pre-wrap;       /* css-3 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  word-break: break-all;
+  white-space: normal;
+}
 body{
   margin-top:20px;
   background:#eee;

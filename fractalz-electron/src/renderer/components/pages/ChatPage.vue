@@ -18,7 +18,6 @@
 
                                   :avatar="messageContent.avatar"
                                   :status="messageContent.status">
-
             </answer-right-element>
           </div>
       </div>
@@ -52,6 +51,7 @@ import Vue from "vue";
 Vue.component ('answer-left-element', AnswerLeft)
 Vue.component ('answer-right-element', AnswerRight)
 Vue.config.productionTip = false
+
 export default {
   name: "ChatPage",
   date() {
@@ -63,11 +63,7 @@ export default {
     return{
       message: '',
       notyHeader: "Диалог Fractalz",
-      Files:{
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      },
+      Files:[],
       formData: ''
     }
   },
@@ -106,7 +102,7 @@ export default {
     },
     getMessage: async function () {
       var result = await this.api
-          .GetMessages(this.dialogId, '', 100)
+          .GetMessages(this.dialogId, '', 100, Vue.$cookies.get('UserInfo').id)
           .catch(response => {
             this.noty.Show({
               title: this.notyHeader,
@@ -128,9 +124,6 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "У вас нет сообщений начните диалог"});
       }
     },
-
-
-
     sendMessage: async function () {
       var obj = {
         userId: Vue.$cookies.get('UserInfo').id,
@@ -155,9 +148,6 @@ export default {
       }
       this.onMessageReceive
     },
-
-
-
     updateMessage: async function (obj) {
       var result = await this.api
           .UpdateMessage(obj)
@@ -218,9 +208,6 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "Ошибка удаления сообщения"});
       }
     },
-
-
-
     filesHandler: async function(){
       this.Files = this.$refs.files.files;
       console.log(this.Files)
