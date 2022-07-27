@@ -24,16 +24,18 @@
     </div>
     <div class="d-flex align-items-center chat-content-footer" >
       <label class="document" >
-        <input type="file" class="p-2 select"  ref="files" style="display: none" multiple v-on:change="filesHandler()" >
+        <form enctype="multipart/form-data" >
+        <input type="file" class="p-2 select"  ref="files" style="display: none" multiple v-on:change="getFile($event)" >
           <svg width="24" height="24" viewBox="0 0 24 24" color="#000000" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file" >
             <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z">
             </path>
             <polyline points="13 2 13 9 20 9">
             </polyline>
           </svg>
+        </form>
       </label>
       <textarea v-model="message" id="message" class="p-2 textarea" placeholder="Ваше сообщение"></textarea>
-      <a v-on:click="sendMessage()" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
+      <a v-on:click=" submitForm($event)" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
           <svg width="24" height="24" color="#000000" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
             <line x1="22" y1="2" x2="11" y2="13"/>
             <polygon points="22 2 15 22 11 13 2 9 22 2"/>
@@ -64,7 +66,8 @@ export default {
       message: '',
       notyHeader: "Диалог Fractalz",
       Files:[],
-      formData: ''
+      formData: '',
+      uploadURL: "http://localhost:5001/chat/fileTransfer",
     }
   },
   props:{
@@ -124,12 +127,13 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "У вас нет сообщений начните диалог"});
       }
     },
-    sendMessage: async function () {
+
+
+    /*sendMessage: async function () {
       var obj = {
         userId: Vue.$cookies.get('UserInfo').id,
         dialogId: this.dialogId,
         message: this.message,
-        files: this.Files
       }
       var result = await this.api
           .CreateMessage(obj)
@@ -147,7 +151,7 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "Ошибка отправки сообщения"});
       }
       this.onMessageReceive
-    },
+    },*/
     updateMessage: async function (obj) {
       var result = await this.api
           .UpdateMessage(obj)
@@ -208,16 +212,50 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "Ошибка удаления сообщения"});
       }
     },
-    filesHandler: async function(){
-      this.Files = this.$refs.files.files;
-      console.log(this.Files)
-      this.formData = new FormData();
-      for( var i = 0; i < this.Files.length; i++ ){
-        let file = this.Files[i];
-        this.formData.append('files[' + i + ']', file);
+
+    getFile(event) {
+      this.Files = event.target.files[0];
+      console.log(this.Files);
+    },
+
+    submitForm(event) {
+      event.preventDefault();
+      let formData = new FormData();
+      formData.append("Files", this.Files);
+      let config = {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      };
+      this.$http
+          .post(this.uploadURL, formData, config)
+          .then(function (response)
+          {
+            if (response.status === 200) {
+              console.log(response.data);
+            }
+          });
+    },
+    /*fileTransfer: async function () {
+      var obj = {
+        DialogId: this.dialogId,
+      }
+      var result = await this.api
+          .FileTransfer(obj)
+          .catch(response => {
+            this.noty.Show({
+              title: this.notyHeader,
+              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+            });
+          });
+      if (result.data.success) {
+        console.log(result)
+      } else {
+        this.noty.Show({title: this.notyHeader, message: "Ошибка отправки сообщения"});
+      }
+    },*/
+
     }
-    }
-  }
 }
 </script>
 
