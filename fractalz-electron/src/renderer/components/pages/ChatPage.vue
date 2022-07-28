@@ -28,9 +28,12 @@
       <VEmojiPicker @select="selectEmoji"/>
     </div>
 
-    <div class="d-flex align-items-center chat-content-footer" >
+    <div class="d-flex align-items-center chat-content-footer" multiple>
+
       <label class="document" >
-        <input type="file" class="p-2 select"  ref="files" style="display: none" multiple v-on:change="filesHandler()" >
+        <transfer-modal v-if="showModal" @close="showModal = false" >
+        </transfer-modal>
+        <input class="p-2 select" style="display: none" @click="showModal = true">
         <svg width="24" height="24" viewBox="0 0 24 24" color="#000000" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file" >
           <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z">
           </path>
@@ -38,16 +41,19 @@
           </polyline>
         </svg>
       </label>
+
       <textarea v-model="message" id="message" class="p-2 textarea" placeholder="Ваше сообщение"></textarea>
       <a v-on:click="emojiHidden('visible')" class="p-2 select" title="Emoji" style="transform: rotate(0deg); right: 0">
         <svg width="25" height="25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12z" fill="#000"/><path d="M11 9.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM16 9.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" fill="#000"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9 15a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1z" fill="#000"/></svg>
       </a>
-      <a v-on:click=" submitForm($event), fileTransfer(), sendMessage()" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
+
+      <a v-on:click="sendMessage()" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
           <svg width="24" height="24" color="#000000" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
             <line x1="22" y1="2" x2="11" y2="13"/>
             <polygon points="22 2 15 22 11 13 2 9 22 2"/>
           </svg>
         </a>
+
     </div>
   </div>
 </template>
@@ -57,10 +63,12 @@ import AnswerLeft from "../elements/chat/AnswerLeft";
 import AnswerRight from "../elements/chat/AnswerRight";
 import Vue from "vue";
 import { VEmojiPicker } from 'v-emoji-picker';
+import FileTransferModal from "../modals/FileTransferModal";
 
 
 Vue.component ('answer-left-element', AnswerLeft)
 Vue.component ('answer-right-element', AnswerRight)
+Vue.component('transfer-modal', FileTransferModal)
 Vue.config.productionTip = false
 
 export default {
@@ -74,15 +82,15 @@ export default {
   date() {
     return {
       messageContents: [],
+      showModal:false,
     }
   },
   data() {
     return {
+      showModal:false,
       message: '',
       notyHeader: "Диалог Fractalz",
-      Files:[],
-      formData: '',
-      uploadURL: "http://localhost:5001/chat/fileTransfer",
+
     }
   },
   props: {
@@ -228,46 +236,6 @@ export default {
         console.log(result)
       } else {
         this.noty.Show({title: this.notyHeader, message: "Ошибка удаления сообщения"});
-      }
-    },
-    getFile(event) {
-      this.Files = event.target.files[0];
-      console.log(this.Files);
-    },
-    submitForm(event) {
-      event.preventDefault();
-      let formData = new FormData();
-      formData.append("Files", this.Files);
-      let config = {
-        headers: {
-          "Content-Type": "multipart/form-data"
-        }
-      };
-      this.$http
-          .post(this.uploadURL, formData, config)
-          .then(function (response)
-          {
-            if (response.status === 200) {
-              console.log(response.data);
-            }
-          });
-    },
-    fileTransfer: async function () {
-      var DialogId = {
-        DialogId:this.dialogId,
-      }
-      var result = await this.api
-          .FileTransfer(DialogId)
-          .catch(response => {
-            this.noty.Show({
-              title: this.notyHeader,
-              message: "Произошла ошибка. Проверьте соединение с интернетом!"
-            });
-          });
-      if (result.data.success) {
-        console.log(result)
-      } else {
-        this.noty.Show({title: this.notyHeader, message: "Ошибка отправки сообщения"});
       }
     },
     }

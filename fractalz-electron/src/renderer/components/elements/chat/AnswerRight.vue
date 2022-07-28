@@ -72,6 +72,7 @@ export default {
     Status : null,
     Name : null,
     Message: null,
+    File:null,
     DateSend: null,
   },
   name: "AnswerRight"

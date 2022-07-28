@@ -11,12 +11,6 @@
             <button class="mr-4 navTask dark-teal" @click="showModal = true">Добавить задачу</button>
 
               <todo-modal v-if="showModal" @close="showModal = false">
-                <template v-slot:body>
-
-                </template>
-<!--                <template v-slot:footer>
-                  Hello, modal!
-                </template>-->
               </todo-modal>
 
             <button class="mr-4 border-0 bg-transparent navTask text-dark" >Архив задач</button>
