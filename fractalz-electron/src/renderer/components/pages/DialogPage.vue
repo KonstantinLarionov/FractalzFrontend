@@ -32,6 +32,7 @@ import Vue from "vue";
 
 Vue.component ('dialog-element', DialogElement)
 Vue.component ('chat-page', ChatPage)
+Vue.config.productionTip = false
 
 export default {
   name: "DialogPage",
