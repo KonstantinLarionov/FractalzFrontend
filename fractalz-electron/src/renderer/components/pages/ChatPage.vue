@@ -28,7 +28,6 @@
       <VEmojiPicker @select="selectEmoji"/>
     </div>
 
-
     <div class="d-flex align-items-center chat-content-footer" >
       <label class="document" >
         <input type="file" class="p-2 select"  ref="files" style="display: none" multiple v-on:change="filesHandler()" >
@@ -40,6 +39,9 @@
         </svg>
       </label>
       <textarea v-model="message" id="message" class="p-2 textarea" placeholder="Ваше сообщение"></textarea>
+      <a v-on:click="emojiHidden('visible')" class="p-2 select" title="Emoji" style="transform: rotate(0deg); right: 0">
+        <svg width="25" height="25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12z" fill="#000"/><path d="M11 9.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM16 9.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" fill="#000"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9 15a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1z" fill="#000"/></svg>
+      </a>
       <a v-on:click="sendMessage()" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
         <svg width="24" height="24" color="#000000" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
           <line x1="22" y1="2" x2="11" y2="13"/>
@@ -47,22 +49,7 @@
         </svg>
       </a>
     </div>
-
-      <textarea v-on:click="emojiHidden('hidden')" v-model="message" id="message" class="p-2 textarea" placeholder="Ваше сообщение"></textarea>
-
-      <a v-on:click="emojiHidden('visible')" class="p-2 select" title="Emoji" style="transform: rotate(0deg); right: 0">
-        <svg width="25" height="25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12z" fill="#000"/><path d="M11 9.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM16 9.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" fill="#000"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9 15a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1z" fill="#000"/></svg>
-      </a>
-
-      <textarea v-model="message" id="message" class="p-2 textarea" placeholder="Ваше сообщение"></textarea>
-      <a v-on:click=" submitForm($event)" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
-          <svg width="24" height="24" color="#000000" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
-            <line x1="22" y1="2" x2="11" y2="13"/>
-            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-          </svg>
-        </a>
-
-    </div>
+  </div>
 </template>
 
 <script>
@@ -109,24 +96,18 @@ export default {
     await this.getMessage();
     Vue.socketEvents.messageReceive = this.onMessageReceive;
     this.scroll();
-
   },
   methods: {
     selectEmoji: function(emoji) {
       console.log(emoji.data)
       var textarea = document.getElementById("message")
       textarea.value += emoji.data;
-
     },
     scroll: function () {
       var block = document.getElementById("chat");
       block.scrollTop = block.scrollHeight;
     },
     onMessageReceive: function (message) {
-      console.log(message)
-      if (message.idSender != this.idUserSender){
-        //this.noty.Show({title: "Новое сообщение от " , message : message.Text})
-      }
       if (message.dialogId == this.dialogId) {
         if (message != null) {
           var arr = [];
@@ -162,9 +143,7 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "У вас нет сообщений начните диалог"});
       }
     },
-
-
-    /*sendMessage: async function () {
+    sendMessage: async function () {
       var obj = {
         userId: Vue.$cookies.get('UserInfo').id,
         dialogId: this.dialogId,
@@ -186,7 +165,7 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "Ошибка отправки сообщения"});
       }
       this.onMessageReceive
-    },*/
+    },
     updateMessage: async function (obj) {
       var result = await this.api
           .UpdateMessage(obj)
@@ -251,12 +230,10 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "Ошибка удаления сообщения"});
       }
     },
-
     getFile(event) {
       this.Files = event.target.files[0];
       console.log(this.Files);
     },
-
     submitForm(event) {
       event.preventDefault();
       let formData = new FormData();
@@ -293,7 +270,6 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "Ошибка отправки сообщения"});
       }
     },*/
-
     }
 }
 </script>
