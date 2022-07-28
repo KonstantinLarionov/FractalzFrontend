@@ -11,34 +11,61 @@
         </div>
         <div v-if="type === 'B'" class="login-form">
           <input type="text" v-model="login" placeholder="Логин/Почта" />
-          <input type="password" v-model="password" placeholder="Пароль"/>
+          <input type="password" v-model="password" placeholder="Пароль"
+                 @keyup.enter="logIn"/>
           <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Войти</button>
           <button class="modal-default-button mr-4 navTask mt-1" v-if="Auth" style="background-color: darkred" v-on:click="logOut()">Выйти</button>
           <p class= "message">Нет аккаута? <a v-on:click="toCreateAccount()">Создать аккаунт</a></p>
           <p class= "password-reset-text"> Забыли пароль?</p>
           <p class= "password-resetbutton"> <a v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</a></p>
+          <p class= "message">Хотите зарегистрироваться с ЭЦП? <a v-on:click="toCreateDSAccount()"><br>Создать аккаунт с ЭЦП</a></p>
+          <p class= "message">Войти с цифровым ключём<a v-on:click="toLogInDS()"><br>Войти с цифровым ключём</a> </p>
         </div>
         <div v-if="type === 'C'" class="password-reset-form">
           <p class="reset-title"> Для восстановления доступа вам необходимо сбросить старый пароль и установить новый.
             Для этого мы отправим вам на Email одноразовый код для подтверждения </p>
-          <input type="text" v-model="existEmail" placeholder="Ваш зарегестрированный Email" />
+          <input type="text" v-model="existEmail" placeholder="Ваш зарегестрированный Email"
+          @keyup.enter="toSendCode"/>
           <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toSendCode()">Отправить код</button>
           <input type="text" v-model="Authcode" placeholder="Ваш одноразовый код" />
-          <input type="text" v-model="newPassword1" placeholder="Новый пароль"/>
-          <input type="text" v-model="newPassword2" placeholder="Подтверждение нового пароля"/>
+          <input type="password" v-model="newPassword1" placeholder="Новый пароль"/>
+          <input type="password" v-model="newPassword2" placeholder="Подтверждение нового пароля"
+          @keyup.enter="passReset"/>
           <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="passReset()">Сохранить</button>
           <p class= "password-resetbutton-back"> <a v-on:click="toBackFromReset()">Вернуться назад</a></p>
       </div>
         <div v-if="type === 'D'" class="auth-code-form">
           <p class="code-title">Почти готово!</p>
           <p class="Code-code">Для потверждения введите код который отправлен на указанную вами почту.</p>
-          <input type="text" v-model="Authcode" placeholder="Код"/>
+          <input type="text" v-model="Authcode" placeholder="Код"
+          @keyup.enter="toValidateCode"/>
           <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toValidateCode()">Подтвердить</button>
           <p class="message"><a v-on:click="toCreateAccount()">Вернуться назад</a></p>
         </div>
-    </div>
+        <!-- Comment
+        <div v-if="type === 'E'" class="digital-signature-registration">
+          <p class="registration-title">Регистрация нового пользователя в системе с цифровым ключём</p>
+          <input type="text" v-model="login" placeholder="Логин"/>
+          <input type="text" v-model="email" placeholder="Почта"/>
+          <input type="password" v-model="password" placeholder="Пароль"/>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singInDS()">Создать</button>
+          <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>
+
+        </div>
+        <div v-if="type === 'F'" class="digital-signature-login">
+          <input type="text" v-model="login" placeholder="Логин/Почта" />
+          <input type="password" v-model="password" placeholder="Пароль"
+                 @keyup.enter="logIn"/>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Войти</button>
+          <button class="modal-default-button mr-4 navTask mt-1" v-if="Auth" style="background-color: darkred" v-on:click="logOut()">Выйти</button>
+          <p class= "password-reset-text"> Забыли пароль?</p>
+          <p class= "password-resetbutton"> <a v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</a></p>
+          <button class="modal-default-button mr-4 navTask dark-teal">Прикрепить документ</button>
+        </div>-->
+     </div>
   </div>
 </template>
+
 
 <script>
 import UserPart from "../../api/UserPart";
@@ -79,6 +106,9 @@ export default {
     toCreateAccount : function () {
       return this.type = 'A';
     },
+    toCreateDSAccount: function (){
+      return this.type = 'E';
+    },
     toSingIn : function () {
       return this.type = 'B';
     },
@@ -88,6 +118,10 @@ export default {
     toBackFromReset:function(){
       return this.type = 'B';
     },
+    toLogInDS: function (){
+      return this.type = 'F'
+    },
+
     toSendCode: async function() {
       var result = await this.api.SendCode(this.email, this.GenRequest.true)
     },
@@ -137,6 +171,7 @@ export default {
         this.login = this.$cookies.get("UserInfo").login
         this.password = this.$cookies.get("UserInfo").password
         this.email = this.$cookies.get("UserInfo").email
+        console.log(this.$cookies.get("UserInfo"))
         return true;
       }
       return false;

@@ -18,23 +18,36 @@
 
                                   :avatar="messageContent.avatar"
                                   :status="messageContent.status">
+
             </answer-right-element>
           </div>
       </div>
     </div>
+
+    <div v-on="" id="emojiblock" class="emoji_block" style="background: #cbd3da" >
+      <VEmojiPicker @select="selectEmoji"/>
+    </div>
+
     <div class="d-flex align-items-center chat-content-footer" >
       <label class="document" >
-        <form enctype="multipart/form-data" >
-        <input type="file" class="p-2 select"  ref="files" style="display: none" multiple v-on:change="getFile($event)" >
-          <svg width="24" height="24" viewBox="0 0 24 24" color="#000000" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file" >
-            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z">
-            </path>
-            <polyline points="13 2 13 9 20 9">
-            </polyline>
-          </svg>
-        </form>
+        <input type="file" class="p-2 select"  ref="files" style="display: none" multiple v-on:change="filesHandler()" >
+        <svg width="24" height="24" viewBox="0 0 24 24" color="#000000" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file" >
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z">
+          </path>
+          <polyline points="13 2 13 9 20 9">
+          </polyline>
+        </svg>
       </label>
       <textarea v-model="message" id="message" class="p-2 textarea" placeholder="Ваше сообщение"></textarea>
+      <a v-on:click="emojiHidden('visible')" class="p-2 select" title="Emoji" style="transform: rotate(0deg); right: 0">
+        <svg width="25" height="25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12z" fill="#000"/><path d="M11 9.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM16 9.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" fill="#000"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9 15a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1z" fill="#000"/></svg>
+      </a>
+      <a v-on:click="sendMessage()" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
+        <svg width="24" height="24" color="#000000" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </a>
       <a v-on:click=" submitForm($event), fileTransfer(), sendMessage()" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
           <svg width="24" height="24" color="#000000" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
             <line x1="22" y1="2" x2="11" y2="13"/>
@@ -49,6 +62,8 @@
 import AnswerLeft from "../elements/chat/AnswerLeft";
 import AnswerRight from "../elements/chat/AnswerRight";
 import Vue from "vue";
+import { VEmojiPicker } from 'v-emoji-picker';
+
 
 Vue.component ('answer-left-element', AnswerLeft)
 Vue.component ('answer-right-element', AnswerRight)
@@ -56,13 +71,19 @@ Vue.config.productionTip = false
 
 export default {
   name: "ChatPage",
+  emoji: 'Demo',
+
+  components: {
+    VEmojiPicker
+  },
+
   date() {
     return {
       messageContents: [],
     }
   },
-  data(){
-    return{
+  data() {
+    return {
       message: '',
       notyHeader: "Диалог Fractalz",
       Files:[],
@@ -70,8 +91,8 @@ export default {
       uploadURL: "http://localhost:5001/chat/fileTransfer",
     }
   },
-  props:{
-    idUserSender : null,
+  props: {
+    idUserSender: null,
     dialogId: null,
     api: Object,
     noty: Object,
@@ -83,16 +104,15 @@ export default {
     this.scroll();
   },
   methods: {
-    scroll : function () {
-      var block = document.getElementById("chat");
-      block.scrollTop  =  block.scrollHeight;
+    selectEmoji: function(emoji) {
+      this.message += emoji.data;
     },
-    onMessageReceive : function (message) {
-      console.log(message)
-      if (message.idSender != this.idUserSender){
-        //this.noty.Show({title: "Новое сообщение от " , message : message.Text})
-      }
-      if (message.dialogId == this.dialogId){
+    scroll: function () {
+      var block = document.getElementById("chat");
+      block.scrollTop = block.scrollHeight;
+    },
+    onMessageReceive: function (message) {
+      if (message.dialogId == this.dialogId) {
         if (message != null) {
           var arr = [];
           arr = message;
@@ -197,6 +217,10 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "Ошибка загрузки файла"});
       }
     },
+    emojiHidden: function (newVisibility) {
+      var emoji = document.getElementById("emojiblock");
+      emoji.style.visibility = newVisibility;
+    },
     deleteMessage: async function () {
       var result = await this.api
           .DeleteMessage(obj)
@@ -212,12 +236,10 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "Ошибка удаления сообщения"});
       }
     },
-
     getFile(event) {
       this.Files = event.target.files[0];
       console.log(this.Files);
     },
-
     submitForm(event) {
       event.preventDefault();
       let formData = new FormData();
@@ -254,12 +276,12 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "Ошибка отправки сообщения"});
       }
     },
-
     }
 }
 </script>
 
 <style scoped>
+
 .chat-content-body{
   width: 100%;
   height: 100%;
@@ -274,9 +296,29 @@ export default {
   border: none;
   outline: none;
   width: 100%;
-  border-right: 2px solid #009788;
-  border-left: 2px solid #009788;
-  border-top: 2px solid #009788;
+  border-right: 1px solid #009788;
+  border-left: 1px solid #009788;
+}
+.emoji_block{
+  position: absolute;
+  visibility: hidden;
+  height: 437px;
+  width: 327px;
+  right: 0px;
+  bottom: 60px;
+  border-right-color: #0b0d0f;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-bottom-color: #0b0d0f;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-top-color: #0b0d0f;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-left-color: #0b0d0f;
+  border-left-style: solid;
+  border-left-width: 1px;
+
 }
 .select{
   height: 100%;

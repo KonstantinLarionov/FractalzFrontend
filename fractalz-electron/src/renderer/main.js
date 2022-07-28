@@ -1,4 +1,7 @@
-import Vue from 'vue'
+process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true'
+
+import Vue from "vue";
+
 import axios from 'axios'
 
 import App from './App'
@@ -7,13 +10,18 @@ import store from './store'
 import DefaultLayout from "./layouts/DefaultLayout"
 Vue.config.productionTip = false
 
+
+
 Vue.component("default-layout", DefaultLayout)
+
+
 
 axios.defaults.baseURL = "http://localhost:5001"
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
+
 Vue.socket = {};
 Vue.socketEvents = {
   messageReceive : function (message)
@@ -62,5 +70,5 @@ new Vue({
   components: { App },
   router,
   store,
-  template: '<App/>'
+  template: '<App/>',
 }).$mount('#app')
