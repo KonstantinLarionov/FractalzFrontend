@@ -98,6 +98,7 @@ export default {
             this.$set(this.todoTasksContents, j , arr[j])
         }
         this.$forceUpdate();
+        console.log(arr)
 
       }
       else{this.noty.Show({title:"123", message:"123"})}

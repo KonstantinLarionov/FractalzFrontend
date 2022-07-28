@@ -57,12 +57,12 @@ export default {
       if(check.data.success)
         {
           this.$forceUpdate();
-          this.Check.save(true)
+          this.complete.save(true)
         }
       if(result.data.success)
         {
           this.$forceUpdate();
-          this.Check.save(false)
+          this.complete.save(false)
         }
     }
 
