@@ -16,6 +16,7 @@ export default class ChatPart extends BasePart {
     _updateMessagePath = this._partPath + "updateMessage"
     _deleteDialogPath = this._partPath + "deleteDialog"
     _deleteMessagePath = this._partPath + "deleteMessage"
+    _fileTransferPath = this._partPath + "fileTransfer"
 
     _getDialogsModel = function (userid) {
         return "?UserId=" + userid;
@@ -25,13 +26,16 @@ export default class ChatPart extends BasePart {
         return "?FindStr=" + findStr;
     }
 
-    _getMessagesModel = function (idDialog, dateFrom, countMessage) {
+    _getMessagesModel = function (idDialog, dateFrom, countMessage, idUser) {
         var res = "?IdDialog=" + idDialog;
         if (dateFrom != ''){
             res+="&DateFrom=" + dateFrom;
         }
         if (countMessage != ''){
             res+= "&CountMessage=" + countMessage;
+        }
+        if (idUser != ''){
+            res+= "&IdUser=" + idUser;
         }
         return res;
     }
@@ -40,6 +44,15 @@ export default class ChatPart extends BasePart {
         return {
             UsersId
         }
+    }
+    _fileTransferModel = function (UsersId) {
+        return {
+            UsersId
+        }
+    }
+
+    _downloadFilesModel = function(Files){
+        return{}
     }
     //#endregion
 
@@ -70,8 +83,8 @@ export default class ChatPart extends BasePart {
      * @returns {Promise<*>}
      * @constructor
      */
-    async GetMessages(idDialog, dateFrom, countMessage) {
-        return await this.instant.get(this._getMessagesPath + this._getMessagesModel(idDialog, dateFrom, countMessage))
+    async GetMessages(idDialog, dateFrom, countMessage, idUser) {
+        return await this.instant.get(this._getMessagesPath + this._getMessagesModel(idDialog, dateFrom, countMessage, idUser))
     }
 
     /**
@@ -79,7 +92,7 @@ export default class ChatPart extends BasePart {
      * @returns {Promise<*>}
      * @constructor
      */
-    async DownloadFile() {
+    async DownloadFile(Files) {
         return await this.instant.get(this._downloadFilePath)
     }
 
@@ -102,7 +115,12 @@ export default class ChatPart extends BasePart {
      */
     async CreateMessage(objectData) {
         console.log(objectData)
-        return await this.instant.post(this._createMessagePath, objectData)
+        return await this.instant.post(this._createMessagePath, objectData )
+    }
+
+    async FileTransfer(objectData) {
+        console.log(objectData)
+        return await this.instant.post(this._fileTransferPath, this._fileTransferModel(objectData) )
     }
 
     /**

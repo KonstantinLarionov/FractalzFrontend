@@ -9,17 +9,13 @@
           <todo-task-manager todo-total-tasks="0" todo-today-tasks="0" todo-total-open-tasks="0"></todo-task-manager>
           <span class="float-right mt-2">
             <button class="mr-4 navTask dark-teal" @click="showModal = true">Добавить задачу</button>
-
               <todo-modal v-if="showModal" @close="showModal = false">
                 <template v-slot:body>
 
                 </template>
-<!--                <template v-slot:footer>
-                  Hello, modal!
-                </template>-->
               </todo-modal>
 
-            <button class="mr-4 border-0 bg-transparent navTask text-dark">Архив задач</button>
+            <button class="mr-4 border-0 bg-transparent navTask text-dark" >Архив задач</button>
             <i class="fa fa-search" aria-hidden="true"></i>
           </span>
         </div>
@@ -30,7 +26,11 @@
             <span class="float-right headingright">7h 15min</span>
           </p>
           <div v-for="todoTaskContent in todoTasksContents" :key="todoTaskContent.$id">
-            <todo-task-element :todo-name="todoTaskContent.name" :todo-time-created="todoTaskContent.timeCreated" :todo-time-to-take="todoTaskContent.timeToTake"></todo-task-element>
+            <todo-task-element :todo-name="todoTaskContent.header"
+                               :todo-time-created="todoTaskContent.dateCreate"
+                               :todo-time-to-take="todoTaskContent.durationInMinute"
+                               :todo-id="todoTaskContent.id" :complete="todoTaskContent.isCompleted"  >
+            </todo-task-element>
           </div>
           <p class="heading2">
             <span class="tomorrow">Вчера</span>
@@ -50,6 +50,8 @@ import TodoModal from "../modals/TodoModal";
 import UserPart from "../../api/UserPart";
 import NotifyCenter from "../../services/NotifyCenter";
 import Vue from "vue";
+import ToDoPart from "../../api/TodoPart";
+import todoTaskElement from "../elements/todo/TodoTaskElement";
 
 Vue.component ('todo-task-element', TodoTaskElement)
 Vue.component ('todo-task-manager', TodoTaskManager)

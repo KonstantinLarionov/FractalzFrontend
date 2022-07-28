@@ -31,15 +31,15 @@
               </svg>
             </router-link>
           </div>
-          <div class="row">
-            <router-link :to="{ name: 'NewsPage' }"  id="newsLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
-                <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
-                <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
-              </svg>
+<!--          <div class="row">-->
+<!--            <router-link :to="{ name: 'NewsPage' }"  id="newsLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">-->
+<!--              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">-->
+<!--                <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>-->
+<!--                <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>-->
+<!--              </svg>-->
 
-            </router-link>
-          </div>
+<!--            </router-link>-->
+<!--          </div>-->
           <div class="row">
             <router-link :to="{ name: 'TodoPage' }"  id="todosLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
@@ -56,6 +56,14 @@
                 <path d="M6.5 3a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3zm-4 0a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3zm8 0a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3z"/>
               </svg>
             </div>
+          </div>
+          <div class="row">
+            <button id="notyCreateLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left " v-on:click="CreateNotyModal = true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-send-exclamation" viewBox="0 0 16 16">
+                <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855a.75.75 0 0 0-.124 1.329l4.995 3.178 1.531 2.406a.5.5 0 0 0 .844-.536L6.637 10.07l7.494-7.494-1.895 4.738a.5.5 0 1 0 .928.372l2.8-7Zm-2.54 1.183L5.93 9.363 1.591 6.602l11.833-4.733Z"/>
+                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1.5a.5.5 0 0 1-1 0V11a.5.5 0 0 1 1 0Zm0 3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
+              </svg>
+            </button>
           </div>
 
           <div class="row" style="margin-top: auto; ">
@@ -74,29 +82,41 @@
         </section>
       </div>
     </div>
+    <CreateNotyModal v-if="CreateNotyModal" @close="CreateNotyModal = false"></CreateNotyModal>
   </div>
 </template>
 
 <script>
 import Vue from "vue";
 import NotifyCenter from "../services/NotifyCenter";
+import CreateNotyModal from "../components/modals/CreateNotyModal";
+
+Vue.component ('CreateNotyModal', CreateNotyModal)
+
 
 export default {
   name: "DefaultLayout",
   data(){
-    return {CountDialogsNoty: 0}
+    return {
+      CountDialogsNoty: 0,
+      CreateNotyModal: false
+    }
   },
   props : {
   },
   mounted() {
     this.noty = new NotifyCenter();
-    Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
+    //Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
+    Vue.socketEvents.notyReceive = this.onNotyGlobal;
+    //Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
+    Vue.socketEvents.messageReceive = this.onMessageUpdate;
   },
   methods: {
-    onDialogsUpdate : function (message1) {
+    onMessageUpdate : function (message){
+      console.log(message)
       if (message.idSender != Vue.$cookies.get('UserInfo').id)
       {
-        this.noty.Show({title: "Новое сообщение" , message : "DialogId: " + message.text})
+        this.noty.Show({title: "Новое сообщение от " + message.nameSender , message : message.text});
         require('electron').ipcRenderer.send('flash-noty', function (){});
         if(this.CountDialogsNoty >= 100) {
           this.CountDialogsNoty = "99+";
@@ -107,6 +127,26 @@ export default {
       }
       //TODO :  + Подсветить жирным диалог который пришел
     },
+    onNotyGlobal : function (message) {
+      console.log(message);
+      this.noty.Show({title: message.Title.toString() , message : message.Message})
+      require('electron').ipcRenderer.send('flash-noty', function (){});
+    }
+/*    onDialogsUpdate : function (message) {
+      console.log(message)
+      if (message.idSender != Vue.$cookies.get('UserInfo').id)
+      {
+        this.noty.Show({title: "Новое сообщение" + message.nameSender , message : "DialogId: " + message.text});
+        require('electron').ipcRenderer.send('flash-noty', function (){});
+        if(this.CountDialogsNoty >= 100) {
+          this.CountDialogsNoty = "99+";
+        }
+        else {
+          this.CountDialogsNoty++;
+        }
+      }
+      //TODO :  + Подсветить жирным диалог который пришел
+    },*/
   }
 }
 </script>

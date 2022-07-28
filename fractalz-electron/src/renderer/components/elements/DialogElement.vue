@@ -8,9 +8,10 @@
       </div>
       <div class="col-9 pl-0">
         <label class="dialog-name">{{DialogName}}</label>
-        <div class="preview-dialog">
+        <div class="preview-dialog ">
           <label class="dialog-last-message-new text-truncate" style="max-width: 258.97px;">{{DialogLastMessage}}</label>
           <label class="dialog-datetime">{{DialogDateSend}}</label>
+          <span v-if="DialogUnreadMessage!= 0 || null" class="badge badge-pill position-relative rounded-pill" style=" margin-top: -8px; font-size: 15px; border: 2px solid rgb(0, 151, 136)"> {{ DialogUnreadMessage }}</span>
         </div>
       </div>
     </div>
@@ -20,6 +21,7 @@
 <script>
 export default {
   props : {
+    DialogUnreadMessage: null,
     DialogName : null,
     DialogLastMessage : null,
     DialogDateSend: null,

@@ -19,7 +19,7 @@
     </div>
     <!-- Dialogs -->
     <div class="row" v-for="dialogContent in dialogContents" :key="dialogContent.$id" v-on:click="openChat(dialogContent.id )">
-      <dialog-element :dialog-name="dialogContent.name" :dialog-last-message="dialogContent.lastMessage" :dialog-date-send="dialogContent.dateSend" ></dialog-element>
+      <dialog-element :dialog-unread-message="dialogContent.countUnReadMessage" :dialog-name="dialogContent.name" :dialog-last-message="dialogContent.lastMessage" :dialog-date-send="dialogContent.dateSend" ></dialog-element>
     </div>
   </div>
 </template>
@@ -64,7 +64,8 @@ export default {
   },
   methods: {
     onDialogsUpdate : function (message) {
-      this.noty.Show({title: "Новое сообщение" , message : "DialogId: " + message.id})
+      console.log(message)
+      //this.noty.Show({title: "Новое сообщение" , message : "DialogId: " + message.id})
       //TODO :  + Подсветить жирным диалог который пришел
     },
     openChat: function (id){

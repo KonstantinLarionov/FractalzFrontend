@@ -133,6 +133,9 @@ export default {
 
     isAuth()
     {
+      var cookiesUserInfo = this.$cookies.get("UserInfo");
+      console.log("Info")
+      console.log(cookiesUserInfo)
       if(this.$cookies.get("UserInfo"))
       {
         this.login = this.$cookies.get("UserInfo").login
