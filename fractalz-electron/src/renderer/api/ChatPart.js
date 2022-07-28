@@ -45,9 +45,9 @@ export default class ChatPart extends BasePart {
             UsersId
         }
     }
-    _fileTransferModel = function (UsersId) {
+    _fileTransferModel = function (DialogId) {
         return {
-            UsersId
+            DialogId
         }
     }
 
@@ -118,9 +118,9 @@ export default class ChatPart extends BasePart {
         return await this.instant.post(this._createMessagePath, objectData )
     }
 
-    async FileTransfer(objectData) {
-        console.log(objectData)
-        return await this.instant.post(this._fileTransferPath, this._fileTransferModel(objectData) )
+    async FileTransfer(DialogId) {
+        console.log(DialogId)
+        return await this.instant.post(this._fileTransferPath, this._fileTransferModel(DialogId) )
     }
 
     /**

@@ -35,7 +35,7 @@
         </form>
       </label>
       <textarea v-model="message" id="message" class="p-2 textarea" placeholder="Ваше сообщение"></textarea>
-      <a v-on:click=" submitForm($event)" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
+      <a v-on:click=" submitForm($event), fileTransfer(), sendMessage()" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
           <svg width="24" height="24" color="#000000" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
             <line x1="22" y1="2" x2="11" y2="13"/>
             <polygon points="22 2 15 22 11 13 2 9 22 2"/>
@@ -129,7 +129,7 @@ export default {
     },
 
 
-    /*sendMessage: async function () {
+    sendMessage: async function () {
       var obj = {
         userId: Vue.$cookies.get('UserInfo').id,
         dialogId: this.dialogId,
@@ -151,7 +151,7 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "Ошибка отправки сообщения"});
       }
       this.onMessageReceive
-    },*/
+    },
     updateMessage: async function (obj) {
       var result = await this.api
           .UpdateMessage(obj)
@@ -236,12 +236,12 @@ export default {
             }
           });
     },
-    /*fileTransfer: async function () {
-      var obj = {
-        DialogId: this.dialogId,
+    fileTransfer: async function () {
+      var DialogId = {
+        DialogId:this.dialogId,
       }
       var result = await this.api
-          .FileTransfer(obj)
+          .FileTransfer(DialogId)
           .catch(response => {
             this.noty.Show({
               title: this.notyHeader,
@@ -253,7 +253,7 @@ export default {
       } else {
         this.noty.Show({title: this.notyHeader, message: "Ошибка отправки сообщения"});
       }
-    },*/
+    },
 
     }
 }
