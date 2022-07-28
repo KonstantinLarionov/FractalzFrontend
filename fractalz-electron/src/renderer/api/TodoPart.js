@@ -44,7 +44,14 @@ export default class TodoPart extends BasePart {
         console.log("" + idTask)
         return await this.instant.delete(this._deleteTaskPath + this._deleteModel(idTask))
     }
-////////////////////////////////////////////////////
+
+    /**
+     *
+     * @param IdTask
+     * @param completed
+     * @returns {{IdTask, completed}}
+     * @private
+     */
     _updateModel = function (IdTask, completed)
     {
         return {
