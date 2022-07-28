@@ -99,9 +99,7 @@ export default {
   },
   methods: {
     selectEmoji: function(emoji) {
-      console.log(emoji.data)
-      var textarea = document.getElementById("message")
-      textarea.value += emoji.data;
+      this.message += emoji.data;
     },
     scroll: function () {
       var block = document.getElementById("chat");
