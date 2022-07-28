@@ -9,10 +9,14 @@
           <todo-task-manager todo-total-tasks="0" todo-today-tasks="0" todo-total-open-tasks="0"></todo-task-manager>
           <span class="float-right mt-2">
             <button class="mr-4 navTask dark-teal" @click="showModal = true">Добавить задачу</button>
+
               <todo-modal v-if="showModal" @close="showModal = false">
                 <template v-slot:body>
 
                 </template>
+<!--                <template v-slot:footer>
+                  Hello, modal!
+                </template>-->
               </todo-modal>
 
             <button class="mr-4 border-0 bg-transparent navTask text-dark" >Архив задач</button>
@@ -62,7 +66,7 @@ export default {
   name: "TodoPage",
   data(){
     return{
-      showModal: false
+      showModal: false,
     }
   },
   date() {
@@ -76,44 +80,49 @@ export default {
   },
   mounted: async function () {
     this.todoTasksContents = [];
+    this.api = new ToDoPart(this.$http);
+    this.todoTasksContents.isCompleted = todoTaskElement.complete;
+    this.taskReq();
     this.getTasks();
   },
   methods: {
-    getTasks: function () {
-      var arr =[
-        {
-          id: 0,
-          name:'Take kids to school',
-          timeCreated: '8:00-8:30AM',
-          timeToTake: '30min',
-        },
-        {
-          id: 1,
-          name:'Take kids to school',
-          timeCreated: '8:00-8:30AM',
-          timeToTake: '30min',
-        },
-        {
-          id: 2,
-          name:'Take kids to school',
-          timeCreated: '8:00-8:30AM',
-          timeToTake: '30min',
-        }
-      ];
-
-      for (let j in arr)
+    taskReq: async function(){
+      var request = await this.api.GetTask( this.$cookies.get("UserInfo").id, '')
+          .catch(response=>{this.noty.Show({title: "Task add", message:"task not added"})})
+      if(request.data.success)
       {
-        this.$set(this.todoTasksContents, j, arr[j])
+        var arr =[];
+        arr = request.data.todoList.tasks.$values;
+        for (let j in arr)
+        {
+            this.$set(this.todoTasksContents, j , arr[j])
+        }
+        this.$forceUpdate();
+        console.log(arr)
+
       }
-      this.$forceUpdate();
+      else{this.noty.Show({title:"123", message:"123"})}
     },
+
+
+    getTasks: async function () {
+
+    },
+
+
     showModal: function (){
       this.showModal = true;
     }
+
+
   }
 }
 </script>
 
 <style scoped>
 
+.mr-4 navTask dark-teal
+{
+
+}
 </style>
