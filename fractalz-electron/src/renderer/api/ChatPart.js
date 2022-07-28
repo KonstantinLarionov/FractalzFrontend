@@ -16,6 +16,7 @@ export default class ChatPart extends BasePart {
     _updateMessagePath = this._partPath + "updateMessage"
     _deleteDialogPath = this._partPath + "deleteDialog"
     _deleteMessagePath = this._partPath + "deleteMessage"
+    _fileTransferPath = this._partPath + "fileTransfer"
 
     _getDialogsModel = function (userid) {
         return "?UserId=" + userid;
@@ -40,6 +41,11 @@ export default class ChatPart extends BasePart {
     }
 
     _createDialogModel = function (UsersId) {
+        return {
+            UsersId
+        }
+    }
+    _fileTransferModel = function (UsersId) {
         return {
             UsersId
         }
@@ -110,6 +116,11 @@ export default class ChatPart extends BasePart {
     async CreateMessage(objectData) {
         console.log(objectData)
         return await this.instant.post(this._createMessagePath, objectData )
+    }
+
+    async FileTransfer(objectData) {
+        console.log(objectData)
+        return await this.instant.post(this._fileTransferPath, this._fileTransferModel(objectData) )
     }
 
     /**
