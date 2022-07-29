@@ -1,5 +1,5 @@
 <template>
-  <chat-page v-if="chatSelect== true" :dialog-id="this.dialogId" :api="this.api" :noty="this.noty" :id-user-sender="this.idUserSender">
+  <chat-page v-if="chatSelect== true" @back="chatSelect = false" :dialog-id="this.dialogId" :api="this.api" :noty="this.noty" :id-user-sender="this.idUserSender">
 
   </chat-page>
   <div v-else-if="chatSelect == false" class="dialogs-wrap p-3" id="dialogsSpace">
@@ -66,7 +66,12 @@ export default {
   methods: {
     onDialogsUpdate : function (message) {
       console.log(message)
-      //this.noty.Show({title: "Новое сообщение" , message : "DialogId: " + message.id})
+      console.log(this.dialogContents)
+      this.dialogContents = this.dialogContents.map(x => {
+        const item = message.find(({ id }) => id === x.id);
+        return item ? item : x;
+      });
+      this.noty.Show({title: "Новое сообщение" , message : "DialogId: " + message.id})
       //TODO :  + Подсветить жирным диалог который пришел
     },
     openChat: function (id){

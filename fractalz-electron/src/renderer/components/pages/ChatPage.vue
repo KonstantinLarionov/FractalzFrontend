@@ -1,5 +1,14 @@
 <template>
   <div class="chat-content-main d-flex flex-column">
+    <div class="row">
+      <div class="searcher-wrap row justify-content-start">
+        <div class="pl-3" @click="$emit('back')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" color="009687FF">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
     <div id="chat" class="chat col-inside-lg decor-default">
         <div class="chat-body">
           <div v-for="messageContent in messageContents" :key="messageContent.$id">
@@ -24,7 +33,7 @@
       </div>
     </div>
 
-    <div v-on="" id="emojiblock" class="emoji_block" style="background: #cbd3da" >
+    <div v-on="" id="emojiblock" class="emoji_block" style="background: #009687" >
       <VEmojiPicker @select="selectEmoji"/>
     </div>
 
