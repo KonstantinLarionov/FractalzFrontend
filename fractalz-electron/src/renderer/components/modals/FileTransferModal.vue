@@ -1,8 +1,8 @@
 <template>
-  <transition name="modal">
+  <transition name="modal" class="modal">
     <div class="modal-mask">
       <div class="modal-wrapper">
-        <div class="modal-container">
+        <div class="modal-container" style="width: 450px">
 
           <div class="modal-header">
             <slot name="header">
@@ -17,17 +17,15 @@
             </slot>
           </div>
 
-          <div class="modal-drag-drop">
-            <slot name="header">
-              <p class="modal-header-title">Отправка файлов</p>
-              <div class="form-group inputDnD" >
-                <label class="sr-only" for="inputFile"></label>
-                <input type="file" class="form-control-file text-primary font-weight-bold" id="inputFile" v-on:change="getFile($event)">
-              </div>
-            </slot>
+          <div class="drag-n-drop" >
+                <form ref="fileform"class="space-drag-drop" style="border-width:2px">
+                  <span class="drop-files-title">Drop the files here!</span>
+                </form>
           </div>
 
-          <div class="modal-file-selector">
+
+
+          <div class="modal-file-selector" style="vertical-align: bottom">
             <slot name="selector">
               <input class="p-2 select" v-on:change="getFile($event)" type="file" multiple width="310px" height="41px" ref="files">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
@@ -37,10 +35,11 @@
             </slot>
           </div>
 
-          <div class="modal-footer">
+          <div class="modal-footer" style="width: 100%" >
             <slot name="footer">
-              <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="fileTransfer()" @click="$emit('close')">
-                Добавить
+              <div class="files-preview" style="width: 320px"></div>
+              <button class="modal-default-button navTask dark-teal" style="margin: 0 0 0 25px;" v-on:click="fileTransfer()" @click="$emit('close')">
+                Отправить
               </button>
             </slot>
           </div>
@@ -53,18 +52,22 @@
 
 <script>
 import ChatPage from "../pages/ChatPage";
+import Vue from "vue";
+import {formatDate} from "../../assets/plugins/fullcalendar/js/main";
 export default {
   name: "FileTransferModal",
 
   props: {
     idUserSender: null,
-    dialogId: null,
+    dialogId:null,
     api: Object,
     noty: Object,
   },
 
   data() {
     return{
+      dragAndDropCapable: false,
+      Message:"sdfsdf",
       Files:[],
       formData: '',
       uploadURL: "http://localhost:5001/chat/fileTransfer",
@@ -74,21 +77,27 @@ export default {
 
   methods:
       {
+        determineDragAndDropCapable(){
+          var div = document.createElement('div');
+          return ( ( 'draggable' in div )
+                  || ( 'ondragstart' in div && 'ondrop' in div ) )
+              && 'FormData' in window
+              && 'FileReader' in window;
+        },
         getFile(event) {
-          //this.Files = event.target.files[0];
           this.Files = this.$refs.files.files;
           console.log(this.Files);
         },
-        fileTransfer() {
-          //event.preventDefault();
+        fileTransfer:async function() {
           let formData = new FormData();
-          //formData.append("Files", this.Files);
           for( var i = 0; i < this.Files.length; i++ ){
             let file = this.Files[i];
             formData.append("Files", file);
           }
-          formData.append("DialogId", this.dialogId)
           formData.append("IdSender", this.$cookies.get("UserInfo").id)
+          formData.append("Message", this.Message)
+          formData.append("DialogId",  this.dialogId)
+          console.log(this.formData)
           let config = {
             headers: {
               "Content-Type": "multipart/form-data"
@@ -103,12 +112,28 @@ export default {
                 }
               });
         },
+        /*dialogTransfer: async function () {
+          var DialogId = {
+            DialogId:this.dialogId,
+          }
+          var result = await this.api.FileTransfer(DialogId)
+          if (result.data.success) {
+            console.log(result)
+          } else {
+            this.noty.Show({title: this.notyHeader, message: "Ошибка отправки сообщения"});
+          }
+        },*/
       }
 }
 
 </script>
 
 <style lang="css">
+.modal
+{
+  width: 450px;
+  height: 450px;
+}
 
 .modal-mask {
   position: fixed;
@@ -124,14 +149,14 @@ export default {
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
-}
-.form-group inputDnD
-{
-  height: 50px;
+  width: 450px;
+  height: 450px;
+  padding: 0%;
 }
 
 .modal-container {
-  width: 600px;
+  width: 450px;
+  height: 450px;
   margin: 0px auto;
   background-color: #fff;
   border-radius: 2px;
@@ -154,16 +179,67 @@ export default {
   margin: 0;
   padding: 0 0 1.25rem;
 }
-.modal-header-close{
-  cursor: pointer;
-}
-.modal-drag-drop
+.modal-header-close
   {
-    width: 180px;
-    height: 180px;
-    align-items: center;
+  cursor: pointer;
+  }
+.drag-n-drop
+  {
+  position: relative;
+  display: flex;
+  padding: 10px 10px 10px 10px;
+  height: 270px;
 
   }
+.space-drag-drop
+{
+  border-color: #009788;
+  border-width: 2px;
+  background-color: #e5e5e5;
+  height: 100%;
+  width: 100%;
+  border-style: dashed;
+  display: table;
+  text-align: center;
+}
+.drop-files-title
+{
+  font-family: "Dosis", Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  color: #0c675e;
+  position: center;
+  display: table-cell;
+  vertical-align: middle;
+  horiz-align: center;
+}
+.modal-footer
+{
+  vertical-align: bottom;
+  horiz-align: left;
+  display: table;
+  height: 80px;
+}
+.modal-default-button
+{
+  margin: 0 0 0 10px;
+  font-size: 12px;
+  vertical-align: center;
+  horiz-align: right;
+  position: center;
+  display: table-cell;
+
+}
+.files-preview
+{
+  horiz-align: left;
+  vertical-align: center;
+  position: center;
+  display: table-cell;
+  border-color: #009788;
+  border-width: 2px;
+  background-color: #e5e5e5;
+  border-style: dashed;
+}
 .modal-drag-drop
   {
     padding: 10px 10px 0px 10px;

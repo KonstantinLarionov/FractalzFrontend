@@ -31,7 +31,7 @@
     <div class="d-flex align-items-center chat-content-footer" multiple>
 
       <label class="document" >
-        <transfer-modal v-if="showModal" @close="showModal = false" >
+        <transfer-modal v-if="showModal" @close="showModal = false" :dialog-id="dialogId">
         </transfer-modal>
         <input class="p-2 select" style="display: none" @click="showModal = true">
         <svg width="24" height="24" viewBox="0 0 24 24" color="#000000" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file" >
