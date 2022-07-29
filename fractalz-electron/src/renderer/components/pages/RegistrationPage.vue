@@ -201,7 +201,8 @@ export default {
         this.connectWebSocket(result.data.user.id);
         await this.$router.push({ name: 'DialogPage' })
       }
-      else {
+      else
+      {
         this.noty.Show({title : "Вход в систему Fractalz", message : "Произошла ошибка.\rПроверьте правильность данных!"});
       }
     },
