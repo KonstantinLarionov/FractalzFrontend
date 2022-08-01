@@ -1,5 +1,4 @@
 <template>
-  <chat-page ></chat-page>>
   <transition name="modal" class="modal" style="position: fixed">
     <div class="modal-mask">
       <div class="modal-wrapper">
