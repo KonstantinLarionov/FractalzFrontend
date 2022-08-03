@@ -58,7 +58,7 @@
     </div>
   </transition>
 </template>
-
+<chat-page :file-info-chat="Files"></chat-page>
 <script>
 import ChatPage from "../pages/ChatPage";
 import Vue from "vue";
@@ -69,7 +69,7 @@ export default {
   props: {
     idUserSender: null,
     dialogId:null,
-    Files:[],
+    FilesInfo:[],
     api: Object,
     noty: Object,
   },
@@ -78,12 +78,14 @@ export default {
     return{
       dragAndDropCapable: false,
       Message:'',
+      Files:[],
       formData: '',
       uploadURL: "http://localhost:5001/chat/fileTransfer",
       TodoListId: this.$cookies.get("UserInfo").todoList.id,
     }
   },
   mounted(){
+    Vue.socketEvents.messageReceive = this.onMessageReceive;
     this.dragAndDropCapable = this.determineDragAndDropCapable();
     if( this.dragAndDropCapable ){
       ['drag', 'dragstart', 'dragend', 'dragover', 'dragenter', 'dragleave', 'drop'].forEach( function( evt ) {
@@ -93,14 +95,27 @@ export default {
         }.bind(this), false);
       }.bind(this));
       this.$refs.fileform.addEventListener('drop', function(e){
-        for( let i = 0; i < e.dataTransfer.files.length; i++ ){
-          this.Files.push( e.dataTransfer.files[i] );
+        for( let i = 0; i < e.dataTransfer.files.length; i++ ) {
+          this.Files.push(e.dataTransfer.files[i]);
         }
       }.bind(this));
     }
   },
   methods:
       {
+        onMessageReceive: function (message) {
+          if (message.dialogId == this.dialogId) {
+            if (message != null)
+            {
+              var arr = [];
+              arr = message;
+              this.messageContents.push(arr)
+              console.log(this.messageContents)
+            }
+            this.$forceUpdate();
+          }
+          //TODO :  + Подсветить жирным диалог который пришел
+        },
         determineDragAndDropCapable(){
           var div = document.createElement('div');
           return ( ( 'draggable' in div )
@@ -132,7 +147,9 @@ export default {
               .then(function (response)
               {
                 if (response.status === 200) {
-                  console.log(response.data);
+
+                  let arr = [response.data.value.createdMessage.file.$values];
+                  //console.log(arr)
                 }
               });
         },

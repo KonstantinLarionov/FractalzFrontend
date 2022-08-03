@@ -65,8 +65,6 @@ export default {
   },
   methods: {
     onDialogsUpdate : function (message) {
-      console.log(message)
-      console.log(this.dialogContents)
       this.dialogContents = this.dialogContents.map(x => {
         const item = message.find(({ id }) => id === x.id);
         return item ? item : x;

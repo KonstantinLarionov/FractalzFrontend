@@ -50,6 +50,12 @@ export default class ChatPart extends BasePart {
             DialogId
         }
     }
+    _fileDownloadModel = function (Path)
+    {
+        return{
+            Path
+        }
+    }
 
     _downloadFilesModel = function(Files){
         return{}
@@ -92,8 +98,8 @@ export default class ChatPart extends BasePart {
      * @returns {Promise<*>}
      * @constructor
      */
-    async DownloadFile(Files) {
-        return await this.instant.get(this._downloadFilePath)
+    async DownloadFile(Path) {
+        return await this.instant.get(this._downloadFilePath , this._fileDownloadModel(Path))
     }
 
     /**

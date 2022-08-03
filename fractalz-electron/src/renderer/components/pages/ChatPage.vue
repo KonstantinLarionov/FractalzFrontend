@@ -16,20 +16,25 @@
                                  :message="messageContent.text"
                                  :date-send="messageContent.dateCreated"
                                  :name="messageContent.nameSender"
-
                                  :avatar="messageContent.avatar"
-                                 :status="messageContent.status">
+                                 :status="messageContent.status"
+                                 :file="messageContent.file.$values">
+
             </answer-left-element>
+
             <answer-right-element v-if="messageContent.idSender === idUserSender"
                                   :message="messageContent.text"
                                   :date-send="messageContent.dateCreated"
                                   :name="messageContent.nameSender"
-
                                   :avatar="messageContent.avatar"
-                                  :status="messageContent.status">
+                                  :status="messageContent.status"
+                                  :file="messageContent.file.$values">
 
             </answer-right-element>
+
+
           </div>
+
       </div>
     </div>
 
@@ -40,8 +45,7 @@
     <div class="d-flex align-items-center chat-content-footer" multiple>
 
       <label class="document" >
-        <transfer-modal v-if="showModal" @close="showModal = false" :dialog-id="dialogId">
-        </transfer-modal>
+        <transfer-modal v-if="showModal" @close="showModal = false" :dialog-id="dialogId" :files="this.FileInfoChat"></transfer-modal>
         <input class="p-2 select" style="display: none" @click="showModal = true">
         <svg width="24" height="24" viewBox="0 0 24 24" color="#000000" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file" >
           <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z">
@@ -85,6 +89,7 @@ export default {
   emoji: 'Demo',
 
   components: {
+    FileTransferModal,
     VEmojiPicker
   },
 
@@ -105,6 +110,7 @@ export default {
   props: {
     idUserSender: null,
     dialogId: null,
+    FileInfoChat:[],
     api: Object,
     noty: Object,
   },
@@ -124,7 +130,8 @@ export default {
     },
     onMessageReceive: function (message) {
       if (message.dialogId == this.dialogId) {
-        if (message != null) {
+        if (message != null)
+        {
           var arr = [];
           arr = message;
           this.messageContents.push(arr)
@@ -134,6 +141,8 @@ export default {
       }
       //TODO :  + Подсветить жирным диалог который пришел
     },
+
+
     getMessage: async function () {
       var result = await this.api
           .GetMessages(this.dialogId, '', 100, Vue.$cookies.get('UserInfo').id)
@@ -151,7 +160,13 @@ export default {
             this.$set(this.messageContents, j, arr[j])
           }
           console.log(this.messageContents)
-          console.log(this.idUserSender)
+
+          for(let i = 0; i < this.messageContents.length; i++)
+            {
+              let file = this.messageContents[i]
+              console.log(file.file.$values)
+            }
+
         }
         this.$forceUpdate();
       } else {
@@ -211,21 +226,6 @@ export default {
         console.log(result)
       } else {
         this.noty.Show({title: this.notyHeader, message: "Ошибка изменения сообщения"});
-      }
-    },
-    downloadFile: async function () {
-      var result = await this.api
-          .DownloadFile(obj)
-          .catch(response => {
-            this.noty.Show({
-              title: this.notyHeader,
-              message: "Произошла ошибка. Проверьте соединение с интернетом!"
-            });
-          });
-      if (result.data.success) {
-        console.log(result)
-      } else {
-        this.noty.Show({title: this.notyHeader, message: "Ошибка загрузки файла"});
       }
     },
     emojiHidden: function (newVisibility) {
