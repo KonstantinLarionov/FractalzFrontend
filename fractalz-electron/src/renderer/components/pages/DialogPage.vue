@@ -65,17 +65,25 @@ export default {
   },
   methods: {
     onDialogsUpdate : function (message) {
-      this.dialogContents = this.dialogContents.map(x => {
-        const item = message.find(({ id }) => id === x.id);
-        return item ? item : x;
-      });
+      var index = this.dialogContents.map(x => {
+        return x.id;
+      }).indexOf(message.id);
+      var unreadMess = this.dialogContents[index].countUnReadMessage;
+      message.countUnReadMessage = unreadMess + 1;
+      console.log(unreadMess)
+      console.log(message.countUnReadMessage)
+      this.dialogContents.splice(index, 1);
+      this.dialogContents.unshift(message);
+      this.$forceUpdate();
       this.noty.Show({title: "Новое сообщение" , message : "DialogId: " + message.id})
       //TODO :  + Подсветить жирным диалог который пришел
     },
-    openChat: function (id){
+    openChat: async function (id){
       if (this.isFindUsers){
         let arr = [Vue.$cookies.get('UserInfo').id, id];
-        this.dialogId = this.createDialog(arr);
+        this.dialogId = await this.createDialog(arr);
+        this.chatSelect = true;
+        return true;
       }
       this.dialogId = id;
       this.chatSelect = true;

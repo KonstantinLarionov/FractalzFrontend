@@ -90,6 +90,7 @@
 import Vue from "vue";
 import NotifyCenter from "../services/NotifyCenter";
 import CreateNotyModal from "../components/modals/CreateNotyModal";
+import ChatPart from "../api/ChatPart";
 
 Vue.component ('CreateNotyModal', CreateNotyModal)
 
@@ -102,14 +103,18 @@ export default {
       CreateNotyModal: false
     }
   },
-  props : {
+  props:{
+    api: Object,
+    noty: Object
   },
   mounted() {
+    this.api = new ChatPart(this.$http);
     this.noty = new NotifyCenter();
     //Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
     Vue.socketEvents.notyReceive = this.onNotyGlobal;
     //Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
     Vue.socketEvents.messageReceive = this.onMessageUpdate;
+    this.getDialogsInfo();
   },
   methods: {
     onMessageUpdate : function (message){
@@ -131,7 +136,7 @@ export default {
       console.log(message);
       this.noty.Show({title: message.Title.toString() , message : message.Message})
       require('electron').ipcRenderer.send('flash-noty', function (){});
-    }
+    },
 /*    onDialogsUpdate : function (message) {
       console.log(message)
       if (message.idSender != Vue.$cookies.get('UserInfo').id)
@@ -147,6 +152,25 @@ export default {
       }
       //TODO :  + Подсветить жирным диалог который пришел
     },*/
+    getDialogsInfo : async function () {
+      var result = await this.api
+          .GetDialogs(Vue.$cookies.get('UserInfo').id)
+          .catch(response => {
+            this.noty.Show({
+              title: this.notyHeader,
+              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+            });
+          });
+      if (result.data.success) {
+        if (result.data.dialogs != null) {
+          for (let j in result.data.dialogs) {
+            if (result.data.dialogs[j].countUnReadMessage != 0) {
+              this.CountDialogsNoty++;
+            }
+          }
+        }
+      }
+    },
   }
 }
 </script>
