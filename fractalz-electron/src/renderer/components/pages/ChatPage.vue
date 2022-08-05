@@ -11,14 +11,17 @@
     </div>
     <div id="chat" class="chat col-inside-lg decor-default">
         <div class="chat-body">
+
           <div v-for="messageContent in messageContents" :key="messageContent.$id">
+
             <answer-left-element v-if="messageContent.idSender !== idUserSender"
                                  :message="messageContent.text"
                                  :date-send="messageContent.dateCreated"
                                  :name="messageContent.nameSender"
                                  :avatar="messageContent.avatar"
                                  :status="messageContent.status"
-                                 :file="messageContent.file.$values">
+                                 :file="messageContent.file.$values"
+                                 :dialog-id="messageContent.dialogId">
 
             </answer-left-element>
 
@@ -28,11 +31,9 @@
                                   :name="messageContent.nameSender"
                                   :avatar="messageContent.avatar"
                                   :status="messageContent.status"
-                                  :file="messageContent.file.$values">
-
+                                  :file="messageContent.file.$values"
+                                  :dialog-id="messageContent.dialogId">
             </answer-right-element>
-
-
           </div>
 
       </div>
@@ -48,10 +49,8 @@
         <transfer-modal v-if="showModal" @close="showModal = false" :dialog-id="dialogId" :files="this.FileInfoChat"></transfer-modal>
         <input class="p-2 select" style="display: none" @click="showModal = true">
         <svg width="24" height="24" viewBox="0 0 24 24" color="#000000" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file" >
-          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z">
-          </path>
-          <polyline points="13 2 13 9 20 9">
-          </polyline>
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+          <polyline points="13 2 13 9 20 9"></polyline>
         </svg>
       </label>
 
@@ -77,11 +76,13 @@ import AnswerRight from "../elements/chat/AnswerRight";
 import Vue from "vue";
 import { VEmojiPicker } from 'v-emoji-picker';
 import FileTransferModal from "../modals/FileTransferModal";
-
+import ChatPart from "../../api/ChatPart";
+import UnknownFile from "../elements/chat/filesextensions/UnknownFile";
 
 Vue.component ('answer-left-element', AnswerLeft)
 Vue.component ('answer-right-element', AnswerRight)
 Vue.component('transfer-modal', FileTransferModal)
+Vue.component('unknown-file' , UnknownFile)
 Vue.config.productionTip = false
 
 export default {
@@ -115,7 +116,9 @@ export default {
     noty: Object,
   },
   mounted: async function () {
+    this.api = new ChatPart(this.$http);
     this.messageContents = [];
+    console.log(this.dialogId)
     await this.getMessage();
     Vue.socketEvents.messageReceive = this.onMessageReceive;
     this.scroll();

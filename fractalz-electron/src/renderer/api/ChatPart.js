@@ -45,16 +45,13 @@ export default class ChatPart extends BasePart {
             UsersId
         }
     }
-    _fileTransferModel = function (DialogId) {
-        return {
-            DialogId
-        }
+    _fileTransferModel = function (FileId) {
+        return "?IdFile=" + FileId
+
     }
-    _fileDownloadModel = function (Path)
+    _fileDownloadModel = function (FileId, DialogId)
     {
-        return{
-            Path
-        }
+        return "?IdFile=" + FileId + "&DialogId=" + DialogId
     }
 
     _downloadFilesModel = function(Files){
@@ -98,8 +95,9 @@ export default class ChatPart extends BasePart {
      * @returns {Promise<*>}
      * @constructor
      */
-    async DownloadFile(Path) {
-        return await this.instant.get(this._downloadFilePath , this._fileDownloadModel(Path))
+    async DownloadFile(FileId, DialogId) {
+        console.log(this._fileDownloadModel(FileId, DialogId))
+        return await this.instant.get(this._downloadFilePath + this._fileDownloadModel(FileId, DialogId))
     }
 
     /**
@@ -124,6 +122,12 @@ export default class ChatPart extends BasePart {
         return await this.instant.post(this._createMessagePath, objectData )
     }
 
+    /**
+     * FileTransfer
+     * @param DialogId
+     * @returns {Promise<*>}
+     * @constructor
+     */
     async FileTransfer(DialogId) {
         console.log(DialogId)
         return await this.instant.post(this._fileTransferPath, this._fileTransferModel(DialogId) )

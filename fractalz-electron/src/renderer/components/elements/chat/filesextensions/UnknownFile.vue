@@ -9,24 +9,27 @@
             </g>
           </svg>
         </span>
-        <a class="file-link" v-bind:href="FileId" @click="downloadFile()">{{Name}}</a>
+        <a class="file-link" @click="downloadFile()">{{Name}}</a>
     </span>
   </div>
 </template>
 
 <script>
-import FileTransferModal from "../../../modals/FileTransferModal";
-import ChatPage from "../../../pages/ChatPage";
+import ChatPart from "../../../../api/ChatPart";
+import NotifyCenter from "../../../../services/NotifyCenter";
+import AnswerLeft from "../AnswerLeft";
 
 export default {
   name: "UnknownFile",
+  api:Object,
   props:
       {
         Path:null,
         Name:null,
         FileId:null,
-        api: Object,
+        api:Object,
         noty: Object,
+        DialogId:null,
       },
   date()
   {
@@ -36,6 +39,8 @@ export default {
   },
   mounted()
   {
+    this.api = new ChatPart(this.$http);
+    this.noty = new NotifyCenter();
 
   },
   methods:
@@ -43,14 +48,14 @@ export default {
 
     downloadFile:async function()
     {
-      console.log(this.FileId)
-      /*var upload = await this.api.DownloadFile(this.FileId).catch(response => {
+      console.log(this.FileId, this.dialogId)
+      var upload = await this.api.DownloadFile(this.FileId, this.DialogId).catch(response => {
         this.noty.Show({
           title: "File download failed",
           message: "Произошла ошибка. Проверьте соединение с интернетом!"
         });
       });
-*/
+
     }
   }
 }
