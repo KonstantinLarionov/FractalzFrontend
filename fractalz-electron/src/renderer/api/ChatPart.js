@@ -51,7 +51,7 @@ export default class ChatPart extends BasePart {
     }
     _fileDownloadModel = function (FileId, DialogId)
     {
-        return "?IdFile=" + FileId + "&DialogId=" + DialogId
+        return "?FileId=" + FileId + "&DialogId=" + DialogId
     }
 
     _downloadFilesModel = function(Files){
@@ -97,8 +97,9 @@ export default class ChatPart extends BasePart {
      */
     async DownloadFile(FileId, DialogId) {
         console.log(this._fileDownloadModel(FileId, DialogId))
-        return await this.instant.get(this._downloadFilePath + this._fileDownloadModel(FileId, DialogId))
+        return await this.instant.get(this._downloadFilePath + this._fileDownloadModel(FileId, DialogId), {responseType:"blob"})
     }
+
 
     /**
      * Создание диалога

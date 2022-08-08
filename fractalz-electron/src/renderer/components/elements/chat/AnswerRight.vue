@@ -28,7 +28,7 @@
     </div>
     <div class="name">{{Name}}</div>
     <div class="text wrapword" >
-      <div v-for="content in File">
+      <div v-for="content in File" style="horiz-align: left">
             <unknown-file :name="content.fileName" :path="content.path" :file-id="content.id" :dialog-id="DialogId"/>
       </div>
       {{Message}}
