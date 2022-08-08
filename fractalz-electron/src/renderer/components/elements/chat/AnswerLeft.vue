@@ -28,7 +28,10 @@
     <div class="name">{{Name}}</div>
     <div class="text wrapword" >
       <div v-for="content in File">
-        <unknown-file :file-link="content" :name="content.fileName" :path="content.path"/>
+        <unknown-file :name="content.fileName" :path="content.path" :file-id="content.id" :dialog-id="DialogId"/>
+      </div>
+      <div v-for="content in dialogId">
+        <unknown-file :dialog-id="content.dialogId"/>
       </div>
       {{Message}}
     </div>
@@ -39,7 +42,6 @@
 <script>
 import UnknownFile from "./filesextensions/UnknownFile";
 import Vue from "vue";
-
 Vue.component('unknown-file',UnknownFile)
 export default {
   props : {
@@ -49,6 +51,8 @@ export default {
     File:[],
     Message: null,
     DateSend: null,
+    api:Object,
+    DialogId:null,
   },
   name: "AnswerLeft",
   mounted()

@@ -1,6 +1,5 @@
 <template>
   <chat-page v-if="chatSelect== true" @back="chatSelect = false" :dialog-id="this.dialogId" :api="this.api" :noty="this.noty" :id-user-sender="this.idUserSender">
-
   </chat-page>
   <div v-else-if="chatSelect == false" class="dialogs-wrap p-3" id="dialogsSpace">
     <!-- Searcher -->
@@ -30,8 +29,10 @@ import ChatPage from "./ChatPage";
 import ChatPart from "../../api/ChatPart";
 import NotifyCenter from "../../services/NotifyCenter";
 import Vue from "vue";
+import UnknownFile from "../elements/chat/filesextensions/UnknownFile";
 
 Vue.component ('dialog-element', DialogElement)
+Vue.component('unknown-file', UnknownFile)
 Vue.component ('chat-page', ChatPage)
 Vue.config.productionTip = false
 

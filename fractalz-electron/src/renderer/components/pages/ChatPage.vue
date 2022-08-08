@@ -11,14 +11,17 @@
     </div>
     <div id="chat" class="chat col-inside-lg decor-default">
         <div class="chat-body">
+
           <div v-for="messageContent in messageContents" :key="messageContent.$id">
+
             <answer-left-element v-if="messageContent.idSender !== idUserSender"
                                  :message="messageContent.text"
                                  :date-send="messageContent.dateCreated"
                                  :name="messageContent.nameSender"
                                  :avatar="messageContent.avatar"
                                  :status="messageContent.status"
-                                 :file="messageContent.file.$values">
+                                 :file="messageContent.file.$values"
+                                 :dialog-id="messageContent.dialogId">
 
             </answer-left-element>
 
@@ -28,17 +31,15 @@
                                   :name="messageContent.nameSender"
                                   :avatar="messageContent.avatar"
                                   :status="messageContent.status"
-                                  :file="messageContent.file.$values">
-
+                                  :file="messageContent.file.$values"
+                                  :dialog-id="messageContent.dialogId">
             </answer-right-element>
-
-
           </div>
 
       </div>
     </div>
 
-    <div v-on="" id="emojiblock" class="emoji_block" style="background: #009687" >
+    <div v-on="" id="emojiblock" class="emoji_block" v-on:mouseout="emojiHidden('hidden')" v-on:mouseover="emojiHidden('visible')" style="background: #009687" >
       <VEmojiPicker @select="selectEmoji"/>
     </div>
 
@@ -48,15 +49,13 @@
         <transfer-modal v-if="showModal" @close="showModal = false" :dialog-id="dialogId" :files="this.FileInfoChat"></transfer-modal>
         <input class="p-2 select" style="display: none" @click="showModal = true">
         <svg width="24" height="24" viewBox="0 0 24 24" color="#000000" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file" >
-          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z">
-          </path>
-          <polyline points="13 2 13 9 20 9">
-          </polyline>
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+          <polyline points="13 2 13 9 20 9"></polyline>
         </svg>
       </label>
 
       <textarea v-model="message" id="message" class="p-2 textarea" placeholder="Ваше сообщение"></textarea>
-      <a v-on:click="emojiHidden('visible')" class="p-2 select" title="Emoji" style="transform: rotate(0deg); right: 0">
+      <a v-on:click="emojiHidden('visible')" v-on:mouseover="emojiHidden('visible')" class="p-2 select" title="Emoji" style="transform: rotate(0deg); right: 0">
         <svg width="25" height="25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12z" fill="#000"/><path d="M11 9.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM16 9.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" fill="#000"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9 15a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1z" fill="#000"/></svg>
       </a>
 
@@ -77,11 +76,13 @@ import AnswerRight from "../elements/chat/AnswerRight";
 import Vue from "vue";
 import { VEmojiPicker } from 'v-emoji-picker';
 import FileTransferModal from "../modals/FileTransferModal";
-
+import ChatPart from "../../api/ChatPart";
+import UnknownFile from "../elements/chat/filesextensions/UnknownFile";
 
 Vue.component ('answer-left-element', AnswerLeft)
 Vue.component ('answer-right-element', AnswerRight)
 Vue.component('transfer-modal', FileTransferModal)
+Vue.component('unknown-file' , UnknownFile)
 Vue.config.productionTip = false
 
 export default {
@@ -115,7 +116,9 @@ export default {
     noty: Object,
   },
   mounted: async function () {
+    this.api = new ChatPart(this.$http);
     this.messageContents = [];
+    console.log(this.dialogId)
     await this.getMessage();
     Vue.socketEvents.messageReceive = this.onMessageReceive;
     this.scroll();

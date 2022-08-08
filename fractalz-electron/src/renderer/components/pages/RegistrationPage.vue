@@ -81,8 +81,8 @@ export default {
       isLogin:true,
       GenRequest: true,
       type: 'B',
-      password:"",
-      login : '',
+      password:null,
+      login : null,
       email : '',
       existEmail:"",
       newPassword1: "",
@@ -181,7 +181,11 @@ export default {
       this.$cookies.set("UserInfo", null)
       this.$cookies.set("UserToken", null)
       this.Auth = false;
+      location.reload()
+      this.login.set(null)
+      this.password.set(null)
       Vue.socket.close(1000, "UserDisconnect");
+
       this.noty.Show({title : "Выход из системы Fractalz", message : "Вы успешно покинули систему!\rЖдем вас снова."});
     },
     logIn : async function () {
@@ -200,6 +204,8 @@ export default {
         this.noty.Show({title : "Вход в систему Fractalz", message : "Добро пожаловать!\rВы успешно вошли в систему."});
         this.connectWebSocket(result.data.user.id);
         await this.$router.push({ name: 'DialogPage' })
+        this.login = null
+        this.password = null
       }
       else
       {
