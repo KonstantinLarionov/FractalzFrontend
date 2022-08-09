@@ -35,14 +35,14 @@ export default class TodoPart extends BasePart {
         return await this.instant.post(this._createTaskPath , this._createModel(Header, About, DurationInMinute,TodoListId))
     }
 ////////////////////////////////////////////////////////
-    _deleteModel = function (idTask)
+    _deleteModel = function (IdTask)
     {
-        return "?idTask=" + idTask
+        return "?IdTask=" + IdTask
     }
 
-    async DeleteTask(idTask) {
-        console.log("" + idTask)
-        return await this.instant.delete(this._deleteTaskPath + this._deleteModel(idTask))
+    async DeleteTask(IdTask) {
+        console.log("" + IdTask)
+        return await this.instant.delete(this._deleteTaskPath + this._deleteModel(IdTask))
     }
 
     /**

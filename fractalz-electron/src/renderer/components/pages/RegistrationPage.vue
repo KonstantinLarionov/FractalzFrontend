@@ -11,10 +11,8 @@
         </div>
         <div v-if="type === 'B'" class="login-form">
           <input type="text" v-model="login" placeholder="Логин/Почта" />
-          <input type="password" v-model="password" placeholder="Пароль"
-                 @keyup.enter="logIn"/>
+          <input type="password" v-model="password" placeholder="Пароль" @keyup.enter="logIn"/>
           <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Войти</button>
-          <button class="modal-default-button mr-4 navTask mt-1" v-if="Auth" style="background-color: darkred" v-on:click="logOut()">Выйти</button>
           <p class= "message">Нет аккаута? <a v-on:click="toCreateAccount()">Создать аккаунт</a></p>
           <p class= "password-reset-text"> Забыли пароль?</p>
           <p class= "password-resetbutton"> <a v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</a></p>
@@ -97,9 +95,9 @@ export default {
   },
 
   mounted() {
-    this.Auth = this.isAuth();
     this.api = new UserPart(this.$http);
     this.noty = new NotifyCenter();
+    this.Auth = this.isAuth();
   },
 
   methods: {
@@ -169,8 +167,6 @@ export default {
       if(this.$cookies.get("UserInfo"))
       {
         this.login = this.$cookies.get("UserInfo").login
-        this.password = this.$cookies.get("UserInfo").password
-        this.email = this.$cookies.get("UserInfo").email
         console.log(this.$cookies.get("UserInfo"))
         return true;
       }

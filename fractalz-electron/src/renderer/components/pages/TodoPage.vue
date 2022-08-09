@@ -6,7 +6,13 @@
       <div class="card">
         <!--Card Header-->
         <div class="card-header">
-          <todo-task-manager todo-total-tasks="0" todo-today-tasks="0" todo-total-open-tasks="0"></todo-task-manager>
+          <div v-for="todoTaskContent in todoTasksContents" :key="todoTaskContent.$id">
+            <todo-task-manager :todo-total-tasks="todoTasksContents.length"
+                               :todo-today-tasks="0"
+                               :todo-total-open-tasks="0">
+
+            </todo-task-manager>
+          </div>
           <span class="float-right mt-2">
             <button class="mr-4 navTask dark-teal" @click="showModal = true">Добавить задачу</button>
 
@@ -70,6 +76,7 @@ export default {
   },
   props:{
     api: Object,
+    todoTasksContents: [],
     noty: Object
   },
   mounted: async function () {
@@ -78,6 +85,7 @@ export default {
     this.todoTasksContents.isCompleted = todoTaskElement.complete;
     this.taskReq();
     this.getTasks();
+    console.log(this.todoTasksContents)
   },
   methods: {
     taskReq: async function(){
@@ -97,12 +105,6 @@ export default {
       }
       else{this.noty.Show({title:"123", message:"123"})}
     },
-
-
-    getTasks: async function () {
-
-    },
-
 
     showModal: function (){
       this.showModal = true;
