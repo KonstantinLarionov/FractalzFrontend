@@ -1,4 +1,5 @@
 <template>
+
   <div class="container-fluid" style="overflow-y: hidden; overflow-x: hidden;">
     <div class="row" style="height: 100vh; ">
       <div class="p-0 m-0 teal">
@@ -8,6 +9,7 @@
               <img src="https://via.placeholder.com/40" class="logo-left"  alt=""/>
             </div>
           </div>
+
           <div class="row mt-1">
             <router-link :to="{ name: 'AccountPage' }" id="accountLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-2 bg-transparent icon-left">
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -16,6 +18,7 @@
               </svg>
             </router-link>
           </div>
+
           <div class="row">
             <router-link :to="{ name: 'DialogPage' }" id="dialogsLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
@@ -24,6 +27,7 @@
               <span v-if="CountDialogsNoty!= 0" class="position-absolute ml-3 badge rounded-pill bg-danger" style="margin-top: -8px; font-size: 10px; border: 2px solid rgb(0, 151, 136)"> {{ CountDialogsNoty }}</span>
             </router-link>
           </div>
+
           <div class="row">
             <router-link :to="{ name: 'TimetablePage' }" id="timetableLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar2-week-fill" viewBox="0 0 16 16">
@@ -67,22 +71,30 @@
           </div>
 
           <div class="row" style="margin-top: auto; ">
-            <router-link :to="{ name: 'RegistrationPage' }"  v-on:click="logOut" id="registrationLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
+            <a v-on:click="showModal = true" id="registrationLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
                 <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
               </svg>
-            </router-link>
+            </a>
           </div>
         </div>
       </div>
-      <div class="col p-0" id="spaces">
+
+
+      <div class="col p-0" >
         <section class="content">
           <slot/>
         </section>
+
       </div>
+
+
+
+
     </div>
     <CreateNotyModal v-if="CreateNotyModal" @close="CreateNotyModal = false"></CreateNotyModal>
+    <exit-modal v-if="showModal" @close="showModal = false" ></exit-modal>
   </div>
 </template>
 
@@ -91,21 +103,26 @@ import Vue from "vue";
 import NotifyCenter from "../services/NotifyCenter";
 import CreateNotyModal from "../components/modals/CreateNotyModal";
 import ChatPart from "../api/ChatPart";
+import ExitModal from "../components/modals/ExitModal";
 
 Vue.component ('CreateNotyModal', CreateNotyModal)
 
 
 export default {
   name: "DefaultLayout",
+  components: {ExitModal},
+
   data(){
     return {
       CountDialogsNoty: 0,
-      CreateNotyModal: false
+      CreateNotyModal: false,
+      showModal:false,
     }
   },
   props:{
     api: Object,
-    noty: Object
+    noty: Object,
+    exitNotyModel:null
   },
   mounted() {
     this.api = new ChatPart(this.$http);
@@ -117,18 +134,7 @@ export default {
     this.getDialogsInfo();
   },
   methods: {
-    logOut: async function()
-    {
-      this.$cookies.set("UserInfo", null)
-      this.$cookies.set("UserToken", null)
-      this.Auth = false;
-      location.reload()
-      this.login.set(null)
-      this.password.set(null)
-      Vue.socket.close(1000, "UserDisconnect");
 
-      this.noty.Show({title : "Выход из системы Fractalz", message : "Вы успешно покинули систему!\rЖдем вас снова."});
-    },
     onMessageUpdate : function (message){
       console.log(message)
       if (message.idSender != Vue.$cookies.get('UserInfo').id)
@@ -188,8 +194,11 @@ export default {
 </script>
 
 <style scoped>
+
 .content{
   width: 100%;
   height: 100%;
 }
+
+
 </style>

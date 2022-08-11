@@ -6,13 +6,11 @@
       <div class="card">
         <!--Card Header-->
         <div class="card-header">
-          <div v-for="todoTaskContent in todoTasksContents" :key="todoTaskContent.$id">
             <todo-task-manager :todo-total-tasks="todoTasksContents.length"
-                               :todo-today-tasks="0"
+                               :todo-today-tasks="this.countedTask"
                                :todo-total-open-tasks="0">
 
             </todo-task-manager>
-          </div>
           <span class="float-right mt-2">
             <button class="mr-4 navTask dark-teal" @click="showModal = true">Добавить задачу</button>
 
@@ -33,7 +31,7 @@
             <todo-task-element :todo-name="todoTaskContent.header"
                                :todo-time-created="todoTaskContent.dateCreate"
                                :todo-time-to-take="todoTaskContent.durationInMinute"
-                               :todo-id="todoTaskContent.id" :complete="todoTaskContent.isCompleted"  >
+                               :todo-id="todoTaskContent.id" :complete="todoTaskContent.isCompleted">
             </todo-task-element>
           </div>
           <p class="heading2">
@@ -67,6 +65,7 @@ export default {
   data(){
     return{
       showModal: false,
+      countedTask:0,
     }
   },
   date() {
@@ -77,14 +76,15 @@ export default {
   props:{
     api: Object,
     todoTasksContents: [],
-    noty: Object
+    noty: Object,
+
   },
   mounted: async function () {
     this.todoTasksContents = [];
     this.api = new ToDoPart(this.$http);
     this.todoTasksContents.isCompleted = todoTaskElement.complete;
-    this.taskReq();
-    this.getTasks();
+    await this.taskReq();
+    await this.completedTaskCount()
     console.log(this.todoTasksContents)
   },
   methods: {
@@ -108,6 +108,17 @@ export default {
 
     showModal: function (){
       this.showModal = true;
+    },
+    completedTaskCount: async function()
+    {
+      for(let i = 0; i < this.todoTasksContents.length; i++)
+      {
+        console.log(this.todoTasksContents[i])
+        if(this.todoTasksContents[i].isCompleted === false)
+        {
+          this.countedTask+=1;
+        }
+      }
     }
 
 

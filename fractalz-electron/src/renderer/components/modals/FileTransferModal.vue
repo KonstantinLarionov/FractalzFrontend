@@ -85,7 +85,6 @@ export default {
     }
   },
   mounted(){
-    Vue.socketEvents.messageReceive = this.onMessageReceive;
     this.dragAndDropCapable = this.determineDragAndDropCapable();
     if( this.dragAndDropCapable ){
       ['drag', 'dragstart', 'dragend', 'dragover', 'dragenter', 'dragleave', 'drop'].forEach( function( evt ) {
@@ -103,19 +102,6 @@ export default {
   },
   methods:
       {
-        onMessageReceive: function (message) {
-          if (message.dialogId == this.dialogId) {
-            if (message != null)
-            {
-              var arr = [];
-              arr = message;
-              this.messageContents.push(arr)
-              console.log(this.messageContents)
-            }
-            this.$forceUpdate();
-          }
-          //TODO :  + Подсветить жирным диалог который пришел
-        },
         determineDragAndDropCapable(){
           var div = document.createElement('div');
           return ( ( 'draggable' in div )

@@ -55,7 +55,7 @@
       </label>
 
       <textarea v-model="message" id="message" class="p-2 textarea" placeholder="Ваше сообщение"></textarea>
-      <a v-on:click="emojiHidden('visible')" v-on:mouseover="emojiHidden('visible')" class="p-2 select" title="Emoji" style="transform: rotate(0deg); right: 0">
+      <a v-on:click="emojiHidden('visible')" class="p-2 select" title="Emoji" style="transform: rotate(0deg); right: 0">
         <svg width="25" height="25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12z" fill="#000"/><path d="M11 9.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM16 9.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" fill="#000"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9 15a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1z" fill="#000"/></svg>
       </a>
 
@@ -133,7 +133,7 @@ export default {
     },
     onMessageReceive: function (message) {
       if (message.dialogId == this.dialogId) {
-        if (message != null)
+        if (message != null )
         {
           var arr = [];
           arr = message;
@@ -201,6 +201,9 @@ export default {
       }
       this.onMessageReceive
     },
+
+
+
     updateMessage: async function (obj) {
       var result = await this.api
           .UpdateMessage(obj)

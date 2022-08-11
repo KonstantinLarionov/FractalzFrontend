@@ -52,17 +52,17 @@ export default class TodoPart extends BasePart {
      * @returns {{IdTask, completed}}
      * @private
      */
-    _updateModel = function (IdTask, completed)
+    _updateModel = function (TodoId, completed)
     {
         return {
-            "IdTask": IdTask,
+            "TodoId": TodoId,
             "completed": completed
 
         };
     }
 
-    async UpdateTask(IdTask, completed) {
-        return await this.instant.put(this._updateStatusTaskPath , this._updateModel(IdTask, completed))
+    async UpdateTask(TodoId, completed) {
+        return await this.instant.put(this._updateStatusTaskPath , this._updateModel(TodoId, completed))
     }
     //#endregion
 

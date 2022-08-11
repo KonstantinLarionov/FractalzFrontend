@@ -29,7 +29,7 @@
 
           <div class="modal-footer">
             <slot name="footer">
-              <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toCreateTask()" @click="$emit('close')">
+              <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toCreateTask(), this.$forceUpdate" @click="$emit('close')">
                 Добавить
               </button>
             </slot>
@@ -66,7 +66,6 @@ export default {
   mounted() {
     this.api = new ToDoPart(this.$http);
     this.noty = new NotifyCenter();
-    this.toCreateTask();
   },
 
   methods:
@@ -81,7 +80,7 @@ export default {
           {
             this.noty.Show({title: titleNoty, message: "Задача добавлена!"});
             await TodoPage.taskReq();
-            //TodoPage.$forceUpdate();
+
           } else
           {
             this.noty.Show({title: titleNoty, message: result.data.message});

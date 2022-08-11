@@ -23,7 +23,7 @@ export default {
   props : {
     TodoTotalTasks : null,
     TodoTotalOpenTasks : null,
-    TodoTodayTasks : null,
+    TodoTodayTasks : 0,
   },
 }
 </script>
