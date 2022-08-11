@@ -22,6 +22,14 @@ export default new Router({
       }
     },
     {
+      path: '/videochat',
+      name: 'VideoChatPage',
+      component: require('@/components/pages/VideoChatPage').default,
+      meta:{
+        layout: "default-layout"
+      }
+    },
+    {
       path: '/dialog/chat',
       name: 'ChatPage',
       component: require('@/components/pages/ChatPage').default,

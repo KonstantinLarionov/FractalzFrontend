@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "jssip": "^3.9.1",
     "node-notifier": "^10.0.1",
     "v-emoji-picker": "^2.3.3",
     "vue": "^2.5.16",
