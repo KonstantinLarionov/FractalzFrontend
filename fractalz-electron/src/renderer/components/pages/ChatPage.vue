@@ -137,6 +137,7 @@ export default {
         {
           var arr = [];
           arr = message;
+          arr.file.$values = message.file;
           this.messageContents.push(arr)
           console.log(this.messageContents)
         }
@@ -161,15 +162,10 @@ export default {
           arr = result.data.messages.$values;
           for (let j in arr) {
             this.$set(this.messageContents, j, arr[j])
+            console.log(this.messageContents.file)
+            this.messageContents.file = []
           }
           console.log(this.messageContents)
-
-          for(let i = 0; i < this.messageContents.length; i++)
-            {
-              let file = this.messageContents[i]
-              console.log(file.file.$values)
-            }
-
         }
         this.$forceUpdate();
       } else {
