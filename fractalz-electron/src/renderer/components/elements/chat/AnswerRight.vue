@@ -50,7 +50,7 @@ export default {
     Message: null,
     DateSend: null,
     api:Object,
-    DialogId:null,
+    dialogId:null,
   },
   name: "AnswerRight",
   mounted()

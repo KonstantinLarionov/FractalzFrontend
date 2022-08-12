@@ -28,7 +28,7 @@ export default {
         FileId:null,
         api:Object,
         noty: Object,
-        DialogId:null,
+        dialogId:null,
       },
   date()
   {
@@ -47,7 +47,7 @@ export default {
     downloadFile:async function()
     {
       console.log(this.FileId, this.dialogId)
-      let upload = await this.api.DownloadFile(this.FileId, this.DialogId).catch(response => {
+      let upload = await this.api.DownloadFile(this.FileId, this.dialogId).catch(response => {
         this.noty.Show({
           title: "File download failed",
           message: "Произошла ошибка. Проверьте соединение с интернетом!"
