@@ -16,7 +16,7 @@
           <p class= "message">Нет аккаута? <a v-on:click="toCreateAccount()">Создать аккаунт</a></p>
           <p class= "password-reset-text"> Забыли пароль?</p>
           <p class= "password-resetbutton"> <a v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</a></p>
-          <p class= "message">Хотите зарегистрироваться с ЭЦП? <a v-on:click="toCreateDSAccount()"><br>Создать аккаунт с ЭЦП</a></p>
+<!--          <p class= "message">Хотите зарегистрироваться с ЭЦП? <a v-on:click="toCreateDSAccount()"><br>Создать аккаунт с ЭЦП</a></p>-->
           <p class= "message">Войти с цифровым ключём<a v-on:click="toLogInDS()"><br>Войти с цифровым ключём</a> </p>
         </div>
         <div v-if="type === 'C'" class="password-reset-form">
@@ -40,8 +40,7 @@
           <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toValidateCode()">Подтвердить</button>
           <p class="message"><a v-on:click="toCreateAccount()">Вернуться назад</a></p>
         </div>
-        <!-- Comment
-        <div v-if="type === 'E'" class="digital-signature-registration">
+<!--        <div v-if="type === 'E'" class="digital-signature-registration">
           <p class="registration-title">Регистрация нового пользователя в системе с цифровым ключём</p>
           <input type="text" v-model="login" placeholder="Логин"/>
           <input type="text" v-model="email" placeholder="Почта"/>
@@ -49,17 +48,25 @@
           <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singInDS()">Создать</button>
           <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>
 
-        </div>
-        <div v-if="type === 'F'" class="digital-signature-login">
-          <input type="text" v-model="login" placeholder="Логин/Почта" />
-          <input type="password" v-model="password" placeholder="Пароль"
-                 @keyup.enter="logIn"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Войти</button>
-          <button class="modal-default-button mr-4 navTask mt-1" v-if="Auth" style="background-color: darkred" v-on:click="logOut()">Выйти</button>
-          <p class= "password-reset-text"> Забыли пароль?</p>
-          <p class= "password-resetbutton"> <a v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</a></p>
-          <button class="modal-default-button mr-4 navTask dark-teal">Прикрепить документ</button>
         </div>-->
+        <div v-if="type === 'F'" class="digital-signature-login">
+          <p>Вход в учетную запись с использованием ЭЦП</p>
+          <div class="drag-n-drop" style="overflow: auto">
+            <form ref="fileform" class="space-drag-drop"  >
+              <title class="drop-files-title" >Перетащите файл сюда</title>
+              <div v-for="(file, key) in Files" class="file-listing" >
+                <div class="remove-container">
+                  <a class="remove" v-on:click="removeFile( key )">Удалить</a>
+                </div>
+                <img class="preview" v-bind:ref="'preview'+parseInt( key )"/>
+                {{ file.name }}
+              </div>
+            </form>
+          </div>
+          <p> Или </p>
+          <button class="modal-default-button mr-4 navTask dark-teal">Выберите в файловой системе</button>
+          <p class="message"><a v-on:click="toSingIn()">Вернуться назад</a></p>
+        </div>
      </div>
   </div>
 </template>
@@ -82,10 +89,12 @@ export default {
       password:null,
       login : null,
       email : '',
+      Files:[],
       existEmail:"",
       newPassword1: "",
       newPassword2: "",
       Authcode:"",
+      dragAndDropCapable: false,
     }
   },
 
@@ -98,6 +107,20 @@ export default {
     this.api = new UserPart(this.$http);
     this.noty = new NotifyCenter();
     this.Auth = this.isAuth();
+    this.dragAndDropCapable = this.determineDragAndDropCapable();
+    if( this.dragAndDropCapable ){
+      ['drag', 'dragstart', 'dragend', 'dragover', 'dragenter', 'dragleave', 'drop'].forEach( function( evt ) {
+        this.$refs.fileform.addEventListener(evt, function(e){
+          e.preventDefault();
+          e.stopPropagation();
+        }.bind(this), false);
+      }.bind(this));
+      this.$refs.fileform.addEventListener('drop', function(e){
+        for( let i = 0; i < e.dataTransfer.files.length; i++ ) {
+          this.Files.push(e.dataTransfer.files[i]);
+        }
+      }.bind(this));
+    }
   },
 
   methods: {
@@ -122,6 +145,18 @@ export default {
 
     toSendCode: async function() {
       var result = await this.api.SendCode(this.email, this.GenRequest.true)
+    },
+    determineDragAndDropCapable(){
+      var div = document.createElement('div');
+      return ( ( 'draggable' in div )
+              || ( 'ondragstart' in div && 'ondrop' in div ) )
+          && 'FormData' in window
+          && 'FileReader' in window;
+    },
+
+    removeFile( key ){
+      this.Files.splice( key, 1 );
+      console.log(this.Files)
     },
 
     toValidateCode: async function()
@@ -356,5 +391,71 @@ export default {
   font-size: 12px;
   margin: 15px 15px 15px;
 }
+.modal
+{
+  width: 450px;
+  height: 450px;
+}
+.remove-container
+{
+  text-align: right;
+}
+.remove
+{
+  text-align: right;
+  color: #9e1a1a;
+}
+
+
+.drag-n-drop
+{
+  position: relative;
+  display: flex;
+  padding: 10px 10px 10px 10px;
+  height: 270px;
+
+}
+.space-drag-drop
+{
+  border-color: #009788;
+  border-width: 2px;
+  background-color: #e5e5e5;
+  height: 100%;
+  width: 100%;
+  border-style: dashed;
+  display: table;
+  text-align: center;
+}
+
+.drop-files-title
+{
+  font-family: "Dosis", Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  color: #0c675e;
+  position: relative;
+  display: grid;
+  vertical-align: middle;
+  horiz-align: center;
+}
+
+.modal-default-button
+{
+  font-size: 12px;
+  vertical-align: center;
+  horiz-align: right;
+  position: center;
+  display: table-cell;
+
+}
+div.file-listing{
+  width: 420px;
+  margin: auto;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+div.file-listing img{
+  height: 10px;
+}
+
 
 </style>
