@@ -21,6 +21,7 @@
     "postinstall": ""
   },
   "dependencies": {
+    "@flashphoner/websdk": "^2.0.221",
     "axios": "^0.18.0",
     "jssip": "^3.9.1",
     "node-notifier": "^10.0.1",
