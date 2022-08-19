@@ -51,20 +51,22 @@
         </div>-->
         <div v-if="type === 'F'" class="digital-signature-login">
           <p>Вход в учетную запись с использованием ЭЦП</p>
-          <div class="drag-n-drop" style="overflow: auto">
+
+          <div class="drag-n-drop" style="overflow: auto" id="drag-n-drop">
             <form ref="fileform" class="space-drag-drop"  >
-              <title class="drop-files-title" >Перетащите файл сюда</title>
-              <div v-for="(file, key) in Files" class="file-listing" >
+                <span class="drop-files-title" >Перетащите файл сюда</span>
+              <div v-for="(file, key) in Files" class="file-listing-reg" >
                 <div class="remove-container">
-                  <a class="remove" v-on:click="removeFile( key )">Удалить</a>
+                  <a class="remove" @click="removeFile( key )">Удалить</a>
                 </div>
                 <img class="preview" v-bind:ref="'preview'+parseInt( key )"/>
                 {{ file.name }}
               </div>
             </form>
           </div>
+
           <p> Или </p>
-          <button class="modal-default-button mr-4 navTask dark-teal">Выберите в файловой системе</button>
+          <input type="file" content="Выберите в файловой системе" v-on:change="getFile($event)"  multiple ref="files">
           <p class="message"><a v-on:click="toSingIn()">Вернуться назад</a></p>
         </div>
      </div>
@@ -76,6 +78,9 @@
 import UserPart from "../../api/UserPart";
 import Vue from "vue";
 import NotifyCenter from "../../services/NotifyCenter";
+import fs from "fs";
+import {readFile} from "copy-webpack-plugin/dist/utils/promisify";
+import axios from "axios";
 
 export default {
   name: "RegistrationPage",
@@ -95,32 +100,21 @@ export default {
       newPassword2: "",
       Authcode:"",
       dragAndDropCapable: false,
+      fileInf:null
     }
   },
 
   props: {
     api: Object,
-    noty: Object
+    noty: Object,
   },
 
   mounted() {
     this.api = new UserPart(this.$http);
     this.noty = new NotifyCenter();
     this.Auth = this.isAuth();
-    this.dragAndDropCapable = this.determineDragAndDropCapable();
-    if( this.dragAndDropCapable ){
-      ['drag', 'dragstart', 'dragend', 'dragover', 'dragenter', 'dragleave', 'drop'].forEach( function( evt ) {
-        this.$refs.fileform.addEventListener(evt, function(e){
-          e.preventDefault();
-          e.stopPropagation();
-        }.bind(this), false);
-      }.bind(this));
-      this.$refs.fileform.addEventListener('drop', function(e){
-        for( let i = 0; i < e.dataTransfer.files.length; i++ ) {
-          this.Files.push(e.dataTransfer.files[i]);
-        }
-      }.bind(this));
-    }
+
+
   },
 
   methods: {
@@ -139,25 +133,120 @@ export default {
     toBackFromReset:function(){
       return this.type = 'B';
     },
-    toLogInDS: function (){
-      return this.type = 'F'
+    toLogInDS:function (){
+      this.type = 'F'
+      if (this.type === 'F')
+      {
+        setTimeout(this.toDetermine, 100)
+      }
     },
-
     toSendCode: async function() {
       var result = await this.api.SendCode(this.email, this.GenRequest.true)
     },
+
+    toDetermine:async function()
+    {
+      this.dragAndDropCapable = this.determineDragAndDropCapable();
+      if( this.dragAndDropCapable ){
+        ['drag', 'dragstart', 'dragend', 'dragover', 'dragenter', 'dragleave', 'drop'].forEach( function( evt ) {
+          this.$refs.fileform.addEventListener(evt, function(e){
+            e.preventDefault();
+            e.stopPropagation();
+          }.bind(this), false);
+        }.bind(this));
+        this.$refs.fileform.addEventListener('drop', function(e){
+          for( let i = 0; i < e.dataTransfer.files.length; i++ ) {
+            this.Files.push(e.dataTransfer.files[i]);
+            this.fileHandler();
+            console.log(this.Files)
+          }
+        }.bind(this));
+
+      }
+    },
+
+
     determineDragAndDropCapable(){
       var div = document.createElement('div');
-      return ( ( 'draggable' in div )
-              || ( 'ondragstart' in div && 'ondrop' in div ) )
+      return ( ( 'draggable' in div ) || ( 'ondragstart' in div && 'ondrop' in div ) )
           && 'FormData' in window
           && 'FileReader' in window;
     },
 
+
     removeFile( key ){
       this.Files.splice( key, 1 );
       console.log(this.Files)
+      this.$forceUpdate()
     },
+    getFile(event) {
+      this.Files = this.$refs.files.files;
+      console.log(this.Files);
+      this.fileHandler()
+    },
+
+    fileHandler: async function()
+    {
+      for(let i = 0; i<this.Files.length; i++)
+      {
+        this.fileInf = this.Files[i]
+        console.log(this.fileInf.path)
+      }
+      const fs = require("fs")
+      var fileBuffer = Buffer.from(this.fileInf.path)
+      fs.readFile(fileBuffer, (err, data) =>
+      {
+        if (err) throw err;
+        console.log(data.toString());
+        var obj = JSON.parse(data.toString());
+        console.log(obj);
+        this.directoryCreation();
+        this.login = obj.Login
+        this.password = obj.Password;
+        this.logIn();
+      })
+
+    },
+    directoryCreation: async function()
+    {
+      const fs = require('fs');
+      const dir = './DigitalSignKeys';
+      try
+      {
+        if (!fs.existsSync(dir))
+        {
+          fs.mkdirSync(dir);
+          fs.copyFile(this.fileInf.path, dir , (err) =>
+          {
+            if (err) throw err;
+            console.log('File was copied to destination');
+          });
+            console.log('File was copied to destination');
+
+          console.log("Directory is created.");
+        }
+        else
+        {
+          fs.mkdirSync(dir);
+          fs.copyFile(this.fileInf.path, dir, (err) =>
+          {
+            if (err) throw err;
+            console.log('File was copied to destination');
+          });
+          console.log("Directory already exists.");
+        }
+      }
+      catch (err)
+      {
+        console.log(err);
+      }
+    },
+
+
+
+
+
+
 
     toValidateCode: async function()
     {
@@ -244,6 +333,7 @@ export default {
       }
     },
    connectWebSocket : function (userId) {
+      //Vue.socket = new WebSocket(Vue.prototype.$http.defaults.baseURL.replace(axios.defaults.baseURL, this.fileInf.Server) + "/ws/subscribe?idUser="+userId);
       Vue.socket = new WebSocket(Vue.prototype.$http.defaults.baseURL.replace('http', 'ws') + "/ws/subscribe?idUser="+userId);
       Vue.socket.onopen = Vue.socketEvents.onopen;
       Vue.socket.onclose = Vue.socketEvents.onclose;
@@ -404,6 +494,7 @@ export default {
 {
   text-align: right;
   color: #9e1a1a;
+  cursor: pointer;
 }
 
 
@@ -447,11 +538,12 @@ export default {
   display: table-cell;
 
 }
-div.file-listing{
-  width: 420px;
+div.file-listing-reg{
+  width: 250px;
   margin: auto;
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid;
+  border-color: #0c675e;
 }
 div.file-listing img{
   height: 10px;

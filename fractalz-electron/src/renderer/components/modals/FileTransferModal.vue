@@ -280,6 +280,7 @@ div.file-listing{
   margin: auto;
   padding: 10px;
   border-bottom: 1px solid #ddd;
+  border-color: cadetblue;
 }
 div.file-listing img{
   height: 10px;
