@@ -12,7 +12,11 @@
   <input type="text" style="border: 1px solid;" id="login" />
   <br />
   <br />
-  <button id="joinBtn" v-on:click="connected()">Join</button>
+  <button id="joinBtn" v-on:click="connected()">CreateRoom</button>
+  <br />
+  <br />
+    <input type="text" style="border: 1px solid;" id="roomurl" />
+    <button id="joinroom" v-on:click="join()">JoinRoom</button>
   <br />
   <br />
   <div id="inviteAddress" style="border: 1px solid;">Not connected</div>
@@ -52,6 +56,17 @@ export default {
       var ref = this;
       connection = RoomApi.connect({
         urlServer: url,
+        username: document.getElementById("login").value
+      }).on(SESSION_STATUS.ESTABLISHED, function (session) {
+        ref.getBrowser();
+      });
+    },
+
+    join(){
+      Flashphoner.init({});
+      var ref = this;
+      connection = RoomApi.connect({
+        urlServer:  document.getElementById("roomurl").value,
         username: document.getElementById("login").value
       }).on(SESSION_STATUS.ESTABLISHED, function (session) {
         ref.getBrowser();
