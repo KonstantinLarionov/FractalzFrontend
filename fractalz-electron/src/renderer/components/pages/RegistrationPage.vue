@@ -67,6 +67,13 @@
 
           <p> Или </p>
           <input type="file" content="Выберите в файловой системе" v-on:change="getFile($event)"  multiple ref="files">
+          <div class="keys-listing">
+            <span class="space-drag-drop">
+              <div content="qwe">
+
+              </div>
+            </span>
+          </div>
           <p class="message"><a v-on:click="toSingIn()">Вернуться назад</a></p>
         </div>
      </div>
@@ -100,7 +107,9 @@ export default {
       newPassword2: "",
       Authcode:"",
       dragAndDropCapable: false,
-      fileInf:null
+      fileInf:null,
+      dir:null,
+      port:null,
     }
   },
 
@@ -190,7 +199,6 @@ export default {
       for(let i = 0; i<this.Files.length; i++)
       {
         this.fileInf = this.Files[i]
-        console.log(this.fileInf.path)
       }
       const fs = require("fs")
       var fileBuffer = Buffer.from(this.fileInf.path)
@@ -203,6 +211,8 @@ export default {
         this.directoryCreation();
         this.login = obj.Login
         this.password = obj.Password;
+        this.port = obj.Port;
+        axios.defaults.baseURL.replace("5002", obj.Port)
         this.logIn();
       })
 
@@ -210,30 +220,21 @@ export default {
     directoryCreation: async function()
     {
       const fs = require('fs');
-      const dir = './DigitalSignKeys';
+      this.dir = './DigitalSignKeys';
       try
       {
         if (!fs.existsSync(dir))
         {
           fs.mkdirSync(dir);
-          fs.copyFile(this.fileInf.path, dir , (err) =>
-          {
-            if (err) throw err;
-            console.log('File was copied to destination');
-          });
-            console.log('File was copied to destination');
-
           console.log("Directory is created.");
+          this.copyFile();
         }
         else
         {
+          this.copyFile();
           fs.mkdirSync(dir);
-          fs.copyFile(this.fileInf.path, dir, (err) =>
-          {
-            if (err) throw err;
-            console.log('File was copied to destination');
-          });
           console.log("Directory already exists.");
+
         }
       }
       catch (err)
@@ -241,6 +242,32 @@ export default {
         console.log(err);
       }
     },
+
+
+
+     copyFile:async function ()
+     {
+      const path = require("path");
+      const fs = require("fs");
+       const fsp = fs.promises;
+      const sourceFilePath = path.join(this.fileInf.path, this.fileInf.name);
+      const destFilePath = path.join(this.dir, this.fileInf.name);
+      try {
+        await fsp.access( sourceFilePath, fs.constants.R_OK);
+        await fsp.access(destFilePath, fs.constants.W_OK);
+        await fsp.copyFile( sourceFilePath, this.dir);
+
+        console.log("File copied successfully.");
+      } catch (ex) {
+        if (ex.errno === -2)
+          console.error(`File "${sourceFilePath}" doesn't exist.`);
+        else if (ex.errno === -13)
+          console.error(`Could not access "${path.resolve(this.dir)}"`);
+        else
+          console.error(`Could not copy "${sourceFilePath}" to "${this.dir}"`);
+      }
+    },
+
 
 
 
@@ -333,7 +360,6 @@ export default {
       }
     },
    connectWebSocket : function (userId) {
-      //Vue.socket = new WebSocket(Vue.prototype.$http.defaults.baseURL.replace(axios.defaults.baseURL, this.fileInf.Server) + "/ws/subscribe?idUser="+userId);
       Vue.socket = new WebSocket(Vue.prototype.$http.defaults.baseURL.replace('http', 'ws') + "/ws/subscribe?idUser="+userId);
       Vue.socket.onopen = Vue.socketEvents.onopen;
       Vue.socket.onclose = Vue.socketEvents.onclose;
