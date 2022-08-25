@@ -26,7 +26,8 @@ export default {
         password:null,
         login:null,
         port:null,
-        fileUpload:false
+        fileUpload:false,
+        noty:Object
       },
 
   methods:
@@ -41,13 +42,49 @@ export default {
 
               var obj = JSON.parse(data.toString());
               let reg = RegistrationPage.data()
-              reg.password = obj.Password
-              reg.login = obj.Login
-              reg.port = obj.Port;
+              this.password = obj.Password
+              this.login = obj.Login
+              this.port = obj.Port;
               Vue.prototype.$http.defaults.baseURL = obj.Server + ":" + obj.Port
-              reg.fileUpload = true;
-              RegistrationPage.methods.logIn()
+              this.fileUpload = true;
+              console.log(this.api)
+              this.logIn()
             });
+          },
+          logIn : async function () {
+            var result = await this.api.Login(this.login, this.password)
+                .catch(response => {
+                  this.noty.Show({
+                    title: "Вход в систему Fractalz",
+                    message: response.response.data.message
+                  });
+                });
+            if(result.data.success)
+            {
+              this.$cookies.set("UserToken", result.data.token);
+              this.$cookies.set("UserInfo", result.data.user);
+              this.noty.Show({title : "Вход в систему Fractalz", message : "Добро пожаловать!\rВы успешно вошли в систему."});
+              this.connectWebSocket(result.data.user.id);
+              await this.$router.push({ name: 'DialogPage' })
+            }
+            else
+            {
+              this.noty.Show({title : "Вход в систему Fractalz", message : "Произошла ошибка.\rПроверьте правильность данных!"});
+            }
+          },
+          connectWebSocket : function (userId) {
+            if(this.fileUpload)
+            {
+              Vue.socket = new WebSocket(Vue.prototype.$http.defaults.baseURL.replace('http', 'ws') + "/ws/subscribe?idUser=" + userId);
+            }
+            else {
+              Vue.socket = new WebSocket(Vue.prototype.$http.defaults.baseURL.replace('http', 'ws') + "/ws/subscribe?idUser=" + userId);
+
+            }
+            Vue.socket.onopen = Vue.socketEvents.onopen;
+            Vue.socket.onclose = Vue.socketEvents.onclose;
+            Vue.socket.onmessage = Vue.socketEvents.onmessage;
+            Vue.socket.onerror = Vue.socketEvents.onerror;
           },
         }
 }
@@ -56,7 +93,7 @@ export default {
 <style scoped>
 .keysContainer
 {
-  margin: 4px;
+  margin: 8px;
   border-bottom:solid;
   border-width: 2px;
   border-bottom-color: #0c675e;

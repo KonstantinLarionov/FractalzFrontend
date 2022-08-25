@@ -70,7 +70,7 @@
           <label> Существующие ключи доступа: </label>
           <div class="keys-box">
             <div class="keys-listing" v-for="keys in Keys" :key="keys.$id">
-              <DigitalKeysBox :key-name="keys"></DigitalKeysBox>
+              <DigitalKeysBox :key-name="keys" :api="api" :noty="noty"></DigitalKeysBox>
             </div>
           </div>
 
@@ -129,7 +129,7 @@ export default {
     this.api = new UserPart(this.$http);
     this.noty = new NotifyCenter();
     this.Auth = this.isAuth();
-
+    console.log(this.api)
   },
 
   methods: {
