@@ -67,12 +67,16 @@
 
           <p> Или </p>
           <input type="file" content="Выберите в файловой системе" v-on:change="getFile($event)"  multiple ref="files">
-
-          <div class="keys-listing">
-            <link href="C:\WorkProjects\FractalzFrontend\DigitalKeys">
+          <label> Существующие ключи доступа: </label>
+          <div class="keys-box">
+            <div class="keys-listing" v-for="keys in Keys" :key="keys.$id">
+              <DigitalKeysBox :key-name="keys"></DigitalKeysBox>
+            </div>
           </div>
 
-          <p class="message"><a v-on:click="toSingIn()">Вернуться назад</a></p>
+          <p class="message" style="margin-top: 14px">
+            <a v-on:click="toSingIn(), toHideKeys()">Вернуться назад</a>
+          </p>
         </div>
      </div>
   </div>
@@ -87,10 +91,11 @@ import fs from "fs";
 import {readFile} from "copy-webpack-plugin/dist/utils/promisify";
 import axios from "axios";
 import path from "path";
+import DigitalKeysBox from "../elements/DigitalKeysBox";
 
 export default {
   name: "RegistrationPage",
-
+  components: {DigitalKeysBox},
   data() {
     return{
       Auth : false,
@@ -107,12 +112,13 @@ export default {
       Authcode:"",
       dragAndDropCapable: false,
       fileInf:null,
-      dir:null,
-      port:null,
+      dir:'C:\\Temp\\WorkProjects\\',
       fileUrlServer: null,
       fileUpload: false,
+      Keys:[],
     }
   },
+
 
   props: {
     api: Object,
@@ -123,7 +129,6 @@ export default {
     this.api = new UserPart(this.$http);
     this.noty = new NotifyCenter();
     this.Auth = this.isAuth();
-
 
   },
 
@@ -147,11 +152,29 @@ export default {
       this.type = 'F'
       if (this.type === 'F')
       {
+        this.toDisplayKeys()
         setTimeout(this.toDetermine, 100)
       }
     },
     toSendCode: async function() {
       var result = await this.api.SendCode(this.email, this.GenRequest.true)
+    },
+    toDisplayKeys: async function()
+    {
+      const fs = require('fs');
+      console.log(this.dir);
+      let fileNames = fs.readdirSync(this.dir);
+      fileNames.forEach((file) =>
+      {
+          this.Keys.push(file)
+      },
+      console.log(this.Keys)
+      )
+    },
+    toHideKeys: async function(keys)
+    {
+      this.Keys.splice( keys , this.Keys.length);
+      this.$forceUpdate()
     },
 
     toDetermine:async function()
@@ -209,9 +232,8 @@ export default {
         console.log(data.toString());
         var obj = JSON.parse(data.toString());
         console.log(obj);
-        this.login = obj.Login
+        this.login = obj.Login;
         this.password = obj.Password;
-        this.port = obj.Port;
         Vue.prototype.$http.defaults.baseURL = obj.Server + ":" + obj.Port
         this.fileUpload = true;
         this.directoryCreation();
@@ -251,8 +273,9 @@ export default {
       const path = require("path");
       const fs = require("fs");
       const sourceFilePath = path.join(this.fileInf.path);
-      const destFilePath = path.join(this.dir, this.fileInf.name) ;
-      fs.copyFile(sourceFilePath, destFilePath, function (err){
+      const destFilePath = path.join(this.dir, this.fileInf.name);
+      fs.copyFile(sourceFilePath, destFilePath, function (err)
+      {
         console.log(err);
         console.log(destFilePath);
         console.log(sourceFilePath);
@@ -431,6 +454,12 @@ export default {
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
+}
+.keys-box
+{
+  border-style: dashed;
+  border-color: #0c675e;
+  background-color: #e5e5e5;
 }
 .form button
 {
