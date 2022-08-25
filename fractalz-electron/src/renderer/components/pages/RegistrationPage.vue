@@ -212,7 +212,7 @@ export default {
         this.login = obj.Login
         this.password = obj.Password;
         this.port = obj.Port;
-        Vue.prototype.$http.defaults.baseURL = obj.Server + obj.Port
+        Vue.prototype.$http.defaults.baseURL = obj.Server + ":" + obj.Port
         this.fileUpload = true;
         this.directoryCreation();
         this.logIn();
@@ -224,7 +224,7 @@ export default {
     directoryCreation: async function()
     {
       const fs = require('fs');
-      this.dir = 'C:\\WorkProjects\\';
+      this.dir = 'C:\\Temp\\WorkProjects\\';
       try
       {
         if (!fs.existsSync(this.dir))
@@ -238,7 +238,6 @@ export default {
           this.copyFile();
           fs.mkdirSync(this.dir);
           console.log("Directory already exists.");
-
         }
       }
       catch (err)
@@ -247,17 +246,17 @@ export default {
       }
     },
 
-
-
      copyFile:async function ()
      {
-
       const path = require("path");
       const fs = require("fs");
       const sourceFilePath = path.join(this.fileInf.path);
-      const destFilePath = path.join(this.dir);
-      fs.copyFile(sourceFilePath, destFilePath)
-
+      const destFilePath = path.join(this.dir, this.fileInf.name) ;
+      fs.copyFile(sourceFilePath, destFilePath, function (err){
+        console.log(err);
+        console.log(destFilePath);
+        console.log(sourceFilePath);
+      })
     },
 
     toValidateCode: async function()
