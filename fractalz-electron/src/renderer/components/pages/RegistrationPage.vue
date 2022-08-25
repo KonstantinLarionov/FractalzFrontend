@@ -1,4 +1,4 @@
-<template>
+<template xmlns="http://www.w3.org/1999/html">
   <div class="login-page-vertical">
       <div class="form">
         <div v-if="type === 'A'" class="register-form">
@@ -67,13 +67,11 @@
 
           <p> Или </p>
           <input type="file" content="Выберите в файловой системе" v-on:change="getFile($event)"  multiple ref="files">
-          <div class="keys-listing">
-            <span class="space-drag-drop">
-              <div content="qwe">
 
-              </div>
-            </span>
+          <div class="keys-listing">
+            <link href="C:\WorkProjects\FractalzFrontend\DigitalKeys">
           </div>
+
           <p class="message"><a v-on:click="toSingIn()">Вернуться назад</a></p>
         </div>
      </div>
@@ -88,6 +86,7 @@ import NotifyCenter from "../../services/NotifyCenter";
 import fs from "fs";
 import {readFile} from "copy-webpack-plugin/dist/utils/promisify";
 import axios from "axios";
+import path from "path";
 
 export default {
   name: "RegistrationPage",
@@ -110,6 +109,8 @@ export default {
       fileInf:null,
       dir:null,
       port:null,
+      fileUrlServer: null,
+      fileUpload: false,
     }
   },
 
@@ -208,31 +209,34 @@ export default {
         console.log(data.toString());
         var obj = JSON.parse(data.toString());
         console.log(obj);
-        this.directoryCreation();
         this.login = obj.Login
         this.password = obj.Password;
         this.port = obj.Port;
-        axios.defaults.baseURL.replace("5002", obj.Port)
+        Vue.prototype.$http.defaults.baseURL = obj.Server + obj.Port
+        this.fileUpload = true;
+        this.directoryCreation();
         this.logIn();
+
+
       })
 
     },
     directoryCreation: async function()
     {
       const fs = require('fs');
-      this.dir = './DigitalSignKeys';
+      this.dir = 'C:\\WorkProjects\\';
       try
       {
-        if (!fs.existsSync(dir))
+        if (!fs.existsSync(this.dir))
         {
-          fs.mkdirSync(dir);
+          fs.mkdirSync(this.dir);
           console.log("Directory is created.");
           this.copyFile();
         }
         else
         {
           this.copyFile();
-          fs.mkdirSync(dir);
+          fs.mkdirSync(this.dir);
           console.log("Directory already exists.");
 
         }
@@ -247,33 +251,14 @@ export default {
 
      copyFile:async function ()
      {
+
       const path = require("path");
       const fs = require("fs");
-       const fsp = fs.promises;
-      const sourceFilePath = path.join(this.fileInf.path, this.fileInf.name);
-      const destFilePath = path.join(this.dir, this.fileInf.name);
-      try {
-        await fsp.access( sourceFilePath, fs.constants.R_OK);
-        await fsp.access(destFilePath, fs.constants.W_OK);
-        await fsp.copyFile( sourceFilePath, this.dir);
+      const sourceFilePath = path.join(this.fileInf.path);
+      const destFilePath = path.join(this.dir);
+      fs.copyFile(sourceFilePath, destFilePath)
 
-        console.log("File copied successfully.");
-      } catch (ex) {
-        if (ex.errno === -2)
-          console.error(`File "${sourceFilePath}" doesn't exist.`);
-        else if (ex.errno === -13)
-          console.error(`Could not access "${path.resolve(this.dir)}"`);
-        else
-          console.error(`Could not copy "${sourceFilePath}" to "${this.dir}"`);
-      }
     },
-
-
-
-
-
-
-
 
     toValidateCode: async function()
     {
@@ -351,8 +336,6 @@ export default {
         this.noty.Show({title : "Вход в систему Fractalz", message : "Добро пожаловать!\rВы успешно вошли в систему."});
         this.connectWebSocket(result.data.user.id);
         await this.$router.push({ name: 'DialogPage' })
-        this.login = null
-        this.password = null
       }
       else
       {
@@ -360,11 +343,18 @@ export default {
       }
     },
    connectWebSocket : function (userId) {
-      Vue.socket = new WebSocket(Vue.prototype.$http.defaults.baseURL.replace('http', 'ws') + "/ws/subscribe?idUser="+userId);
-      Vue.socket.onopen = Vue.socketEvents.onopen;
-      Vue.socket.onclose = Vue.socketEvents.onclose;
-      Vue.socket.onmessage = Vue.socketEvents.onmessage;
-      Vue.socket.onerror = Vue.socketEvents.onerror;
+      if(this.fileUpload)
+      {
+        Vue.socket = new WebSocket(Vue.prototype.$http.defaults.baseURL.replace('http', 'ws') + "/ws/subscribe?idUser=" + userId);
+      }
+      else {
+        Vue.socket = new WebSocket(Vue.prototype.$http.defaults.baseURL.replace('http', 'ws') + "/ws/subscribe?idUser=" + userId);
+
+      }
+     Vue.socket.onopen = Vue.socketEvents.onopen;
+     Vue.socket.onclose = Vue.socketEvents.onclose;
+     Vue.socket.onmessage = Vue.socketEvents.onmessage;
+     Vue.socket.onerror = Vue.socketEvents.onerror;
     },
     passReset: async function (){
       var Reg = new RegExp("^(?=.*[A-Z]).{1,18}$");
