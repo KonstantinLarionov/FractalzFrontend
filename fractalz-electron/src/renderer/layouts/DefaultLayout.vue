@@ -64,6 +64,15 @@
               </svg>
             </router-link>
           </div>
+
+          <div class="row">
+            <router-link :to="{name: 'BookPage'}" id="documentsLeftButtone" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 293.151 293.151" style="fill:white" xml:space="preserve" color="#0000">
+                <path d="M255.316,55.996l-51.928-52.94C201.471,1.102,198.842,0,196.104,0h-82.302h-8.232H45.113    c-5.631,0-10.197,4.566-10.197,10.192c0,5.626,4.566,10.192,10.197,10.192h60.457h8.232h72.11l0.005,44.231    c0,5.631,4.561,10.197,10.192,10.197h41.731v197.955H56.592V47.828c0-5.631-4.566-10.197-10.197-10.197    c-5.631,0-10.192,4.566-10.192,10.197v235.131c0,5.631,4.566,10.192,10.192,10.192h201.642c5.631,0,10.197-4.566,10.197-10.192    V63.137C258.229,60.467,257.185,57.903,255.316,55.996z M206.307,54.423V35.147l18.906,19.276H206.307z"/>
+              </svg>
+            </router-link>
+          </div>
+
           <div class="row">
             <div id="kanbanLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">

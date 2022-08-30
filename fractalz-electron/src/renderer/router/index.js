@@ -78,6 +78,14 @@ export default new Router({
       }
     },
     {
+      path: '/books',
+      name: 'BookPage',
+      component: require('@/components/pages/BookPage').default,
+      meta:{
+        layout: "default-layout"
+      }
+    },
+    {
       path: '*',
       redirect: '/'
     }
