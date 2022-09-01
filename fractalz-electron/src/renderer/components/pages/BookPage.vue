@@ -5,20 +5,21 @@
       <section class="box-container">
 
       <section class="book-card">
-        <button class="button-add-book" @click="booksModal = true">
+        <button class="button-add-book" v-on:click="showModal">
           Добавить новый документ
         </button>
 
-        <books-modal></books-modal>
-
         <div class="books-listing">
-          <BookElement></BookElement>
+          <books-modal v-if="booksModal" @close= "booksModal = false">
+            <BookElement></BookElement>
+          </books-modal>
         </div>
 
       </section>
 
       <section class="section-card">
         <div class="book-name" >Название книги</div>
+
         <button class="button-add-book">Добавить новый раздел</button>
       </section>
 
@@ -34,6 +35,7 @@
 import BookElement from "../elements/books/BookElement";
 import Vue from "vue";
 import BooksModal from "../modals/BooksModal";
+import BooksPart from "../../api/BooksPart";
 Vue.component("book-element", BookElement);
 Vue.component("books-modal", BooksModal);
 export default {
@@ -41,9 +43,22 @@ export default {
   components: {BookElement},
   data(){
     return{
+      ShelfContent:[],
       booksModal: false,
+      api:Object,
     }
   },
+  mounted()
+  {
+    this.api = new BooksPart(this.$http)
+  },
+  methods:
+      {
+        showModal: async function()
+        {
+          this.booksModal = true;
+        }
+      }
 }
 </script>
 
@@ -103,7 +118,7 @@ export default {
   border-style: solid;
   border-radius: 8px;
   display: table-cell;
-
+  background-color: #e8e8e8;
 }
 .sheet-card
 {

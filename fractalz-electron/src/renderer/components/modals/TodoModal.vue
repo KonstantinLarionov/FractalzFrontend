@@ -45,7 +45,6 @@
 import ToDoPart from "../../api/TodoPart";
 import NotifyCenter from "../../services/NotifyCenter";
 import TodoPage from "../pages/TodoPage";
-import TodoTaskElement from "../elements/todo/TodoTaskElement";
 
 export default {
   name: "TodoModal",

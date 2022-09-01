@@ -6,7 +6,7 @@
 
           <div class="modal-header">
             <slot name="header">
-              <p class="modal-header-title">Создание документа</p>
+              <p class="modal-header-title">Создание нового документа</p>
               <a class="modal-header-close" @click="$emit('close')">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
                   <path d="M0 0h24v24H0z" fill="none"/>
@@ -18,13 +18,19 @@
 
           <div class="modal-body">
             <slot name="body">
-
+              <p class ="modal-heading">Название документа</p>
+              <textarea class="modal-body-input"  type="text" v-model="bookName">
+              </textarea>
+              <p class ="modal-heading">Краткое описание документа</p>
+              <textarea class="modal-body-input" v-model="about" type="text"></textarea>
+              <p class ="modal-heading">Цвет документа</p>
+              <input class="modal-body-input" v-model="color" type="color">
             </slot>
           </div>
 
           <div class="modal-footer">
             <slot name="footer">
-              <button class="modal-default-button mr-4 navTask dark-teal" style="margin-left: 200px" v-on:click="this.$forceUpdate" @click="$emit('close')">
+              <button class="add-button" v-on:click="createBook()" @click="$emit('close')">
                 Добавить
               </button>
             </slot>
@@ -39,15 +45,34 @@
 <script>
 import Vue from "vue";
 import BookElement from "../elements/books/BookElement";
+import BooksPart from "../../api/BooksPart";
+import NotifyCenter from "../../services/NotifyCenter";
 Vue.component('book-element', BookElement)
 export default {
   name: "BooksModal",
+  props:
+      {
+        api:Object,
+        noty:Object,
+        bookName:null,
+        about:null,
+        color:null,
+      },
+  mounted()
+  {
+    this.noty = new NotifyCenter();
+    this.api = new BooksPart(this.$http)
+  },
   methods:
       {
-        toDo: async function()
+        createBook: async function()
         {
-          let as = document.createElement('')
+          console.log(this.bookName,this.about,this.color)
+         let objectData = JSON.stringify([this.bookName,this.about,this.color])
+          var create = await this.api.CreateBook(objectData).catch(response=>{this.noty.Show({title:"BookCreation", message:"message"})})
+
         }
+
       }
 }
 </script>
@@ -55,7 +80,7 @@ export default {
 <style scoped>
 .modal-body{
   margin: 0 0 0 0;
-  padding: 0 10px 0px 10px;
+  padding: 0 10px 0 10px;
 }
 
 .modal-mask {
@@ -75,17 +100,20 @@ export default {
 }
 
 .modal-container {
-  height: 300px;
-  width: 300px;
-  margin: 0px auto;
+  height: auto;
+  max-width: 1450px;
+  margin: 0 auto;
   background-color: #fff;
-  border-radius: 2px;
+  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
+  border-width: 4px;
+  border-color: #009688;
+  border-style: solid;
 }
 .modal-header{
   display: flex;
-  padding: 10px 10px 0px 10px;
+  padding: 10px 10px 0 10px;
 }
 .modal-header-title{
   position: relative;
@@ -102,8 +130,23 @@ export default {
 .modal-header-close{
   cursor: pointer;
 }
+.modal-body-input
+{
+  background-color: #cccccc;
+  border-radius: 8px;
+}
 .modal-footer
 {
   width: 100%;
+}
+.add-button
+{
+  background-color: rgb(67, 234, 11);
+  border-style: solid;
+  border-color: #0b0d0f;
+  border-radius: 8px;
+  border-width: 1px;
+  margin-top: 10px;
+  margin-left: 220px;
 }
 </style>
