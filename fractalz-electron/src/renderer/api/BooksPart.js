@@ -7,6 +7,7 @@ export default class BooksPart extends BasePart {
     //#region [ApiData]
     _partPath = "/books/"
     _createBook = this._partPath + "CreateBook"
+    _getBook = this._partPath + "GetBook"
     _updateBook = this._partPath + "UpdateBook"
     _deleteBook = this._partPath + "DeleteBook"
     _createBookSection = this._partPath + "CreateBookSection"
@@ -16,19 +17,26 @@ export default class BooksPart extends BasePart {
     _updateBookSheets = this._partPath + "UpdateBookSheets"
 
 
-    _createBookModel = function (bookName, about, color) {
+    _createBookModel = function (BookName, About, Color) {
         return {
-            "bookName": bookName,
-            "about": about,
-            "color": color,
+            "BookName": BookName,
+            "About": About,
+            "Color": Color,
         };
+    }
+    _getBookModel = function (BookId) {
+        return "?BookId=" + BookId
     }
 
 
     //#endregion
 
-    async CreateBook(bookName, about, color) {
-        console.log(bookName, about, color)
-        return await this.instant.post(this._createBook, this._createBookModel(bookName, about, color))
+    async CreateBook(BookName, About, Color) {
+        console.log(BookName, About, Color)
+        return await this.instant.post(this._createBook, this._createBookModel(BookName, About, Color))
+    }
+    async GetBook(BookId) {
+        console.log(BookId)
+        return await this.instant.get(this._createBook + this._getBookModel(BookId))
     }
 }

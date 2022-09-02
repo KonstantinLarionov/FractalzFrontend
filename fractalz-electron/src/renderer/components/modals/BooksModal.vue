@@ -19,12 +19,12 @@
           <div class="modal-body">
             <slot name="body">
               <p class ="modal-heading">Название документа</p>
-              <textarea class="modal-body-input"  type="text" v-model="bookName">
+              <textarea class="modal-body-input"  type="text" v-model="BookName">
               </textarea>
               <p class ="modal-heading">Краткое описание документа</p>
-              <textarea class="modal-body-input" v-model="about" type="text"></textarea>
+              <textarea class="modal-body-input" v-model="About" type="text"></textarea>
               <p class ="modal-heading">Цвет документа</p>
-              <input class="modal-body-input" v-model="color" type="color">
+              <input class="modal-body-input" v-model="Color" type="color">
             </slot>
           </div>
 
@@ -54,9 +54,9 @@ export default {
       {
         api:Object,
         noty:Object,
-        bookName:null,
-        about:null,
-        color:null,
+        BookName:null,
+        About:null,
+        Color:null,
       },
   mounted()
   {
@@ -67,9 +67,9 @@ export default {
       {
         createBook: async function()
         {
-          console.log(this.bookName,this.about,this.color)
-         let objectData = JSON.stringify([this.bookName,this.about,this.color])
-          var create = await this.api.CreateBook(objectData).catch(response=>{this.noty.Show({title:"BookCreation", message:"message"})})
+          console.log(this.BookName,this.About,this.Color)
+          let objectData =[this.BookName,this.About,this.Color]
+          var create = await this.api.CreateBook(this.BookName,this.About,this.Color).catch(response=>{this.noty.Show({title:"BookCreation", message:"message"})})
 
         }
 
