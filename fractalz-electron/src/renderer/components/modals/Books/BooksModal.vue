@@ -44,9 +44,10 @@
 
 <script>
 import Vue from "vue";
-import BookElement from "../elements/books/BookElement";
-import BooksPart from "../../api/BooksPart";
-import NotifyCenter from "../../services/NotifyCenter";
+import BookElement from "../../elements/books/BookElement";
+import BooksPart from "../../../api/BooksPart";
+import NotifyCenter from "../../../services/NotifyCenter";
+import BookPage from "../../pages/BookPage";
 Vue.component('book-element', BookElement)
 export default {
   name: "BooksModal",
@@ -69,8 +70,11 @@ export default {
         {
           console.log(this.BookName,this.About,this.Color)
           let objectData =[this.BookName,this.About,this.Color]
-          var create = await this.api.CreateBook(this.BookName,this.About,this.Color).catch(response=>{this.noty.Show({title:"BookCreation", message:"message"})})
-
+          var create = await this.api.CreateBook(this.BookName,this.About,this.Color, Vue.$cookies.get('UserInfo').id).catch(response=>{this.noty.Show({title:"BookCreation", message:"message"})})
+          if (create.data.success)
+          {
+            BookPage.methods.GetBook;
+          }
         }
 
       }

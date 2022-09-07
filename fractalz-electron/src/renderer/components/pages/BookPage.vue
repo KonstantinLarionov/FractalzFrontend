@@ -9,10 +9,14 @@
           Добавить новый документ
         </button>
 
-        <div class="books-listing">
-          <books-modal v-if="booksModal" @close= "booksModal = false">
-            <BookElement></BookElement>
-          </books-modal>
+        <div class="books-listing ">
+          <books-modal v-if="booksModal" @close= "booksModal = false"></books-modal>
+
+          <section >
+            <div v-for="content in ShelfContent"  :key="content.$id" >
+              <book-element :about="content.about" :book-name="content.bookName" :date-time="content.dateTime" :color="content.color" :id="content.id"></book-element>
+            </div>
+          </section>
         </div>
 
       </section>
@@ -34,7 +38,7 @@
 <script>
 import BookElement from "../elements/books/BookElement";
 import Vue from "vue";
-import BooksModal from "../modals/BooksModal";
+import BooksModal from "../modals/Books/BooksModal";
 import BooksPart from "../../api/BooksPart";
 Vue.component("book-element", BookElement);
 Vue.component("books-modal", BooksModal);
@@ -51,12 +55,23 @@ export default {
   mounted()
   {
     this.api = new BooksPart(this.$http)
+    this.toGetBooks();
   },
   methods:
       {
         showModal: async function()
         {
           this.booksModal = true;
+        },
+
+        toGetBooks: async function()
+        {
+          let get = await this.api.GetBook(Vue.$cookies.get('UserInfo').id).catch(response => {console.log(response.response.data)})
+          if(get.data.success)
+          {
+            this.ShelfContent = get.data.book.$values;
+            console.log(this.ShelfContent)
+          }
         }
       }
 }

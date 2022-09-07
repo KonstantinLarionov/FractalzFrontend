@@ -17,26 +17,27 @@ export default class BooksPart extends BasePart {
     _updateBookSheets = this._partPath + "UpdateBookSheets"
 
 
-    _createBookModel = function (BookName, About, Color) {
+    _createBookModel = function (BookName, About, Color, OwnerId) {
         return {
             "BookName": BookName,
             "About": About,
             "Color": Color,
+            "OwnerId": OwnerId,
         };
     }
-    _getBookModel = function (BookId) {
-        return "?BookId=" + BookId
+    _getBookModel = function (OwnerId) {
+        return "?OwnerId=" + OwnerId
     }
 
 
     //#endregion
 
-    async CreateBook(BookName, About, Color) {
-        console.log(BookName, About, Color)
-        return await this.instant.post(this._createBook, this._createBookModel(BookName, About, Color))
+    async CreateBook(BookName, About, Color, OwnerId) {
+        console.log(BookName, About, Color,OwnerId)
+        return await this.instant.post(this._createBook, this._createBookModel(BookName, About, Color,OwnerId))
     }
-    async GetBook(BookId) {
-        console.log(BookId)
-        return await this.instant.get(this._createBook + this._getBookModel(BookId))
+    async GetBook(OwnerId) {
+        console.log(OwnerId)
+        return await this.instant.get(this._getBook + this._getBookModel(OwnerId))
     }
 }
