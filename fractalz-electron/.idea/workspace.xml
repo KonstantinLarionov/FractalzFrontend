@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62c9c083-0caf-47be-a0b5-6ab81b039c16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../fractalz-videochat/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../fractalz-videochat/.idea/fractalz-videochat.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../fractalz-videochat/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/fractalz-electron.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fractalz-electron.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/css/main-colors-text.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/css/main-variables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-BlackItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-LightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-MediumItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-ThinItalic.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/pages/VideoChatPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/pages/VideoChatPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +28,7 @@
       <list>
         <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -52,7 +59,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Vue.js-realtime-voice-video-chat-app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/renderer/assets/fonts/roboto" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -62,7 +70,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\.rider\Fractalz\Frontend\fractalz-electron\src\renderer\assets\fonts\roboto" />
       <recent name="C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-electron\src\renderer\assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\.rider\Fractalz\Frontend\fractalz-electron\src\renderer\assets\fonts\roboto" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -83,6 +95,7 @@
       <workItem from="1659323408781" duration="1015000" />
       <workItem from="1659331407336" duration="6934000" />
       <workItem from="1659419570616" duration="7958000" />
+      <workItem from="1662627486232" duration="5257000" />
     </task>
     <servers />
   </component>
