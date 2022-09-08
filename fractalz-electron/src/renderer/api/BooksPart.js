@@ -28,6 +28,12 @@ export default class BooksPart extends BasePart {
     _getBookModel = function (OwnerId) {
         return "?OwnerId=" + OwnerId
     }
+    _deleteBookModel = function (id) {
+        return "?id=" + id
+
+
+    }
+
 
 
     //#endregion
@@ -39,5 +45,10 @@ export default class BooksPart extends BasePart {
     async GetBook(OwnerId) {
         console.log(OwnerId)
         return await this.instant.get(this._getBook + this._getBookModel(OwnerId))
+    }
+    async DeleteBook(id)
+    {
+        console.log(this._deleteBook, this._deleteBookModel(id))
+        return await this.instant.delete(this._deleteBook + this._deleteBookModel(id))
     }
 }

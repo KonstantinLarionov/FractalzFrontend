@@ -9,12 +9,12 @@
           Добавить новый документ
         </button>
 
-        <div class="books-listing ">
+        <div class="books-listing " >
           <books-modal v-if="booksModal" @close= "booksModal = false"></books-modal>
 
           <section >
             <div v-for="content in ShelfContent"  :key="content.$id" >
-              <book-element :about="content.about" :book-name="content.bookName" :date-time="content.dateTime" :color="content.color" :id="content.id"></book-element>
+              <book-element class="book-element" v-on:click="toGetId()" :about="content.about" :book-name="content.bookName" :date-time="content.dateTime" :color="content.color" :id="content.id"></book-element>
             </div>
           </section>
         </div>
@@ -22,7 +22,7 @@
       </section>
 
       <section class="section-card">
-        <div class="book-name" >Название книги</div>
+        <label class="book-name" style="font-size: 14px">ASDAS</label>
 
         <button class="button-add-book">Добавить новый раздел</button>
       </section>
@@ -45,6 +45,10 @@ Vue.component("books-modal", BooksModal);
 export default {
   name: "BookPage",
   components: {BookElement},
+  props:
+      {
+        BookName:null,
+      },
   data(){
     return{
       ShelfContent:[],
@@ -102,6 +106,7 @@ export default {
 }
 .books-listing
 {
+  overflow: auto;
   border-style: solid;
   border-color: #0b0d0f;
   border-width: 2px;
@@ -121,7 +126,6 @@ export default {
   border-width: 2px;
   height: 30px;
   text-align: center;
-
 }
 
 .section-card
@@ -134,6 +138,10 @@ export default {
   border-radius: 8px;
   display: table-cell;
   background-color: #e8e8e8;
+}
+.book-element
+{
+  cursor: pointer;
 }
 .sheet-card
 {

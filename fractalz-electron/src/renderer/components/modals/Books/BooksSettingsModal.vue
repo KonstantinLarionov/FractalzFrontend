@@ -1,13 +1,13 @@
 <template>
   <transition name="modal">
-    <div class="modal-mask">
-      <div class="modal-wrapper">
-        <div class="modal-container">
+    <div class="sett-mask">
+      <div class="sett-wrapper">
+        <div class="sett-container">
 
-          <div class="modal-header">
+          <div class="sett-header">
             <slot name="header">
-              <p class="modal-header-title">Создание нового документа</p>
-              <a class="modal-header-close" @click="$emit('close')">
+              <label style="width: 400px">Настройки документа</label>
+              <a class="sett-header-close" @click="$emit('close')">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
                   <path d="M0 0h24v24H0z" fill="none"/>
                   <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
@@ -16,23 +16,27 @@
             </slot>
           </div>
 
-          <div class="modal-body">
+          <div class="sett-body">
             <slot name="body">
-              <p class ="modal-heading">Название документа</p>
-              <textarea class="modal-body-input"  type="text" v-model="">
-              </textarea>
-              <p class ="modal-heading">Краткое описание документа</p>
-              <textarea class="modal-body-input" v-model="" type="text"></textarea>
-              <p class ="modal-heading">Цвет документа</p>
-              <input class="modal-body-input" type="color">
+              <label> SAMPLE_TEXT </label>
+              <label> SAMPLE_TEXT </label>
+              <label> SAMPLE_TEXT </label>
+              <label> SAMPLE_TEXT </label>
+              <label> SAMPLE_TEXT </label>
+              <label> SAMPLE_TEXT </label>
+              <label> SAMPLE_TEXT </label>
+              <label> SAMPLE_TEXT </label>
+              <label> SAMPLE_TEXT </label>
+              <label> SAMPLE_TEXT </label>
+              <label> SAMPLE_TEXT </label>
+              <label> SAMPLE_TEXT </label>
             </slot>
           </div>
 
-          <div class="modal-footer">
+          <div class="sett-footer">
             <slot name="footer">
-              <button class="add-button" v-on:click="" @click="$emit('close')">
-                Добавить
-              </button>
+              <button class="btn-danger" v-on:click="toDeleteBook()" @click="$emit('close')"> Удалить документ </button>
+              <button class="btn-success"> Сохранить изменения </button>
             </slot>
           </div>
 
@@ -43,18 +47,57 @@
 </template>
 
 <script>
+import BooksPart from "../../../api/BooksPart";
+
 export default {
-  name: "BooksSettingsModal"
+  name: "BooksSettingsModal",
+  props:
+      {
+        api:Object,
+        id:null,
+      },
+  mounted()
+  {
+    this.api= new BooksPart (this.$http)
+    console.log(this.id)
+  },
+  methods:
+      {
+        toDeleteBook:async function()
+        {
+          var obj = {}
+          let result = await this.api.DeleteBook(this.id).catch(response => {console.log(response.response.data)})
+          if(result.data.success)
+          {
+            this.page.$forceUpdate()
+          }
+        }
+      }
 }
 </script>
 
 <style scoped>
-.modal-body{
+.sett-body {
   margin: 0 0 0 0;
   padding: 0 10px 0 10px;
+  width: 100%;
+  height: max-content;
+}
+.btn-danger
+{
+  background-color: #e81111;
+  border-color: rgb(93, 17, 17);
+  margin-left: 10px;
+  border-radius: 8px;
+}
+.btn-success
+{
+  border-radius: 8px;
+  margin-left: 78px;
+
 }
 
-.modal-mask {
+.sett-mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -65,14 +108,14 @@ export default {
   transition: opacity 0.3s ease;
 }
 
-.modal-wrapper {
+.sett-wrapper {
   display: table-cell;
   vertical-align: middle;
 }
 
-.modal-container {
-  height: auto;
-  max-width: 1450px;
+.sett-container {
+  height: max-content;
+  max-width: 450px;
   margin: 0 auto;
   background-color: #fff;
   border-radius: 8px;
@@ -81,12 +124,13 @@ export default {
   border-width: 4px;
   border-color: #009688;
   border-style: solid;
+  display: table;
 }
-.modal-header{
+.sett-header{
   display: flex;
   padding: 10px 10px 0 10px;
 }
-.modal-header-title{
+.sett-header-title{
   position: relative;
   display: flex;
   flex-direction: row;
@@ -98,19 +142,20 @@ export default {
   margin: 0;
   padding: 0 0 1.25rem;
 }
-.modal-header-close{
+.sett-header-close{
   cursor: pointer;
 }
-.modal-body-input
+.sett-body-input
 {
   background-color: #cccccc;
   border-radius: 8px;
 }
-.modal-footer
+.sett-footer
 {
+  height: 50px;
   width: 100%;
 }
-.add-button
+.sett-button
 {
   background-color: rgb(67, 234, 11);
   border-style: solid;
