@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62c9c083-0caf-47be-a0b5-6ab81b039c16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../fractalz-videochat/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../fractalz-videochat/.idea/fractalz-videochat.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../fractalz-videochat/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/fractalz-electron.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fractalz-electron.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/pages/VideoChatPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/pages/VideoChatPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/pages/BookPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/pages/BookPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +76,7 @@
       <workItem from="1659323408781" duration="1015000" />
       <workItem from="1659331407336" duration="6934000" />
       <workItem from="1659419570616" duration="7958000" />
+      <workItem from="1662635084046" duration="1460000" />
     </task>
     <servers />
   </component>
@@ -99,7 +93,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

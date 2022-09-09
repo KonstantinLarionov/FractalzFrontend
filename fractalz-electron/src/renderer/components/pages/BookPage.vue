@@ -5,9 +5,9 @@
       <section class="box-container">
 
       <section class="book-card">
-        <button class="button-add-book" v-on:click="showModal">
-          Добавить новый документ
-        </button>
+        <div class="button-add-book" v-on:click="showModal">
+          <label style="width: 245px" > BookAdd</label>
+        </div>
 
         <div class="books-listing " >
           <books-modal v-if="booksModal" @close= "booksModal = false"></books-modal>
@@ -21,15 +21,15 @@
 
       </section>
 
-      <section class="section-card">
-        <label class="book-name" style="font-size: 14px">ASDAS</label>
+      <div class="section-card">
+        <div class="book-name" >sfd </div>
 
         <button class="button-add-book">Добавить новый раздел</button>
-      </section>
+      </div>
 
-      <section class="sheet-card">
+      <div class="sheet-card">
         <div class="tools-bar"></div>
-      </section>
+      </div>
 
     </section>
   </div>
@@ -124,7 +124,7 @@ export default {
   border-color: #0b0d0f;
   border-style: solid;
   border-width: 2px;
-  height: 30px;
+  height:50px;
   text-align: center;
 }
 
@@ -180,5 +180,6 @@ export default {
   border-style: solid;
   height: 50px;
 }
+
 
 </style>
