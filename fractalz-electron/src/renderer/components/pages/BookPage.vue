@@ -6,15 +6,15 @@
 
       <section class="book-card">
         <div class="button-add-book" v-on:click="showModal">
-          <label style="width: 245px" > BookAdd</label>
+          <label class="book-label" > BookAdd</label>
         </div>
 
-        <div class="books-listing " >
+        <div class="books-listing "  style="margin-top: 4px">
           <books-modal v-if="booksModal" @close= "booksModal = false"></books-modal>
 
           <section >
             <div v-for="content in ShelfContent"  :key="content.$id" >
-              <book-element class="book-element" v-on:click="toGetId()" :about="content.about" :book-name="content.bookName" :date-time="content.dateTime" :color="content.color" :id="content.id"></book-element>
+              <book-element @choosenBookInf="ChooseBook($event)" name="book-element" class="book-element" :about="content.about" :book-name="content.bookName" :date-time="content.dateTime" :color="content.color" :id="content.id"></book-element>
             </div>
           </section>
         </div>
@@ -22,9 +22,10 @@
       </section>
 
       <div class="section-card">
-        <div class="book-name" >sfd </div>
-
-        <button class="button-add-book">Добавить новый раздел</button>
+        <div class="book-name" > {ChoosenBookName} </div>
+        <div class="books-listing">
+          <button class="button-add-section" v-on:click="toCreateSection">Добавить новый раздел</button>
+        </div>
       </div>
 
       <div class="sheet-card">
@@ -42,6 +43,8 @@ import BooksModal from "../modals/Books/BooksModal";
 import BooksPart from "../../api/BooksPart";
 Vue.component("book-element", BookElement);
 Vue.component("books-modal", BooksModal);
+
+
 export default {
   name: "BookPage",
   components: {BookElement},
@@ -54,6 +57,7 @@ export default {
       ShelfContent:[],
       booksModal: false,
       api:Object,
+      ChoosenBook:[]
     }
   },
   mounted()
@@ -76,7 +80,17 @@ export default {
             this.ShelfContent = get.data.book.$values;
             console.log(this.ShelfContent)
           }
+        },
+        toCreateSection: async function()
+        {
+          console.log(this.ChoosenBook)
+          //let createSection = await this.api.
+        },
+        ChooseBook: async function(ChoosenBook)
+        {
+          this.ChoosenBook = ChoosenBook
         }
+
       }
 }
 </script>
@@ -92,6 +106,12 @@ export default {
   display: table;
   width: 100%;
   height: 100%;
+
+}
+.book-label
+{
+  cursor: pointer;
+  width: 245px;
 }
 .book-card
 {
@@ -111,21 +131,23 @@ export default {
   border-color: #0b0d0f;
   border-width: 2px;
   border-radius: 8px;
-  width: 100%;
+  width: 250px;
   height: 100%;
-  background-color: #e8e8e8;
+  background-color: #adadad;
 }
 
 .book-name
 {
-  width: 100%;
+  width: 240px;
   background-color: #009688;
   border-radius: 8px;
   border-color: #0b0d0f;
   border-style: solid;
   border-width: 2px;
   height:50px;
+  margin-left: 5px;
   text-align: center;
+  margin-bottom: 3px;
 }
 
 .section-card
@@ -141,7 +163,11 @@ export default {
 }
 .book-element
 {
+  width: 240px;
+  horiz-align: center;
   cursor: pointer;
+  margin-left: 3px;
+  margin-top: 6px
 }
 .sheet-card
 {
@@ -173,12 +199,26 @@ export default {
 
 .button-add-book
 {
-  width: 100%;
+  width: 240px;
   background-color: #009688;
   border-radius: 8px;
   border-color: #0b0d0f;
   border-style: solid;
   height: 50px;
+  margin-left: 5px;
+  margin-top:5px;
+}
+.button-add-section
+{
+  margin-right: 4px;
+  width: 240px;
+  background-color: #009688;
+  border-radius: 8px;
+  border-color: #0b0d0f;
+  border-style: solid;
+  height: 50px;
+  margin-left: 3px;
+  margin-top:5px;
 }
 
 

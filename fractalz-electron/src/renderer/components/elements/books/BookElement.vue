@@ -1,5 +1,5 @@
 <template>
-  <div class="book-container" v-on:click="toGetId">
+  <div class="book-container" @click="toChooseBook" >
     <booksSettingsModal v-if="booksSettingsModal" :id="this.Id" @close= "booksSettingsModal = false"></booksSettingsModal>
     <div class="element-top">
       <label style="width: 180px">{{ BookName }}</label>
@@ -18,16 +18,17 @@
     <div class="element-bottom">
       <label>{{ DateTime }}</label>
     </div>
-
   </div>
 </template>
 
 <script>
 import Vue from "vue";
 import booksSettingsModal from "../../modals/Books/BooksSettingsModal";
+import BookPage from "../../pages/BookPage";
 Vue.component("booksSettingsModal", booksSettingsModal)
 export default {
   name: "BookElement",
+  components: {BookPage},
   props:
       {
         BookName: null,
@@ -36,17 +37,24 @@ export default {
         Color:null,
         Id:null,
         booksSettingsModal:false,
+
       },
+  data(){
+    return{
+     ChosenBookInf:[],
+    }
+  },
   methods:
       {
         showModalSett: async function()
         {
           this.booksSettingsModal = true
         },
-        toGetId: async function()
+        toChooseBook: async function()
         {
-
-        },
+         this.ChosenBookInf.push(this.BookName, this.Id)
+          this.$emit(`choosenBookInf`, this.ChosenBookInf )
+        }
       }
 }
 

@@ -25,14 +25,18 @@ export default class BooksPart extends BasePart {
             "OwnerId": OwnerId,
         };
     }
+    _createBookSection = function (ChoosenBookInf)
+    {
+
+    }
     _getBookModel = function (OwnerId) {
         return "?OwnerId=" + OwnerId
     }
     _deleteBookModel = function (id) {
         return "?id=" + id
 
-
     }
+
 
 
 
