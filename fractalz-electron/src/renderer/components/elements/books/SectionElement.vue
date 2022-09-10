@@ -2,7 +2,7 @@
   <div class="book-container" v-on:click="toChooseSection">
     <div class="element-top"></div>
     <div class="element-middle">
-      <label type="text" class="text-sect-name" contenteditable="true" @keyup.enter="">{{SectionName}}</label>
+      <label type="text" id="sect-label" class="text-sect-name" contenteditable="true" v-model="this.SectionName" @keyup.enter="toUpdateName">{{SectionNameImp}}</label>
     </div>
 
     <div class="element-bottom">
@@ -12,28 +12,41 @@
 </template>
 
 <script>
+
+
+import BooksPart from "../../../api/BooksPart";
+
 export default {
   name: "SectionElement",
   props:
       {
         OwnerId:null,
-        SectionName:null,
+        SectionNameImp:null,
         Id:null,
         DataTime:null
       },
   data()
       {
         return{
-
+          SectionName:null,
+          api:Object,
         }
       },
-  mounted() {
+  mounted()
+  {
+    this.api = new BooksPart (this.$http)
   },
   methods:
       {
         toChooseSection:async function()
         {
-          console.log(this.Id)
+          this.SectionName = document.getElementById('sect-label').textContent
+          console.log(this.Id, this.SectionName)
+        },
+        toUpdateName:async function()
+        {
+          let update = await this.api.UpdateSection(this.Id, this.SectionName).catch(response=> {response.response.data})
+          console.log(update.data)
         }
       }
 }

@@ -40,6 +40,12 @@ export default class BooksPart extends BasePart {
     _getBookSectionModel = function(OwnerId, BookId) {
         return "?OwnerId=" + OwnerId + "&BookId="+BookId
     }
+    _updateBookSectionModel = function (SectionId, SectionName){
+        return {
+            "SectionId":SectionId,
+            "SectionName":SectionName
+        }
+    }
 
     _deleteBookModel = function (id) {
         return "?id=" + id
@@ -64,6 +70,9 @@ export default class BooksPart extends BasePart {
     }
     async GetSection(OwnerId, BookId) {
         return await this.instant.get(this._getBookSection + this._getBookSectionModel(OwnerId, BookId))
+    }
+    async UpdateSection (SectionId, SectionName){
+        return await this.instant.put(this._updateBookSection, this._updateBookSectionModel(SectionId, SectionName))
     }
     async DeleteBook(id)
     {
