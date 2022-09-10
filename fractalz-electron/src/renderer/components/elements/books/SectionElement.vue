@@ -1,12 +1,12 @@
 <template>
-  <div class="book-container" >
-
+  <div class="book-container" v-on:click="toChooseSection">
+    <div class="element-top"></div>
     <div class="element-middle">
-      <textarea type="text" class="text-sect-name" >{{SectionName}}</textarea>
+      <label type="text" class="text-sect-name" contenteditable="true" @keyup.enter="">{{SectionName}}</label>
     </div>
 
     <div class="element-bottom">
-      <textarea type="text" class="text-sect-about" >{{About}}</textarea>
+      <input type="color" class="text-sect-about" contenteditable="true">{{DataTime}}
     </div>
   </div>
 </template>
@@ -14,15 +14,27 @@
 <script>
 export default {
   name: "SectionElement",
+  props:
+      {
+        OwnerId:null,
+        SectionName:null,
+        Id:null,
+        DataTime:null
+      },
   data()
       {
         return{
-          SectionName:null,
-          About:null
+
         }
       },
+  mounted() {
+  },
   methods:
       {
+        toChooseSection:async function()
+        {
+          console.log(this.Id)
+        }
       }
 }
 </script>
@@ -30,12 +42,9 @@ export default {
 <style scoped>
 .element-top
 {
-  background-color: whitesmoke;
-  border-radius:8px ;
-  text-align: left;
-  border-style: solid;
-  border-width: 2px;
   margin:2px;
+  height: 10px;
+  border-color: transparent;
 }
 .button-settings
 {
@@ -47,12 +56,17 @@ export default {
 }
 .book-container
 {
-  width: 100%;
+
   background-color: #009688;
   border-radius: 8px;
   border-color: #0b0d0f;
   border-style: solid;
   height: max-content;
+  width: 240px;
+  horiz-align: center;
+  cursor: pointer;
+  margin-left: 6px;
+  margin-top: 6px
 }
 
 .text-sect-name

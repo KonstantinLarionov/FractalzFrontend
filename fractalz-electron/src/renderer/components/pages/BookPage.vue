@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <div class="books-route">Books>"Filtered">Section>"Non_critical"></div>
+    <div class="books-route-book" id="book-route"></div>
 
       <section class="box-container">
 
@@ -10,11 +10,13 @@
         </div>
 
         <div class="books-listing "  style="margin-top: 4px">
-          <books-modal v-if="booksModal" @close= "booksModal = false"></books-modal>
+          <books-modal @getBook="togetBooksModal($event)" v-if="booksModal" @close= "booksModal = false"></books-modal>
 
-          <section >
+          <section>
             <div v-for="content in ShelfContent"  :key="content.$id" >
-              <book-element v-on:click="toGetSections()" @choosenBookInf="ChooseBook($event)"  name="book-element" class="book-element" :about="content.about" :book-name="content.bookName" :date-time="content.dateTime" :color="content.color" :id="content.id"></book-element>
+              <div>
+                <book-element @chosenBookInf="ChooseBook($event)" name="book-element" class="book-element" :about="content.about" :book-name="content.bookName" :date-time="content.dateTime" :color="content.color" :id="content.id"></book-element>
+              </div>
             </div>
           </section>
         </div>
@@ -25,7 +27,9 @@
         <button class="button-add-section" v-on:click="toCreateSection">Добавить новый раздел</button>
 
         <div class="books-listing" >
-          <section-element></section-element>
+          <div class="sect-list" v-for="content in SectionContent" :key="content.$id">
+            <section-element :data-time="content.date" :id="content.id"></section-element>
+          </div>
         </div>
       </div>
 
@@ -86,14 +90,12 @@ export default {
             console.log(this.ShelfContent)
           }
         },
-        toGetSections: async function()
+
+        togetBooksModal:async function(CreatedBookInf)
         {
-          let get = await this.api.GetSection(Vue.$cookies.get('UserInfo').id, this.BookId).catch(response=>{response.response.data})
-          if(get.data.success)
-          {
-            console.log(get.data)
-          }
+          this.ShelfContent = CreatedBookInf
         },
+
         toCreateSection: async function()
         {
           console.log(this.ChosenBook)
@@ -104,19 +106,40 @@ export default {
           }
 
           let createSection = await this.api.CreateSection(this.bookName, this.BookId, Vue.$cookies.get('UserInfo').id).catch(response=>{response.response.data})
+          await this.toGetSection();
         },
+
         ChooseBook: async function(ChosenBook)
         {
           this.ChosenBook = ChosenBook
-          for(let i in this.ChosenBook)
+          for (let i in this.ChosenBook)
           {
             this.bookName = this.ChosenBook[i].bookName
             this.BookId = this.ChosenBook[i].id
           }
+
+          var route = document.getElementById("book-route");
+          route.textContent = "BookName: " + this.bookName
+
+          await this.toGetSection()
+
+        },
+
+        toGetSection:async function()
+        {
+          if(this.SectionContent !=null)
+          {
+            this.SectionContent =[]
+          }
           let get = await this.api.GetSection(Vue.$cookies.get('UserInfo').id, this.BookId).catch(response=>{response.response.data})
+
           if(get.data.success)
           {
-            console.log(get.data)
+            for(let i=0;i < get.data.bookSectionsList.$values.length; i++)
+            {
+              this.SectionContent.push(get.data.bookSectionsList.$values[i])
+            }
+            console.log(this.SectionContent)
           }
         }
 
@@ -140,7 +163,8 @@ export default {
 .book-label
 {
   cursor: pointer;
-  width: 245px;
+  width: max-content;
+  margin-top: 11px;
 }
 .book-card
 {
@@ -152,6 +176,7 @@ export default {
   border-radius: 8px;
   display: table-cell;
   margin:1px ;
+  padding-top:-5px ;
 }
 .books-listing
 {
@@ -160,8 +185,9 @@ export default {
   border-color: #0b0d0f;
   border-width: 2px;
   border-radius: 8px;
-  width: 250px;
-  height: 100%;
+  width: 264px;
+
+  height: 925px;
   background-color: #adadad;
 }
 
@@ -181,7 +207,7 @@ export default {
 
 .section-card
 {
-  width: 250px;
+  width: 260px;
   height: 150px;
   border-width: 2px;
   border-color: #868686;
@@ -195,7 +221,7 @@ export default {
   width: 240px;
   horiz-align: center;
   cursor: pointer;
-  margin-left: 3px;
+  margin-left: 6px;
   margin-top: 6px
 }
 .sheet-card
@@ -208,12 +234,16 @@ export default {
   display: table-cell;
   background-color: #e8e8e8;
 }
-.books-route
+.books-route-book
 {
+  height: 30px;
   border-width: 3px;
   border-radius: 8px;
   border-color: #009688;
   border-style: solid;
+  font-size: 16px;
+  font-weight: bold;
+  color: #009688;
 }
 /*.tools-bar
 {
@@ -233,9 +263,12 @@ export default {
   border-radius: 8px;
   border-color: #0b0d0f;
   border-style: solid;
-  height: 50px;
-  margin-left: 5px;
-
+  border-width: 2px;
+  height:50px;
+  margin-top: 6px;
+  margin-left: 10px;
+  text-align: center;
+  margin-bottom: 3px;
 }
 .button-add-section
 {
@@ -247,9 +280,9 @@ export default {
   border-width: 2px;
   height:50px;
   margin-top: 6px;
-  margin-left: 5px;
+  margin-left: 10px;
   text-align: center;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 
 

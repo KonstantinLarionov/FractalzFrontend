@@ -30,7 +30,7 @@
 
           <div class="modal-footer">
             <slot name="footer">
-              <button class="add-button" v-on:click="createBook()" @click="$emit('close')">
+              <button class="add-button" @click="toGetBook">
                 Добавить
               </button>
             </slot>
@@ -59,6 +59,13 @@ export default {
         About:null,
         Color:null,
       },
+  data()
+  {
+    return{
+      CreatedBookInf:[]
+    }
+
+  },
   mounted()
   {
     this.noty = new NotifyCenter();
@@ -73,8 +80,20 @@ export default {
           var create = await this.api.CreateBook(this.BookName,this.About,this.Color, Vue.$cookies.get('UserInfo').id).catch(response=>{this.noty.Show({title:"BookCreation", message:"message"})})
           if (create.data.success)
           {
-            BookPage.methods.GetBook;
+            console.log("BOOK CREATED")
+            this.toGetBook
           }
+        },
+        toGetBook:async function()
+        {
+          var create = await this.api.CreateBook(this.BookName,this.About,this.Color, Vue.$cookies.get('UserInfo').id).catch(response=>{this.noty.Show({title:"BookCreation", message:"message"})})
+          let get = await this.api.GetBook(Vue.$cookies.get('UserInfo').id).catch(response => {console.log(response.response.data)})
+          if(get.data.success)
+          {
+            this.CreatedBookInf = get.data.book.$values;
+            this.$emit('getBook',this.CreatedBookInf)
+          }
+          this.$emit('close')
         }
 
       }

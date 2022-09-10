@@ -48,7 +48,7 @@
 
 <script>
 import BooksPart from "../../../api/BooksPart";
-
+import Vue from "vue";
 export default {
   name: "BooksSettingsModal",
   props:
@@ -56,6 +56,12 @@ export default {
         api:Object,
         id:null,
       },
+  data()
+  {
+    return{
+      CreatedBookInf:null
+    }
+  },
   mounted()
   {
     this.api= new BooksPart (this.$http)
@@ -65,12 +71,21 @@ export default {
       {
         toDeleteBook:async function()
         {
-          var obj = {}
           let result = await this.api.DeleteBook(this.id).catch(response => {console.log(response.response.data)})
           if(result.data.success)
           {
-            this.page.$forceUpdate()
+            this.toGetBooks()
           }
+        },
+        toGetBooks: async function()
+        {
+          let get = await this.api.GetBook(Vue.$cookies.get('UserInfo').id).catch(response => {console.log(response.response.data)})
+          if(get.data.success)
+          {
+            this.CreatedBookInf = get.data.book.$values;
+            this.$emit('getBook',this.CreatedBookInf)
+          }
+          this.$emit('close')
         }
       }
 }
