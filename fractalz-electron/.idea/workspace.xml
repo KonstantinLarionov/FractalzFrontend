@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62c9c083-0caf-47be-a0b5-6ab81b039c16" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/renderer/components/elements/books/SectionElement.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/api/BooksPart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/api/BooksPart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/elements/books/BookElement.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/elements/books/BookElement.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/components/pages/BookPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/pages/BookPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -77,6 +80,7 @@
       <workItem from="1659331407336" duration="6934000" />
       <workItem from="1659419570616" duration="7958000" />
       <workItem from="1662635084046" duration="1460000" />
+      <workItem from="1662712190370" duration="10450000" />
     </task>
     <servers />
   </component>

@@ -42,6 +42,7 @@ export default {
   data(){
     return{
      ChosenBookInf:[],
+
     }
   },
   methods:
@@ -52,8 +53,14 @@ export default {
         },
         toChooseBook: async function()
         {
-         this.ChosenBookInf.push(this.BookName, this.Id)
+         this.ChosenBookInf.push(
+             {"bookName":this.BookName , "id":this.Id}
+        )
           this.$emit(`choosenBookInf`, this.ChosenBookInf )
+          if(this.ChosenBookInf != null)
+          {
+            return this.ChosenBookInf = []
+          }
         }
       }
 }

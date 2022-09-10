@@ -14,7 +14,7 @@
 
           <section >
             <div v-for="content in ShelfContent"  :key="content.$id" >
-              <book-element @choosenBookInf="ChooseBook($event)" name="book-element" class="book-element" :about="content.about" :book-name="content.bookName" :date-time="content.dateTime" :color="content.color" :id="content.id"></book-element>
+              <book-element v-on:click="toGetSections()" @choosenBookInf="ChooseBook($event)"  name="book-element" class="book-element" :about="content.about" :book-name="content.bookName" :date-time="content.dateTime" :color="content.color" :id="content.id"></book-element>
             </div>
           </section>
         </div>
@@ -22,9 +22,10 @@
       </section>
 
       <div class="section-card">
-        <div class="book-name" > {ChoosenBookName} </div>
-        <div class="books-listing">
-          <button class="button-add-section" v-on:click="toCreateSection">Добавить новый раздел</button>
+        <button class="button-add-section" v-on:click="toCreateSection">Добавить новый раздел</button>
+
+        <div class="books-listing" >
+          <section-element></section-element>
         </div>
       </div>
 
@@ -41,13 +42,14 @@ import BookElement from "../elements/books/BookElement";
 import Vue from "vue";
 import BooksModal from "../modals/Books/BooksModal";
 import BooksPart from "../../api/BooksPart";
+import SectionElement from "../elements/books/SectionElement";
 Vue.component("book-element", BookElement);
 Vue.component("books-modal", BooksModal);
 
 
 export default {
   name: "BookPage",
-  components: {BookElement},
+  components: {SectionElement, BookElement},
   props:
       {
         BookName:null,
@@ -55,9 +57,12 @@ export default {
   data(){
     return{
       ShelfContent:[],
+      SectionContent:[],
       booksModal: false,
       api:Object,
-      ChoosenBook:[]
+      ChosenBook:[],
+      bookName:null,
+      BookId:null,
     }
   },
   mounted()
@@ -81,14 +86,38 @@ export default {
             console.log(this.ShelfContent)
           }
         },
+        toGetSections: async function()
+        {
+          let get = await this.api.GetSection(Vue.$cookies.get('UserInfo').id, this.BookId).catch(response=>{response.response.data})
+          if(get.data.success)
+          {
+            console.log(get.data)
+          }
+        },
         toCreateSection: async function()
         {
-          console.log(this.ChoosenBook)
-          //let createSection = await this.api.
+          console.log(this.ChosenBook)
+          for(let i in this.ChosenBook)
+          {
+            this.bookName = this.ChosenBook[i].bookName
+            this.BookId = this.ChosenBook[i].id
+          }
+
+          let createSection = await this.api.CreateSection(this.bookName, this.BookId, Vue.$cookies.get('UserInfo').id).catch(response=>{response.response.data})
         },
-        ChooseBook: async function(ChoosenBook)
+        ChooseBook: async function(ChosenBook)
         {
-          this.ChoosenBook = ChoosenBook
+          this.ChosenBook = ChosenBook
+          for(let i in this.ChosenBook)
+          {
+            this.bookName = this.ChosenBook[i].bookName
+            this.BookId = this.ChosenBook[i].id
+          }
+          let get = await this.api.GetSection(Vue.$cookies.get('UserInfo').id, this.BookId).catch(response=>{response.response.data})
+          if(get.data.success)
+          {
+            console.log(get.data)
+          }
         }
 
       }
@@ -206,19 +235,21 @@ export default {
   border-style: solid;
   height: 50px;
   margin-left: 5px;
-  margin-top:5px;
+
 }
 .button-add-section
 {
-  margin-right: 4px;
   width: 240px;
   background-color: #009688;
   border-radius: 8px;
   border-color: #0b0d0f;
   border-style: solid;
-  height: 50px;
-  margin-left: 3px;
-  margin-top:5px;
+  border-width: 2px;
+  height:50px;
+  margin-top: 6px;
+  margin-left: 5px;
+  text-align: center;
+  margin-bottom: 3px;
 }
 
 
