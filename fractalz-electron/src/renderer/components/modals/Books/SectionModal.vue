@@ -1,13 +1,13 @@
 <template>
   <transition name="modal">
-    <div class="modal-mask">
+    <div class="modal-mask" >
       <div class="modal-wrapper">
         <div class="modal-container">
 
           <div class="modal-header">
             <slot name="header">
               <p class="modal-header-title">Создание нового документа</p>
-              <a class="modal-header-close" @click="$emit('close')">
+              <a class="modal-close" @click="$emit('close-sect')">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
                   <path d="M0 0h24v24H0z" fill="none"/>
                   <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
@@ -18,19 +18,14 @@
 
           <div class="modal-body">
             <slot name="body">
-              <p class ="modal-heading">Название документа</p>
-              <textarea class="modal-body-input"  type="text" v-model="BookName">
-              </textarea>
-              <p class ="modal-heading">Краткое описание документа</p>
-              <textarea class="modal-body-input" v-model="About" type="text"></textarea>
-              <p class ="modal-heading">Цвет документа</p>
-              <input class="modal-body-input" v-model="Color" type="color">
+              <p class ="modal-heading">Название секции</p>
+              <textarea class="modal-body-input"  type="text" v-model="SectName"></textarea>
             </slot>
           </div>
 
           <div class="modal-footer">
             <slot name="footer">
-              <button class="add-button" @click="toGetBook">
+              <button class="add-button" v-on:click="toGetSection">
                 Добавить
               </button>
             </slot>
@@ -44,48 +39,44 @@
 
 <script>
 import Vue from "vue";
-import BookElement from "../../elements/books/BookElement";
 import BooksPart from "../../../api/BooksPart";
 import NotifyCenter from "../../../services/NotifyCenter";
-import BookPage from "../../pages/BookPage";
-Vue.component('book-element', BookElement)
+
 export default {
-  name: "BooksModal",
+  name: "SectionModal",
   props:
       {
-        api:Object,
-        noty:Object,
-        BookName:null,
-        About:null,
-        Color:null,
+        BookId:null,
       },
-  data()
-  {
+  data() {
     return{
-      CreatedBookInf:[]
+      api:Object,
+      SectName:null,
+      SectionContent:[]
     }
-
   },
   mounted()
   {
+    this.api = new BooksPart (this.$http)
     this.noty = new NotifyCenter();
-    this.api = new BooksPart(this.$http)
   },
-  methods:
+  methods:{
+    toGetSection:async function()
+    {
+      var create = await this.api.CreateSection(this.SectName,this.BookId, Vue.$cookies.get('UserInfo').id).catch(response=>{response.response.data})
+      let get = await this.api.GetSection(Vue.$cookies.get('UserInfo').id, this.BookId).catch(response => {console.log(response.response.data)})
+      if(get.data.success)
       {
-        toGetBook:async function()
+        for(let i=0;i < get.data.bookSectionsList.$values.length; i++)
         {
-          var create = await this.api.CreateBook(this.BookName,this.About,this.Color, Vue.$cookies.get('UserInfo').id).catch(response=>{this.noty.Show({title:"BookCreation", message:"message"})})
-          let get = await this.api.GetBook(Vue.$cookies.get('UserInfo').id).catch(response => {console.log(response.response.data)})
-          if(get.data.success)
-          {
-            this.CreatedBookInf = get.data.book.$values;
-            this.$emit('getBook',this.CreatedBookInf)
-          }
-          this.$emit('close')
+          this.SectionContent.push(get.data.bookSectionsList.$values[i])
         }
-
+        this.$emit('toGetSectionModal',this.SectionContent)
       }
+      this.$emit('close-sect')
+    }
+
+  }
 }
 </script>
 
@@ -139,7 +130,7 @@ export default {
   margin: 0;
   padding: 0 0 1.25rem;
 }
-.modal-header-close{
+.modal-close{
   cursor: pointer;
 }
 .modal-body-input
