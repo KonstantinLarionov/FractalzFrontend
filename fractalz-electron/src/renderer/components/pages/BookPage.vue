@@ -59,9 +59,13 @@
       </div>
 
       <div class="sheet-card">
-        <div class="tools-bar">
-          <vue-editor v-model="content"></vue-editor>
-        </div>
+        <section class="element-top-sheet">
+        </section>
+        <section class="element-middle-sheet">
+          <div class="tools-bar" v-for="content in CreatedSheetInf" :key="content.$id">
+            <sheet-element id="text-section" :id="content.id" :text="content.text"></sheet-element>
+          </div>
+        </section>
       </div>
 
     </section>
@@ -75,15 +79,17 @@ import BooksModal from "../modals/Books/BooksModal";
 import BooksPart from "../../api/BooksPart";
 import SectionElement from "../elements/books/SectionElement";
 import SectionModal from "../modals/Books/SectionModal";
-import { VueEditor } from "vue2-editor";
+import SheetElement from "../elements/books/SheetElement";
+
 Vue.component("section-modal", SectionModal)
 Vue.component("book-element", BookElement);
 Vue.component("books-modal", BooksModal);
+Vue.component("sheet-element", SheetElement)
 
 
 export default {
   name: "BookPage",
-  components: {SectionModal, SectionElement, BookElement, VueEditor},
+  components: {SheetElement, SectionModal, SectionElement, BookElement},
   props:
       {
         BookName: null,
@@ -101,7 +107,8 @@ export default {
       sectModal: false,
       ChosenSection: null,
       SelectedText:null,
-      content: "<h1>Some initial content</h1>"
+      content: "<h1>Some initial content</h1>",
+      CreatedSheetInf:[]
     }
   },
   mounted() {
@@ -178,51 +185,23 @@ export default {
         toChooseSection: async function (ChosenSection) {
           this.ChosenSection = ChosenSection
           var route = document.getElementById("book-route");
-          route.textContent = "BookName: " + this.bookName + " / SectionName: " + this.ChosenSection
-
+          route.textContent = "BookName: " + this.bookName + " / SectionName: " + this.ChosenSection.SectionNameImp
+          await this.toCreateSheet()
+          //await this.toGetSheet()
         },
-        f1:async function () {
-          //function to make the text bold using DOM method
-          this.SelectedText = document.getSelection().toString()
-          document.getElementById('selectedText').style.fontStyle = "bold";
-        },
-        f2:async function () {
-            //function to make the text italic using DOM method
-            document.getElementById("textarea1").style.fontStyle = "italic";
-          },
-        f3:async function () {
-            //function to make the text alignment left using DOM method
-            document.getElementById("textarea1").style.textAlign = "left";
-          },
-        f4:async function () {
-            //function to make the text alignment center using DOM method
-            document.getElementById("textarea1").style.textAlign = "center";
-          },
-        f5:async function () {
-            //function to make the text alignment right using DOM method
-            document.getElementById("textarea1").style.textAlign = "right";
-          },
-        f6:async function () {
-            //function to make the text in Uppercase using DOM method
-            document.getElementById("textarea1").style.textTransform = "uppercase";
-          },
-        f7:async function () {
-            //function to make the text in Lowercase using DOM method
-            document.getElementById("textarea1").style.textTransform = "lowercase";
-          },
-        f8:async function () {
-            //function to make the text capitalize using DOM method
-            document.getElementById("textarea1").style.textTransform = "capitalize";
-          },
-        f9:async function () {
-            //function to make the text back to normal by removing all the methods applied
-            //using DOM method
-            document.getElementById("textarea1").style.fontWeight = "normal";
-            document.getElementById("textarea1").style.textAlign = "left";
-            document.getElementById("textarea1").style.fontStyle = "normal";
-            document.getElementById("textarea1").style.textTransform = "capitalize";
-            document.getElementById("textarea1").value = " ";
+        toCreateSheet: async function()
+        {
+          let create = await this.api.CreateSheet(this.ChosenSection.Id).catch(response => {response.response.data})
+          if(create.data.success)
+          {
+            this.CreatedSheetInf.push(create.data.bookSheets)
           }
+        },
+        toGetSheet:async function()
+        {
+          let get = await this.api.GetSheet(Id).catch(response=>{response.response.data})
+        }
+
       }
 }
 </script>
@@ -300,6 +279,7 @@ export default {
   display: table-cell;
   background-color: #e8e8e8;
 }
+
 .books-route-book
 {
   height: 30px;
@@ -342,45 +322,8 @@ export default {
   text-align: center;
   margin-bottom: 4px;
 }
-.h1 {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  text-align: center;
-  color: #957dad;
-  font-family: 'Montserrat', sans-serif;
-}
 
-.section {
-  padding: 5%;
-  padding-top: 0;
-  height: 100vh;
-}
 
-.side {
-  margin-left: 0;
-}
-
-.button {
-  margin: 10px;
-  border-color: #957dad !important;
-  color: #888888 !important;
-  margin-bottom: 25px;
-}
-
-.button:hover {
-  background-color: #fec8d8 !important;
-}
-
-.textarea {
-  padding: 3%;
-  border-color: #957dad;
-  border-width: thick;
-}
-
-.flex-box {
-  display: flex;
-  justify-content: center;
-}
 
 
 </style>

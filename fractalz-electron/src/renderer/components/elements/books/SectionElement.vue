@@ -39,7 +39,7 @@ export default {
         return{
           SectionName:null,
           api:Object,
-          SectionContent:[],
+          ChosenSectInf:null
         }
       },
   mounted()
@@ -50,8 +50,9 @@ export default {
       {
         toChooseSection:async function()
         {
-          document.getElementById('sect-label').textContent = this.SectionNameImp
-          this.$emit(`chooseSect`, this.SectionNameImp )
+          this.ChosenSectInf = {"SectionNameImp": this.SectionNameImp, "Id": this.Id}
+          document.getElementById('sect-label').textContent = this.SectionNameImp;
+          this.$emit(`chooseSect`, this.ChosenSectInf)
           console.log(this.Id, this.SectionName)
         },
 
@@ -60,10 +61,6 @@ export default {
           this.SectionName = document.getElementById('sect-label').textContent
           let update = await this.api.UpdateSection(this.Id, this.SectionName).catch(response=> {response.response.data})
           console.log(update.data)
-        },
-        toGetSectionName: async function()
-        {
-          //let get = await this.api.
         },
 
         toDeleteSection: async function()
@@ -132,7 +129,6 @@ export default {
   border-color: #0b0d0f;
   border-style: solid;
   border-width: 2px;
-  resize: block;
   width:100%;
   cursor: pointer;
   overflow-scrolling:auto ;
