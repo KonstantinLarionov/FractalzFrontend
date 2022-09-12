@@ -60,100 +60,7 @@
 
       <div class="sheet-card">
         <div class="tools-bar">
-          <section class="">
-            <h1 class="shadow-sm">TEXT EDITOR</h1>
-            <div class="flex-box">
-              <div class="row">
-                <div class="col">
-                  <button type="button"
-                          v-on:click="f1()"
-                          class=" shadow-sm btn btn-outline-secondary"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Bold Text">
-                    Bold</button>
-                  <button type="button"
-                          v-on:click="f2()"
-                          class="shadow-sm btn btn-outline-success"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Italic Text">
-                    Italic</button>
-                  <button type="button"
-                          v-on:click="f3()"
-                          class=" shadow-sm btn btn-outline-primary"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Left Align">
-                    <i class="fas fa-align-left"></i></button>
-                  <button type="button"
-                          v-on:click="f4()"
-                          class="btn shadow-sm btn-outline-secondary"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Center Align">
-                    <i class="fas fa-align-center"></i></button>
-                  <button type="button"
-                          v-on:click="f5()"
-                          class="btn shadow-sm btn-outline-primary"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Right Align">
-                    <i class="fas fa-align-right"></i></button>
-                  <button type="button"
-                          v-on:click="f6()"
-                          class="btn shadow-sm btn-outline-secondary"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Uppercase Text">
-                    Upper Case</button>
-                  <button type="button"
-                          v-on:click="f7()"
-                          class="btn shadow-sm btn-outline-primary"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Lowercase Text">
-                    Lower Case</button>
-                  <button type="button"
-                          v-on:click="f8()"
-                          class="btn shadow-sm btn-outline-primary"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Capitalize Text">
-                    Capitalize</button>
-                  <button type="button"
-                          v-on:click="f9()"
-                          class="btn shadow-sm btn-outline-primary side"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Tooltip on top">
-                    Clear Text</button>
-                </div>
-              </div>
-            </div>
-            <br>
-            <div class="row">
-              <div class="col-md-3 col-sm-3">
-              </div>
-              <div class="col-md-6 col-sm-9">
-                <div class="flex-box">
-                    <textarea id="textarea1"
-                              class="input shadow"
-                              name="name"
-                              rows="15"
-                              cols="100"
-                              placeholder="Your text here ">
-                    </textarea>
-                  <div hidden id="selectedText"></div>
-                </div>
-              </div>
-              <div class="col-md-3">
-              </div>
-            </div>
-          </section>
-          <br>
-          <br>
-
+          <vue-editor v-model="content"></vue-editor>
         </div>
       </div>
 
@@ -168,6 +75,7 @@ import BooksModal from "../modals/Books/BooksModal";
 import BooksPart from "../../api/BooksPart";
 import SectionElement from "../elements/books/SectionElement";
 import SectionModal from "../modals/Books/SectionModal";
+import { VueEditor } from "vue2-editor";
 Vue.component("section-modal", SectionModal)
 Vue.component("book-element", BookElement);
 Vue.component("books-modal", BooksModal);
@@ -175,7 +83,7 @@ Vue.component("books-modal", BooksModal);
 
 export default {
   name: "BookPage",
-  components: {SectionModal, SectionElement, BookElement},
+  components: {SectionModal, SectionElement, BookElement, VueEditor},
   props:
       {
         BookName: null,
@@ -192,7 +100,8 @@ export default {
       SectName: [],
       sectModal: false,
       ChosenSection: null,
-      SelectedText:null
+      SelectedText:null,
+      content: "<h1>Some initial content</h1>"
     }
   },
   mounted() {
