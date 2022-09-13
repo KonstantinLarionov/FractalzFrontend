@@ -186,6 +186,7 @@ export default {
           this.ChosenSection = ChosenSection
           var route = document.getElementById("book-route");
           route.textContent = "BookName: " + this.bookName + " / SectionName: " + this.ChosenSection.SectionNameImp
+          this.CreatedSheetInf = []
           await this.toCreateSheet()
           //await this.toGetSheet()
         },
@@ -261,6 +262,8 @@ export default {
   display: table-cell;
   background-color: #e8e8e8;
 }
+.element-middle-sheet
+{}
 .book-element
 {
   width: 240px;
@@ -277,6 +280,7 @@ export default {
   border-color: #868686;
   border-style: solid;
   display: table-cell;
+  max-width: 990px;
   background-color: #e8e8e8;
 }
 

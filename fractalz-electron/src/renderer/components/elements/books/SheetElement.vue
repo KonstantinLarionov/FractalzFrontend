@@ -4,7 +4,7 @@
       <button class="button-save-text" v-on:click="toSaveText"> Сохранить документ</button>
     </div>
     <div class="sheet-container-middle">
-      <vue-editor v-model="content" ></vue-editor>
+      <vue-editor  class="vue-editor" v-model="content" ></vue-editor>
     </div>
   </div>
 </template>
@@ -45,11 +45,17 @@ export default {
 </script>
 
 <style scoped>
-.element-top-sheet
+.sheet-page-container
+{
+ display:table;
+}
+.sheet-container-top
 {
   width: 75%;
   display: table;
   height: max-content;
+  max-width: border-box;
+  overflow: auto;
 }
 .button-save-text
 {
@@ -63,6 +69,18 @@ export default {
   margin-left: 65%;
   text-align: center;
   margin-bottom: 4px;
+}
+.sheet-container-middle
+{
+  width:available;
+  max-width: border-box;
+}
+.vue-editor
+{
+  width: available;
+  height:880px;
+  display:table-cell;
+  max-width: 1314px;
 }
 
 </style>
