@@ -1,4 +1,5 @@
-import { app, BrowserWindow } from 'electron'
+import {app, BrowserWindow, Tray} from 'electron'
+const nativeImage = require('electron').nativeImage
 import '../renderer/store'
 import { ipcMain } from "electron";
 ipcMain.on('flash-noty', (event, data) => {
@@ -17,20 +18,27 @@ const winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:9080`
   : `file://${__dirname}/index.html`
 
+
 function createWindow () {
   /**
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    width: 430,
-    height: 700,
+    width: 526,
+    height: 742,
     minWidth : 386,
     minHeight : 360,
     useContentSize: true,
     resizable: true,
-    autoHideMenuBar: true
+    autoHideMenuBar: true,
     // Here
   })
+
+
+  var iconc = nativeImage.createFromPath('../renderer/assets/images/logo-img.png');
+  console.log("ICON");
+  mainWindow.setIcon(iconc);
+  // new Tray('.//renderer/images/logo-img.ico')
 
   mainWindow.loadURL(winURL)
 

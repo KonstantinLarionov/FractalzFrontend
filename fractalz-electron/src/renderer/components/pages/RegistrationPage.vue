@@ -1,84 +1,122 @@
 <template xmlns="http://www.w3.org/1999/html">
-  <div class="login-page-vertical">
-      <div class="form">
-        <div v-if="type === 'A'" class="register-form">
-          <p class="registration-title">Регистрация нового пользователя в системе Fractalz!</p>
-          <input type="text" v-model="login" placeholder="Логин"/>
-          <input type="text" v-model="email" placeholder="Почта"/>
-          <input type="password" v-model="password" placeholder="Пароль"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singIn()">Создать</button>
-          <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>
-        </div>
-        <div v-if="type === 'B'" class="login-form">
-          <input type="text" v-model="login" placeholder="Логин/Почта" />
-          <input type="password" v-model="password" placeholder="Пароль" @keyup.enter="logIn"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Войти</button>
-          <p class= "message">Нет аккаута? <a v-on:click="toCreateAccount()">Создать аккаунт</a></p>
-          <p class= "password-reset-text"> Забыли пароль?</p>
-          <p class= "password-resetbutton"> <a v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</a></p>
-<!--          <p class= "message">Хотите зарегистрироваться с ЭЦП? <a v-on:click="toCreateDSAccount()"><br>Создать аккаунт с ЭЦП</a></p>-->
-          <p class= "message">Войти с цифровым ключём<a v-on:click="toLogInDS()"><br>Войти с цифровым ключём</a> </p>
-        </div>
-        <div v-if="type === 'C'" class="password-reset-form">
-          <p class="reset-title"> Для восстановления доступа вам необходимо сбросить старый пароль и установить новый.
-            Для этого мы отправим вам на Email одноразовый код для подтверждения </p>
-          <input type="text" v-model="existEmail" placeholder="Ваш зарегестрированный Email"
-          @keyup.enter="toSendCode"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toSendCode()">Отправить код</button>
-          <input type="text" v-model="Authcode" placeholder="Ваш одноразовый код" />
-          <input type="password" v-model="newPassword1" placeholder="Новый пароль"/>
-          <input type="password" v-model="newPassword2" placeholder="Подтверждение нового пароля"
-          @keyup.enter="passReset"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="passReset()">Сохранить</button>
-          <p class= "password-resetbutton-back"> <a v-on:click="toBackFromReset()">Вернуться назад</a></p>
+  <div class="main-wrapper container-fluid">
+    <div class="row">
+      <img class=" box-angle" src="src/renderer/assets/images/img.png"/>
+    </div>
+    <div class="row justify-content-center">
+        <img class="logo " src="src/renderer/assets/images/logo-img.png" height="100" width="100"/>
+    </div>
+    <div class="container-fluid wrapper-login-form">
+      <div class="row justify-content-center">
+        <label class="title-login-form">Леттер.</label>
       </div>
-        <div v-if="type === 'D'" class="auth-code-form">
-          <p class="code-title">Почти готово!</p>
-          <p class="Code-code">Для потверждения введите код который отправлен на указанную вами почту.</p>
-          <input type="text" v-model="Authcode" placeholder="Код"
-          @keyup.enter="toValidateCode"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toValidateCode()">Подтвердить</button>
-          <p class="message"><a v-on:click="toCreateAccount()">Вернуться назад</a></p>
+      <div class="wrapper-input-form justify-content-between">
+        <div class="row mt-4 justify-content-center">
+          <input type="text" class="input-form" placeholder="Введите логин"/>
         </div>
-<!--        <div v-if="type === 'E'" class="digital-signature-registration">
-          <p class="registration-title">Регистрация нового пользователя в системе с цифровым ключём</p>
-          <input type="text" v-model="login" placeholder="Логин"/>
-          <input type="text" v-model="email" placeholder="Почта"/>
-          <input type="password" v-model="password" placeholder="Пароль"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singInDS()">Создать</button>
-          <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>
-
-        </div>-->
-        <div v-if="type === 'F'" class="digital-signature-login">
-          <p>Вход в учетную запись с использованием ЭЦП</p>
-
-          <div class="drag-n-drop" style="overflow: auto" id="drag-n-drop">
-            <form ref="fileform" class="space-drag-drop"  >
-                <span class="drop-files-title" >Перетащите файл сюда</span>
-              <div v-for="(file, key) in Files" class="file-listing-reg" >
-                <div class="remove-container">
-                  <a class="remove" @click="removeFile( key )">Удалить</a>
-                </div>
-                <img class="preview" v-bind:ref="'preview'+parseInt( key )"/>
-                {{ file.name }}
-              </div>
-            </form>
-          </div>
-
-          <p> Или </p>
-          <input type="file" content="Выберите в файловой системе" v-on:change="getFile($event)"  multiple ref="files">
-          <label> Существующие ключи доступа: </label>
-          <div class="keys-box">
-            <div class="keys-listing" v-for="keys in Keys" :key="keys.$id">
-              <DigitalKeysBox :key-name="keys" :api="api" :noty="noty"></DigitalKeysBox>
-            </div>
-          </div>
-
-          <p class="message" style="margin-top: 14px">
-            <a v-on:click="toSingIn(), toHideKeys()">Вернуться назад</a>
-          </p>
+        <div class="row mt-4 justify-content-center">
+          <input type="password" class="input-form" placeholder="Введите пароль"/>
         </div>
-     </div>
+        <div class="row mt-4 justify-content-center">
+          <button class="input-form button-form">Войти</button>
+        </div>
+        <div class="row mt-4 justify-content-center">
+          <label class="label-form">Нет аккаунта?</label>
+          <a class="href-form" href="">Создать аккаунт</a>
+        </div>
+        <div class="row justify-content-center">
+          <label class="label-form">Забыли пароль?</label>
+        </div>
+        <div class="row justify-content-center">
+          <a class="href-form" style="margin-top: -12px" href="">Нажмите чтобы восстановить доступ</a>
+        </div>
+        <div class="row mt-2 justify-content-center">
+          <a class="href-form" href="">Войти с цифровым ключём</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--      <div class="form">-->
+<!--        <div v-if="type === 'A'" class="register-form">-->
+<!--          <p class="registration-title">Регистрация нового пользователя в системе Fractalz!</p>-->
+<!--          <input type="text" v-model="login" placeholder="Логин"/>-->
+<!--          <input type="text" v-model="email" placeholder="Почта"/>-->
+<!--          <input type="password" v-model="password" placeholder="Пароль"/>-->
+<!--          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singIn()">Создать</button>-->
+<!--          <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>-->
+<!--        </div>-->
+<!--        <div v-if="type === 'B'" class="login-form">-->
+<!--          <input type="text" v-model="login" placeholder="Логин/Почта" />-->
+<!--          <input type="password" v-model="password" placeholder="Пароль" @keyup.enter="logIn"/>-->
+<!--          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Войти</button>-->
+<!--          <p class= "message">Нет аккаута? <a v-on:click="toCreateAccount()">Создать аккаунт</a></p>-->
+<!--          <p class= "password-reset-text"> Забыли пароль?</p>-->
+<!--          <p class= "password-resetbutton"> <a v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</a></p>-->
+<!--&lt;!&ndash;          <p class= "message">Хотите зарегистрироваться с ЭЦП? <a v-on:click="toCreateDSAccount()"><br>Создать аккаунт с ЭЦП</a></p>&ndash;&gt;-->
+<!--          <p class= "message">Войти с цифровым ключём<a v-on:click="toLogInDS()"><br>Войти с цифровым ключём</a> </p>-->
+<!--        </div>-->
+<!--        <div v-if="type === 'C'" class="password-reset-form">-->
+<!--          <p class="reset-title"> Для восстановления доступа вам необходимо сбросить старый пароль и установить новый.-->
+<!--            Для этого мы отправим вам на Email одноразовый код для подтверждения </p>-->
+<!--          <input type="text" v-model="existEmail" placeholder="Ваш зарегестрированный Email"-->
+<!--          @keyup.enter="toSendCode"/>-->
+<!--          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toSendCode()">Отправить код</button>-->
+<!--          <input type="text" v-model="Authcode" placeholder="Ваш одноразовый код" />-->
+<!--          <input type="password" v-model="newPassword1" placeholder="Новый пароль"/>-->
+<!--          <input type="password" v-model="newPassword2" placeholder="Подтверждение нового пароля"-->
+<!--          @keyup.enter="passReset"/>-->
+<!--          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="passReset()">Сохранить</button>-->
+<!--          <p class= "password-resetbutton-back"> <a v-on:click="toBackFromReset()">Вернуться назад</a></p>-->
+<!--      </div>-->
+<!--        <div v-if="type === 'D'" class="auth-code-form">-->
+<!--          <p class="code-title">Почти готово!</p>-->
+<!--          <p class="Code-code">Для потверждения введите код который отправлен на указанную вами почту.</p>-->
+<!--          <input type="text" v-model="Authcode" placeholder="Код"-->
+<!--          @keyup.enter="toValidateCode"/>-->
+<!--          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toValidateCode()">Подтвердить</button>-->
+<!--          <p class="message"><a v-on:click="toCreateAccount()">Вернуться назад</a></p>-->
+<!--        </div>-->
+<!--&lt;!&ndash;        <div v-if="type === 'E'" class="digital-signature-registration">-->
+<!--          <p class="registration-title">Регистрация нового пользователя в системе с цифровым ключём</p>-->
+<!--          <input type="text" v-model="login" placeholder="Логин"/>-->
+<!--          <input type="text" v-model="email" placeholder="Почта"/>-->
+<!--          <input type="password" v-model="password" placeholder="Пароль"/>-->
+<!--          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singInDS()">Создать</button>-->
+<!--          <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>-->
+
+<!--        </div>&ndash;&gt;-->
+<!--        <div v-if="type === 'F'" class="digital-signature-login">-->
+<!--          <p>Вход в учетную запись с использованием ЭЦП</p>-->
+
+<!--          <div class="drag-n-drop" style="overflow: auto" id="drag-n-drop">-->
+<!--            <form ref="fileform" class="space-drag-drop"  >-->
+<!--                <span class="drop-files-title" >Перетащите файл сюда</span>-->
+<!--              <div v-for="(file, key) in Files" class="file-listing-reg" >-->
+<!--                <div class="remove-container">-->
+<!--                  <a class="remove" @click="removeFile( key )">Удалить</a>-->
+<!--                </div>-->
+<!--                <img class="preview" v-bind:ref="'preview'+parseInt( key )"/>-->
+<!--                {{ file.name }}-->
+<!--              </div>-->
+<!--            </form>-->
+<!--          </div>-->
+
+<!--          <p> Или </p>-->
+<!--          <input type="file" content="Выберите в файловой системе" v-on:change="getFile($event)"  multiple ref="files">-->
+<!--          <label> Существующие ключи доступа: </label>-->
+<!--          <div class="keys-box">-->
+<!--            <div class="keys-listing" v-for="keys in Keys" :key="keys.$id">-->
+<!--              <DigitalKeysBox :key-name="keys" :api="api" :noty="noty"></DigitalKeysBox>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <p class="message" style="margin-top: 14px">-->
+<!--            <a v-on:click="toSingIn(), toHideKeys()">Вернуться назад</a>-->
+<!--          </p>-->
+<!--        </div>-->
+<!--     </div>-->
   </div>
 </template>
 
@@ -420,178 +458,73 @@ export default {
 
 }
 </script>
-
 <style>
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+.main-wrapper{
+  background-color: var(--color-gray);
+  width: 100vw;
+  height: 100vh;
+}
 
-.login-page-vertical
-{
+.box-angle {
   z-index: 0;
-  width:360px;
-  display: table;
-  margin: 0% auto;
-  vertical-align: middle;
+  width: 100%;
 }
-.form
-{
+.logo{
   z-index: 1;
-  background: #FFFFFF;
-  max-width: 360px;
-  margin: 10% auto auto auto;
-  padding: 35px;
-
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin-top: -65px;
 }
-.form input
-{
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-.keys-box
-{
-  border-style: dashed;
-  border-color: #0c675e;
-  background-color: #e5e5e5;
-}
-.form button
-{
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #009788;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  cursor: pointer;
-  margin: 0px 0px 15px;
-}
-.form .registration-title
-{
-  color: #009788;
-  font-size: 16px;
-}
-.form .code-title
-{
-  color: #009788;
-  font-size: 18px;
-}
-.form .message
-{
-  margin: 0px 15px 15px;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-.form .message a
-{
-  color: #009788;
-  cursor: pointer;
-  text-decoration: none;
-}
-.form .password-reset-text
-{
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-.form .reset-title{
-
-  margin: 0px 15px 15px;
-  color: #000000;
-  font-size: 15px;
-}
-.form .password-resetbutton
-{
-  color: #009788;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 12px;
-}
-
-.form .password-resetbutton-back
-{
-  color: #009788;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 12px;
-  margin: 15px 15px 15px;
-}
-.modal
-{
-  width: 450px;
-  height: 450px;
-}
-.remove-container
-{
-  text-align: right;
-}
-.remove
-{
-  text-align: right;
-  color: #9e1a1a;
-  cursor: pointer;
-}
-
-
-.drag-n-drop
-{
-  position: relative;
-  display: flex;
-  padding: 10px 10px 10px 10px;
-  height: 270px;
+.wrapper-login-form{
 
 }
-.space-drag-drop
-{
-  border-color: #009788;
-  border-width: 2px;
-  background-color: #e5e5e5;
-  height: 100%;
-  width: 100%;
-  border-style: dashed;
-  display: table;
-  text-align: center;
+.title-login-form{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 52px;
+  color: var(--color-dark-blue);
 }
-
-.drop-files-title
-{
-  font-family: "Dosis", Arial, Helvetica, sans-serif;
-  font-size: 25px;
-  color: #0c675e;
-  position: relative;
-  display: grid;
-  vertical-align: middle;
-  horiz-align: center;
-}
-
-.modal-default-button
-{
-  font-size: 12px;
-  vertical-align: center;
-  horiz-align: right;
-  position: center;
-  display: table-cell;
-
-}
-div.file-listing-reg{
-  width: 250px;
-  margin: auto;
+.input-form{
   padding: 10px;
-  border-bottom: 1px solid;
-  border-color: #0c675e;
+  text-align: center;
+  color: var(--color-dark-blue);
+  background-color: var(--color-white);
+  border: 0px;
+  width: 340px;
+  border-radius: var(--radius-max);
 }
-div.file-listing img{
-  height: 10px;
+.button-form{
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+  border: none;
+  transition: .2s;
+}
+.label-form{
+  font-size: 13px;
+  color: var(--color-ultra-dark-gray);
+}
+.href-form{
+  margin-left: 5px;
+  font-size: 13px;
+  color: var(--color-dark-blue);
+}
+.button-form:hover{
+  box-shadow: var(--shadow-down-4);
 }
 
 
+button:active, button:focus {
+  outline: none;
+}
+button::-moz-focus-inner {
+  border: 0;
+}
+input:active, input:focus {
+  outline: none;
+}
+input::-moz-focus-inner {
+  border: 0;
+}
+::placeholder { /* Most modern browsers support this now. */
+  color:   var(--color-dark-blue);
+}
 </style>

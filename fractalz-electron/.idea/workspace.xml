@@ -2,21 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62c9c083-0caf-47be-a0b5-6ab81b039c16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/css/main-colors-text.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/css/main-variables.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-Black.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-BlackItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-LightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-MediumItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-Thin.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/fonts/roboto/Roboto-ThinItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/images/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/images/logo-img.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/assets/css/main-variables.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/css/main-variables.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/assets/images/logo-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/assets/images/logo-img.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/images/logo-img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/pages/RegistrationPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/pages/RegistrationPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +68,7 @@
       <recent name="C:\Users\kosty\RiderProjects\FractalzFrontend\fractalz-electron\src\renderer\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\.rider\Fractalz\Frontend\fractalz-electron\src\renderer\assets\images" />
       <recent name="D:\.rider\Fractalz\Frontend\fractalz-electron\src\renderer\assets\fonts\roboto" />
     </key>
   </component>
@@ -95,7 +90,9 @@
       <workItem from="1659323408781" duration="1015000" />
       <workItem from="1659331407336" duration="6934000" />
       <workItem from="1659419570616" duration="7958000" />
-      <workItem from="1662627486232" duration="5257000" />
+      <workItem from="1662627486232" duration="16470000" />
+      <workItem from="1662695401429" duration="3772000" />
+      <workItem from="1663040921089" duration="598000" />
     </task>
     <servers />
   </component>
