@@ -59,7 +59,8 @@ export default {
   data()
   {
     return{
-      CreatedBookInf:null
+      CreatedBookInf:null,
+      SectId:[],
     }
   },
   mounted()
@@ -69,12 +70,23 @@ export default {
   },
   methods:
       {
+        toGetSection: async function()
+        {
+          let get = await this.api.GetSection(Vue.$cookies.get('UserInfo').id, this.id).catch(response => {console.log(response.response.data)})
+          if(get.data.success)
+          {
+            for(let i=0;i < get.data.bookSectionsList.$values.length; i++)
+            {
+              this.SectId.push(get.data.bookSectionsList.$values[i])
+            }
+          }
+        },
         toDeleteBook:async function()
         {
           let result = await this.api.DeleteBook(this.id).catch(response => {console.log(response.response.data)})
           if(result.data.success)
           {
-            this.toGetBooks()
+            await this.toGetBooks()
           }
         },
         toGetBooks: async function()

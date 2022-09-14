@@ -31,7 +31,6 @@
         </div>
 
       </section>
-
       <div class="section-card">
         <button class="button-add-section" v-on:click="showSectModal">
           Добавить новый раздел
@@ -42,7 +41,6 @@
             @close-sect="sectModal=false"
             @toGetSectionModal="toGetSectionModal($event)">
         </section-modal>
-
 
         <div class="books-listing" >
           <div class="sect-list" v-for="content in SectionContent" :key="content.$id">
