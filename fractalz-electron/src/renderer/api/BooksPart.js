@@ -66,7 +66,7 @@ export default class BooksPart extends BasePart {
     }
 
     _deleteBookModel = function (id) {
-        return "?id=" + id
+        return "?BookId=" + id
 
     }
 

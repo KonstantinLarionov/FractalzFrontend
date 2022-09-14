@@ -1,9 +1,9 @@
 <template>
   <div class="page-container">
+
     <div class="books-route-book" id="book-route"></div>
 
       <section class="box-container">
-
       <section class="book-card">
         <div class="button-add-book" v-on:click="showModal">
           <label class="book-label" > BookAdd</label>
