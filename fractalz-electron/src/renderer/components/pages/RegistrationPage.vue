@@ -6,117 +6,247 @@
     <div class="row justify-content-center">
         <img class="logo " src="src/renderer/assets/images/logo-img.png" height="100" width="100"/>
     </div>
-    <div class="container-fluid wrapper-login-form">
+    <div v-if="type === 'A'" class="container-fluid">
+
       <div class="row justify-content-center">
-        <label class="title-login-form">Леттер.</label>
+        <label class="title-registration-form">Регистрация в Леттер</label>
       </div>
       <div class="wrapper-input-form justify-content-between">
-        <div class="row mt-4 justify-content-center">
-          <input type="text" class="input-form" placeholder="Введите логин"/>
+
+        <div class="row mt-4 justify-content-center placeholder-container">
+          <input type="text" class="input-form" placeholder=" "/>
+          <label v-model="login">Введите логин</label>
         </div>
-        <div class="row mt-4 justify-content-center">
-          <input type="password" class="input-form" placeholder="Введите пароль"/>
+
+        <div class="row mt-4 justify-content-center placeholder-container">
+          <input type="password" class="input-form" placeholder=" "/>
+          <label v-model="email">Введите почту</label>
         </div>
-        <div class="row mt-4 justify-content-center">
-          <button class="input-form button-form">Войти</button>
+
+        <div class="row mt-4 justify-content-center placeholder-container">
+          <input type="password" class="input-form" placeholder=" "/>
+          <label v-model="email">Введите почту</label>
         </div>
+
+        <div class="row mt-4 justify-content-center placeholder-container">
+          <input type="password" class="input-form" placeholder=" "/>
+          <label v-model="password">Введите пароль</label>
+        </div>
+
+        <div class="row mt-4 justify-content-center">
+          <button class="input-form button-form" v-on:click="singIn()">Создать</button>
+        </div>
+
+        <div class="row mt-4 justify-content-center">
+          <label class="label-form">Уже усть аккаунт?</label>
+          <label class="href-form" href=""  v-on:click="toSingIn()">Войти</label>
+        </div>
+      </div>
+
+    </div>
+    <div v-if="type === 'B'" class="container-fluid wrapper-login-form">
+
+      <div class="row justify-content-center">
+        <label class="title-login-form">Леттер</label>
+      </div>
+      <div class="wrapper-input-form justify-content-between">
+
+        <div class="row mt-4 justify-content-center placeholder-container">
+          <input type="text" class="input-form" placeholder=" "/>
+          <label v-model="login">Введите логин</label>
+        </div>
+
+        <div class="row mt-4 justify-content-center placeholder-container">
+          <input type="password" class="input-form" placeholder=" "/>
+          <label v-model="password">Введите пароль</label>
+        </div>
+
+        <div class="row mt-4 justify-content-center">
+          <button class="input-form button-form" v-on:click="logIn()">Войти</button>
+        </div>
+
         <div class="row mt-4 justify-content-center">
           <label class="label-form">Нет аккаунта?</label>
-          <a class="href-form" href="">Создать аккаунт</a>
+          <label class="href-form" v-on:click="toCreateAccount()">Создать аккаунт</label>
         </div>
+
         <div class="row justify-content-center">
           <label class="label-form">Забыли пароль?</label>
         </div>
         <div class="row justify-content-center">
-          <a class="href-form" style="margin-top: -12px" href="">Нажмите чтобы восстановить доступ</a>
+          <label class="href-form" style="margin-top: -12px" href="" v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</label>
         </div>
+
         <div class="row mt-2 justify-content-center">
-          <a class="href-form" href="">Войти с цифровым ключём</a>
+          <label class="href-form" href="" v-on:click="toLogInDS()">Войти с цифровым ключём</label>
         </div>
 
       </div>
 
     </div>
+    <div v-if="type === 'C'" class="container-fluid">
 
-    <!--      <div class="form">-->
-<!--        <div v-if="type === 'A'" class="register-form">-->
-<!--          <p class="registration-title">Регистрация нового пользователя в системе Fractalz!</p>-->
-<!--          <input type="text" v-model="login" placeholder="Логин"/>-->
-<!--          <input type="text" v-model="email" placeholder="Почта"/>-->
-<!--          <input type="password" v-model="password" placeholder="Пароль"/>-->
-<!--          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singIn()">Создать</button>-->
-<!--          <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>-->
-<!--        </div>-->
-<!--        <div v-if="type === 'B'" class="login-form">-->
-<!--          <input type="text" v-model="login" placeholder="Логин/Почта" />-->
-<!--          <input type="password" v-model="password" placeholder="Пароль" @keyup.enter="logIn"/>-->
-<!--          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Войти</button>-->
-<!--          <p class= "message">Нет аккаута? <a v-on:click="toCreateAccount()">Создать аккаунт</a></p>-->
-<!--          <p class= "password-reset-text"> Забыли пароль?</p>-->
-<!--          <p class= "password-resetbutton"> <a v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</a></p>-->
-<!--&lt;!&ndash;          <p class= "message">Хотите зарегистрироваться с ЭЦП? <a v-on:click="toCreateDSAccount()"><br>Создать аккаунт с ЭЦП</a></p>&ndash;&gt;-->
-<!--          <p class= "message">Войти с цифровым ключём<a v-on:click="toLogInDS()"><br>Войти с цифровым ключём</a> </p>-->
-<!--        </div>-->
-<!--        <div v-if="type === 'C'" class="password-reset-form">-->
-<!--          <p class="reset-title"> Для восстановления доступа вам необходимо сбросить старый пароль и установить новый.-->
-<!--            Для этого мы отправим вам на Email одноразовый код для подтверждения </p>-->
-<!--          <input type="text" v-model="existEmail" placeholder="Ваш зарегестрированный Email"-->
-<!--          @keyup.enter="toSendCode"/>-->
-<!--          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toSendCode()">Отправить код</button>-->
-<!--          <input type="text" v-model="Authcode" placeholder="Ваш одноразовый код" />-->
-<!--          <input type="password" v-model="newPassword1" placeholder="Новый пароль"/>-->
-<!--          <input type="password" v-model="newPassword2" placeholder="Подтверждение нового пароля"-->
-<!--          @keyup.enter="passReset"/>-->
-<!--          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="passReset()">Сохранить</button>-->
-<!--          <p class= "password-resetbutton-back"> <a v-on:click="toBackFromReset()">Вернуться назад</a></p>-->
-<!--      </div>-->
-<!--        <div v-if="type === 'D'" class="auth-code-form">-->
-<!--          <p class="code-title">Почти готово!</p>-->
-<!--          <p class="Code-code">Для потверждения введите код который отправлен на указанную вами почту.</p>-->
-<!--          <input type="text" v-model="Authcode" placeholder="Код"-->
-<!--          @keyup.enter="toValidateCode"/>-->
-<!--          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toValidateCode()">Подтвердить</button>-->
-<!--          <p class="message"><a v-on:click="toCreateAccount()">Вернуться назад</a></p>-->
-<!--        </div>-->
-<!--&lt;!&ndash;        <div v-if="type === 'E'" class="digital-signature-registration">-->
-<!--          <p class="registration-title">Регистрация нового пользователя в системе с цифровым ключём</p>-->
-<!--          <input type="text" v-model="login" placeholder="Логин"/>-->
-<!--          <input type="text" v-model="email" placeholder="Почта"/>-->
-<!--          <input type="password" v-model="password" placeholder="Пароль"/>-->
-<!--          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singInDS()">Создать</button>-->
-<!--          <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>-->
+      <div class="col justify-content-center">
+        <label class="row title-recovery-form justify-content-center">
+          Для восстановления доступа вам<br>необходимо сбросить старый пароль и<br>установить новый.
+        </label>
+        <label class="row title-recovery-form justify-content-center">
+          Для этого мы отправим вам на Email<br>одноразовый код для подтверждения
+        </label>
+      </div>
+      <div class="wrapper-input-form justify-content-between">
 
-<!--        </div>&ndash;&gt;-->
-<!--        <div v-if="type === 'F'" class="digital-signature-login">-->
-<!--          <p>Вход в учетную запись с использованием ЭЦП</p>-->
+        <div class="row mt-4 justify-content-center placeholder-container">
+          <input type="text" class="input-form" placeholder=" "/>
+          <label v-model="existEmail">Введите почту</label>
+        </div>
 
-<!--          <div class="drag-n-drop" style="overflow: auto" id="drag-n-drop">-->
-<!--            <form ref="fileform" class="space-drag-drop"  >-->
-<!--                <span class="drop-files-title" >Перетащите файл сюда</span>-->
-<!--              <div v-for="(file, key) in Files" class="file-listing-reg" >-->
-<!--                <div class="remove-container">-->
-<!--                  <a class="remove" @click="removeFile( key )">Удалить</a>-->
-<!--                </div>-->
-<!--                <img class="preview" v-bind:ref="'preview'+parseInt( key )"/>-->
-<!--                {{ file.name }}-->
-<!--              </div>-->
-<!--            </form>-->
-<!--          </div>-->
+        <div class="row mt-4 justify-content-center">
+          <button class="input-form button-form" v-on:click="toSendCode()">Отправить код</button>
+        </div>
 
-<!--          <p> Или </p>-->
-<!--          <input type="file" content="Выберите в файловой системе" v-on:change="getFile($event)"  multiple ref="files">-->
-<!--          <label> Существующие ключи доступа: </label>-->
-<!--          <div class="keys-box">-->
-<!--            <div class="keys-listing" v-for="keys in Keys" :key="keys.$id">-->
-<!--              <DigitalKeysBox :key-name="keys" :api="api" :noty="noty"></DigitalKeysBox>-->
-<!--            </div>-->
-<!--          </div>-->
+        <div class="row mt-2 justify-content-center">
+          <label class="href-form" href="" v-on:click="toBackFromReset()">Вернуться назад</label>
+        </div>
+      </div>
+    </div>
+    <div v-if="type === 'D'" class="container-fluid">
 
-<!--          <p class="message" style="margin-top: 14px">-->
-<!--            <a v-on:click="toSingIn(), toHideKeys()">Вернуться назад</a>-->
-<!--          </p>-->
-<!--        </div>-->
-<!--     </div>-->
+      <div class="row justify-content-center">
+        <label class="title-recovery-account-form">Восстановление<br>аккаунта</label>
+      </div>
+      <div class="wrapper-input-form justify-content-between">
+
+        <div class="row mt-4 justify-content-center placeholder-container">
+          <input type="text" class="input-form" placeholder=" "/>
+          <label v-model="Authcode">Ваш одноразовый код</label>
+        </div>
+
+        <div class="row mt-4 justify-content-center placeholder-container">
+          <input type="password" class="input-form" placeholder=" "/>
+          <label v-model="newPassword1">Введите новый пароль</label>
+        </div>
+
+        <div class="row mt-4 justify-content-center placeholder-container">
+          <input type="password" class="input-form" placeholder=" "/>
+          <label v-model="newPassword2">Подтвердите новый пароль</label>
+        </div>
+
+        <div class="row mt-4 justify-content-center">
+          <button class="input-form button-form" v-on:click="passReset()">Сохранить</button>
+        </div>
+
+        <div class="row mt-2 justify-content-center">
+          <label class="href-form" href="" v-on:click="toBackFromReset()">Вернуться назад</label>
+        </div>
+
+      </div>
+
+    </div>
+    <div v-if="type === 'F'" class="container-fluid wrapper-login-form">
+
+      <div class="justify-content-center">
+
+        <div class="row mt-2 justify-content-center">
+          <div class="ecp-drag-n-drop-zone">
+            <label class="ecp-form">Перетащите файл подписи сюда</label>
+          </div>
+        </div>
+
+        <div class="row mt-4 justify-content-center">
+          <label class="label-form">Или</label>
+        </div>
+
+        <div class="ecp-select-form">
+          <label class="ecp-label">Выберите файл -> </label>
+          <button class="button-form ecp-input-form" v-on:click="singIn()">...</button>
+        </div>
+
+        <div class="row mt-2 justify-content-center">
+          <label class="href-form" href="" v-on:click="toBackFromReset()">Вернуться назад</label>
+        </div>
+      </div>
+
+    </div>
+<!--          <div class="form">
+        <div v-if="type === 'A'" class="register-form">
+          <p class="registration-title">Регистрация нового пользователя в системе Fractalz!</p>
+          <input type="text" v-model="login" placeholder="Логин"/>
+          <input type="text" v-model="email" placeholder="Почта"/>
+          <input type="password" v-model="password" placeholder="Пароль"/>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singIn()">Создать</button>
+          <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>
+        </div>-->
+<!--        <div v-if="type === 'B'" class="login-form">
+          <input type="text" v-model="login" placeholder="Логин/Почта" />
+          <input type="password" v-model="password" placeholder="Пароль" @keyup.enter="logIn"/>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Войти</button>
+          <p class= "message">Нет аккаута? <a v-on:click="toCreateAccount()">Создать аккаунт</a></p>
+          <p class= "password-reset-text"> Забыли пароль?</p>
+          <p class= "password-resetbutton"> <a v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</a></p>
+&lt;!&ndash;          <p class= "message">Хотите зарегистрироваться с ЭЦП? <a v-on:click="toCreateDSAccount()"><br>Создать аккаунт с ЭЦП</a></p>&ndash;&gt;
+          <p class= "message">Войти с цифровым ключём<a v-on:click="toLogInDS()"><br>Войти с цифровым ключём</a> </p>
+        </div>-->
+<!--        <div v-if="type === 'C'" class="password-reset-form">
+          <p class="reset-title"> Для восстановления доступа вам необходимо сбросить старый пароль и установить новый.
+            Для этого мы отправим вам на Email одноразовый код для подтверждения </p>
+          <input type="text" v-model="existEmail" placeholder="Ваш зарегестрированный Email"
+          @keyup.enter="toSendCode"/>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toSendCode()">Отправить код</button>
+          <input type="text" v-model="Authcode" placeholder="Ваш одноразовый код" />
+          <input type="password" v-model="newPassword1" placeholder="Новый пароль"/>
+          <input type="password" v-model="newPassword2" placeholder="Подтверждение нового пароля"
+          @keyup.enter="passReset"/>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="passReset()">Сохранить</button>
+          <p class= "password-resetbutton-back"> <a v-on:click="toBackFromReset()">Вернуться назад</a></p>
+      </div>-->
+<!--        <div v-if="type === 'D'" class="auth-code-form">
+          <p class="code-title">Почти готово!</p>
+          <p class="Code-code">Для потверждения введите код который отправлен на указанную вами почту.</p>
+          <input type="text" v-model="Authcode" placeholder="Код"
+          @keyup.enter="toValidateCode"/>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toValidateCode()">Подтвердить</button>
+          <p class="message"><a v-on:click="toCreateAccount()">Вернуться назад</a></p>
+        </div>-->
+<!--        <div v-if="type === 'E'" class="digital-signature-registration">
+          <p class="registration-title">Регистрация нового пользователя в системе с цифровым ключём</p>
+          <input type="text" v-model="login" placeholder="Логин"/>
+          <input type="text" v-model="email" placeholder="Почта"/>
+          <input type="password" v-model="password" placeholder="Пароль"/>
+          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singInDS()">Создать</button>
+          <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>
+
+        </div>-->
+<!--        <div v-if="type === 'F'" class="digital-signature-login">
+          <p>Вход в учетную запись с использованием ЭЦП</p>
+
+          <div class="drag-n-drop" style="overflow: auto" id="drag-n-drop">
+            <form ref="fileform" class="space-drag-drop"  >
+                <span class="drop-files-title" >Перетащите файл сюда</span>
+              <div v-for="(file, key) in Files" class="file-listing-reg" >
+                <div class="remove-container">
+                  <a class="remove" @click="removeFile( key )">Удалить</a>
+                </div>
+                <img class="preview" v-bind:ref="'preview'+parseInt( key )"/>
+                {{ file.name }}
+              </div>
+            </form>
+          </div>
+
+          <p> Или </p>
+          <input type="file" content="Выберите в файловой системе" v-on:change="getFile($event)"  multiple ref="files">
+          <label> Существующие ключи доступа: </label>
+          <div class="keys-box">
+            <div class="keys-listing" v-for="keys in Keys" :key="keys.$id">
+              <DigitalKeysBox :key-name="keys" :api="api" :noty="noty"></DigitalKeysBox>
+            </div>
+          </div>
+
+          <p class="message" style="margin-top: 14px">
+            <a v-on:click="toSingIn(), toHideKeys()">Вернуться назад</a>
+          </p>
+        </div>
+     </div>-->
   </div>
 </template>
 
@@ -172,20 +302,26 @@ export default {
 
   methods: {
     toCreateAccount : function () {
-      return this.type = 'A';
+      this.type = 'A';
+      return false;
     },
+
     toCreateDSAccount: function (){
       return this.type = 'E';
     },
+
     toSingIn : function () {
       return this.type = 'B';
     },
+
     toResetPassword : function(){
       return this.type = 'C';
     },
+
     toBackFromReset:function(){
       return this.type = 'B';
     },
+
     toLogInDS:function (){
       this.type = 'F'
       if (this.type === 'F')
@@ -194,9 +330,11 @@ export default {
         setTimeout(this.toDetermine, 100)
       }
     },
+
     toSendCode: async function() {
       var result = await this.api.SendCode(this.email, this.GenRequest.true)
     },
+
     toDisplayKeys: async function()
     {
       const fs = require('fs');
@@ -381,7 +519,7 @@ export default {
       this.noty.Show({title : "Выход из системы Fractalz", message : "Вы успешно покинули систему!\rЖдем вас снова."});
     },
     logIn : async function () {
-      var result = await this.api
+/*      var result = await this.api
           .Login(this.login, this.password)
           .catch(response => {
             this.noty.Show({
@@ -400,7 +538,8 @@ export default {
       else
       {
         this.noty.Show({title : "Вход в систему Fractalz", message : "Произошла ошибка.\rПроверьте правильность данных!"});
-      }
+      }*/
+      await this.$router.push({ name: 'DialogPage' })
     },
    connectWebSocket : function (userId) {
       if(this.fileUpload)
@@ -459,6 +598,62 @@ export default {
 }
 </script>
 <style>
+.placeholder-container {
+  position: relative;
+}
+.input-form{
+  padding: 10px;
+  text-align: center;
+  color: var(--color-dark-blue);
+  background-color: var(--color-white);
+  border: 0px;
+  width: 340px;
+  border-radius: var(--radius-max);
+}
+.ecp-input-form{
+  padding: 10px;
+  text-align: center;
+  color: var(--color-dark-blue);
+  background-color: var(--color-white);
+  border: 0px;
+  width: 140px;
+  border-radius: var(--radius-max);
+}
+
+.ecp-form{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  color: var(--color-dark-blue);
+}
+
+.ecp-label{
+  padding-right: 60px;
+}
+
+.ecp-select-form{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  vertical-align: middle;
+  text-align: center;
+  pointer-events: none;
+  color: var(--color-dark-blue);
+}
+
+.placeholder-container label {
+  transition: 0.2s;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  pointer-events: none;
+  border-radius: var(--radius-max);
+  color: var(--color-dark-blue);
+}
+
 .main-wrapper{
   background-color: var(--color-gray);
   width: 100vw;
@@ -468,10 +663,14 @@ export default {
 .box-angle {
   z-index: 0;
   width: 100%;
+  pointer-events: none;
+  user-select: none;
 }
 .logo{
   z-index: 1;
   margin-top: -65px;
+  pointer-events: none;
+  user-select: none;
 }
 .wrapper-login-form{
 
@@ -483,15 +682,32 @@ export default {
   font-size: 52px;
   color: var(--color-dark-blue);
 }
-.input-form{
-  padding: 10px;
-  text-align: center;
+
+.title-registration-form{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
   color: var(--color-dark-blue);
-  background-color: var(--color-white);
-  border: 0px;
-  width: 340px;
-  border-radius: var(--radius-max);
 }
+
+.title-recovery-form{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--color-dark-blue);
+  text-align: center;
+}
+
+.title-recovery-account-form{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  color: var(--color-dark-blue);
+}
+
 .button-form{
   background-color: var(--color-dark-blue);
   color: var(--color-white);
@@ -506,12 +722,36 @@ export default {
   margin-left: 5px;
   font-size: 13px;
   color: var(--color-dark-blue);
+  cursor: pointer;
 }
 .button-form:hover{
   box-shadow: var(--shadow-down-4);
 }
 
+.ecp-drag-n-drop-zone
+{
+  display: table;
+  text-align: center;
+  margin-top: 15px;
+  position: relative;
+  height: 270px;
+  width: 340px;
+  border-color: var(--color-dark-blue);
+  border-width: 2px;
+  background-color: var(--color-gray);
+  border-style: dashed;
+}
 
+.justify-content-center input:focus + label,
+.justify-content-center input:not(:placeholder-shown) + label{
+
+  top: -10px;
+  border-radius: var(--radius-max);
+  color: var(--color-white);
+  font-size: 11px;
+  background-color: var(--color-dark-blue);
+  padding: 2px 10px;
+}
 button:active, button:focus {
   outline: none;
 }

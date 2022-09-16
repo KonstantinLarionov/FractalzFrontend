@@ -228,7 +228,7 @@ export default {
   display: flex;
   padding: 10px 10px 10px 10px;
   height: 270px;
-
+  width: 340px;
   }
 .space-drag-drop
 {
