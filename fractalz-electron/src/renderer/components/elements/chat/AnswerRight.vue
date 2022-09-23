@@ -31,17 +31,33 @@
       <div v-for="content in File" :key="content.$id" style="horiz-align: left">
         <unknown-file :name="content.fileName" :path="content.path" :file-id="content.id" :dialog-id="dialogId"/>
       </div>
-      {{Message}}
+      {{this.Message}}
     </div>
+    <div v-on="getMessageReaction()">{{this.LikeCheck}}</div>
+    <div class="reactions">
+      <select @change="messageReaction($event)">
+        <option v-on="deleteMessageReaction()"></option>
+        <option value=0>👍️</option>
+        <option value=1>😄️</option>
+        <option value=2>😆️</option>
+        <option value=3>❤️</option>
+      </select>
+    </div>
+
     <div class="time">{{DateSend}}</div>
   </div>
 </template>
 
 <script>
 import UnknownFile from "./filesextensions/UnknownFile";
+import ChatPart from "../../../api/ChatPart";
+import ChatPage from "../../../components/pages/ChatPage";
+
 import Vue from "vue";
+
 Vue.component('unknown-file',UnknownFile)
 export default {
+
   props : {
     Avatar: null,
     Status : null,
@@ -51,11 +67,74 @@ export default {
     DateSend: null,
     api:Object,
     dialogId:null,
+    Reactions: null,
+    messageId: null
   },
   name: "AnswerRight",
   mounted()
   {
-    console.log(this.DialogId)
+    this.api = new ChatPart(this.$http);
+    console.log(this.DialogId);
+  },
+  methods:{
+    messageReaction: async function(event) {
+      this.selected = event.target.value;
+      var obj = {
+        idMessage: this.messageId,
+        idUser: Vue.$cookies.get('UserInfo').id,
+        emojiType: parseInt(this.selected)
+      };
+      var result = await this.api
+          .ReactionMessage(obj)
+          .catch(response => {
+            this.noty.Show({
+              title: this.notyHeader,
+              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+            });
+          });
+      if (result.data.success) {
+        console.log(result)
+      } else {
+        this.noty.Show({title: this.notyHeader, message: "Ошибка изменения сообщения"});
+      }
+    },
+    getMessageReaction: async function(){
+      this.LikeCheck = "";
+      for (let n = 0; n<=this.Reactions.length; n++){
+        if (this.Reactions[n].emojiType == 0){this.LikeCheck += "👍️"};
+        if (this.Reactions[n].emojiType == 1){this.LikeCheck += "😄️"};
+        if (this.Reactions[n].emojiType == 2){this.LikeCheck += "😆️"};
+        if (this.Reactions[n].emojiType == 3){this.LikeCheck += "❤️"};
+        //this.LikeCheck += this.Reactions[n].userId;
+      }
+      var result = await this.api
+          .GetMessages(this.Reactions[0].userId) // .ReactionMessage
+          .catch(response => {
+            this.noty.Show({
+              title: this.notyHeader,
+              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+            });
+          });
+    },
+    deleteMessageReaction: async function() {
+      var obj = {
+        idMessage: this.messageId,
+        idUser: Vue.$cookies.get('UserInfo').id
+      };
+      var result = await this.api
+          .DeleteReactionMessage(obj)
+          .catch(response => {
+            this.noty.Show({
+              title: this.notyHeader,
+              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+            });
+          });
+      if (result.data.success) {
+        console.log(result)
+      } else {
+        this.noty.Show({title: this.notyHeader, message: "Ошибка изменения сообщения"});
+      }
+    }
   }
 }
 </script>

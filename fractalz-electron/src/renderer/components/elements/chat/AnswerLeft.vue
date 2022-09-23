@@ -32,6 +32,16 @@
       </div>
       {{Message}}
     </div>
+    <div v-on="getMessageReaction()">{{this.LikeCheck}}</div>
+    <div class="reactions">
+      <select @change="messageReaction($event)">
+        <option></option>
+        <option value=0>👍️</option>
+        <option value=1>😄️</option>
+        <option value=2>😆️</option>
+        <option value=3>❤️</option>
+      </select>
+    </div>
     <div class="time">{{DateSend}}</div>
   </div>
 </template>
@@ -39,6 +49,7 @@
 <script>
 import UnknownFile from "./filesextensions/UnknownFile";
 import Vue from "vue";
+import ChatPart from "../../../api/ChatPart";
 Vue.component('unknown-file',UnknownFile)
 export default {
   props : {
@@ -50,10 +61,57 @@ export default {
     DateSend: null,
     api:Object,
     dialogId:null,
+    Reactions: null,
+    messageId: null
   },
   name: "AnswerLeft",
   mounted()
   {
+    this.api = new ChatPart(this.$http);
+    console.log(this.DialogId);
+  },
+  methods:{
+    messageReaction: async function(event) {
+      this.selected = event.target.value;
+      var obj = {
+        idMessage: this.messageId,
+        idUser: Vue.$cookies.get('UserInfo').id,
+        emojiType: parseInt(this.selected)
+      };
+      var result = await this.api
+          .ReactionMessage(obj)
+          .catch(response => {
+            this.noty.Show({
+              title: this.notyHeader,
+              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+            });
+          });
+
+
+      if (result.data.success) {
+        console.log(result)
+      } else {
+        this.noty.Show({title: this.notyHeader, message: "Ошибка изменения сообщения"});
+      }
+    },
+    getMessageReaction: async function(){
+      this.LikeCheck = "";
+      for (let n = 0; n<=this.Reactions.length; n++){
+        if (this.Reactions[n].emojiType == 0){this.LikeCheck += "👍️"};
+        if (this.Reactions[n].emojiType == 1){this.LikeCheck += "😄️"};
+        if (this.Reactions[n].emojiType == 2){this.LikeCheck += "😆️"};
+        if (this.Reactions[n].emojiType == 3){this.LikeCheck += "❤️"};
+        //this.LikeCheck += this.Reactions[n].userId;
+      }
+      var result = await this.api
+          .GetMessages(this.Reactions[0].userId) // .ReactionMessage
+          .catch(response => {
+            this.noty.Show({
+              title: this.notyHeader,
+              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+            });
+          });
+    }
   }
 }
 </script>

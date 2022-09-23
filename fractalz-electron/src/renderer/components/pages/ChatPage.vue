@@ -21,7 +21,9 @@
                                :avatar="messageContent.avatar"
                                :status="messageContent.status"
                                :file="messageContent.file.$values"
-                               :dialog-id="messageContent.dialogId">
+                               :dialog-id="messageContent.dialogId"
+                               :reactions="messageContent.reactions.$values"
+                               :messageId="messageContent.id">
 
           </answer-left-element>
 
@@ -32,7 +34,9 @@
                                 :avatar="messageContent.avatar"
                                 :status="messageContent.status"
                                 :file="messageContent.file.$values"
-                                :dialog-id="messageContent.dialogId">
+                                :dialog-id="messageContent.dialogId"
+                                :reactions="messageContent.reactions.$values"
+                                :messageId="messageContent.id">
           </answer-right-element>
         </div>
 
@@ -203,21 +207,6 @@ export default {
     updateMessage: async function (obj) {
       var result = await this.api
           .UpdateMessage(obj)
-          .catch(response => {
-            this.noty.Show({
-              title: this.notyHeader,
-              message: "Произошла ошибка. Проверьте соединение с интернетом!"
-            });
-          });
-      if (result.data.success) {
-        console.log(result)
-      } else {
-        this.noty.Show({title: this.notyHeader, message: "Ошибка изменения сообщения"});
-      }
-    },
-    sendReaction: async function () {
-      var result = await this.api
-          .ReactionMessage(obj)
           .catch(response => {
             this.noty.Show({
               title: this.notyHeader,

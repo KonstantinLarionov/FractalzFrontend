@@ -1,7 +1,8 @@
 <template>
-  <chat-page v-if="chatSelect== true" @back="chatSelect = false" :dialog-id="this.dialogId" :api="this.api" :noty="this.noty" :id-user-sender="this.idUserSender">
+  <chat-page v-if="chatSelect=== true" @back="chatSelect = false" :dialog-id="this.dialogId" :api="this.api" :noty="this.noty" :id-user-sender="this.idUserSender">
   </chat-page>
-  <div v-else-if="chatSelect == false" class="dialogs-wrap p-3" id="dialogsSpace">
+  <!--  <books-modal :api="this.api" :noty="this.noty"></books-modal>-->
+  <div v-else-if="chatSelect === false" class="dialogs-wrap p-3" id="dialogsSpace">
     <!-- Searcher -->
     <div class="row">
       <div class="searcher-wrap row"
