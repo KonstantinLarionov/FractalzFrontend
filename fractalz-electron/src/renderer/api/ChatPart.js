@@ -12,7 +12,9 @@ export default class ChatPart extends BasePart {
     _downloadFilePath = this._partPath + "downloadFile"
     _createDialogPath = this._partPath + "createDialog"
     _createMessagePath = this._partPath + "createMessage"
-    _reactionMessagePath = this._partPath + "reactionMessage"
+    _reactionMessagePath = this._partPath + "reaction"
+    _deleteReactionMessagePath = this._partPath + "deleteReaction"
+    _getReactionsPath = this._partPath + "getReactions"
     _updateMessagePath = this._partPath + "updateMessage"
     _deleteDialogPath = this._partPath + "deleteDialog"
     _deleteMessagePath = this._partPath + "deleteMessage"
@@ -49,9 +51,9 @@ export default class ChatPart extends BasePart {
         return "?IdFile=" + FileId
 
     }
-    _fileDownloadModel = function (FileId, dialogId)
+    _fileDownloadModel = function (FileId, DialogId)
     {
-        return "?FileId=" + FileId + "&dialogId=" + dialogId
+        return "?FileId=" + FileId + "&DialogId=" + DialogId
     }
 
     _downloadFilesModel = function(Files){
@@ -95,9 +97,9 @@ export default class ChatPart extends BasePart {
      * @returns {Promise<*>}
      * @constructor
      */
-    async DownloadFile(FileId, dialogId) {
-        console.log(this._fileDownloadModel(FileId, dialogId))
-        return await this.instant.get(this._downloadFilePath + this._fileDownloadModel(FileId, dialogId), {responseType:"blob"})
+    async DownloadFile(FileId, DialogId) {
+        console.log(this._fileDownloadModel(FileId, DialogId))
+        return await this.instant.get(this._downloadFilePath + this._fileDownloadModel(FileId, DialogId), {responseType:"blob"})
     }
 
 
@@ -142,6 +144,16 @@ export default class ChatPart extends BasePart {
      */
     async ReactionMessage(objectData) {
         return await this.instant.post(this._reactionMessagePath, objectData)
+    }
+
+    /**
+     * Удаление реакции
+     * @param objectData
+     * @returns {Promise<*>}
+     * @constructor
+     */
+    async DeleteReactionMessage(objectData) {
+        return await this.instant.delete(this._reactionMessagePath, objectData)
     }
 
     /**
