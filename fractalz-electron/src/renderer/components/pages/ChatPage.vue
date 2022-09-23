@@ -10,31 +10,31 @@
       </div>
     </div>
     <div id="chat" class="chat col-inside-lg decor-default">
-        <div class="chat-body">
+      <div class="chat-body">
 
-          <div v-for="messageContent in messageContents" :key="messageContent.$id">
+        <div v-for="messageContent in messageContents" :key="messageContent.$id">
 
-            <answer-left-element v-if="messageContent.idSender !== idUserSender"
-                                 :message="messageContent.text"
-                                 :date-send="messageContent.dateCreated"
-                                 :name="messageContent.nameSender"
-                                 :avatar="messageContent.avatar"
-                                 :status="messageContent.status"
-                                 :file="messageContent.file.$values"
-                                 :dialog-id="messageContent.dialogId">
+          <answer-left-element v-if="messageContent.idSender !== idUserSender"
+                               :message="messageContent.text"
+                               :date-send="messageContent.dateCreated"
+                               :name="messageContent.nameSender"
+                               :avatar="messageContent.avatar"
+                               :status="messageContent.status"
+                               :file="messageContent.file.$values"
+                               :dialog-id="messageContent.dialogId">
 
-            </answer-left-element>
+          </answer-left-element>
 
-            <answer-right-element v-if="messageContent.idSender === idUserSender"
-                                  :message="messageContent.text"
-                                  :date-send="messageContent.dateCreated"
-                                  :name="messageContent.nameSender"
-                                  :avatar="messageContent.avatar"
-                                  :status="messageContent.status"
-                                  :file="messageContent.file.$values"
-                                  :dialog-id="messageContent.dialogId">
-            </answer-right-element>
-          </div>
+          <answer-right-element v-if="messageContent.idSender === idUserSender"
+                                :message="messageContent.text"
+                                :date-send="messageContent.dateCreated"
+                                :name="messageContent.nameSender"
+                                :avatar="messageContent.avatar"
+                                :status="messageContent.status"
+                                :file="messageContent.file.$values"
+                                :dialog-id="messageContent.dialogId">
+          </answer-right-element>
+        </div>
 
       </div>
     </div>
@@ -60,11 +60,11 @@
       </a>
 
       <a v-on:click="sendMessage()" class="p-2 select" title="Отправить сообщение" style="transform: rotate(45deg); right: 0">
-          <svg width="24" height="24" color="#000000" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
-            <line x1="22" y1="2" x2="11" y2="13"/>
-            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-          </svg>
-        </a>
+        <svg width="24" height="24" color="#000000" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </a>
 
     </div>
   </div>
@@ -249,7 +249,7 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "Ошибка удаления сообщения"});
       }
     },
-    }
+  }
 }
 </script>
 
