@@ -2,48 +2,60 @@
 
   <div class="container-fluid" style="overflow-y: hidden; overflow-x: hidden;">
     <div class="row" style="height: 100vh; ">
-      <div class="p-0 m-0 teal">
+      <div class="p-0 m-0 wrapper-leftbar">
         <div class="container d-flex flex-column" style="height: 100%;">
-          <div class="row mt-2">
-            <div class="col d-flex justify-content-center mt-1">
-              <img src="https://via.placeholder.com/40" class="logo-left"  alt=""/>
-            </div>
+          <div class="row mt-2 flex-column align-items-center" style="height: 30px">
+            <div class="mt-2" style="border-bottom: 2px solid var(--color-white); width: 30px;"></div>
+            <div class="mt-1" style="border-bottom: 2px solid var(--color-white); width: 30px;"></div>
+            <div class="mt-1" style="border-bottom: 2px solid var(--color-white); width: 30px;"></div>
           </div>
 
-          <div class="row mt-1">
-            <router-link :to="{ name: 'AccountPage' }" id="accountLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-2 bg-transparent icon-left">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
+          <div class="row mt-2">
+            <router-link :to="{ name: 'AccountPage' }" style="height: 60px; font-weight: " id="accountLeftButton" class=" flex-column button-left col d-flex justify-content-center align-items-center mt-2 bg-transparent icon-left">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="var(--color-light-blue)" class="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
               </svg>
+              <label style="font-size: 10px; font-weight: 200" class="mt-1">Профиль</label>
             </router-link>
           </div>
 
           <div class="row">
-            <router-link :to="{ name: 'DialogPage' }" id="dialogsLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
-                <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            <router-link :to="{ name: 'DialogPage' }" style="height: 60px;"  id="dialogsLeftButton" class="flex-column button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
+              <svg width="25" height="25" viewBox="0 0 16 16" fill="var(--color-light-blue)" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.678 11.894C2.7818 11.9982 2.86133 12.124 2.91094 12.2625C2.96055 12.4009 2.97901 12.5486 2.965 12.695C2.89472 13.3726 2.76148 14.0421 2.567 14.695C3.962 14.372 4.814 13.998 5.201 13.802C5.4205 13.6908 5.67329 13.6645 5.911 13.728C6.59243 13.9097 7.29477 14.0011 8 14C11.996 14 15 11.193 15 8C15 4.808 11.996 2 8 2C4.004 2 1 4.808 1 8C1 9.468 1.617 10.83 2.678 11.894ZM2.185 15.799C1.94807 15.846 1.71037 15.889 1.472 15.928C1.272 15.96 1.12 15.752 1.199 15.566C1.28779 15.3566 1.36918 15.1441 1.443 14.929L1.446 14.919C1.694 14.199 1.896 13.371 1.97 12.6C0.743 11.37 0 9.76 0 8C0 4.134 3.582 1 8 1C12.418 1 16 4.134 16 8C16 11.866 12.418 15 8 15C7.20765 15.0011 6.41859 14.8982 5.653 14.694C5.133 14.957 4.014 15.436 2.185 15.799Z"/>
+                <path d="M4 5.5C4 5.36739 4.05268 5.24021 4.14645 5.14645C4.24021 5.05268 4.36739 5 4.5 5H11.5C11.6326 5 11.7598 5.05268 11.8536 5.14645C11.9473 5.24021 12 5.36739 12 5.5C12 5.63261 11.9473 5.75979 11.8536 5.85355C11.7598 5.94732 11.6326 6 11.5 6H4.5C4.36739 6 4.24021 5.94732 4.14645 5.85355C4.05268 5.75979 4 5.63261 4 5.5ZM4 8C4 7.86739 4.05268 7.74021 4.14645 7.64645C4.24021 7.55268 4.36739 7.5 4.5 7.5H11.5C11.6326 7.5 11.7598 7.55268 11.8536 7.64645C11.9473 7.74021 12 7.86739 12 8C12 8.13261 11.9473 8.25979 11.8536 8.35355C11.7598 8.44732 11.6326 8.5 11.5 8.5H4.5C4.36739 8.5 4.24021 8.44732 4.14645 8.35355C4.05268 8.25979 4 8.13261 4 8ZM4 10.5C4 10.3674 4.05268 10.2402 4.14645 10.1464C4.24021 10.0527 4.36739 10 4.5 10H8.5C8.63261 10 8.75979 10.0527 8.85355 10.1464C8.94732 10.2402 9 10.3674 9 10.5C9 10.6326 8.94732 10.7598 8.85355 10.8536C8.75979 10.9473 8.63261 11 8.5 11H4.5C4.36739 11 4.24021 10.9473 4.14645 10.8536C4.05268 10.7598 4 10.6326 4 10.5Z" />
               </svg>
-              <span v-if="CountDialogsNoty!= 0" class="position-absolute ml-3 badge rounded-pill bg-danger" style="margin-top: -8px; font-size: 10px; border: 2px solid rgb(0, 151, 136)"> {{ CountDialogsNoty }}</span>
+
+              <span v-if="CountDialogsNoty!= 0" class="position-absolute ml-3 badge rounded-pill bg-danger" style="margin-top: -25px; font-size: 10px; ">{{ CountDialogsNoty }}</span>
+              <label style="font-size: 10px; font-weight: 200" class="mt-1">Сообщения</label>
+
             </router-link>
           </div>
 
           <div class="row">
-            <router-link :to="{ name: 'VideoChatPage' }"  id="videoChatLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
-              <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 512.000000 512.000000" fill="white">
-                <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" stroke="none">
-                  <path d="M2370 5114 c-19 -2 -78 -9 -130 -15 -788 -90 -1517 -582 -1919 -1296 -313 -555 -401 -1238 -241 -1873 45 -180 103 -335 186 -503 l44 -89 -156 -581 c-120 -448 -155 -591 -151 -621 9 -68 65 -124 133 -133 30 -4 174 31 620 151 l582 156 133 -64 c880 -419 1931 -294 2694 321 1101 887 1274 2498 388 3598 -409 507 -974 829 -1633 930 -100 15 -472 28 -550 19z m545 -343 c151 -26 293 -62 415 -108 688 -256 1212 -832 1394 -1533 57 -221 70 -327 70 -570 0 -243 -13 -349 -70 -570 -181 -696 -698 -1268 -1381 -1528 -107 -41 -320 -96 -458 -119 -166 -26 -507 -24 -675 5 -256 44 -424 99 -666 218 -85 42 -164 74 -181 74 -16 0 -240 -56 -497 -126 -258 -69 -470 -123 -473 -121 -2 3 53 215 122 472 69 257 125 481 125 498 0 17 -32 95 -74 181 -119 242 -174 410 -218 666 -29 168 -31 509 -5 675 81 497 291 912 636 1255 382 381 862 605 1401 654 108 10 418 -4 535 -23z"/>
-                  <path d="M1348 3691 c-158 -51 -279 -186 -314 -350 -20 -98 -20 -1465 1 -1564 34 -163 158 -299 316 -348 57 -18 103 -19 824 -19 719 0 767 1 824 19 86 27 140 61 204 130 64 70 100 140 118 231 6 36 13 66 14 68 2 2 126 -68 276 -155 263 -152 276 -158 329 -158 68 0 114 29 141 89 18 39 19 84 19 926 0 842 -1 887 -19 926 -27 60 -73 89 -141 89 -53 0 -66 -6 -329 -158 -150 -87 -274 -157 -276 -155 -1 2 -8 32 -14 68 -18 91 -54 161 -118 231 -64 69 -118 103 -204 130 -57 18 -104 19 -827 18 -716 0 -771 -1 -824 -18z m1593 -324 c72 -48 69 -10 69 -807 0 -797 3 -759 -69 -807 l-34 -23 -731 0 c-715 0 -732 1 -764 20 -19 12 -41 38 -52 63 -19 40 -20 73 -20 747 0 674 1 707 20 747 11 25 33 51 52 63 32 19 49 20 764 20 l731 0 34 -23z m839 -808 c0 -319 -4 -579 -8 -577 -5 2 -106 59 -225 128 l-217 124 0 326 0 326 218 126 c119 69 220 127 225 127 4 1 7 -260 7 -580z"/>
-                  <path d="M2505 3159 c-16 -4 -47 -23 -69 -41 -131 -108 -84 -322 80 -368 185 -52 339 152 239 316 -51 83 -154 122 -250 93z"/>
+            <router-link :to="{ name: 'VideoChatPage' }" style="height: 60px;" id="videoChatLeftButton" class="flex-column button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
+              <svg width="30" height="30" viewBox="0 0 16 16" fill="var(--color-light-blue)" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 6C0 5.46957 0.210714 4.96086 0.585786 4.58579C0.960859 4.21071 1.46957 4 2 4H14C14.5304 4 15.0391 4.21071 15.4142 4.58579C15.7893 4.96086 16 5.46957 16 6V9C16 9.53043 15.7893 10.0391 15.4142 10.4142C15.0391 10.7893 14.5304 11 14 11H9.269C9.413 11.162 9.599 11.324 9.8 11.475C10.0868 11.6886 10.3901 11.8792 10.707 12.045L10.721 12.051L10.724 12.053C10.8247 12.1034 10.9053 12.1864 10.953 12.2884C11.0006 12.3904 11.0125 12.5055 10.9865 12.6151C10.9606 12.7247 10.8985 12.8223 10.8102 12.8921C10.7219 12.962 10.6126 13 10.5 13H5.5C5.38741 13 5.27812 12.962 5.18982 12.8921C5.10152 12.8223 5.03938 12.7247 5.01346 12.6151C4.98754 12.5055 4.99937 12.3904 5.04701 12.2884C5.09466 12.1864 5.17534 12.1034 5.276 12.053L5.279 12.051L5.293 12.044C5.384 11.9977 5.47338 11.9484 5.561 11.896C5.78179 11.7679 5.99513 11.6273 6.2 11.475C6.4 11.325 6.587 11.162 6.731 11H2C1.46957 11 0.960859 10.7893 0.585786 10.4142C0.210714 10.0391 0 9.53043 0 9V6ZM2 5C1.73478 5 1.48043 5.10536 1.29289 5.29289C1.10536 5.48043 1 5.73478 1 6V9C1 9.26522 1.10536 9.51957 1.29289 9.70711C1.48043 9.89464 1.73478 10 2 10H14C14.2652 10 14.5196 9.89464 14.7071 9.70711C14.8946 9.51957 15 9.26522 15 9V6C15 5.73478 14.8946 5.48043 14.7071 5.29289C14.5196 5.10536 14.2652 5 14 5H2Z"/>
+                <path d="M8 6.5C7.73478 6.5 7.48043 6.60536 7.29289 6.79289C7.10536 6.98043 7 7.23478 7 7.5C7 7.76522 7.10536 8.01957 7.29289 8.20711C7.48043 8.39464 7.73478 8.5 8 8.5C8.26522 8.5 8.51957 8.39464 8.70711 8.20711C8.89464 8.01957 9 7.76522 9 7.5C9 7.23478 8.89464 6.98043 8.70711 6.79289C8.51957 6.60536 8.26522 6.5 8 6.5ZM6 7.5C6 6.96957 6.21071 6.46086 6.58579 6.08579C6.96086 5.71071 7.46957 5.5 8 5.5C8.53043 5.5 9.03914 5.71071 9.41421 6.08579C9.78929 6.46086 10 6.96957 10 7.5C10 8.03043 9.78929 8.53914 9.41421 8.91421C9.03914 9.28929 8.53043 9.5 8 9.5C7.46957 9.5 6.96086 9.28929 6.58579 8.91421C6.21071 8.53914 6 8.03043 6 7.5ZM13 7.5C13 7.63261 12.9473 7.75979 12.8536 7.85355C12.7598 7.94732 12.6326 8 12.5 8C12.3674 8 12.2402 7.94732 12.1464 7.85355C12.0527 7.75979 12 7.63261 12 7.5C12 7.36739 12.0527 7.24021 12.1464 7.14645C12.2402 7.05268 12.3674 7 12.5 7C12.6326 7 12.7598 7.05268 12.8536 7.14645C12.9473 7.24021 13 7.36739 13 7.5Z" />
+              </svg>
+              <label style="font-size: 10px; font-weight: 200" class="mt-1">Конференции</label>
+            </router-link>
+          </div>
+          <div class="row mt-1">
+            <router-link :to="{ name: 'TimetablePage' }" style="height: 60px;" id="timetableLeftButton" class="flex-column button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
+              <svg width="25" height="25" viewBox="0 0 16 16" fill="var(--color-light-blue)" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_39_24)">
+                  <path d="M3.5 0C3.63261 0 3.75979 0.0526784 3.85355 0.146447C3.94732 0.240215 4 0.367392 4 0.5V1H12V0.5C12 0.367392 12.0527 0.240215 12.1464 0.146447C12.2402 0.0526784 12.3674 0 12.5 0C12.6326 0 12.7598 0.0526784 12.8536 0.146447C12.9473 0.240215 13 0.367392 13 0.5V1H14C14.5304 1 15.0391 1.21071 15.4142 1.58579C15.7893 1.96086 16 2.46957 16 3V14C16 14.5304 15.7893 15.0391 15.4142 15.4142C15.0391 15.7893 14.5304 16 14 16H2C1.46957 16 0.960859 15.7893 0.585786 15.4142C0.210714 15.0391 0 14.5304 0 14V3C0 2.46957 0.210714 1.96086 0.585786 1.58579C0.960859 1.21071 1.46957 1 2 1H3V0.5C3 0.367392 3.05268 0.240215 3.14645 0.146447C3.24021 0.0526784 3.36739 0 3.5 0V0ZM2 2C1.73478 2 1.48043 2.10536 1.29289 2.29289C1.10536 2.48043 1 2.73478 1 3V4H15V3C15 2.73478 14.8946 2.48043 14.7071 2.29289C14.5196 2.10536 14.2652 2 14 2H2ZM15 5H1V14C1 14.2652 1.10536 14.5196 1.29289 14.7071C1.48043 14.8946 1.73478 15 2 15H14C14.2652 15 14.5196 14.8946 14.7071 14.7071C14.8946 14.5196 15 14.2652 15 14V5Z"/>
+                  <path d="M9 7.5C9 7.36739 9.05268 7.24021 9.14645 7.14645C9.24021 7.05268 9.36739 7 9.5 7H15V9H9.5C9.36739 9 9.24021 8.94732 9.14645 8.85355C9.05268 8.75979 9 8.63261 9 8.5V7.5ZM7 10.5V11.5C7 11.6326 6.94732 11.7598 6.85355 11.8536C6.75979 11.9473 6.63261 12 6.5 12H1V10H6.5C6.63261 10 6.75979 10.0527 6.85355 10.1464C6.94732 10.2402 7 10.3674 7 10.5Z"/>
                 </g>
+                <defs>
+                  <clipPath id="clip0_39_24">
+                    <rect width="16" height="16" fill="white"/>
+                  </clipPath>
+                </defs>
               </svg>
-            </router-link>
-          </div>
-          <div class="row">
-            <router-link :to="{ name: 'TimetablePage' }" id="timetableLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar2-week-fill" viewBox="0 0 16 16">
-                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zm9.954 3H2.545c-.3 0-.545.224-.545.5v1c0 .276.244.5.545.5h10.91c.3 0 .545-.224.545-.5v-1c0-.276-.244-.5-.546-.5zM8.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM3 10.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"/>
-              </svg>
+              <label style="font-size: 10px; font-weight: 200" class="mt-1">Расписание</label>
             </router-link>
           </div>
 <!--          <div class="row">-->
@@ -146,13 +158,13 @@ export default {
     exitNotyModel:null
   },
   mounted() {
-    this.api = new ChatPart(this.$http);
-    this.noty = new NotifyCenter();
-    //Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
-    Vue.socketEvents.notyReceive = this.onNotyGlobal;
-    //Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
-    Vue.socketEvents.messageReceive = this.onMessageUpdate;
-    this.getDialogsInfo();
+    // this.api = new ChatPart(this.$http);
+    // this.noty = new NotifyCenter();
+    // //Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
+    // Vue.socketEvents.notyReceive = this.onNotyGlobal;
+    // //Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
+    // Vue.socketEvents.messageReceive = this.onMessageUpdate;
+    // this.getDialogsInfo();
   },
   methods: {
 
@@ -222,4 +234,8 @@ export default {
 }
 
 
+.wrapper-leftbar {
+  background-color: var(--color-dark-blue);
+  width: 80px;
+}
 </style>

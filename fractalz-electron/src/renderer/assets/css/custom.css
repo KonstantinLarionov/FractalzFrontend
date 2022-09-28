@@ -2,10 +2,10 @@
     border-color: transparent;
     transition: 0.28s;
 }
-.button-left:hover{
-    cursor: pointer;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14), 0 3px 4px 0 rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20);
-}
+/*.button-left:hover{*/
+/*    cursor: pointer;*/
+/*    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14), 0 3px 4px 0 rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20);*/
+/*}*/
 .gear-left {
     border-color: transparent;
     transition: 0.28s;

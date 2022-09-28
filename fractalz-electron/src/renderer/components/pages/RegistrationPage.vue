@@ -18,7 +18,7 @@
           <input type="password" class="input-form" placeholder="Введите пароль"/>
         </div>
         <div class="row mt-4 justify-content-center">
-          <button class="input-form button-form">Войти</button>
+          <router-link class="input-form button-form" :to="{ name: 'AccountPage' }" >Войти</router-link>
         </div>
         <div class="row mt-4 justify-content-center">
           <label class="label-form">Нет аккаунта?</label>
