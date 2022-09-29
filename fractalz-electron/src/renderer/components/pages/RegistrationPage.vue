@@ -639,10 +639,10 @@ export default {
 }
 @keyframes background-wrapp-anim {
   from{
-    opacity: 1;
+    background-color: var(--color-gray);
   }
   to{
-    opacity: 0;
+    background-color: var(--color-middle-gray);
   }
 }
 .animate-box-wrapper{

@@ -1,15 +1,19 @@
 <template>
 
-  <div class="container-fluid" style="overflow-y: hidden; overflow-x: hidden;">
+  <div class="container-fluid" style="overflow-y: hidden; overflow-x: hidden; background-color: var(--color-middle-gray)">
     <div class="row" style="height: 100vh; ">
-      <div class="p-0 m-0 wrapper-leftbar">
+      <div id="leftbar-wrapper" class="p-0 wrapper-leftbar">
         <div class="container d-flex flex-column" style="height: 100%;">
-          <div class="row mt-2 flex-column align-items-center" style="height: 30px">
+          <button id="burger" v-on:click="collapsLeftbar()" class="row mt-2 flex-column align-items-center" style="background-color: transparent; border: none; height: 30px; cursor: pointer">
             <div class="mt-2" style="border-bottom: 2px solid var(--color-white); width: 30px;"></div>
             <div class="mt-1" style="border-bottom: 2px solid var(--color-white); width: 30px;"></div>
             <div class="mt-1" style="border-bottom: 2px solid var(--color-white); width: 30px;"></div>
-          </div>
-
+          </button>
+          <button id="arrow" v-on:click="restoreLeftbar()" class="row mt-2 flex-column align-items-center" style="display: none; z-index: 99999; background-color: transparent; border: none; margin-left: 70px; position: absolute; height: 30px; cursor: pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="var(--color-dark-blue)" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+            </svg>
+          </button>
           <div class="row mt-2">
             <router-link :to="{ name: 'AccountPage' }" style="height: 60px; text-decoration: none !important;" id="accountLeftButton" class=" flex-column button-left col d-flex justify-content-center align-items-center mt-2 bg-transparent icon-left">
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="var(--color-light-blue)" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -19,7 +23,6 @@
               <label style="font-size: 10px; font-weight: 200" class="mt-1">Профиль</label>
             </router-link>
           </div>
-
           <div class="row">
             <router-link :to="{ name: 'DialogPage' }" style="height: 60px;text-decoration: none !important;"  id="dialogsLeftButton" class="flex-column button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
               <svg width="25" height="25" viewBox="0 0 16 16" fill="var(--color-light-blue)" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +35,6 @@
 
             </router-link>
           </div>
-
           <div class="row">
             <router-link :to="{ name: 'VideoChatPage' }" style="height: 60px;text-decoration: none !important;" id="videoChatLeftButton" class="flex-column button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
               <svg width="30" height="30" viewBox="0 0 16 16" fill="var(--color-light-blue)" xmlns="http://www.w3.org/2000/svg">
@@ -69,52 +71,46 @@
           </div>
           <div class="row" >
             <books-modal hidden :api="this.api"></books-modal>
-            <router-link :to="{name: 'BookPage'}"  id="documentsLeftButtone" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 293.151 293.151" style="fill:white" xml:space="preserve" color="#0000">
-                <path d="M255.316,55.996l-51.928-52.94C201.471,1.102,198.842,0,196.104,0h-82.302h-8.232H45.113    c-5.631,0-10.197,4.566-10.197,10.192c0,5.626,4.566,10.192,10.197,10.192h60.457h8.232h72.11l0.005,44.231    c0,5.631,4.561,10.197,10.192,10.197h41.731v197.955H56.592V47.828c0-5.631-4.566-10.197-10.197-10.197    c-5.631,0-10.192,4.566-10.192,10.197v235.131c0,5.631,4.566,10.192,10.192,10.192h201.642c5.631,0,10.197-4.566,10.197-10.192    V63.137C258.229,60.467,257.185,57.903,255.316,55.996z M206.307,54.423V35.147l18.906,19.276H206.307z"/>
+            <router-link :to="{name: 'BookPage'}" style="height: 60px; text-decoration: none !important;" id="documentsLeftButtone" class="flex-column mt-2 button-left col d-flex justify-content-center align-items-center bg-transparent icon-left">
+              <svg width="25" height="25" viewBox="0 0 16 16" fill="var(--color-light-blue)" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1H12V8C12 8.08847 11.9766 8.17535 11.932 8.25179C11.8875 8.32823 11.8235 8.39149 11.7465 8.43511C11.6696 8.47873 11.5824 8.50114 11.4939 8.50007C11.4055 8.49899 11.3189 8.47447 11.243 8.429L9 7.083L6.757 8.43C6.68104 8.47552 6.59436 8.50004 6.50582 8.50107C6.41727 8.5021 6.33004 8.4796 6.25304 8.43586C6.17605 8.39213 6.11205 8.32873 6.06759 8.25215C6.02313 8.17557 5.99981 8.08855 6 8V1Z"/>
+                <path d="M3 0H13C13.5304 0 14.0391 0.210714 14.4142 0.585786C14.7893 0.960859 15 1.46957 15 2V14C15 14.5304 14.7893 15.0391 14.4142 15.4142C14.0391 15.7893 13.5304 16 13 16H3C2.46957 16 1.96086 15.7893 1.58579 15.4142C1.21071 15.0391 1 14.5304 1 14V13H2V14C2 14.2652 2.10536 14.5196 2.29289 14.7071C2.48043 14.8946 2.73478 15 3 15H13C13.2652 15 13.5196 14.8946 13.7071 14.7071C13.8946 14.5196 14 14.2652 14 14V2C14 1.73478 13.8946 1.48043 13.7071 1.29289C13.5196 1.10536 13.2652 1 13 1H3C2.73478 1 2.48043 1.10536 2.29289 1.29289C2.10536 1.48043 2 1.73478 2 2V3H1V2C1 1.46957 1.21071 0.960859 1.58579 0.585786C1.96086 0.210714 2.46957 0 3 0V0Z"/>
+                <path d="M1 5V4.5C1 4.36739 1.05268 4.24021 1.14645 4.14645C1.24021 4.05268 1.36739 4 1.5 4C1.63261 4 1.75979 4.05268 1.85355 4.14645C1.94732 4.24021 2 4.36739 2 4.5V5H2.5C2.63261 5 2.75979 5.05268 2.85355 5.14645C2.94732 5.24021 3 5.36739 3 5.5C3 5.63261 2.94732 5.75979 2.85355 5.85355C2.75979 5.94732 2.63261 6 2.5 6H0.5C0.367392 6 0.240215 5.94732 0.146447 5.85355C0.0526784 5.75979 0 5.63261 0 5.5C0 5.36739 0.0526784 5.24021 0.146447 5.14645C0.240215 5.05268 0.367392 5 0.5 5H1ZM1 8V7.5C1 7.36739 1.05268 7.24021 1.14645 7.14645C1.24021 7.05268 1.36739 7 1.5 7C1.63261 7 1.75979 7.05268 1.85355 7.14645C1.94732 7.24021 2 7.36739 2 7.5V8H2.5C2.63261 8 2.75979 8.05268 2.85355 8.14645C2.94732 8.24021 3 8.36739 3 8.5C3 8.63261 2.94732 8.75979 2.85355 8.85355C2.75979 8.94732 2.63261 9 2.5 9H0.5C0.367392 9 0.240215 8.94732 0.146447 8.85355C0.0526784 8.75979 0 8.63261 0 8.5C0 8.36739 0.0526784 8.24021 0.146447 8.14645C0.240215 8.05268 0.367392 8 0.5 8H1ZM1 11V10.5C1 10.3674 1.05268 10.2402 1.14645 10.1464C1.24021 10.0527 1.36739 10 1.5 10C1.63261 10 1.75979 10.0527 1.85355 10.1464C1.94732 10.2402 2 10.3674 2 10.5V11H2.5C2.63261 11 2.75979 11.0527 2.85355 11.1464C2.94732 11.2402 3 11.3674 3 11.5C3 11.6326 2.94732 11.7598 2.85355 11.8536C2.75979 11.9473 2.63261 12 2.5 12H0.5C0.367392 12 0.240215 11.9473 0.146447 11.8536C0.0526784 11.7598 0 11.6326 0 11.5C0 11.3674 0.0526784 11.2402 0.146447 11.1464C0.240215 11.0527 0.367392 11 0.5 11H1Z"/>
               </svg>
+              <label style="font-size: 10px; font-weight: 200;" class="mt-1">Документация</label>
             </router-link>
           </div>
-
           <div class="row">
-            <div id="kanbanLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
-                <path d="M13.5 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h11zm-11-1a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2h-11z"/>
-                <path d="M6.5 3a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3zm-4 0a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3zm8 0a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3z"/>
+            <button id="notyCreateLeftButton" style="height: 60px; text-decoration: none !important; color: white" class="flex-column button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left " v-on:click="CreateNotyModal = true">
+              <svg width="25" height="25" viewBox="0 0 16 16" fill="var(--color-light-blue)" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_39_30)">
+                  <path d="M8 16C8.53043 16 9.03914 15.7893 9.41421 15.4142C9.78929 15.0392 10 14.5305 10 14H6C6 14.5305 6.21071 15.0392 6.58579 15.4142C6.96086 15.7893 7.46957 16 8 16ZM8 1.91802L7.203 2.07902C6.29896 2.26322 5.48633 2.75412 4.90265 3.46864C4.31897 4.18316 4.0001 5.07741 4 6.00002C4 6.62802 3.866 8.19702 3.541 9.74202C3.381 10.509 3.165 11.308 2.878 12H13.122C12.835 11.308 12.62 10.51 12.459 9.74202C12.134 8.19702 12 6.62802 12 6.00002C11.9997 5.07758 11.6807 4.18357 11.097 3.46926C10.5134 2.75494 9.70087 2.26419 8.797 2.08002L8 1.91702V1.91802ZM14.22 12C14.443 12.447 14.701 12.801 15 13H1C1.299 12.801 1.557 12.447 1.78 12C2.68 10.2 3 6.88002 3 6.00002C3 3.58002 4.72 1.56002 7.005 1.09902C6.99104 0.959974 7.00638 0.819547 7.05003 0.686794C7.09368 0.554041 7.16467 0.43191 7.25842 0.328279C7.35217 0.224647 7.4666 0.141815 7.59433 0.085125C7.72206 0.028435 7.86026 -0.000854492 8 -0.000854492C8.13974 -0.000854492 8.27794 0.028435 8.40567 0.085125C8.5334 0.141815 8.64783 0.224647 8.74158 0.328279C8.83533 0.43191 8.90632 0.554041 8.94997 0.686794C8.99362 0.819547 9.00896 0.959974 8.995 1.09902C10.1253 1.32892 11.1414 1.94238 11.8712 2.83552C12.6011 3.72866 12.9999 4.84659 13 6.00002C13 6.88002 13.32 10.2 14.22 12Z"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_39_30">
+                    <rect width="16" height="16" fill="white"/>
+                  </clipPath>
+                </defs>
               </svg>
-            </div>
-          </div>
-          <div class="row">
-            <button id="notyCreateLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left " v-on:click="CreateNotyModal = true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-send-exclamation" viewBox="0 0 16 16">
-                <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855a.75.75 0 0 0-.124 1.329l4.995 3.178 1.531 2.406a.5.5 0 0 0 .844-.536L6.637 10.07l7.494-7.494-1.895 4.738a.5.5 0 1 0 .928.372l2.8-7Zm-2.54 1.183L5.93 9.363 1.591 6.602l11.833-4.733Z"/>
-                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1.5a.5.5 0 0 1-1 0V11a.5.5 0 0 1 1 0Zm0 3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
-              </svg>
+              <label style="font-size: 10px; font-weight: 200;" class="mt-1">Уведомления</label>
             </button>
           </div>
-
           <div class="row" style="margin-top: auto; ">
-            <a v-on:click="showModal = true" id="registrationLeftButton" class="button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+            <a v-on:click="showModal = true" style="cursor:pointer;height: 60px; text-decoration: none !important; color: white" id="registrationLeftButton" class="flex-column button-left col d-flex justify-content-center align-items-center mt-1 bg-transparent icon-left">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="var(--color-light-blue)" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
                 <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
               </svg>
+              <label style="font-size: 10px; font-weight: 200;" class="mt-1">Выйти</label>
             </a>
           </div>
         </div>
       </div>
-
-
       <div class="col p-0" >
         <section class="content">
           <slot/>
         </section>
-
       </div>
-
-
-
-
     </div>
     <CreateNotyModal v-if="CreateNotyModal" @close="CreateNotyModal = false"></CreateNotyModal>
     <exit-modal v-if="showModal" @close="showModal = false" ></exit-modal>
@@ -157,7 +153,16 @@ export default {
     // this.getDialogsInfo();
   },
   methods: {
-
+    collapsLeftbar : function ()
+    {
+      document.getElementById("leftbar-wrapper").className += " collaps-leftbar"
+      document.getElementById("arrow").style.display = "block"
+    },
+    restoreLeftbar : function ()
+    {
+      document.getElementById("leftbar-wrapper").classList.remove("collaps-leftbar");
+      document.getElementById("arrow").style.display = "none"
+    },
     onMessageUpdate : function (message){
       console.log(message)
       if (message.idSender != Vue.$cookies.get('UserInfo').id)
@@ -217,6 +222,12 @@ export default {
 </script>
 
 <style scoped>
+
+.collaps-leftbar{
+  transition: .6s;
+  /*transform: translate(-100%,0);*/
+  margin-left: -80px;
+}
 
 .content{
   width: 100%;
