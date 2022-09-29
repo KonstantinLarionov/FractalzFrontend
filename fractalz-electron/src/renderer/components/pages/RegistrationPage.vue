@@ -1,10 +1,12 @@
 <template xmlns="http://www.w3.org/1999/html">
-  <div class="main-wrapper container-fluid">
-    <div class="row">
-      <img class=" box-angle" src="src/renderer/assets/images/img.png"/>
-    </div>
-    <div class="row justify-content-center">
+  <div id="main-wrapper" class="main-wrapper container-fluid">
+    <div id="box">
+      <div id="box-angle" class="row">
+        <img class=" box-angle" src="src/renderer/assets/images/img.png"/>
+      </div>
+      <div id="box-logo" class="row justify-content-center">
         <img class="logo " src="src/renderer/assets/images/logo-img.png" height="100" width="100"/>
+      </div>
     </div>
     <div v-if="type === 'A'" class="container-fluid">
 
@@ -19,8 +21,19 @@
         </div>
 
         <div class="row mt-4 justify-content-center placeholder-container">
-          <input type="password" class="input-form" placeholder=" "/>
-          <label v-model="email">Введите почту</label>
+          <input type="password" class="input-form" style="width: 250px;" placeholder=" "/>
+          <label style="margin-left: -40px;" v-model="email">Введите код доступа</label>
+          <button title="Получить код на Email" class="input-form button-form" style="width: 70px; margin-left: 18px" v-on:click="">
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.04375 3.33281C0.131966 2.91867 0.348823 2.54889 0.658806 2.28404C0.968789 2.01919 1.35352 1.87497
+               1.75 1.875H12.25C12.6465 1.87497 13.0312 2.01919 13.3412 2.28404C13.6512 2.54889 13.868 2.91867
+                13.9563 3.33281L7 7.88812L0.04375 3.33281ZM0 4.40344V11.0634L5.07762 7.72781L0 4.40344ZM5.91587
+                 8.27812L0.167125 12.0534C0.309161 12.3743 0.533336 12.6454 0.813559 12.8351C1.09378 13.0248
+                  1.41853 13.1253 1.75 13.125H12.25C12.5814 13.1251 12.906 13.0243 13.1861 12.8345C13.4662 12.6446 13.6902
+                   12.3734 13.832 12.0525L8.08325 8.27719L7 8.98688L5.91587 8.27719V8.27812ZM8.92237 7.72875L14 11.0634V4.40344L8.92237 7.72781V7.72875Z"
+                    fill="white"/>
+            </svg>
+          </button>
         </div>
 
         <div class="row mt-4 justify-content-center placeholder-container">
@@ -44,8 +57,7 @@
       </div>
 
     </div>
-    <div v-if="type === 'B'" class="container-fluid wrapper-login-form">
-
+    <div id="login_wrapper" v-if="type === 'B'" class="container-fluid wrapper-login-form">
       <div class="row justify-content-center">
         <label class="title-login-form">Леттер</label>
       </div>
@@ -84,9 +96,10 @@
       </div>
 
     </div>
+
     <div v-if="type === 'C'" class="container-fluid">
 
-      <div class="col justify-content-center">
+      <div class="mt-4 col justify-content-center">
         <label class="row title-recovery-form justify-content-center">
           Для восстановления доступа вам<br>необходимо сбросить старый пароль и<br>установить новый.
         </label>
@@ -539,7 +552,11 @@ export default {
       {
         this.noty.Show({title : "Вход в систему Fractalz", message : "Произошла ошибка.\rПроверьте правильность данных!"});
       }*/
-      await this.$router.push({ name: 'DialogPage' })
+
+      document.getElementById("login_wrapper").className += " animate-login-wrapper";
+      document.getElementById("main-wrapper").className += " animate-background-wrapper";
+      document.getElementById("box").className += " animate-box-wrapper";
+      setTimeout(async () => { await this.$router.push({ name: 'DialogPage' })},700);
     },
    connectWebSocket : function (userId) {
       if(this.fileUpload)
@@ -598,6 +615,55 @@ export default {
 }
 </script>
 <style>
+.animate-login-wrapper{
+  animation-name: login-wrapp-anim;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+}
+@keyframes login-wrapp-anim {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+.animate-background-wrapper{
+  animation-name: background-wrapp-anim;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+}
+@keyframes background-wrapp-anim {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+.animate-box-wrapper{
+  -webkit-transform-origin-y: top;
+  transform-origin-y: top;
+  perspective: 800;
+  transform-style: preserve-3d;
+  animation-name: box-wrapp-anim;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+}
+@keyframes box-wrapp-anim {
+  from{
+
+  }
+  to{
+    transform: rotateX(180deg);
+  }
+}
 .placeholder-container {
   position: relative;
 }
