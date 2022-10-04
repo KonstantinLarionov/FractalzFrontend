@@ -50,6 +50,7 @@
     flex-direction: column;
     padding: 0;
     margin: 0;
+    height: 100%;
 }
 .preview-dialog{
     display: flex;
