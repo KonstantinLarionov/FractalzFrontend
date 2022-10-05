@@ -20,8 +20,8 @@
       </div>
       </div>
       <div class="dialogues">
-        <div class="d1">
-          <div class="avatar">
+        <router-link :to="{ name: 'ChatPage' }" style="height: 60px; text-decoration: none !important;" class="d1">
+          <div class="avatar1">
            <img src="https://pp.userapi.com/c628428/v628428477/3829c/0tfJPfMUvZY.jpg" width="50" height="50" class="photo">
           </div>
           <div class ="cenetmasseg">
@@ -36,27 +36,20 @@
           <div class="timess">
             <p>14:16</p>
           </div>
-        </div>
+        </router-link>
         <div class="d2">
           <div class="avatar">
             <img src=http://s1.fotokto.ru/photo/full/493/4935264.jpg width="50" height="50" class="photo">
           </div>
           <div class ="cenetmasseg">
-
             <div class="namean">
               <p>Мария Ларионова</p>
                 <svg class="tchk" width="3" height="3" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="1" cy="1" r="1" fill="#B1BD23"/>
                 </svg>
-
-                <circle cx="1" cy="1" r="1" fill="#23BD57"/>
-              </svg>
             </div>
-
             <p class="textLastMasseg">Текст последнего сообщения  полный с выреза...</p>
-
           </div>
-
           <div class="timess">
             <p>14:16</p>
           </div>
@@ -66,20 +59,14 @@
             <img src=https://skesov.ru/wp-content/uploads/2020/10/img-20200925171951-659.jpg width="50" height="50" class="photo">
           </div>
           <div class ="cenetmasseg">
-
             <div class="namean">
               <p>Никита Панин</p>
               <svg class="tchk" width="3" height="3" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="1" cy="1" r="1" fill="#BD2323"/>
               </svg>
-              <circle cx="1" cy="1" r="1" fill="#23BD57"/>
-              </svg>
             </div>
-
             <p class="textLastBlue">Текст последнего сообщения  полный с выреза...</p>
-
           </div>
-
           <div class="timess">
             <p>14:16</p>
             <p class="npr">3</p>
@@ -90,20 +77,14 @@
             <img src=https://skesov.ru/wp-content/uploads/2020/10/img-20200925171951-659.jpg width="50" height="50" class="photo">
           </div>
           <div class ="cenetmasseg">
-
             <div class="namean">
               <p>Никита Панин</p>
               <svg class="tchk" width="3" height="3" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="1" cy="1" r="1" fill="#BD2323"/>
               </svg>
-              <circle cx="1" cy="1" r="1" fill="#23BD57"/>
-              </svg>
             </div>
-
             <p class="textLastBlue">Текст последнего сообщения  полный с выреза...</p>
-
           </div>
-
           <div class="timess">
             <p>14:16</p>
             <p class="npr">3</p>
@@ -114,21 +95,14 @@
             <img src=http://s1.fotokto.ru/photo/full/493/4935264.jpg width="50" height="50" class="photo">
           </div>
           <div class ="cenetmasseg">
-
             <div class="namean">
               <p>Мария Ларионова</p>
               <svg class="tchk" width="3" height="3" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="1" cy="1" r="1" fill="#B1BD23"/>
               </svg>
-
-              <circle cx="1" cy="1" r="1" fill="#23BD57"/>
-              </svg>
             </div>
-
             <p class="textLastMasseg">Текст последнего сообщения  полный с выреза...</p>
-
           </div>
-
           <div class="timess">
             <p>14:16</p>
           </div>
@@ -137,20 +111,15 @@
           <div class="avatar">
             <img src="https://pp.userapi.com/c628428/v628428477/3829c/0tfJPfMUvZY.jpg" width="50" height="50" class="photo">
           </div>
-
           <div class ="cenetmasseg">
-
             <div class="namean">
               <p>Константин Ларионов</p>
               <svg class="tchk" width="3" height="3" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="1" cy="1" r="1" fill="#23BD57"/>
               </svg>
             </div>
-
             <p class="textLastMasseg">Текст последнего сообщения полный</p>
-
           </div>
-
           <div class="timess">
             <p>14:16</p>
           </div>
@@ -160,20 +129,14 @@
             <img src=https://skesov.ru/wp-content/uploads/2020/10/img-20200925171951-659.jpg width="50" height="50" class="photo">
           </div>
           <div class ="cenetmasseg">
-
             <div class="namean">
               <p>Никита Панин</p>
               <svg class="tchk" width="3" height="3" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="1" cy="1" r="1" fill="#BD2323"/>
               </svg>
-              <circle cx="1" cy="1" r="1" fill="#23BD57"/>
-              </svg>
             </div>
-
             <p class="textLastBlue">Текст последнего сообщения  полный с выреза...</p>
-
           </div>
-
           <div class="timess">
             <p>14:16</p>
             <p class="npr">3</p>
@@ -184,26 +147,18 @@
             <img src=http://s1.fotokto.ru/photo/full/493/4935264.jpg width="50" height="50" class="photo">
           </div>
           <div class ="cenetmasseg">
-
             <div class="namean">
               <p>Мария Ларионова</p>
               <svg class="tchk" width="3" height="3" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="1" cy="1" r="1" fill="#B1BD23"/>
               </svg>
-
-              <circle cx="1" cy="1" r="1" fill="#23BD57"/>
-              </svg>
             </div>
-
             <p class="textLastMasseg">Текст последнего сообщения  полный с выреза...</p>
-
           </div>
-
           <div class="timess">
             <p>14:16</p>
           </div>
         </div>
-
         </div>
       </div>
     </div>
@@ -225,7 +180,7 @@
 <!--    <div class="row" v-for="dialogContent in dialogContents" :key="dialogContent.$id" v-on:click="openChat(dialogContent.id )">-->
 <!--      <dialog-element :dialog-unread-message="dialogContent.countUnReadMessage" :dialog-name="dialogContent.name" :dialog-last-message="dialogContent.lastMessage" :dialog-date-send="dialogContent.dateSend" ></dialog-element>-->
 <!--    </div>-->
-  </div>
+
 </template>
 
 <script>
@@ -458,6 +413,22 @@ export default {
   display: flex;
   flex-direction: row;
   height: 66px;
+  cursor: pointer;
+}
+.d1:hover {
+  background-color:  #DCDCDC;
+}
+
+.avatar1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 60px;
+  margin-top: 30px;
+  margin-right: 50px;
+  margin-left: 30px;
+  margin-bottom: 30px;
 }
 .avatar {
   display: flex;
@@ -504,19 +475,21 @@ export default {
   font-size: 9px;
 }
 .textLastMasseg {
-
   font-family: 'Roboto';
   font-style: normal;
   margin-top: -6px;
   font-size: 10px;
   line-height: 7px;
   color: dimgray;
-
 }
 .d2 {
   display: flex;
   flex-direction: row;
   height: 66px;
+  cursor: pointer;
+}
+.d2:hover {
+  background-color: #DCDCDC;
 }
 .npr {
   color: #00627A;
