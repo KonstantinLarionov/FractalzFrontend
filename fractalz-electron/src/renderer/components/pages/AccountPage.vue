@@ -326,7 +326,7 @@ position: absolute;
 .p_adress{
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 14px;
   line-height: 9px;
   position: absolute;
@@ -336,7 +336,7 @@ position: absolute;
 .numder1{
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 14px;
   line-height: 9px;
   position: absolute;
@@ -351,7 +351,7 @@ position: absolute;
 .mail_p{
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 14px;
   line-height: 9px;
   position: absolute;

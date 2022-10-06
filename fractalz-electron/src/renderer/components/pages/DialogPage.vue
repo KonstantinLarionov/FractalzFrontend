@@ -13,7 +13,7 @@
     <div class="dialog-wrap-dialogs">
       <div class="home-wrapp">
       <div class="home">
-        <svg class="homes" width="30" height="30" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="homes" width="25" height="25" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M8 3.293L14 9.293V13.5C14 13.8978 13.842 14.2794 13.5607 14.5607C13.2794 14.842 12.8978 15 12.5 15H3.5C3.10218 15 2.72064 14.842 2.43934 14.5607C2.15804 14.2794 2 13.8978 2 13.5V9.293L8 3.293V3.293ZM13 2.5V6L11 4V2.5C11 2.36739 11.0527 2.24021 11.1464 2.14645C11.2402 2.05268 11.3674 2 11.5 2H12.5C12.6326 2 12.7598 2.05268 12.8536 2.14645C12.9473 2.24021 13 2.36739 13 2.5Z" fill="#1DC0CB"/>
           <path fill-rule="evenodd" clip-rule="evenodd" d="M7.29299 1.5C7.48052 1.31253 7.73483 1.20721 7.99999 1.20721C8.26516 1.20721 8.51946 1.31253 8.70699 1.5L15.354 8.146C15.4479 8.23989 15.5006 8.36723 15.5006 8.5C15.5006 8.63278 15.4479 8.76011 15.354 8.854C15.2601 8.94789 15.1328 9.00063 15 9.00063C14.8672 9.00063 14.7399 8.94789 14.646 8.854L7.99999 2.207L1.35399 8.854C1.2601 8.94789 1.13277 9.00063 0.999991 9.00063C0.867215 9.00063 0.739877 8.94789 0.645991 8.854C0.552104 8.76011 0.499359 8.63278 0.499359 8.5C0.499359 8.36723 0.552104 8.23989 0.645991 8.146L7.29299 1.5Z" fill="#1DC0CB"/>
         </svg>
@@ -358,17 +358,17 @@ export default {
   position: absolute;
   left: 60px;
   top: 19px;
-  width: 350px;
+  width: 225px;
   border-top: transparent;
   border-right: transparent;
-  border-left: transparent;
   border-bottom: transparent;
-  ofnt-family: Roboto;
+  border-left: transparent;
+  
   font-size: 15px;
   background-color: transparent;
 }
 .stick {
-  border: 1px solid #00627A;
+  border: 1px solid var(--color-dark-blue);
   position: absolute;
   width: 255px;
   height: 0px;
@@ -384,9 +384,6 @@ export default {
   border-radius: 25px 25px 0 0;
   box-shadow: var(--shadow-up-4)
 }
-.homes {
-
-}
 .home-wrapp{
   display: flex;
   justify-content: flex-end;
@@ -398,11 +395,17 @@ export default {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  width: 82px;
-  height: 82px;
+  width: 72px;
+  height: 72px;
   margin-right: 35px;
   margin-top: -35px;
+  box-shadow: var(--shadow-down-4);
+  transition: .3s;
   background-color: var(--color-dark-blue);
+  cursor: pointer;
+}
+.home:hover{
+  box-shadow : none;
 }
 .dialogues{
   display: flex;
@@ -414,6 +417,7 @@ export default {
   flex-direction: row;
   height: 66px;
   cursor: pointer;
+  transition: .3s;
 }
 .d1:hover {
   background-color:  #DCDCDC;
@@ -426,8 +430,8 @@ export default {
   border-radius: 50%;
   width: 60px;
   margin-top: 30px;
-  margin-right: 50px;
-  margin-left: 30px;
+  margin-right: 40px;
+  margin-left: 20px;
   margin-bottom: 30px;
 }
 .avatar {
@@ -437,8 +441,8 @@ export default {
   border-radius: 50%;
   width: 60px;
   margin-top: 28px;
-  margin-right: 50px;
-  margin-left: 30px;
+  margin-right: 40px;
+  margin-left: 20px;
   margin-bottom: 30px;
 }
 .photo{
@@ -446,7 +450,9 @@ export default {
 }
 .tchk {
   margin-top: 10px;
-  margin-left: 2px;
+  margin-left: 5px;
+  width: 4px;
+  height: 4px;
 }
 .cenetmasseg {
   display: flex;
@@ -465,6 +471,7 @@ export default {
   font-size: 13px;
 }
 .timess {
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -473,12 +480,13 @@ export default {
   position: fixed;
   right: 20px;
   font-size: 9px;
+  margin-top: 6px;
 }
 .textLastMasseg {
   font-family: 'Roboto';
   font-style: normal;
   margin-top: -6px;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 7px;
   color: dimgray;
 }
@@ -487,6 +495,7 @@ export default {
   flex-direction: row;
   height: 66px;
   cursor: pointer;
+  transition: .3s;
 }
 .d2:hover {
   background-color: #DCDCDC;
@@ -494,15 +503,19 @@ export default {
 .npr {
   color: #00627A;
   margin-right: 10px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 7px;
 }
 .textLastBlue {
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 400;
-  margin-top: -6px;
-  font-size: 10px;
+  font-weight: 500;
+  font-size: 11px;
   line-height: 7px;
   color: #00627A;
-;
+  margin-top: -6px;
 }
 </style>
