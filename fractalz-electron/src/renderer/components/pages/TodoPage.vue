@@ -285,7 +285,7 @@ export default {
   justify-content: center;
   align-items: center;
   color: var(--color-dark-blue);
-  font-size: 13px;
+  font-size: 12px;
   margin-top: 10px;
 }
 .filter-left-date {
@@ -330,6 +330,10 @@ export default {
   padding: 7px 20px 7px 20px;
   color: var(--color-white);
   background-color: var(--color-dark-blue);
+  transition: .3s;
+}
+.todo-filter-buttonadd:hover {
+  box-shadow: none;
 }
 .todo-body-wrapper {
   height: calc(100% - 90px);
