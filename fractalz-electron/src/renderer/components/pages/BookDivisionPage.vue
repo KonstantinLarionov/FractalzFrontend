@@ -150,18 +150,34 @@
             </div>
         </div>
     </div>
+    <div class="book-div-content">
+        <vue-editor style="height: calc(100% - 110px);"></vue-editor>
+    </div>
     </div>
 </template>
 <script>
-import Vue from "vue";
+import { VueEditor } from "vue2-editor";
 export default {
+  components: {VueEditor},
   name: "BookDivisionPage",
   mounted(){}
 }
 </script>
 <style scoped>
+.book-div-content {
+    border-radius: 25px 0 0 25px;
+    box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.25);
+    padding: 15px;
+    position: absolute;
+    z-index: 999999;
+    height: 100%;
+    width: 80%;
+    right: 0;
+    top: 0;
+    background-color: var(--color-white);
+}
 .listdiv-row-info {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 300;
 }
 .count-orange {
@@ -233,7 +249,7 @@ export default {
     font-size: 17px;
 }
 .book-listdiv-wrapper {
-    height: 90%;
+    height: 87%;
     background-color: white;
     margin-top: 40px;
     box-shadow: var(--shadow-up-2);

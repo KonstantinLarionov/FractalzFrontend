@@ -578,8 +578,7 @@ export default {
   border-style: solid;
 <<<<<<< HEAD
   height: 50px;
-} */
-=======
+} 
   border-width: 2px;
   height:50px;
   margin-top: 6px;
@@ -602,9 +601,5 @@ export default {
   text-align: center;
   margin-bottom: 4px;
 }
-
-
-
->>>>>>> master
-
+*/
 </style>
