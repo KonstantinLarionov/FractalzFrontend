@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/components/pages/RegistrationPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/pages/RegistrationPage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/layouts/DefaultLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/layouts/DefaultLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/modals/Books/BooksSettingsModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/modals/Books/BooksSettingsModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/pages/BookPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/pages/BookPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,9 +16,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+
         <option value="CSS File" />
+
+        <option value="Vue Single File Component" />
+
       </list>
     </option>
   </component>
@@ -84,6 +89,7 @@
       <workItem from="1659323408781" duration="1015000" />
       <workItem from="1659331407336" duration="6934000" />
       <workItem from="1659419570616" duration="7958000" />
+<<<<<<< HEAD
       <workItem from="1662627486232" duration="16470000" />
       <workItem from="1662695401429" duration="3772000" />
       <workItem from="1663040921089" duration="5370000" />
@@ -95,6 +101,11 @@
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1663044175087</updated>
+=======
+      <workItem from="1662635084046" duration="1460000" />
+      <workItem from="1662712190370" duration="10450000" />
+      <workItem from="1663057878186" duration="3599000" />
+>>>>>>> master
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -122,7 +133,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

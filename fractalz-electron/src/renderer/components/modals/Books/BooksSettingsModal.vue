@@ -48,7 +48,7 @@
 
 <script>
 import BooksPart from "../../../api/BooksPart";
-
+import Vue from "vue";
 export default {
   name: "BooksSettingsModal",
   props:
@@ -56,6 +56,13 @@ export default {
         api:Object,
         id:null,
       },
+  data()
+  {
+    return{
+      CreatedBookInf:null,
+      SectId:[],
+    }
+  },
   mounted()
   {
     this.api= new BooksPart (this.$http)
@@ -63,14 +70,34 @@ export default {
   },
   methods:
       {
+        toGetSection: async function()
+        {
+          let get = await this.api.GetSection(Vue.$cookies.get('UserInfo').id, this.id).catch(response => {console.log(response.response.data)})
+          if(get.data.success)
+          {
+            for(let i=0;i < get.data.bookSectionsList.$values.length; i++)
+            {
+              this.SectId.push(get.data.bookSectionsList.$values[i])
+            }
+          }
+        },
         toDeleteBook:async function()
         {
-          var obj = {}
           let result = await this.api.DeleteBook(this.id).catch(response => {console.log(response.response.data)})
           if(result.data.success)
           {
-            this.page.$forceUpdate()
+            await this.toGetBooks()
           }
+        },
+        toGetBooks: async function()
+        {
+          let get = await this.api.GetBook(Vue.$cookies.get('UserInfo').id).catch(response => {console.log(response.response.data)})
+          if(get.data.success)
+          {
+            this.CreatedBookInf = get.data.book.$values;
+            this.$emit('getBook',this.CreatedBookInf)
+          }
+          this.$emit('close')
         }
       }
 }
