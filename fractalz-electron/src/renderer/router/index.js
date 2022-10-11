@@ -86,6 +86,14 @@ export default new Router({
             }
         },
         {
+            path: '/notification',
+            name: 'NotificationPage',
+            component: require('@/components/pages/NotificationPage').default,
+            meta: {
+                layout: "default-layout"
+            }
+        },
+        {
             path: '/bookDivision',
             name: 'BookDivisionPage',
             component: require('@/components/pages/BookDivisionPage').default,
