@@ -60,14 +60,14 @@ export default new Router({
                 layout: "default-layout"
             }
         },
-        /*{
+        {
           path: '/timetable',
           name: 'TimetablePage',
           component: require('@/components/pages/TimetablePage').default,
           meta:{
             layout: "default-layout"
           }
-        }*/
+        }
         ,
         {
             path: '/',

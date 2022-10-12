@@ -1,7 +1,6 @@
 <template>
   <div class="news-wrap" id="newsSpace">
     <div class="row news-controls">
-
     </div>
     <div v-for="newsContent in newsContents" :key="newsContent.$id">
       <news-element :news-name="newsContent.name" :news-type="newsContent.type" :news-text="newsContent.text"></news-element>
