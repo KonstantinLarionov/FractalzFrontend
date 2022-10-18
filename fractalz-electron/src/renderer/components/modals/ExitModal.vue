@@ -1,11 +1,11 @@
 <template>
   <transition name="modal">
-    <div class="modal-mask">
-      <div class="modal-wrapper">
-        <div class="modal-container-exit">
-          <div class="modal-header">
-            <div <img  src="src/renderer/assets/images/img.png" class="box-angle2">
-            <div id="box-logo" class="row justify-content-center"><img src="src/renderer/assets/images/logo-img.png" height="90" width="90" class="logo2"></div>
+   <div class="modal-mask">
+     <div class="modal-wrapper">
+      <div class="modal-container-exit">
+        <div class="modal-header">
+            <div <img src="src/renderer/assets/images/img.png" class="box-angle2">
+            <div id="box-logo" class="row justify-content-center"><img src="src/renderer/assets/images/logo-img.png" height="70" width="70" class="logo2"></div>
           </div>
             <slot name="header">
               <div class="header">
@@ -22,7 +22,7 @@
               </div>
             </slot>
           </div>
-          <div class="footer-exit" style="margin-top: -50px">
+          <div class="footer-exit" style="margin-top: -65px">
                 <span class="buttons" >
                     <router-link :to="{ name: 'RegistrationPage' }">
                       <button class="btn btn-danger" v-on:click="logOut" style="margin-left: 120px">
@@ -32,12 +32,11 @@
                   <button  class="btn btn-success" @click="$emit('close')" >Остаться</button>
                 </span>
           </div>
-        </div>
       </div>
     </div>
+  </div>
   </transition>
 </template>
-
 <script>
 import Vue from "vue";
 import UserNotyElement from "../elements/noty/UserNotyElement";
@@ -60,9 +59,7 @@ export default {
     api : Object,
     apiNoty : Object
   },
-
   methods: {
-
     logOut: async function()
     {
       this.$cookies.set("UserInfo", null)
@@ -77,7 +74,6 @@ export default {
   }
 }
 </script>
-
 <style lang="css">
 .btn-danger{
   height: 40px;
@@ -86,8 +82,17 @@ export default {
   background: #00627A;
   margin-left: 30px;
   border: transparent;
+  font-size: 12px;
+  font-weight: 300;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .btn-danger:hover{
+  background: #003947;
+}
+.btn-danger:active{
+  background: #003947;
+}
+.btn-danger:focus{
   background: #003947;
 }
 .btn-success{
@@ -97,8 +102,17 @@ export default {
   background: #9B9B9B;
   margin-left: 60px;
   border: transparent;
+  font-size: 12px;
+  font-weight: 300;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .btn-success:hover{
+  background: #7B7B7B;
+}
+.btn-success:active{
+  background: #7B7B7B;
+}
+.btn-success:focus{
   background: #7B7B7B;
 }
 .modal-mask {
@@ -113,17 +127,18 @@ export default {
 }
 .box-angle2{
   width: 400px;
-  height: 75px;
+  height: 70px;
   margin-top: -10px;
   margin-left: -10px;
 }
 .logo2{
 margin-top: -50px;
-  margin-left: 160px;
+  margin-left: 170px;
 }
 .question{
   color: #00627AS;
-  margin-left: 20px;
+  margin-left: 25px;
+  font-size: 14px;
 }
 .modal-wrapper {
   display: table-cell;
@@ -144,6 +159,7 @@ margin-top: -50px;
 .notification-exit{
   font-weight: 300;
   margin-left: 10px;
+  line-height: 16px;
 }
 .modal-header{
   display: flex;
