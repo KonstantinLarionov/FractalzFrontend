@@ -67,7 +67,7 @@ export default {
       this.Auth = false;
       this.login.set(null)
       this.password.set(null)
-      Vue.socket.close(1000, "UserDisconnect");
+      ;Vue.socket.close(1000, "UserDisconnect")
 
       this.noty.Show({title : "Выход из системы Fractalz", message : "Вы успешно покинули систему!\rЖдем вас снова."});
     },

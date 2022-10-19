@@ -1,5 +1,20 @@
 <template>
   <div class="todo-wrap" id="todoSpace">
+    <transition name="modal" class="modal">
+      <div class="modal-mask">
+        <div class="modal-wrapper">
+          <div class="modal-container-notification-buttons">
+            <div class="indent"></div>
+            <div class ="top-of-the-notification">
+              <p class="text-notification">Текст для уведомления в модельном <br> окне пользователю на принятие или <br> отклонеие действия</p>
+            </div>
+            <div class="bottom-of-the-notification">
+              <button class="btn cancellation" @click="$emit('close')" id="modal-close">Отмена</button> <button class="btn approval" @click="$emit('close')">Хорошо</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
     <div class="todo-filter">
       <div class="Entering-a-search">
         <input class="input-up" name="s" placeholder="Введите заголовок уведомления">
@@ -110,6 +125,17 @@ function NotificationPage() {
 export default {
   name: "Notification",
   components: {NotificationPage}
+}
+var modal = document.getElementById('id01');
+
+// Когда пользователь кликает за пределами модального окна, то оно закрывается
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
 }
 </script>
 
@@ -229,5 +255,71 @@ option:hover
   font-size: 11px;
   margin-top: 40px;
   margin-right: 15px;
+}
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+.indent{
+  height: 40px;
+}
+.modal-container-notification-buttons {
+  width: 400px;
+  height: 200px;
+  margin: 0px auto;
+  background-color: #D9D9D9;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.3s ease;
+  border-width: 5px;
+  border-style: solid;
+  border: transparent;
+}
+.top-of-the-notification{
+  width: 100%;
+  height: 50%;
+  color: #00627A;
+}
+.bottom-of-the-notification{
+  width: 100%;
+  height: 30%;
+  color: white;
+}
+.cancellation{
+  height: 30px;
+  width: 100px;
+  border-radius: 20px;
+  background: #9B9B9B;
+  margin-left: 70px;
+  border: transparent;
+  font-size: 14px;
+  font-weight: 400;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+.cancellation:hover{
+  background: #7B7B7B;
+}
+.text-notification {
+text-align: center;
+  line-height: 18px;
+}
+.approval{
+  height: 30px;
+  width: 100px;
+  border-radius: 20px;
+  background: #00627A;
+  margin-left: 60px;
+  border: transparent;
+  font-size: 14px;
+  font-weight: 400;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+.modal{
+
+}
+.approval:hover{
+  background: #003947;
 }
 </style>

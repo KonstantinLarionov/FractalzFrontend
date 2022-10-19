@@ -15,11 +15,38 @@
   </transition>
 </template>
 <script>
-export default {
-  name: "NotificationButtons"
-}
-</script>
+import Vue from "vue";
+import UserNotyElement from "../elements/noty/UserNotyElement";
 
+
+Vue.component ('user-element', UserNotyElement)
+export default {
+  name: "NotificationButtons",
+  data() {
+    return {
+      Title : "",
+      Message : "",
+      Users: [],
+      SelectedUserId: []
+    }
+  },
+  props : {
+    api : Object,
+    apiNoty : Object
+  },
+  methods: {
+    logOut: async function()
+    {
+      this.$cookies.set("UserInfo", null)
+      this.$cookies.set("UserToken", null)
+      this.Auth = false;
+      this.login.set(null)
+      this.password.set(null)
+      Vue.socket.close(1000, "UserDisconnect");
+    },
+  }
+    }
+</script>
 <style scoped>
 .modal-wrapper {
   display: table-cell;

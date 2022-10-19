@@ -166,18 +166,14 @@
     <!-- <div class="books-route">Books>"Filtered">Section>"Non_critical"></div>
 =======
 >>>>>>> master
-
     <div class="books-route-book" id="book-route"></div>
-
       <section class="box-container">
       <section class="book-card">
         <div class="button-add-book" v-on:click="showModal">
           <label class="book-label" > BookAdd</label>
         </div>
-
         <div class="books-listing "  style="margin-top: 4px">
           <books-modal @getBook="togetBooksModal($event)" v-if="booksModal" @close= "booksModal = false"></books-modal>
-
           <section>
             <div v-for="content in ShelfContent"  :key="content.$id" >
               <div>
@@ -195,7 +191,6 @@
             </div>
           </section>
         </div>
-
       </section>
       <div class="section-card">
         <button class="button-add-section" v-on:click="showSectModal">
@@ -207,7 +202,6 @@
             @close-sect="sectModal=false"
             @toGetSectionModal="toGetSectionModal($event)">
         </section-modal>
-
         <div class="books-listing" >
           <div class="sect-list" v-for="content in SectionContent" :key="content.$id">
             <section-element
@@ -221,7 +215,6 @@
           </div>
         </div>
       </div>
-
       <div class="sheet-card">
         <section class="element-top-sheet">
         </section>
@@ -231,7 +224,6 @@
           </div>
         </section>
       </div>
-
     </section> -->
   </div>
 </template>
@@ -284,7 +276,6 @@ export default {
         showModal: async function () {
           this.booksModal = true;
         },
-
         showSectModal: async function () {
           console.log(this.ChosenBook)
           if (this.ChosenBook.length != 0)
@@ -294,9 +285,7 @@ export default {
             let route = document.getElementById("book-route");
             route.textContent = " ПЕРЕД СОЗДАНИЕМ РАЗДЕЛА ВЫБЕРИТЕ КНИГУ!"
           }
-
         },
-
         toGetBooks: async function () {
           let get = await this.api.GetBook(Vue.$cookies.get('UserInfo').id).catch(response => {
             console.log(response.response.data)
@@ -306,25 +295,20 @@ export default {
             console.log(this.ShelfContent)
           }
         },
-
         togetBooksModal: async function (CreatedBookInf) {
           this.ShelfContent = CreatedBookInf
         },
-
         ChooseBook: async function (ChosenBook) {
           this.ChosenBook = ChosenBook
           for (let i in this.ChosenBook) {
             this.bookName = this.ChosenBook[i].bookName
             this.BookId = this.ChosenBook[i].id
           }
-
           var route = document.getElementById("book-route");
           route.textContent = "BookName: " + this.bookName
 
           await this.toGetSection()
-
         },
-
         toGetSection: async function () {
           if (this.SectionContent != null) {
             this.SectionContent = []
@@ -332,7 +316,6 @@ export default {
           let get = await this.api.GetSection(Vue.$cookies.get('UserInfo').id, this.BookId).catch(response => {
             response.response.data
           })
-
           if (get.data.success) {
             for (let i = 0; i < get.data.bookSectionsList.$values.length; i++) {
               this.SectionContent.push(get.data.bookSectionsList.$values[i])
@@ -366,11 +349,9 @@ export default {
         {
           let get = await this.api.GetSheet(Id).catch(response=>{response.response.data})
         }
-
       }
 }
 </script>
-
 <style scoped>
   .purple {
     fill: var(--color-purple);
@@ -490,7 +471,6 @@ export default {
   display: table;
   width: 100%;
   height: 100%;
-
 }
 .book-label
 {

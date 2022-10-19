@@ -67,8 +67,7 @@ export default new Router({
           meta:{
             layout: "default-layout"
           }
-        }
-        ,
+        },
         {
             path: '/',
             name: 'RegistrationPage',
