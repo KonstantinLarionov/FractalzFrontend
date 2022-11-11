@@ -673,7 +673,8 @@ export default {
 .wrapper-login-form{
 
 }
-. title-login-form{
+
+.title-login-form{
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
