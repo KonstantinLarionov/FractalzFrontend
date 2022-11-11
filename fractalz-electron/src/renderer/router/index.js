@@ -60,15 +60,14 @@ export default new Router({
                 layout: "default-layout"
             }
         },
-        /*{
+        {
           path: '/timetable',
           name: 'TimetablePage',
           component: require('@/components/pages/TimetablePage').default,
           meta:{
             layout: "default-layout"
           }
-        }*/
-        ,
+        },
         {
             path: '/',
             name: 'RegistrationPage',
@@ -81,6 +80,14 @@ export default new Router({
             path: '/books',
             name: 'BookPage',
             component: require('@/components/pages/BookPage').default,
+            meta: {
+                layout: "default-layout"
+            }
+        },
+        {
+            path: '/notification',
+            name: 'NotificationPage',
+            component: require('@/components/pages/NotificationPage').default,
             meta: {
                 layout: "default-layout"
             }

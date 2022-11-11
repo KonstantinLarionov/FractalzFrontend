@@ -1,5 +1,4 @@
 <template>
-
   <div class="book-container" >
     <booksSettingsModal v-if="booksSettingsModal" :id="this.Id" @close= "booksSettingsModal = false"></booksSettingsModal>
     <div class="element-grab">
@@ -11,21 +10,16 @@
         </svg>
       </button>
     </div>
-
     <div @click="toChooseBook" >
-
       <div class="element-top" >
         <label style="width: 180px">{{ BookName }}</label>
       </div>
-
       <div class="element-middle">
         <label>{{ About }}</label>
       </div>
-
       <div class="element-bottom">
         <label>{{ DateTime }}</label>
       </div>
-
     </div>
   </div>
 </template>
@@ -46,12 +40,10 @@ export default {
         Color:null,
         Id:null,
         booksSettingsModal:false,
-
       },
   data(){
     return{
      ChosenBookInf:[],
-
     }
   },
   methods:
@@ -70,11 +62,9 @@ export default {
           {
             return this.ChosenBookInf = []
           }
-
         }
       }
 }
-
 </script>
 
 <style scoped>
@@ -94,7 +84,6 @@ export default {
   height: 45px;
   display: table-cell;
   border-radius:8px ;
-
 }
 .element-top
 {
@@ -136,7 +125,6 @@ export default {
 }
 .element-bottom
 {
-
   height: 25px;
   background-color: whitesmoke;
   border-radius:8px ;
