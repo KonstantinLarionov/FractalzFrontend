@@ -37,8 +37,10 @@
           </div>
         </div>
         <div class="profile-info-wrapper">
-          <div class="info-fio">Ларионов Константин Олегович</div>
-          <div class="info-login">kostya12277</div>
+          <div class="info-fio"v-model="model.name">
+              <input placeholder="ФИО" style="border-radius: 8px;border-style:solid;border-color: #0c675e;text-align: center; max-width: max-content">
+          </div>
+          <div class="info-login" v-model="model.login"></div>
           <div class="info-status">
             <svg id="info-status-icon" width="16" height="16" viewBox="0 0 16 16" fill="var(--color-light-green)" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_11_132)">
@@ -254,9 +256,10 @@ export default {
   margin-top: 18px;
   font-weight: 600;
   font-size: 18px;
+  max-width: max-content;
 }
 .info-login{
-  font-weight: 200;
+  font-weight: 500;
   font-size: 13px;
 }
 .profile-info-wrapper{

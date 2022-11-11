@@ -144,13 +144,13 @@ export default {
     exitNotyModel:null
   },
   mounted() {
-    // this.api = new ChatPart(this.$http);
-    // this.noty = new NotifyCenter();
-    // //Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
-    // Vue.socketEvents.notyReceive = this.onNotyGlobal;
-    // //Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
-    // Vue.socketEvents.messageReceive = this.onMessageUpdate;
-    // this.getDialogsInfo();
+    this.api = new ChatPart(this.$http);
+    this.noty = new NotifyCenter();
+    Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
+    Vue.socketEvents.notyReceive = this.onNotyGlobal;
+    Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
+    Vue.socketEvents.messageReceive = this.onMessageUpdate;
+    this.getDialogsInfo();
   },
   methods: {
     collapsLeftbar : function ()
@@ -183,7 +183,7 @@ export default {
       this.noty.Show({title: message.Title.toString() , message : message.Message})
       require('electron').ipcRenderer.send('flash-noty', function (){});
     },
-/*    onDialogsUpdate : function (message) {
+    onDialogsUpdate : function (message) {
       console.log(message)
       if (message.idSender != Vue.$cookies.get('UserInfo').id)
       {
@@ -197,7 +197,7 @@ export default {
         }
       }
       //TODO :  + Подсветить жирным диалог который пришел
-    },*/
+    },
     getDialogsInfo : async function () {
       var result = await this.api
           .GetDialogs(Vue.$cookies.get('UserInfo').id)

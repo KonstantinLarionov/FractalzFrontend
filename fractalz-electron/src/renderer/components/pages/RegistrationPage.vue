@@ -16,34 +16,18 @@
       <div class="wrapper-input-form justify-content-between">
 
         <div class="row mt-4 justify-content-center placeholder-container">
-          <input type="text" class="input-form" placeholder=" "/>
-          <label v-model="login">Введите логин</label>
+          <input type="text" class="input-form" placeholder="" v-model="login"/>
+          <label >Введите логин</label>
         </div>
 
         <div class="row mt-4 justify-content-center placeholder-container">
-          <input type="password" class="input-form" style="width: 250px;" placeholder=" "/>
-          <label style="margin-left: -40px;" v-model="email">Введите код доступа</label>
-          <button title="Получить код на Email" class="input-form button-form" style="width: 70px; margin-left: 18px" v-on:click="">
-            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0.04375 3.33281C0.131966 2.91867 0.348823 2.54889 0.658806 2.28404C0.968789 2.01919 1.35352 1.87497
-               1.75 1.875H12.25C12.6465 1.87497 13.0312 2.01919 13.3412 2.28404C13.6512 2.54889 13.868 2.91867
-                13.9563 3.33281L7 7.88812L0.04375 3.33281ZM0 4.40344V11.0634L5.07762 7.72781L0 4.40344ZM5.91587
-                 8.27812L0.167125 12.0534C0.309161 12.3743 0.533336 12.6454 0.813559 12.8351C1.09378 13.0248
-                  1.41853 13.1253 1.75 13.125H12.25C12.5814 13.1251 12.906 13.0243 13.1861 12.8345C13.4662 12.6446 13.6902
-                   12.3734 13.832 12.0525L8.08325 8.27719L7 8.98688L5.91587 8.27719V8.27812ZM8.92237 7.72875L14 11.0634V4.40344L8.92237 7.72781V7.72875Z"
-                    fill="white"/>
-            </svg>
-          </button>
+          <input type="text" class="input-form" placeholder="" v-model="email"/>
+          <label >Введите почту</label>
         </div>
 
         <div class="row mt-4 justify-content-center placeholder-container">
-          <input type="password" class="input-form" placeholder=" "/>
-          <label v-model="email">Введите почту</label>
-        </div>
-
-        <div class="row mt-4 justify-content-center placeholder-container">
-          <input type="password" class="input-form" placeholder=" "/>
-          <label v-model="password">Введите пароль</label>
+          <input type="password" class="input-form" placeholder=" " v-model="password"/>
+          <label>Введите пароль</label>
         </div>
 
         <div class="row mt-4 justify-content-center">
@@ -55,8 +39,32 @@
           <label class="href-form" href=""  v-on:click="toSingIn()">Войти</label>
         </div>
       </div>
-
     </div>
+
+    <div v-if="type === 'G'" style="display: flex; justify-content: space-around; width: 100%">
+      <div style="display: flex; flex-direction: column">
+        <p class="row mt-4 justify-content-center placeholder-container">Почти готово!</p>
+        <p class="row mt-4 justify-content-center placeholder-container">Для потверждения введите код который отправлен на указанную вами почту.</p>
+        <div class="row mt-4 justify-content-center placeholder-container" style="">
+          <input type="password" class="input-form" style="width: 250px;" placeholder=" " v-model="Authcode"/>
+          <label style="margin-left: -40px;" >Введите код доступа</label>
+          <button title="Получить код на Email" class="input-form button-form" style="width: 70px; margin-left: 18px" v-on:click="toSendCode()">
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.04375 3.33281C0.131966 2.91867 0.348823 2.54889 0.658806 2.28404C0.968789 2.01919 1.35352 1.87497
+                 1.75 1.875H12.25C12.6465 1.87497 13.0312 2.01919 13.3412 2.28404C13.6512 2.54889 13.868 2.91867
+                  13.9563 3.33281L7 7.88812L0.04375 3.33281ZM0 4.40344V11.0634L5.07762 7.72781L0 4.40344ZM5.91587
+                   8.27812L0.167125 12.0534C0.309161 12.3743 0.533336 12.6454 0.813559 12.8351C1.09378 13.0248
+                    1.41853 13.1253 1.75 13.125H12.25C12.5814 13.1251 12.906 13.0243 13.1861 12.8345C13.4662 12.6446 13.6902
+                     12.3734 13.832 12.0525L8.08325 8.27719L7 8.98688L5.91587 8.27719V8.27812ZM8.92237 7.72875L14 11.0634V4.40344L8.92237 7.72781V7.72875Z"
+                    fill="white"/>
+            </svg>
+          </button>
+        </div>
+        <button class="input-form row mt-4 button-form justify-content-center" style="margin-left: 110px" v-on:click="toValidateCode()">Подтвердить</button>
+        <p class="href-form" style="margin-left: 230px; margin-top: 20px;"><a v-on:click="toCreateAccount()">Вернуться назад</a></p>
+      </div>
+    </div>
+
     <div id="login_wrapper" v-if="type === 'B'" class="container-fluid wrapper-login-form">
       <div class="row justify-content-center">
         <label class="title-login-form">Леттер</label>
@@ -64,13 +72,13 @@
       <div class="wrapper-input-form justify-content-between">
 
         <div class="row mt-4 justify-content-center placeholder-container">
-          <input type="text" class="input-form" placeholder=" "/>
-          <label v-model="login">Введите логин</label>
+          <input type="text" class="input-form" placeholder=" " v-model="login"/>
+          <label >Введите логин</label>
         </div>
 
         <div class="row mt-4 justify-content-center placeholder-container">
-          <input type="password" class="input-form" placeholder=" "/>
-          <label v-model="password">Введите пароль</label>
+          <input type="password" class="input-form" placeholder=" " v-model="password"/>
+          <label >Введите пароль</label>
         </div>
 
         <div class="row mt-4 justify-content-center">
@@ -110,8 +118,8 @@
       <div class="wrapper-input-form justify-content-between">
 
         <div class="row mt-4 justify-content-center placeholder-container">
-          <input type="text" class="input-form" placeholder=" "/>
-          <label v-model="existEmail">Введите почту</label>
+          <input type="text" class="input-form" placeholder=" " v-model="existEmail"/>
+          <label >Введите почту</label>
         </div>
 
         <div class="row mt-4 justify-content-center">
@@ -131,18 +139,18 @@
       <div class="wrapper-input-form justify-content-between">
 
         <div class="row mt-4 justify-content-center placeholder-container">
-          <input type="text" class="input-form" placeholder=" "/>
-          <label v-model="Authcode">Ваш одноразовый код</label>
+          <input type="text" class="input-form" placeholder=" " v-bind="Authcode"/>
+          <label >Ваш одноразовый код</label>
         </div>
 
         <div class="row mt-4 justify-content-center placeholder-container">
-          <input type="password" class="input-form" placeholder=" "/>
-          <label v-model="newPassword1">Введите новый пароль</label>
+          <input type="password" class="input-form" placeholder=" " v-model="newPassword1"/>
+          <label >Введите новый пароль</label>
         </div>
 
         <div class="row mt-4 justify-content-center placeholder-container">
-          <input type="password" class="input-form" placeholder=" "/>
-          <label v-model="newPassword2">Подтвердите новый пароль</label>
+          <input type="password" class="input-form" placeholder=" " v-model="newPassword2"/>
+          <label >Подтвердите новый пароль</label>
         </div>
 
         <div class="row mt-4 justify-content-center">
@@ -181,85 +189,6 @@
       </div>
 
     </div>
-<!--          <div class="form">
-        <div v-if="type === 'A'" class="register-form">
-          <p class="registration-title">Регистрация нового пользователя в системе Fractalz!</p>
-          <input type="text" v-model="login" placeholder="Логин"/>
-          <input type="text" v-model="email" placeholder="Почта"/>
-          <input type="password" v-model="password" placeholder="Пароль"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singIn()">Создать</button>
-          <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>
-        </div>-->
-<!--        <div v-if="type === 'B'" class="login-form">
-          <input type="text" v-model="login" placeholder="Логин/Почта" />
-          <input type="password" v-model="password" placeholder="Пароль" @keyup.enter="logIn"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="logIn()">Войти</button>
-          <p class= "message">Нет аккаута? <a v-on:click="toCreateAccount()">Создать аккаунт</a></p>
-          <p class= "password-reset-text"> Забыли пароль?</p>
-          <p class= "password-resetbutton"> <a v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</a></p>
-&lt;!&ndash;          <p class= "message">Хотите зарегистрироваться с ЭЦП? <a v-on:click="toCreateDSAccount()"><br>Создать аккаунт с ЭЦП</a></p>&ndash;&gt;
-          <p class= "message">Войти с цифровым ключём<a v-on:click="toLogInDS()"><br>Войти с цифровым ключём</a> </p>
-        </div>-->
-<!--        <div v-if="type === 'C'" class="password-reset-form">
-          <p class="reset-title"> Для восстановления доступа вам необходимо сбросить старый пароль и установить новый.
-            Для этого мы отправим вам на Email одноразовый код для подтверждения </p>
-          <input type="text" v-model="existEmail" placeholder="Ваш зарегестрированный Email"
-          @keyup.enter="toSendCode"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toSendCode()">Отправить код</button>
-          <input type="text" v-model="Authcode" placeholder="Ваш одноразовый код" />
-          <input type="password" v-model="newPassword1" placeholder="Новый пароль"/>
-          <input type="password" v-model="newPassword2" placeholder="Подтверждение нового пароля"
-          @keyup.enter="passReset"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="passReset()">Сохранить</button>
-          <p class= "password-resetbutton-back"> <a v-on:click="toBackFromReset()">Вернуться назад</a></p>
-      </div>-->
-<!--        <div v-if="type === 'D'" class="auth-code-form">
-          <p class="code-title">Почти готово!</p>
-          <p class="Code-code">Для потверждения введите код который отправлен на указанную вами почту.</p>
-          <input type="text" v-model="Authcode" placeholder="Код"
-          @keyup.enter="toValidateCode"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="toValidateCode()">Подтвердить</button>
-          <p class="message"><a v-on:click="toCreateAccount()">Вернуться назад</a></p>
-        </div>-->
-<!--        <div v-if="type === 'E'" class="digital-signature-registration">
-          <p class="registration-title">Регистрация нового пользователя в системе с цифровым ключём</p>
-          <input type="text" v-model="login" placeholder="Логин"/>
-          <input type="text" v-model="email" placeholder="Почта"/>
-          <input type="password" v-model="password" placeholder="Пароль"/>
-          <button class="modal-default-button mr-4 navTask dark-teal" v-on:click="singInDS()">Создать</button>
-          <p class="message">Уже зарегистрированы? <a v-on:click="toSingIn()">Войти</a></p>
-
-        </div>-->
-<!--        <div v-if="type === 'F'" class="digital-signature-login">
-          <p>Вход в учетную запись с использованием ЭЦП</p>
-
-          <div class="drag-n-drop" style="overflow: auto" id="drag-n-drop">
-            <form ref="fileform" class="space-drag-drop"  >
-                <span class="drop-files-title" >Перетащите файл сюда</span>
-              <div v-for="(file, key) in Files" class="file-listing-reg" >
-                <div class="remove-container">
-                  <a class="remove" @click="removeFile( key )">Удалить</a>
-                </div>
-                <img class="preview" v-bind:ref="'preview'+parseInt( key )"/>
-                {{ file.name }}
-              </div>
-            </form>
-          </div>
-
-          <p> Или </p>
-          <input type="file" content="Выберите в файловой системе" v-on:change="getFile($event)"  multiple ref="files">
-          <label> Существующие ключи доступа: </label>
-          <div class="keys-box">
-            <div class="keys-listing" v-for="keys in Keys" :key="keys.$id">
-              <DigitalKeysBox :key-name="keys" :api="api" :noty="noty"></DigitalKeysBox>
-            </div>
-          </div>
-
-          <p class="message" style="margin-top: 14px">
-            <a v-on:click="toSingIn(), toHideKeys()">Вернуться назад</a>
-          </p>
-        </div>
-     </div>-->
   </div>
 </template>
 
@@ -300,7 +229,6 @@ export default {
     }
   },
 
-
   props: {
     api: Object,
     noty: Object,
@@ -334,7 +262,10 @@ export default {
     toBackFromReset:function(){
       return this.type = 'B';
     },
-
+    toProofMail: function()
+    {
+      return this.type = 'G'
+    },
     toLogInDS:function (){
       this.type = 'F'
       if (this.type === 'F')
@@ -344,9 +275,7 @@ export default {
       }
     },
 
-    toSendCode: async function() {
-      var result = await this.api.SendCode(this.email, this.GenRequest.true)
-    },
+
 
     toDisplayKeys: async function()
     {
@@ -470,7 +399,10 @@ export default {
         console.log(sourceFilePath);
       })
     },
-
+    toSendCode: async function() {
+      console.log(this.email)
+      var result = await this.api.SendCode(this.email, this.GenRequest.true)
+    },
     toValidateCode: async function()
     {
       const titleNoty = "Регистрация в системе Fractalz"
@@ -478,7 +410,7 @@ export default {
       if (result.data.success)
       {
         this.noty.Show({title: titleNoty, message: "Добро пожаловать!"});
-        return this.logIn();
+        return this.logIn()
       } else
       {
         this.noty.Show({title: titleNoty, message: result.data.message});
@@ -498,12 +430,38 @@ export default {
       if (result.data.success)
       {
         this.noty.Show({title: titleNoty, message: "Вы успешно зарегистрированы!\rОсталось совсем чуть-чуть!"});
-        this.type = "D"
-        return this.toSendCode();
+        return this.toProofMail();
       } else
       {
         this.noty.Show({title: titleNoty, message: result.data.message});
       }
+    },
+    logIn : async function () {
+      var result = await this.api
+          .Login(this.login, this.password)
+          .catch(response => {
+            this.noty.Show({
+              title: "Вход в систему Fractalz",
+              message: response.response.data.message
+            });
+          });
+      if(result.data.success)
+      {
+        this.$cookies.set("UserToken", result.data.token);
+        this.$cookies.set("UserInfo", result.data.user);
+        this.noty.Show({title : "Вход в систему Fractalz", message : "Добро пожаловать!\rВы успешно вошли в систему."});
+        this.connectWebSocket(result.data.user.id);
+        await this.$router.push({ name: 'DialogPage' })
+      }
+      else
+      {
+        this.noty.Show({title : "Вход в систему Fractalz", message : "Произошла ошибка.\rПроверьте правильность данных!"});
+      }
+
+      document.getElementById("login_wrapper").className += " animate-login-wrapper";
+      document.getElementById("main-wrapper").className += " animate-background-wrapper";
+      document.getElementById("box").className += " animate-box-wrapper";
+      setTimeout(async () => { await this.$router.push({ name: 'DialogPage' })},700);
     },
 
     isAuth()
@@ -531,33 +489,7 @@ export default {
 
       this.noty.Show({title : "Выход из системы Fractalz", message : "Вы успешно покинули систему!\rЖдем вас снова."});
     },
-    logIn : async function () {
-/*      var result = await this.api
-          .Login(this.login, this.password)
-          .catch(response => {
-            this.noty.Show({
-          title: "Вход в систему Fractalz",
-          message: response.response.data.message
-        });
-      });
-      if(result.data.success)
-      {
-        this.$cookies.set("UserToken", result.data.token);
-        this.$cookies.set("UserInfo", result.data.user);
-        this.noty.Show({title : "Вход в систему Fractalz", message : "Добро пожаловать!\rВы успешно вошли в систему."});
-        this.connectWebSocket(result.data.user.id);
-        await this.$router.push({ name: 'DialogPage' })
-      }
-      else
-      {
-        this.noty.Show({title : "Вход в систему Fractalz", message : "Произошла ошибка.\rПроверьте правильность данных!"});
-      }*/
 
-      document.getElementById("login_wrapper").className += " animate-login-wrapper";
-      document.getElementById("main-wrapper").className += " animate-background-wrapper";
-      document.getElementById("box").className += " animate-box-wrapper";
-      setTimeout(async () => { await this.$router.push({ name: 'DialogPage' })},700);
-    },
    connectWebSocket : function (userId) {
       if(this.fileUpload)
       {
@@ -648,7 +580,7 @@ export default {
 .animate-box-wrapper{
   -webkit-transform-origin-y: top;
   transform-origin-y: top;
-  perspective: 800;
+  perspective: 800px;
   transform-style: preserve-3d;
   animation-name: box-wrapp-anim;
   -webkit-animation-duration: 2s;
@@ -741,7 +673,7 @@ export default {
 .wrapper-login-form{
 
 }
-.title-login-form{
+. title-login-form{
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;

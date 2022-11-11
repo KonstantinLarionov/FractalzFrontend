@@ -1,0 +1,43 @@
+{
+  "$id": "1",
+  "success": true,
+  "message": null,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA4ZGFjMjQ2LTVlMGUtNDAwZS04YmJmLWVjNDkwOGVlNDJmNyIsIm5iZiI6MTY2Nzk5Mzg4OCwiZXhwIjoxNjY4MDgwMjg4LCJpYXQiOjE2Njc5OTM4ODgsImlzcyI6IkZyYWN0YWx6IiwiYXVkIjoiRnJhY3RhbHoifQ.u81tpWMP5jGTJA5DTH9G74J1j7P9i2t6IaKKOG1TJ0c",
+  "user": {
+    "$id": "2",
+    "id": "08dac246-5e0e-400e-8bbf-ec4908ee42f7",
+    "onlineStatus": 0,
+    "login": "anthrnewLog123",
+    "name": null,
+    "surname": null,
+    "patro": null,
+    "number": null,
+    "email": "nik-panin-2016@mail.ru",
+    "password": "a3e1e14955b2a24af2a2fe75acc227cfc7754db9d28b6d411f7d6dd342b303ff",
+    "authCode": "287502",
+    "create": "2022-11-09T16:34:30.781865",
+    "lastLogin": "0001-01-01T00:00:00",
+    "isEmailConfirmed": 1,
+    "logo": null,
+    "dialogs": {
+      "$id": "3",
+      "$values": []
+    },
+    "todoList": {
+      "$id": "4",
+      "id": "08dac246-5e0e-4069-838e-ce096ad90bd2",
+      "userId": "08dac246-5e0e-400e-8bbf-ec4908ee42f7",
+      "tasks": {
+        "$id": "5",
+        "$values": []
+      },
+      "created": "0001-01-01T00:00:00"
+    },
+    "myVoiceServer": {
+      "$id": "6",
+      "$values": []
+    },
+    "voiceRoomId": null,
+    "voiceRoom": null
+  }
+}
