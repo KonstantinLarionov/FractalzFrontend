@@ -21,8 +21,7 @@
                 </ul>
               </div>
             </slot>
-          </div>
-          <div class="footer-exit" style="margin-top: -65px">
+            <div class="footer-exit">
                 <span class="buttons" >
                     <router-link :to="{ name: 'RegistrationPage' }">
                       <button class="btn btn-danger" v-on:click="logOut" style="margin-left: 120px">
@@ -31,6 +30,7 @@
                     </router-link>
                   <button  class="btn btn-success" @click="$emit('close')" >Остаться</button>
                 </span>
+          </div>
           </div>
       </div>
     </div>
@@ -177,6 +177,9 @@ margin-top: -50px;
 {
   border-radius: 20px;
 }
-
+.footer-exit{
+margin-top: 10px;
+margin-left: -55px;
+}
 </style>
 
