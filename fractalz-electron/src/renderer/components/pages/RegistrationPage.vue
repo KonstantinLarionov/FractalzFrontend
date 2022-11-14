@@ -8,7 +8,7 @@
         <img class="logo " src="src/renderer/assets/images/logo-img.png" height="100" width="100"/>
       </div>
     </div>
-    <div v-if="type === 'A'" class="container-fluid">
+    <div v-if="type === 'A'" class="container-fluid" >
 
       <div class="row justify-content-center">
         <label class="title-registration-form">Регистрация в Леттер</label>
@@ -31,7 +31,9 @@
         </div>
 
         <div class="row mt-4 justify-content-center">
-          <button class="input-form button-form" v-on:click="singIn()">Создать</button>
+          <button class="input-form button-form" v-on:click="singIn()" >
+            <input style="display:none" @keyup.enter="singIn()">
+            Создать</button>
         </div>
 
         <div class="row mt-4 justify-content-center">
@@ -44,7 +46,7 @@
     <div v-if="type === 'G'" style="display: flex; justify-content: space-around; width: 100%">
       <div style="display: flex; flex-direction: column">
         <p class="row mt-4 justify-content-center placeholder-container">Почти готово!</p>
-        <p class="row mt-4 justify-content-center placeholder-container">Для потверждения введите код который отправлен на указанную вами почту.</p>
+        <p class="row mt-4 justify-content-center placeholder-container">Для потверждения аккаунта необходимо отправить код на указанную вами почту.</p>
         <div class="row mt-4 justify-content-center placeholder-container" style="">
           <input type="password" class="input-form" style="width: 250px;" placeholder=" " v-model="Authcode"/>
           <label style="margin-left: -40px;" >Введите код доступа</label>
@@ -94,7 +96,7 @@
           <label class="label-form">Забыли пароль?</label>
         </div>
         <div class="row justify-content-center">
-          <label class="href-form" style="margin-top: -12px" href="" v-on:click="toResetPassword()">Нажмите чтобы восстановить доступ</label>
+          <label class="href-form" style="margin-top: -12px" href="" v-on:click="toBeginReset()">Нажмите чтобы восстановить доступ</label>
         </div>
 
         <div class="row mt-2 justify-content-center">
@@ -118,12 +120,12 @@
       <div class="wrapper-input-form justify-content-between">
 
         <div class="row mt-4 justify-content-center placeholder-container">
-          <input type="text" class="input-form" placeholder=" " v-model="existEmail"/>
+          <input type="text" class="input-form" placeholder=" " v-model="email"/>
           <label >Введите почту</label>
         </div>
 
         <div class="row mt-4 justify-content-center">
-          <button class="input-form button-form" v-on:click="toSendCode()">Отправить код</button>
+          <button class="input-form button-form" v-on:click="toSendCode(); toResetPassword()">Отправить код</button>
         </div>
 
         <div class="row mt-2 justify-content-center">
@@ -139,7 +141,7 @@
       <div class="wrapper-input-form justify-content-between">
 
         <div class="row mt-4 justify-content-center placeholder-container">
-          <input type="text" class="input-form" placeholder=" " v-bind="Authcode"/>
+          <input type="text" class="input-form" placeholder=" " v-model="Authcode"/>
           <label >Ваш одноразовый код</label>
         </div>
 
@@ -154,7 +156,7 @@
         </div>
 
         <div class="row mt-4 justify-content-center">
-          <button class="input-form button-form" v-on:click="passReset()">Сохранить</button>
+          <button class="input-form button-form" v-on:click="toValidateCode; passReset()">Сохранить</button>
         </div>
 
         <div class="row mt-2 justify-content-center">
@@ -216,7 +218,6 @@ export default {
       login : null,
       email : '',
       Files:[],
-      existEmail:"",
       newPassword1: "",
       newPassword2: "",
       Authcode:"",
@@ -256,13 +257,16 @@ export default {
     },
 
     toResetPassword : function(){
+      return this.type = 'D';
+    },
+    toBeginReset: function ()
+    {
       return this.type = 'C';
     },
-
     toBackFromReset:function(){
       return this.type = 'B';
     },
-    toProofMail: function()
+    toProofMail: async function()
     {
       return this.type = 'G'
     },
@@ -410,7 +414,6 @@ export default {
       if (result.data.success)
       {
         this.noty.Show({title: titleNoty, message: "Добро пожаловать!"});
-        return this.logIn()
       } else
       {
         this.noty.Show({title: titleNoty, message: result.data.message});
@@ -508,7 +511,7 @@ export default {
       var Reg = new RegExp("^(?=.*[A-Z]).{1,18}$");
       var reg = new RegExp("^(?=.*[a-z]).{1,18}$");
 
-      if (!(this.newPassword1 === this.newPassword2))
+      if (!(this.newPassword1 == this.newPassword2))
         return this.noty.Show({title : "Сброс пароля в системе Fractalz", message : "Произошла ошибка.\rВведенные пароли не совпадают"});
 
       if (!(this.newPassword2.length > 6))
@@ -526,7 +529,7 @@ export default {
       if (valid.data.success)
       {
         {
-          const result = await this.api.PasswordReset(this.existEmail, this.newPassword2).catch(response => {
+          const result = await this.api.PasswordReset(this.email, this.newPassword2).catch(response => {
             this.noty.Show
             ({
               title: "Сброс пароля в системе Fractalz",

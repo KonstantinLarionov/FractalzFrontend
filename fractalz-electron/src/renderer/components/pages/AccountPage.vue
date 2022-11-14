@@ -37,10 +37,17 @@
           </div>
         </div>
         <div class="profile-info-wrapper">
-          <div class="info-fio"v-model="model.name">
-              <input placeholder="ФИО" style="border-radius: 8px;border-style:solid;border-color: #0c675e;text-align: center; max-width: max-content">
+          <div class="info-fio" v-model="model.name">
+              <input placeholder="ФИО"
+                     style="border-radius:
+                     8px;border-style:solid;
+                     border-color: #FFFFFF;
+                     text-align: center;
+                     max-width: max-content">
           </div>
-          <div class="info-login" v-model="model.login"></div>
+          <div class="info-login" v-model="model.login">
+            <input placeholder="Логин" style="border-bottom:solid; border-bottom-color: #0b0d0f; text-align: center; max-width: max-content">
+          </div>
           <div class="info-status">
             <svg id="info-status-icon" width="16" height="16" viewBox="0 0 16 16" fill="var(--color-light-green)" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_11_132)">
@@ -67,7 +74,7 @@
             <svg class="homes" width="20" height="35" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1.293L12 7.293V11.5C12 11.8978 11.842 12.2794 11.5607 12.5607C11.2794 12.842 10.8978 13 10.5 13H1.5C1.10218 13 0.720644 12.842 0.43934 12.5607C0.158035 12.2794 0 11.8978 0 11.5V7.293L6 1.293ZM11 0.5V4L9 2V0.5C9 0.367392 9.05268 0.240215 9.14645 0.146447C9.24021 0.0526785 9.36739 0 9.5 0H10.5C10.6326 0 10.7598 0.0526785 10.8536 0.146447C10.9473 0.240215 11 0.367392 11 0.5Z" fill="black"/>
             </svg>
-            <p class="p_adress">Адрес: г.Оренбург пр. Победы 157/6</p>
+            <p class="p_adress">Адрес:<label></label></p>
           </div>
           <div class="numder">
             <svg class="phone" width="20" height="26" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -258,7 +265,7 @@ export default {
   margin-top: 18px;
   font-weight: 600;
   font-size: 18px;
-  max-width: max-content;
+  max-width: 100%;
 }
 .info-login{
   font-weight: 500;
