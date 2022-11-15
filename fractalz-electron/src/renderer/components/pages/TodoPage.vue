@@ -20,9 +20,7 @@
         </div>
         <div class="filter-left-done">
           <div style="margin-right: 5px;">Показать только не выполненные</div>
-          <svg width="25" height="25" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 0C3.67392 0 2.40215 0.526784 1.46447 1.46447C0.526784 2.40215 0 3.67392 0 5C0 6.32608 0.526784 7.59785 1.46447 8.53553C2.40215 9.47322 3.67392 10 5 10H11C12.3261 10 13.5979 9.47322 14.5355 8.53553C15.4732 7.59785 16 6.32608 16 5C16 3.67392 15.4732 2.40215 14.5355 1.46447C13.5979 0.526784 12.3261 0 11 0H5ZM11 9C9.93913 9 8.92172 8.57857 8.17157 7.82843C7.42143 7.07828 7 6.06087 7 5C7 3.93913 7.42143 2.92172 8.17157 2.17157C8.92172 1.42143 9.93913 1 11 1C12.0609 1 13.0783 1.42143 13.8284 2.17157C14.5786 2.92172 15 3.93913 15 5C15 6.06087 14.5786 7.07828 13.8284 7.82843C13.0783 8.57857 12.0609 9 11 9Z" fill="#00627A"/>
-          </svg>
+          <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
         </div>
       </div>
       <div class="todo-filter-right">
@@ -157,7 +155,6 @@
       </div>
     </div> -->
   </div>
-
 </template>
 
 <script>
@@ -428,6 +425,7 @@ export default {
 .round {
   position: relative;
 }
+/*****************Зелёные кнопки с права от *******************/
 .container{
   display: flex;
   Justify-content: flex-end;
@@ -440,7 +438,7 @@ export default {
     height: 1.7em;
     background-color: transparent;
     border-radius: 50%;
-    border: 2px solid #05FF00;
+    border: 2px solid #ffffff;
     appearance: none;
     -webkit-appearance: none;
     outline: none;
@@ -464,7 +462,6 @@ export default {
 .round input[type="checkbox"] {
   visibility: hidden;
 }
-
 .round input[type="checkbox"]:checked + label {
   background-color: transparent;
   border-color: #05FF00;
@@ -475,5 +472,49 @@ export default {
 }
 .round input[type="checkbox"]:checked + label:after {
   opacity: 1;
+}
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 35px;
+	height: 20px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 7px;
+	width: 17px;
+	height: 17px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+  margin-top: -3px;
+  margin-left: -3px;
+}
+input:checked + label {
+	background: #00627A;
+}
+input:checked + label:after {
+	left: calc(100% - 0px);
+	transform: translateX(-100%);
+}
+label:active:after {
+	width: 25px;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
 </style>
