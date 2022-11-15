@@ -37,16 +37,17 @@
           </div>
         </div>
         <div class="profile-info-wrapper">
-          <div class="info-fio" v-model="model.name">
+          <div class="info-fio" >
               <input placeholder="ФИО"
                      style="border-radius:
                      8px;border-style:solid;
                      border-color: #FFFFFF;
                      text-align: center;
-                     max-width: max-content">
+                     max-width: max-content"
+                     v-model="model.name">
           </div>
-          <div class="info-login" v-model="model.login">
-            <input placeholder="Логин" style="border-bottom:solid; border-bottom-color: #0b0d0f; text-align: center; max-width: max-content">
+          <div class="info-login" >
+            <input placeholder="Логин"  v-model="model.login" style="border-bottom:solid; border-bottom-color: #0b0d0f; text-align: center; max-width: max-content">
           </div>
           <div class="info-status">
             <svg id="info-status-icon" width="16" height="16" viewBox="0 0 16 16" fill="var(--color-light-green)" xmlns="http://www.w3.org/2000/svg">
@@ -239,8 +240,25 @@ export default {
   mounted() {
     this.api = new UserPart(this.$http);
     this.noty = new NotifyCenter();
+    this.getUser();
   },
   methods:{
+    getUser:async function()
+    {
+      var getUser = await this.api.GetUser(this.$cookies.get("UserInfo").id)
+      if(getUser.data.success)
+      {
+        console.log(getUser.data.userEntity)
+        this.model.email = getUser.data.userEntity.email;
+        this.model.login = getUser.data.userEntity.login;
+        this.model.name = getUser.data.userEntity.name;
+        this.model.surname = getUser.data.userEntity.surname;
+        this.model.number = getUser.data.userEntity.number;
+        this.model.logo = getUser.data.userEntity.logo;
+        this.model.patro = getUser.data.userEntity.patro;
+        this.model.userId = getUser.data.userEntity.userId;
+      }
+    },
     updateProfile : async function() {
       var result = await this.api.UpdateProfile(this.model);
       if(result.success)

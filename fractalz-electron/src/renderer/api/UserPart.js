@@ -13,10 +13,15 @@ export default class UserPart extends BasePart {
     _passwordReset = this._partPath + "passwordReset"
     _sendCode = this._partPath + "sendCode"
     _validCode = this._partPath + "validCode"
+    _getUser = this._partPath + "getUser"
 
     _loginModel = function (login, password)
     {
         return "?login=" + login + "&password=" + password;
+    }
+    _getUserModel = function (id)
+    {
+        return "?userId=" + id;
     }
 
     _registrationModel = function (login, email, password)
@@ -62,6 +67,15 @@ export default class UserPart extends BasePart {
      */
     async Login(login, password) {
         return await this.instant.get(this._loginPath + this._loginModel(login, password))
+    }
+    /**
+     *Получение пользователя
+     * @param id
+     * @returns {Promise<*>}
+     * @constructor
+     */
+    async GetUser(id) {
+        return await this.instant.get(this._getUser + this._getUserModel(id))
     }
 
     /**

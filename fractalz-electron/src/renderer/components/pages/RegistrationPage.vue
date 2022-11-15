@@ -135,7 +135,7 @@
     </div>
     <div v-if="type === 'D'" class="container-fluid">
 
-      <div class="row justify-content-center">
+      <div v-if="type === 'C'" class="row justify-content-center">
         <label class="title-recovery-account-form">Восстановление<br>аккаунта</label>
       </div>
       <div class="wrapper-input-form justify-content-between">
@@ -596,7 +596,7 @@ export default {
 
   }
   to{
-    transform: rotateX(180deg);
+    transform:rotate(180deg);
   }
 }
 .placeholder-container {
