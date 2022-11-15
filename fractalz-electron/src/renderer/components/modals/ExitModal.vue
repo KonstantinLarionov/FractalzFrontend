@@ -24,11 +24,11 @@
             <div class="footer-exit">
                 <span class="buttons" >
                     <router-link :to="{ name: 'RegistrationPage' }">
-                      <button class="btn btn-danger" v-on:click="logOut" style="margin-left: 120px">
+                      <button class="exit-btn" v-on:click="logOut" style="margin-left: 120px">
                         Выйти
                       </button>
                     </router-link>
-                  <button  class="btn btn-success" @click="$emit('close')" >Остаться</button>
+                  <button  class="back-btn" @click="$emit('close')" >Остаться</button>
                 </span>
           </div>
           </div>
@@ -75,7 +75,8 @@ export default {
 }
 </script>
 <style lang="css">
-.btn-danger{
+.exit-btn{
+  color: white;
   height: 40px;
   width: 100px;
   border-radius: 20px;
@@ -86,16 +87,17 @@ export default {
   font-weight: 300;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.btn-danger:hover{
+.exit-btn:hover{
   background: #003947;
 }
-.btn-danger:active{
+.exit-btn:active{
   background: #003947;
 }
-.btn-danger:focus{
+.exit-btn:focus{
   background: #003947;
 }
-.btn-success{
+.back-btn{
+  color: white;
   height: 40px;
   width: 100px;
   border-radius: 20px;
@@ -106,13 +108,13 @@ export default {
   font-weight: 300;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.btn-success:hover{
+.back-btn:hover{
   background: #7B7B7B;
 }
-.btn-success:active{
+.back-btn:active{
   background: #7B7B7B;
 }
-.btn-success:focus{
+.back-btn:focus{
   background: #7B7B7B;
 }
 .modal-mask {
@@ -136,7 +138,6 @@ margin-top: -50px;
   margin-left: 170px;
 }
 .question{
-  color: #00627AS;
   margin-left: 25px;
   font-size: 14px;
 }

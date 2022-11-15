@@ -1,6 +1,6 @@
 <template>
   <div class="todo-wrap" id="todoSpace">
-    <transition name="modal" class="modal">
+    <!--<transition name="modal" class="modal">
       <div class="modal-mask">
         <div class="modal-wrapper">
           <div class="modal-container-notification-buttons">
@@ -9,12 +9,13 @@
               <p class="text-notification">Текст для уведомления в модельном <br> окне пользователю на принятие или <br> отклонеие действия</p>
             </div>
             <div class="bottom-of-the-notification">
-              <button class="btn cancellation" @click="$emit('close')" id="modal-close">Отмена</button> <button class="btn approval" @click="$emit('close')">Хорошо</button>
+              <button class="btn cancellation" @click="$emit('close')" id="modal-close">Отмена</button>
+              <button class="btn approval" @click="$emit('close')">Хорошо</button>
             </div>
           </div>
         </div>
       </div>
-    </transition>
+    </transition> -->
     <div class="todo-filter">
       <div class="Entering-a-search">
         <input class="input-up" name="s" placeholder="Введите заголовок уведомления">
@@ -118,6 +119,13 @@
 </template>
 
 <script>
+import Vue from "vue";
+import UserNotyElement from "../elements/noty/UserNotyElement";
+import ChatPart from "../../api/ChatPart";
+import NotyPart from "../../api/NotyPart";
+
+Vue.component ('user-element', UserNotyElement)
+
 function NotificationPage() {
 
 }
@@ -315,9 +323,6 @@ text-align: center;
   font-weight: 400;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: white;
-}
-.modal{
-
 }
 .approval:hover{
   background: #003947;
