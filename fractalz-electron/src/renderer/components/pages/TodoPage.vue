@@ -20,7 +20,9 @@
         </div>
         <div class="filter-left-done">
           <div style="margin-right: 5px;">Показать только не выполненные</div>
+          <div class="WW">
           <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+          </div>
         </div>
       </div>
       <div class="todo-filter-right">
@@ -67,12 +69,6 @@
           <div class="todo-task-info-header">
             <div>Заголовок задачи</div>
             <div class="task-circle">
-              <div class="container">
-               <div class="round">
-                <input type="checkbox" checked id="checkbox" />
-                <label for="checkbox"></label>
-              </div>
-            </div>
             </div>
           </div>
           <div class="todo-task-info-description">
@@ -96,12 +92,6 @@
           <div class="todo-task-info-header">
             <div>Заголовок задачи</div>
             <div class="task-circle">
-              <div class="container">
-               <div class="round">
-                <input type="checkbox" checked id="checkbox" />
-                <label for="checkbox"></label>
-              </div>
-            </div>
             </div>
           </div>
           <div class="todo-task-info-description">
@@ -425,7 +415,7 @@ export default {
 .round {
   position: relative;
 }
-/*****************Зелёные кнопки с права от *******************/
+
 .container{
   display: flex;
   Justify-content: flex-end;
@@ -473,12 +463,14 @@ export default {
 .round input[type="checkbox"]:checked + label:after {
   opacity: 1;
 }
-input[type=checkbox]{
+
+/*Чек бокс вкл-выкл*/
+.WW input[type=checkbox]{
 	height: 0;
 	width: 0;
 	visibility: hidden;
 }
-label {
+.WW label {
 	cursor: pointer;
 	text-indent: -9999px;
 	width: 35px;
@@ -488,7 +480,7 @@ label {
 	border-radius: 100px;
 	position: relative;
 }
-label:after {
+.WW label:after {
 	content: '';
 	position: absolute;
 	top: 5px;
@@ -501,14 +493,14 @@ label:after {
   margin-top: -3px;
   margin-left: -3px;
 }
-input:checked + label {
+.WW input[type="checkbox"]:checked + label {
 	background: #00627A;
 }
-input:checked + label:after {
+.WW input[type="checkbox"]:checked + label:after {
 	left: calc(100% - 0px);
 	transform: translateX(-100%);
 }
-label:active:after {
+.WW label:active:after {
 	width: 25px;
 }
 body {
