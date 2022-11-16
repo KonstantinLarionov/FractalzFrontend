@@ -9,40 +9,33 @@
       </div>
     </div>
     <div v-if="type === 'A'" class="container-fluid" >
-
       <div class="row justify-content-center">
         <label class="title-registration-form">Регистрация в Леттер</label>
       </div>
       <div class="wrapper-input-form justify-content-between">
-
         <div class="row mt-4 justify-content-center placeholder-container">
           <input type="text" class="input-form" placeholder="" v-model="login"/>
           <label >Введите логин</label>
         </div>
-
         <div class="row mt-4 justify-content-center placeholder-container">
           <input type="text" class="input-form" placeholder="" v-model="email"/>
           <label >Введите почту</label>
         </div>
-
         <div class="row mt-4 justify-content-center placeholder-container">
           <input type="password" class="input-form" placeholder=" " v-model="password"/>
           <label>Введите пароль</label>
         </div>
-
         <div class="row mt-4 justify-content-center">
           <button class="input-form button-form" v-on:click="singIn()" >
             <input style="display:none" @keyup.enter="singIn()">
             Создать</button>
         </div>
-
         <div class="row mt-4 justify-content-center">
           <label class="label-form">Уже усть аккаунт?</label>
           <label class="href-form" href=""  v-on:click="toSingIn()">Войти</label>
         </div>
       </div>
     </div>
-
     <div v-if="type === 'G'" style="display: flex; justify-content: space-around; width: 100%">
       <div style="display: flex; flex-direction: column">
         <p class="row mt-4 justify-content-center placeholder-container">Почти готово!</p>
@@ -66,49 +59,38 @@
         <p class="href-form" style="margin-left: 230px; margin-top: 20px;"><a v-on:click="toCreateAccount()">Вернуться назад</a></p>
       </div>
     </div>
-
     <div id="login_wrapper" v-if="type === 'B'" class="container-fluid wrapper-login-form">
       <div class="row justify-content-center">
         <label class="title-login-form">Леттер</label>
       </div>
       <div class="wrapper-input-form justify-content-between">
-
         <div class="row mt-4 justify-content-center placeholder-container">
           <input type="text" class="input-form" placeholder=" " v-model="login"/>
           <label >Введите логин</label>
         </div>
-
         <div class="row mt-4 justify-content-center placeholder-container">
           <input type="password" class="input-form" placeholder=" " v-model="password"/>
           <label >Введите пароль</label>
         </div>
-
         <div class="row mt-4 justify-content-center">
           <button class="input-form button-form" v-on:click="logIn()">Войти</button>
         </div>
-
         <div class="row mt-4 justify-content-center">
           <label class="label-form">Нет аккаунта?</label>
           <label class="href-form" v-on:click="toCreateAccount()">Создать аккаунт</label>
         </div>
-
         <div class="row justify-content-center">
           <label class="label-form">Забыли пароль?</label>
         </div>
         <div class="row justify-content-center">
           <label class="href-form" style="margin-top: -12px" href="" v-on:click="toBeginReset()">Нажмите чтобы восстановить доступ</label>
         </div>
-
         <div class="row mt-2 justify-content-center">
           <label class="href-form" href="" v-on:click="toLogInDS()">Войти с цифровым ключём</label>
         </div>
-
       </div>
-
     </div>
-
     <div v-if="type === 'C'" class="container-fluid">
-
       <div class="mt-4 col justify-content-center">
         <label class="row title-recovery-form justify-content-center">
           Для восстановления доступа вам<br>необходимо сбросить старый пароль и<br>установить новый.
@@ -118,82 +100,64 @@
         </label>
       </div>
       <div class="wrapper-input-form justify-content-between">
-
         <div class="row mt-4 justify-content-center placeholder-container">
           <input type="text" class="input-form" placeholder=" " v-model="email"/>
           <label >Введите почту</label>
         </div>
-
         <div class="row mt-4 justify-content-center">
           <button class="input-form button-form" v-on:click="toSendCode(); toResetPassword()">Отправить код</button>
         </div>
-
         <div class="row mt-2 justify-content-center">
           <label class="href-form" href="" v-on:click="toBackFromReset()">Вернуться назад</label>
         </div>
       </div>
     </div>
     <div v-if="type === 'D'" class="container-fluid">
-
       <div v-if="type === 'C'" class="row justify-content-center">
         <label class="title-recovery-account-form">Восстановление<br>аккаунта</label>
       </div>
       <div class="wrapper-input-form justify-content-between">
-
         <div class="row mt-4 justify-content-center placeholder-container">
           <input type="text" class="input-form" placeholder=" " v-model="Authcode"/>
           <label >Ваш одноразовый код</label>
         </div>
-
         <div class="row mt-4 justify-content-center placeholder-container">
           <input type="password" class="input-form" placeholder=" " v-model="newPassword1"/>
           <label >Введите новый пароль</label>
         </div>
-
         <div class="row mt-4 justify-content-center placeholder-container">
           <input type="password" class="input-form" placeholder=" " v-model="newPassword2"/>
           <label >Подтвердите новый пароль</label>
         </div>
-
         <div class="row mt-4 justify-content-center">
           <button class="input-form button-form" v-on:click="toValidateCode; passReset()">Сохранить</button>
         </div>
-
         <div class="row mt-2 justify-content-center">
           <label class="href-form" href="" v-on:click="toBackFromReset()">Вернуться назад</label>
         </div>
-
       </div>
-
     </div>
     <div v-if="type === 'F'" class="container-fluid wrapper-login-form">
-
       <div class="justify-content-center">
-
         <div class="row mt-2 justify-content-center">
           <div class="ecp-drag-n-drop-zone">
             <label class="ecp-form">Перетащите файл подписи сюда</label>
           </div>
         </div>
-
         <div class="row mt-4 justify-content-center">
           <label class="label-form">Или</label>
         </div>
-
         <div class="ecp-select-form">
           <label class="ecp-label">Выберите файл -> </label>
           <button class="button-form ecp-input-form" v-on:click="singIn()">...</button>
         </div>
-
         <div class="row mt-2 justify-content-center">
           <label class="href-form" href="" v-on:click="toBackFromReset()">Вернуться назад</label>
         </div>
       </div>
-
     </div>
   </div>
 </template>
-
 
 <script>
 import UserPart from "../../api/UserPart";
