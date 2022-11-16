@@ -75,6 +75,7 @@
           </div>
         </div>
         <div class="profile-adress-wrapper">
+          <div class="first-row">
           <div class="adress">
             <svg class="roof" width="24" height="21" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M7.29301 0.500001C7.48053 0.31253 7.73484 0.207214 8.00001 0.207214C8.26517 0.207214 8.51948 0.31253 8.70701 0.500001L15.354 7.146C15.4479 7.23989 15.5006 7.36723 15.5006 7.5C15.5006 7.63278 15.4479 7.76011 15.354 7.854C15.2601 7.94789 15.1328 8.00063 15 8.00063C14.8672 8.00063 14.7399 7.94789 14.646 7.854L8.00001 1.207L1.35401 7.854C1.26012 7.94789 1.13278 8.00063 1.00001 8.00063C0.86723 8.00063 0.739893 7.94789 0.646006 7.854C0.552119 7.76011 0.499374 7.63278 0.499374 7.5C0.499374 7.36723 0.552119 7.23989 0.646006 7.146L7.29301 0.500001Z" fill="black"/>
@@ -123,9 +124,12 @@
               >
             </p>
           </div>
-          <button style="  border-radius: 40px; background-color: transparent; border-color: transparent"><img class="vk-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png"/></button>
-          <button style=" border-radius:50px; background-color:transparent; border-color:transparent"><img class="tg-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png"/></button>
+          </div>
+          <div class="second-row">
+          <button style=" width: 30px; height: 30px; margin-top: 20px; margin-left: 10px; border-radius: 40px; background-color: transparent; border-color: transparent"><img class="vk-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png"/></button>
+          <button style=" width: 30px; height: 30px; margin-top: 11px; margin-left: 10px; border-radius:50px; background-color:transparent; border-color:transparent"><img class="tg-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png"/></button>
         </div>
+      </div>
           <div class="info-photos">
           <div class ="down">
             <button class="btn-down"><img class="img-down" src="https://sun9-north.userapi.com/sun9-83/s/v1/ig2/xeu9WymM8N9y_3PVvHpSi_uA6DW-sefE6dPT4I6zzuOJ7POgHwzgIfzNU9Hb-3rbNpNhqAYWKEDjADP7vKMpSTEA.jpg?size=27x29&quality=96&type=album"></button>
@@ -225,6 +229,16 @@ export default {
 </script>
 
 <style scoped>
+.first-row{
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+}
+.second-row{
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+}
 .info-status{
   color: black;
   font-weight: 300;
@@ -242,6 +256,7 @@ export default {
 }
 .profile-info-wrapper{
   width: 100%;
+  height: 100px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -311,9 +326,22 @@ export default {
 .profile-adress-wrapper{
   height: 120px;
   width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 .adress{
-  width: 200px;
+  margin-left: 50px;
+  width: 270px;
+  height: 40px;
+}
+.numder{
+  margin-left: 50px;
+  width: 270px;
+  height: 40px;
+}
+.mail{
+  margin-left: 50px;
+  width: 270px;
   height: 40px;
 }
 .profile-logo{
@@ -396,16 +424,12 @@ position: absolute;
 .vk-img{
   height: 30px;
   width: 30px;
-  position: absolute;
-  left: 390px;
-  top: 410px;
+  margin-left: -10px;
 }
 .tg-img{
+  height: 30px;
   width: 30px;
-  width: 30px;
-  position: absolute;
-  left: 390px;
-  top: 450px;
+  margin-left: -10px;
 }
 .photos{
   height: 100%;

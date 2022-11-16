@@ -218,7 +218,7 @@ option:hover
   color: white;
 }
 .the-main-part{
-  height: 5000px;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
