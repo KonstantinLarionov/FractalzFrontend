@@ -128,18 +128,16 @@
         </div>
           <div class="info-photos">
           <div class ="down">
-            <svg class="Arrow" width="13" height="13" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0C3.09946 0 3.19484 0.0395089 3.26517 0.109835C3.33549 0.180161 3.375 0.275544 3.375 0.375V4.71975L4.9845 3.1095C5.01937 3.07463 5.06076 3.04698 5.10631 3.02811C5.15187 3.00924 5.20069 2.99953 5.25 2.99953C5.29931 2.99953 5.34813 3.00924 5.39369 3.02811C5.43924 3.04698 5.48063 3.07463 5.5155 3.1095C5.55037 3.14437 5.57802 3.18576 5.59689 3.23131C5.61576 3.27687 5.62547 3.32569 5.62547 3.375C5.62547 3.42431 5.61576 3.47313 5.59689 3.51869C5.57802 3.56424 5.55037 3.60563 5.5155 3.6405L3.2655 5.8905C3.23067 5.92542 3.18928 5.95313 3.14372 5.97203C3.09817 5.99094 3.04933 6.00067 3 6.00067C2.95067 6.00067 2.90183 5.99094 2.85627 5.97203C2.81072 5.95313 2.76933 5.92542 2.7345 5.8905L0.4845 3.6405C0.449634 3.60563 0.421977 3.56424 0.403107 3.51869C0.384238 3.47313 0.374526 3.42431 0.374526 3.375C0.374526 3.32569 0.384238 3.27687 0.403107 3.23131C0.421977 3.18576 0.449634 3.14437 0.4845 3.1095C0.554915 3.03908 0.650418 2.99953 0.75 2.99953C0.799308 2.99953 0.848133 3.00924 0.893688 3.02811C0.939242 3.04698 0.980634 3.07463 1.0155 3.1095L2.625 4.71975V0.375C2.625 0.275544 2.66451 0.180161 2.73483 0.109835C2.80516 0.0395089 2.90054 0 3 0Z" fill="#00627A"/>
-            </svg>
+            <button class="btn-down"><img class="img-down" src="https://sun9-north.userapi.com/sun9-83/s/v1/ig2/xeu9WymM8N9y_3PVvHpSi_uA6DW-sefE6dPT4I6zzuOJ7POgHwzgIfzNU9Hb-3rbNpNhqAYWKEDjADP7vKMpSTEA.jpg?size=27x29&quality=96&type=album"></button>
           </div>
           <div class="info">
             <div class="p_photos">
               <p class="p4">Фотографии</p>
               <p class="p5">150</p>
-              <svg class="plus_photo" width="19" height="19" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.375 0C1.01033 0 0.660591 0.131696 0.402728 0.366117C0.144866 0.600537 0 0.918479 0 1.25L0 8.75C0 9.08152 0.144866 9.39946 0.402728 9.63388C0.660591 9.8683 1.01033 10 1.375 10H9.625C9.98967 10 10.3394 9.8683 10.5973 9.63388C10.8551 9.39946 11 9.08152 11 8.75V1.25C11 0.918479 10.8551 0.600537 10.5973 0.366117C10.3394 0.131696 9.98967 0 9.625 0L1.375 0ZM5.84375 2.8125V4.6875H7.90625C7.99742 4.6875 8.08485 4.72042 8.14932 4.77903C8.21378 4.83763 8.25 4.91712 8.25 5C8.25 5.08288 8.21378 5.16237 8.14932 5.22097C8.08485 5.27958 7.99742 5.3125 7.90625 5.3125H5.84375V7.1875C5.84375 7.27038 5.80753 7.34987 5.74307 7.40847C5.6786 7.46708 5.59117 7.5 5.5 7.5C5.40883 7.5 5.3214 7.46708 5.25693 7.40847C5.19247 7.34987 5.15625 7.27038 5.15625 7.1875V5.3125H3.09375C3.00258 5.3125 2.91515 5.27958 2.85068 5.22097C2.78622 5.16237 2.75 5.08288 2.75 5C2.75 4.91712 2.78622 4.83763 2.85068 4.77903C2.91515 4.72042 3.00258 4.6875 3.09375 4.6875H5.15625V2.8125C5.15625 2.72962 5.19247 2.65013 5.25693 2.59153C5.3214 2.53292 5.40883 2.5 5.5 2.5C5.59117 2.5 5.6786 2.53292 5.74307 2.59153C5.80753 2.65013 5.84375 2.72962 5.84375 2.8125Z" fill="#00627A"/>
-              </svg>
             </div>
+            <div class="dtnconteiner">
+            <button class="buttonplus"><img class="plusinbtn" src="https://sun9-west.userapi.com/sun9-68/s/v1/ig2/vPw_rcDLxFcsXJVH4Sy_mB60jCn_dlvvouYAAVvbk47Q-UYEqlioO1NXA5CC9TZ6uorGs9a2by4dr9FiwwYqOvJg.jpg?size=47x42&quality=96&type=album"></button>
+          </div>
           </div>
           <div class="photos">
             <div class ="photos_osnov">
@@ -314,6 +312,10 @@ export default {
   height: 120px;
   width: 100%;
 }
+.adress{
+  width: 200px;
+  height: 40px;
+}
 .profile-logo{
   background-image: url(../../assets/images/defaultlogo.jpg);
   background-size: cover;
@@ -336,8 +338,10 @@ export default {
 .info{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   height: 50px;
   width: 100%;
+
 }
 .roof{
 position: absolute;
@@ -419,6 +423,7 @@ position: absolute;
   text-align: left;
   margin-top: 5px;
   margin-left: 30px;
+  
 }
 .p4{
   font-family: 'Roboto';
@@ -439,10 +444,13 @@ position: absolute;
   margin-top: 15px;
   margin-left: 5px;
 }
-.plus_photo{
-  position: fixed;
-  bottom: 185px;
-  right: 30px;
+.buttonplus{
+  margin-left: -10px;
+  margin-top: 15px;
+  background-color: transparent;
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
 }
 .photos_osnov{
   width: 100%;
@@ -485,6 +493,15 @@ opacity: 0;
 cursor: pointer;
 display: flex;
 }
+.plusinbtn{
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -7px;
+}
+.dtnconteiner{
+  margin-right: 20px;
+}
 .trash-photo:hover{
   opacity: 1;
 }
@@ -499,8 +516,18 @@ display: flex;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-top: 100px;
 }
-.Arrow{
-  margin-top: 10px;
-  margin-left: 10px;
+.btn-down{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  border-color: transparent;
 }
+.img-down{
+  margin-top: 4px;
+  margin-left: 3px;
+  width: 15px;
+  height: 18px;
+}
+
 </style>
