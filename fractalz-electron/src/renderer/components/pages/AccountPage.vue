@@ -44,10 +44,17 @@
                      border-color: #FFFFFF;
                      text-align: center;
                      max-width: max-content"
-                     v-model="model.name">
+                     v-model="model.name"
+                     v-on:keyup.enter="updateProfile()">
           </div>
           <div class="info-login" >
-            <input placeholder="Логин"  v-model="model.login" style="border-bottom:solid; border-bottom-color: #0b0d0f; text-align: center; max-width: max-content">
+            <input placeholder="Логин"
+                   v-model="model.login"
+                   style="border-bottom:solid;
+                   border-bottom-color: #0b0d0f;
+                   text-align: center;
+                   max-width: max-content"
+                   v-on:keyup.enter="updateProfile()">
           </div>
           <div class="info-status">
             <svg id="info-status-icon" width="16" height="16" viewBox="0 0 16 16" fill="var(--color-light-green)" xmlns="http://www.w3.org/2000/svg">
@@ -81,13 +88,40 @@
             <svg class="phone" width="20" height="26" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 2C0 1.46957 0.210714 0.960859 0.585786 0.585786C0.960859 0.210714 1.46957 0 2 0L8 0C8.53043 0 9.03914 0.210714 9.41421 0.585786C9.78929 0.960859 10 1.46957 10 2V14C10 14.5304 9.78929 15.0391 9.41421 15.4142C9.03914 15.7893 8.53043 16 8 16H2C1.46957 16 0.960859 15.7893 0.585786 15.4142C0.210714 15.0391 0 14.5304 0 14V2ZM6 13C6 12.7348 5.89464 12.4804 5.70711 12.2929C5.51957 12.1054 5.26522 12 5 12C4.73478 12 4.48043 12.1054 4.29289 12.2929C4.10536 12.4804 4 12.7348 4 13C4 13.2652 4.10536 13.5196 4.29289 13.7071C4.48043 13.8946 4.73478 14 5 14C5.26522 14 5.51957 13.8946 5.70711 13.7071C5.89464 13.5196 6 13.2652 6 13Z" fill="black"/>
             </svg>
-            <p class="numder1">Телефон: +7 (996) 571-85-93</p>
+            <p class="numder1">
+              Телефон:
+              <input placeholder="Введите номер"
+                     style="
+                     border-width: 0 0 1px 0;
+                     border-bottom-style:solid;
+                     border-radius: 15px;
+                     border-bottom-color:#1dc0cb;
+                     text-align: center;
+                     max-width: max-content"
+                     v-model="model.number"
+                     type="tel"
+                     v-on:keyup.enter="updateProfile()">
+
+              </p>
           </div>
           <div class="mail">
             <svg class="mail_pic" width="24" height="20" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0.05 1.555C0.150818 1.11324 0.398655 0.718813 0.752922 0.436308C1.10719 0.153804 1.54688 -3.04944e-05 2 4.53414e-09H14C14.4531 -3.04944e-05 14.8928 0.153804 15.2471 0.436308C15.6013 0.718813 15.8492 1.11324 15.95 1.555L8 6.414L0.05 1.555ZM0 2.697V9.801L5.803 6.243L0 2.697ZM6.761 6.83L0.191 10.857C0.353327 11.1993 0.609527 11.4884 0.929782 11.6908C1.25004 11.8931 1.62117 12.0004 2 12H14C14.3788 12.0001 14.7498 11.8926 15.0698 11.6901C15.3899 11.4876 15.6459 11.1983 15.808 10.856L9.238 6.829L8 7.586L6.761 6.829V6.83ZM10.197 6.244L16 9.801V2.697L10.197 6.243V6.244Z" fill="black"/>
             </svg>
-            <p class="mail_p">Почта: kostya12277@yandex.ru</p>
+            <p class="mail_p">
+              Почта:
+              <input
+                     style="
+                     border-width: 0 0 1px 0;
+                     border-bottom-style:solid;
+                     border-bottom-color:#1dc0cb;
+                     border-radius: 15px;
+                     text-align: center;
+                     max-width: max-content"
+                     v-model="model.email"
+                     readonly="readonly"
+              >
+            </p>
           </div>
           <button style="  border-radius: 40px; background-color: transparent; border-color: transparent"><img class="vk-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png"/></button>
           <button style=" border-radius:50px; background-color:transparent; border-color:transparent"><img class="tg-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png"/></button>
@@ -125,61 +159,6 @@
       </div>
       </div>
     </div>
-
-<!--    <div class="container-fluid">-->
-<!--      <div class="col">-->
-<!--    <div class="row  w-100 d-flex flex-column"><div style="display: flex; justify-content: center"><img  width="200" height="200" src="https://via.placeholder.com/200"/></div></div>-->
-<!--    <div class="row w-100 d-flex flex-column">-->
-<!--      <div class="input__wrapper">-->
-<!--        <input name="file" type="file" id="input__file" class="input input__file" multiple>-->
-<!--        <label for="input__file" class="input__file-button">-->
-<!--          <span class="input__file-icon-wrapper">-->
-<!--            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">-->
-<!--              <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>-->
-<!--              <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>-->
-<!--            </svg>-->
-<!--          </span>-->
-<!--          <span class="input__file-button-text">Выберите файл</span>-->
-<!--        </label>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="container-fluid " style="overflow-y: scroll;">-->
-<!--    <div class="row w-100 d-flex flex-column">-->
-<!--      <label style="font-weight: bold">Ваш Email: </label>-->
-<!--      <input v-model="model.email" type="text" class="account-input-text">-->
-<!--    </div>-->
-<!--    <div class="row w-100 d-flex flex-column">-->
-<!--      <label style="font-weight: bold">Имя: </label>-->
-<!--      <input type="text" v-model="model.name" class="account-input-text">-->
-<!--    </div>-->
-<!--    <div class="row w-100 d-flex flex-column">-->
-<!--      <label style="font-weight: bold">Фамилия: </label>-->
-<!--      <input type="text" v-model="model.surname" class="account-input-text">-->
-<!--    </div>-->
-<!--    <div class="row w-100 d-flex flex-column">-->
-<!--      <label style="font-weight: bold" >Отчество: </label>-->
-<!--      <input type="text" v-model="model.patro" class="account-input-text">-->
-<!--    </div>-->
-<!--    <div class="row w-100 d-flex flex-column">-->
-<!--      <label style="font-weight: bold">Логин: </label>-->
-<!--      <input type="text" v-model="model.login" class="account-input-text">-->
-<!--    </div>-->
-<!--    <div class="row w-100 d-flex flex-column">-->
-<!--      <label style="font-weight: bold">Телефон: </label>-->
-<!--      <input  v-model="model.number" type="text" class="account-input-text">-->
-<!--    </div>-->
-<!--    <div class="row w-100 d-flex flex-column">-->
-<!--      <label style="font-weight: bold">Файл подписи: </label>-->
-<!--      <input type="text" class="account-input-text"/>-->
-
-<!--      <small class="text-muted">(нужен только для внутренних серверов)</small>-->
-<!--    </div>-->
-<!--    <div class="row w-100 d-flex flex-column">-->
-<!--      <button class="btn btn-success account-input-btn" v-on:click="updateProfile()">Сохранить</button>-->
-<!--    </div>-->
-<!--    </div>-->
   </div>
 </template>
 
@@ -229,7 +208,8 @@ export default {
         this.model.number = getUser.data.userEntity.number;
         this.model.logo = getUser.data.userEntity.logo;
         this.model.patro = getUser.data.userEntity.patro;
-        this.model.userId = getUser.data.userEntity.userId;
+        this.model.userId = getUser.data.userEntity.id;
+        this.api = new UserPart(this.$http);
       }
     },
     updateProfile : async function() {
