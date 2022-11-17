@@ -77,12 +77,7 @@
         <div class="profile-adress-wrapper">
           <div class="first-row">
           <div class="adress">
-            <svg class="roof" width="24" height="21" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.29301 0.500001C7.48053 0.31253 7.73484 0.207214 8.00001 0.207214C8.26517 0.207214 8.51948 0.31253 8.70701 0.500001L15.354 7.146C15.4479 7.23989 15.5006 7.36723 15.5006 7.5C15.5006 7.63278 15.4479 7.76011 15.354 7.854C15.2601 7.94789 15.1328 8.00063 15 8.00063C14.8672 8.00063 14.7399 7.94789 14.646 7.854L8.00001 1.207L1.35401 7.854C1.26012 7.94789 1.13278 8.00063 1.00001 8.00063C0.86723 8.00063 0.739893 7.94789 0.646006 7.854C0.552119 7.76011 0.499374 7.63278 0.499374 7.5C0.499374 7.36723 0.552119 7.23989 0.646006 7.146L7.29301 0.500001Z" fill="black"/>
-            </svg>
-            <svg class="homes" width="20" height="35" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1.293L12 7.293V11.5C12 11.8978 11.842 12.2794 11.5607 12.5607C11.2794 12.842 10.8978 13 10.5 13H1.5C1.10218 13 0.720644 12.842 0.43934 12.5607C0.158035 12.2794 0 11.8978 0 11.5V7.293L6 1.293ZM11 0.5V4L9 2V0.5C9 0.367392 9.05268 0.240215 9.14645 0.146447C9.24021 0.0526785 9.36739 0 9.5 0H10.5C10.6326 0 10.7598 0.0526785 10.8536 0.146447C10.9473 0.240215 11 0.367392 11 0.5Z" fill="black"/>
-            </svg>
+            <img class="homes" src="https://sun9-north.userapi.com/sun9-83/s/v1/ig2/49lW6QIXAda9l85zsw_FTwlaENocJ9_KV-YgfnxSIw2RwTlCD_cyDFcZFSNBWfg4TXBhen8OAoz-ORJirDVOvDZe.jpg?size=62x59&quality=96&type=album" ></img>
             <p class="p_adress">Адрес:<label></label></p>
           </div>
           <div class="numder">
@@ -377,9 +372,8 @@ position: absolute;
   top: 387px;
 }
 .homes{
-position: absolute;
-  left: 52px;
-  top: 386px;
+  width: 25px;
+  height: 25px;
 }
 .p_adress{
   font-family: 'Roboto';
@@ -387,9 +381,8 @@ position: absolute;
   font-weight: 400;
   font-size: 14px;
   line-height: 9px;
-  position: absolute;
-  left: 80px;
-  top: 400px;
+  margin-top: -15px;
+  margin-left: 30px;
 }
 .numder1{
   font-family: 'Roboto';
@@ -397,14 +390,12 @@ position: absolute;
   font-weight: 400;
   font-size: 14px;
   line-height: 9px;
-  position: absolute;
-  left: 80px;
-  top: 440px;
+  margin-left: 28px;
+  margin-top: -17px;
 }
 .phone{
-  position: absolute;
-  left: 52px;
-  top: 433px;
+margin-top: 4px;
+margin-left: 2px;
 }
 .mail_p{
   font-family: 'Roboto';
@@ -412,14 +403,11 @@ position: absolute;
   font-weight: 400;
   font-size: 14px;
   line-height: 9px;
-  position: absolute;
-  left: 80px;
-  top: 480px;
+  margin-top: -18px;
+  margin-left: 30px;
 }
 .mail_pic{
-  position: absolute;
-  left: 50px;
-  top: 475px;
+  margin-top: 9px;
 }
 .vk-img{
   height: 30px;
