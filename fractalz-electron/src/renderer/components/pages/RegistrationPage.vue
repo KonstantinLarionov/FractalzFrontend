@@ -8,7 +8,7 @@
         <img class="logo " src="src/renderer/assets/images/logo-img.png" height="100" width="100"/>
       </div>
     </div>
-    <div v-if="type === 'A'" class="container-fluid" >
+    <div v-if="type === 'A'" class="container-fluid" v-on:keyup.enter="singIn()">
       <div class="row justify-content-center">
         <label class="title-registration-form">Регистрация в Леттер</label>
       </div>
@@ -27,7 +27,7 @@
         </div>
         <div class="row mt-4 justify-content-center">
           <button class="input-form button-form" v-on:click="singIn()" >
-            <input style="display:none" @keyup.enter="singIn()">
+            <input style="display:none" >
             Создать</button>
         </div>
         <div class="row mt-4 justify-content-center">
@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <div v-if="type === 'G'" style="display: flex; justify-content: space-around; width: 100%">
+    <div v-if="type === 'G'" style="display: flex; justify-content: space-around; width: 100%" v-on:keyup.enter="toValidateCode()">
       <div style="display: flex; flex-direction: column">
         <p class="row mt-4 justify-content-center placeholder-container">Почти готово!</p>
         <p class="row mt-4 justify-content-center placeholder-container">Для потверждения аккаунта необходимо отправить код на указанную вами почту.</p>
@@ -59,7 +59,7 @@
         <p class="href-form" style="margin-left: 230px; margin-top: 20px;"><a v-on:click="toCreateAccount()">Вернуться назад</a></p>
       </div>
     </div>
-    <div id="login_wrapper" v-if="type === 'B'" class="container-fluid wrapper-login-form">
+    <div id="login_wrapper" v-if="type === 'B'" class="container-fluid wrapper-login-form" v-on:keyup.enter="logIn()">
       <div class="row justify-content-center">
         <label class="title-login-form">Леттер</label>
       </div>
@@ -73,7 +73,7 @@
           <label >Введите пароль</label>
         </div>
         <div class="row mt-4 justify-content-center">
-          <button class="input-form button-form" v-on:click="logIn()">Войти</button>
+          <button class="input-form button-form" v-on:click="logIn()" >Войти</button>
         </div>
         <div class="row mt-4 justify-content-center">
           <label class="label-form">Нет аккаунта?</label>
@@ -90,7 +90,7 @@
         </div>
       </div>
     </div>
-    <div v-if="type === 'C'" class="container-fluid">
+    <div v-if="type === 'C'" class="container-fluid" v-on:keyup.enter="toSendCode(); toResetPassword()">
       <div class="mt-4 col justify-content-center">
         <label class="row title-recovery-form justify-content-center">
           Для восстановления доступа вам<br>необходимо сбросить старый пароль и<br>установить новый.
@@ -112,7 +112,7 @@
         </div>
       </div>
     </div>
-    <div v-if="type === 'D'" class="container-fluid">
+    <div v-if="type === 'D'" class="container-fluid" v-on:keyup.enter="toValidateCode; passReset()">
       <div v-if="type === 'C'" class="row justify-content-center">
         <label class="title-recovery-account-form">Восстановление<br>аккаунта</label>
       </div>
@@ -140,16 +140,16 @@
     <div v-if="type === 'F'" class="container-fluid wrapper-login-form">
       <div class="justify-content-center">
         <div class="row mt-2 justify-content-center">
-          <div class="ecp-drag-n-drop-zone">
+          <span class="ecp-drag-n-drop-zone" ref="fileform">
             <label class="ecp-form">Перетащите файл подписи сюда</label>
-          </div>
+          </span>
         </div>
         <div class="row mt-4 justify-content-center">
           <label class="label-form">Или</label>
+
         </div>
-        <div class="ecp-select-form">
-          <label class="ecp-label">Выберите файл -> </label>
-          <button class="button-form ecp-input-form" v-on:click="singIn()">...</button>
+        <div class=" row mt-4 justify-content-center">
+          <input type="file" ref="file" class="" style="cursor: pointer" v-on:change="getFile()">
         </div>
         <div class="row mt-2 justify-content-center">
           <label class="href-form" href="" v-on:click="toBackFromReset()">Вернуться назад</label>
@@ -207,6 +207,7 @@ export default {
   },
 
   methods: {
+
     toCreateAccount : function () {
       this.type = 'A';
       return false;
@@ -238,25 +239,11 @@ export default {
       this.type = 'F'
       if (this.type === 'F')
       {
-        this.toDisplayKeys()
         setTimeout(this.toDetermine, 100)
+
       }
     },
 
-
-
-    toDisplayKeys: async function()
-    {
-      const fs = require('fs');
-      console.log(this.dir);
-      let fileNames = fs.readdirSync(this.dir);
-      fileNames.forEach((file) =>
-      {
-          this.Keys.push(file)
-      },
-      console.log(this.Keys)
-      )
-    },
     toHideKeys: async function(keys)
     {
       this.Keys.splice( keys , this.Keys.length);
@@ -284,7 +271,6 @@ export default {
       }
     },
 
-
     determineDragAndDropCapable(){
       var div = document.createElement('div');
       return ( ( 'draggable' in div ) || ( 'ondragstart' in div && 'ondrop' in div ) )
@@ -299,7 +285,7 @@ export default {
       this.$forceUpdate()
     },
     getFile(event) {
-      this.Files = this.$refs.files.files;
+      this.Files = this.$refs.file.files;
       console.log(this.Files);
       this.fileHandler()
     },
@@ -378,6 +364,7 @@ export default {
       if (result.data.success)
       {
         this.noty.Show({title: titleNoty, message: "Добро пожаловать!"});
+        await this.logIn()
       } else
       {
         this.noty.Show({title: titleNoty, message: result.data.message});
@@ -583,6 +570,7 @@ export default {
   border: 0px;
   width: 140px;
   border-radius: var(--radius-max);
+  cursor: pointer;
 }
 
 .ecp-form{
@@ -678,6 +666,7 @@ export default {
   background-color: var(--color-dark-blue);
   color: var(--color-white);
   border: none;
+  cursor: pointer;
   transition: .2s;
 }
 .label-form{
