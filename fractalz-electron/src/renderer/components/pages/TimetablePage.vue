@@ -3,13 +3,8 @@
     <div class="todo-filter">
       <div class="Entering-a-search">
         <div class="eye">
-          <svg class="eye-around" width="18" height="14" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 3.5C0 3.5 1.6875 0.40625 4.5 0.40625C7.3125 0.40625 9 3.5 9 3.5C9 3.5 7.3125 6.59375 4.5 6.59375C1.6875 6.59375 0 3.5 0 3.5ZM4.5 5.46875C5.02214 5.46875 5.5229 5.26133 5.89212 4.89212C6.26133 4.5229 6.46875 4.02215 6.46875 3.5C6.46875 2.97785 6.26133 2.4771 5.89212 2.10788C5.5229 1.73867 5.02214 1.53125 4.5 1.53125C3.97785 1.53125 3.4771 1.73867 3.10788 2.10788C2.73867 2.4771 2.53125 2.97785 2.53125 3.5C2.53125 4.02215 2.73867 4.5229 3.10788 4.89212C3.4771 5.26133 3.97785 5.46875 4.5 5.46875Z" fill="#00627A"/>
-          </svg>
-          <svg class="eye-center" width="6" height="6" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2.90625 1.5C2.90625 1.87296 2.75809 2.23065 2.49437 2.49437C2.23065 2.75809 1.87296 2.90625 1.5 2.90625C1.12704 2.90625 0.769354 2.75809 0.505631 2.49437C0.241908 2.23065 0.09375 1.87296 0.09375 1.5C0.09375 1.12704 0.241908 0.769354 0.505631 0.505631C0.769354 0.241908 1.12704 0.09375 1.5 0.09375C1.87296 0.09375 2.23065 0.241908 2.49437 0.505631C2.75809 0.769354 2.90625 1.12704 2.90625 1.5Z" fill="#00627A"/>
-          </svg>
-          <p>Показать только:</p>
+          <img class="eye-img" src="https://sun9-west.userapi.com/sun9-10/s/v1/ig2/laqT6gkcivf2-sVCGMaoWgzfT2GW5hJkxjf2J1jO1UJd3BEldvFrdFiChoqMG0s-WJo5QYffCGxHkJJh4xsR_eff.jpg?size=20x15&quality=96&type=album"/>
+          <p style="margin-left: 3px;">Показать только:</p>
         </div>
         <div class="Dates">
           <svg class ="box" width="16" height="16" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,29 +23,25 @@
       <div class="center-time">
         <div class="left-center">
           <div class="meetings-conference">
-            <svg class ="center-box1" width="12" height="12" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.25 0.375C5.34946 0.375 5.44484 0.414509 5.51516 0.484835C5.58549 0.555161 5.625 0.650544 5.625 0.75V5.25C5.625 5.34946 5.58549 5.44484 5.51516 5.51516C5.44484 5.58549 5.34946 5.625 5.25 5.625H0.75C0.650544 5.625 0.555161 5.58549 0.484835 5.51516C0.414509 5.44484 0.375 5.34946 0.375 5.25V0.75C0.375 0.650544 0.414509 0.555161 0.484835 0.484835C0.555161 0.414509 0.650544 0.375 0.75 0.375H5.25ZM0.75 0C0.551088 0 0.360322 0.0790176 0.21967 0.21967C0.0790176 0.360322 0 0.551088 0 0.75L0 5.25C0 5.44891 0.0790176 5.63968 0.21967 5.78033C0.360322 5.92098 0.551088 6 0.75 6H5.25C5.44891 6 5.63968 5.92098 5.78033 5.78033C5.92098 5.63968 6 5.44891 6 5.25V0.75C6 0.551088 5.92098 0.360322 5.78033 0.21967C5.63968 0.0790176 5.44891 0 5.25 0L0.75 0Z" fill="#0288D1"/>
-            </svg>
-            <svg class="check-mark1" width="8" height="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3.11375 0.863733C3.16623 0.81171 3.23708 0.782432 3.31097 0.782228C3.38487 0.782024 3.45588 0.810911 3.50864 0.862643C3.56141 0.914376 3.5917 0.984798 3.59296 1.05868C3.59422 1.13257 3.56635 1.20398 3.51537 1.25748L2.01837 3.12873C1.99264 3.15645 1.96159 3.17868 1.92707 3.19412C1.89255 3.20956 1.85527 3.21787 1.81747 3.21857C1.77966 3.21927 1.7421 3.21234 1.70703 3.1982C1.67196 3.18405 1.64011 3.16297 1.61337 3.13623L0.621498 2.14398C0.593866 2.11823 0.571702 2.08718 0.55633 2.05269C0.540958 2.01819 0.532692 1.98094 0.532026 1.94318C0.53136 1.90542 0.538307 1.8679 0.552452 1.83288C0.566597 1.79786 0.587652 1.76605 0.614359 1.73934C0.641066 1.71264 0.672878 1.69158 0.707899 1.67744C0.74292 1.66329 0.780431 1.65634 0.818194 1.65701C0.855958 1.65768 0.8932 1.66594 0.9277 1.68132C0.9622 1.69669 0.99325 1.71885 1.019 1.74648L1.80425 2.53136L3.10662 0.871983C3.10895 0.869078 3.11145 0.866322 3.11412 0.863733H3.11375Z" fill="#0288D1"/>
-            </svg>
-            <p class="p-meet" style="color:#0288D1;
-">Втречи</p>
-            <svg class="center-box2" width="12" height="12" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.25 0.375C5.34946 0.375 5.44484 0.414509 5.51516 0.484835C5.58549 0.555161 5.625 0.650544 5.625 0.75V5.25C5.625 5.34946 5.58549 5.44484 5.51516 5.51516C5.44484 5.58549 5.34946 5.625 5.25 5.625H0.75C0.650544 5.625 0.555161 5.58549 0.484835 5.51516C0.414509 5.44484 0.375 5.34946 0.375 5.25V0.75C0.375 0.650544 0.414509 0.555161 0.484835 0.484835C0.555161 0.414509 0.650544 0.375 0.75 0.375H5.25ZM0.75 0C0.551088 0 0.360322 0.0790176 0.21967 0.21967C0.0790176 0.360322 0 0.551088 0 0.75L0 5.25C0 5.44891 0.0790176 5.63968 0.21967 5.78033C0.360322 5.92098 0.551088 6 0.75 6H5.25C5.44891 6 5.63968 5.92098 5.78033 5.78033C5.92098 5.63968 6 5.44891 6 5.25V0.75C6 0.551088 5.92098 0.360322 5.78033 0.21967C5.63968 0.0790176 5.44891 0 5.25 0L0.75 0Z" fill="#9575CD"/>
-            </svg>
-            <svg class ="check-mark2" width="8" height="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3.11375 0.863733C3.16623 0.81171 3.23708 0.782432 3.31097 0.782228C3.38487 0.782024 3.45588 0.810911 3.50864 0.862643C3.56141 0.914376 3.5917 0.984798 3.59296 1.05868C3.59422 1.13257 3.56635 1.20398 3.51537 1.25748L2.01837 3.12873C1.99264 3.15645 1.96159 3.17868 1.92707 3.19412C1.89255 3.20956 1.85527 3.21787 1.81747 3.21857C1.77966 3.21927 1.7421 3.21234 1.70703 3.1982C1.67196 3.18405 1.64011 3.16297 1.61337 3.13623L0.621498 2.14398C0.593866 2.11823 0.571702 2.08718 0.55633 2.05269C0.540958 2.01819 0.532692 1.98094 0.532026 1.94318C0.53136 1.90542 0.538307 1.8679 0.552452 1.83288C0.566597 1.79786 0.587652 1.76605 0.614359 1.73934C0.641066 1.71264 0.672878 1.69158 0.707899 1.67744C0.74292 1.66329 0.780431 1.65634 0.818194 1.65701C0.855958 1.65768 0.8932 1.66594 0.9277 1.68132C0.9622 1.69669 0.99325 1.71885 1.019 1.74648L1.80425 2.53136L3.10662 0.871983C3.10895 0.869078 3.11145 0.866322 3.11412 0.863733H3.11375Z" fill="#9575CD"/>
-            </svg>
-            <p class="conference-p" style="color:#9575CD;
-">Конференции</p>
-            <svg class="center-box3" width="12" height="12" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.25 0.375C5.34946 0.375 5.44484 0.414509 5.51516 0.484835C5.58549 0.555161 5.625 0.650544 5.625 0.75V5.25C5.625 5.34946 5.58549 5.44484 5.51516 5.51516C5.44484 5.58549 5.34946 5.625 5.25 5.625H0.75C0.650544 5.625 0.555161 5.58549 0.484835 5.51516C0.414509 5.44484 0.375 5.34946 0.375 5.25V0.75C0.375 0.650544 0.414509 0.555161 0.484835 0.484835C0.555161 0.414509 0.650544 0.375 0.75 0.375H5.25ZM0.75 0C0.551088 0 0.360322 0.0790176 0.21967 0.21967C0.0790176 0.360322 0 0.551088 0 0.75L0 5.25C0 5.44891 0.0790176 5.63968 0.21967 5.78033C0.360322 5.92098 0.551088 6 0.75 6H5.25C5.44891 6 5.63968 5.92098 5.78033 5.78033C5.92098 5.63968 6 5.44891 6 5.25V0.75C6 0.551088 5.92098 0.360322 5.78033 0.21967C5.63968 0.0790176 5.44891 0 5.25 0L0.75 0Z" fill="#FF5722"/>
-            </svg>
-            <svg class="check-mark3" width="8" height="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3.11375 0.863733C3.16623 0.81171 3.23708 0.782432 3.31097 0.782228C3.38487 0.782024 3.45588 0.810911 3.50864 0.862643C3.56141 0.914376 3.5917 0.984798 3.59296 1.05868C3.59422 1.13257 3.56635 1.20398 3.51537 1.25748L2.01837 3.12873C1.99264 3.15645 1.96159 3.17868 1.92707 3.19412C1.89255 3.20956 1.85527 3.21787 1.81747 3.21857C1.77966 3.21927 1.7421 3.21234 1.70703 3.1982C1.67196 3.18405 1.64011 3.16297 1.61337 3.13623L0.621498 2.14398C0.593866 2.11823 0.571702 2.08718 0.55633 2.05269C0.540958 2.01819 0.532692 1.98094 0.532026 1.94318C0.53136 1.90542 0.538307 1.8679 0.552452 1.83288C0.566597 1.79786 0.587652 1.76605 0.614359 1.73934C0.641066 1.71264 0.672878 1.69158 0.707899 1.67744C0.74292 1.66329 0.780431 1.65634 0.818194 1.65701C0.855958 1.65768 0.8932 1.66594 0.9277 1.68132C0.9622 1.69669 0.99325 1.71885 1.019 1.74648L1.80425 2.53136L3.10662 0.871983C3.10895 0.869078 3.11145 0.866322 3.11412 0.863733H3.11375Z" fill="#FF5722"/>
-            </svg>
-            <p class="notification-p">Уведомления</p>
+            <div class="first-row">
+            <label class="checkbox style-a">
+              <input type="checkbox"/>
+              <div class="checkbox__checkmark"></div>
+              <div class="checkbox__body"> <p class="p-meet" style="color:#0288D1;">Втречи</p></div>
+            </label>
+            <label class="checkbox style-c">
+              <input type="checkbox"/>
+              <div class="checkbox__checkmark"></div>
+              <div class="checkbox__body"><p class="conference-p" style="color:#9575CD;">Конференции</p></div>
+            </label>
+          </div>
+          <div class="second-row">
+            <label class="checkbox style-b">
+              <input type="checkbox"/>
+              <div class="checkbox__checkmark"></div>
+              <div class="checkbox__body"><p class="notification-p">Уведомления</p></div>
+            </label>
+          </div>
           </div>
         </div>
         <div class="right-center">
@@ -236,27 +227,20 @@ export default {
 .eye{
 display: flex;
   flex-direction: row;
-  width: 35%;
+  width: 50%;
   height: 20px;
-  margin-left: 35px;
+  margin-left: 40px;
   margin-top: 17px;
   font-size: 12px;
   font-weight: 300;
 }
-.eye-around{
-position: fixed;
-  top: 19px;
-  left: 92px;
-}
-.eye-center{
-position: fixed;
-  top: 23px;
-  left: 98px;
+.eye-img{
+  width: 23px;
+  height: 18px;
 }
 .Dates{
-  position: fixed;
-  right: 70px;
-  background-color: #0c5460;
+height: 40px;
+width: 50%;
 }
 .box{
 position: fixed;
@@ -302,14 +286,15 @@ position: fixed;
 .left-center{
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 270px;
   height: 100%;
+  margin-left: 10px;
 }
 .meetings-conference{
   width: 100%;
-  height: 50%;
+  height: 100px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   font-size: 12px;
   margin-left: 10px;
 }
@@ -344,18 +329,14 @@ position: fixed;
   left: 124px;
 }
 .p-meet{
-  margin-left: 20px;
-  margin-top: 2px;
-}
-.conference-p{
-  margin-left: 30px;
-  margin-top: 2px;
+  margin-left: -7px;
+  margin-top: 3px;
 }
 .notification-p{
   color:#FF5722;
-position: fixed;
-  top: 68px;
-  left: 138px;
+  font-size:12px;
+  margin-left: -9px;
+  margin-top: 2px;
 }
 .right-center{
   width: 100%;
@@ -465,6 +446,11 @@ background: #FF5722;
   font-size: 10px;
   font-weight: 300;
   line-height: 7px;
+}
+.conference-p{
+font-size: 12px;
+margin-left: 19px;
+margin-top: 2px;
 }
 .p-time{
   margin-top: 5px;
@@ -623,5 +609,168 @@ background: #FF5722;
   background-color: rgba(0, 150, 135, 0.2);
   border: solid rgb(0, 150, 135);
   border-width: 2px 0;
+}
+.checkbox.style-a {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  user-select: none;
+  border-color: #0288D1;
+}
+.checkbox.style-a input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkbox.style-a input:checked ~ .checkbox__checkmark {
+  background-color: #fff;
+}
+.checkbox.style-a input:checked ~ .checkbox__checkmark:after {
+  opacity: 1;
+  color: #0288D1;
+}
+.checkbox.style-a .checkbox__checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  border: 1px solid #0288D1;
+  transition: background-color 0.25s ease;
+  border-radius: 3px;
+}
+.checkbox.style-a .checkbox__checkmark:after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 4px; 
+  height: 8px;
+  border: solid #0288D1;
+  border-width: 0 1px 1px 0; 
+  transform: rotate(45deg); 
+  opacity: 0; 
+  transition: opacity 0.25s ease; 
+}
+.checkbox.style-a .checkbox__body {
+  color: #0288D1;
+  line-height: 1.4;
+  font-size: 12px;
+}
+.checkbox.style-b {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  user-select: none;
+  border-color: #FF5722;
+}
+.checkbox.style-b input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkbox.style-b input:checked ~ .checkbox__checkmark {
+  background-color: #fff;
+}
+.checkbox.style-b input:checked ~ .checkbox__checkmark:after {
+  opacity: 1;
+  color: #FF5722;
+}
+.checkbox.style-b .checkbox__checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 12px;
+  width: 13px;
+  background-color: #fff;
+  border: 1px solid #FF5722;
+  transition: background-color 0.25s ease;
+  border-radius: 3px;
+}
+.checkbox.style-b .checkbox__checkmark:after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 4px; 
+  height: 8px;
+  border: solid #FF5722;
+  border-width: 0 1px 1px 0; 
+  transform: rotate(45deg); 
+  opacity: 0; 
+  transition: opacity 0.25s ease; 
+}
+.checkbox.style-b .checkbox__body {
+  color: #FF5722;
+  line-height: 1.4;
+  font-size: 16px;
+}
+.checkbox.style-c {
+  display: inline-block;
+  position: relative;
+  margin-left: 10px;
+  margin-top: -1px;
+  cursor: pointer;
+  user-select: none;
+  border-color: #9575CD;
+}
+.checkbox.style-c input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkbox.style-c input:checked ~ .checkbox__checkmark {
+  background-color: #fff;
+}
+.checkbox.style-c input:checked ~ .checkbox__checkmark:after {
+  opacity: 1;
+  color: #9575CD;
+}
+.checkbox.style-c .checkbox__checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 12px;
+  width: 13px;
+  background-color: #fff;
+  border: 1px solid #9575CD;
+  transition: background-color 0.25s ease;
+  border-radius: 3px;
+}
+.checkbox.style-c .checkbox__checkmark:after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 4px; 
+  height: 8px;
+  border: solid #9575CD;
+  border-width: 0 1px 1px 0; 
+  transform: rotate(45deg); 
+  opacity: 0; 
+  transition: opacity 0.25s ease; 
+}
+.checkbox.style-c .checkbox__body {
+  color: #9575CD;
+  line-height: 1.4;
+  font-size: 16px;
+}
+.first-row{
+  width: 100%;
+  height: 20px;
+}
+.second-row{
+  width: 100%;
+  height: 20px;
+  margin-left: 30px;
 }
 </style>

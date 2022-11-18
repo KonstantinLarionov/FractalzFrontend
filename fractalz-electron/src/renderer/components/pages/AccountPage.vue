@@ -39,8 +39,8 @@
         <div class="profile-info-wrapper">
           <div class="info-fio" >
               <input placeholder="ФИО"
-                     style="border-radius:
-                     8px;border-style:solid;
+                     style="border-radius:8px;
+                     border-style:solid;
                      border-color: #FFFFFF;
                      text-align: center;
                      max-width: max-content"
@@ -69,15 +69,11 @@
             </svg>
             <label>В сети</label>
           </div>
-          <div class="info-contacts-wrapper row">
-            <div class="col"></div>
-            <div class="col"></div>
-          </div>
         </div>
         <div class="profile-adress-wrapper">
           <div class="first-row">
           <div class="adress">
-            <img class="homes" src="https://sun9-north.userapi.com/sun9-83/s/v1/ig2/49lW6QIXAda9l85zsw_FTwlaENocJ9_KV-YgfnxSIw2RwTlCD_cyDFcZFSNBWfg4TXBhen8OAoz-ORJirDVOvDZe.jpg?size=62x59&quality=96&type=album" ></img>
+            <img class="homes" src="https://sun9-north.userapi.com/sun9-83/s/v1/ig2/49lW6QIXAda9l85zsw_FTwlaENocJ9_KV-YgfnxSIw2RwTlCD_cyDFcZFSNBWfg4TXBhen8OAoz-ORJirDVOvDZe.jpg?size=62x59&quality=96&type=album"/>
             <p class="p_adress">Адрес:<label></label></p>
           </div>
           <div class="numder">
@@ -97,7 +93,6 @@
                      v-model="model.number"
                      type="tel"
                      v-on:keyup.enter="updateProfile()">
-
               </p>
           </div>
           <div class="mail">
@@ -243,7 +238,6 @@ export default {
   margin-top: 18px;
   font-weight: 600;
   font-size: 18px;
-  max-width: 100%;
 }
 .info-login{
   font-weight: 500;
@@ -418,6 +412,7 @@ margin-left: 2px;
   height: 30px;
   width: 30px;
   margin-left: -10px;
+  margin-top: 25px;
 }
 .photos{
   height: 100%;
@@ -541,5 +536,4 @@ display: flex;
   width: 15px;
   height: 18px;
 }
-
 </style>
