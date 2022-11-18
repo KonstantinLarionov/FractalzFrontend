@@ -8,6 +8,7 @@
   </div>
 </template>
 <script>
+
 import NewsElement from "../elements/NewsElement";
 import Vue from "vue";
 

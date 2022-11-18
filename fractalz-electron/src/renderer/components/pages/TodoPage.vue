@@ -148,6 +148,7 @@
 </template>
 
 <script>
+
 import TodoTaskElement from "../elements/todo/TodoTaskElement";
 import TodoTaskManager from "../elements/todo/TodoTaskManager";
 import TodoModal from "../modals/TodoModal";

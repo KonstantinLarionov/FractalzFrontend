@@ -36,7 +36,7 @@
     <div class="the-main-part">
       <div class="piece1">
         <div class="avatar-photo">
-          <img class="" src=https://skesov.ru/wp-content/uploads/2020/10/img-20200925171951-659.jpg width="43" height="43" class="photo">
+          <img src=https://skesov.ru/wp-content/uploads/2020/10/img-20200925171951-659.jpg width="43" height="43" class="photo">
         </div>
         <div class ="name-information">
           <div class="Name-i">Никита Панин</div>
@@ -56,7 +56,7 @@
       </div>
       <div class="piece1">
         <div class="avatar-photo">
-          <img class="" src=https://skesov.ru/wp-content/uploads/2020/10/img-20200925171951-659.jpg width="43" height="43" class="photo">
+          <img class="photo" src=https://skesov.ru/wp-content/uploads/2020/10/img-20200925171951-659.jpg width="43" height="43">
         </div>
         <div class ="name-information">
           <div class="Name-i">Никита Панин</div>
