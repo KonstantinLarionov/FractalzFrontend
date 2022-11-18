@@ -43,7 +43,7 @@
                      border-style:solid;
                      border-color: #FFFFFF;
                      text-align: center;
-                     max-width: max-content"
+                     width: 400px;"
                      v-model="model.name"
                      v-on:keyup.enter="updateProfile()">
           </div>
@@ -238,6 +238,7 @@ export default {
   margin-top: 18px;
   font-weight: 600;
   font-size: 18px;
+  width: 400px;
 }
 .info-login{
   font-weight: 500;

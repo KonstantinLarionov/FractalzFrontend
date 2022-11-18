@@ -162,6 +162,7 @@ window.onclick = function(event) {
   flex-direction: column;
   width: 60%;
   height: 100%;
+  margin-left: 10px;
 }
 .Filters{
   display: flex;
