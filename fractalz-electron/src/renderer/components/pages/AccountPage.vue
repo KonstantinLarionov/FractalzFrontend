@@ -39,22 +39,11 @@
         <div class="profile-info-wrapper">
           <div class="info-fio" >
               <input placeholder="ФИО"
-                     style="border-radius:8px;
-                     border-style:solid;
-                     border-color: #FFFFFF;
+                     style="border-radius: 20px;
+                     border: 1px solid gray;
                      text-align: center;
-                     width: 400px;"
-                     v-model="model.name"
-                     v-on:keyup.enter="updateProfile()">
-          </div>
-          <div class="info-login" >
-            <input placeholder="Логин"
-                   v-model="model.login"
-                   style="border-bottom:solid;
-                   border-bottom-color: #0b0d0f;
-                   text-align: center;
-                   max-width: max-content"
-                   v-on:keyup.enter="updateProfile()">
+                     width: 350px;"
+                     v-model="model.name"/>
           </div>
           <div class="info-status">
             <svg id="info-status-icon" width="16" height="16" viewBox="0 0 16 16" fill="var(--color-light-green)" xmlns="http://www.w3.org/2000/svg">
@@ -73,56 +62,88 @@
         <div class="profile-adress-wrapper">
           <div class="first-row">
           <div class="adress">
-            <img class="homes" src="https://sun9-north.userapi.com/sun9-83/s/v1/ig2/49lW6QIXAda9l85zsw_FTwlaENocJ9_KV-YgfnxSIw2RwTlCD_cyDFcZFSNBWfg4TXBhen8OAoz-ORJirDVOvDZe.jpg?size=62x59&quality=96&type=album"/>
-            <p class="p_adress">Адрес:<label></label></p>
+           <img class="homes" src="https://sun9-north.userapi.com/sun9-83/s/v1/ig2/49lW6QIXAda9l85zsw_FTwlaENocJ9_KV-YgfnxSIw2RwTlCD_cyDFcZFSNBWfg4TXBhen8OAoz-ORJirDVOvDZe.jpg?size=62x59&quality=96&type=album"/>
+           <div class="adres-input">
+              <p class="p_adress">
+              Адрес:
+              <input placeholder="Введте адрес"
+                     style="
+                     height: 23px;
+                     width: 225px;
+                     border-radius: 20px;
+                     border-color: transparent;
+                     font-family: 'Inter';
+                     font-style: normal;
+                     font-weight: 300;
+                     font-size: 14px;
+                     line-height: 7px;
+                     max-width: max-content;
+                     color: black;" />
+              </p>
+            </div>
           </div>
           <div class="numder">
             <svg class="phone" width="20" height="26" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 2C0 1.46957 0.210714 0.960859 0.585786 0.585786C0.960859 0.210714 1.46957 0 2 0L8 0C8.53043 0 9.03914 0.210714 9.41421 0.585786C9.78929 0.960859 10 1.46957 10 2V14C10 14.5304 9.78929 15.0391 9.41421 15.4142C9.03914 15.7893 8.53043 16 8 16H2C1.46957 16 0.960859 15.7893 0.585786 15.4142C0.210714 15.0391 0 14.5304 0 14V2ZM6 13C6 12.7348 5.89464 12.4804 5.70711 12.2929C5.51957 12.1054 5.26522 12 5 12C4.73478 12 4.48043 12.1054 4.29289 12.2929C4.10536 12.4804 4 12.7348 4 13C4 13.2652 4.10536 13.5196 4.29289 13.7071C4.48043 13.8946 4.73478 14 5 14C5.26522 14 5.51957 13.8946 5.70711 13.7071C5.89464 13.5196 6 13.2652 6 13Z" fill="black"/>
             </svg>
-            <p class="numder1">
+            <div class="input-number">
+                        <p class="numder1">
               Телефон:
               <input placeholder="Введите номер"
                      style="
-                     border-width: 0 0 1px 0;
-                     border-bottom-style:solid;
-                     border-radius: 15px;
-                     border-bottom-color:#1dc0cb;
-                     text-align: center;
-                     max-width: max-content"
-                     v-model="model.number"
-                     type="tel"
-                     v-on:keyup.enter="updateProfile()">
+                     height: 23px;
+                     width: 120px;
+                     border-radius: 20px;
+                     border-color: transparent;
+                     font-family: 'Inter';
+                     font-style: normal;
+                     font-weight: 300;
+                     font-size: 14px;
+                     line-height: 7px;
+                     max-width: max-content;
+                     color: black;"
+                     type="tel">
               </p>
+            </div>
           </div>
           <div class="mail">
             <svg class="mail_pic" width="24" height="20" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0.05 1.555C0.150818 1.11324 0.398655 0.718813 0.752922 0.436308C1.10719 0.153804 1.54688 -3.04944e-05 2 4.53414e-09H14C14.4531 -3.04944e-05 14.8928 0.153804 15.2471 0.436308C15.6013 0.718813 15.8492 1.11324 15.95 1.555L8 6.414L0.05 1.555ZM0 2.697V9.801L5.803 6.243L0 2.697ZM6.761 6.83L0.191 10.857C0.353327 11.1993 0.609527 11.4884 0.929782 11.6908C1.25004 11.8931 1.62117 12.0004 2 12H14C14.3788 12.0001 14.7498 11.8926 15.0698 11.6901C15.3899 11.4876 15.6459 11.1983 15.808 10.856L9.238 6.829L8 7.586L6.761 6.829V6.83ZM10.197 6.244L16 9.801V2.697L10.197 6.243V6.244Z" fill="black"/>
             </svg>
+            <div class="input-mail">
             <p class="mail_p">
               Почта:
-              <input
+              <input placeholder="Введите почту"
                      style="
-                     border-width: 0 0 1px 0;
-                     border-bottom-style:solid;
-                     border-bottom-color:#1dc0cb;
-                     border-radius: 15px;
-                     text-align: center;
-                     max-width: max-content"
-                     v-model="model.email"
-                     readonly="readonly"
-              >
+                     height: 23px;
+                     width: 100px;
+                     border-radius: 20px;
+                     border-color: transparent;
+                     font-family: 'Inter';
+                     font-style: normal;
+                     font-weight: 300;
+                     font-size: 14px;
+                     line-height: 7px;
+                     max-width: max-content;
+                     color: black;"
+                     type="mail">
             </p>
+            </div>
           </div>
           </div>
           <div class="second-row">
-          <button style=" width: 30px; height: 30px; margin-top: 20px; margin-left: 10px; border-radius: 40px; background-color: transparent; border-color: transparent"><img class="vk-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png"/></button>
+          <button style=" width: 30px; height: 30px; margin-top: 20px; margin-left: 10px; border-radius: 40px; background-color: transparent; border-color: transparent"><img class="vk-img" @click="showModal" src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png"/></button>
           <button style=" width: 30px; height: 30px; margin-top: 11px; margin-left: 10px; border-radius:50px; background-color:transparent; border-color:transparent"><img class="tg-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png"/></button>
         </div>
       </div>
+      <div class="btn-save">
+        <button type="button" class="save" v-on:keyup.enter="updateProfile()">Сохранить изменения</button>
+      </div>
           <div class="info-photos">
           <div class ="down">
-            <button class="btn-down"><img class="img-down" src="https://sun9-north.userapi.com/sun9-83/s/v1/ig2/xeu9WymM8N9y_3PVvHpSi_uA6DW-sefE6dPT4I6zzuOJ7POgHwzgIfzNU9Hb-3rbNpNhqAYWKEDjADP7vKMpSTEA.jpg?size=27x29&quality=96&type=album"></button>
+            <button class="btn-down"> <svg class="img-down" width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0C3.09946 0 3.19484 0.0395089 3.26517 0.109835C3.33549 0.180161 3.375 0.275544 3.375 0.375V4.71975L4.9845 3.1095C5.01937 3.07463 5.06076 3.04698 5.10631 3.02811C5.15187 3.00924 5.20069 2.99953 5.25 2.99953C5.29931 2.99953 5.34813 3.00924 5.39369 3.02811C5.43924 3.04698 5.48063 3.07463 5.5155 3.1095C5.55037 3.14437 5.57802 3.18576 5.59689 3.23131C5.61576 3.27687 5.62547 3.32569 5.62547 3.375C5.62547 3.42431 5.61576 3.47313 5.59689 3.51869C5.57802 3.56424 5.55037 3.60563 5.5155 3.6405L3.2655 5.8905C3.23067 5.92542 3.18928 5.95313 3.14372 5.97203C3.09817 5.99094 3.04933 6.00067 3 6.00067C2.95067 6.00067 2.90183 5.99094 2.85627 5.97203C2.81072 5.95313 2.76933 5.92542 2.7345 5.8905L0.4845 3.6405C0.449634 3.60563 0.421977 3.56424 0.403107 3.51869C0.384238 3.47313 0.374526 3.42431 0.374526 3.375C0.374526 3.32569 0.384238 3.27687 0.403107 3.23131C0.421977 3.18576 0.449634 3.14437 0.4845 3.1095C0.554915 3.03908 0.650418 2.99953 0.75 2.99953C0.799308 2.99953 0.848133 3.00924 0.893688 3.02811C0.939242 3.04698 0.980634 3.07463 1.0155 3.1095L2.625 4.71975V0.375C2.625 0.275544 2.66451 0.180161 2.73483 0.109835C2.80516 0.0395089 2.90054 0 3 0V0Z" fill="#00627A"/>
+</svg>
+</button>
           </div>
           <div class="info">
             <div class="p_photos">
@@ -176,6 +197,7 @@ export default {
         number: this.$cookies.get("UserInfo").number,
         email: this.$cookies.get("UserInfo").email,
         logo: this.$cookies.get("UserInfo").logo,
+        save: this.$cookies.get("UserInfo").save
       },
       notyHeader: "Профиль Fractalz"
     };
@@ -199,6 +221,7 @@ export default {
         this.model.surname = getUser.data.userEntity.surname;
         this.model.number = getUser.data.userEntity.number;
         this.model.logo = getUser.data.userEntity.logo;
+        this.model.save = getUser.data.userEntity.save;
         this.model.patro = getUser.data.userEntity.patro;
         this.model.userId = getUser.data.userEntity.id;
         this.api = new UserPart(this.$http);
@@ -222,7 +245,8 @@ export default {
 .first-row{
   display: flex;
   flex-direction: column;
-  width: 380px;
+  width: 80%;
+  height: 120px;
 }
 .second-row{
   display: flex;
@@ -238,7 +262,8 @@ export default {
   margin-top: 18px;
   font-weight: 600;
   font-size: 18px;
-  width: 400px;
+  width: 400px; 
+  text-align: center;
 }
 .info-login{
   font-weight: 500;
@@ -314,19 +339,30 @@ export default {
   overflow: hidden;
 }
 .profile-adress-wrapper{
-  height: 120px;
+  height: -10px;
   width: 100%;
   display: flex;
   flex-direction: row;
+  margin-top: -15px;
 }
 .adress{
   margin-left: 50px;
-  width: 270px;
+  width: 80%;
   height: 40px;
+}
+.adres-input{
+  width: 230px;
+  height: 30px;
+  border: 1px solid grey;
+  border-radius: 15px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: -16px;
+  margin-left: 33px;
 }
 .numder{
   margin-left: 50px;
-  width: 270px;
+  width: 80%;
   height: 40px;
 }
 .mail{
@@ -345,13 +381,60 @@ export default {
   align-items: flex-end;
   overflow: hidden;
 }
+.save{
+  margin-top: 10px;
+  width: 200px;
+  height: 30px;
+  background: #00627A;
+  border-radius: 15px;
+  color: white;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 13px;
+  line-height: 2px; 
+  text-align: center;
+  border-color: transparent;
+  box-shadow:  0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+.save:hover{
+  background-color: #025669;
+}
 .info-photos{
   background-color: var(--color-white);
   width: 100%;
   height: 220px;
-  margin-top: auto;
+  margin-top: 30px;
   box-shadow: var(--shadow-up-2);
   border-radius: 40px 40px 0 0;
+  transition: 0.3s ease-out;
+}
+.down{
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  background-color: #ECECEC;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 100px;
+}
+.btn-down{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border-color: transparent;
+}
+.btn-down:hover{
+  background-color: #d4d4d4;
+}
+
+.img-down{
+  text-align: center;
+  width: 15px;
+  height: 18px;
 }
 .info{
   display: flex;
@@ -361,48 +444,67 @@ export default {
   width: 100%;
 
 }
-.roof{
-position: absolute;
-  left: 50px;
-  top: 387px;
-}
 .homes{
   width: 25px;
   height: 25px;
+  margin-bottom: -15px;
 }
 .p_adress{
-  font-family: 'Roboto';
+  font-family: 'Inter';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 14px;
-  line-height: 9px;
-  margin-top: -15px;
-  margin-left: 30px;
+  line-height: 7px;
+  margin-top: 3px;
 }
 .numder1{
-  font-family: 'Roboto';
+  width: 100%;
+  font-family: 'Inter';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 14px;
-  line-height: 9px;
-  margin-left: 28px;
-  margin-top: -17px;
+  line-height: 7px;
+  margin-left: 13px;
+  margin-top: 2px;
+}
+.input-number{
+  width: 230px;
+  height: 30px;
+  border: 1px solid grey;
+  border-radius: 15px;
+  vertical-align: middle;
+  margin-top: -16px;
+  margin-left: 33px;
 }
 .phone{
-margin-top: 4px;
-margin-left: 2px;
+  width: 30px;
+  height: 30px;
+  margin-bottom: -18px;
+  margin-left: -2px;
 }
 .mail_p{
-  font-family: 'Roboto';
+  font-family: 'Inter';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 14px;
-  line-height: 9px;
-  margin-top: -18px;
-  margin-left: 30px;
+  line-height: 7px;
+  margin-top: 3px;
+  margin-left: 13px;
 }
 .mail_pic{
-  margin-top: 9px;
+  width: 30px;
+  height: 30px;
+  margin-bottom: -18px;
+  margin-left: -4px;
+}
+.input-mail{
+  width: 230px;
+  height: 30px;
+  border: 1px solid grey;
+  border-radius: 15px;
+  vertical-align: middle;
+  margin-top: -16px;
+  margin-left: 33px;
 }
 .vk-img{
   height: 30px;
@@ -453,8 +555,9 @@ margin-left: 2px;
   margin-left: 5px;
 }
 .buttonplus{
-  margin-left: -10px;
+  margin-left: -18px;
   margin-top: 15px;
+  border-color: transparent;
   background-color: transparent;
   border-radius: 5px;
   width: 20px;
@@ -505,36 +608,12 @@ display: flex;
   width: 20px;
   height: 20px;
   margin-top: -10px;
-  margin-left: -7px;
+  margin-left: -15px;
 }
 .dtnconteiner{
   margin-right: 20px;
 }
 .trash-photo:hover{
   opacity: 1;
-}
-.down{
-  position: fixed;
-  bottom: 10px;
-  right: 20px;
-  height: 35px;
-  width: 35px;
-  border-radius: 50px;
-  background-color: #ECECEC;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-top: 100px;
-}
-.btn-down{
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: transparent;
-  border-color: transparent;
-}
-.img-down{
-  margin-top: 4px;
-  margin-left: 3px;
-  width: 15px;
-  height: 18px;
 }
 </style>

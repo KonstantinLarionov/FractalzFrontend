@@ -352,11 +352,11 @@ export default {
 .chat-content-main {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.dialog {
-  height: 86%;
-  width: 100%;
-}
+
 .keyboard{
 display: flex;
 flex-direction: row;

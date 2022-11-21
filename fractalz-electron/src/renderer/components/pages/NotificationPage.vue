@@ -156,6 +156,7 @@ window.onclick = function(event) {
   background-color: white;
   display: flex;
   flex-direction: row;
+  
 }
 .Entering-a-search{
   display: flex;
