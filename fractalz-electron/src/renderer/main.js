@@ -9,7 +9,7 @@ import router from './router'
 import store from './store'
 import DefaultLayout from "./layouts/DefaultLayout"
 Vue.config.productionTip = false
-
+Vue.config.silent = true
 
 
 Vue.component("default-layout", DefaultLayout)

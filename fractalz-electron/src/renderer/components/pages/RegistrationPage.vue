@@ -403,6 +403,10 @@ export default {
       {
         this.$cookies.set("UserToken", result.data.token);
         this.$cookies.set("UserInfo", result.data.user);
+
+        console.log("USERINFOSET")
+        console.log(this.$cookies.get("UserInfo"))
+
         this.noty.Show({title : "Вход в систему Fractalz", message : "Добро пожаловать!\rВы успешно вошли в систему."});
         this.connectWebSocket(result.data.user.id);
         await this.$router.push({ name: 'DialogPage' })

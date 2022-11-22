@@ -41,7 +41,6 @@ export default class TodoPart extends BasePart {
     }
 
     async DeleteTask(IdTask) {
-        console.log("" + IdTask)
         return await this.instant.delete(this._deleteTaskPath + this._deleteModel(IdTask))
     }
 

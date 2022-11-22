@@ -16,12 +16,12 @@
             </defs>
           </svg>
           <div class="filter-date-label">Выбрать день:</div>
-          <input class="filter-date-input" type="date"/>
+          <input class="filter-date-input" type="date" id="filterdatetodo" v-bind:value="DateStart" @change="getTodoList()" />
         </div>
         <div class="filter-left-done">
           <div style="margin-right: 5px;">Показать только не выполненные</div>
           <div class="WW">
-          <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+          <input type="checkbox" id="switch" v-bind:checked="NotCompleted" @change="ShowNotCompleted" /><label for="switch">Toggle</label>
           </div>
         </div>
       </div>
@@ -30,120 +30,25 @@
       </div>
     </div>
     <div class="todo-body-wrapper">
-      <div class="todo-task-wrapper">
-         <div class="todo-task-info purple">
-      
-          <div class="todo-task-info-trash">
-            <svg width="15" height="15" viewBox="0 0 9 10" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7.11169 10C7.86319 10 8.4375 9.175 8.4375 8.21429V2.85714H0.5625V8.21429C0.5625 9.175 1.13681 10 1.88831 10H7.11169ZM3.09375 4.28571H5.90625C5.98084 4.28571 6.05238 4.32334 6.10512 4.39032C6.15787 4.4573 6.1875 4.54814 6.1875 4.64286C6.1875 4.73758 6.15787 4.82842 6.10512 4.8954C6.05238 4.96237 5.98084 5 5.90625 5H3.09375C3.01916 5 2.94762 4.96237 2.89488 4.8954C2.84213 4.82842 2.8125 4.73758 2.8125 4.64286C2.8125 4.54814 2.84213 4.4573 2.89488 4.39032C2.94762 4.32334 3.01916 4.28571 3.09375 4.28571ZM0.45 0C0.330653 0 0.216193 0.0602039 0.131802 0.167368C0.0474106 0.274531 0 0.419876 0 0.571429L0 1.42857C0 1.58012 0.0474106 1.72547 0.131802 1.83263C0.216193 1.9398 0.330653 2 0.45 2H8.55C8.66935 2 8.78381 1.9398 8.8682 1.83263C8.95259 1.72547 9 1.58012 9 1.42857V0.571429C9 0.419876 8.95259 0.274531 8.8682 0.167368C8.78381 0.0602039 8.66935 0 8.55 0H0.45Z"/>
-            </svg>
-          </div>
-          <div class="todo-task-info-header">
-            <div>Заголовок задачи</div>
-            <div class="task-circle">
-              <div class="container">
-               <div class="round">
-                <input type="checkbox" checked id="checkbox" />
-                <label for="checkbox"></label>
-              </div>
-            </div>
-            </div>
-          </div>
-          <div class="todo-task-info-description">
-            С учётом сложившейся международной обстановки, современная методология разработки предполагает независимые способы реализации.
-          </div>
-          <div class="todo-task-period">13:30 - 14:00</div>
-        </div>
-        <div class="todo-task-time">
-          <div class="todo-task-time-circle purple">13:30</div>
-          <div class="todo-task-time-line"></div>
-        </div>
-      </div>
-      <div class="todo-task-wrapper">
-        <div class="todo-task-info blue">
-          <div class="todo-task-info-trash">
-            <svg width="15" height="15" viewBox="0 0 9 10" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7.11169 10C7.86319 10 8.4375 9.175 8.4375 8.21429V2.85714H0.5625V8.21429C0.5625 9.175 1.13681 10 1.88831 10H7.11169ZM3.09375 4.28571H5.90625C5.98084 4.28571 6.05238 4.32334 6.10512 4.39032C6.15787 4.4573 6.1875 4.54814 6.1875 4.64286C6.1875 4.73758 6.15787 4.82842 6.10512 4.8954C6.05238 4.96237 5.98084 5 5.90625 5H3.09375C3.01916 5 2.94762 4.96237 2.89488 4.8954C2.84213 4.82842 2.8125 4.73758 2.8125 4.64286C2.8125 4.54814 2.84213 4.4573 2.89488 4.39032C2.94762 4.32334 3.01916 4.28571 3.09375 4.28571ZM0.45 0C0.330653 0 0.216193 0.0602039 0.131802 0.167368C0.0474106 0.274531 0 0.419876 0 0.571429L0 1.42857C0 1.58012 0.0474106 1.72547 0.131802 1.83263C0.216193 1.9398 0.330653 2 0.45 2H8.55C8.66935 2 8.78381 1.9398 8.8682 1.83263C8.95259 1.72547 9 1.58012 9 1.42857V0.571429C9 0.419876 8.95259 0.274531 8.8682 0.167368C8.78381 0.0602039 8.66935 0 8.55 0H0.45Z"/>
-            </svg>
-          </div>
-          <div class="todo-task-info-header">
-            <div>Заголовок задачи</div>
-            <div class="task-circle">
-            </div>
-          </div>
-          <div class="todo-task-info-description">
-            С учётом сложившейся международной обстановки, современная методология разработки предполагает независимые способы реализации.
-          </div>
-          <div class="todo-task-period">13:30 - 14:00</div>
+      <todo-task-element  v-for="todoTaskContent in todoTasksContentsView" :key="todoTaskContent.id" :TodoHeader="todoTaskContent.header"
+                               :TodoAbout="todoTaskContent.about"
+                               :TodoTimeCreated="todoTaskContent.dateCreate"
+                               :complete="todoTaskContent.isCompleted"
+                               :TodoTimeEnd="todoTaskContent.timeEnd"
+                               :colorNumber="todoTaskContent.colorNumber"
+                               :TodoId="todoTaskContent.id">
+      </todo-task-element>
+      <!-- <todo-task-element :TodoHeader="'Заголовок задачи'"
+                               :TodoAbout="'С учётом сложившейся международной обстановки, современная методология разработки предполагает независимые способы реализации.'"
+                               :TodoTimeCreated="'13:30'"
+                               :TodoPeriod="'13:30-14:30'"
+                               :complete="false"
+                               :colorNumber="1"
+                               :TodoId="'1'">
+            </todo-task-element> -->
 
-        </div>
-        <div class="todo-task-time">
-          <div class="todo-task-time-circle blue">13:30</div>
-          <div class="todo-task-time-line"></div>
-        </div>
-      </div>
-      <div class="todo-task-wrapper">
-        <div class="todo-task-info teal">
-          <div class="todo-task-info-trash">
-            <svg width="15" height="15" viewBox="0 0 9 10" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7.11169 10C7.86319 10 8.4375 9.175 8.4375 8.21429V2.85714H0.5625V8.21429C0.5625 9.175 1.13681 10 1.88831 10H7.11169ZM3.09375 4.28571H5.90625C5.98084 4.28571 6.05238 4.32334 6.10512 4.39032C6.15787 4.4573 6.1875 4.54814 6.1875 4.64286C6.1875 4.73758 6.15787 4.82842 6.10512 4.8954C6.05238 4.96237 5.98084 5 5.90625 5H3.09375C3.01916 5 2.94762 4.96237 2.89488 4.8954C2.84213 4.82842 2.8125 4.73758 2.8125 4.64286C2.8125 4.54814 2.84213 4.4573 2.89488 4.39032C2.94762 4.32334 3.01916 4.28571 3.09375 4.28571ZM0.45 0C0.330653 0 0.216193 0.0602039 0.131802 0.167368C0.0474106 0.274531 0 0.419876 0 0.571429L0 1.42857C0 1.58012 0.0474106 1.72547 0.131802 1.83263C0.216193 1.9398 0.330653 2 0.45 2H8.55C8.66935 2 8.78381 1.9398 8.8682 1.83263C8.95259 1.72547 9 1.58012 9 1.42857V0.571429C9 0.419876 8.95259 0.274531 8.8682 0.167368C8.78381 0.0602039 8.66935 0 8.55 0H0.45Z"/>
-            </svg>
-          </div>
-          <div class="todo-task-info-header">
-            <div>Заголовок задачи</div>
-            <div class="task-circle">
-            </div>
-          </div>
-          <div class="todo-task-info-description">
-            С учётом сложившейся международной обстановки, современная методология разработки предполагает независимые способы реализации.
-          </div>
-          <div class="todo-task-period">13:30 - 14:00</div>
-        </div>
-        <div class="todo-task-time">
-          <div class="todo-task-time-circle teal">13:30</div>
-          <div class="todo-task-time-line"></div>
-        </div>
-      </div>
     </div>
-    <!-- For Page
-    <div class="page">
-      <div class="card">
-        Card Header
-        <div class="card-header">
-            <todo-task-manager :todo-total-tasks="todoTasksContents.length"
-                               :todo-today-tasks="this.countedTask"
-                               :todo-total-open-tasks="0">
 
-            </todo-task-manager>
-          <span class="float-right mt-2">
-            <button class="mr-4 navTask dark-teal" @click="showModal = true">Добавить задачу</button>
-
-              <todo-modal v-if="showModal" @close="showModal = false"></todo-modal>
-
-            <button class="mr-4 border-0 bg-transparent navTask text-dark" >Архив задач</button>
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </span>
-        </div>
-       Card Body
-        <div class="card-body">
-          <p class="heading1">
-            <span class="today">Сегодня</span>
-            <span class="float-right headingright">7h 15min</span>
-          </p>
-          <div v-for="todoTaskContent in todoTasksContents" :key="todoTaskContent.$id">
-            <todo-task-element :todo-name="todoTaskContent.header"
-                               :todo-time-created="todoTaskContent.dateCreate"
-                               :todo-time-to-take="todoTaskContent.durationInMinute"
-                               :todo-id="todoTaskContent.id" :complete="todoTaskContent.isCompleted">
-            </todo-task-element>
-          </div>
-          <p class="heading2">
-            <span class="tomorrow">Вчера</span>
-            <span class="float-right headingright">6h 30min</span>
-          </p>
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -174,55 +79,86 @@ export default {
   date() {
     return {
       todoTasksContents: [],
+      todoTasksContentsView: [],
+      DateStart : null
     }
   },
   props:{
     api: Object,
-    todoTasksContents: [],
+    todoTasksContents: Array,
+    todoTasksContentsView: Array,
     noty: Object,
-
+    DateStart : Object,
+    NotCompleted : Boolean
   },
   mounted: async function () {
-    this.todoTasksContents = [];
+    console.log(this.$cookies.get("UserInfo"))
+
+    this.NotCompleted = false
+    this.todoTasksContents = []
+    this.todoTasksContentsView = []
+    if(!Vue.TodoDataStart) {
+      var now = new Date();
+      var day = ("0" + now.getDate()).slice(-2);
+      var month = ("0" + (now.getMonth() + 1)).slice(-2);
+      this.DateStart = now.getFullYear() + "-" + (month) + "-" + (day)
+    }
+    else {
+      this.DateStart = Vue.TodoDataStart;
+    }
+
     this.api = new ToDoPart(this.$http);
-    this.todoTasksContents.isCompleted = todoTaskElement.complete;
     await this.taskReq();
-    await this.completedTaskCount()
-    console.log(this.todoTasksContents)
   },
   methods: {
+    async getTodoList(){
+      Vue.TodoDataStart =
+          document.getElementById("filterdatetodo").value;
+      this.DateStart = Vue.TodoDataStart
+      await this.taskReq()
+    },
+    ShowNotCompleted: function (){
+      if(this.NotCompleted)
+        this.todoTasksContentsView = this.todoTasksContents.filter( function (el) { return !el.isCompleted})
+      else
+        this.todoTasksContentsView = this.todoTasksContents
+    },
     taskReq: async function(){
-      var request = await this.api.GetTask( this.$cookies.get("UserInfo").id, '')
+
+      var request = await this.api.GetTask( this.$cookies.get("UserInfo").id, this.DateStart)
           .catch(response=>{this.noty.Show({title: "Task add", message:"task not added"})})
+
       if(request.data.success)
       {
+        this.todoTasksContents = null
+        this.todoTasksContents = []
+        this.todoTasksContentsView = null
+        this.todoTasksContentsView = []
+
         var arr =[];
         arr = request.data.todoList.tasks.$values;
-        for (let j in arr)
+
+        console.log("get3")
+        console.log(arr)
+        var color = 1
+        for (var i in arr)
         {
-            this.$set(this.todoTasksContents, j , arr[j])
+          arr[i].colorNumber = color
+          color++
+
+          this.todoTasksContents.push(arr[i])
+          this.todoTasksContentsView.push(arr[i])
+
+          if(color>3)
+            color = 1
         }
         this.$forceUpdate();
-        console.log(arr)
-
       }
-      else{this.noty.Show({title:"123", message:"123"})}
+      else{this.noty.Show({title:"Ошибка", message:"Не удалось получить список задач"})}
     },
     showModal: function (){
       this.showModal = true;
     },
-    completedTaskCount: async function()
-    {
-      for(let i = 0; i < this.todoTasksContents.length; i++)
-      {
-        console.log(this.todoTasksContents[i])
-        if(this.todoTasksContents[i].isCompleted === false)
-        {
-          this.countedTask+=1;
-        }
-      }
-    }
-
 
   }
 }
@@ -314,6 +250,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: auto;
+  flex:1;
+  scroll-behavior: smooth;
 }
 .todo-task-wrapper {
   cursor: pointer;
