@@ -4,7 +4,7 @@
      <div class="modal-wrapper">
       <div class="modal-container-exit">
         <div class="modal-header">
-            <div <img src="src/renderer/assets/images/img.png" class="box-angle2">
+           <div> <img class="box-angle2" src="src/renderer/assets/images/img.png">
             <div id="box-logo" class="row justify-content-center"><img src="src/renderer/assets/images/logo-img.png" height="70" width="70" class="logo2"></div>
           </div>
             <slot name="header">
