@@ -134,8 +134,7 @@ export default {
   margin-left: -10px;
 }
 .logo2{
-margin-top: -50px;
-  margin-left: 170px;
+  margin-top: -50px;
 }
 .question{
   margin-left: 25px;

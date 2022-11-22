@@ -39,7 +39,7 @@
     <div v-if="type === 'G'" style="display: flex; justify-content: space-around; width: 100%" v-on:keyup.enter="toValidateCode()">
       <div style="display: flex; flex-direction: column">
         <p class="row mt-4 justify-content-center placeholder-container">Почти готово!</p>
-        <p class="row mt-4 justify-content-center placeholder-container">Для потверждения аккаунта необходимо отправить код на указанную вами почту.</p>
+        <p class="row mt-4 justify-content-center placeholder-container" style ="text-align: center; margin: 8%;">Для потверждения аккаунта необходимо отправить код на указанную вами почту.</p>
         <div class="row mt-4 justify-content-center placeholder-container" style="">
           <input type="password" class="input-form" style="width: 250px;" placeholder=" " v-model="Authcode"/>
           <label style="margin-left: -40px;" >Введите код доступа</label>

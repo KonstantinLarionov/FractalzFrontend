@@ -136,24 +136,16 @@
 <script>
 import UserPart from "../../api/UserPart";
 import NotifyCenter from "../../services/NotifyCenter";
-import RegistrationModal from "../../components/modals/RegistrationModal.vue";
-import Vue from "vue";
-import { link } from "fs";
-
-
-Vue.component('vk-link',RegistrationModal)
 
 export default {
   name: "AccountPage",
   props: {
     api: Object,
-    noty: Object,
-    showModal:null,
+    noty: Object
   },
   data()
   {
     return {
-      showModal:false,
       model : {
         userId: this.$cookies.get("UserInfo").id,
         login: this.$cookies.get("UserInfo").login,

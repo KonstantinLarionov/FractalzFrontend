@@ -197,27 +197,29 @@ export default {
         }
       }
       //TODO :  + Подсветить жирным диалог который пришел
-    }
-  //   getDialogsInfo : async function () {
-  //     var result = await this.api
-  //         .GetDialogs(Vue.$cookies.get('UserInfo').id)
-  //         .catch(response => {
-  //           this.noty.Show({
-  //             title: this.notyHeader,
-  //             message: "Произошла ошибка. Проверьте соединение с интернетом!"
-  //           });
-  //         });
-  //     if (result.data.success) {
-  //       if (result.data.dialogs != null) {
-  //         for (let j in result.data.dialogs) {
-  //           if (result.data.dialogs[j].countUnReadMessage != 0) {
-  //             this.CountDialogsNoty++;
-  //           }
-  //         }
-  //       }
-  //     }
-  //   },
-  // }
+    },
+
+    getDialogsInfo : async function () {
+      var result = await this.api
+          .GetDialogs(Vue.$cookies.get('UserInfo').id)
+          .catch(response => {
+            this.noty.Show({
+              title: this.notyHeader,
+              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+            });
+          });
+      if (result.data.success) {
+        if (result.data.dialogs != null) {
+          for (let j in result.data.dialogs) {
+            if (result.data.dialogs[j].countUnReadMessage != 0) {
+              this.CountDialogsNoty++;
+            }
+          }
+        }
+      }
+    },
+  },
+}
 </script>
 
 <style scoped>
