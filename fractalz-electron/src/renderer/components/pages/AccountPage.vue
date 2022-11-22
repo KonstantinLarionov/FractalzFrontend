@@ -38,12 +38,7 @@
         </div>
         <div class="profile-info-wrapper">
           <div class="info-fio" >
-              <input placeholder="ФИО"
-                     style="border-radius: 20px;
-                     border: 1px solid gray;
-                     text-align: center;
-                     width: 350px;"
-                     v-model="model.name"/>
+              <input placeholder="ФИО" class="input-fio" v-model="model.name"/>
           </div>
           <div class="info-status">
             <svg id="info-status-icon" width="16" height="16" viewBox="0 0 16 16" fill="var(--color-light-green)" xmlns="http://www.w3.org/2000/svg">
@@ -66,19 +61,7 @@
            <div class="adres-input">
               <p class="p_adress">
               Адрес:
-              <input placeholder="Введте адрес"
-                     style="
-                     height: 23px;
-                     width: 225px;
-                     border-radius: 20px;
-                     border-color: transparent;
-                     font-family: 'Inter';
-                     font-style: normal;
-                     font-weight: 300;
-                     font-size: 14px;
-                     line-height: 7px;
-                     max-width: max-content;
-                     color: black;" />
+              <input placeholder="Введте адрес" class="address-entry"/>
               </p>
             </div>
           </div>
@@ -89,20 +72,7 @@
             <div class="input-number">
                         <p class="numder1">
               Телефон:
-              <input placeholder="Введите номер"
-                     style="
-                     height: 23px;
-                     width: 120px;
-                     border-radius: 20px;
-                     border-color: transparent;
-                     font-family: 'Inter';
-                     font-style: normal;
-                     font-weight: 300;
-                     font-size: 14px;
-                     line-height: 7px;
-                     max-width: max-content;
-                     color: black;"
-                     type="tel">
+              <input placeholder="Введите номер" class="Enter-number" type="tel">
               </p>
             </div>
           </div>
@@ -113,31 +83,18 @@
             <div class="input-mail">
             <p class="mail_p">
               Почта:
-              <input placeholder="Введите почту"
-                     style="
-                     height: 23px;
-                     width: 100px;
-                     border-radius: 20px;
-                     border-color: transparent;
-                     font-family: 'Inter';
-                     font-style: normal;
-                     font-weight: 300;
-                     font-size: 14px;
-                     line-height: 7px;
-                     max-width: max-content;
-                     color: black;"
-                     type="mail">
+              <input placeholder="Введите почту" class="" type="mail" v-bind:="model.email" >
             </p>
             </div>
           </div>
           </div>
           <div class="second-row">
-          <button style=" width: 30px; height: 30px; margin-top: 20px; margin-left: 10px; border-radius: 40px; background-color: transparent; border-color: transparent"><img class="vk-img" @click="showModal" src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png"/></button>
+          <button style=" width: 30px; height: 30px; margin-top: 20px; margin-left: 10px; border-radius: 40px; background-color: transparent; border-color: transparent" @click="showModal"><img class="vk-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png"/><a v-on:click="vk-link"></a></button>
           <button style=" width: 30px; height: 30px; margin-top: 11px; margin-left: 10px; border-radius:50px; background-color:transparent; border-color:transparent"><img class="tg-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png"/></button>
         </div>
       </div>
       <div class="btn-save">
-        <button type="button" class="save" v-on:keyup.enter="updateProfile()">Сохранить изменения</button>
+        <button type="button" class="save" v-on:click="updateProfile()">Сохранить изменения</button>
       </div>
           <div class="info-photos">
           <div class ="down">
@@ -172,22 +129,31 @@
       </div>
       </div>
     </div>
+    <vk-link v-if="showModal" @close="showModal = true"></vk-link> 
   </div>
 </template>
 
 <script>
 import UserPart from "../../api/UserPart";
 import NotifyCenter from "../../services/NotifyCenter";
+import RegistrationModal from "../../components/modals/RegistrationModal.vue";
+import Vue from "vue";
+import { link } from "fs";
+
+
+Vue.component('vk-link',RegistrationModal)
 
 export default {
   name: "AccountPage",
   props: {
     api: Object,
-    noty: Object
+    noty: Object,
+    showModal:null,
   },
   data()
   {
     return {
+      showModal:false,
       model : {
         userId: this.$cookies.get("UserInfo").id,
         login: this.$cookies.get("UserInfo").login,
@@ -268,6 +234,12 @@ export default {
 .info-login{
   font-weight: 500;
   font-size: 13px;
+}
+.input-fio{
+  border-radius: 20px;
+border: 1px solid gray;
+text-align: center;
+width: 350px;
 }
 .profile-info-wrapper{
   width: 100%;
@@ -457,6 +429,19 @@ export default {
   line-height: 7px;
   margin-top: 3px;
 }
+.address-entry{
+  height: 23px;
+  width: 225px;
+  border-radius: 20px;
+  border-color: transparent;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 7px;
+  max-width: max-content;
+  color: black;
+}
 .numder1{
   width: 100%;
   font-family: 'Inter';
@@ -466,6 +451,19 @@ export default {
   line-height: 7px;
   margin-left: 13px;
   margin-top: 2px;
+}
+.Enter-number{
+  height: 23px;
+  width: 120px;
+  border-radius: 20px;
+  border-color: transparent;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 7px;
+  max-width: max-content;
+  color: black;
 }
 .input-number{
   width: 230px;
@@ -490,6 +488,19 @@ export default {
   line-height: 7px;
   margin-top: 3px;
   margin-left: 13px;
+}
+.Enter-mail{
+  height: 23px;
+  width: 100px;
+  border-radius: 20px;
+  border-color: transparent;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 7px;
+  max-width: max-content;
+  color: black;
 }
 .mail_pic{
   width: 30px;
