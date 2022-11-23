@@ -83,7 +83,7 @@
             <div class="input-mail">
             <p class="mail_p">
               Почта:
-              <input placeholder="Введите почту" class="" type="email" v-bind="model.email" >
+              <input placeholder="Введите почту" class="Enter-mail" type="email" v-bind="model.email" >
             </p>
             </div>
           </div>
@@ -470,6 +470,19 @@ width: 350px;
   height: 30px;
   margin-bottom: -18px;
   margin-left: -2px;
+}
+.Enter-mail{
+  height: 23px;
+  width: 120px;
+  border-radius: 20px;
+  border-color: transparent;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 7px;
+  max-width: max-content;
+  color: black;
 }
 .mail_p{
   font-family: 'Inter';
