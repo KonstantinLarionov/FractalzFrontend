@@ -2,24 +2,25 @@
     <transition name="modal">
      <div class="modal-mask">
        <div class="modal-wrapper">
-        <div class="modal-container-exit">
+        <div class="modal-container-input">
               <slot name="header">
                 <div class="header">
                   <div class="question-exit">
-                  <p class="question">
-                    Что-то помяется 
+                    <br>
+                    <br>
+                    <br>
+                  <p class="text">
+                    Название поля для ввода 
                   </p>
                   </div>
+                  <input class="inpt"/>
                 </div>
               </slot>
-              <div class="footer-exit">
+              <div class="footer-modal">
                   <span class="buttons" >
-                      <router-link :to="{ name: 'RegistrationPage' }">
-                        <button class="exit-btn" v-on:click="logOut" style="margin-left: 120px">
-                          Выйти
-                        </button>
-                      </router-link>
-                    <button  class="back-btn" @click="$emit('close')" >Остаться</button>
+                      <router-link :to="{ name: 'RegistrationPage'}"/>
+                    <br>
+                    <button  class="send-btn" @click="$emit('close')" >Ввести</button>
                   </span>
             </div>
             </div>
@@ -65,48 +66,6 @@
   }
   </script>
   <style lang="css">
-  .exit-btn{
-    color: white;
-    height: 40px;
-    width: 100px;
-    border-radius: 20px;
-    background: #00627A;
-    margin-left: 30px;
-    border: transparent;
-    font-size: 12px;
-    font-weight: 300;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  .exit-btn:hover{
-    background: #003947;
-  }
-  .exit-btn:active{
-    background: #003947;
-  }
-  .exit-btn:focus{
-    background: #003947;
-  }
-  .back-btn{
-    color: white;
-    height: 40px;
-    width: 100px;
-    border-radius: 20px;
-    background: #9B9B9B;
-    margin-left: 60px;
-    border: transparent;
-    font-size: 12px;
-    font-weight: 300;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  .back-btn:hover{
-    background: #7B7B7B;
-  }
-  .back-btn:active{
-    background: #7B7B7B;
-  }
-  .back-btn:focus{
-    background: #7B7B7B;
-  }
   .modal-mask {
     position: fixed;
     top: 0;
@@ -117,25 +76,11 @@
     display: table;
     transition: opacity 0.3s ease;
   }
-  .box-angle2{
-    width: 400px;
-    height: 70px;
-    margin-top: -10px;
-    margin-left: -10px;
-  }
-  .logo2{
-  margin-top: -50px;
-    margin-left: 170px;
-  }
-  .question{
-    margin-left: 25px;
-    font-size: 14px;
-  }
   .modal-wrapper {
     display: table-cell;
     vertical-align: middle;
   }
-  .modal-container-exit {
+  .modal-container-input {
     width: 400px;
     height: 300px;
     margin: 0px auto;
@@ -147,15 +92,6 @@
     border-style: solid;
     border: transparent;
   }
-  .notification-exit{
-    font-weight: 300;
-    margin-left: 10px;
-    line-height: 16px;
-  }
-  .modal-header{
-    display: flex;
-    flex-direction: column;
-  }
   .header{
     margin-top: 10px;
     margin-left: 20px;
@@ -164,14 +100,45 @@
     color: #00627A;
     font-size: 14px;
   }
-  .buttons
-  {
+  .text{
+    font-size: 17px;
+    text-align: center;
+    margin-right:120px;
+  }
+  .footer-modal{
+  margin-top: 100px;
+  margin-left: 185px;
+  }
+.send-btn{
     border-radius: 20px;
+    color: white;
+    height: 40px;
+    width: 120px;
+    border-radius: 20px;
+    background: #00627A;
+    margin-left: 30px;
+    border: transparent;
+    font-size: 15px;
+    font-weight: 300;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
-  .footer-exit{
-  margin-top: 10px;
-  margin-left: -55px;
+  .send-btn:hover{
+    background: #003947;
   }
+  .send-btn:active{
+    background: #003947;
+  }
+  .send-btn:focus{
+    background: #003947;
+  }
+  .inpt{
+    margin-left: 30px;
+    height: 30px;
+    width: 280px;
+    border-radius: 20px;
+    border: 1px transparent solid;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
   </style>
   
   
