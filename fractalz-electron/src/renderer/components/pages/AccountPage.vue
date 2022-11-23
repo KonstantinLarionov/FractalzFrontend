@@ -83,7 +83,7 @@
             <div class="input-mail">
             <p class="mail_p">
               Почта:
-              <input placeholder="Введите почту" class="" type="mail" v-bind:="model.email" >
+              <input placeholder="Введите почту" class="" type="email" v-bind="model.email" >
             </p>
             </div>
           </div>
@@ -146,7 +146,7 @@ export default {
   data()
   {
     return {
-      model : {
+      model: {
         userId: this.$cookies.get("UserInfo").id,
         login: this.$cookies.get("UserInfo").login,
         name: this.$cookies.get("UserInfo").name,
@@ -303,7 +303,6 @@ width: 350px;
   overflow: hidden;
 }
 .profile-adress-wrapper{
-  height: -10px;
   width: 100%;
   display: flex;
   flex-direction: row;

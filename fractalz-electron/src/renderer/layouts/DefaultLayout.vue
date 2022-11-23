@@ -112,7 +112,6 @@
         </section>
       </div>
     </div>
-    <CreateNotyModal v-if="CreateNotyModal" @close="CreateNotyModal = false"></CreateNotyModal>
     <exit-modal v-if="showModal" @close="showModal = false" ></exit-modal>
   </div>
 </template>
@@ -160,7 +159,7 @@ export default {
     },
     restoreLeftbar : function ()
     {
-      document.getElementById("leftbar-wrapper").classList.remove("collaps-leftbar");
+      document.getElementById("leftbar-wrapper").className +="collaps-leftbar"
       document.getElementById("arrow").style.display = "none"
     },
     onMessageUpdate : function (message){
@@ -200,18 +199,23 @@ export default {
     },
 
     getDialogsInfo : async function () {
+      console.log(Vue.$cookies.get('UserInfo').id);
       var result = await this.api
           .GetDialogs(Vue.$cookies.get('UserInfo').id)
           .catch(response => {
             this.noty.Show({
               title: this.notyHeader,
               message: "Произошла ошибка. Проверьте соединение с интернетом!"
-            });
-          });
-      if (result.data.success) {
-        if (result.data.dialogs != null) {
-          for (let j in result.data.dialogs) {
-            if (result.data.dialogs[j].countUnReadMessage != 0) {
+            })
+          })
+      if (result.data.success)
+      {
+        if (result.data.dialogs.$values.length != 0)
+        {
+          for (let j in result.data.dialogs)
+          {
+            if (result.data.dialogs[j].countUnReadMessage != 0)
+            {
               this.CountDialogsNoty++;
             }
           }

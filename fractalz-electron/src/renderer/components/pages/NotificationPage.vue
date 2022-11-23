@@ -121,30 +121,20 @@
 <script>
 import Vue from "vue";
 import UserNotyElement from "../elements/noty/UserNotyElement";
-import ChatPart from "../../api/ChatPart";
-import NotyPart from "../../api/NotyPart";
 
 Vue.component ('user-element', UserNotyElement)
 
-function NotificationPage() {
-
-}
-
 export default {
   name: "Notification",
-  components: {NotificationPage}
-}
-var modal = document.getElementById('id01');
+  props:{
+    modal: document.getElementById('todoSpace')
+  },
+  methods:{
 
-// Когда пользователь кликает за пределами модального окна, то оно закрывается
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
+  },
 }
+
+
 </script>
 
 <style scoped>
