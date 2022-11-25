@@ -1,6 +1,5 @@
 <template >
-<div style="
-  width: 90%;">
+<div style="width: 90%;">
   <div class="todo-task-wrapper">
          <div class="todo-task-info" v-bind:class="{purple: colorNumber == 1, blue: colorNumber == 2, teal: colorNumber == 3}">
 
@@ -14,7 +13,7 @@
             <div class="task-circle">
               <div class="container">
                <div class="round">
-                <input type="checkbox" @click="_completeTask()" v-bind:id="TodoId" v-bind:checked="complete" />
+                <input type="checkbox" @click="_completeTask()" v-bind:id="TodoId" v-model="complete" />
                 <label v-bind:for="TodoId"></label>
               </div>
             </div>
@@ -36,44 +35,39 @@
 <script>
 import ToDoPart from "../../../api/TodoPart";
 export default {
-  data: function ()
-  {
+  data() {
     return {
       colorNumber: 1,
       TodoHeader: '',
       TodoAbout: '',
-      TodoTimeCreated: null,
-      TodoTimeCreatedView: "",
-      TodoTimeEnd: null,
-      TodoPeriod: null,
+      TodoTimeCreated: '',
+      //TodoTimeCreatedView: this.getTime(this.TodoTimeCreated),
+      TodoTimeEnd: '',
+      TodoPeriod: '',
       TodoId: '',
-      api: null,
-      noty: null,
+      api: '',
+      noty: '',
       complete: null
     }
   },
   props: {
     colorNumber: Number,
-    TodoHeader: '',
-    TodoAbout: '',
-    TodoTimeCreated: null,
-    TodoTimeCreatedView: "",
-    TodoTimeEnd: null,
-    TodoPeriod: null,
-    TodoId: '',
+    TodoHeader: String,
+    TodoAbout: String,
+    TodoTimeCreated: String,
+    TodoTimeCreatedView: String,
+    TodoTimeEnd: String,
+    TodoPeriod: String,
+    TodoId: String,
     api: Object,
     noty: Object,
-    complete: null
+    complete: Boolean
   },
   name: "TodoTaskElement",
-  mounted() {
-
-    this.api = new ToDoPart(this.$http);
-
-    this.TodoTimeCreatedView = this.getTime(this.TodoTimeCreated)
-    if (this.complete) {
-      this.TodoPeriod = this.getTimePeriod(this.TodoTimeEnd)
-    }
+  computed: {
+    TodoTimeCreatedView() { return this.getTime(this.TodoTimeCreated) },
+    TodoPeriod() { if(this.complete) return this.getTimePeriod(this.TodoTimeEnd) },
+    api() {return new ToDoPart(this.$http)}
   },
   methods: {
 
@@ -106,23 +100,21 @@ export default {
       var check = await this.api.DeleteTask(this.TodoId);
 
       if (check.data.success) {
+        this.$emit('delete', this.TodoId)
         //this.$el.parentNode.removeChild(this.$el);
-        this.$forceUpdate();
+        //this.$forceUpdate();
       }
     },
 
     _completeTask: async function () {
+      console.log(this.complete);
       if (!this.complete)
         this.TodoPeriod = this.getTimePeriod(Date.now());
 
       var result = await this.api.UpdateTask(this.TodoId, !this.complete);
       if (result.data.success) {
-        this.$forceUpdate();
-        this.complete = true
-      }
-      if (result.data.success) {
-        this.$forceUpdate();
-        this.complete = false
+        let buff = this.complete;
+        this.complete = buff;
       }
     }
 

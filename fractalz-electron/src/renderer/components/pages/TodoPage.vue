@@ -29,14 +29,15 @@
         <button class="todo-filter-buttonadd" @click="showModal = true">Добавить задачу</button>
       </div>
     </div>
-    <div class="todo-body-wrapper">
+    <div class="todo-body-wrapper" id="wrapper-todolist">
       <todo-task-element  v-for="todoTaskContent in todoTasksContentsView" :key="todoTaskContent.id" :TodoHeader="todoTaskContent.header"
                                :TodoAbout="todoTaskContent.about"
                                :TodoTimeCreated="todoTaskContent.dateCreate"
                                :complete="todoTaskContent.isCompleted"
                                :TodoTimeEnd="todoTaskContent.timeEnd"
                                :colorNumber="todoTaskContent.colorNumber"
-                               :TodoId="todoTaskContent.id">
+                               :TodoId="todoTaskContent.id"
+                               @delete="deleteTask">
       </todo-task-element>
       <!-- <todo-task-element :TodoHeader="'Заголовок задачи'"
                                :TodoAbout="'С учётом сложившейся международной обстановки, современная методология разработки предполагает независимые способы реализации.'"
@@ -48,7 +49,7 @@
             </todo-task-element> -->
 
     </div>
-    <todo-modal-r-d v-if="showModal" @close="showModal = false" @update="taskReq" ></todo-modal-r-d>
+    <todo-modal-r-d v-if="showModal" @close="showModal = false" @update="getTodoList" ></todo-modal-r-d>
   </div>
 </template>
 
@@ -73,10 +74,6 @@ export default {
     return{
       showModal: false,
       countedTask:0,
-    }
-  },
-  date() {
-    return {
       todoTasksContents: [],
       todoTasksContentsView: [],
       DateStart : null
@@ -91,6 +88,7 @@ export default {
     NotCompleted : Boolean
   },
   mounted: async function () {
+    console.log(123321);
     this.NotCompleted = false
     this.todoTasksContents = []
     this.todoTasksContentsView = []
@@ -108,6 +106,22 @@ export default {
     await this.taskReq();
   },
   methods: {
+    deleteTask(id){
+      console.log(id);
+       let el = this.todoTasksContents.findIndex(x=>x.id === id)
+       console.log(el);
+
+        this.todoTasksContents.splice(el, 1); 
+        if (this.NotCompleted) {
+        var ar = this.todoTasksContents.filter(function (el) {
+          return !el.isCompleted
+        })
+        this.todoTasksContentsView = Object.assign(ar);
+      } else {
+        this.todoTasksContentsView = Object.assign(this.todoTasksContents);
+      }
+      this.$forceUpdate();
+    },
     async getTodoList(){
       Vue.TodoDataStart =
           document.getElementById("filterdatetodo").value;
@@ -116,22 +130,12 @@ export default {
     },
     ShowNotCompleted: function () {
       if (this.NotCompleted) {
-        this.todoTasksContentsView = null;
-        this.todoTasksContentsView = [];
         var ar = this.todoTasksContents.filter(function (el) {
           return !el.isCompleted
         })
-        for (let i = 0; i < ar.length; i++) {
-          this.todoTasksContentsView.push(ar[i])
-        }
+        this.todoTasksContentsView = Object.assign(ar);
       } else {
-        this.todoTasksContentsView = null;
-        this.todoTasksContentsView = [];
-        var ar2 = this.todoTasksContents
-
-        for (let i = 0; i < ar2.length; i++) {
-          this.todoTasksContentsView.push(ar2[i])
-        }
+        this.todoTasksContentsView = Object.assign(this.todoTasksContents);
       }
       this.$forceUpdate();
     },
@@ -156,14 +160,16 @@ export default {
           color++
 
           this.todoTasksContents.push(arr[i])
-          this.todoTasksContentsView.push(arr[i])
 
           if(color>3)
             color = 1
         }
-        this.$forceUpdate();
+
+        this.todoTasksContentsView = Object.assign(this.todoTasksContents);
+        console.log(this.todoTasksContentsView);
       }
       else{this.noty.Show({title:"Ошибка", message:"Не удалось получить список задач"})}
+      this.$forceUpdate();
     },
     showModal: function (){
       this.showModal = true;

@@ -22,12 +22,12 @@
         <input class="input-up2" name="s" placeholder="Введите основной текст уведомления">
       </div>
       <div class="Filters">
-        <select class="selectvalue">
-          <option class="begin-1">Выберите кому</option>
+        <input list="selectable" class="selectvalue" placeholder="Выберите кому"/>
+        <datalist class="selectvalue" id="selectable" editable>
           <option>Никита Панин</option>
           <option>Константин Ларионов</option>
           <option>Мария Ларионова</option>
-        </select>
+        </datalist>
         <button class="set-filtres">Отправить</button>
       </div>
       <div class="todo-filter-left">
@@ -185,6 +185,7 @@ export default {
   margin-right: 25px;
   margin-top: 14px;
   font-size: 13px;
+  outline:none;
   border-top: transparent;
   border-right: transparent;
   border-left: transparent;
@@ -198,7 +199,7 @@ option:hover
   color: #00627AA1;
 }
 .set-filtres{
-  width: 140px;
+  width: 60%;
   height: 25px;
   margin-left: 25px;
   margin-top: 15px;
@@ -206,7 +207,21 @@ option:hover
   font-weight: 200;
   border-radius: 40px 40px 40px 40px;
   background-color: #FF5722;
+  box-shadow: var(--shadow-down-4);
+  border: none;
   color: white;
+
+  -webkit-user-select: none;
+-moz-user-select: -moz-none;
+-ms-user-select: none;
+ user-select: none;
+
+-webkit-appearance: none;
+-moz-appearance: radio-container;
+ appearance: none;
+}
+.set-filtres:active{
+  box-shadow: none;
 }
 .the-main-part{
   height: 100%;

@@ -6,8 +6,8 @@
           <div class="todocreator-container-elems">
             <div class="todocreator-label">Добавление задачи</div>
             <input class="todocreator-input" v-model:value="Header" type="text" placeholder="Введите заголовок задачи"/>
-            <textarea v-model:value="About" class="todocreator-input text-left" placeholder="Введите описание задачи"/>
-            <input class="todocreator-input " v-model:value="DateCreate" type="date" placeholder="Введите дату задачи"/>
+            <textarea v-model:value="About" class="todocreator-input text-left" placeholder="Введите описание задачи"></textarea>
+            <input class="todocreator-input " v-model="DateCreate" type="date" placeholder="Введите дату задачи"/>
           </div>
           <div class="footer-exit">
                   <span class="buttons" >
@@ -51,7 +51,12 @@ export default {
     this.TodoListId = Vue.UserInfo.todoList.id
     this.api = new ToDoPart(this.$http);
     this.noty = new NotifyCenter();
+      var now = new Date();
+      var day = ("0" + now.getDate()).slice(-2);
+      var month = ("0" + (now.getMonth() + 1)).slice(-2);
+      this.DateCreate = now.getFullYear() + "-" + (month) + "-" + (day)
   },
+
   methods: {
     async createTask () {
       const titleNoty = "Создание задачи"

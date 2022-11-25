@@ -16,7 +16,8 @@ Vue.component("default-layout", DefaultLayout)
 
 
 
-axios.defaults.baseURL = "http://95.105.113.237:5544"
+// axios.defaults.baseURL = "http://95.105.113.237:5544"
+axios.defaults.baseURL = "http://192.168.88.152:5247"
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
