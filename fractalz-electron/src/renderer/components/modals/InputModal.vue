@@ -1,5 +1,5 @@
 <template>
-   <div class="modal-shadow" v-if="show" @click.self="closeModal">
+   <div class="modal-shadow">
      <div class="modal-wrapper">
       <div class="modal-container-input">
             <slot name="header">
@@ -11,7 +11,11 @@
                   Название поля для ввода 
                 </p>
                 </div>
+                <img class="vk-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png"/>
                 <input class="inpt"/>
+                <br>
+                <img class="tg-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png"/>
+                <input class="inpt-second"/>
               </div>
             </slot>
             <div class="footer-modal">
@@ -38,12 +42,9 @@ export default {
             }
         },
         methods: {
-            closeModal: function () {
-                this.show = false
             }
         }
-    }
-
+    
 </script>
 <style lang="css">
 
@@ -65,7 +66,7 @@ export default {
   width: 350px;
   height: 250px;
   margin: 0px auto;
-  background-color: #D9D9D9;
+  background-color: #ECECEC;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
@@ -87,7 +88,7 @@ export default {
   margin-right:120px;
 }
 .footer-modal{
-margin-top: 50px;
+margin-top: 90px;
 margin-left: 170px;
 }
 .send-btn{
@@ -112,11 +113,32 @@ margin-left: 170px;
 .send-btn:focus{
   background: #003947;
 }
-.inpt{
-  margin-left: 10px;
-  margin-top: 10px;
+.vk-img{
   height: 30px;
-  width: 280px;
+  width: 30px;
+  margin-left:5px;
+}
+.inpt{
+  text-align: center;
+  margin-left: 5px;
+  margin-top: 5px;
+  height: 30px;
+  width: 250px;
+  border-radius: 20px;
+  border: 1px transparent solid;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.tg-img{
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
+}
+.inpt-second{
+  text-align: center;
+  margin-left: 5px;
+  margin-top: 25px;
+  height: 30px;
+  width: 250px;
   border-radius: 20px;
   border: 1px transparent solid;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
