@@ -88,8 +88,8 @@
             </div>
           </div>
           </div>
-          <div class="second-row">
-          <button v:on-click="showModal = true" 
+          <div class="second-row" v-on:click="showModal = true" >
+          <button
           style=" width: 30px; height: 30px; margin-top: 20px; margin-left: 10px; border-radius: 40px; background-color: transparent; border-color: transparent"><img class="vk-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png"/></button>
           <button style=" width: 30px; height: 30px; margin-top: 17px; margin-left: 10px; border-radius:50px; background-color:transparent; border-color:transparent"><img class="tg-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png"/></button>
         </div>
@@ -138,15 +138,17 @@
 import UserPart from "../../api/UserPart";
 import NotifyCenter from "../../services/NotifyCenter";
 import InputModal from "../modals/InputModal";
-import Vue from "vue";
 
-Vue.component("inputModal", InputModal)
+
 
 export default {
   name: "AccountPage",
   props: {
     api: Object,
     noty: Object
+  },
+  components:{
+    InputModal
   },
   data()
   {
@@ -172,14 +174,6 @@ export default {
     this.noty = new NotifyCenter();
     this.getUser();
   },
-  components: {
-        },
-        methods: {
-          InputModalVisit:false,
-          showModal: function () {
-                this.$refs.modal.show = true
-            }
-        },
   methods:{
     getUser:async function()
     {
