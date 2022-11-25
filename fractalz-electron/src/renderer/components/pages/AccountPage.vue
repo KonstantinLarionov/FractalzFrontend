@@ -89,8 +89,9 @@
           </div>
           </div>
           <div class="second-row">
-          <button style=" width: 30px; height: 30px; margin-top: 20px; margin-left: 10px; border-radius: 40px; background-color: transparent; border-color: transparent" @click="showModal"><img class="vk-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png"/><a v-on:click="vk-link"></a></button>
-          <button style=" width: 30px; height: 30px; margin-top: 11px; margin-left: 10px; border-radius:50px; background-color:transparent; border-color:transparent"><img class="tg-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png"/></button>
+          <button v:on-click="showModal = true" 
+          style=" width: 30px; height: 30px; margin-top: 20px; margin-left: 10px; border-radius: 40px; background-color: transparent; border-color: transparent"><img class="vk-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png"/></button>
+          <button style=" width: 30px; height: 30px; margin-top: 17px; margin-left: 10px; border-radius:50px; background-color:transparent; border-color:transparent"><img class="tg-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png"/></button>
         </div>
       </div>
       <div class="btn-save">
@@ -129,13 +130,17 @@
       </div>
       </div>
     </div>
-    <vk-link v-if="showModal" @close="showModal = true"></vk-link> 
+    <InputModal v-if="showModal" @close="showModal = false"></InputModal>
   </div>
 </template>
 
 <script>
 import UserPart from "../../api/UserPart";
 import NotifyCenter from "../../services/NotifyCenter";
+import InputModal from "../modals/InputModal";
+import Vue from "vue";
+
+Vue.component("inputModal", InputModal)
 
 export default {
   name: "AccountPage",
@@ -145,8 +150,9 @@ export default {
   },
   data()
   {
-    return {
-      model: {
+    return { showModal: false,
+      model: 
+      {
         userId: this.$cookies.get("UserInfo").id,
         login: this.$cookies.get("UserInfo").login,
         name: this.$cookies.get("UserInfo").name,
@@ -157,15 +163,23 @@ export default {
         logo: this.$cookies.get("UserInfo").logo,
         save: this.$cookies.get("UserInfo").save
       },
+
       notyHeader: "Профиль Fractalz"
     };
   },
-
   mounted() {
     this.api = new UserPart(this.$http);
     this.noty = new NotifyCenter();
     this.getUser();
   },
+  components: {
+        },
+        methods: {
+          InputModalVisit:false,
+          showModal: function () {
+                this.$refs.modal.show = true
+            }
+        },
   methods:{
     getUser:async function()
     {
@@ -210,6 +224,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: 70px;
+  height: 120px;
 }
 .info-status{
   color: black;
@@ -530,7 +545,6 @@ width: 350px;
   height: 30px;
   width: 30px;
   margin-left: -10px;
-  margin-top: 25px;
 }
 .photos{
   height: 100%;
