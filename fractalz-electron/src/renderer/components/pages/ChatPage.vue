@@ -20,7 +20,6 @@
         </svg>
       </div>
     </div>
-    <div class="dialog"></div>
     <div class="keyboard">
       <div class="Paper_clip">
         <svg width="25" height="25" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -313,6 +312,9 @@ export default {
   width: 100%;
   border-radius: 0 0 30px 30px;
   box-shadow: var(--shadow-down-4)
+}
+.photo{
+  margin-left: 20px;
 }
 .avatar_in_dialog{
   display: flex;

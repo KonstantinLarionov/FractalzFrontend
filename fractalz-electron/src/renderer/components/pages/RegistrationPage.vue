@@ -38,9 +38,9 @@
     </div>
     <div v-if="type === 'G'" style="display: flex; justify-content: space-around; width: 100%" v-on:keyup.enter="toValidateCode()">
       <div style="display: flex; flex-direction: column">
-        <p class="row mt-4 justify-content-center placeholder-container">Почти готово!</p>
-        <p class="row mt-4 justify-content-center placeholder-container">Для потверждения аккаунта необходимо отправить код на указанную вами почту.</p>
-        <div class="row mt-4 justify-content-center placeholder-container" style="">
+        <p class="row mt-4 justify-content-center placeholder-container" style="color: #00627A;" >Почти готово!</p>
+        <p class="row mt-4 justify-content-center placeholder-container" style ="text-align: center; margin: 8%; color: #00627A;">Для потверждения аккаунта необходимо отправить код на указанную вами почту.</p>
+        <div class="row mt-4 justify-content-center placeholder-container" style="text-align: center;">
           <input type="password" class="input-form" style="width: 250px;" placeholder=" " v-model="Authcode"/>
           <label style="margin-left: -40px;" >Введите код доступа</label>
           <button title="Получить код на Email" class="input-form button-form" style="width: 70px; margin-left: 18px" v-on:click="toSendCode()">
@@ -55,7 +55,7 @@
             </svg>
           </button>
         </div>
-        <button class="input-form row mt-4 button-form justify-content-center" style="margin-left: 110px" v-on:click="toValidateCode()">Подтвердить</button>
+        <button class="input-form row mt-4 button-form justify-content-center" style="margin-left: 110px; text-align: center;" v-on:click="toValidateCode()">Подтвердить</button>
         <p class="href-form" style="margin-left: 230px; margin-top: 20px;"><a v-on:click="toCreateAccount()">Вернуться назад</a></p>
       </div>
     </div>
@@ -112,7 +112,7 @@
         </div>
       </div>
     </div>
-    <div v-if="type === 'D'" class="container-fluid" v-on:keyup.enter="toValidateCode; passReset()">
+    <div v-if="type === 'D'" class="container-fluid" v-on:keyup.enter="toValidateCode, passReset()">
       <div v-if="type === 'C'" class="row justify-content-center">
         <label class="title-recovery-account-form">Восстановление<br>аккаунта</label>
       </div>
@@ -130,7 +130,7 @@
           <label >Подтвердите новый пароль</label>
         </div>
         <div class="row mt-4 justify-content-center">
-          <button class="input-form button-form" v-on:click="toValidateCode; passReset()">Сохранить</button>
+          <button class="input-form button-form" v-on:click="toValidateCode, passReset()">Сохранить</button>
         </div>
         <div class="row mt-2 justify-content-center">
           <label class="href-form" href="" v-on:click="toBackFromReset()">Вернуться назад</label>
