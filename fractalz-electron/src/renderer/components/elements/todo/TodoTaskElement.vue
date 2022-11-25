@@ -20,7 +20,7 @@
             </div>
             </div>
           </div>
-          <div class="todo-task-info-description">
+          <div class="todo-task-info-description wrapword">
             {{TodoAbout}}
           </div>
           <div class="todo-task-period">{{TodoPeriod}}</div>
@@ -36,6 +36,22 @@
 <script>
 import ToDoPart from "../../../api/TodoPart";
 export default {
+  data: function ()
+  {
+    return {
+      colorNumber: 1,
+      TodoHeader: '',
+      TodoAbout: '',
+      TodoTimeCreated: null,
+      TodoTimeCreatedView: "",
+      TodoTimeEnd: null,
+      TodoPeriod: null,
+      TodoId: '',
+      api: null,
+      noty: null,
+      complete: null
+    }
+  },
   props: {
     colorNumber: Number,
     TodoHeader: '',
@@ -90,7 +106,7 @@ export default {
       var check = await this.api.DeleteTask(this.TodoId);
 
       if (check.data.success) {
-        this.$el.parentNode.removeChild(this.$el);
+        //this.$el.parentNode.removeChild(this.$el);
         this.$forceUpdate();
       }
     },
@@ -118,6 +134,22 @@ export default {
 
 
 <style scoped>
+.wrapword {
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  white-space: pre-wrap;       /* css-3 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  white-space: -webkit-pre-wrap; /* Newer versions of Chrome/Safari*/
+  word-break: break-all;
+  white-space: normal;
+}
 .todo-body-wrapper {
   height: calc(100% - 90px);
   display: flex;
@@ -127,7 +159,7 @@ export default {
 .todo-task-wrapper {
   cursor: pointer;
   display: flex;
-  width: 90%;
+  /*width: 90%;*/
   margin-top: 20px;
 }
 .todo-task-wrapper:hover .todo-task-info-trash {

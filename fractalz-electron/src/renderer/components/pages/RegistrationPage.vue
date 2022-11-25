@@ -401,11 +401,18 @@ export default {
           });
       if(result.data.success)
       {
-        this.$cookies.set("UserToken", result.data.token);
-        this.$cookies.set("UserInfo", result.data.user);
+        try {
+          this.$cookies.set("UserToken", result.data.token);
+          this.$cookies.set("UserInfo", result.data.user);
 
-        console.log("USERINFOSET")
-        console.log(this.$cookies.get("UserInfo"))
+          Vue.UserInfo = result.data.user;
+          Vue.UserToken = result.data.token;
+        }
+        catch (e) {
+
+          console.log("USERINFOSET")
+          console.log(e)
+        }
 
         this.noty.Show({title : "Вход в систему Fractalz", message : "Добро пожаловать!\rВы успешно вошли в систему."});
         this.connectWebSocket(result.data.user.id);

@@ -21,12 +21,12 @@
         <div class="filter-left-done">
           <div style="margin-right: 5px;">Показать только не выполненные</div>
           <div class="WW">
-          <input type="checkbox" id="switch" v-bind:checked="NotCompleted" @change="ShowNotCompleted" /><label for="switch">Toggle</label>
+          <input type="checkbox" id="switch" v-model:checked="NotCompleted" @change="ShowNotCompleted" /><label for="switch"></label>
           </div>
         </div>
       </div>
       <div class="todo-filter-right">
-        <button class="todo-filter-buttonadd">Добавить задачу</button>
+        <button class="todo-filter-buttonadd" @click="showModal = true">Добавить задачу</button>
       </div>
     </div>
     <div class="todo-body-wrapper">
@@ -48,7 +48,7 @@
             </todo-task-element> -->
 
     </div>
-
+    <todo-modal-r-d v-if="showModal" @close="showModal = false" @update="taskReq" ></todo-modal-r-d>
   </div>
 </template>
 
@@ -57,11 +57,9 @@
 import TodoTaskElement from "../elements/todo/TodoTaskElement";
 import TodoTaskManager from "../elements/todo/TodoTaskManager";
 import TodoModal from "../modals/TodoModal";
-import UserPart from "../../api/UserPart";
-import NotifyCenter from "../../services/NotifyCenter";
 import Vue from "vue";
 import ToDoPart from "../../api/TodoPart";
-import todoTaskElement from "../elements/todo/TodoTaskElement";
+import TodoModalRD from "../modals/TodoModalRD";
 
 Vue.component ('todo-task-element', TodoTaskElement)
 Vue.component ('todo-task-manager', TodoTaskManager)
@@ -70,6 +68,7 @@ Vue.component ('todo-modal', TodoModal)
 
 export default {
   name: "TodoPage",
+  components: {TodoModalRD},
   data(){
     return{
       showModal: false,
@@ -92,8 +91,6 @@ export default {
     NotCompleted : Boolean
   },
   mounted: async function () {
-    console.log(this.$cookies.get("UserInfo"))
-
     this.NotCompleted = false
     this.todoTasksContents = []
     this.todoTasksContentsView = []
@@ -117,15 +114,29 @@ export default {
       this.DateStart = Vue.TodoDataStart
       await this.taskReq()
     },
-    ShowNotCompleted: function (){
-      if(this.NotCompleted)
-        this.todoTasksContentsView = this.todoTasksContents.filter( function (el) { return !el.isCompleted})
-      else
-        this.todoTasksContentsView = this.todoTasksContents
+    ShowNotCompleted: function () {
+      if (this.NotCompleted) {
+        this.todoTasksContentsView = null;
+        this.todoTasksContentsView = [];
+        var ar = this.todoTasksContents.filter(function (el) {
+          return !el.isCompleted
+        })
+        for (let i = 0; i < ar.length; i++) {
+          this.todoTasksContentsView.push(ar[i])
+        }
+      } else {
+        this.todoTasksContentsView = null;
+        this.todoTasksContentsView = [];
+        var ar2 = this.todoTasksContents
+
+        for (let i = 0; i < ar2.length; i++) {
+          this.todoTasksContentsView.push(ar2[i])
+        }
+      }
+      this.$forceUpdate();
     },
     taskReq: async function(){
-
-      var request = await this.api.GetTask( this.$cookies.get("UserInfo").id, this.DateStart)
+      var request = await this.api.GetTask( Vue.UserInfo.id, this.DateStart)
           .catch(response=>{this.noty.Show({title: "Task add", message:"task not added"})})
 
       if(request.data.success)
@@ -138,10 +149,8 @@ export default {
         var arr =[];
         arr = request.data.todoList.tasks.$values;
 
-        console.log("get3")
-        console.log(arr)
         var color = 1
-        for (var i in arr)
+        for (let i = arr.length - 1; i >= 0; i--)
         {
           arr[i].colorNumber = color
           color++
@@ -165,6 +174,7 @@ export default {
 </script>
 
 <style scoped>
+
 .todo-wrap {
   display: flex;
   flex-direction: column;

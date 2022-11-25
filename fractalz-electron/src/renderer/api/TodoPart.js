@@ -21,18 +21,21 @@ export default class TodoPart extends BasePart {
         return await this.instant.get(this._getListPath + this._getListModel(UserId, DateFrom))
     }
 //////////////////////////////////////////////////////
-    _createModel = function (Header, About, DurationInMinute,TodoListId)
+    _createModel = function (Header, About, DurationInMinute,TodoListId, dateCreate)
     {
         return {
             "Header": Header,
             "About": About,
             "DurationInMinute": DurationInMinute,
             "TodoListId": TodoListId,
+            "DateCreate": dateCreate
         };
     }
 
-    async CreateTask(Header, About, DurationInMinute,TodoListId) {
-        return await this.instant.post(this._createTaskPath , this._createModel(Header, About, DurationInMinute,TodoListId))
+    async CreateTask(Header, About, DurationInMinute,TodoListId, datecreate) {
+        let model = this._createModel(Header, About, DurationInMinute,TodoListId,datecreate);
+        console.log(model);
+        return await this.instant.post(this._createTaskPath, model)
     }
 ////////////////////////////////////////////////////////
     _deleteModel = function (IdTask)

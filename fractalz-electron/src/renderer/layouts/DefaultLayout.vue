@@ -197,7 +197,7 @@ export default {
         }
       }
       //TODO :  + Подсветить жирным диалог который пришел
-    }
+    },},}
   //   getDialogsInfo : async function () {
   //     var result = await this.api
   //         .GetDialogs(Vue.$cookies.get('UserInfo').id)

@@ -72,7 +72,7 @@ export default {
       toCreateTask: async function()
       {
         const titleNoty = "Создание задачи"
-        var result = await this.api.CreateTask(this.Header, this.About, this.duration, this.TodoListId)
+        var result = await this.api.CreateTask(this.Header, this.About, this.duration, this.TodoListId, a)
             .catch(response => {this.noty.Show({
               title: titleNoty, message: response.response.data.message})});
         if (result.data.success)

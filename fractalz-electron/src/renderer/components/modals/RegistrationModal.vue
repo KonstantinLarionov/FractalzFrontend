@@ -7,7 +7,7 @@
                 <div class="header">
                   <div class="question-exit">
                   <p class="question">
-                    Что-то помяется 
+                    Что-то помяется
                   </p>
                   </div>
                 </div>
@@ -19,7 +19,7 @@
                           Выйти
                         </button>
                       </router-link>
-                    <button  class="back-btn" @click="$emit('close')" >Остаться</button>
+                    <button  class="back-btn" @click="" >Остаться</button>
                   </span>
             </div>
             </div>
@@ -32,9 +32,9 @@
   import UserNotyElement from "../elements/noty/UserNotyElement";
   import ChatPart from "../../api/ChatPart";
   import NotyPart from "../../api/NotyPart";
-  
+
   Vue.component ('user-element', UserNotyElement)
-  
+
   export default {
     name: "RegistrationModal",
     data() {
@@ -58,7 +58,7 @@
         this.login.set(null)
         this.password.set(null)
         ;Vue.socket.close(1000, "UserDisconnect")
-  
+
         this.noty.Show({title : "Выход из системы Fractalz", message : "Вы успешно покинули систему!\rЖдем вас снова."});
       },
     }
@@ -173,5 +173,4 @@
   margin-left: -55px;
   }
   </style>
-  
-  
+
