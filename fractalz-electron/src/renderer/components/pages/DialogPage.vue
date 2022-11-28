@@ -21,45 +21,13 @@
         </svg>
       </div>
       </div>
-      <div class="dialogues">
-        <router-link :to="{ name: 'ChatPage' }" style="height: 60px; text-decoration: none !important;" class="d1">
-          <div class="avatar1">
-           <img src="https://pp.userapi.com/c628428/v628428477/3829c/0tfJPfMUvZY.jpg" width="50" height="50" class="photo">
-          </div>
-          <div class ="cenetmasseg">
-            <div class="namean">
-             <p>Константин Ларионов</p>
-             <svg class="tchk" width="3" height="3" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="1" cy="1" r="1" fill="#23BD57"/>
-             </svg>
-            </div>
-            <p class="textLastMasseg">Текст последнего сообщения полный</p>
-          </div>
-          <div class="timess">
-            <p>14:16</p>
-          </div>
-        </router-link>
-          </div>
+      <div  class="dialogues" v-for="dialogCont in dialogContents" >
+        <dialog-row :name="dialogCont.name" :id="dialogCont.$id">
+
+        </dialog-row>
+      </div>
+      </div>
         </div>
-        </div>
-<!--    &lt;!&ndash; Searcher &ndash;&gt;-->
-<!--    <div class="row">-->
-<!--      <div class="searcher-wrap row"-->
-<!--      @keyup.enter="findUsers">-->
-<!--        <div class="searcher-icon col-2 find" v-on:click="findUsers() ">-->
-<!--          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="gray" class="bi bi-search" viewBox="0 0 16 16">-->
-<!--            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>-->
-<!--          </svg>-->
-<!--        </div>-->
-<!--        <div class="searcher-input col-10">-->
-<!--          <input type="text" v-model="findStr" placeholder="Найти диалог"/>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Dialogs &ndash;&gt;-->
-<!--    <div class="row" v-for="dialogContent in dialogContents" :key="dialogContent.$id" v-on:click="openChat(dialogContent.id )">-->
-<!--      <dialog-element :dialog-unread-message="dialogContent.countUnReadMessage" :dialog-name="dialogContent.name" :dialog-last-message="dialogContent.lastMessage" :dialog-date-send="dialogContent.dateSend" ></dialog-element>-->
-<!--    </div>-->
 
 </template>
 
@@ -70,6 +38,7 @@ import ChatPart from "../../api/ChatPart";
 import NotifyCenter from "../../services/NotifyCenter";
 import Vue from "vue";
 import UnknownFile from "../elements/chat/filesextensions/UnknownFile";
+import DialogRow from "../elements/DialogRow";
 
 Vue.component ('dialog-element', DialogElement)
 Vue.component('unknown-file', UnknownFile)
@@ -78,19 +47,18 @@ Vue.config.productionTip = false
 
 export default {
   name: "DialogPage",
+  components:{
+    DialogRow
+  },
   data(){
     return{
       findStr :"",
       chatSelect: false,
       dialogId: null,
+      dialogContents: [],
       idUserSender: Vue.$cookies.get('UserInfo').id,
       isFindUsers: false,
       notyHeader: "Диалоги Fractalz"
-    }
-  },
-  date() {
-    return {
-      dialogContents: [],
     }
   },
   props:{
@@ -168,7 +136,8 @@ export default {
         if (result.data.users != null){
           arr = result.data.users.$values;
           this.dialogContents = [];
-          for (let j in arr) {
+          for (let j in arr)
+          {
             this.$set(this.dialogContents, j, arr[j])
             console.log(this.dialogContents)
           }
