@@ -28,7 +28,7 @@
           <option>Константин Ларионов</option>
           <option>Мария Ларионова</option>
         </datalist>
-        <button class="set-filtres">Отправить</button>
+        <button class="set-filtres" @click="Showmodalnoty = true">Отправить</button>
       </div>
       <div class="todo-filter-left">
       </div>
@@ -115,23 +115,30 @@
         <div class="time-notification">13:30</div>
       </div>
     </div>
+    <CreateNotyModal v-if="Showmodalnoty" @close = "Showmodalnoty = false"></CreateNotyModal>
   </div>
+
 </template>
 
 <script>
 import Vue from "vue";
 import UserNotyElement from "../elements/noty/UserNotyElement";
+import CreateNotyModal from "../modals/CreateNotyModal.vue";
 
 Vue.component ('user-element', UserNotyElement)
 
 export default {
-  name: "Notification",
-  props:{
-    modal: document.getElementById('todoSpace')
-  },
-  methods:{
-
-  },
+    name: "Notification",
+    props: {
+        modal: document.getElementById("todoSpace")
+    },
+    data(){
+      return{
+        Showmodalnoty : false,
+      }
+    },
+    methods: {},
+    components: { CreateNotyModal }
 }
 
 
