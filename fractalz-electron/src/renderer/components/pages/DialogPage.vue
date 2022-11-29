@@ -8,7 +8,7 @@
       <svg class="pirture" width="20" height="20"  viewBox="0 0 12 12" fill="var(--color-dark-blue)" xmlns="http://www.w3.org/2000/svg">
         <path d="M8.80627 7.75811C9.53249 6.76712 9.85776 5.53847 9.717 4.31797C9.57624 3.09746 8.97983 1.97511 8.0471 1.17545C7.11436 0.375797 5.91408 -0.0421914 4.6864 0.00511342C3.45872 0.0524183 2.29416 0.561527 1.42572 1.43059C0.557287 2.29965 0.049011 3.46456 0.00258463 4.69228C-0.0438417 5.92 0.375005 7.11998 1.17533 8.05214C1.97565 8.9843 3.09843 9.57991 4.31904 9.7198C5.53964 9.85968 6.76806 9.53354 7.75852 8.80661H7.75777C7.78027 8.83661 7.80427 8.86511 7.83127 8.89286L10.7188 11.7804C10.8594 11.9211 11.0502 12.0002 11.2491 12.0003C11.4481 12.0003 11.6389 11.9214 11.7796 11.7807C11.9204 11.6401 11.9995 11.4493 11.9995 11.2504C11.9996 11.0514 11.9207 10.8606 11.78 10.7199L8.89252 7.83236C8.86571 7.80521 8.83688 7.78014 8.80627 7.75736V7.75811ZM8.99977 4.87511C8.99977 5.41681 8.89308 5.95321 8.68578 6.45368C8.47848 6.95414 8.17463 7.40888 7.79159 7.79192C7.40855 8.17496 6.95381 8.47881 6.45334 8.68611C5.95287 8.89341 5.41648 9.00011 4.87477 9.00011C4.33307 9.00011 3.79667 8.89341 3.2962 8.68611C2.79574 8.47881 2.341 8.17496 1.95796 7.79192C1.57492 7.40888 1.27107 6.95414 1.06377 6.45368C0.856469 5.95321 0.749773 5.41681 0.749773 4.87511C0.749773 3.78109 1.18437 2.73188 1.95796 1.95829C2.73155 1.1847 3.78076 0.750106 4.87477 0.750106C5.96879 0.750106 7.018 1.1847 7.79159 1.95829C8.56518 2.73188 8.99977 3.78109 8.99977 4.87511Z"/>
       </svg>
-      <input class="in"  placeholder="Найти на сервере" id="myserch" name="searhitem" v-on:keyup.enter="findUsers()" v-model="findStr" type="search"/>
+      <input class="in"  placeholder="Введите логин и нажмите Enter" id="myserch" name="searhitem" v-on:keyup.enter="findUsers()" v-on:keyup.backspace="clearArea()" v-model="findStr" type="text"/>
     <hr class="stick">
       </div>
     </div>
@@ -21,9 +21,8 @@
         </svg>
       </div>
       </div>
-      <div  class="dialogues" v-for="dialogCont in dialogContents" >
-        <dialog-row :name="dialogCont.name" :id="dialogCont.$id">
-
+      <div  class="dialogues" v-for="dialogCont in dialogContentsView" >
+        <dialog-row v-on:click="createDialog()" :name="dialogCont.name" :id="dialogCont.$id">
         </dialog-row>
       </div>
       </div>
@@ -56,6 +55,7 @@ export default {
       chatSelect: false,
       dialogId: null,
       dialogContents: [],
+      dialogContentsView: [],
       idUserSender: Vue.$cookies.get('UserInfo').id,
       isFindUsers: false,
       notyHeader: "Диалоги Fractalz"
@@ -135,12 +135,7 @@ export default {
         var arr = [];
         if (result.data.users != null){
           arr = result.data.users.$values;
-          this.dialogContents = [];
-          for (let j in arr)
-          {
-            this.$set(this.dialogContents, j, arr[j])
-            console.log(this.dialogContents)
-          }
+          this.dialogContentsView = Object.assign(arr)
           this.$forceUpdate();
         }
       }
@@ -148,7 +143,19 @@ export default {
         this.noty.Show({title: this.notyHeader, message: "Пользователь которого вы ищите не найден"});
       }
     },
+    clearArea(){
+      this.dialogContentsView = Object.assign(this.dialogContents);
+      this.$forceUpdate();
+
+    },
     createDialog: async function (usersId) {
+
+      if(this.dialogContents.find(x => x.id === usersId))
+      { 
+        console.log("Элемент уже есть в массиве диалогов")
+        return;
+      }
+
       console.log(usersId)
       var result = await this.api
           .CreateDialog(usersId)

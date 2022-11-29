@@ -86,7 +86,9 @@ export default {
       }
     },
     sendNoty : async function (){
-      await this.apiNoty.SendNoty(this.SelectedUserId, Vue.$cookies.get('UserInfo').login, this.Title, this.Message)
+      this.SelectedUserId.forEach(async element => {
+        await this.apiNoty.SendNoty(element, Vue.$cookies.get('UserInfo').id, this.Title, this.Message)
+      });
     }
   }
 }
