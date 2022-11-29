@@ -21,7 +21,7 @@
       <div class="profile-wrapper">
         <div class="profile-logo-wrapper">
           <div class="profile-logo">
-
+            <img v-if="model.Avatar" :src="model.Avatar" class="avatar-img" >
             <button class="profile-edit-logo">
               <label for="avatar-img" class="profile-edit-logo">
                 <svg class="edit-button-icon" width="20" height="20" viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg" >
@@ -35,7 +35,7 @@
                     </clipPath>
                   </defs>
                 </svg>
-              <input type="file" id="avatar-img" style="display: none" ref="logo" accept="image/*">
+              <input type="file" id="avatar-img" style="display: none" ref="logo" accept="image/*" @change="this.setAvatar">
               </label>
             </button>
           </div>
@@ -170,7 +170,8 @@ export default {
         Logo: this.$cookies.get("UserInfo").logo,
         TgLink:this.$cookies.get("UserInfo").tgLink,
         VkLink: this.$cookies.get("UserInfo").vkLink,
-        Adress: this.$cookies.get("UserInfo").adress
+        Adress: this.$cookies.get("UserInfo").adress,
+        Avatar:null,
       },
 
       notyHeader: "Профиль Fractalz"
@@ -181,7 +182,16 @@ export default {
     this.noty = new NotifyCenter();
     this.getUser();
   },
+
   methods:{
+    setAvatar(){
+      this.model.Logo = this.$refs.logo.files[0];
+      let reader = new FileReader();
+      reader.onload = (e) => {
+        this.model.Avatar = e.target.result;
+      };
+      reader.readAsDataURL(this.model.Logo);
+    },
     getUser:async function()
     {
       var getUser = await this.api.GetUser(this.$cookies.get("UserInfo").id)
@@ -268,6 +278,7 @@ width: 350px;
   border: none;
   transition: .2s;
   height: 33px;
+  z-index: 5;
 }
 .profile-edit-logo:hover{
   background-color: var(--color-gray)
@@ -354,6 +365,7 @@ width: 350px;
   width: 270px;
   height: 40px;
 }
+
 .profile-logo{
   background-size: cover;
   height: 200px;
@@ -363,6 +375,15 @@ width: 350px;
   justify-content: center;
   align-items: flex-end;
   overflow: hidden;
+}
+.avatar-img
+{
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position:absolute;
+  z-index:1
 }
 .save{
   margin-top: 10px;
