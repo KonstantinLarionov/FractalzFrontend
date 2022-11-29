@@ -8,11 +8,10 @@
                   <br>
                   <br>
                 <p class="text">
-                  Название поля для ввода 
                 </p>
                 </div>
                 <img class="vk-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png"/>
-                <input class="inpt"/>
+                <input class="inpt" />
                 <br>
                 <img class="tg-img" src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png"/>
                 <input class="inpt-second"/>
@@ -36,14 +35,18 @@ import UserNotyElement from "../elements/noty/UserNotyElement";
 Vue.component ('user-element', UserNotyElement)
 
 export default {
-        name: "InputModal",
-        data: function () {
-            return {
-            }
-        },
-        methods: {
-            }
-        }
+  name: "InputModal",
+  data: function () {
+      return {
+      }
+  },
+  props:{
+    VkLink: Object,
+    TgLink: Object,
+  },
+  methods: {
+      }
+  }
     
 </script>
 <style lang="css">

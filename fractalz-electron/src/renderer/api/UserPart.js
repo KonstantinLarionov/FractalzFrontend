@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueCookies from 'vue-cookies'
 import BasePart from "./BasePart";
+import axios from "axios";
 Vue.use(VueCookies)
 
 export default class UserPart extends BasePart {
@@ -55,6 +56,23 @@ export default class UserPart extends BasePart {
         }
 
     }
+    _updateProfileModel = function (objectData)
+    {
+        return{
+              'Patro=': objectData.Patro,
+              'UserId=' : objectData.UserId,
+              'Login=' : objectData.Login,
+              'Number=' : objectData.Number,
+              'Logo=' : objectData.Logo,
+              'Name=': objectData.Name,
+              'TGLink=' : objectData.Patro,
+              'VKLink=': objectData.Patro,
+              'Address=' : objectData.Patro,
+              'Surname=' : objectData.Patro,
+              'Email=': objectData.Patro
+        }
+
+    }
 
     //#endregion
 
@@ -106,6 +124,35 @@ export default class UserPart extends BasePart {
      */
     async UpdateProfile( objectData ) {
         console.log(objectData);
-        return await this.instant.post(this._updateProfilePath, objectData)
+        let formData = new FormData();
+        for( var i = 0; i < objectData.Logo; i++ ){
+            let file = this.Files[i];
+            formData.append("Files", file);
+        }
+        formData.append("UserId",objectData.UserId )
+        formData.append("Adress", objectData.Adress)
+        formData.append("VKLink", objectData.VkLink)
+        formData.append("TGLink", objectData.TgLink)
+        formData.append("Login",objectData.Login )
+        formData.append("Name", objectData.Name)
+        formData.append("Surname", objectData.Surname)
+        formData.append("Patro", objectData.Patro)
+        formData.append("Number", objectData.Number)
+        formData.append("Email", objectData.Email)
+        formData.append("Logo", objectData.Logo)
+        console.log(this.formData)
+        let config = {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        };
+        this.instant
+            .post(axios.defaults.baseURL + "/user/updateProfile", formData, config)
+            .then(function (response)
+            {
+                if (response.status === 200) {
+
+                }
+            });
     }
 }

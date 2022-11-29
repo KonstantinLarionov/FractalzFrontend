@@ -63,6 +63,7 @@
 import ChatPage from "../pages/ChatPage";
 import Vue from "vue";
 import {formatDate} from "../../assets/plugins/fullcalendar/js/main";
+import axios from "axios";
 export default {
   name: "FileTransferModal",
 
@@ -129,7 +130,7 @@ export default {
             }
           };
           this.$http
-              .post(this.uploadURL, formData, config)
+              .post(axios.defaults.baseURL + "/chat/fileTransfer", formData, config)
               .then(function (response)
               {
                 if (response.status === 200) {
