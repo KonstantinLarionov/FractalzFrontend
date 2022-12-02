@@ -21,7 +21,7 @@
         </svg>
       </div>
       </div>
-      <div  class="dialogues" v-for="dialogCont in dialogContentsView" >
+      <div  class="dialogues" v-for="dialogCont in dialogContents" >
         <dialog-row v-on:click="createDialog()" :name="dialogCont.name" :id="dialogCont.$id">
         </dialog-row>
       </div>
@@ -55,7 +55,6 @@ export default {
       chatSelect: false,
       dialogId: null,
       dialogContents: [],
-      dialogContentsView: [],
       idUserSender: Vue.$cookies.get('UserInfo').id,
       isFindUsers: false,
       notyHeader: "Диалоги Fractalz"
@@ -103,7 +102,7 @@ export default {
           .catch(response => {
             this.noty.Show({
               title: this.notyHeader,
-              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+              message: response.response.data.message,
             });
           });
       if (result.data.success) {
@@ -115,7 +114,8 @@ export default {
           }
           this.$forceUpdate();
         }
-      } else {
+      }
+      else {
         this.noty.Show({title: this.notyHeader, message: "У вас нет активных диалогов"});
       }
     },
@@ -135,7 +135,7 @@ export default {
         var arr = [];
         if (result.data.users != null){
           arr = result.data.users.$values;
-          this.dialogContentsView = Object.assign(arr)
+          this.dialogContents = Object.assign(arr)
           this.$forceUpdate();
         }
       }
@@ -144,7 +144,7 @@ export default {
       }
     },
     clearArea(){
-      this.dialogContentsView = Object.assign(this.dialogContents);
+      this.dialogContents = Object.assign(this.dialogContents);
       this.$forceUpdate();
 
     },

@@ -21,7 +21,7 @@
       <div class="profile-wrapper">
         <div class="profile-logo-wrapper">
           <div class="profile-logo">
-            <img v-if="model.Avatar" :src="model.Avatar" class="avatar-img" >
+            <img src="" id="Avatar" class="avatar-img" >
             <button class="profile-edit-logo">
               <label for="avatar-img" class="profile-edit-logo">
                 <svg class="edit-button-icon" width="20" height="20" viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg" >
@@ -188,7 +188,7 @@ export default {
       this.model.Logo = this.$refs.logo.files[0];
       let reader = new FileReader();
       reader.onload = (e) => {
-        this.model.Avatar = e.target.result;
+        var doc = document.getElementById("Avatar").attributes[1].value = e.target.result;
       };
       reader.readAsDataURL(this.model.Logo);
     },
@@ -204,6 +204,7 @@ export default {
         this.model.Surname = getUser.data.userEntity.surname;
         this.model.Number = getUser.data.userEntity.number;
         this.model.Logo = getUser.data.userEntity.logo;
+        this.model.Avatar = this.getAvatar(getUser.data.logo.path);
         //this.model.save = getUser.data.userEntity.save;
         this.model.Patro = getUser.data.userEntity.patro;
         this.model.UserId = getUser.data.userEntity.id;
@@ -212,6 +213,10 @@ export default {
         this.model.Adress = getUser.data.userEntity.adress
         this.api = new UserPart(this.$http);
       }
+    },
+    getAvatar(event){
+       var doc = document.getElementById("Avatar").attributes[1].value = "data:image/png;base64," + event;
+       return doc
     },
     updateProfile : async function() {
       this.model.Logo = this.$refs.logo.files[0];
