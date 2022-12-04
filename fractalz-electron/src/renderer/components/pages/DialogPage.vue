@@ -21,8 +21,8 @@
         </svg>
       </div>
       </div>
-      <div  class="dialogues" v-for="dialogCont in dialogContentsView" >
-        <dialog-row @create="createDialog" :name="dialogCont.name" :idDialog="dialogCont.id">
+      <div  class="dialogues" v-for="dialogCont in dialogContents" >
+        <dialog-row v-on:click="createDialog()" :name="dialogCont.name" :id="dialogCont.$id">
         </dialog-row>
       </div>
       </div>
@@ -55,7 +55,6 @@ export default {
       chatSelect: false,
       dialogId: null,
       dialogContents: [],
-      dialogContentsView: [],
       idUserSender: Vue.$cookies.get('UserInfo').id,
       isFindUsers: false,
       notyHeader: "Диалоги Fractalz"
@@ -69,7 +68,7 @@ export default {
     this.api = new ChatPart(this.$http);
     this.noty = new NotifyCenter();
     this.dialogContents = [];
-    await this.getDialogs();
+    this.getDialogs();
     Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
   },
   methods: {
@@ -98,30 +97,25 @@ export default {
       this.chatSelect = true;
     },
     getDialogs: async function () {
-      
       var result = await this.api
           .GetDialogs(Vue.$cookies.get('UserInfo').id)
           .catch(response => {
             this.noty.Show({
               title: this.notyHeader,
-              message: "Произошла ошибка. Проверьте соединение с интернетом!"
+              message: response.response.data.message,
             });
           });
       if (result.data.success) {
-        console.log("Получил список диалогов")
-        console.log(result.data)
-
         var arr = [];
         if (result.data.dialogs != null){
-          arr = result.data.dialogs;
-          this.dialogContents = Object.assign(arr);
-          this.clearArea();
-          console.log("Получил список диалогов")
-          console.log(this.dialogContents)
-          console.log(this.dialogContentsView)
+          arr = result.data.dialogs.$values;
+          for (let j in arr) {
+            this.$set(this.dialogContents, j, arr[j])
+          }
           this.$forceUpdate();
         }
-      } else {
+      }
+      else {
         this.noty.Show({title: this.notyHeader, message: "У вас нет активных диалогов"});
       }
     },
@@ -141,7 +135,7 @@ export default {
         var arr = [];
         if (result.data.users != null){
           arr = result.data.users.$values;
-          this.dialogContentsView = Object.assign(arr)
+          this.dialogContents = Object.assign(arr)
           this.$forceUpdate();
         }
       }
@@ -150,12 +144,12 @@ export default {
       }
     },
     clearArea(){
-      this.dialogContentsView = Object.assign(this.dialogContents);
+      this.dialogContents = Object.assign(this.dialogContents);
       this.$forceUpdate();
+
     },
     createDialog: async function (usersId) {
-      // console.log(this.dialogContents);
-      // return;
+
       if(this.dialogContents.find(x => x.id === usersId))
       { 
         console.log("Элемент уже есть в массиве диалогов")

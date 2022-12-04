@@ -21,24 +21,28 @@
       <div class="profile-wrapper">
         <div class="profile-logo-wrapper">
           <div class="profile-logo">
+            <img src="" id="Avatar" class="avatar-img" >
             <button class="profile-edit-logo">
-              <svg class="edit-button-icon" width="20" height="20" viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_11_114)">
-                  <path d="M9.68875 1.09126C9.74714 1.14398 9.77993 1.21538 9.77993 1.28982C9.77993 1.36426 9.74714 1.43566 9.68875 1.48838L9.03687 2.07563L7.78687 0.950633L8.43875 0.363383C8.49735 0.310656 8.57682 0.281036 8.65969 0.281036C8.74255 0.281036 8.82202 0.310656 8.88062 0.363383L9.68875 1.0907V1.09126ZM8.595 2.47276L7.345 1.34776L3.08687 5.18063C3.05248 5.21158 3.02658 5.24934 3.01125 5.29088L2.50812 6.64876C2.499 6.67351 2.4977 6.70006 2.50438 6.72544C2.51106 6.75082 2.52545 6.77403 2.54594 6.79247C2.56643 6.81091 2.59222 6.82386 2.62042 6.82987C2.64862 6.83589 2.67812 6.83472 2.70562 6.82651L4.21437 6.37369C4.26048 6.36006 4.30242 6.33695 4.33687 6.3062L8.595 2.47332V2.47276Z" />
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.625 7.59375C0.625 7.81753 0.723772 8.03214 0.899587 8.19037C1.0754 8.34861 1.31386 8.4375 1.5625 8.4375H8.4375C8.68614 8.4375 8.9246 8.34861 9.10041 8.19037C9.27623 8.03214 9.375 7.81753 9.375 7.59375V4.21875C9.375 4.14416 9.34208 4.07262 9.28347 4.01988C9.22487 3.96713 9.14538 3.9375 9.0625 3.9375C8.97962 3.9375 8.90013 3.96713 8.84153 4.01988C8.78292 4.07262 8.75 4.14416 8.75 4.21875V7.59375C8.75 7.66834 8.71708 7.73988 8.65847 7.79262C8.59987 7.84537 8.52038 7.875 8.4375 7.875H1.5625C1.47962 7.875 1.40013 7.84537 1.34153 7.79262C1.28292 7.73988 1.25 7.66834 1.25 7.59375V1.40625C1.25 1.33166 1.28292 1.26012 1.34153 1.20738C1.40013 1.15463 1.47962 1.125 1.5625 1.125H5.625C5.70788 1.125 5.78737 1.09537 5.84597 1.04262C5.90458 0.989879 5.9375 0.918342 5.9375 0.84375C5.9375 0.769158 5.90458 0.697621 5.84597 0.644876C5.78737 0.592132 5.70788 0.5625 5.625 0.5625H1.5625C1.31386 0.5625 1.0754 0.651395 0.899587 0.809629C0.723772 0.967862 0.625 1.18247 0.625 1.40625V7.59375Z"/>
-                </g>
-                <defs>
-                  <clipPath id="clip0_11_114">
-                    <rect width="10" height="9" fill="white"/>
-                  </clipPath>
-                </defs>
-              </svg>
+              <label for="avatar-img" class="profile-edit-logo">
+                <svg class="edit-button-icon" width="20" height="20" viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg" >
+                  <g clip-path="url(#clip0_11_114)" >
+                    <path d="M9.68875 1.09126C9.74714 1.14398 9.77993 1.21538 9.77993 1.28982C9.77993 1.36426 9.74714 1.43566 9.68875 1.48838L9.03687 2.07563L7.78687 0.950633L8.43875 0.363383C8.49735 0.310656 8.57682 0.281036 8.65969 0.281036C8.74255 0.281036 8.82202 0.310656 8.88062 0.363383L9.68875 1.0907V1.09126ZM8.595 2.47276L7.345 1.34776L3.08687 5.18063C3.05248 5.21158 3.02658 5.24934 3.01125 5.29088L2.50812 6.64876C2.499 6.67351 2.4977 6.70006 2.50438 6.72544C2.51106 6.75082 2.52545 6.77403 2.54594 6.79247C2.56643 6.81091 2.59222 6.82386 2.62042 6.82987C2.64862 6.83589 2.67812 6.83472 2.70562 6.82651L4.21437 6.37369C4.26048 6.36006 4.30242 6.33695 4.33687 6.3062L8.595 2.47332V2.47276Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.625 7.59375C0.625 7.81753 0.723772 8.03214 0.899587 8.19037C1.0754 8.34861 1.31386 8.4375 1.5625 8.4375H8.4375C8.68614 8.4375 8.9246 8.34861 9.10041 8.19037C9.27623 8.03214 9.375 7.81753 9.375 7.59375V4.21875C9.375 4.14416 9.34208 4.07262 9.28347 4.01988C9.22487 3.96713 9.14538 3.9375 9.0625 3.9375C8.97962 3.9375 8.90013 3.96713 8.84153 4.01988C8.78292 4.07262 8.75 4.14416 8.75 4.21875V7.59375C8.75 7.66834 8.71708 7.73988 8.65847 7.79262C8.59987 7.84537 8.52038 7.875 8.4375 7.875H1.5625C1.47962 7.875 1.40013 7.84537 1.34153 7.79262C1.28292 7.73988 1.25 7.66834 1.25 7.59375V1.40625C1.25 1.33166 1.28292 1.26012 1.34153 1.20738C1.40013 1.15463 1.47962 1.125 1.5625 1.125H5.625C5.70788 1.125 5.78737 1.09537 5.84597 1.04262C5.90458 0.989879 5.9375 0.918342 5.9375 0.84375C5.9375 0.769158 5.90458 0.697621 5.84597 0.644876C5.78737 0.592132 5.70788 0.5625 5.625 0.5625H1.5625C1.31386 0.5625 1.0754 0.651395 0.899587 0.809629C0.723772 0.967862 0.625 1.18247 0.625 1.40625V7.59375Z"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_11_114">
+                      <rect width="10" height="9" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              <input type="file" id="avatar-img" style="display: none" ref="logo" accept="image/*" @change="this.setAvatar">
+              </label>
             </button>
           </div>
         </div>
         <div class="profile-info-wrapper">
           <div class="info-fio" >
-              <input placeholder="ФИО" class="input-fio" v-model="model.name"/>
+              <input placeholder="ФИО" class="input-fio" v-model="model.Name"/>
           </div>
           <div class="info-status">
             <svg id="info-status-icon" width="16" height="16" viewBox="0 0 16 16" fill="var(--color-light-green)" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +65,7 @@
            <div class="adres-input">
               <p class="p_adress">
               Адрес:
-              <input placeholder="Введте адрес" class="address-entry"/>
+              <input placeholder="Введите адрес" class="address-entry" v-model="model.Adress"/>
               </p>
             </div>
           </div>
@@ -72,7 +76,7 @@
             <div class="input-number">
                         <p class="numder1">
               Телефон:
-              <input placeholder="Введите номер" class="Enter-number" type="tel">
+              <input placeholder="Введите номер" class="Enter-number" type="tel" v-model="model.Number">
               </p>
             </div>
           </div>
@@ -83,7 +87,7 @@
             <div class="input-mail">
             <p class="mail_p">
               Почта:
-              <input placeholder="Введите почту" class="Enter-mail" type="email" v-bind="model.email" >
+              <input placeholder="Введите почту" class="Enter-mail" type="email" v-model="model.Email" readonly>
             </p>
             </div>
           </div>
@@ -145,25 +149,29 @@ export default {
   name: "AccountPage",
   props: {
     api: Object,
-    noty: Object
+    noty: Object,
   },
   components:{
     InputModal
   },
   data()
   {
-    return { showModal: false,
+    return {
+      showModal: false,
       model: 
       {
-        userId: this.$cookies.get("UserInfo").id,
-        login: this.$cookies.get("UserInfo").login,
-        name: this.$cookies.get("UserInfo").name,
-        surname: this.$cookies.get("UserInfo").surname,
-        patro: this.$cookies.get("UserInfo").patro,
-        number: this.$cookies.get("UserInfo").number,
-        email: this.$cookies.get("UserInfo").email,
-        logo: this.$cookies.get("UserInfo").logo,
-        save: this.$cookies.get("UserInfo").save
+        UserId: this.$cookies.get("UserInfo").id,
+        Login: this.$cookies.get("UserInfo").login,
+        Name: this.$cookies.get("UserInfo").name,
+        Surname: this.$cookies.get("UserInfo").surname,
+        Patro: this.$cookies.get("UserInfo").patro,
+        Number: this.$cookies.get("UserInfo").number,
+        Email: this.$cookies.get("UserInfo").email,
+        Logo: this.$cookies.get("UserInfo").logo,
+        TgLink:this.$cookies.get("UserInfo").tgLink,
+        VkLink: this.$cookies.get("UserInfo").vkLink,
+        Adress: this.$cookies.get("UserInfo").adress,
+        Avatar:null,
       },
 
       notyHeader: "Профиль Fractalz"
@@ -174,26 +182,45 @@ export default {
     this.noty = new NotifyCenter();
     this.getUser();
   },
+
   methods:{
+    setAvatar(){
+      this.model.Logo = this.$refs.logo.files[0];
+      let reader = new FileReader();
+      reader.onload = (e) => {
+        var doc = document.getElementById("Avatar").attributes[1].value = e.target.result;
+      };
+      reader.readAsDataURL(this.model.Logo);
+    },
     getUser:async function()
     {
       var getUser = await this.api.GetUser(this.$cookies.get("UserInfo").id)
       if(getUser.data.success)
       {
         console.log(getUser.data.userEntity)
-        this.model.email = getUser.data.userEntity.email;
-        this.model.login = getUser.data.userEntity.login;
-        this.model.name = getUser.data.userEntity.name;
-        this.model.surname = getUser.data.userEntity.surname;
-        this.model.number = getUser.data.userEntity.number;
-        this.model.logo = getUser.data.userEntity.logo;
-        this.model.save = getUser.data.userEntity.save;
-        this.model.patro = getUser.data.userEntity.patro;
-        this.model.userId = getUser.data.userEntity.id;
+        this.model.Email = getUser.data.userEntity.email;
+        this.model.Login = getUser.data.userEntity.login;
+        this.model.Name = getUser.data.userEntity.name;
+        this.model.Surname = getUser.data.userEntity.surname;
+        this.model.Number = getUser.data.userEntity.number;
+        this.model.Logo = getUser.data.userEntity.logo;
+        this.model.Avatar = this.getAvatar(getUser.data.logo.path);
+        //this.model.save = getUser.data.userEntity.save;
+        this.model.Patro = getUser.data.userEntity.patro;
+        this.model.UserId = getUser.data.userEntity.id;
+        this.model.TgLink = getUser.data.userEntity.tgLink;
+        this.model.VkLink = getUser.data.userEntity.vkLink
+        this.model.Adress = getUser.data.userEntity.adress
         this.api = new UserPart(this.$http);
       }
     },
+    getAvatar(event){
+       var doc = document.getElementById("Avatar").attributes[1].value = "data:image/png;base64," + event;
+       return doc
+    },
     updateProfile : async function() {
+      this.model.Logo = this.$refs.logo.files[0];
+      console.log(this.model)
       var result = await this.api.UpdateProfile(this.model);
       if(result.success)
       {
@@ -256,6 +283,7 @@ width: 350px;
   border: none;
   transition: .2s;
   height: 33px;
+  z-index: 5;
 }
 .profile-edit-logo:hover{
   background-color: var(--color-gray)
@@ -342,8 +370,8 @@ width: 350px;
   width: 270px;
   height: 40px;
 }
+
 .profile-logo{
-  background-image: url(../../assets/images/defaultlogo.jpg);
   background-size: cover;
   height: 200px;
   width: 200px;
@@ -352,6 +380,15 @@ width: 350px;
   justify-content: center;
   align-items: flex-end;
   overflow: hidden;
+}
+.avatar-img
+{
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position:absolute;
+  z-index:1
 }
 .save{
   margin-top: 10px;
