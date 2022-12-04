@@ -1,5 +1,5 @@
 <template>
-    <div class="d1">
+    <div class="d1" v-on:click="$emit('create', idDialog)">
           <div class="avatar">
             <img src="https://pp.userapi.com/c628428/v628428477/3829c/0tfJPfMUvZY.jpg" width="50" height="50" class="photo">
           </div>
@@ -10,10 +10,10 @@
                 <circle cx="1" cy="1" r="1" fill="#23BD57"/>
               </svg>
             </div>
-            <p class="textLastMasseg">Текст последнего сообщения полный</p>
+            <p class="textLastMasseg">{{textLastMessage}}</p>
           </div>
           <div class="timess">
-            <p>Часы:минуты</p>
+            <p>{{dateLastMessage}}</p>
           </div>
         </div>
 </template>
@@ -35,19 +35,27 @@ export default {
       dialogId: null,
       idUserSender: Vue.$cookies.get('UserInfo').id,
       isFindUsers: false,
-      notyHeader: "Диалоги Fractalz"
+      notyHeader: "Диалоги Fractalz",
+      dateLastMessage: "",
+      textLastMessage: "",
+      idDialog : ""
     }
   },
   props:{
     Name:"",
     api: Object,
     noty: Object,
-    Id:null
+    Id:String,
+    dateLastMessage: String,
+    idDialog: String
   },
   mounted: async function () {
-    this.api = new ChatPart(this.$http);
+    //this.api = new ChatPart(this.$http);
     this.noty = new NotifyCenter();
     Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
+  },
+  computed: {
+    Id(){ return this.Id }
   },
   methods: {
 

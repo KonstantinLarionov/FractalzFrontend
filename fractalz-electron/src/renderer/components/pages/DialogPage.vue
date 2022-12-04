@@ -22,7 +22,7 @@
       </div>
       </div>
       <div  class="dialogues" v-for="dialogCont in dialogContentsView" >
-        <dialog-row v-on:click="createDialog()" :name="dialogCont.name" :id="dialogCont.$id">
+        <dialog-row @create="createDialog" :name="dialogCont.name" :idDialog="dialogCont.id">
         </dialog-row>
       </div>
       </div>
@@ -69,7 +69,7 @@ export default {
     this.api = new ChatPart(this.$http);
     this.noty = new NotifyCenter();
     this.dialogContents = [];
-    this.getDialogs();
+    await this.getDialogs();
     Vue.socketEvents.dialogsReceive = this.onDialogsUpdate;
   },
   methods: {
@@ -98,6 +98,7 @@ export default {
       this.chatSelect = true;
     },
     getDialogs: async function () {
+      
       var result = await this.api
           .GetDialogs(Vue.$cookies.get('UserInfo').id)
           .catch(response => {
@@ -107,12 +108,17 @@ export default {
             });
           });
       if (result.data.success) {
+        console.log("Получил список диалогов")
+        console.log(result.data)
+
         var arr = [];
         if (result.data.dialogs != null){
-          arr = result.data.dialogs.$values;
-          for (let j in arr) {
-            this.$set(this.dialogContents, j, arr[j])
-          }
+          arr = result.data.dialogs;
+          this.dialogContents = Object.assign(arr);
+          this.clearArea();
+          console.log("Получил список диалогов")
+          console.log(this.dialogContents)
+          console.log(this.dialogContentsView)
           this.$forceUpdate();
         }
       } else {
@@ -146,10 +152,10 @@ export default {
     clearArea(){
       this.dialogContentsView = Object.assign(this.dialogContents);
       this.$forceUpdate();
-
     },
     createDialog: async function (usersId) {
-
+      // console.log(this.dialogContents);
+      // return;
       if(this.dialogContents.find(x => x.id === usersId))
       { 
         console.log("Элемент уже есть в массиве диалогов")
