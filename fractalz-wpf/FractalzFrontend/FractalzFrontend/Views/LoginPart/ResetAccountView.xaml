@@ -7,7 +7,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="740" d:DesignWidth="524">
-    <DockPanel LastChildFill="False">
+    <DockPanel LastChildFill="False" Cursor="Hand">
         <Image DockPanel.Dock="Top" Source="/Views/LoginPart/angle.png"/>
         <Image Margin="0,-70,0,0" Height="100" Width="100" DockPanel.Dock="Top" Source="/Views/LoginPart/logo.png"/>
         <Label 
@@ -100,6 +100,8 @@
             </Grid>
         </Border>
         <Button 
+            Name="Save"
+            Click="Save_Click"
             DockPanel.Dock="Top" 
             Width="250" 
             Height="40"
@@ -140,7 +142,10 @@
         <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Center"
                     Margin="0,40,0,0"
                     Orientation="Horizontal">
-            <Label FontSize="15" Cursor="Hand" Foreground="#00627A">Вернуться назад</Label>
+            <Label
+                Name="Back"
+                MouseDown="Back_MouseDown"
+                FontSize="15" Cursor="Hand" Foreground="#00627A">Вернуться назад</Label>
         </StackPanel>
     </DockPanel>
 </UserControl>

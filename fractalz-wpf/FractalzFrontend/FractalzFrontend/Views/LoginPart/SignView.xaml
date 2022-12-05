@@ -60,6 +60,8 @@
             TextAlignment="Center"
             Text="Выберите файл с компьютера" VerticalAlignment="Center" FontFamily="Roboto Cn"/>
             <Button 
+                Name="FromPc"
+                Click="FromPc_Click"
             Width="70" 
             Height="40"
             materialDesign:ShadowAssist.ShadowDepth="Depth0"
@@ -98,7 +100,10 @@
         <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Center"
                     Margin="0,20,0,0"
                     Orientation="Horizontal">
-            <Label FontSize="15" Cursor="Hand" Foreground="#00627A">Вернуться назад</Label>
+            <Label 
+                Name="Back"
+                MouseDown="Back_MouseDown"
+                FontSize="15" Cursor="Hand" Foreground="#00627A">Вернуться назад</Label>
         </StackPanel>
     </DockPanel>
 </UserControl>

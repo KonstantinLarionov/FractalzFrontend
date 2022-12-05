@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using FractalzFrontend.Application;
+
+using Newtonsoft.Json;
 
 using RestSharp;
 
@@ -13,14 +15,15 @@ namespace FractalzFrontend.Client
     public class RestApiClient : FractalzFrontend.Application.Abstractions.IRestClient
     {
         RestClient _client;
-        public RestApiClient(string host) 
+        public RestApiClient(string host = "http://192.168.88.152:5247") 
         { 
             _client = new RestClient(host);
         }
 
-        public T Send<T>(object request, string resource, Method method)
+        public T Send<T>(object request, string resource, Method method, out ErrorResponse error)
         {
             T response = default(T);
+            error = null;
 
             var payload = new RestRequest(resource);
             payload.Method = method;
@@ -37,14 +40,21 @@ namespace FractalzFrontend.Client
                 payload.AddJsonBody(request);
             }
             var result = _client.Execute(payload);
-            response = JsonConvert.DeserializeObject<T>(result.Content);
-
+            try
+            {
+                response = JsonConvert.DeserializeObject<T>(result.Content);
+            }
+            catch(Exception ex)
+            {
+                error = new ErrorResponse() { Message = ex.Message, StatusCode = result.StatusCode };  
+            }
             return response;
         }
 
-        public T SendForm<T>(object request, string resource, Method method)
+        public T SendForm<T>(object request, string resource, Method method, out ErrorResponse error)
         {
             T response = default(T);
+            error = null;
 
             var payload = new RestRequest(resource);
             payload.Method = method;
@@ -56,8 +66,15 @@ namespace FractalzFrontend.Client
                 payload.AddParameter(item.Key, item.Value);
             }
             
-            var result = _client.Execute(payload);
-            response = JsonConvert.DeserializeObject<T>(result.Content);
+            var result = _client.Execute(payload); 
+            try
+            {
+                response = JsonConvert.DeserializeObject<T>(result.Content);
+            }
+            catch (Exception ex)
+            {
+                error = new ErrorResponse() { Message = ex.Message, StatusCode = result.StatusCode };
+            }
 
             return response;
         }

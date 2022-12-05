@@ -48,6 +48,7 @@
     <Compile Include="Abstractions\ICacheController.cs" />
     <Compile Include="Abstractions\IRestClient.cs" />
     <Compile Include="Abstractions\IWebSocketClient.cs" />
+    <Compile Include="Domain\ErrorResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

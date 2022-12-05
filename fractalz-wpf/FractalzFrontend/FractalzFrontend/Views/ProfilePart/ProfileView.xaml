@@ -15,7 +15,7 @@
             <Image  Stretch="Fill" Height="221" />
         </DockPanel>
         <Border
-            CornerRadius="35"
+            CornerRadius="35, 35, 0, 0"
             Margin="0, -33,0,0"
             Padding="5"
             Background="White"

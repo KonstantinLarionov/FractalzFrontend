@@ -10,7 +10,7 @@ namespace FractalzFrontend.Application.Abstractions
 {
     public interface IRestClient
     {
-        T Send<T>(object request, string resource, Method method);
-        T SendForm<T>(object request, string resource, Method method);
+        T Send<T>(object request, string resource, Method method, out ErrorResponse error);
+        T SendForm<T>(object request, string resource, Method method, out ErrorResponse error);
     }
 }

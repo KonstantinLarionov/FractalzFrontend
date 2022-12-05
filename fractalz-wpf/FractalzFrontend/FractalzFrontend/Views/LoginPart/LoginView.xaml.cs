@@ -1,4 +1,11 @@
-﻿using System;
+﻿using FractalzFrontend.Application.Abstractions;
+using FractalzFrontend.Models;
+using FractalzFrontend.Models.LoginPart;
+using FractalzFrontend.ViewModels.LoginPart;
+
+using Ninject;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,15 +27,38 @@ namespace FractalzFrontend.Views.LoginPart
     /// </summary>
     public partial class LoginView : UserControl
     {
-        public LoginView()
+        private readonly MainWindow main;
+        private readonly LoginVM _vm = new LoginVM();
+        private readonly LoginModel _model;
+
+        public LoginView(MainWindow main)
         {
             InitializeComponent();
+
+            _model = new LoginModel(_vm);
+            DataContext = _vm;
+            this.main = main;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Layout l = new Layout();
-            l.Show();
+            var response = _model.LoginRequest();
+            if (response.Success)
+            { 
+                main.Visibility = Visibility.Collapsed;
+                new Layout(main).Show();
+            }
+            else
+                MessageBox.Show(response.Message);
         }
+
+        private void CreateAccount_MouseDown(object sender, MouseButtonEventArgs e) =>
+            main.SwtichSpace(1);
+
+        private void ResetAccount_MouseDown(object sender, MouseButtonEventArgs e) =>
+            main.SwtichSpace(3);
+
+        private void Sign_MouseDown(object sender, MouseButtonEventArgs e) =>
+            main.SwtichSpace(4);
     }
 }

@@ -28,6 +28,7 @@
             Background="White">
             <Grid>
                 <TextBox 
+                    Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"
                     FontSize="15"
                     HorizontalContentAlignment="Center"
                     BorderThickness="0"
@@ -53,6 +54,7 @@
             Background="White">
             <Grid>
                 <TextBox 
+                    Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
                     FontSize="15"
                     HorizontalContentAlignment="Center"
                     BorderThickness="0"
@@ -108,7 +110,10 @@
                     Orientation="Horizontal">
             <Label FontSize="15"
                 Foreground="#7B7B7B">Нет аккаунта?</Label>
-            <Label FontSize="15" Cursor="Hand" Foreground="#00627A">Создать аккаунт</Label>
+            <Label 
+                Name="CreateAccount"
+                MouseDown="CreateAccount_MouseDown"
+                FontSize="15" Cursor="Hand" Foreground="#00627A">Создать аккаунт</Label>
         </StackPanel>
 
         <Label 
@@ -119,6 +124,8 @@
             Padding="0"
             Foreground="#7B7B7B">Забыли пароль?</Label>
         <Label 
+            Name="ResetAccount"
+            MouseDown="ResetAccount_MouseDown"
             FontSize="15"
             DockPanel.Dock="Top" 
             HorizontalAlignment="Center"
@@ -127,6 +134,8 @@
             Foreground="#00627A"
             Cursor="Hand">Нажмите что бы восстановить доступ</Label>
         <Label 
+            Name="Sign"
+            MouseDown="Sign_MouseDown"
             FontSize="15"
             DockPanel.Dock="Top" 
             HorizontalAlignment="Center"

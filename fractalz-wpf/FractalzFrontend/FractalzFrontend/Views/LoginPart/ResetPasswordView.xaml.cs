@@ -20,9 +20,19 @@ namespace FractalzFrontend.Views.LoginPart
     /// </summary>
     public partial class ResetPasswordView : UserControl
     {
-        public ResetPasswordView()
+        private readonly MainWindow main;
+
+        public ResetPasswordView(MainWindow main)
         {
             InitializeComponent();
+            this.main = main;
         }
+
+        private void Code_Click(object sender, RoutedEventArgs e)
+        {
+            main.SwtichSpace(2);
+        }
+
+        private void Back_MouseDown(object sender, MouseButtonEventArgs e) => main.SwtichSpace(0);
     }
 }

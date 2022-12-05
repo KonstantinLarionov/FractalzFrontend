@@ -13,16 +13,20 @@
         <materialDesign:Card 
             materialDesign:ShadowAssist.ShadowDepth="Depth3" Width="70"
                    Background="#00627A">
-            <DockPanel LastChildFill="False">
-                <Button 
+            <DockPanel Name="leftbar" LastChildFill="False">
+                <!--<Button 
+                    Click="SwitchSpace"
+                    Name="burger"
                     Height="40"
                     Padding="0"
                     DockPanel.Dock="Top"
                     Background="Transparent"
                     BorderBrush="Transparent"  >
                     <materialDesign:PackIcon Height="25" Width="25" Kind="HamburgerMenu"/>
-                </Button>
+                </Button>-->
                 <Button 
+                    Click="SwitchSpace"
+                    Name="profile"
                     Margin="0,10,0,0"
                     Height="40"
                     Padding="0"
@@ -32,6 +36,8 @@
                     <materialDesign:PackIcon Height="25" Width="25" Kind="User"/>
                 </Button>
                 <Button 
+                    Click="SwitchSpace"
+                    Name="chat"
                     Margin="0,10,0,0"
                     Height="40"
                     Padding="0"
@@ -41,6 +47,8 @@
                     <materialDesign:PackIcon Height="25" Width="25" Kind="ChatTypingOutline"/>
                 </Button>
                 <Button 
+                    Click="SwitchSpace"
+                    Name="videochat"
                     Margin="0,10,0,0"
                     Height="40"
                     Padding="0"
@@ -50,6 +58,8 @@
                     <materialDesign:PackIcon Height="25" Width="25" Kind="Videocam"/>
                 </Button>
                 <Button 
+                    Click="SwitchSpace"
+                    Name="events"
                     Margin="0,10,0,0"
                     Height="40"
                     Padding="0"
@@ -59,6 +69,8 @@
                     <materialDesign:PackIcon Height="25" Width="25" Kind="Calendar"/>
                 </Button>
                 <Button 
+                    Click="SwitchSpace"
+                    Name="todo"
                     Margin="0,10,0,0"
                     Height="40"
                     Padding="0"
@@ -68,6 +80,8 @@
                     <materialDesign:PackIcon Height="25" Width="25" Kind="ToDo"/>
                 </Button>
                 <Button 
+                    Click="SwitchSpace"
+                    Name="notify"
                     Margin="0,10,0,0"
                     Height="40"
                     Padding="0"
@@ -77,6 +91,8 @@
                     <materialDesign:PackIcon Height="25" Width="25" Kind="Notifications"/>
                 </Button>
                 <Button 
+                    Click="SwitchSpace"
+                    Name="docs"
                     Margin="0,10,0,0"
                     Height="40"
                     Padding="0"
@@ -86,6 +102,8 @@
                     <materialDesign:PackIcon Height="25" Width="25" Kind="BookMultiple"/>
                 </Button>
                 <Button 
+                    Click="SwitchSpace"
+                    Name="exit"
                     Height="40"
                     Padding="0"
                     DockPanel.Dock="Bottom"
@@ -95,8 +113,7 @@
                 </Button>
             </DockPanel>
         </materialDesign:Card>
-        <DockPanel>
-            <notifypart:NotifyView/>
+        <DockPanel Name="space">
         </DockPanel>
     </DockPanel>
 </Window>

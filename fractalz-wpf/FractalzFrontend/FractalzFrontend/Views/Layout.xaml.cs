@@ -1,4 +1,8 @@
 ﻿using FractalzFrontend.Application.Abstractions;
+using FractalzFrontend.Views.ChatPart;
+using FractalzFrontend.Views.NotifyPart;
+using FractalzFrontend.Views.ProfilePart;
+using FractalzFrontend.Views.TodoPart;
 
 using Ninject;
 
@@ -23,9 +27,63 @@ namespace FractalzFrontend.Views
     /// </summary>
     public partial class Layout : Window
     {
-        public Layout()
+        private readonly MainWindow main;
+        private ProfileView profileView;
+        private DialogsView dialogsView;
+        private NotifyView notifyView;
+        private TodoView todoView;
+        public Layout(MainWindow main)
         {
             InitializeComponent();
+
+            this.main = main;
+
+            profileView = new ProfileView();
+            dialogsView = new DialogsView();
+            notifyView = new NotifyView();
+            todoView = new TodoView();
+
+            space.Children.Clear();
+            space.Children.Add(profileView);
+        }
+
+        private void SwitchSpace(object sender, RoutedEventArgs e)
+        {
+            var button = (Button)sender;
+            switch (button.Name)
+            {
+                case "burger":
+                    //leftbar.Visibility = Visibility.Collapsed;
+                    break;
+                case "profile":
+                    space.Children.Clear();
+                    space.Children.Add(profileView);
+                    break;
+                case "chat":
+                    space.Children.Clear();
+                    space.Children.Add(dialogsView);
+                    break;
+                case "videochat":
+                    break;
+                case "events":
+                    break;
+                case "todo":
+                    space.Children.Clear();
+                    space.Children.Add(todoView);
+                    break;
+                case "notify":
+                    space.Children.Clear();
+                    space.Children.Add(notifyView);
+                    break;
+                case "docs":
+                    break;
+                case "exit":
+                    main.Visibility = Visibility.Visible;
+                    this.Close();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

@@ -20,9 +20,19 @@ namespace FractalzFrontend.Views.LoginPart
     /// </summary>
     public partial class SignView : UserControl
     {
-        public SignView()
+        private readonly MainWindow main;
+
+        public SignView(MainWindow main)
         {
             InitializeComponent();
+            this.main = main;
+        }
+
+        private void Back_MouseDown(object sender, MouseButtonEventArgs e) => main.SwtichSpace(0);
+
+        private void FromPc_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
