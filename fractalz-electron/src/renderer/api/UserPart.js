@@ -140,6 +140,8 @@ export default class UserPart extends BasePart {
         formData.append("Number", objectData.Number)
         formData.append("Email", objectData.Email)
         formData.append("Logo", objectData.Logo)
+        formData.append("Adress",objectData.Adress)
+        formData.append("Background", objectData.Background)
         console.log(this.formData)
         let config = {
             headers: {
