@@ -10,5 +10,6 @@ namespace FractalzFrontend.Application.Abstractions
     {
         void SetCache(string key, object value);
         T GetCache<T>(string key);
+        void ClearCache();
     }
 }

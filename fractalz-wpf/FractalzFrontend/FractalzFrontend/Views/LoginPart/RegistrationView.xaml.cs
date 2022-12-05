@@ -24,8 +24,8 @@ namespace FractalzFrontend.Views.LoginPart
     public partial class RegistrationView : UserControl
     {
         private readonly MainWindow main;
-        public readonly RegistrationVM _vm = new RegistrationVM();
-        public readonly RegistrationModel _model;
+        private readonly RegistrationVM _vm = new RegistrationVM();
+        private readonly RegistrationModel _model;
         public RegistrationView(MainWindow main)
         {
             InitializeComponent();
@@ -37,36 +37,16 @@ namespace FractalzFrontend.Views.LoginPart
 
         private void In_MouseDown(object sender, MouseButtonEventArgs e) => main.SwtichSpace(0);
 
+        private void Code_Click(object sender, RoutedEventArgs e)
+        {
+
+            var response = _model.SendCodeRequest();
+
+        }
+
         private void Reg_Click(object sender, RoutedEventArgs e)
         {
-            var response = _model.RegistrationRequest();
 
-            var responseCode = _model.SendCodeRequest();
-
-            if (responseCode.Success && response.Success)
-            {
-                if (response.Success)
-                {
-                    MessageBox.Show("Вы успешно зарегистрировались в системе Леттер.\r\nПодтвердите аккаунт.");
-                    main.SwtichSpace(5);
-                }
-                else
-                {
-                    MessageBox.Show(
-                        response.Message,
-                        "Регистрация аккаунта",
-                        button: MessageBoxButton.OK,
-                        icon: MessageBoxImage.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show(
-                    "Проблемы с отправкой кода, возможно почта уже существует в системе",
-                    "Регистрация аккаунта",
-                    button: MessageBoxButton.OK,
-                    icon: MessageBoxImage.Error);
-            }
         }
     }
 }

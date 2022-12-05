@@ -17,5 +17,7 @@ namespace FractalzFrontend.Cache
 
         public T GetCache<T>(string key) => 
             (T)_cache[key];
+
+        public void ClearCache() => _cache.Clear();
     }
 }

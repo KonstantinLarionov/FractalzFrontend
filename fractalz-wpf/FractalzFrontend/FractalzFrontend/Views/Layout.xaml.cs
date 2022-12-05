@@ -19,6 +19,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FractalzFrontend.Cache;
+using FractalzFrontend.Models;
 
 namespace FractalzFrontend.Views
 {
@@ -32,17 +34,18 @@ namespace FractalzFrontend.Views
         private DialogsView dialogsView;
         private NotifyView notifyView;
         private TodoView todoView;
+        private ICacheController _cache;
+        private LayoutModel model;
+
         public Layout(MainWindow main)
         {
             InitializeComponent();
-
             this.main = main;
-
+            model = new LayoutModel(_cache);
             profileView = new ProfileView();
             dialogsView = new DialogsView();
             notifyView = new NotifyView();
             todoView = new TodoView();
-
             space.Children.Clear();
             space.Children.Add(profileView);
         }
@@ -79,6 +82,7 @@ namespace FractalzFrontend.Views
                     break;
                 case "exit":
                     main.Visibility = Visibility.Visible;
+                    model.ClearCache();
                     this.Close();
                     break;
                 default:
