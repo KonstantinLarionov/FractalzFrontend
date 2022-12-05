@@ -1,0 +1,9 @@
+C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Application\bin\Debug\FractalzFrontend.Application.dll
+C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Application\bin\Debug\FractalzFrontend.Application.pdb
+C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Application\bin\Debug\RestSharp.dll
+C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Application\bin\Debug\RestSharp.xml
+C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Application\obj\Debug\FractalzFrontend.Application.csproj.AssemblyReference.cache
+C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Application\obj\Debug\FractalzFrontend.Application.csproj.CoreCompileInputs.cache
+C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Application\obj\Debug\FractalzFrontend.Application.csproj.CopyComplete
+C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Application\obj\Debug\FractalzFrontend.Application.dll
+C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Application\obj\Debug\FractalzFrontend.Application.pdb

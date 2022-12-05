@@ -1,0 +1,102 @@
+﻿<Window x:Class="FractalzFrontend.Views.Layout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FractalzFrontend.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:profilepart1="clr-namespace:FractalzFrontend.Views.ChatPart" xmlns:todopart="clr-namespace:FractalzFrontend.Views.TodoPart" xmlns:notifypart="clr-namespace:FractalzFrontend.Views.NotifyPart"
+        mc:Ignorable="d"
+        Title="Леттер." Height="740" Width="524"
+        Background="#D9D9D9">
+    <DockPanel>
+        <materialDesign:Card 
+            materialDesign:ShadowAssist.ShadowDepth="Depth3" Width="70"
+                   Background="#00627A">
+            <DockPanel LastChildFill="False">
+                <Button 
+                    Height="40"
+                    Padding="0"
+                    DockPanel.Dock="Top"
+                    Background="Transparent"
+                    BorderBrush="Transparent"  >
+                    <materialDesign:PackIcon Height="25" Width="25" Kind="HamburgerMenu"/>
+                </Button>
+                <Button 
+                    Margin="0,10,0,0"
+                    Height="40"
+                    Padding="0"
+                    DockPanel.Dock="Top"
+                    Background="Transparent"
+                    BorderBrush="Transparent">
+                    <materialDesign:PackIcon Height="25" Width="25" Kind="User"/>
+                </Button>
+                <Button 
+                    Margin="0,10,0,0"
+                    Height="40"
+                    Padding="0"
+                    DockPanel.Dock="Top"
+                    Background="Transparent"
+                    BorderBrush="Transparent">
+                    <materialDesign:PackIcon Height="25" Width="25" Kind="ChatTypingOutline"/>
+                </Button>
+                <Button 
+                    Margin="0,10,0,0"
+                    Height="40"
+                    Padding="0"
+                    DockPanel.Dock="Top"
+                    Background="Transparent"
+                    BorderBrush="Transparent">
+                    <materialDesign:PackIcon Height="25" Width="25" Kind="Videocam"/>
+                </Button>
+                <Button 
+                    Margin="0,10,0,0"
+                    Height="40"
+                    Padding="0"
+                    DockPanel.Dock="Top"
+                    Background="Transparent"
+                    BorderBrush="Transparent">
+                    <materialDesign:PackIcon Height="25" Width="25" Kind="Calendar"/>
+                </Button>
+                <Button 
+                    Margin="0,10,0,0"
+                    Height="40"
+                    Padding="0"
+                    DockPanel.Dock="Top"
+                    Background="Transparent"
+                    BorderBrush="Transparent" Cursor="Hand">
+                    <materialDesign:PackIcon Height="25" Width="25" Kind="ToDo"/>
+                </Button>
+                <Button 
+                    Margin="0,10,0,0"
+                    Height="40"
+                    Padding="0"
+                    DockPanel.Dock="Top"
+                    Background="Transparent"
+                    BorderBrush="Transparent" Cursor="Hand">
+                    <materialDesign:PackIcon Height="25" Width="25" Kind="Notifications"/>
+                </Button>
+                <Button 
+                    Margin="0,10,0,0"
+                    Height="40"
+                    Padding="0"
+                    DockPanel.Dock="Top"
+                    Background="Transparent"
+                    BorderBrush="Transparent">
+                    <materialDesign:PackIcon Height="25" Width="25" Kind="BookMultiple"/>
+                </Button>
+                <Button 
+                    Height="40"
+                    Padding="0"
+                    DockPanel.Dock="Bottom"
+                    Background="Transparent"
+                    BorderBrush="Transparent">
+                    <materialDesign:PackIcon Height="25" Width="25" Kind="Output"/>
+                </Button>
+            </DockPanel>
+        </materialDesign:Card>
+        <DockPanel>
+            <notifypart:NotifyView/>
+        </DockPanel>
+    </DockPanel>
+</Window>

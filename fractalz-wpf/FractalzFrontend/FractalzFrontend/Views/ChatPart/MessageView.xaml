@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="FractalzFrontend.Views.ChatPart.MessageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FractalzFrontend.Views.ChatPart"
+             mc:Ignorable="d"  d:DesignWidth="454"
+             Margin="0,15,0,0">
+    <DockPanel LastChildFill="False">
+        <Image
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    DockPanel.Dock="Left"
+                    Margin="5,0,5,0"
+                    Width="40" Height="40" Source="/Views/ChatPart/1.PNG" Stretch="Fill" >
+            <Image.Clip>
+                <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20" />
+            </Image.Clip>
+        </Image>
+        <Border
+            Padding="10"
+            Background="#9B9B9B"
+            CornerRadius="15,15,15,15"
+            DockPanel.Dock="Top">
+            <DockPanel LastChildFill="True">
+                <TextBlock
+                    FontSize="14"
+                    Foreground="White" TextWrapping="WrapWithOverflow"
+                           Text="Разнообразный и богатый опыт говорит нам, что синтетическое тестирование предоставляет широкие возможности для экономической целесообразности принимаемых решений. В своём стремлении повысить качество жизни, они забывают, что выбранный нами инновационный путь играет важную роль в формировании новых предложений. Предварительные выводы неутешительны: курс на социально-ориентированный национальный проект способствует подготовке и реализации глубокомысленных рассуждений."/>
+            </DockPanel>
+        </Border>
+    </DockPanel>
+</UserControl>
