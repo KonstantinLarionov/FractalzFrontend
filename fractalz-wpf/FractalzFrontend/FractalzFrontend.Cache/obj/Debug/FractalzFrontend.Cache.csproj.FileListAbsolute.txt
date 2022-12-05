@@ -11,3 +11,16 @@ C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\Fractalz
 C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\obj\Debug\FractalzFrontend.Cache.csproj.CopyComplete
 C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\obj\Debug\FractalzFrontend.Cache.dll
 C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\obj\Debug\FractalzFrontend.Cache.pdb
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\bin\Debug\FractalzFrontend.Cache.dll
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\bin\Debug\FractalzFrontend.Cache.pdb
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\bin\Debug\FractalzFrontend.Application.dll
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\bin\Debug\Ninject.dll
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\bin\Debug\RestSharp.dll
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\bin\Debug\FractalzFrontend.Application.pdb
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\bin\Debug\Ninject.xml
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\bin\Debug\RestSharp.xml
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\obj\Debug\FractalzFrontend.Cache.csproj.AssemblyReference.cache
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\obj\Debug\FractalzFrontend.Cache.csproj.CoreCompileInputs.cache
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\obj\Debug\FractalzFrontend.Cache.csproj.CopyComplete
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\obj\Debug\FractalzFrontend.Cache.dll
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Cache\obj\Debug\FractalzFrontend.Cache.pdb

@@ -15,7 +15,7 @@ namespace FractalzFrontend.Client
     public class RestApiClient : FractalzFrontend.Application.Abstractions.IRestClient
     {
         RestClient _client;
-        public RestApiClient(string host = "http://192.168.88.152:5247") 
+        public RestApiClient(string host = "http://localhost:5001") 
         { 
             _client = new RestClient(host);
         }
