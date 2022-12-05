@@ -173,7 +173,7 @@ export default {
         Logo: this.$cookies.get("UserInfo").logo,
         TgLink:this.$cookies.get("UserInfo").tgLink,
         VkLink: this.$cookies.get("UserInfo").vkLink,
-        Adress: this.$cookies.get("UserInfo").adress,
+        Adress: this.$cookies.get("UserInfo").address,
         Avatar:null,
         Background:null,
       },
@@ -201,7 +201,11 @@ export default {
       {
         console.log(ex)
       }
-
+    },
+    getBackground(event)
+    {
+      var doc = document.getElementById("Background").style.backgroundImage =  `url(data:image/png;base64,${event})`;
+      return doc
     },
     setAvatar(){
       this.model.Logo = this.$refs.logo.files[0];
@@ -210,6 +214,10 @@ export default {
         var doc = document.getElementById("Avatar").attributes[1].value = e.target.result;
       };
       reader.readAsDataURL(this.model.Logo);
+    },
+    getAvatar(event){
+      var doc = document.getElementById("Avatar").attributes[1].value = "data:image/png;base64," + event;
+      return doc
     },
     getUser:async function()
     {
@@ -229,14 +237,12 @@ export default {
         this.model.UserId = getUser.data.userEntity.id;
         this.model.TgLink = getUser.data.userEntity.tgLink;
         this.model.VkLink = getUser.data.userEntity.vkLink
-        this.model.Adress = getUser.data.userEntity.adress
+        this.model.Adress = getUser.data.userEntity.address
+        this.model.Background = this.getBackground(getUser.data.background.path);
         this.api = new UserPart(this.$http);
       }
     },
-    getAvatar(event){
-       var doc = document.getElementById("Avatar").attributes[1].value = "data:image/png;base64," + event;
-       return doc
-    },
+
     updateProfile : async function() {
       this.model.Logo = this.$refs.logo.files[0];
       console.log(this.model)
@@ -349,7 +355,7 @@ width: 350px;
   margin-top: -107px;
   display: flex;
   z-index: 5;
-  background-color: #1dc0cb;
+  background-color: #00627a;
   justify-content: center;
   align-items:center;
   box-shadow: var(--shadow-down-4);
