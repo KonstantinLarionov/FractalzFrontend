@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="FractalzFrontend.Views.LoginPart.CodeValidateView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FractalzFrontend.Views.LoginPart"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="740" d:DesignWidth="524">
+    <DockPanel LastChildFill="False" Cursor="Hand">
+        <Image DockPanel.Dock="Top" Source="/Views/LoginPart/angle.png"/>
+        <Image Margin="0,-70,0,0" Height="100" Width="100" DockPanel.Dock="Top" Source="/Views/LoginPart/logo.png"/>
+        <Label 
+            FontSize="35"
+            HorizontalContentAlignment="Center"
+            DockPanel.Dock="Top"
+            Foreground="#00627A"
+            Content="Регистрация в Леттер." FontFamily="Roboto Cn"/>
+        <Label 
+            FontSize="18"
+            HorizontalContentAlignment="Center"
+            DockPanel.Dock="Top"
+            Foreground="#00627A"
+            Content="Введите код отправленный на почту" FontFamily="Roboto Cn"/>
+        <StackPanel 
+            DockPanel.Dock="Top" 
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            Margin="0,50,0,0">
+            <Border 
+            
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            CornerRadius="18" 
+            DockPanel.Dock="Top" 
+            Width="250" 
+            Height="40"
+            Padding="5"
+            BorderThickness="1"
+            Background="White">
+                <Grid>
+                    <TextBox 
+                    Text="{Binding Code, UpdateSourceTrigger=PropertyChanged}"
+                    FontSize="15"
+                    HorizontalContentAlignment="Center"
+                    BorderThickness="0"
+                    Width="250" 
+                    Height="auto" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Foreground="#00627A"
+                    Background="White"
+                    materialDesign:HintAssist.Hint="Введите код доступа" CaretBrush="#FF00627A"/>
+                </Grid>
+            </Border>
+        </StackPanel>
+        <Button 
+            Name="Reg"
+            Click="Code_Click"
+            DockPanel.Dock="Top" 
+            Width="250" 
+            Height="40"
+            Margin="0,20,0,0"
+            materialDesign:ShadowAssist.ShadowDepth="Depth0"
+            FontSize="15"
+            HorizontalContentAlignment="Center"
+            BorderThickness="0"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Foreground="White"
+            Content="Подтвердить" Cursor="Hand" BorderBrush="{x:Null}">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="18" />
+                        </Style>
+                    </Style.Resources>
+                    <Setter Property="Background" Value="#00627A"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.9"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Center"
+                    Margin="0,40,0,0"
+                    Orientation="Horizontal">
+            <Label FontSize="15"
+                Foreground="#7B7B7B">Уже есть аккаунт?</Label>
+            <Label 
+                MouseDown="In_MouseDown"
+                Name="In"
+                FontSize="15" Cursor="Hand" Foreground="#00627A">Войти</Label>
+        </StackPanel>
+    </DockPanel>
+</UserControl>

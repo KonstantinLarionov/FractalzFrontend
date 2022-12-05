@@ -1,5 +1,4 @@
-﻿
-using FractalzFrontend.Views.LoginPart;
+﻿using FractalzFrontend.Views.LoginPart;
 
 using Ninject;
 
@@ -31,6 +30,7 @@ namespace FractalzFrontend
         private ResetAccountView resetAccountView;
         private ResetPasswordView resetPasswordView;
         private SignView signView;
+        private CodeValidateView codeValidateView;
         public MainWindow()
         {
             InitializeComponent();
@@ -39,6 +39,7 @@ namespace FractalzFrontend
             registrationView = new RegistrationView(this);
             resetAccountView = new ResetAccountView(this);
             resetPasswordView = new ResetPasswordView(this);
+            codeValidateView = new CodeValidateView(this, registrationView._model, registrationView._vm);
             signView = new SignView(this);
 
             space.Children.Clear();
@@ -64,6 +65,9 @@ namespace FractalzFrontend
                     break;
                 case 4:
                     space.Children.Add(signView);
+                    break;
+                case 5:
+                    space.Children.Add(codeValidateView);
                     break;
                 default:
                     break;
