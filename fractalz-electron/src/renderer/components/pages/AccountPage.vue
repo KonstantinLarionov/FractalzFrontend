@@ -1,19 +1,22 @@
 <template>
   <div class="container-fluid" id="accountSpace">
     <div class="row">
-      <div class="background-profile">
+      <div class="background-profile"  id="Background">
         <button class="background-edit-button">
-          <svg class="edit-button-icon" width="20" height="20" viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_11_114)">
-              <path d="M9.68875 1.09126C9.74714 1.14398 9.77993 1.21538 9.77993 1.28982C9.77993 1.36426 9.74714 1.43566 9.68875 1.48838L9.03687 2.07563L7.78687 0.950633L8.43875 0.363383C8.49735 0.310656 8.57682 0.281036 8.65969 0.281036C8.74255 0.281036 8.82202 0.310656 8.88062 0.363383L9.68875 1.0907V1.09126ZM8.595 2.47276L7.345 1.34776L3.08687 5.18063C3.05248 5.21158 3.02658 5.24934 3.01125 5.29088L2.50812 6.64876C2.499 6.67351 2.4977 6.70006 2.50438 6.72544C2.51106 6.75082 2.52545 6.77403 2.54594 6.79247C2.56643 6.81091 2.59222 6.82386 2.62042 6.82987C2.64862 6.83589 2.67812 6.83472 2.70562 6.82651L4.21437 6.37369C4.26048 6.36006 4.30242 6.33695 4.33687 6.3062L8.595 2.47332V2.47276Z" />
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.625 7.59375C0.625 7.81753 0.723772 8.03214 0.899587 8.19037C1.0754 8.34861 1.31386 8.4375 1.5625 8.4375H8.4375C8.68614 8.4375 8.9246 8.34861 9.10041 8.19037C9.27623 8.03214 9.375 7.81753 9.375 7.59375V4.21875C9.375 4.14416 9.34208 4.07262 9.28347 4.01988C9.22487 3.96713 9.14538 3.9375 9.0625 3.9375C8.97962 3.9375 8.90013 3.96713 8.84153 4.01988C8.78292 4.07262 8.75 4.14416 8.75 4.21875V7.59375C8.75 7.66834 8.71708 7.73988 8.65847 7.79262C8.59987 7.84537 8.52038 7.875 8.4375 7.875H1.5625C1.47962 7.875 1.40013 7.84537 1.34153 7.79262C1.28292 7.73988 1.25 7.66834 1.25 7.59375V1.40625C1.25 1.33166 1.28292 1.26012 1.34153 1.20738C1.40013 1.15463 1.47962 1.125 1.5625 1.125H5.625C5.70788 1.125 5.78737 1.09537 5.84597 1.04262C5.90458 0.989879 5.9375 0.918342 5.9375 0.84375C5.9375 0.769158 5.90458 0.697621 5.84597 0.644876C5.78737 0.592132 5.70788 0.5625 5.625 0.5625H1.5625C1.31386 0.5625 1.0754 0.651395 0.899587 0.809629C0.723772 0.967862 0.625 1.18247 0.625 1.40625V7.59375Z"/>
-            </g>
-            <defs>
-              <clipPath id="clip0_11_114">
-                <rect width="10" height="9" fill="white"/>
-              </clipPath>
-            </defs>
-          </svg>
+          <label for="background-img"  class="profile-edit-logo">
+            <svg class="edit-button-icon" width="20" height="20" viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_11_114)">
+                <path d="M9.68875 1.09126C9.74714 1.14398 9.77993 1.21538 9.77993 1.28982C9.77993 1.36426 9.74714 1.43566 9.68875 1.48838L9.03687 2.07563L7.78687 0.950633L8.43875 0.363383C8.49735 0.310656 8.57682 0.281036 8.65969 0.281036C8.74255 0.281036 8.82202 0.310656 8.88062 0.363383L9.68875 1.0907V1.09126ZM8.595 2.47276L7.345 1.34776L3.08687 5.18063C3.05248 5.21158 3.02658 5.24934 3.01125 5.29088L2.50812 6.64876C2.499 6.67351 2.4977 6.70006 2.50438 6.72544C2.51106 6.75082 2.52545 6.77403 2.54594 6.79247C2.56643 6.81091 2.59222 6.82386 2.62042 6.82987C2.64862 6.83589 2.67812 6.83472 2.70562 6.82651L4.21437 6.37369C4.26048 6.36006 4.30242 6.33695 4.33687 6.3062L8.595 2.47332V2.47276Z" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.625 7.59375C0.625 7.81753 0.723772 8.03214 0.899587 8.19037C1.0754 8.34861 1.31386 8.4375 1.5625 8.4375H8.4375C8.68614 8.4375 8.9246 8.34861 9.10041 8.19037C9.27623 8.03214 9.375 7.81753 9.375 7.59375V4.21875C9.375 4.14416 9.34208 4.07262 9.28347 4.01988C9.22487 3.96713 9.14538 3.9375 9.0625 3.9375C8.97962 3.9375 8.90013 3.96713 8.84153 4.01988C8.78292 4.07262 8.75 4.14416 8.75 4.21875V7.59375C8.75 7.66834 8.71708 7.73988 8.65847 7.79262C8.59987 7.84537 8.52038 7.875 8.4375 7.875H1.5625C1.47962 7.875 1.40013 7.84537 1.34153 7.79262C1.28292 7.73988 1.25 7.66834 1.25 7.59375V1.40625C1.25 1.33166 1.28292 1.26012 1.34153 1.20738C1.40013 1.15463 1.47962 1.125 1.5625 1.125H5.625C5.70788 1.125 5.78737 1.09537 5.84597 1.04262C5.90458 0.989879 5.9375 0.918342 5.9375 0.84375C5.9375 0.769158 5.90458 0.697621 5.84597 0.644876C5.78737 0.592132 5.70788 0.5625 5.625 0.5625H1.5625C1.31386 0.5625 1.0754 0.651395 0.899587 0.809629C0.723772 0.967862 0.625 1.18247 0.625 1.40625V7.59375Z"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_11_114">
+                  <rect width="10" height="9" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+            <input type="file" id="background-img" style="display: none" ref="bckgrndImg" accept="image/*" @change="this.setBackground">
+          </label>
         </button>
       </div>
     </div>
@@ -172,6 +175,7 @@ export default {
         VkLink: this.$cookies.get("UserInfo").vkLink,
         Adress: this.$cookies.get("UserInfo").adress,
         Avatar:null,
+        Background:null,
       },
 
       notyHeader: "Профиль Fractalz"
@@ -184,6 +188,21 @@ export default {
   },
 
   methods:{
+    setBackground(){
+      try {
+        this.model.Background = this.$refs.bckgrndImg.files[0];
+        let reader = new FileReader();
+        reader.readAsDataURL(this.model.Background);
+        reader.onload = (e) => {
+          var doc = document.getElementById("Background").style.backgroundImage = `url(${reader.result})`;
+        };
+      }
+      catch (ex)
+      {
+        console.log(ex)
+      }
+
+    },
     setAvatar(){
       this.model.Logo = this.$refs.logo.files[0];
       let reader = new FileReader();
@@ -292,6 +311,7 @@ width: 350px;
   fill: var(--color-white)
 }
 .background-edit-button{
+  z-index: 5;
   background-color: transparent;
   border: none;
 }
@@ -305,7 +325,7 @@ width: 350px;
 .background-profile{
   height: 230px;
   width: 100%;
-  background-image: url(../../assets/images/defaultback.jpg);
+  z-index: 1;
   background-size: cover;
   display: flex;
   justify-content: flex-end;
@@ -326,9 +346,10 @@ width: 350px;
   width: 100%;
 }
 .profile-logo-wrapper{
-  background-color: var(--color-white);
   margin-top: -107px;
   display: flex;
+  z-index: 5;
+  background-color: #1dc0cb;
   justify-content: center;
   align-items:center;
   box-shadow: var(--shadow-down-4);
@@ -374,6 +395,7 @@ width: 350px;
 .profile-logo{
   background-size: cover;
   height: 200px;
+  z-index: 5;
   width: 200px;
   border-radius: 50%;
   display: flex;
