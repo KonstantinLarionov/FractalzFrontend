@@ -16,22 +16,23 @@ using System.Web.UI.WebControls.WebParts;
 
 using WebSocketSharp;
 
+using static FractalzFrontend.Application.Domain.WebSocketDelegates;
+
 namespace FractalzFrontend.Client
 {
     public class WebsocketClient : IWebSocketClient
     {
         private string _baseUrl;
         private WebSocket _socket;
-        public delegate void MessageHandler(MessageMappedDto message);
+        private readonly ILogDispatcher _log;
+
         public event MessageHandler OnMessage;
-        public delegate void DialogHandler(DialogsMappedDto message);
         public event DialogHandler OnDialogs;
-        public delegate void UsersHandler(User message);
         public event UsersHandler OnUsers;
-        public delegate void NotyHandler(NotySocketEvent message);
         public event NotyHandler OnNoty;
-        public WebsocketClient()
+        public WebsocketClient(ILogDispatcher logDispatcher)
         {
+            this._log = logDispatcher;
         }
 
         public void Connect(string userId)
@@ -43,40 +44,45 @@ namespace FractalzFrontend.Client
             _socket.OnOpen += _socket_OnOpen;
         }
 
-        private void _socket_OnOpen(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        private void _socket_OnOpen(object sender, EventArgs e) =>
+            _log.Success("SocketOpen", e.ToString());
 
         private void _socket_OnMessage(object sender, MessageEventArgs e)
         {
             var responseData = e.Data;
+            _log.Info("OnMessage", e.Data);
+
             var response = JsonConvert.DeserializeObject<BasicWsEntities>(responseData);
+
             switch (response.Type)
             {
                 case WsMessageType.User:
+                    _log.Info("OnUser", e.Data);
+
                     this.OnUsers?.Invoke((User)response.Data);
                     break;
                 case WsMessageType.Noty:
+                    _log.Info("OnNoty", e.Data);
+
                     this.OnNoty?.Invoke((NotySocketEvent)response.Data);
                     break;
                 case WsMessageType.Dialog:
+                    _log.Info("OnDialog", e.Data);
+
                     this.OnDialogs?.Invoke((DialogsMappedDto)response.Data);
                     break;
                 case WsMessageType.Message:
+                    _log.Info("OnMessage", e.Data);
+
                     this.OnMessage?.Invoke((MessageMappedDto)response.Data);
                     break;
             }
         }
 
-        private void _socket_OnError(object sender, ErrorEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        private void _socket_OnError(object sender, ErrorEventArgs e) =>
+            _log.Error("SocketError", e.Message + Environment.NewLine + e.Message);
 
-        private void _socket_OnClose(object sender, CloseEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        private void _socket_OnClose(object sender, CloseEventArgs e) =>
+            _log.Info("SocketClose", e.Code + e.Reason);
     }
 }

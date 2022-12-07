@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractalzFrontend.Cache", "F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractalzFrontend.Application", "FractalzFrontend.Application\FractalzFrontend.Application.csproj", "{45256C77-DC7A-4706-8DD1-15D51E3DC12B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractalzFrontend.Logger", "FractalzFrontend.Logger\FractalzFrontend.Logger.csproj", "{C4085802-F4E9-4F30-A03E-8B57645F07BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{45256C77-DC7A-4706-8DD1-15D51E3DC12B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45256C77-DC7A-4706-8DD1-15D51E3DC12B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45256C77-DC7A-4706-8DD1-15D51E3DC12B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4085802-F4E9-4F30-A03E-8B57645F07BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4085802-F4E9-4F30-A03E-8B57645F07BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4085802-F4E9-4F30-A03E-8B57645F07BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4085802-F4E9-4F30-A03E-8B57645F07BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

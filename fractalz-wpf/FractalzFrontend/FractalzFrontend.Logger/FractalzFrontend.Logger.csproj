@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{45256C77-DC7A-4706-8DD1-15D51E3DC12B}</ProjectGuid>
+    <ProjectGuid>{C4085802-F4E9-4F30-A03E-8B57645F07BD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FractalzFrontend.Application</RootNamespace>
-    <AssemblyName>FractalzFrontend.Application</AssemblyName>
+    <RootNamespace>FractalzFrontend.Logger</RootNamespace>
+    <AssemblyName>FractalzFrontend.Logger</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,15 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Fractalz.Application.Domain">
-      <HintPath>..\..\..\..\FractalzBackend\Fractalz.Application.Domain\bin\Debug\Fractalz.Application.Domain.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="RestSharp, Version=106.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.106.9.0\lib\net452\RestSharp.dll</HintPath>
+    <Reference Include="Ninject, Version=3.3.6.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.6\lib\net45\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,17 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstractions\ICacheController.cs" />
-    <Compile Include="Abstractions\ILogDispatcher.cs" />
-    <Compile Include="Abstractions\IRestClient.cs" />
-    <Compile Include="Abstractions\IWebSocketClient.cs" />
-    <Compile Include="Domain\ErrorResponse.cs" />
-    <Compile Include="Domain\NotySocketEvent.cs" />
-    <Compile Include="Domain\WebSocketDelegates.cs" />
+    <Compile Include="LogDispatcher.cs" />
+    <Compile Include="NinjetLogColletion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FractalzFrontend.Application\FractalzFrontend.Application.csproj">
+      <Project>{45256C77-DC7A-4706-8DD1-15D51E3DC12B}</Project>
+      <Name>FractalzFrontend.Application</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
