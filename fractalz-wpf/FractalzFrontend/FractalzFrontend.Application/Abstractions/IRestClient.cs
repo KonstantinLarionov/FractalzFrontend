@@ -11,6 +11,7 @@ namespace FractalzFrontend.Application.Abstractions
     public interface IRestClient
     {
         T Send<T>(object request, string resource, Method method, out ErrorResponse error);
+        void SetAuth(string key,string value);
         T SendForm<T>(object request, string resource, Method method, out ErrorResponse error);
     }
 }

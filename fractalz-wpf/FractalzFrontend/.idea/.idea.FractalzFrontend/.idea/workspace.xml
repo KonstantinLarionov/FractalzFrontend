@@ -4,22 +4,104 @@
     <projectFile>FractalzFrontend/FractalzFrontend.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4167b81-0105-43bf-93b9-00e4bb211c3e" name="Changes" comment="" />
+    <list default="true" id="e4167b81-0105-43bf-93b9-00e4bb211c3e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/FractalzFrontend/Models/ProfilePart/ProfileModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FractalzFrontend/ViewModels/ProfilePart/ProfileVM.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FractalzFrontend/Views/LoginPart/CodeValidateView.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FractalzFrontend/Views/LoginPart/CodeValidateView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FractalzFrontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FractalzFrontend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Application/Abstractions/IRestClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Application/Abstractions/IRestClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Application/bin/Debug/FractalzFrontend.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Application/bin/Debug/FractalzFrontend.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Application/bin/Debug/FractalzFrontend.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Application/bin/Debug/FractalzFrontend.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Cache/bin/Debug/FractalzFrontend.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Cache/bin/Debug/FractalzFrontend.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Cache/bin/Debug/FractalzFrontend.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Cache/bin/Debug/FractalzFrontend.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Cache/obj/Debug/FractalzFrontend.Cache.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Cache/obj/Debug/FractalzFrontend.Cache.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/FractalzFrontend.Client.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/FractalzFrontend.Client.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/RestClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/RestClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Client.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Client.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/FractalzFrontend.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/FractalzFrontend.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/Views/LoginPart/RegistrationView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/Views/LoginPart/RegistrationView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/Views/LoginPart/RegistrationView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/Views/LoginPart/RegistrationView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/ProfileView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/ProfileView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/ProfileView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/ProfileView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/Fractalz.Application.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/Fractalz.Application.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/Fractalz.Application.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/Fractalz.Application.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/FractalzFrontend.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/FractalzFrontend.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/FractalzFrontend.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/FractalzFrontend.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/FractalzFrontend.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/FractalzFrontend.Client.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/FractalzFrontend.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/FractalzFrontend.Client.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/FractalzFrontend.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/FractalzFrontend.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/FractalzFrontend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/bin/Debug/FractalzFrontend.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.g.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend_MarkupCompile.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend_MarkupCompile.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend_MarkupCompile.lref" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend_MarkupCompile.lref" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/GeneratedInternalTypeHelper.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/GeneratedInternalTypeHelper.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/LoginPart/RegistrationView.baml" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/LoginPart/RegistrationView.baml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/LoginPart/RegistrationView.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/LoginPart/RegistrationView.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/LoginPart/RegistrationView.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/LoginPart/RegistrationView.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/ProfilePart/ProfileView.baml" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/ProfilePart/ProfileView.baml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/ProfilePart/ProfileView.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/ProfilePart/ProfileView.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/ProfilePart/ProfileView.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/ProfilePart/ProfileView.g.i.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/4cb3b500caad4002bf7383287635d78afa00/ec/58a3faad/0200005C.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/343557076ff94b03a6e87cb01db47f736003a8/3c/7b62fe6b/PropertyPathWorker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/343557076ff94b03a6e87cb01db47f736003a8/8a/46210905/WpfXamlLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4cb3b500caad4002bf7383287635d78afa00/14/5bea1b46/UpdateProfileRequest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4cb3b500caad4002bf7383287635d78afa00/76/d9c4506a/LoginResponse.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4cb3b500caad4002bf7383287635d78afa00/78/792a7bec/RegistrationResponse.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58f6d0b3a6a74b5db5861b4275cfb3b6381da8/ca/401dc814/Mouse.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6fc0155e6fdd4c5eab3eafeef639933a32230/b7/97914e02/MultipartFormDataContent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edef46c9b2db4b878c98495bfdc516fa568ba8/41/a25fc62d/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edef46c9b2db4b878c98495bfdc516fa568ba8/ce/4c070c6e/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/4cb3b500caad4002bf7383287635d78afa00/ee/97ca15aa/Fractalz.Application.Domain.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/29ea32a76b2a6b8eb246f247df6a6a86d887384b4c31db2a35effccdd86c24/JsonSerializerInternalReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de83d477b058dfda70ad18afe0c1e99753d360286487172b9ecf18c2ec3c/RestRequest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../FractalzBackend/Fractalz.Application.Domain/Domains/Entities/Profile/User.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../FractalzBackend/Fractalz.Application.Domain/Domains/Requests/User/UpdateProfileRequest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../FractalzBackend/Fractalz.Application.Domain/Domains/Responses/User/GetUserResponse.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../FractalzBackend/Fractalz.Application.Domain/Domains/Responses/User/LoginResponse.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../FractalzBackend/Fractalz.Application.Domain/Domains/Responses/User/UpdateProfileResponse.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IXBytpHyjJiCCtLSRAMsR8toaM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "XThreadsFramesViewSplitterKey": "0.111683846"
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.111683846",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
@@ -42,51 +124,76 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e4167b81-0105-43bf-93b9-00e4bb211c3e" name="Changes" comment="" />
+      <created>1670318306017</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670318306017</updated>
+      <workItem from="1670318345489" duration="17608000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/FractalzFrontend/Models/LoginPart/SignLoginModel.cs</url>
-          <line>43</line>
-          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Models\LoginPart\SignLoginModel.cs" initialLine="43" containingFunctionPresentation="method 'SignLoginRequest'">
+          <url>file://$PROJECT_DIR$/FractalzFrontend.Client/RestClient.cs</url>
+          <line>74</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Client\RestClient.cs" initialLine="75" containingFunctionPresentation="method 'SendForm'">
             <startOffsets>
-              <option value="1348" />
+              <option value="2330" />
             </startOffsets>
             <endOffsets>
-              <option value="1402" />
+              <option value="2368" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="21" />
+          <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/FractalzFrontend/Models/LoginPart/SignLoginModel.cs</url>
-          <line>44</line>
-          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Models\LoginPart\SignLoginModel.cs" initialLine="44" containingFunctionPresentation="method 'SignLoginRequest'">
+          <url>file://$PROJECT_DIR$/FractalzFrontend.Client/RestClient.cs</url>
+          <line>77</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Client\RestClient.cs" initialLine="78" containingFunctionPresentation="method 'SendForm'">
             <startOffsets>
-              <option value="1419" />
+              <option value="2416" />
             </startOffsets>
             <endOffsets>
-              <option value="1475" />
+              <option value="2476" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="22" />
+          <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/Layout.xaml.cs</url>
-          <line>85</line>
-          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\Layout.xaml.cs" initialLine="83" containingFunctionPresentation="method 'SwitchSpace'">
+          <url>file://$PROJECT_DIR$/FractalzFrontend.Client/RestClient.cs</url>
+          <line>81</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Client\RestClient.cs" initialLine="82" containingFunctionPresentation="method 'SendForm'">
             <startOffsets>
-              <option value="2724" />
+              <option value="2554" />
             </startOffsets>
             <endOffsets>
-              <option value="2737" />
+              <option value="2639" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="24" />
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FractalzFrontend/Models/ProfilePart/ProfileModel.cs</url>
+          <line>51</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Models\ProfilePart\ProfileModel.cs" initialLine="51" containingFunctionPresentation="method 'UpdateUserInfo'">
+            <startOffsets>
+              <option value="1580" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1592" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="99" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

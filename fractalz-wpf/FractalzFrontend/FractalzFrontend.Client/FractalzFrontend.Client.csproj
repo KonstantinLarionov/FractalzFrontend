@@ -71,6 +71,10 @@
       <Project>{45256C77-DC7A-4706-8DD1-15D51E3DC12B}</Project>
       <Name>FractalzFrontend.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FractalzFrontend.Cache\FractalzFrontend.Cache.csproj">
+      <Project>{bfb672a6-cee9-484a-92ef-b0c598a61d4b}</Project>
+      <Name>FractalzFrontend.Cache</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

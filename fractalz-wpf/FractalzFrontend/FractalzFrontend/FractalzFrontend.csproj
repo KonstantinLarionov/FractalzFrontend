@@ -76,9 +76,11 @@
     <Compile Include="Models\LoginPart\RegistrationModel.cs" />
     <Compile Include="Models\LoginPart\SignLoginModel.cs" />
     <Compile Include="Models\NinjectCollection.cs" />
+    <Compile Include="Models\ProfilePart\ProfileModel.cs" />
     <Compile Include="ViewModels\LoginPart\LoginVM.cs" />
     <Compile Include="ViewModels\LoginPart\RegistrationVM.cs" />
     <Compile Include="ViewModels\LoginPart\SignLoginVM.cs" />
+    <Compile Include="ViewModels\ProfilePart\ProfileVM.cs" />
     <Compile Include="Views\ChatPart\ChatView.xaml.cs">
       <DependentUpon>ChatView.xaml</DependentUpon>
     </Compile>
@@ -95,6 +97,9 @@
       <DependentUpon>Layout.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LayoutModel.cs" />
+    <Compile Include="Views\LoginPart\CodeValidateView.xaml.cs">
+      <DependentUpon>CodeValidateView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginPart\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -163,6 +168,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\LoginPart\CodeValidateView.xaml" />
     <Page Include="Views\LoginPart\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

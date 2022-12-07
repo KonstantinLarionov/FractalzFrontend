@@ -162,3 +162,6 @@ C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\
 C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\FractalzFrontend.csproj.CopyComplete
 C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\FractalzFrontend.exe
 C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\FractalzFrontend.pdb
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\bin\Debug\Fractalz.Application.Domain.dll
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\LoginPart\CodeValidateView.g.cs
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\LoginPart\CodeValidateView.baml
