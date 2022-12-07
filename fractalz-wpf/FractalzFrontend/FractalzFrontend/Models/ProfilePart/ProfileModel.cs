@@ -90,6 +90,7 @@ namespace FractalzFrontend.Models.ProfilePart
                 _profileVm.Number = response.userEntity.Number;
                 _profileVm.TgLink = response.userEntity.TGLink;
                 _profileVm.VkLink = response.userEntity.VKLink;
+                _profileVm.Login = response.userEntity.Login;
                 /*_profileVm.Logo = arrLog;
                 _profileVm.Background = arrBck;*/
             }

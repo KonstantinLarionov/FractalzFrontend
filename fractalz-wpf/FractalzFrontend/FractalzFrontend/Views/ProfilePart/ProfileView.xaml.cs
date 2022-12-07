@@ -17,6 +17,8 @@ using FractalzFrontend.Cache;
 using FractalzFrontend.Models;
 using FractalzFrontend.Models.ProfilePart;
 using FractalzFrontend.ViewModels.ProfilePart;
+using FractalzFrontend.Views.ProfilePart.Modals;
+using MaterialDesignThemes.Wpf;
 using Ninject;
 
 namespace FractalzFrontend.Views.ProfilePart
@@ -28,6 +30,7 @@ namespace FractalzFrontend.Views.ProfilePart
     {
         private ProfileVM _profileVm = new ProfileVM();
         private readonly ProfileModel _profileModel;
+        private VkModal _vkModal;
         public ProfileView()
         {
             InitializeComponent();
@@ -51,7 +54,7 @@ namespace FractalzFrontend.Views.ProfilePart
 
         private void VkModalOpen(object sender, MouseButtonEventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
