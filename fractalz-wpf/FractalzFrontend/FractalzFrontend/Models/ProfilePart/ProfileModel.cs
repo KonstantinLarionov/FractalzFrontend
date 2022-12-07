@@ -61,7 +61,7 @@ namespace FractalzFrontend.Models.ProfilePart
                 UserId = _cacheController.GetCache<User>("User_Info").Id,
                 TGLink = _profileVm.TgLink,
                 VKLink = _profileVm.VkLink,
-                Background = _profileVm.Background,
+                //Background = _profileVm.Background,
                 
                 
             };

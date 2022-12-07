@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\App.xaml
-181258117981
+191026485855
 1-511624060
-31-1001783039
+33-2068737255
 22-1871319254
-MainWindow.xaml;Views\ChatPart\ChatView.xaml;Views\ChatPart\DialogsView.xaml;Views\ChatPart\DialogView.xaml;Views\ChatPart\MessageView.xaml;Views\Layout.xaml;Views\LoginPart\LoginView.xaml;Views\LoginPart\RegistrationView.xaml;Views\LoginPart\ResetAccountView.xaml;Views\LoginPart\ResetPasswordView.xaml;Views\LoginPart\SignView.xaml;Views\NotifyPart\EventView.xaml;Views\NotifyPart\NotifyView.xaml;Views\ProfilePart\ProfileView.xaml;Views\TimesheetPart\EventView.xaml;Views\TimesheetPart\TimesheetView.xaml;Views\TodoPart\TaskView.xaml;Views\TodoPart\TodoView.xaml;
+MainWindow.xaml;Views\ChatPart\ChatView.xaml;Views\ChatPart\DialogsView.xaml;Views\ChatPart\DialogView.xaml;Views\ChatPart\MessageView.xaml;Views\Layout.xaml;Views\LoginPart\CodeValidateView.xaml;Views\LoginPart\LoginView.xaml;Views\LoginPart\RegistrationView.xaml;Views\LoginPart\ResetAccountView.xaml;Views\LoginPart\ResetPasswordView.xaml;Views\LoginPart\SignView.xaml;Views\NotifyPart\EventView.xaml;Views\NotifyPart\NotifyView.xaml;Views\ProfilePart\ProfileView.xaml;Views\TimesheetPart\EventView.xaml;Views\TimesheetPart\TimesheetView.xaml;Views\TodoPart\TaskView.xaml;Views\TodoPart\TodoView.xaml;
 
 True
 

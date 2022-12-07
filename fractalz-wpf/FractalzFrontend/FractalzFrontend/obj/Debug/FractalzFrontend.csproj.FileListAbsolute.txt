@@ -165,3 +165,4 @@ C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\
 C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\bin\Debug\Fractalz.Application.Domain.dll
 C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\LoginPart\CodeValidateView.g.cs
 C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\LoginPart\CodeValidateView.baml
+C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\LoginPart\CodeValidateView.g.cs
