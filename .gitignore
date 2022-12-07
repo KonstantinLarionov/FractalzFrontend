@@ -39,3 +39,12 @@ _ReSharper*/
 .vs/
 #Nuget packages folder
 packages/
+/fractalz-wpf/FractalzFrontend/.vs/FractalzFrontend/v17/.suo
+/fractalz-wpf/FractalzFrontend/.vs/FractalzFrontend/v17/.suo
+/fractalz-wpf/FractalzFrontend/FractalzFrontend.Cache/obj/Debug/FractalzFrontend.Cache.csproj.AssemblyReference.cache
+/fractalz-wpf/FractalzFrontend/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.csproj.AssemblyReference.cache
+/fractalz-wpf/FractalzFrontend/FractalzFrontend.Logger/obj/Debug/FractalzFrontend.Logger.csproj.AssemblyReference.cache
+/fractalz-wpf/FractalzFrontend/FractalzFrontend/obj/Debug/FractalzFrontend.csproj.AssemblyReference.cache
+/fractalz-wpf/FractalzFrontend/FractalzFrontend/obj/Debug/FractalzFrontend.csproj.FileListAbsolute.txt
+/fractalz-wpf/FractalzFrontend/FractalzFrontend/obj/Debug/FractalzFrontend_MarkupCompile.cache
+/fractalz-wpf/FractalzFrontend/FractalzFrontend/obj/Debug/GeneratedInternalTypeHelper.g.cs
