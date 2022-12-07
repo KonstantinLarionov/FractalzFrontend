@@ -49,6 +49,7 @@
     <Compile Include="Abstractions\IRestClient.cs" />
     <Compile Include="Abstractions\IWebSocketClient.cs" />
     <Compile Include="Domain\ErrorResponse.cs" />
+    <Compile Include="Domain\NotySocketEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
