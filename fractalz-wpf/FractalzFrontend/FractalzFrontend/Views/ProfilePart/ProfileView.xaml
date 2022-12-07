@@ -44,6 +44,7 @@
                     </Border.Effect>
                 </Border>
                 <TextBox 
+                    Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
                     Margin="0, 20, 0, 0"
                     FontFamily="Roboto Lt"
                     FontSize="18"
@@ -51,15 +52,16 @@
                     materialDesign:HintAssist.Hint="Фамилия имя отчество / Логин" 
                     Width="300" 
                     DockPanel.Dock="Top"/>
-
                 <Label  
                     Margin="0, 5, 0, 0"
                     Foreground="Green"
                     FontSize="18"
                     HorizontalContentAlignment="Center"
                     DockPanel.Dock="Top" Content="В сети" FontFamily="Roboto"/>
+                
                 <DockPanel DockPanel.Dock="Top">
                     <Button 
+                        Click="UpdateUserInfo"
                         DockPanel.Dock="Bottom" 
                         Width="250" 
                         Height="40"
@@ -121,6 +123,7 @@
                             DockPanel.Dock="Top">
                             <materialDesign:PackIcon Kind="Home" Width="35" Height="35"/>
                             <TextBox 
+                                Text="{Binding Adress, UpdateSourceTrigger=PropertyChanged}"
                                 materialDesign:HintAssist.Hint="Адрес"
                                 HorizontalContentAlignment="Center"
                                 Margin="10,0,0,0"
@@ -133,6 +136,7 @@
                             DockPanel.Dock="Top" >
                             <materialDesign:PackIcon Kind="Phone" Width="35" Height="35"/>
                             <TextBox 
+                                Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}"
                                 materialDesign:HintAssist.Hint="Телефон"
                                 HorizontalContentAlignment="Center"
                                 Margin="10,0,0,0"
@@ -145,6 +149,8 @@
                             DockPanel.Dock="Top" >
                             <materialDesign:PackIcon Kind="Email" Width="35" Height="35"/>
                             <TextBox 
+                                IsReadOnly="True"
+                                Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"
                                 materialDesign:HintAssist.Hint="Почта"
                                 HorizontalContentAlignment="Center"
                                 Margin="10,0,0,0"

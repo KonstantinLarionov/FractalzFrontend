@@ -28,3 +28,5 @@ C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.
 C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Client\obj\Debug\FractalzFrontend.Client.csproj.CopyComplete
 C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Client\obj\Debug\FractalzFrontend.Client.dll
 C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Client\obj\Debug\FractalzFrontend.Client.pdb
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Client\bin\Debug\FractalzFrontend.Cache.dll
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Client\bin\Debug\FractalzFrontend.Cache.pdb

@@ -18,6 +18,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FractalzFrontend.Models.LoginPart;
+using FractalzFrontend.ViewModels.LoginPart;
 
 namespace FractalzFrontend
 {
@@ -31,6 +33,7 @@ namespace FractalzFrontend
         private ResetAccountView resetAccountView;
         private ResetPasswordView resetPasswordView;
         private SignView signView;
+        private CodeValidateView codeValidateView;
         public MainWindow()
         {
             InitializeComponent();
@@ -40,7 +43,7 @@ namespace FractalzFrontend
             resetAccountView = new ResetAccountView(this);
             resetPasswordView = new ResetPasswordView(this);
             signView = new SignView(this);
-
+            codeValidateView = new CodeValidateView(this,registrationView._model, registrationView._vm);
             space.Children.Clear();
             space.Children.Add(loginView);
         }
@@ -64,6 +67,9 @@ namespace FractalzFrontend
                     break;
                 case 4:
                     space.Children.Add(signView);
+                    break;
+                case 5:
+                    space.Children.Add(codeValidateView);
                     break;
                 default:
                     break;

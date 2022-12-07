@@ -9,33 +9,37 @@ namespace FractalzFrontend.Client
 {
     public static class Extensions
     {
-        public static IDictionary<string, string> ToDictionary(this object source)
+        public static IDictionary<string, object> ToDictionary(this object source)
         {
-            return source.ToDictionary<string>();
+            return source.ToDictionary<object>();
         }
 
-        public static IDictionary<string, T> ToDictionary<T>(this object source)
+        public static IDictionary<string, object> ToDictionary<T>(this object source)
         {
             if (source == null)
                 ThrowExceptionWhenSourceArgumentIsNull();
 
-            var dictionary = new Dictionary<string, T>();
+            var dictionary = new Dictionary<string, object>();
             foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(source))
-                AddPropertyToDictionary<T>(property, source, dictionary);
+                AddPropertyToDictionary<object>(property, source, dictionary);
 
             return dictionary;
         }
 
-        private static void AddPropertyToDictionary<T>(PropertyDescriptor property, object source, Dictionary<string, T> dictionary)
+        private static void AddPropertyToDictionary<T>(PropertyDescriptor property, object source, Dictionary<string, object> dictionary)
         {
             object value = property.GetValue(source);
-            if (IsOfType<T>(value))
-                dictionary.Add(property.Name, (T)value);
+            if (IsOfType(value)|| IsOfTypeNull(value))
+                dictionary.Add(property.Name, value);
         }
 
-        private static bool IsOfType<T>(object value)
+        private static bool IsOfType(object value)
         {
-            return value is T;
+            return value is object;
+        }
+        private static bool IsOfTypeNull(object value)
+        {
+            return value is null;
         }
 
         private static void ThrowExceptionWhenSourceArgumentIsNull()
