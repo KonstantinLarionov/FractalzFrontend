@@ -121,6 +121,9 @@
     <Compile Include="Views\NotifyPart\NotifyView.xaml.cs">
       <DependentUpon>NotifyView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProfilePart\Modals\VkModal.xaml.cs">
+      <DependentUpon>VkModal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProfilePart\ProfileView.xaml.cs">
       <DependentUpon>ProfileView.xaml</DependentUpon>
     </Compile>
@@ -197,6 +200,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ProfilePart\Modals\VkModal.xaml" />
     <Page Include="Views\ProfilePart\ProfileView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

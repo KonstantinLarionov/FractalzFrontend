@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Fractalz.Application.Domains.Entities.Profile;
 using Fractalz.Application.Domains.Requests.User;
 using Fractalz.Application.Domains.Responses;
@@ -47,7 +50,7 @@ namespace FractalzFrontend.Models.ProfilePart
             return UserId;
         }
 
-        public UpdateProfileResponse UpdateUserInfo()
+        public async Task <UpdateProfileResponse> UpdateUserInfo()
         {
             SetBearer();
             var request = new UpdateProfileRequest
@@ -55,7 +58,7 @@ namespace FractalzFrontend.Models.ProfilePart
                 Address = _profileVm.Adress,
                 Email = _profileVm.Email,
                 Login = _profileVm.Login,
-                Logo = _profileVm.Logo,
+                //Logo = _profileVm.Logo,
                 Name = _profileVm.Name,
                 Number = _profileVm.Number,
                 UserId = _cacheController.GetCache<User>("User_Info").Id,
@@ -65,17 +68,33 @@ namespace FractalzFrontend.Models.ProfilePart
                 
                 
             };
-            var response = _rest.Send<UpdateProfileResponse>
+            var response = _rest.SendForm<UpdateProfileResponse>
             (
                 request,
                 "/user/updateProfile", Method.POST, out var err);
             return response;
         }
 
-        public GetUserResponse GetUser()
+        public async Task<BasicResponse> GetUser()
         {
             var response = _rest.Send<GetUserResponse>(UserId, $"/user/getUser/?UserId={UserId}", Method.GET, out var err);
-            return response;
+
+            if (response.Success)
+            {
+                /*byte[] arrLog = new byte[response.userLogo.ByteLength];
+                byte[] arrBck = new byte[response.UserBackground.ByteLength];*/
+                _profileVm.Adress = response.userEntity.Address;
+                _profileVm.Email = response.userEntity.Email;
+                _profileVm.Id = response.userEntity.Id;
+                _profileVm.Name = response.userEntity.Name;
+                _profileVm.Number = response.userEntity.Number;
+                _profileVm.TgLink = response.userEntity.TGLink;
+                _profileVm.VkLink = response.userEntity.VKLink;
+                /*_profileVm.Logo = arrLog;
+                _profileVm.Background = arrBck;*/
+            }
+
+            return new BasicResponse() { Success = true };
         }
     }
 

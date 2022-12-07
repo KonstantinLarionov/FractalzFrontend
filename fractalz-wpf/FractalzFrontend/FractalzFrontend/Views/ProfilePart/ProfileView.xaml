@@ -101,8 +101,9 @@
                     </Button>
                     <DockPanel
                         Width="100"
-                        DockPanel.Dock="Right">
+                        DockPanel.Dock="Right" >
                         <materialDesign:PackIcon 
+                            MouseDoubleClick="VkModalOpen"
                             Foreground="#0288D1"
                             Margin="40,60,0,0"
                             Width="35"

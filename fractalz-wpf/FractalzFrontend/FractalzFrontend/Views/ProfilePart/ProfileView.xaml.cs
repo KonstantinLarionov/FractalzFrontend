@@ -36,9 +36,9 @@ namespace FractalzFrontend.Views.ProfilePart
             _profileModel.GetUser();
         }
 
-        private void UpdateUserInfo(object sender, RoutedEventArgs e)
+        private async void UpdateUserInfo(object sender, RoutedEventArgs e)
         {
-            var upd = _profileModel.UpdateUserInfo();
+            var upd = await _profileModel.UpdateUserInfo();
             if (upd.Success)
             {
                 MessageBox.Show("Изменения успешно сохранены"); 
@@ -47,6 +47,11 @@ namespace FractalzFrontend.Views.ProfilePart
             {
                 MessageBox.Show("Произошла ошибка! Проверьте правильность введенных данных!");
             }
+        }
+
+        private void VkModalOpen(object sender, MouseButtonEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

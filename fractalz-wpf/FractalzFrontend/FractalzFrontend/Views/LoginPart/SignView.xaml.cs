@@ -40,7 +40,23 @@ namespace FractalzFrontend.Views.LoginPart
 
         private void FromPc_Click(object sender, RoutedEventArgs e)
         {
-
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            Nullable<bool> result = dlg.ShowDialog();
+            string files = dlg.FileName;
+            using (StreamReader r = new StreamReader(files))
+            {
+                string json = r.ReadToEnd();
+                UserData items = JsonConvert.DeserializeObject<UserData>(json);
+                var log = _model.SignLoginRequest(items.Login, items.Password);
+                if (log.Success)
+                { 
+                    main.Visibility = Visibility.Collapsed;
+                    new Layout(main).Show();
+                }
+                else
+                    MessageBox.Show(log.Message);
+            }
+            
         }
 
         private void UIElement_OnDragEnter(object sender, DragEventArgs e)
