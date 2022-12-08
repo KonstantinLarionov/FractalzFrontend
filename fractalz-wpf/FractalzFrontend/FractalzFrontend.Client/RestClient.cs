@@ -31,7 +31,7 @@ namespace FractalzFrontend.Client
 
         public T Send<T>(object request, string resource, Method method, out ErrorResponse error)
         {
-            _logDispatcher.Info("SendRequest", JsonConvert.SerializeObject(request) + "<br>" + resource + "<br>" + method.ToString());
+            _logDispatcher?.Info("SendRequest", JsonConvert.SerializeObject(request) + "<br>" + resource + "<br>" + method.ToString());
 
             T response = default(T);
             error = null;
@@ -54,11 +54,11 @@ namespace FractalzFrontend.Client
             try
             {
                 response = JsonConvert.DeserializeObject<T>(result.Content);
-                _logDispatcher.Success("GetResponse", result.Content);
+                _logDispatcher?.Success("GetResponse", result.Content);
             }
             catch (Exception ex)
             {
-                _logDispatcher.Error("GetResponse", result.StatusCode.ToString() + "<br>" + result.Content);
+                _logDispatcher?.Error("GetResponse", result.StatusCode.ToString() + "<br>" + result.Content);
                 error = new ErrorResponse() { Message = ex.Message, StatusCode = result.StatusCode };  
             }
             return response;
@@ -66,7 +66,7 @@ namespace FractalzFrontend.Client
 
         public T SendForm<T>(object request, string resource, Method method, out ErrorResponse error)
         {
-            _logDispatcher.Info("SendRequest", JsonConvert.SerializeObject(request) + "<br>" + resource + "<br>" + method.ToString());
+            _logDispatcher?.Info("SendRequest", JsonConvert.SerializeObject(request) + "<br>" + resource + "<br>" + method.ToString());
 
             T response = default(T);
             error = null;
@@ -83,12 +83,12 @@ namespace FractalzFrontend.Client
             try
             {
                 response = JsonConvert.DeserializeObject<T>(result.Content);
-                _logDispatcher.Success("GetResponse", result.Content);
+                _logDispatcher?.Success("GetResponse", result.Content);
 
             }
             catch (Exception ex)
             {
-                _logDispatcher.Error("GetResponse", result.StatusCode.ToString() + "<br>" + result.Content);
+                _logDispatcher?.Error("GetResponse", result.StatusCode.ToString() + "<br>" + result.Content);
 
                 error = new ErrorResponse() { Message = ex.Message, StatusCode = result.StatusCode };
             }
