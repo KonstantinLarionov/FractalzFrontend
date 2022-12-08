@@ -19,7 +19,7 @@ namespace FractalzFrontend.Client
         RestClient _client;
         private readonly ICacheController _cacheController;
         private string Token;
-        public RestApiClient(string host = "http://localhost:5001") 
+        public RestApiClient(string host = "http://192.168.88.152:5247") 
         { 
             _client = new RestClient(host);
         }

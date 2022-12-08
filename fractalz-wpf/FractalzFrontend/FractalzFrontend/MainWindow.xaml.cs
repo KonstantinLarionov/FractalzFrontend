@@ -20,6 +20,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FractalzFrontend.Models.LoginPart;
 using FractalzFrontend.ViewModels.LoginPart;
+using FractalzFrontend.Models;
+using FractalzFrontend.Application.Abstractions;
 
 namespace FractalzFrontend
 {
@@ -46,6 +48,8 @@ namespace FractalzFrontend
             codeValidateView = new CodeValidateView(this,registrationView._model, registrationView._vm);
             space.Children.Clear();
             space.Children.Add(loginView);
+
+            var log = NinjectCollection.Logger.Services.Get<ILogDispatcher>();
         }
 
         public void SwtichSpace(int number)

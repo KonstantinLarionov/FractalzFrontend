@@ -96,7 +96,7 @@
     <Compile Include="Views\Layout.xaml.cs">
       <DependentUpon>Layout.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LayoutModel.cs" />
+    <Compile Include="Models\LayoutModel.cs" />
     <Compile Include="Views\LoginPart\CodeValidateView.xaml.cs">
       <DependentUpon>CodeValidateView.xaml</DependentUpon>
     </Compile>
@@ -278,6 +278,10 @@
     <ProjectReference Include="..\FractalzFrontend.Client\FractalzFrontend.Client.csproj">
       <Project>{BF72ED50-F530-4E60-88CD-7AC451B28213}</Project>
       <Name>FractalzFrontend.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FractalzFrontend.Logger\FractalzFrontend.Logger.csproj">
+      <Project>{C4085802-F4E9-4F30-A03E-8B57645F07BD}</Project>
+      <Name>FractalzFrontend.Logger</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

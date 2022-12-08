@@ -34,14 +34,13 @@ namespace FractalzFrontend.Views
         private DialogsView dialogsView;
         private NotifyView notifyView;
         private TodoView todoView;
-        private ICacheController _cache;
         private LayoutModel model;
 
         public Layout(MainWindow main)
         {
             InitializeComponent();
             this.main = main;
-            model = new LayoutModel(_cache);
+            model = new LayoutModel();
             profileView = new ProfileView();
             dialogsView = new DialogsView();
             notifyView = new NotifyView();

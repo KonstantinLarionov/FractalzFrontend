@@ -31,3 +31,4 @@ C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\Fractalz
 C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Application\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Application\bin\Debug\System.Web.Razor.xml
 C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Application\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend.Application\bin\Debug\System.Runtime.Serialization.Primitives.dll

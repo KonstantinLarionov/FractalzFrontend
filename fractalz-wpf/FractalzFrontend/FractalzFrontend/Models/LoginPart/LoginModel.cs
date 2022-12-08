@@ -49,7 +49,10 @@ namespace FractalzFrontend.Models.LoginPart
                 "/user/login", 
                 Method.GET,
                 out var error);
-
+            if (response == null && error == null)
+            {
+                return new LoginResponse() { Success = false, Message = "Сервер не отвечает" };
+            }
             if (response.Success)
             {
                 _cacheController.SetCache("User_Info", response.User);

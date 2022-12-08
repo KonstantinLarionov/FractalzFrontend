@@ -16,7 +16,7 @@ namespace FractalzFrontend.Models.ProfilePart
 {
     public class ProfileModel
     {
-        private ProfileVM _profileVm;
+        private ProfileVM _profileVm; 
         private readonly IRestClient _rest;
         private readonly ICacheController _cacheController;
         private Guid UserId;

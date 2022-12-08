@@ -20,7 +20,7 @@ namespace FractalzFrontend.Logger
         public IKernel Services = new StandardKernel();
         public void AddClientCollection()
         {
-            Services.Bind<ILogDispatcher>().To<LogDispatcher>().InSingletonScope();
+            Services.Bind<ILogDispatcher>().To<LogDispatcher>().InTransientScope();
         }
     }
 }

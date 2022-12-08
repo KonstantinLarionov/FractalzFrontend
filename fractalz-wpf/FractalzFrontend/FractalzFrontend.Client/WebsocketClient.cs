@@ -22,26 +22,32 @@ namespace FractalzFrontend.Client
 {
     public class WebsocketClient : IWebSocketClient
     {
-        private string _baseUrl;
+        private string _baseUrl = "ws://192.168.88.152:5247";
         private WebSocket _socket;
-        private readonly ILogDispatcher _log;
+        private ILogDispatcher _log;
 
         public event MessageHandler OnMessage;
         public event DialogHandler OnDialogs;
         public event UsersHandler OnUsers;
         public event NotyHandler OnNoty;
-        public WebsocketClient(ILogDispatcher logDispatcher)
+        public WebsocketClient()
         {
-            this._log = logDispatcher;
         }
+
+        public void SetLogger(ILogDispatcher logDispatcher) => this._log = logDispatcher;
 
         public void Connect(string userId)
         {
+            _log.SetFileName(LoggerNameFile.SocketState);
+
             _socket = new WebSocket(_baseUrl + "/ws/subscribe?idUser=" + userId);
             _socket.OnClose += _socket_OnClose;
             _socket.OnError += _socket_OnError;
             _socket.OnMessage += _socket_OnMessage;
             _socket.OnOpen += _socket_OnOpen;
+            _socket.Connect();
+
+            _log.Success("WebSocket", "SocketTryConnect");
         }
 
         private void _socket_OnOpen(object sender, EventArgs e) =>

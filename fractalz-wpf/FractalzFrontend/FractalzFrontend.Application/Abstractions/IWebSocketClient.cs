@@ -22,5 +22,7 @@ namespace FractalzFrontend.Application.Abstractions
         event UsersHandler OnUsers;
 
         event NotyHandler OnNoty;
+        void Connect(string userId);
+        void SetLogger(ILogDispatcher logDispatcher);
     }
 }
