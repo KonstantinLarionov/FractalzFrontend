@@ -17,6 +17,8 @@ using FractalzFrontend.Cache;
 using FractalzFrontend.Models;
 using FractalzFrontend.Models.ProfilePart;
 using FractalzFrontend.ViewModels.ProfilePart;
+using FractalzFrontend.Views.ProfilePart.Modals;
+using MaterialDesignThemes.Wpf;
 using Ninject;
 
 namespace FractalzFrontend.Views.ProfilePart
@@ -28,6 +30,7 @@ namespace FractalzFrontend.Views.ProfilePart
     {
         private ProfileVM _profileVm = new ProfileVM();
         private readonly ProfileModel _profileModel;
+        private VkModal _vkModal;
         public ProfileView()
         {
             InitializeComponent();
@@ -36,9 +39,9 @@ namespace FractalzFrontend.Views.ProfilePart
             _profileModel.GetUser();
         }
 
-        private void UpdateUserInfo(object sender, RoutedEventArgs e)
+        private async void UpdateUserInfo(object sender, RoutedEventArgs e)
         {
-            var upd = _profileModel.UpdateUserInfo();
+            var upd = await _profileModel.UpdateUserInfo();
             if (upd.Success)
             {
                 MessageBox.Show("Изменения успешно сохранены"); 
@@ -47,6 +50,11 @@ namespace FractalzFrontend.Views.ProfilePart
             {
                 MessageBox.Show("Произошла ошибка! Проверьте правильность введенных данных!");
             }
+        }
+
+        private void VkModalOpen(object sender, MouseButtonEventArgs e)
+        {
+            
         }
     }
 }

@@ -49,9 +49,18 @@
                     FontFamily="Roboto Lt"
                     FontSize="18"
                     HorizontalContentAlignment="Center"
-                    materialDesign:HintAssist.Hint="Фамилия имя отчество / Логин" 
+                    materialDesign:HintAssist.Hint="Фамилия Имя Отчество" 
                     Width="300" 
                     DockPanel.Dock="Top"/>
+                <TextBox
+                    Width="150" 
+                    Margin="0, 5, 0, 0"
+                    Foreground="Black"
+                    FontSize="18"
+                    HorizontalContentAlignment="Center"
+                    materialDesign:HintAssist.Hint="Логин"
+                    Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"
+                    DockPanel.Dock="Top"  FontFamily="Roboto"/>
                 <Label  
                     Margin="0, 5, 0, 0"
                     Foreground="Green"
@@ -101,8 +110,9 @@
                     </Button>
                     <DockPanel
                         Width="100"
-                        DockPanel.Dock="Right">
+                        DockPanel.Dock="Right" >
                         <materialDesign:PackIcon 
+                            MouseDoubleClick="VkModalOpen"
                             Foreground="#0288D1"
                             Margin="40,60,0,0"
                             Width="35"

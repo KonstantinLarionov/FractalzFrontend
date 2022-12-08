@@ -1,5 +1,7 @@
 using System;
 using System.ComponentModel;
+using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
 
@@ -11,8 +13,8 @@ namespace FractalzFrontend.ViewModels.ProfilePart
         private string adress;
         private string number;
         private string email;
-        private MultipartFormDataContent logo;
-        private MultipartFormDataContent background;
+        private byte[] logo;
+        private byte[] background;
         private string vkLink;
         private string tgLink;
         private string login;
@@ -23,8 +25,8 @@ namespace FractalzFrontend.ViewModels.ProfilePart
         public string Name { get => name; set { name = value; OnPropertyChanged(nameof(Name)); } }
         public string Adress { get => adress; set { adress = value; OnPropertyChanged(nameof(Adress)); } }
         public string Number { get => number; set { number = value; OnPropertyChanged(nameof(Number)); } }
-        public MultipartFormDataContent Logo { get => logo; set { logo = value; OnPropertyChanged(nameof(Logo)); } }
-        public MultipartFormDataContent Background { get => background; set { background = value; OnPropertyChanged(nameof(Background)); } }
+        public byte[] Logo { get => logo; set { logo = value; OnPropertyChanged(nameof(Logo)); } }
+        public byte[] Background { get => background; set { background = value; OnPropertyChanged(nameof(Background)); } }
         public string VkLink { get => vkLink; set { vkLink = value; OnPropertyChanged(nameof(VkLink)); } }
         public string TgLink { get => tgLink; set { tgLink = value; OnPropertyChanged(nameof(TgLink)); } }
 
