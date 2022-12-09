@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FractalzFrontend.ViewModels.DialogsPart;
 
 namespace FractalzFrontend.Views.ChatPart
 {
@@ -20,9 +21,11 @@ namespace FractalzFrontend.Views.ChatPart
     /// </summary>
     public partial class DialogsView : UserControl
     {
+        private DialogsVM _dialogsVm;
         public DialogsView()
         {
             InitializeComponent();
+            DataContext = _dialogsVm;
         }
     }
 }

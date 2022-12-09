@@ -5,48 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4167b81-0105-43bf-93b9-00e4bb211c3e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/Modals/VkModal.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/Modals/VkModal.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/Modals/ProfileLinksModal.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FractalzFrontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FractalzFrontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Application/bin/Debug/FractalzFrontend.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Application/bin/Debug/FractalzFrontend.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Application/bin/Debug/FractalzFrontend.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Application/bin/Debug/FractalzFrontend.Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Application/obj/Debug/FractalzFrontend.Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Cache/bin/Debug/FractalzFrontend.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Cache/bin/Debug/FractalzFrontend.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Cache/bin/Debug/FractalzFrontend.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Cache/bin/Debug/FractalzFrontend.Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Cache/bin/Debug/FractalzFrontend.Cache.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Cache/bin/Debug/FractalzFrontend.Cache.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Cache/bin/Debug/FractalzFrontend.Cache.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Cache/bin/Debug/FractalzFrontend.Cache.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FractalzFrontend.Cache/obj/Debug/FractalzFrontend.Cache.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Cache/obj/Debug/FractalzFrontend.Cache.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Cache/obj/Debug/FractalzFrontend.Cache.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Cache/obj/Debug/FractalzFrontend.Cache.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Cache/obj/Debug/FractalzFrontend.Cache.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Cache/obj/Debug/FractalzFrontend.Cache.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Cache/obj/Debug/FractalzFrontend.Cache.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Cache/obj/Debug/FractalzFrontend.Cache.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Cache/obj/Debug/FractalzFrontend.Cache.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Cache/obj/Debug/FractalzFrontend.Cache.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Client.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/bin/Debug/FractalzFrontend.Client.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Client/obj/Debug/FractalzFrontend.Client.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FractalzFrontend.Logger/obj/Debug/FractalzFrontend.Logger.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend.Logger/obj/Debug/FractalzFrontend.Logger.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FractalzFrontend/FractalzFrontend.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/FractalzFrontend.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FractalzFrontend/Models/ProfilePart/ProfileModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/Models/ProfilePart/ProfileModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend/ViewModels/ProfilePart/ProfileVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/ViewModels/ProfilePart/ProfileVM.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend/Views/LoginPart/SignView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/Views/LoginPart/SignView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/Modals/VkModal.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/Modals/VkModal.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/Modals/ProfileLinksModal.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/ProfileView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/ProfileView.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/ProfileView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/ProfileView.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend_MarkupCompile.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend_MarkupCompile.i.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend_MarkupCompile.i.lref" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/FractalzFrontend_MarkupCompile.lref" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/LoginPart/LoginView.baml" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/LoginPart/LoginView.baml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/ProfilePart/ProfileView.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/ProfilePart/ProfileView.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/ProfilePart/ProfileView.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FractalzFrontend/obj/Debug/Views/ProfilePart/ProfileView.g.i.cs" afterDir="false" />
     </list>
@@ -59,6 +31,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/112246c275c4497e9a1a3f3c6eec4b2dfa00/85/9bd0c39b/02000016pdb.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/4cb3b500caad4002bf7383287635d78afa00/ec/58a3faad/0200005C.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/343557076ff94b03a6e87cb01db47f736003a8/3c/7b62fe6b/PropertyPathWorker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/343557076ff94b03a6e87cb01db47f736003a8/67/c7a93e3f/Window.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/343557076ff94b03a6e87cb01db47f736003a8/8a/46210905/WpfXamlLoader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/343557076ff94b03a6e87cb01db47f736003a8/e5/1ef23e1f/FileDialog.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4cb3b500caad4002bf7383287635d78afa00/14/5bea1b46/UpdateProfileRequest.cs" root0="SKIP_HIGHLIGHTING" />
@@ -67,6 +40,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58f6d0b3a6a74b5db5861b4275cfb3b6381da8/ca/401dc814/Mouse.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6fc0155e6fdd4c5eab3eafeef639933a32230/b7/97914e02/MultipartFormDataContent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edef46c9b2db4b878c98495bfdc516fa568ba8/41/a25fc62d/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edef46c9b2db4b878c98495bfdc516fa568ba8/b8/c1b09c25/AsyncMethodBuilderCore.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edef46c9b2db4b878c98495bfdc516fa568ba8/ce/4c070c6e/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edef46c9b2db4b878c98495bfdc516fa568ba8/fa/ba8bd48d/StreamReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/4cb3b500caad4002bf7383287635d78afa00/ee/97ca15aa/Fractalz.Application.Domain.cs" root0="SKIP_HIGHLIGHTING" />
@@ -210,43 +184,160 @@
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/LoginPart/SignView.xaml.cs</url>
-          <line>42</line>
-          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\LoginPart\SignView.xaml.cs" initialLine="42" containingFunctionPresentation="method 'FromPc_Click'">
+          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/Modals/ProfileLinksModal.xaml.cs</url>
+          <line>24</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\ProfilePart\Modals\ProfileLinksModal.xaml.cs" initialLine="17" containingFunctionPresentation="method 'SaveLinks'">
             <startOffsets>
-              <option value="1240" />
+              <option value="786" />
             </startOffsets>
             <endOffsets>
-              <option value="1314" />
+              <option value="786" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="107" />
+          <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/LoginPart/SignView.xaml.cs</url>
-          <line>44</line>
-          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\LoginPart\SignView.xaml.cs" initialLine="43" containingFunctionPresentation="method 'FromPc_Click'">
+          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/ProfileView.xaml.cs</url>
+          <line>56</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\ProfilePart\ProfileView.xaml.cs" initialLine="52" containingFunctionPresentation="method 'LinksModalOpen'">
             <startOffsets>
-              <option value="1381" />
+              <option value="2004" />
             </startOffsets>
             <endOffsets>
-              <option value="1409" />
+              <option value="2024" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="108" />
+          <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/LoginPart/SignView.xaml.cs</url>
-          <line>45</line>
-          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\LoginPart\SignView.xaml.cs" initialLine="44" containingFunctionPresentation="method 'FromPc_Click'">
+          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/ProfileView.xaml.cs</url>
+          <line>58</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\ProfilePart\ProfileView.xaml.cs" initialLine="54" containingFunctionPresentation="method 'LinksModalOpen'">
             <startOffsets>
-              <option value="1422" />
+              <option value="2092" />
             </startOffsets>
             <endOffsets>
-              <option value="1470" />
+              <option value="2106" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="110" />
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/ProfileView.xaml.cs</url>
+          <line>57</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\ProfilePart\ProfileView.xaml.cs" initialLine="53" containingFunctionPresentation="method 'LinksModalOpen'">
+            <startOffsets>
+              <option value="2048" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2068" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/ProfileView.xaml.cs</url>
+          <line>63</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\ProfilePart\ProfileView.xaml.cs" initialLine="59" containingFunctionPresentation="method 'LinksModalOpen'">
+            <startOffsets>
+              <option value="2185" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2244" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/ProfileView.xaml.cs</url>
+          <line>64</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\ProfilePart\ProfileView.xaml.cs" initialLine="62" containingFunctionPresentation="method 'LinksModalOpen'">
+            <startOffsets>
+              <option value="2261" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2275" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FractalzFrontend/Models/ProfilePart/ProfileModel.cs</url>
+          <line>55</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Models\ProfilePart\ProfileModel.cs" initialLine="55" containingFunctionPresentation="method 'UpdateUserInfo'">
+            <startOffsets>
+              <option value="1688" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2260" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/Modals/ProfileLinksModal.xaml.cs</url>
+          <line>16</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\ProfilePart\Modals\ProfileLinksModal.xaml.cs" initialLine="15" containingFunctionPresentation="constructor 'ProfileLinksModal'">
+            <startOffsets>
+              <option value="546" />
+            </startOffsets>
+            <endOffsets>
+              <option value="566" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/Modals/ProfileLinksModal.xaml.cs</url>
+          <line>17</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\ProfilePart\Modals\ProfileLinksModal.xaml.cs" initialLine="16" containingFunctionPresentation="constructor 'ProfileLinksModal'">
+            <startOffsets>
+              <option value="579" />
+            </startOffsets>
+            <endOffsets>
+              <option value="599" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/Modals/ProfileLinksModal.xaml.cs</url>
+          <line>15</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\ProfilePart\Modals\ProfileLinksModal.xaml.cs" initialLine="14" containingFunctionPresentation="constructor 'ProfileLinksModal'">
+            <startOffsets>
+              <option value="508" />
+            </startOffsets>
+            <endOffsets>
+              <option value="533" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/Modals/ProfileLinksModal.xaml.cs</url>
+          <line>22</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\ProfilePart\Modals\ProfileLinksModal.xaml.cs" initialLine="21" containingFunctionPresentation="method 'SaveLinks'">
+            <startOffsets>
+              <option value="698" />
+            </startOffsets>
+            <endOffsets>
+              <option value="729" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FractalzFrontend/Views/ProfilePart/Modals/ProfileLinksModal.xaml.cs</url>
+          <line>23</line>
+          <properties documentPath="C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\Views\ProfilePart\Modals\ProfileLinksModal.xaml.cs" initialLine="22" containingFunctionPresentation="method 'SaveLinks'">
+            <startOffsets>
+              <option value="742" />
+            </startOffsets>
+            <endOffsets>
+              <option value="773" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="133" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
