@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Fractalz.Application.Domains.MappingEntities.Chat;
@@ -8,13 +9,20 @@ namespace FractalzFrontend.ViewModels.DialogsPart
     public class DialogsVM:INotifyPropertyChanged
     {
         private string userName { get; set; }
+        
+        private string foundDialogName { get; set; }
+        private string foundDialogLastMessage { get; set; }
+        private Guid foundDialogId { get; set; }
         public string UserName { get => userName; set { userName = value; OnPropertyChanged(nameof(UserName)); } }
+        public string FoundDialogName { get => foundDialogName; set { foundDialogName = value; OnPropertyChanged(nameof(FoundDialogName)); } }
+        public Guid FoundDialogId { get => foundDialogId; set { foundDialogId = value; OnPropertyChanged(nameof(FoundDialogId)); } }
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
     }
 }

@@ -1,7 +1,9 @@
+using System.Collections.Generic;
 using Fractalz.Application.Domains.MappingEntities.Chat;
 using Fractalz.Application.Domains.Requests.Chat;
 using Fractalz.Application.Domains.Requests.User;
 using Fractalz.Application.Domains.Responses;
+using Fractalz.Application.Domains.Responses.Chat;
 using FractalzFrontend.Application.Abstractions;
 using FractalzFrontend.ViewModels.DialogsPart;
 using Ninject;
@@ -12,9 +14,9 @@ namespace FractalzFrontend.Models.DialogsPart
 {
     public class DialogsModel
     {
-        private readonly IRestClient _rest;
-        private readonly ICacheController _cacheController;
-        private readonly DialogsVM _vm;
+        private IRestClient _rest;
+        private ICacheController _cacheController;
+        private DialogsVM _vm;
         public DialogsModel(DialogsVM vm)
         {
             _vm = vm;
@@ -34,10 +36,10 @@ namespace FractalzFrontend.Models.DialogsPart
             return true;
         }
 
-        public FindUserMappedDto GetDialogUser()
+        public FindUserResponse GetDialogUser()
         {
             var request = new FindUserRequest() { FindStr = _vm.UserName};
-            var response = _rest.Send<FindUserMappedDto>(request, $"/chat/findUsers?FindStr={request.FindStr}", Method.GET,
+            var response = _rest.Send<FindUserResponse>(request, $"/chat/findUsers?FindStr={request.FindStr}", Method.GET,
                 out var err);
             return response;
         }
