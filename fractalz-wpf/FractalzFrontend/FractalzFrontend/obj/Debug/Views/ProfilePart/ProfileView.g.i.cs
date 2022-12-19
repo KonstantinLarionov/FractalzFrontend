@@ -85,13 +85,6 @@ namespace FractalzFrontend.Views.ProfilePart {
             
             #line 115 "..\..\..\..\Views\ProfilePart\ProfileView.xaml"
             ((MaterialDesignThemes.Wpf.PackIcon)(target)).MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.LinksModalOpen);
-#pragma checksum "..\..\..\..\Views\ProfilePart\ProfileView.xaml" "{8829d00f-11b8-4213-878b-770e8597ac16}" "F34C850913A399AD55855456201E42697F27C7B53B2983BCB0E7496F59F0B2E5"
-#pragma checksum "..\..\..\..\Views\ProfilePart\ProfileView.xaml" "{8829d00f-11b8-4213-878b-770e8597ac16}" "6CA1CB27CACC7BF1180FEA9C20805E1FB8738986842EA4FC120FF4ADF0B689FD"
-            #line 73 "..\..\..\..\Views\ProfilePart\ProfileView.xaml"
-            #line 115 "..\..\..\..\Views\ProfilePart\ProfileView.xaml"
-            ((MaterialDesignThemes.Wpf.PackIcon)(target)).MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.VkModalOpen);
-            #line 115 "..\..\..\..\Views\ProfilePart\ProfileView.xaml"
-            ((MaterialDesignThemes.Wpf.PackIcon)(target)).MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.LinksModalOpen);
             
             #line default
             #line hidden
