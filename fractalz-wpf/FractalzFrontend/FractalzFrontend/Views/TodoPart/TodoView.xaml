@@ -60,31 +60,21 @@
                 <StackPanel Orientation="Vertical">
                     <DockPanel Margin="10,20,10,0">
                         <Label Content="Вырать день:"/>
-                        <DatePicker FontSize="16" HorizontalContentAlignment="Center"/>
+                        <DatePicker 
+                            Text="{Binding TodoDate, UpdateSourceTrigger=PropertyChanged}"
+                            FontSize="16" HorizontalContentAlignment="Center"/>
                     </DockPanel>
                     <StackPanel>
                         <DockPanel Margin="10,5,10,0">
                             <Label Content="Показать не выполненные"/>
-                            <ToggleButton/>
+                            <ToggleButton IsChecked="{Binding IsNotDone, UpdateSourceTrigger=PropertyChanged}"/>
                         </DockPanel>
                     </StackPanel>
                 </StackPanel>
             </DockPanel>
         </Border>
         <ScrollViewer>
-            <StackPanel Margin="10,10,10,0">
-                <local:TaskView/>
-                <local:TaskView/>
-                <local:TaskView/>
-                <local:TaskView/>
-                <local:TaskView/>
-                <local:TaskView/>
-                <local:TaskView/>
-                <local:TaskView/>
-                <local:TaskView/>
-                <local:TaskView/>
-                <local:TaskView/>
-                <local:TaskView/>
+            <StackPanel Name="todolist" Margin="10,10,10,0">
             </StackPanel>
         </ScrollViewer>
     </DockPanel>
