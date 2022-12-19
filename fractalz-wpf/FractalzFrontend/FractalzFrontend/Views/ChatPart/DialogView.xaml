@@ -41,7 +41,7 @@
                 <Label
                     FontSize="18"
                     FontFamily="Roboto"
-                    Content="Фамилия имя / Логин" 
+                    Content="{Binding FoundDialogName, UpdateSourceTrigger=PropertyChanged}" 
                     Foreground="#DD000000"/>
                 <materialDesign:PackIcon 
                     Foreground="Green"
@@ -54,7 +54,7 @@
                     FontFamily="Roboto Lt"
                     DockPanel.Dock="Top"
                     TextWrapping="Wrap"
-                    Text="фыжловдлфоывдлфоывлдфоыдвофэ фжыовлджфоывлдофдылводфлыовдлфоывлдфодлолд" Foreground="#FF8C8C8C"/>
+                    Text="{Binding LastMessage, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF8C8C8C"/>
         </DockPanel>
     </DockPanel>
 </UserControl>

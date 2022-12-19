@@ -98,9 +98,4 @@ namespace FractalzFrontend.Models.ProfilePart
             return new BasicResponse() { Success = true };
         }
     }
-
-    public class UserToken
-    {
-        public string Token;
-    }
 }

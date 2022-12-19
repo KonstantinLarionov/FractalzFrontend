@@ -1,24 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Fractalz.Application.Domains.Entities.Profile;
 using FractalzFrontend.Application.Abstractions;
-using FractalzFrontend.Cache;
 using FractalzFrontend.Models;
 using FractalzFrontend.Models.ProfilePart;
 using FractalzFrontend.ViewModels.ProfilePart;
 using FractalzFrontend.Views.ProfilePart.Modals;
-using MaterialDesignThemes.Wpf;
 using Ninject;
 
 namespace FractalzFrontend.Views.ProfilePart
@@ -30,13 +18,23 @@ namespace FractalzFrontend.Views.ProfilePart
     {
         private ProfileVM _profileVm = new ProfileVM();
         private readonly ProfileModel _profileModel;
-        private VkModal _vkModal;
+        private readonly ICacheController _cacheController;
+        private ProfileLinksModal _links;
+        private string tglink;
+        private string vklink;
         public ProfileView()
         {
             InitializeComponent();
             _profileModel = new ProfileModel(_profileVm);
             DataContext = _profileVm;
             _profileModel.GetUser();
+            _cacheController = NinjectCollection
+                .Cache
+                .Services
+                .Get<ICacheController>();
+            tglink = _cacheController.GetCache<User>("User_Info").TGLink;
+            vklink = _cacheController.GetCache<User>("User_Info").VKLink;
+            _links = new ProfileLinksModal(vklink,tglink, _profileVm);
         }
 
         private async void UpdateUserInfo(object sender, RoutedEventArgs e)
@@ -52,9 +50,23 @@ namespace FractalzFrontend.Views.ProfilePart
             }
         }
 
-        private void VkModalOpen(object sender, MouseButtonEventArgs e)
+        private void LinksModalOpen(object sender, MouseButtonEventArgs e)
         {
+            if (_links.Visibility == Visibility.Collapsed)
+            {
+                _links.TgBox.Text = tglink;
+                _links.VkBox.Text = vklink;
+                _links.Show();
+                
+            }
+            else
+            {
+                _links = new ProfileLinksModal(vklink, tglink, _profileVm);
+                _links.Show();
+            }
+            
             
         }
+
     }
 }

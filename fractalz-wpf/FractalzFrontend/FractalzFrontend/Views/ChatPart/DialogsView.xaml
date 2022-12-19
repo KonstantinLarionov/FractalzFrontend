@@ -11,15 +11,36 @@
         <DockPanel 
             Height="100"
             DockPanel.Dock="Top">
-             <materialDesign:PackIcon 
-                 Foreground="#00627A"
-                 Margin="20,0,0,0"
-                 Width="40"
-                 Height="40"
-                 VerticalAlignment="Center"
-                 DockPanel.Dock="Left"
-                 Kind="Search"/>
-
+            <Button 
+                Width="40" 
+                Height="40" 
+                Background="Transparent" Click="FindUser">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="35" />
+                            </Style>
+                        </Style.Resources>
+                        <Setter Property="Background" Value="#00627A"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.9"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <materialDesign:PackIcon Kind="Search" Width="40" Foreground="#00627A" Height="40"/>
+            </Button>
             <Button 
                     DockPanel.Dock="Right" 
                     Width="70" 
@@ -64,6 +85,7 @@
             </Button>
 
             <TextBox
+                 Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}"
                  BorderBrush="#00627A"
                  Foreground="#00627A"
                  Margin="0,0,20,0"
@@ -71,7 +93,11 @@
                  materialDesign:HintAssist.Hint="Найти на сервере"
                  DockPanel.Dock="Right"
                  HorizontalAlignment="Stretch"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center">
+                <TextBox.InputBindings>
+                    <KeyBinding Command="{Binding GetDialogUser}" Key="Enter" />
+                </TextBox.InputBindings>
+            </TextBox>
         </DockPanel>
         
         <Border
@@ -90,13 +116,6 @@
                 Margin="0,20,0,0"
                 DockPanel.Dock="Top"
                 Orientation="Vertical">
-                        <local:DialogView/>
-                        <local:DialogView/>
-                        <local:DialogView/>
-                        <local:DialogView/>
-                        <local:DialogView/>
-                        <local:DialogView/>
-                        <local:DialogView/>
                         <local:DialogView/>
                     </StackPanel>
                 </ScrollViewer>

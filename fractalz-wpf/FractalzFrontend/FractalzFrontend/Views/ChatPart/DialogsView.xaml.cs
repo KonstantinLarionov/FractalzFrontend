@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FractalzFrontend.Models.DialogsPart;
+using FractalzFrontend.ViewModels.DialogsPart;
 
 namespace FractalzFrontend.Views.ChatPart
 {
@@ -20,9 +22,18 @@ namespace FractalzFrontend.Views.ChatPart
     /// </summary>
     public partial class DialogsView : UserControl
     {
+        private DialogsVM _dialogsVm = new DialogsVM();
+        private DialogsModel _dialogsModel;
         public DialogsView()
         {
+            DataContext = _dialogsVm;
+            _dialogsModel = new DialogsModel(_dialogsVm);
             InitializeComponent();
+        }
+
+        private void FindUser(object sender, RoutedEventArgs e)
+        {
+            _dialogsModel.GetDialogUser();
         }
     }
 }

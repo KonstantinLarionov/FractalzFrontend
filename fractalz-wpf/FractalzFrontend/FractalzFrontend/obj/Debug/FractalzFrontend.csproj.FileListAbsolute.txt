@@ -165,6 +165,9 @@ C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\
 C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\LoginPart\CodeValidateView.g.cs
 C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\LoginPart\CodeValidateView.baml
 C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\LoginPart\CodeValidateView.g.cs
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\bin\Debug\websocket-sharp-with-proxy-support.dll
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\ProfilePart\Modals\ProfileLinksModal.g.cs
+C:\WorkProjects\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\ProfilePart\Modals\ProfileLinksModal.baml
 C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\bin\Debug\websocket-sharp-with-proxy-support.dll
 C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\LoginPart\CodeValidateView.baml
 C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\bin\Debug\FractalzFrontend.Logger.dll

@@ -16,6 +16,7 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <LangVersion>8</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,7 +38,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Fractalz.Application.Domain">
+    <Reference Include="Fractalz.Application.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\..\FractalzBackend\Fractalz.Application.Domain\bin\Debug\Fractalz.Application.Domain.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignColors, Version=1.2.7.1979, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
@@ -73,18 +74,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\DialogsPart\DialogsModel.cs" />
     <Compile Include="Models\LoginPart\RegistrationModel.cs" />
     <Compile Include="Models\LoginPart\SignLoginModel.cs" />
     <Compile Include="Models\NinjectCollection.cs" />
     <Compile Include="Models\ProfilePart\ProfileModel.cs" />
-    <Compile Include="Models\TodoPart\TaskModel.cs" />
-    <Compile Include="Models\TodoPart\TodoModel.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModels\DialogsPart\DialogsVM.cs" />
     <Compile Include="ViewModels\LoginPart\LoginVM.cs" />
     <Compile Include="ViewModels\LoginPart\RegistrationVM.cs" />
     <Compile Include="ViewModels\LoginPart\SignLoginVM.cs" />
     <Compile Include="ViewModels\ProfilePart\ProfileVM.cs" />
-    <Compile Include="ViewModels\TodoPart\TaskVM.cs" />
-    <Compile Include="ViewModels\TodoPart\TodoVM.cs" />
     <Compile Include="Views\ChatPart\ChatView.xaml.cs">
       <DependentUpon>ChatView.xaml</DependentUpon>
     </Compile>
@@ -125,8 +125,8 @@
     <Compile Include="Views\NotifyPart\NotifyView.xaml.cs">
       <DependentUpon>NotifyView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProfilePart\Modals\VkModal.xaml.cs">
-      <DependentUpon>VkModal.xaml</DependentUpon>
+    <Compile Include="Views\ProfilePart\Modals\ProfileLinksModal.xaml.cs">
+      <DependentUpon>ProfileLinksModal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ProfilePart\ProfileView.xaml.cs">
       <DependentUpon>ProfileView.xaml</DependentUpon>
@@ -204,7 +204,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ProfilePart\Modals\VkModal.xaml" />
+    <Page Include="Views\ProfilePart\Modals\ProfileLinksModal.xaml" />
     <Page Include="Views\ProfilePart\ProfileView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
