@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FractalzFrontend.ViewModels.TodoPart;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,12 @@ namespace FractalzFrontend.Views.TodoPart
     /// </summary>
     public partial class TodoView : UserControl
     {
+        private TodoVM _vm = new TodoVM();
         public TodoView()
         {
             InitializeComponent();
+            DataContext = _vm;
+
         }
     }
 }

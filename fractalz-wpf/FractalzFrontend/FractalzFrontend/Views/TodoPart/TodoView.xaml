@@ -75,6 +75,13 @@
         </Border>
         <ScrollViewer>
             <StackPanel Name="todolist" Margin="10,10,10,0">
+                <ListBox ItemsSource="{Binding Tasks}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <local:TaskView/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </StackPanel>
         </ScrollViewer>
     </DockPanel>

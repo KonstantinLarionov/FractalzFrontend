@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace FractalzFrontend.ViewModels.TodoPart
 {
-    public class TaskVM
+    public class TaskVM : INotifyPropertyChanged
     {
         public string Id;
         private string header;
         private string description;
         private bool isDone;
         private string time;
-        private DateTime Datetime { get; set; }
+        public DateTime Datetime { get; set; }
 
         public string Header { get => header; set { header = value; OnPropertyChanged(nameof(Header)); } }
         public string Description { get => description; set { description = value; OnPropertyChanged(nameof(Description)); } }

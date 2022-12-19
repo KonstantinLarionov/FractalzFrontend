@@ -79,12 +79,16 @@
     <Compile Include="Models\LoginPart\SignLoginModel.cs" />
     <Compile Include="Models\NinjectCollection.cs" />
     <Compile Include="Models\ProfilePart\ProfileModel.cs" />
+    <Compile Include="Models\TodoPart\TaskModel.cs" />
+    <Compile Include="Models\TodoPart\TodoModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModels\DialogsPart\DialogsVM.cs" />
     <Compile Include="ViewModels\LoginPart\LoginVM.cs" />
     <Compile Include="ViewModels\LoginPart\RegistrationVM.cs" />
     <Compile Include="ViewModels\LoginPart\SignLoginVM.cs" />
     <Compile Include="ViewModels\ProfilePart\ProfileVM.cs" />
+    <Compile Include="ViewModels\TodoPart\TaskVM.cs" />
+    <Compile Include="ViewModels\TodoPart\TodoVM.cs" />
     <Compile Include="Views\ChatPart\ChatView.xaml.cs">
       <DependentUpon>ChatView.xaml</DependentUpon>
     </Compile>
