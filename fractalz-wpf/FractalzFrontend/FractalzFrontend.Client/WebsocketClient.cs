@@ -87,7 +87,7 @@ namespace FractalzFrontend.Client
 
         private void _socket_OnError(object sender, ErrorEventArgs e) =>
             _log.Error("SocketError", e.Message + Environment.NewLine + e.Message);
-
+        
         private void _socket_OnClose(object sender, CloseEventArgs e) =>
             _log.Info("SocketClose", e.Code + e.Reason);
     }

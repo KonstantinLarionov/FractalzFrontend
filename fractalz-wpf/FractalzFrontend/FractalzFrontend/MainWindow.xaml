@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FractalzFrontend" xmlns:loginpart="clr-namespace:FractalzFrontend.Views.LoginPart"
         mc:Ignorable="d"
-        Title="MainWindow" Height="740" Width="524" Cursor="Hand">
+        Title="MainWindow" Height="740" Width="524" Cursor="Hand" WindowStartupLocation="CenterScreen">
     <DockPanel Name="space" LastChildFill="True" Background="#FFC7C7C7">
     </DockPanel>
 </Window>

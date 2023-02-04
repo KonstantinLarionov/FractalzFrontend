@@ -141,6 +141,9 @@
     <Compile Include="Views\TimesheetPart\TimesheetView.xaml.cs">
       <DependentUpon>TimesheetView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TodoPart\Modals\CreateTask.xaml.cs">
+      <DependentUpon>CreateTask.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TodoPart\TaskView.xaml.cs">
       <DependentUpon>TaskView.xaml</DependentUpon>
     </Compile>
@@ -218,6 +221,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TimesheetPart\TimesheetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TodoPart\Modals\CreateTask.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

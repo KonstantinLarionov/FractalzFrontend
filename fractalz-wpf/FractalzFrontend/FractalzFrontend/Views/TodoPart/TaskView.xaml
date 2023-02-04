@@ -47,7 +47,7 @@
                 <DockPanel LastChildFill="True">
                     <DockPanel LastChildFill="False" DockPanel.Dock="Top">
                         <Label 
-                            Content="{Binding Header, UpdateSourceTrigger=PropertyChanged}"
+                            Content="{Binding vm.Header, Mode=OneWay}"
                             FontSize="16"
                             Foreground="White" 
                             FontFamily="Roboto" DockPanel.Dock="Left" FontWeight="Bold"/>

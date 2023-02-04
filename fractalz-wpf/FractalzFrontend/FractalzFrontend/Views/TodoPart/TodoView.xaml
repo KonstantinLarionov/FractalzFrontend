@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:FractalzFrontend.Views.TodoPart"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="740" d:DesignWidth="454" Background="#ECECEC">
+             d:DesignHeight="740" d:DesignWidth="454" Background="#ECECEC" Loaded="UserControl_Loaded">
     <DockPanel>
         <Border
             CornerRadius="0,0,35,35"
@@ -21,10 +21,11 @@
                 <Button 
                     DockPanel.Dock="Right" 
                     Width="150" 
-                    Height="35"
-                    Margin="0,0,30,0"
+                    Height="30"
+                    Margin="10,0,20,0"
                     materialDesign:ShadowAssist.ShadowDepth="Depth0"
-                    FontSize="15"
+                    FontSize="13"
+                    Click="Button_Click"
                     HorizontalContentAlignment="Center"
                     BorderThickness="0"
                     HorizontalAlignment="Center" 
@@ -32,6 +33,7 @@
                     Foreground="White"
                     Content="Добавить задачу" Cursor="Hand" BorderBrush="{x:Null}">
                     <Button.Style>
+
                         <Style TargetType="{x:Type Button}">
                             <Style.Resources>
                                 <Style TargetType="Border">
@@ -44,6 +46,10 @@
                                     <ControlTemplate TargetType="{x:Type Button}">
                                         <Border Background="{TemplateBinding Background}">
                                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                            <Border.Effect>
+                                                <DropShadowEffect Color="#FF3E3E3E" Direction="270" Opacity="0.3" />
+                                            </Border.Effect>
                                         </Border>
                                     </ControlTemplate>
                                 </Setter.Value>
@@ -59,26 +65,110 @@
 
                 <StackPanel Orientation="Vertical">
                     <DockPanel Margin="10,20,10,0">
-                        <Label Content="Вырать день:"/>
                         <DatePicker 
-                            Text="{Binding TodoDate, UpdateSourceTrigger=PropertyChanged}"
+                            materialDesign:HintAssist.Hint="Выбрать день →"
+                            Text="{Binding TodoDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                            CalendarClosed="DatePicker_CalendarClosed"
                             FontSize="16" HorizontalContentAlignment="Center"/>
                     </DockPanel>
                     <StackPanel>
                         <DockPanel Margin="10,5,10,0">
                             <Label Content="Показать не выполненные"/>
-                            <ToggleButton IsChecked="{Binding IsNotDone, UpdateSourceTrigger=PropertyChanged}"/>
+                            <ToggleButton Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" IsChecked="{Binding IsNotDone, UpdateSourceTrigger=PropertyChanged}"/>
                         </DockPanel>
                     </StackPanel>
                 </StackPanel>
             </DockPanel>
         </Border>
+
         <ScrollViewer>
-            <StackPanel Name="todolist" Margin="10,10,10,0">
-                <ListBox ItemsSource="{Binding Tasks}">
+
+            <StackPanel Name="todolist" Margin="10,10,0,0">
+                <ListBox HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Name="listbox1" ItemsSource="{Binding Tasks}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <local:TaskView/>
+                            <DockPanel
+                                Tag="{Binding Id, Mode=OneWay}"
+                                MouseEnter="DockPanel_MouseEnter" 
+                                MouseLeave="DockPanel_MouseLeave">
+                                <Button
+                                    Visibility="Collapsed"
+                                    DockPanel.Dock="Left"
+                                    Click="Button_Click_1"
+                                    Tag="{Binding Id, Mode=OneWay}"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Width="Auto"
+                                    Height="Auto"
+                                    Background="Transparent" BorderBrush="Transparent" Foreground="DarkRed">
+                                    <materialDesign:PackIcon Kind="Trash"/>
+                                </Button>
+                                <DockPanel DockPanel.Dock="Right">
+                                    <Border 
+                                        Margin="0,0,0,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        CornerRadius="25" 
+                                        DockPanel.Dock="Top" 
+                                        Width="50" 
+                                        Height="50"
+                                        Padding="5"
+                                        BorderThickness="1"
+                                        Background="#9575CD">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="#FF3E3E3E" Direction="270" Opacity="0.3" />
+                                        </Border.Effect>
+                                        <Label 
+                                            Content="{Binding Time, Mode=OneWay}"
+                                            FontSize="13"
+                                            HorizontalContentAlignment="Center"
+                                            BorderThickness="0"
+                                            Height="auto" 
+                                            HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center" 
+                                            Foreground="White"
+                                           />
+                                    </Border>
+                                    <Line Width="1" 
+                                              Margin="0,15,0,0" Fill="#00627A" Stroke="#00627A" Stretch="Fill" StrokeThickness="2" X1="1" X2="1" Y1="1"/>
+                                </DockPanel>
+                                <DockPanel Margin="0,0,10,0">
+                                 
+                                    <Border
+                                        Padding="10"
+                                        Background="White"
+                                        BorderBrush="#9575CD"
+                                        BorderThickness="1"
+                                        CornerRadius="15,15,15,15"
+                                        DockPanel.Dock="Top">
+                                        
+                                        <DockPanel LastChildFill="True">
+                                        
+                                            <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                                                <Label 
+                                                        Content="{Binding Header, Mode=OneWay}"
+                                                        FontSize="16"
+                                                        FontFamily="Roboto" DockPanel.Dock="Left" FontWeight="Bold"/>
+                                                <CheckBox
+                                                        Tag="{Binding Id, Mode=OneWay}"
+                                                        Checked="CheckBox_Checked"
+                                                        Unchecked="CheckBox_Checked"
+                                                        IsChecked="{Binding IsDone, Mode=OneWay}"
+                                                        Cursor="Hand" Margin="0,0,10,0" DockPanel.Dock="Right" Background="#FF009625" BorderBrush="#FF009625">
+                                                    <CheckBox.LayoutTransform>
+                                                        <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+                                                    </CheckBox.LayoutTransform>
+                                                </CheckBox>
+                                            </DockPanel>
+                                            <TextBlock 
+                                                    Text="{Binding Description, Mode=OneWay}"
+                                                    FontFamily="Roboto"
+                                                    FontSize="14"
+                                                     TextWrapping="WrapWithOverflow"/>
+                                        </DockPanel>
+                                    </Border>
+                                </DockPanel>
+                            </DockPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>

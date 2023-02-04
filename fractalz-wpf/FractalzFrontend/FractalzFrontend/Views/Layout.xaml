@@ -8,7 +8,7 @@
         xmlns:profilepart1="clr-namespace:FractalzFrontend.Views.ChatPart" xmlns:todopart="clr-namespace:FractalzFrontend.Views.TodoPart" xmlns:notifypart="clr-namespace:FractalzFrontend.Views.NotifyPart"
         mc:Ignorable="d"
         Title="Леттер." Height="740" Width="524"
-        Background="#D9D9D9">
+        Background="#D9D9D9" WindowStartupLocation="CenterScreen">
     <DockPanel>
         <materialDesign:Card 
             materialDesign:ShadowAssist.ShadowDepth="Depth3" Width="70"

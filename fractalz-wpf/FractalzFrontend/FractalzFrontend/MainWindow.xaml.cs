@@ -22,6 +22,8 @@ using FractalzFrontend.Models.LoginPart;
 using FractalzFrontend.ViewModels.LoginPart;
 using FractalzFrontend.Models;
 using FractalzFrontend.Application.Abstractions;
+using FractalzFrontend.ViewModels.TodoPart;
+using FractalzFrontend.Views.TodoPart;
 
 namespace FractalzFrontend
 {
@@ -30,6 +32,7 @@ namespace FractalzFrontend
     /// </summary>
     public partial class MainWindow : Window
     {
+       
         private LoginView loginView;
         private RegistrationView registrationView;
         private ResetAccountView resetAccountView;

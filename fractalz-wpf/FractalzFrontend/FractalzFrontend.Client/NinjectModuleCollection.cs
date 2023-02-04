@@ -21,7 +21,7 @@ namespace FractalzFrontend.Client
         public IKernel Services = new StandardKernel();
         public void AddClientCollection()
         {
-            Services.Bind<IRestClient>().To<RestApiClient>().InTransientScope();
+            Services.Bind<IRestClient>().To<RestApiClient>().InSingletonScope();
             Services.Bind<IWebSocketClient>().To<WebsocketClient>().InSingletonScope();
         }
     }

@@ -10,10 +10,10 @@ namespace FractalzFrontend.ViewModels.LoginPart
 {
     public class LoginVM : INotifyPropertyChanged
     {
-        private string login;
-        private string password;
+        private string login = "kostya12277";
+        private string password = "4Thehorde!";
 
-        public string Login { get => login; set { login = value; OnPropertyChanged(nameof(Login)); } }
+        public string Login { get => login; set { login = value; OnPropertyChanged(nameof(Login)); } } 
         public string Password { get => password; set { password = value; OnPropertyChanged(nameof(Password)); } }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -174,3 +174,5 @@ C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\Fractalz
 C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\bin\Debug\FractalzFrontend.Logger.pdb
 C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\ProfilePart\Modals\ProfileLinksModal.g.cs
 C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\ProfilePart\Modals\ProfileLinksModal.baml
+C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\TodoPart\Modals\CreateTask.g.cs
+C:\Projects\AFC\Fractalz\FractalzFrontend\fractalz-wpf\FractalzFrontend\FractalzFrontend\obj\Debug\Views\TodoPart\Modals\CreateTask.baml

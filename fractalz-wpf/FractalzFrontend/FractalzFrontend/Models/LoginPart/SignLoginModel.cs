@@ -43,6 +43,8 @@ namespace FractalzFrontend.Models.LoginPart
             {
                 _cacheController.SetCache("User_Info", response.User);
                 _cacheController.SetCache("User_Token", response.Token);
+
+                _rest.SetAuth("Authorization", "Bearer " + response.Token);
             }
             return response;
         }

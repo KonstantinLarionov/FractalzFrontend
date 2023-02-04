@@ -23,9 +23,30 @@ namespace FractalzFrontend.Views.TodoPart
     /// </summary>
     public partial class TaskView : UserControl
     {
+        public string Header
+        {
+            get { return (string)GetValue(HeaderProperty); }
+            set { SetValue(HeaderProperty, value); }
+        }
+
+        public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(
+                                "Header",
+                                typeof(string), typeof(TaskView));
+
+        //    public TaskVM vm
+        //    {
+        //        get {
+        //            return (TaskVM)GetValue(ComponentProperty);
+        //        }
+        //        set { 
+        //            SetValue(ComponentProperty, value); }
+        //    }
+        //private TaskModel _model;
         public TaskView()
         {
             InitializeComponent();
+            //_model = new TaskModel(vm);
+            //DataContext = vm;
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
