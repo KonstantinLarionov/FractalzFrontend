@@ -83,6 +83,7 @@
     <Compile Include="Models\TodoPart\TodoModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModels\DialogsPart\DialogsVM.cs" />
+    <Compile Include="ViewModels\DialogsPart\DialogVM.cs" />
     <Compile Include="ViewModels\LoginPart\LoginVM.cs" />
     <Compile Include="ViewModels\LoginPart\RegistrationVM.cs" />
     <Compile Include="ViewModels\LoginPart\SignLoginVM.cs" />

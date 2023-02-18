@@ -26,9 +26,29 @@ namespace FractalzFrontend.Views.ChatPart
         private DialogsModel _dialogsModel;
         public DialogsView()
         {
+            InitializeComponent();
             DataContext = _dialogsVm;
             _dialogsModel = new DialogsModel(_dialogsVm);
-            InitializeComponent();
+            _dialogsVm.AddValue(new DialogVM()
+            {
+                Account = "Константин Ларионов",
+                DateTime = DateTime.Now,
+                Id = new Guid(),
+                IsP2P = true,
+                LastMessage = "Последнее тестовое сообщение",
+                OnlineStatus = new SolidColorBrush(Colors.Green),
+                IsRead = true,
+            }); _dialogsVm.AddValue(new DialogVM()
+            {
+                Account = "kostya12277",
+                DateTime = DateTime.Now,
+                Id = new Guid(),
+                IsP2P = true,
+                LastMessage = "Последнее тестовое сообщение Последнее тестовое сообщение",
+                OnlineStatus = new SolidColorBrush(Colors.Red),
+                IsRead=false,
+            });
+
         }
 
         private void FindUser(object sender, RoutedEventArgs e)

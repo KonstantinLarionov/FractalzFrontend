@@ -113,10 +113,64 @@
             <DockPanel>
                 <ScrollViewer>
                     <StackPanel 
-                Margin="0,20,0,0"
-                DockPanel.Dock="Top"
-                Orientation="Vertical">
-                        <local:DialogView/>
+                        Margin="0,20,0,0"
+                        DockPanel.Dock="Top"
+                        Orientation="Vertical">
+                        <ListBox HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Name="listbox1" ItemsSource="{Binding Dialogs}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <DockPanel>
+                                        <DockPanel 
+                                Width="90"
+                                DockPanel.Dock="Left">
+                                            <Image 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" 
+                                    Height="60"
+                                    Width="60" 
+                                    Stretch="Fill" 
+                                    Source="/Views/ProfilePart/1.PNG">
+                                                <Image.Clip>
+                                                    <EllipseGeometry Center="30,30" RadiusX="30" RadiusY="30" />
+                                                </Image.Clip>
+                                            </Image>
+                                        </DockPanel>
+                                        <DockPanel 
+                                Width="80"
+                                DockPanel.Dock="Right">
+                                            <Label 
+                                    Content="{Binding DateTimeLastMessage, UpdateSourceTrigger=PropertyChanged}" 
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <StackPanel
+                                    Margin="0,5,0,0"
+                                    DockPanel.Dock="Top"
+                                    Orientation="Horizontal">
+                                                <Label
+                                        FontSize="16"
+                                        FontFamily="Roboto"
+                                        Content="{Binding Account, UpdateSourceTrigger=PropertyChanged}" 
+                                        Foreground="#DD000000"/>
+                                                <materialDesign:PackIcon 
+                                        Foreground="{Binding OnlineStatus, UpdateSourceTrigger=PropertyChanged}"
+                                        Width="5" Height="5" 
+                                        HorizontalAlignment="Center" Visibility="{Binding IsP2P, UpdateSourceTrigger=PropertyChanged}"
+                                        VerticalAlignment="Center" Kind="Circle"/>
+                                            </StackPanel>
+                                            <TextBlock
+                                        FontSize="14"
+                                        FontFamily="Roboto Lt"
+                                        DockPanel.Dock="Top"
+                                        TextWrapping="Wrap"
+                                        Text="{Binding LastMessage, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding LastMessageStatus, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </DockPanel>
+                                    </DockPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                       
                     </StackPanel>
                 </ScrollViewer>
             </DockPanel>
